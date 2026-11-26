@@ -39,8 +39,8 @@ def validate(data):
                 if candidate["id"] in REPOSITORIES else True, "repository reuse controls")
         if candidate["id"] in REPOSITORIES:
             require(candidate["status"] == "external_link_only", "repository status")
-            require(candidate["sourceUrl"].startswith("https://"), "source URL")
-            require(candidate["rightsUrl"].startswith("https://"), "rights URL")
+            require(isinstance(candidate["sourceUrl"], str) and candidate["sourceUrl"].startswith("https://"), "source URL")
+            require(isinstance(candidate["rightsUrl"], str) and candidate["rightsUrl"].startswith("https://"), "rights URL")
             require(candidate["rightsStatus"] == "verified_restrictions", "rights evidence")
             require(candidate["accessStatus"] != "not_selected", "repository access")
             require(candidate["allowedActions"] == ["external_link", "original_bibliographic_reference"],
