@@ -1,0 +1,7 @@
+.sn-lexicons .lc-pager:not([hidden]){display:flex;flex-wrap:wrap;gap:var(--sn-space-3);margin-block:var(--sn-space-3)}
+.sn-lexicons li{min-width:0;overflow-wrap:anywhere;margin-block:var(--sn-space-2)}
+.sn-lexicons .sn-button{max-width:100%;white-space:normal;overflow-wrap:anywhere;min-height:44px;text-align:start}
+.sn-lexicons #lc-lex-detail:not([hidden]){border-block-start:1px solid var(--sn-control-border);padding-block-start:var(--sn-space-4)}
+.sn-lexicons #lc-lex-detail:focus{outline:3px solid var(--sn-focus);outline-offset:3px}
+.sn-lexicons ol,.sn-lexicons ul{padding-inline-start:1.5rem}
+.sn-lexicons .module-breadcrumb{padding:0}
