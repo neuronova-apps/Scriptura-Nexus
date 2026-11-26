@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import StudyList from '../../components/catalog/StudyList.astro';
+import { axes, getDiscipline } from '../../lib/taxonomy';
+import { studiesByAxis, relatedStudiesByAxis } from '../../lib/catalog';
+import { basePath } from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/catalog.css';
+export function getStaticPaths() { return axes.map(axis => ({params:{id:axis.id},props:{axis}})); }
+const { axis } = Astro.props;
+const primary = studiesByAxis(axis.id);
+const related = relatedStudiesByAxis(axis.id);
+const base = basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title={axis.name + ' | Scriptura Nexus'} description={axis.scope}>
+<div class="module-landing">
+<nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base + 'estudios/'}>Estudios bíblicos</a></li><li aria-current="page">{axis.id}</li></ol></nav>
+<Card variant="editorial"><p class="module-phase">{axis.id} · Eje temático</p><h1>{axis.name}</h1><p>{axis.scope}</p><p>Disciplina base: {getDiscipline(axis.baseDisciplineId)?.name}</p></Card>
+<section aria-labelledby="principales"><h2 id="principales">Investigaciones principales ({primary.length})</h2>{primary.length ? <StudyList items={primary}/> : <p>Este eje aún no tiene investigaciones principales en el catálogo inicial. Permanece habilitado para futuras incorporaciones.</p>}</section>
+<section aria-labelledby="relacionadas"><h2 id="relacionadas">Investigaciones relacionadas ({related.length})</h2><p>Estas investigaciones pertenecen a otros ejes principales y se enlazan a sus fichas únicas.</p>{related.length ? <StudyList items={related}/> : <p>No hay investigaciones relacionadas registradas por ahora.</p>}</section>
+<a class="sn-button sn-button--secondary" href={base + 'estudios/'}>Volver al catálogo</a>
+</div></BaseLayout>

@@ -1,0 +1,8 @@
+.catalog-grid, .catalog-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:var(--sn-space-3); }
+.catalog-list { padding:0; margin:0; list-style:none; }
+.catalog-list li[hidden], .catalog-filters[hidden], .catalog-empty[hidden] { display:none; }
+.catalog-filters { display:flex; flex-wrap:wrap; gap:var(--sn-space-3); align-items:end; margin-block:1rem; }
+.catalog-filters label { display:grid; gap:.4rem; min-width:0; max-width:100%; flex:1 1 15rem; }
+.catalog-filters select { font:inherit; max-width:100%; padding:.5rem; color:var(--sn-navy); background:var(--sn-surface); border:1px solid currentColor; }
+.catalog-list h3, .catalog-grid h3 { margin-top:0; overflow-wrap:anywhere; }
+.catalog-list p:last-child { margin-bottom:0; }
