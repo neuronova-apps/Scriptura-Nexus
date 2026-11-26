@@ -351,3 +351,17 @@ assert.ok(!existsSync('dist/editorial-private'));
 assert.ok(!existsSync('dist/drafts'));
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA|EVD-900001/);
 console.log('P6.4: registro inicial vacío, 42 fichas sin versión aprobada, sin borradores en rutas ni índice.');
+
+// P6.5.2: actual production HTML and synthetic-data isolation.
+let auditedPositions=0;
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ const sections=[...html.matchAll(/<section[^>]*data-section-id="([^"]+)"[^>]*>/g)];
+ assert.equal(sections.length,20,study.id);auditedPositions+=sections.length;
+ for(let i=1;i<=20;i++){const anchor='seccion-'+String(i).padStart(2,'0');assert.ok(html.includes('id="'+anchor+'-titulo"'));assert.ok(html.includes('aria-labelledby="'+anchor+'-titulo"'));}
+ assert.equal((html.match(/href="#indice-secciones"/g)||[]).length,20);
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.5\.2/);
+}
+assert.equal(auditedPositions,840);
+assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.2/);
+console.log('P6.5.2: 840 posiciones HTML, títulos, anclas de retorno y aislamiento de fixtures conformes.');
