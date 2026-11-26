@@ -12,3 +12,7 @@
 .sn-analyzer dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--sn-space-2);margin-block:var(--sn-space-4)}
 .sn-analyzer dt{font-weight:600}.sn-analyzer dd{margin:0}
 @media(max-width:40rem){.ta-fields,.sn-analyzer dl{grid-template-columns:minmax(0,1fr)}}
+
+/* P8.3.5: semantic foreground/background must change together when switching themes.
+   Do not interpolate colors of analyzer controls across light/dark contrast palettes. */
+.sn-analyzer .sn-button,.sn-analyzer .ta-word,.sn-analyzer select,.sn-analyzer input{transition:none}
