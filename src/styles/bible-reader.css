@@ -1,0 +1,20 @@
+.sn-bible-reader section{min-width:0;overflow-wrap:anywhere}
+.sn-bible-reader fieldset{border:0;padding:0;margin:0;min-width:0}
+.sn-bible-reader legend{font-weight:600;margin-block-end:var(--sn-space-3)}
+.br-sections,.br-actions{display:flex;flex-wrap:wrap;gap:var(--sn-space-3);align-items:center}
+.br-sections{list-style:none;padding:0;margin:0}
+.br-sections a{display:inline-flex;align-items:center;min-height:44px}
+.br-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sn-space-4);margin-block-end:var(--sn-space-4)}
+.sn-bible-reader label{display:grid;gap:var(--sn-space-2);min-width:0}
+.sn-bible-reader select{font:inherit;color:var(--sn-ink);background:var(--sn-surface);border:1px solid var(--sn-control-border);border-radius:var(--sn-radius-md);padding:var(--sn-space-3);min-height:44px;width:100%;min-width:0}
+.sn-bible-reader :disabled{cursor:not-allowed;opacity:1;color:var(--sn-muted);background:var(--sn-paper)}
+.sn-bible-reader :focus-visible,.sn-bible-reader h2[tabindex="-1"]:focus{outline:3px solid var(--sn-focus);outline-offset:3px;scroll-margin-block-start:1rem}
+.sn-bible-reader .sn-button,.sn-bible-reader select{transition:none}
+.sn-bible-reader .sn-button{min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.br-reading{background:var(--sn-paper);color:var(--sn-ink);border:1px solid var(--sn-control-border);border-radius:var(--sn-radius-md);padding:var(--sn-space-5);margin-block:var(--sn-space-4);font-family:var(--sn-font-display);font-size:1.125em;line-height:1.8}
+.br-reading p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.br-actions{justify-content:space-between}
+.sn-bible-reader dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--sn-space-2)}
+.sn-bible-reader dt{font-weight:600}.sn-bible-reader dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:40rem){.br-fields,.sn-bible-reader dl{grid-template-columns:minmax(0,1fr)}.br-actions>*{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){html:has(.sn-bible-reader){scroll-behavior:auto}}

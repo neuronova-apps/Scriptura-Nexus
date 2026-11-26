@@ -507,3 +507,28 @@ for(const [html,other,ids] of [[analyzerHtml,'lexicos-concordancias',['ta-refere
 }
 assert.match(lexHtml,/<div[^>]*id="lc-lex-detail"[^>]*role="region"[^>]*aria-label="Detalle de entrada léxica"/);
 console.log('P8.5.3: navegación recíproca, destinos de sección y región de detalle conformes.');
+
+// P9.2.3: public reader shell, zero authorized editions, no validation corpus or fixtures.
+const readerHtml=readFileSync('dist/biblia/lector/index.html','utf8');
+const bibleHtml=readFileSync('dist/biblia/index.html','utf8');
+assert.ok(bibleHtml.includes('href="/Scriptura-Nexus/biblia/lector/"'));
+assert.ok(readerHtml.includes('href="/Scriptura-Nexus/biblia/"'));
+assert.ok(readerHtml.includes('href="/Scriptura-Nexus/fundamentos/licencias/"'));
+assert.equal((readerHtml.match(/<h1(?:\s|>)/g)||[]).length,1);
+assert.match(readerHtml,/No hay ediciones autorizadas para consulta pública/);
+assert.match(readerHtml,/<fieldset[^>]*id="br-fields"[^>]*disabled/);
+for(const id of ['br-book','br-chapter','br-verse','br-consult','br-previous','br-next'])assert.match(readerHtml,new RegExp('id="'+id+'"[^>]*disabled'));
+for(const id of ['br-edition','br-book','br-chapter','br-verse'])assert.ok(readerHtml.includes('for="'+id+'"')&&readerHtml.includes('id="'+id+'"'));
+const readerIds=[...readerHtml.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(new Set(readerIds).size,readerIds.length);
+for(const m of readerHtml.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g))for(const id of m[1].split(/\s+/))assert.ok(readerIds.includes(id),'ARIA sin destino');
+for(const id of ['br-reference-title','br-passage-title','br-source-title']){
+ assert.ok(readerHtml.includes('href="#'+id+'"'));assert.match(readerHtml,new RegExp('<h2[^>]*id="'+id+'"[^>]*tabindex="-1"'));
+}
+assert.match(readerHtml,/<noscript>/);assert.match(readerHtml,/id="br-status"[^>]*role="status"[^>]*aria-live="polite"/);
+assert.ok(!existsSync('dist/data/biblia/'));
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile()&&/\.(?:html?|json|js|mjs|xml|txt|map)$/i.test(file.name)){
+ const s=readFileSync(file.parentPath+'/'+file.name,'utf8');
+ assert.doesNotMatch(s,/reader-fixture-only|TXT-reader-fixture|Texto de prueba exclusivo P923|proyeccion-ediciones-p913\.json|admisiones-ediciones-p912\.json|FRAG-ED-C01-GEN|56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5/,'Datos de validación no publicables: '+file.name);
+}
+console.log('P9.2.3: lector enlazado, controles bloqueados, ARIA y ausencia de corpus/fixtures conformes.');
