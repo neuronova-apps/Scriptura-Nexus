@@ -13,7 +13,7 @@ export function normalizeSearch(value: string): string {
 export function createSearchIndex(studies: readonly SearchSource[], axes: readonly {id:string;name:string}[]): SearchEntry[] {
   const names = new Map(axes.map(axis => [axis.id, axis.name]));
   // P5.4 only admits public planned catalog metadata. Future approved snapshots require P6.
-  return studies.filter(study => study.status === 'planificado').map(study => ({
+  return studies.filter(study => study.status === 'planificado').map<SearchEntry>(study => ({
     id: study.id, title: study.title, question: study.question, status: 'planificado',
     axis: names.get(study.primaryAxisId) ?? study.primaryAxisId,
     terms: normalizeSearch([study.id, study.title, study.question, study.primaryAxisId,
