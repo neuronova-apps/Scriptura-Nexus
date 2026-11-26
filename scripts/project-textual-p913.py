@@ -114,12 +114,17 @@ def verify_registry_empty():
     publications=json.loads((ROOT/'src/data/publicaciones/registro.json').read_text(encoding='utf-8'))
     require(registry=={'schemaVersion':1,**{k:[] for k in ('editions','units','tokens','lemmas','identifiers','analyses','morphCodes')}},'registro lingüístico')
     require(publications=={'schemaVersion':1,'snapshots':[]},'registro de publicaciones')
+def merge_book_aliases(existing,*incoming):
+    # Exact aliases, first-seen source order; do not normalize or merge book identities.
+    return list(dict.fromkeys([*existing,*incoming]))
+
 def verify_report(report):
     require(report['schemaVersion']==1 and report['phase']=='P9.1.3' and report['mode']=='in_memory_validation_only','report schema')
     require(report['baselineMain']==BASELINE and len(report['editions'])==2 and len(report['books'])==66 and len(report['corpusManifests'])==2,'report coverage')
     require(report['entityCounts']['ENT19']==2 and report['entityCounts']['ENT20']==0 and report['entityCounts']['ENT21']==0 and report['entityCounts']['ENT22']==66 and report['entityCounts']['ENT23']>0 and report['entityCounts']['ENT37']==2,'entity counts')
     require(report['controls']=={'corpusTextPersisted':False,'sourceTextEmitted':False,'publicRegistryChanged':False,'canonAssignments':0,'versificationAssignments':0,'alignmentsCreated':0,'publicationAuthorized':False},'safety controls')
     require(not any(k in report for k in ('units','tokens','alignments','corpus')),'raw corpus in report')
+    require(len({b['id'] for b in report['books']})==len(report['books']) and all(len(set(b['aliases']))==len(b['aliases']) for b in report['books']),'book identities')
     for ed,manifest in zip(report['editions'],report['corpusManifests']):
         require(ed['id']==manifest['editionId'] and ed['canonId'] is None and ed['versificationId'] is None and ed['referencePolicy']=='source_native_unmapped','edition scope')
         require(manifest['persistence']=='metadata_only' and manifest['publicationEnabled'] is False,'publication gate')
@@ -160,7 +165,7 @@ def build():
         gr_order+=len(units);all_units+=len(units);gr_book_ids.append(book_id)
         gr_resources.append({'id':resource_id,'sourceFileId':'ED-C02:'+meta['book'],'sourceId':'F03','path':meta['path'],'bytes':meta['bytes'],'sha256':meta['sha256'],'component':'texto_fuente','licenseRef':gr_license})
         gr_fragments.append({'id':'FRAG-ED-C02-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':metrics['wordElements'],'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'emptyUnitDiagnostics':metrics['emptyUnitDiagnostics'],'excludedStructures':{'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0},'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
-        books[book_id]['aliases'].extend([source_metrics['referenceBookLabel'],meta['book']])
+        books[book_id]['aliases']=merge_book_aliases(books[book_id]['aliases'],source_metrics['referenceBookLabel'],meta['book'])
     editions.append({'id':gr_id,'sourceId':'F03','name':'SBL Greek New Testament','language':'grc','kind':'edicion_critica','version':'v1.2','provider':'Faithlife/SBLGNT','resourceIds':[x['id'] for x in gr_resources],'canonId':None,'versificationId':None,'coverageBookIds':gr_book_ids,'referencePolicy':'source_native_unmapped','licenseRef':gr_license,'attribution':'The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.','sourceRevision':{'commit':greek['sourceCommit']}})
     gr_global=hashlib.sha256()
     for f,r in zip(gr_fragments,gr_resources):gr_global.update(canonical({'fragment':f['projectionSha256'],'source':r['sha256'],'resource':r['id']})+b'\n')
