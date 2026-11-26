@@ -15,6 +15,7 @@ async function download(file){
  }finally{await reader.cancel().catch(()=>{});}
  return Buffer.concat(chunks,count);
 }
+if(process.argv.includes('--closure')&&!process.argv.includes('--integrity'))throw new Error('--closure requiere --integrity');
 const report=[],projections=[],repeated=[];
 for(const id of oshbFileIds){
  const file=manifest.files.find(f=>f.id===id);
@@ -77,6 +78,13 @@ if(process.argv.some(x=>['--occurrences','--lexical','--morphology','--integrity
     assert.deepEqual(integrity,summarizeIntegrity(repeat));
     assert.equal(integrity.pendingMorphology,333);
     console.log(JSON.stringify({mode:'P8.2.6-validation-only',...integrity},null,2));
+    if(process.argv.includes('--closure')){
+     const {consolidateP82}=await import('./lib/oshb-closure.mjs');
+     const registry=JSON.parse(readFileSync('src/data/linguistica/registro.json','utf8'));
+     const closure=consolidateP82({manifest,registry,integrity,repeatedIntegrity:summarizeIntegrity(repeat),compatibility,lexical});
+     console.log(JSON.stringify(closure,null,2));
+     if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.7: consolidación técnica (sin publicación)\n\n`'+JSON.stringify(closure)+'`\n');
+    }
     if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.6: auditoría de integridad\n\n`'+JSON.stringify(integrity)+'`\n');
    }
   }

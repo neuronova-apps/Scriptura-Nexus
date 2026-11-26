@@ -9,6 +9,9 @@ on:
       - 'scripts/lib/oshb-lexical.mjs'
       - 'scripts/lib/oshb-morphology.mjs'
       - 'scripts/lib/oshb-integrity.mjs'
+      - 'scripts/lib/oshb-closure.mjs'
+      - 'tests/p8-oshb-closure.test.mjs'
+      - 'src/data/linguistica/registro.json'
       - 'tests/p8-oshb-integrity.test.mjs'
       - 'tests/p8-oshb-morphology.test.mjs'
       - 'tests/p8-oshb-lexical.test.mjs'
@@ -56,3 +59,7 @@ jobs:
         run: node --test tests/p8-oshb-integrity.test.mjs
       - name: Auditoría de cobertura e integridad real
         run: node scripts/import-oshb.mjs --integrity
+      - name: Consolidación P8.2 sintética
+        run: node --test tests/p8-oshb-closure.test.mjs
+      - name: Consolidación P8.2 real reproducible y barrera de publicación
+        run: node scripts/import-oshb.mjs --integrity --closure
