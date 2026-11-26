@@ -6,3 +6,7 @@ dist/
 !.env.example
 *.log
 .DS_Store
+
+# Private editorial work must stay outside the public repository.
+/editorial-private/
+/drafts/
