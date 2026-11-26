@@ -13,12 +13,16 @@
       "scope": "Texto amalgamado y anotaciones; distinguir ediciones y variantes, sin tratarlo como edición única.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "d4c0c820fdf9f2b450c9f96ce6103d6875028affd2e44094d753f1329ca1fd85",
       "bytes": 14188364,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto amalgamado de múltiples ediciones y anotaciones; falta revisión de condiciones de componentes y separación de edición/variantes.",
+      "conditions": []
     },
     {
       "id": "LING-002",
@@ -31,12 +35,16 @@
       "scope": "Texto amalgamado y anotaciones; distinguir ediciones y variantes, sin tratarlo como edición única.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "122040eeeaeba50d6abbf67b39cacaff687211bda69b080e5d53927c830d9968",
       "bytes": 15938967,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto amalgamado de múltiples ediciones y anotaciones; falta revisión de condiciones de componentes y separación de edición/variantes.",
+      "conditions": []
     },
     {
       "id": "LING-003",
@@ -49,12 +57,16 @@
       "scope": "Texto hebreo/arameo y anotaciones; delimitar idiomas, Ketiv/Qere y adiciones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "7763ef367bb0e6e1c1a95fb9b652e1d611b2481827611433e82abbf229216d70",
       "bytes": 18190495,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto, morfología derivada y variantes/adiciones de otras fuentes; falta revisión de licencias por componente y separación de capas.",
+      "conditions": []
     },
     {
       "id": "LING-004",
@@ -67,12 +79,16 @@
       "scope": "Texto hebreo/arameo y anotaciones; delimitar idiomas, Ketiv/Qere y adiciones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "b79add01a8c95673e31ec3ab8ad86183d2312cd96421ddf21f3d1f74377526a7",
       "bytes": 24500357,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto, morfología derivada y variantes/adiciones de otras fuentes; falta revisión de licencias por componente y separación de capas.",
+      "conditions": []
     },
     {
       "id": "LING-005",
@@ -85,12 +101,16 @@
       "scope": "Texto hebreo/arameo y anotaciones; delimitar idiomas, Ketiv/Qere y adiciones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "e0416880bb78f46715bb17ce526b623c3051da0ef83f7bf83beaad350e6272e8",
       "bytes": 9540663,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto, morfología derivada y variantes/adiciones de otras fuentes; falta revisión de licencias por componente y separación de capas.",
+      "conditions": []
     },
     {
       "id": "LING-006",
@@ -103,12 +123,16 @@
       "scope": "Texto hebreo/arameo y anotaciones; delimitar idiomas, Ketiv/Qere y adiciones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "d5a609f5a4b9f7757a2615e55877b07f9f6931a8afccef012c0b4bf662caf540",
       "bytes": 17977558,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Texto, morfología derivada y variantes/adiciones de otras fuentes; falta revisión de licencias por componente y separación de capas.",
+      "conditions": []
     },
     {
       "id": "LING-007",
@@ -121,12 +145,16 @@
       "scope": "Léxico abreviado; verificar derechos de definiciones y extensiones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "734a5b64a1152f67604bf09d32f15c0ba537151961752fcf168087b41b4d93ea",
       "bytes": 4736983,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Definiciones de fuentes distintas, incluidas Abbott-Smith y Middle Liddell; separar y comprobar edición y condiciones antes de admitir.",
+      "conditions": []
     },
     {
       "id": "LING-008",
@@ -139,12 +167,16 @@
       "scope": "Léxico abreviado; verificar derechos de definiciones y extensiones.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "848eef2ac16753a43694897dbb9e8f266725e7cc9da4809f367ee5b990f05dbb",
       "bytes": 3288115,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "Definiciones BDB abreviadas de Online Bible requieren permiso adicional; excluir archivo inicial hasta separar columnas y documentar autorización.",
+      "conditions": []
     },
     {
       "id": "LING-009",
@@ -157,12 +189,16 @@
       "scope": "Tabla de códigos; conservar sistema y códigos originales.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "rechazado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "9e8443fd4759f112253d7a1858c0687a8cf833f4d537e8fda97bfff74ea4c168",
       "bytes": 467126,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": null,
+      "allowedComponents": [],
+      "attribution": null,
+      "decisionBasis": "README y encabezado nominal CC BY; no se logró inspeccionar cabecera completa de la versión exacta para identificar condiciones por componente.",
+      "conditions": []
     },
     {
       "id": "LING-010",
@@ -175,12 +211,23 @@
       "scope": "Tabla de códigos; conservar sistema y códigos originales.",
       "licenseEvidencePath": "README.md",
       "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
-      "review": "pendiente",
+      "review": "aprobado",
       "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
       "sha256": "fe37e62b97e531410159e5f1b1ac8a69db4512c3e8407c03bae38639bd09f97f",
       "bytes": 394651,
       "licenseEvidenceSha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
-      "approvalRef": null
+      "approvalRef": "docs/P8/02-decisiones-admision.md#ling-010",
+      "allowedComponents": [
+        "codigo_morfologico",
+        "descripcion_gramatical"
+      ],
+      "attribution": "STEP Bible (https://www.STEPBible.org), basado en el trabajo de Tyndale House, Cambridge; https://stepbible.github.io/STEPBible-Data/; CC BY 4.0.",
+      "decisionBasis": "Cabecera del archivo fijo y README permiten incorporar y reformatear datos. Se limita a códigos y descripciones gramaticales; no ejemplos, glosas léxicas ni copia íntegra.",
+      "conditions": [
+        "Incorporación transformada a la aplicación, no espejo ni archivo original.",
+        "Preservar código y sistema; distinguir códigos léxicos y de ocurrencia.",
+        "Atribuir, enlazar CC BY 4.0 y registrar modificaciones; excluir ejemplos y glosas."
+      ]
     },
     {
       "id": "LING-011",
@@ -193,12 +240,24 @@
       "scope": "Muestra complementaria Gen; OSIS, texto WLC y anotaciones separados. No extrapolar al resto de libros.",
       "licenseEvidencePath": "LICENSE.md",
       "declaredLicense": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
-      "review": "pendiente",
+      "review": "aprobado",
       "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
       "sha256": "e5ab737c323d3879733e03882ecf17b7d917115133f87f9cd97895ac98f2b1a4",
       "bytes": 1859929,
       "licenseEvidenceSha256": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878",
-      "approvalRef": null
+      "approvalRef": "docs/P8/02-decisiones-admision.md#ling-011",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "decisionBasis": "LICENSE.md fijo y derechos OSIS en cabecera confirman WLC dominio público y anotaciones CC BY 4.0. Solo este libro; no inferir lemas o códigos ausentes.",
+      "conditions": [
+        "Conservar escritura, diacríticos, posiciones, versificación y procedencia del libro.",
+        "Atribución exacta OSHB, enlace a CC BY 4.0 y registro de cambios de anotaciones.",
+        "No copiar metadatos o materiales ajenos a las capas autorizadas; no redistribuir XML íntegro en esta fase."
+      ]
     },
     {
       "id": "LING-012",
@@ -211,12 +270,24 @@
       "scope": "Muestra complementaria Dan; OSIS, texto WLC y anotaciones separados. No extrapolar al resto de libros.",
       "licenseEvidencePath": "LICENSE.md",
       "declaredLicense": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
-      "review": "pendiente",
+      "review": "aprobado",
       "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
       "sha256": "e63592e843bfe907758853affb352f049296cce1df95e747d65a48b29ab486a4",
       "bytes": 569236,
       "licenseEvidenceSha256": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878",
-      "approvalRef": null
+      "approvalRef": "docs/P8/02-decisiones-admision.md#ling-012",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "decisionBasis": "LICENSE.md fijo y derechos OSIS en cabecera confirman WLC dominio público y anotaciones CC BY 4.0. Solo este libro; no inferir lemas o códigos ausentes.",
+      "conditions": [
+        "Conservar escritura, diacríticos, posiciones, versificación y procedencia del libro.",
+        "Atribución exacta OSHB, enlace a CC BY 4.0 y registro de cambios de anotaciones.",
+        "No copiar metadatos o materiales ajenos a las capas autorizadas; no redistribuir XML íntegro en esta fase."
+      ]
     }
   ],
   "deferred": [

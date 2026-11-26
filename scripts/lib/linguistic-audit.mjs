@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
 const repos={F01:'STEPBible/STEPBible-Data',F02:'openscriptures/morphhb'};
+const scopes={ 'LING-010':{sourceId:'F01',dataset:'TEHMC',path:'Morphology codes/TEHMC - Translators Expansion of Hebrew Morphology Codes - STEPBible.org CC BY.txt',allowed:['codigo_morfologico','descripcion_gramatical']}, 'LING-011':{sourceId:'F02',dataset:'OSHB v.2.2',path:'wlc/Gen.xml',allowed:['texto_wlc','anotaciones_lema','anotaciones_morfologia']}, 'LING-012':{sourceId:'F02',dataset:'OSHB v.2.2',path:'wlc/Dan.xml',allowed:['texto_wlc','anotaciones_lema','anotaciones_morfologia']} };
 const sha=(x,n)=>typeof x==='string'&&new RegExp('^[a-f0-9]{'+n+'}$').test(x);
 const text=x=>typeof x==='string'&&x.trim().length>0;
 const path=x=>text(x)&&!/[\\\\:\u0000-\u001f?#]/.test(x)&&!x.split('/').some(p=>!p||p==='.'||p==='..');
@@ -13,8 +14,11 @@ export function validateCandidates(data){
   if(!['pendiente','rechazado','aprobado'].includes(f.review))throw new Error('Decisión inválida');
   const integrity=sha(f.commit,40)&&sha(f.sha256,64)&&Number.isSafeInteger(f.bytes)&&f.bytes>0&&sha(f.licenseEvidenceSha256,64);
   if(f.commit!==null||f.sha256!==null||f.bytes!==null||f.licenseEvidenceSha256!==null){if(!integrity)throw new Error('Integridad incompleta');if(sha(f.ref,40)&&f.ref!==f.commit)throw new Error('Commit incoherente');}
-  if(f.review==='aprobado'){if(!integrity||!text(f.approvalRef))throw new Error('Aprobación sin evidencia por archivo');}
-  else if(f.approvalRef!==null)throw new Error('Referencia de aprobación sin decisión');
+  if(!text(f.decisionBasis)||!Array.isArray(f.allowedComponents)||!Array.isArray(f.conditions))throw new Error('Decisión sin alcance documentado');
+  if(f.review==='aprobado'){
+   const scope=Object.hasOwn(scopes,f.id)?scopes[f.id]:null;
+   if(!integrity||f.ref!==f.commit||f.approvalRef!=='docs/P8/02-decisiones-admision.md#'+f.id.toLowerCase()||!scope||scope.sourceId!==f.sourceId||scope.dataset!==f.dataset||scope.path!==f.path||!text(f.attribution)||!f.conditions.length||!f.conditions.every(text)||!f.allowedComponents.length||new Set(f.allowedComponents).size!==f.allowedComponents.length||!f.allowedComponents.every(x=>scope.allowed.includes(x)))throw new Error('Aprobación sin evidencia o alcance permitido por archivo');
+  }else if(f.approvalRef!==null||f.attribution!==null||f.allowedComponents.length||f.conditions.length)throw new Error('Permisos en recurso no aprobado');
  }
  return data;
 }

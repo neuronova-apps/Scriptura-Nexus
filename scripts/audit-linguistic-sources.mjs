@@ -30,9 +30,9 @@ for(const f of data.files){
  const {notices,...content}=await inspect(raw),license=await inspect(licenseUrl);
  headerReviews.push({id:f.id,notices});
  if(f.commit&&(f.commit!==commit||f.sha256!==content.sha256||f.bytes!==content.bytes||f.licenseEvidenceSha256!==license.sha256))throw new Error('Integridad distinta de la registrada: '+f.id);
- report.push({id:f.id,dataset:f.dataset,commit,path:f.path,raw,licenseUrl,...content,licenseEvidenceSha256:license.sha256,review:'pendiente_revision_humana'});
+ report.push({id:f.id,dataset:f.dataset,commit,path:f.path,raw,licenseUrl,...content,licenseEvidenceSha256:license.sha256,review:f.review});
 }
 console.log(JSON.stringify({schemaVersion:1,files:report},null,2));
 console.log('Indicaciones de licencia en cabeceras (extractos orientativos; no aprobación):');
 console.log(JSON.stringify(headerReviews,null,2));
-if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## P8.1: auditoría de bytes (sin admisión)\n\n'+report.map(x=>'- '+x.id+' · '+x.dataset+' · '+x.bytes+' bytes · commit `'+x.commit+'` · SHA-256 `'+x.sha256+'` · evidencia de licencia `'+x.licenseEvidenceSha256+'`').join('\n')+'\n\nLas señales de cabecera son orientativas; requieren revisión humana por componente. No se guardaron ni publicaron archivos de datos.\n');
+if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## P8.1: auditoría de bytes (sin admisión)\n\n'+report.map(x=>'- '+x.id+' · '+x.dataset+' · '+x.bytes+' bytes · commit `'+x.commit+'` · SHA-256 `'+x.sha256+'` · evidencia de licencia `'+x.licenseEvidenceSha256+'`').join('\n')+'\n\nLas señales de cabecera son orientativas; no sustituyen las decisiones de admisión documentadas. No se guardaron ni publicaron archivos de datos.\n');
