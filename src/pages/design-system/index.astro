@@ -10,9 +10,9 @@ const home = basePath(import.meta.env.BASE_URL);
 ---
 <BaseLayout title="Sistema de diseño | Scriptura Nexus" description="Guía visual de los tokens, componentes y estados de interfaz de Scriptura Nexus.">
   <div class="sn-showcase">
-    <SectionHeading eyebrow="P2.2 · Guía de interfaz" title="Sistema de diseño" description="Referencia visual de los colores, la tipografía, los componentes y sus estados. Esta página es una muestra técnica para revisar la consistencia antes de construir el portal principal." />
+    <SectionHeading level={1} eyebrow="P2.2 · Guía de interfaz" title="Sistema de diseño" description="Referencia visual de los colores, la tipografía, los componentes y sus estados. Esta página es una muestra técnica para revisar la consistencia antes de construir el portal principal." />
     <Card variant="editorial">
-      <h1 class="sn-showcase-title">Identidad académica clásica</h1>
+      <h2 class="sn-showcase-title">Identidad académica clásica</h2>
       <p>El sistema utiliza azul profundo, acentos dorados, superficies cálidas y tipografía serif para títulos con sans serif para lectura funcional.</p>
       <div class="sn-button-row">
         <Button href={home} variant="primary">Volver al inicio</Button>
@@ -45,15 +45,15 @@ const home = basePath(import.meta.env.BASE_URL);
         <Card>
           <h3>Botones y acciones</h3>
           <div class="sn-button-row">
-            <Button size="sm">Pequeño</Button>
-            <Button>Estándar</Button>
-            <Button size="lg" variant="secondary">Ampliado</Button>
+            <Button size="sm" href={home}>Pequeño</Button>
+            <Button href={home}>Estándar</Button>
+            <Button size="lg" variant="secondary" href={home}>Ampliado</Button>
           </div>
         </Card>
       </div>
       <div class="sn-showcase-grid">
         <Card variant="outlined">
-          <h3>Tarjeta editorial</h3>
+          <h3>Tarjeta sin relleno</h3>
           <p>Contenedor para presentar información, resúmenes y accesos a contenidos.</p>
         </Card>
         <Card variant="editorial">

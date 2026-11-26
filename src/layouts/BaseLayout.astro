@@ -42,8 +42,8 @@ const base = import.meta.env.BASE_URL;
             <span class="brand-descriptor">Estudio bíblico histórico, exegético y teológico comparado</span>
           </span>
         </a>
-        <details class="appearance-settings">
-          <summary aria-label="Abrir preferencias visuales">Apariencia</summary>
+        <details class="appearance-settings" data-appearance-panel hidden>
+          <summary>Apariencia</summary>
           <div class="appearance-settings__panel">
             <p class="appearance-settings__title">Preferencias visuales</p>
             <label class="appearance-settings__field" for="sn-appearance-theme">
@@ -67,6 +67,7 @@ const base = import.meta.env.BASE_URL;
             <p class="appearance-settings__status" data-appearance-status role="status" aria-live="polite">Las preferencias se guardan únicamente en este navegador.</p>
           </div>
         </details>
+        <noscript><p>Para cambiar la apariencia, habilita JavaScript en tu navegador.</p></noscript>
       </div>
     </header>
     <main id="contenido" class="site-main" tabindex="-1"><div class="site-main-inner"><slot /></div></main>
