@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "scope": "P8.5.1-audit-only",
+  "repository": "openscriptures/morphhb",
+  "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+  "publication": false,
+  "admission": false,
+  "licenseEvidence": {
+    "path": "LICENSE.md",
+    "bytes": 1476,
+    "gitBlobSha1": "906e051438bf66ef6f2f7f36110504cba2b6867f",
+    "sha256": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878"
+  },
+  "files": [
+    {
+      "path": "wlc/Exod.xml",
+      "bytes": 1524392,
+      "gitBlobSha1": "9f1174a401696a1625e88c0d87ed2359889fb79e",
+      "sha256": null,
+      "id": "EXP-C01",
+      "book": "Exod",
+      "review": "pendiente",
+      "allowedComponents": [],
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ]
+    },
+    {
+      "path": "wlc/Lev.xml",
+      "bytes": 1085069,
+      "gitBlobSha1": "6025e0713ccfc79de0c90cb92ed0e8c0062d2614",
+      "sha256": null,
+      "id": "EXP-C02",
+      "book": "Lev",
+      "review": "pendiente",
+      "allowedComponents": [],
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ]
+    },
+    {
+      "path": "wlc/Ezra.xml",
+      "bytes": 369920,
+      "gitBlobSha1": "03b112205f559c24d00e35109f950c42e3f9464b",
+      "sha256": null,
+      "id": "EXP-C03",
+      "book": "Ezra",
+      "review": "pendiente",
+      "allowedComponents": [],
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ]
+    }
+  ]
+}

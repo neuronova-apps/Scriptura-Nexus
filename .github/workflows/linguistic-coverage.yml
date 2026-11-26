@@ -1,0 +1,35 @@
+name: P8.5.1 Auditoría de cobertura lingüística
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audit-linguistic-coverage-p85.py'
+      - 'scripts/validate-linguistic-coverage-p85.mjs'
+      - 'scripts/project-lexical-model-p84.py'
+      - 'scripts/lib/term-analyzer-validation-data.mjs'
+      - 'src/lib/term-analyzer.ts'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'docs/P8/*.json'
+      - 'tests/test_linguistic_coverage_p85.py'
+      - '.github/workflows/linguistic-coverage.yml'
+      - 'src/data/linguistica/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Pruebas de aislamiento y auditoría
+        run: python3 -m unittest discover -s tests -p test_linguistic_coverage_p85.py
+      - name: Conciliación de cobertura real
+        run: node scripts/validate-linguistic-coverage-p85.mjs
+      - name: Auditoría de pendientes léxicos y candidatos adicionales
+        run: python3 scripts/audit-linguistic-coverage-p85.py
