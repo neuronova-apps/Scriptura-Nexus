@@ -53,6 +53,8 @@ class Comparison(unittest.TestCase):
         for selection,status in [(ref(book='LIB-GEN'),'book_outside_coverage'),(ref(chapter='9'),'chapter_not_found'),(ref('99'),'reference_not_found')]:
             x=e.compare(A,ref(),B,selection);self.assertEqual(x['status'],'target_unavailable');self.assertEqual(x['target']['status'],status)
         self.assertEqual(e.compare(A,ref('99'),B)['status'],'source_unavailable')
+        x=e.compare(A,ref('99'),B,ref('2'))
+        self.assertEqual(x['status'],'source_unavailable');self.assertEqual(x['target']['unit']['text'],'β');self.assertIsNone(x['comparison'])
     def test_missing_and_empty_not_equal(self):
         e=self.engine();self.assertEqual(e.compare(A,ref('4'),B)['status'],'source_empty_marker')
         x=e.compare(B,ref('5'),A,ref('4'));self.assertEqual(x['status'],'target_empty_marker');self.assertTrue(x['target']['unit']['empty'])
