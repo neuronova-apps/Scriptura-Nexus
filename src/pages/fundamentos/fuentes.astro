@@ -1,0 +1,72 @@
+---
+import MethodologyGuide from '../../components/methodology/MethodologyGuide.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+<MethodologyGuide title="Fuentes y trazabilidad de evidencias" slug="fuentes/" description="Criterios para identificar, evaluar y registrar las fuentes que respaldan o cuestionan cada afirmación de una investigación.">
+  <section aria-labelledby="tipos">
+    <SectionHeading id="tipos" title="Tipos de fuentes" description="La pertinencia depende de la pregunta investigada, no únicamente de la categoría." />
+    <div class="method-guide-grid">
+      <Card><h3>Fuentes primarias</h3><p>Testimonios directos o documentos objeto de estudio: textos bíblicos identificados por edición, manuscritos y aparatos consultados, documentos históricos, obras originales y documentos institucionales.</p></Card>
+      <Card><h3>Fuentes secundarias</h3><p>Investigaciones especializadas que analizan, contextualizan o interpretan las fuentes primarias: monografías, artículos académicos, comentarios, estudios lingüísticos e históricos.</p></Card>
+      <Card><h3>Fuentes terciarias</h3><p>Obras de orientación y síntesis inicial, como enciclopedias, diccionarios generales e instrumentos de consulta. Sirven para localizar referencias, pero no sustituyen la comprobación de las fuentes relevantes.</p></Card>
+    </div>
+    <Callout tone="info">La clasificación es funcional. Un documento puede ser primario para estudiar una postura institucional y secundario para otra pregunta. Se debe declarar qué función cumple en cada estudio.</Callout>
+  </section>
+  <section aria-labelledby="ficha">
+    <SectionHeading id="ficha" title="Ficha de evidencia" description="Registrar la afirmación concreta que la fuente respalda o cuestiona." />
+    <Card>
+      <ul class="method-list">
+        <li>Identificador de la evidencia y afirmación relacionada.</li>
+        <li>Autor o institución responsable.</li>
+        <li>Título, edición, fecha y datos editoriales disponibles.</li>
+        <li>Página, sección, versículo, número de catálogo o localizador estable.</li>
+        <li>DOI o URL, cuando exista; fecha de consulta.</li>
+        <li>Tipo y función de la fuente en el estudio.</li>
+        <li>Cita breve autorizada o paráfrasis; identificar traducción propia cuando corresponda.</li>
+        <li>Procedencia, licencia, estado de verificación y observaciones.</li>
+      </ul>
+    </Card>
+  </section>
+  <section aria-labelledby="verificacion">
+    <SectionHeading id="verificacion" title="Verificación de afirmaciones" />
+    <Card>
+      <ol class="method-steps">
+        <li>Separar cada afirmación verificable de la interpretación que se construye a partir de ella.</li>
+        <li>Localizar la fuente original y comprobar que el pasaje citado sostiene realmente la afirmación.</li>
+        <li>Revisar edición, fecha, autoría, institución, contexto y localizador.</li>
+        <li>Buscar evidencia que respalde y que cuestione la afirmación cuando la cuestión sea controvertida.</li>
+        <li>Distinguir documento oficial, opinión de un autor, reconstrucción histórica y conclusión editorial.</li>
+        <li>Registrar desacuerdos, datos faltantes y límites; no inventar citas, páginas, DOI o referencias.</li>
+      </ol>
+      <p>Se utilizará APA 7 complementado con convenciones para citas bíblicas, manuscritos y textos antiguos. Las citas directas se diferenciarán de las paráfrasis y de las inferencias editoriales.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="logos">
+    <SectionHeading id="logos" title="Uso de Logos Bible Software y ChatGPT" />
+    <Card>
+      <ol class="method-steps">
+        <li>Localizar el pasaje y registrar la edición consultada.</li>
+        <li>Consultar, cuando estén disponibles, interlineal, información de palabras, búsqueda morfológica, léxicos, comentarios y obras pertinentes.</li>
+        <li>Anotar la referencia bibliográfica y el localizador de Logos; conservar la edición y el contexto de consulta.</li>
+        <li>Compartir en el trabajo los extractos permitidos o referencias necesarias para analizarlos y contrastarlos.</li>
+        <li>Verificar el resultado con el contexto y otras fuentes pertinentes antes de incorporarlo al estudio.</li>
+      </ol>
+      <p>Logos es una herramienta de consulta externa. No se presupone acceso directo de ChatGPT a la biblioteca privada ni que todas las funciones estén disponibles en cada licencia. ChatGPT ayuda a organizar y analizar, pero no constituye una fuente primaria ni sustituye la comprobación original.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="respaldo">
+    <SectionHeading id="respaldo" title="Grados cualitativos de respaldo" />
+    <Card>
+      <dl class="method-grades">
+        <div><dt>Explícito</dt><dd>El texto en contexto afirma directamente la proposición delimitada; esto no implica por sí mismo vigencia universal.</dd></div>
+        <div><dt>Sólidamente fundamentado</dt><dd>Convergencia de evidencia relevante y argumentos robustos, con objeciones consideradas.</dd></div>
+        <div><dt>Plausible</dt><dd>Interpretación razonable con evidencia limitada o alternativas significativas.</dd></div>
+        <div><dt>Discutido</dt><dd>Existen interpretaciones relevantes en conflicto sin resolución suficientemente fundada.</dd></div>
+        <div><dt>Indeterminado</dt><dd>La evidencia disponible no permite una respuesta responsable.</dd></div>
+      </dl>
+      <p>Asignar el grado por afirmación, no por prestigio del autor ni por denominación. Son categorías cualitativas, no porcentajes de verdad; justificar la valoración y registrar desacuerdos.</p>
+    </Card>
+  </section>
+</MethodologyGuide>

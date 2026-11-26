@@ -1,0 +1,64 @@
+---
+import MethodologyGuide from '../../components/methodology/MethodologyGuide.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+<MethodologyGuide title="Licencias y atribuciones" slug="licencias/" description="Criterios para identificar derechos, permisos, procedencia y atribución de textos, traducciones, imágenes y recursos empleados en el proyecto.">
+  <section aria-labelledby="principio">
+    <SectionHeading id="principio" title="Principio de uso responsable" />
+    <Card>
+      <p>Que un recurso esté disponible en una biblioteca digital, en Internet o en Logos Bible Software no significa que pueda copiarse y publicarse en Scriptura Nexus. La atribución identifica la procedencia, pero no sustituye una licencia o autorización cuando esta sea necesaria.</p>
+      <p>Antes de incorporar material ajeno, identificar quién tiene los derechos, qué versión se consulta, qué usos permite y si la autorización cubre publicación, adaptación, almacenamiento y redistribución en un sitio público.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="registro">
+    <SectionHeading id="registro" title="Registro mínimo de derechos y atribución" />
+    <Card>
+      <ul class="method-list">
+        <li>Autor, creador o titular de derechos, según la información disponible.</li>
+        <li>Título y tipo de recurso: traducción bíblica, libro, artículo, imagen, mapa, tabla, audio o software.</li>
+        <li>Edición, versión, fecha y procedencia.</li>
+        <li>Licencia o permiso identificado, enlace a sus condiciones y fecha de consulta.</li>
+        <li>Usos autorizados y restricciones: reproducción, adaptación, distribución, atribución o uso comercial.</li>
+        <li>Atribución requerida y modificaciones realizadas.</li>
+        <li>Ubicación dentro del proyecto y responsable de verificar la autorización.</li>
+      </ul>
+    </Card>
+  </section>
+  <section aria-labelledby="biblia">
+    <SectionHeading id="biblia" title="Traducciones y ediciones bíblicas" />
+    <Card>
+      <p>Identificar cada traducción y revisión por su nombre, entidad editora o titular, fecha y aviso de derechos. Consultar las condiciones oficiales de esa edición antes de reproducir versículos o fragmentos en el portal.</p>
+      <p>Cuando no exista permiso suficiente, utilizar la referencia bíblica y un enlace a una fuente autorizada, o redactar un análisis propio sin reproducir el texto protegido. No asumir que todas las traducciones tienen las mismas condiciones ni fijar límites de cita sin consultar la licencia aplicable.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="logos">
+    <SectionHeading id="logos" title="Logos, bibliotecas y obras académicas" />
+    <Card>
+      <p>La disponibilidad de una obra en Logos Bible Software habilita su consulta conforme a la licencia del usuario, pero no autoriza automáticamente a extraer, subir o redistribuir su contenido en un repositorio público.</p>
+      <p>Registrar las referencias bibliográficas y localizadores. Compartir para análisis únicamente extractos permitidos. No importar bibliotecas privadas, bases de datos, léxicos completos ni contenidos sujetos a restricciones incompatibles con la publicación.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="imagenes">
+    <SectionHeading id="imagenes" title="Imágenes, mapas, tablas y otros materiales" />
+    <Card>
+      <p>Comprobar los derechos de cada elemento visual y de sus componentes. Una imagen de manuscrito, fotografía arqueológica, mapa o tabla puede tener condiciones distintas de las del documento que representa. Registrar autoría, institución depositaria, identificador, licencia, modificaciones y condiciones de reproducción.</p>
+      <p>Si los derechos o permisos no pueden verificarse, no publicar el archivo. Puede sustituirse por una descripción propia, un enlace a la fuente o un recurso con autorización compatible.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="citas">
+    <SectionHeading id="citas" title="Citas, paráfrasis y producción propia" />
+    <Card>
+      <ul class="method-list">
+        <li>Distinguir claramente cita directa, paráfrasis, traducción propia e inferencia editorial.</li>
+        <li>Conservar comillas y localizadores para las citas directas; evitar transcripciones extensas innecesarias.</li>
+        <li>Atribuir las ideas parafraseadas y registrar la fuente original consultada.</li>
+        <li>Identificar traducciones propias y la edición de partida.</li>
+        <li>Señalar las modificaciones realizadas en materiales reutilizados cuando la licencia lo requiera.</li>
+        <li>Conservar el historial de cambios y la evidencia de los permisos.</li>
+      </ul>
+    </Card>
+  </section>
+  <Callout tone="warning" title="Condición para publicar">Si la licencia, la titularidad o el permiso no están claros, el recurso queda pendiente y no se incorpora al sitio público hasta verificar su uso autorizado. La atribución por sí sola no resuelve esa incertidumbre.</Callout>
+</MethodologyGuide>

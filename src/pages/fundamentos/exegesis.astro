@@ -1,0 +1,50 @@
+---
+import MethodologyGuide from '../../components/methodology/MethodologyGuide.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+<MethodologyGuide title="Exégesis bíblica" slug="exegesis/" description="Procedimiento para estudiar qué comunica un pasaje en su contexto, mediante el análisis textual, literario, histórico y lingüístico.">
+  <section aria-labelledby="que-es">
+    <SectionHeading id="que-es" title="¿Qué busca la exégesis?" />
+    <Card>
+      <p>La exégesis procura explicar el sentido del pasaje atendiendo a su forma textual, lengua, género, estructura, contexto histórico-literario y relación con otros textos. No consiste en reunir versículos aislados para confirmar una conclusión previa ni en asignar al pasaje todos los sentidos posibles de una palabra.</p>
+      <p>La pregunta operativa de la perspectiva M10 es: ¿qué comunica el texto en contexto? La respuesta debe mostrar los pasos del razonamiento, las evidencias utilizadas y las alternativas relevantes.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="procedimiento">
+    <SectionHeading id="procedimiento" title="Secuencia de trabajo" description="Aplicar los pasos pertinentes y registrar los que queden pendientes." />
+    <ol class="method-steps">
+      <li><strong>Identificar el texto.</strong> Registrar referencia, edición bíblica, canon empleado y delimitación de la perícopa. Distinguir el texto consultado de una traducción.</li>
+      <li><strong>Comprobar variantes relevantes.</strong> Consultar una edición y un aparato crítico identificables cuando la variante pueda afectar la lectura. Si no se dispone de ellos, dejar constancia; no simular una colación.</li>
+      <li><strong>Leer el contexto literario.</strong> Reconocer género, estructura, argumento, voz narrativa, destinatarios y propósito del pasaje.</li>
+      <li><strong>Estudiar el contexto histórico-cultural.</strong> Examinar autoría, fecha, lugar, instituciones y costumbres, señalando qué datos son seguros, discutidos o desconocidos.</li>
+      <li><strong>Analizar la lengua.</strong> Registrar forma textual, lema, Strong cuando exista, transliteración, morfología, sintaxis, sentidos posibles y significado contextual justificado.</li>
+      <li><strong>Comparar traducciones.</strong> Identificar versiones y revisiones concretas, describir diferencias y explicar sus posibles causas solo cuando haya evidencia.</li>
+      <li><strong>Examinar relaciones intertextuales.</strong> Distinguir cita explícita, alusión probable, paralelo temático y asociación interpretativa.</li>
+      <li><strong>Contrastar interpretaciones.</strong> Presentar lecturas sustentadas, argumentos contrarios y presupuestos sin ocultar desacuerdos.</li>
+      <li><strong>Formular una conclusión proporcional.</strong> Responder a la pregunta delimitada, expresar el grado de respaldo y dejar visibles las limitaciones.</li>
+    </ol>
+  </section>
+  <section aria-labelledby="perspectivas">
+    <SectionHeading id="perspectivas" title="Perspectivas relacionadas" />
+    <Card>
+      <ul class="method-list">
+        <li>M01 Textual: variantes y testigos.</li>
+        <li>M02–M05: lingüística, filología, semántica y sintaxis.</li>
+        <li>M06–M09: historia, cultura, arqueología y literatura.</li>
+        <li>M10 Exegética: interpretación contextual.</li>
+        <li>M12–M13: relaciones intertextuales y canónicas.</li>
+      </ul>
+      <p>La selección depende del pasaje y de la evidencia disponible. Las perspectivas no aplicables deben justificarse y las pendientes no deben presentarse como resultados.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="entregables">
+    <SectionHeading id="entregables" title="Entregables y trazabilidad" />
+    <Card>
+      <p>Según la pregunta, la exégesis puede producir un inventario de pasajes, mapa literario, ficha de variantes, matriz de traducciones, fichas de términos, mapa de relaciones y argumentación exegética. Cada afirmación debe vincularse con su fuente y localizador.</p>
+      <p>En la plantilla maestra se relaciona especialmente con las secciones 04 a 12. No reemplaza las otras secciones obligatorias ni elimina la identificación, delimitación, contraste, conclusiones o referencias.</p>
+    </Card>
+  </section>
+  <Callout tone="warning" title="Límite metodológico">Un número Strong no determina por sí solo el significado. Tampoco la etimología, una traducción aislada o una variante textual resuelven automáticamente una cuestión doctrinal.</Callout>
+</MethodologyGuide>

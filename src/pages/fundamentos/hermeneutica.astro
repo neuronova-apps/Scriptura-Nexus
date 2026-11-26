@@ -1,0 +1,68 @@
+---
+import MethodologyGuide from '../../components/methodology/MethodologyGuide.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+<MethodologyGuide title="Hermenéutica bíblica" slug="hermeneutica/" description="Principios y presupuestos que orientan la interpretación, la relación entre el contexto original y la aplicación contemporánea.">
+  <section aria-labelledby="distincion">
+    <SectionHeading id="distincion" title="Hermenéutica y exégesis: funciones relacionadas" />
+    <Card>
+      <p>La exégesis estudia qué comunica un pasaje en su contexto. La hermenéutica examina los principios, presupuestos y reglas con los que se interpreta y se establece la relación entre el sentido del texto y su posible aplicación.</p>
+      <p>Ambas tareas se necesitan: una aplicación responsable debe apoyarse en una lectura contextual, y una lectura debe hacer explícitos los criterios interpretativos que utiliza.</p>
+    </Card>
+  </section>
+  <section aria-labelledby="presupuestos">
+    <SectionHeading id="presupuestos" title="Presupuestos que deben declararse" />
+    <Card>
+      <ul class="method-list">
+        <li>Canon y tradición textual utilizados, sin asumir que todas las comunidades cristianas tienen idéntico canon.</li>
+        <li>Género literario, contexto, destinatarios y propósito atribuido al pasaje.</li>
+        <li>Reglas de interpretación y relación entre pasaje, libro y conjunto del canon.</li>
+        <li>Marco teológico o confesional del intérprete y diversidad interna de esa tradición.</li>
+        <li>Relación entre Antiguo y Nuevo Testamento, pactos y destinatarios de cada disposición.</li>
+        <li>Distinción entre evidencia textual, reconstrucción histórica, inferencia, doctrina institucional y síntesis editorial.</li>
+      </ul>
+    </Card>
+  </section>
+  <section aria-labelledby="puente">
+    <SectionHeading id="puente" title="Del contexto original a la aplicación actual" description="El puente hermenéutico debe argumentarse; no se presupone." />
+    <Card>
+      <ol class="method-steps">
+        <li>Establecer qué afirma el pasaje en su contexto y a quién se dirige.</li>
+        <li>Determinar qué tipo de afirmación se está examinando y cuál es su alcance.</li>
+        <li>Examinar su relación con el canon, los pactos y otros textos pertinentes.</li>
+        <li>Contrastar cómo las tradiciones interpretativas justifican la continuidad, discontinuidad o transformación de su aplicación.</li>
+        <li>Explicar qué aspectos pueden trasladarse al presente y cuáles dependen de circunstancias históricas o culturales.</li>
+        <li>Declarar las reservas, las diferencias y el grado de respaldo de cada conclusión.</li>
+      </ol>
+    </Card>
+  </section>
+  <section aria-labelledby="categorias">
+    <SectionHeading id="categorias" title="Categorías para analizar una afirmación" />
+    <Card>
+      <dl class="method-grades">
+        <div><dt>Mandamiento explícito</dt><dd>Identificar destinatario, contenido y alcance; que sea explícito no demuestra automáticamente vigencia universal.</dd></div>
+        <div><dt>Principio aplicable</dt><dd>Explicar cómo se deriva del texto y por qué resulta pertinente en otro contexto.</dd></div>
+        <div><dt>Disposición del Antiguo Pacto</dt><dd>Estudiar su función, destinatarios y relación con los pactos posteriores, sin resolverla solo con una etiqueta.</dd></div>
+        <div><dt>Práctica cultural</dt><dd>Documentar su contexto y evitar convertir una costumbre local en norma universal sin argumento.</dd></div>
+        <div><dt>Interpretación teológica o tradición denominacional</dt><dd>Atribuir la postura a sus fuentes y distinguir documentos oficiales de opiniones individuales.</dd></div>
+        <div><dt>Convicción personal o cuestión indeterminada</dt><dd>No presentar una conciencia individual o una falta de evidencia como mandato bíblico universal.</dd></div>
+      </dl>
+    </Card>
+  </section>
+  <section aria-labelledby="errores">
+    <SectionHeading id="errores" title="Controles contra errores de interpretación" />
+    <Card>
+      <ul class="method-list">
+        <li>No aislar una frase del argumento y del género del pasaje.</li>
+        <li>No equiparar lectura literal con fidelidad ni antigüedad con autenticidad.</li>
+        <li>No atribuir a una palabra todos sus sentidos posibles en una sola ocurrencia.</li>
+        <li>No proyectar categorías denominacionales actuales sobre autores o comunidades antiguas.</li>
+        <li>No confundir la postura mayoritaria con la única lectura posible ni ocultar diversidad interna.</li>
+        <li>No forzar simetría entre tradiciones cuando sus fuentes o autoridades son distintas.</li>
+      </ul>
+    </Card>
+  </section>
+  <Callout tone="info" title="Atención preferente sin conclusión predeterminada">La perspectiva pentecostal recibe atención preferente en Scriptura Nexus, pero no privilegio probatorio. Se contrastará con otras perspectivas protestantes y católicas y, cuando corresponda, ortodoxas, judías y académicas.</Callout>
+</MethodologyGuide>
