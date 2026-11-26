@@ -1,0 +1,20 @@
+# P8.4.3. Modelo de entradas léxicas e identificadores
+
+Base main faee78802eb3688d2949673adb948387b4217086, P8.4.2 PR #44 integrado tras cuatro ejecuciones satisfactorias. Modelo independiente del registro de ocurrencias P8.2/P8.3, sin cambios en su contrato ni en aplicación pública. El modelo privado se construye exclusivamente en memoria a partir de los cuatro archivos aprobados y hashes fijados en P8.4.2. Los tres aplazados no se descargan. No se autoriza publicar, ni escribir corpus, ni inferir sentido contextual.
+
+## Contrato v1
+- LENTRY: identidad estable por archivo admitido, revisión e ID exacto del proveedor; sistema index/strong/bdb, lengua hbo/arc/grc o null si no admitida/documentada, origen.
+- LFORM: forma original, lengua de índice, entrada y origen; no normalizar forma, no inferir lema de ocurrencia.
+- LDEF: texto original de un elemento def permitido exclusivamente textual, lengua del contenido inglés, entrada y localizador con ruta de sentidos y ordinales. No aplanar texto mixto, referencias, notas ni campos no admitidos; no traducir automáticamente.
+- LLINK: rawCode exacto, origen, tipo de relación, entrada fuente nullable (AugIndex), destino por sistema y clave, estado documentado/sin_resolver, regla de representación nullable. No implica sinonimia. Atributo aug separado, sin componer códigos. Distintas entradas de diccionarios nunca se fusionan.
+- Origin: ID de archivo, commit, SHA-256, componente, selector de admisión y localizador exacto. Identidades de registros por SHA-256 de tupla canónica. Las relaciones de diccionario no son ENT26 de ocurrencia; no modificar identificadores en registro de corpus.
+
+## Correspondencia Strong
+P8.4.2: 0/9.299 enlaces raw exactos. La revisión fija del proveedor documenta el comportamiento del visor: [WordGroup.js](https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HomeFiles/Script/WordGroup.js) lee el atributo xref strong y llama al controlador; [StrongControl.js](https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HomeFiles/Script/StrongControl.js) antepone H y consulta el ID. Se verifican ambos blobs/tamaños y fragmentos técnicos en CI, sin ejecutar/copiar código del proveedor; registrar SHA-256 de evidencia. Solo xref strong numérico y destino H+raw existente en esta revisión se marca referencia_proveedor documentada. Conservar código original; sin padding, eliminación de homógrafos, prefijos de ocurrencia, fusión semántica ni atribución de idioma al Strong por H. Desacuerdos permanecen sin_resolver. No se aplica la regla a AugIndex ni claves OSHB de otra revisión; la correspondencia con corpus sigue pendiente.
+
+## Validación
+Diez pruebas sintéticas: identidad, vínculos exactos, regla documentada, rechazo de falsas correspondencias, jerarquía de definiciones, alcance, determinismo y ausencia. Proyección real repetida, huella canónica reproducible, control de base de 30.740 entradas (10.221 índice, 8.674 Strong, 11.845 BDB), 10.221 formas y 35.496 definiciones textuales; comprobar 9.299 destinos AugIndex y 10.175 BDB exactos. Recuento de vínculos Strong/aug y ausencias se obtiene de CI, no se presupone. Mantener registro público vacío, cero publicación y cero enlaces de corpus. Los datos no se imprimen, solo conteos y huellas. Modelo Python reutilizable para pruebas internas; interfaz y motor de concordancias se implementarán posteriormente. P8.4.4 deberá usar ocurrencias por edición y claves reales, no sumar entradas léxicas como ocurrencias. P8.5 conserva ampliación, Dodson pendiente y restricciones STEP; revisiones manuales anteriores pendientes. CI pendiente.
+
+## Corrección de validación #1
+
+10 pruebas aprobadas; la ejecución real falló en verified sources (blob mismatch). El árbol Git fijo del proveedor confirma que el identificador correcto de StrongControl.js es 2382264d93a803a4b35f976801060ae77706807a; se elimina un carácter final transcrito por error. Se añaden etiquetas de comprobación por candidato/evidencia sin contenido de entradas. Integridad y criterios permanecen intactos; revalidar.
