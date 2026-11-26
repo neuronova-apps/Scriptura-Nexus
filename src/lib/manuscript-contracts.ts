@@ -139,7 +139,7 @@ export interface ManuscriptValidationContext {
   bibliographyEditionIds: readonly string[];
   resourceIds: readonly string[];
   authorIds: readonly string[];
-  evidenceIds: readonly string[];
+  verifiedEvidenceIds: readonly string[];
   bibleBooks: readonly BibleBook[];
   textualUnits: readonly TextualUnit[];
   versificationIds: readonly string[];
@@ -236,7 +236,7 @@ export function validateManuscriptWitness(
       if (dating.precision === 'year') {
         requireValue(errors, dating.earliestYear === dating.latestYear, 'testigo: precisión anual con intervalo');
       }
-      requireValue(errors, text(dating.basisEvidenceId) && context.evidenceIds.includes(String(dating.basisEvidenceId)),
+      requireValue(errors, text(dating.basisEvidenceId) && context.verifiedEvidenceIds.includes(String(dating.basisEvidenceId)),
         'testigo: datación sin evidencia conocida');
     }
   }
@@ -264,7 +264,7 @@ export function validateManuscriptWitness(
       context.bibliographyEditionIds, 'testigo bibliografía', errors);
     const resources = validateRefs(value.sourceRefs.resourceIds,
       context.resourceIds, 'testigo recursos', errors);
-    validateRefs(value.sourceRefs.evidenceIds, context.evidenceIds, 'testigo evidencias', errors, 1);
+    validateRefs(value.sourceRefs.evidenceIds, context.verifiedEvidenceIds, 'testigo evidencias', errors, 1);
     requireValue(errors, bibliography.length + resources.length > 0,
       'testigo: sin referencia bibliográfica ni recurso de procedencia');
     if (record(value.dateRange) && text(value.dateRange.basisEvidenceId)) {
@@ -299,7 +299,7 @@ export function validateTextualEditionRecord(
       : edition.kind === 'edicion_critica', 'edición: función incompatible con ENT19');
   }
   validateRefs(value.editorAuthorIds, context.authorIds, 'edición responsables', errors);
-  validateRefs(value.sourceEvidenceIds, context.evidenceIds, 'edición evidencias', errors, 1);
+  validateRefs(value.sourceEvidenceIds, context.verifiedEvidenceIds, 'edición evidencias', errors, 1);
   requireValue(errors, ['pending', 'documented'].includes(String(value.reviewStatus)),
     'edición: estado de revisión inválido');
   return errors;
@@ -318,7 +318,7 @@ export function validateTextualLocus(
   const edition = editionMap(context).get(String(value.textualEditionId));
   requireValue(errors, Boolean(edition), 'locus: edición textual desconocida');
   requireValue(errors, text(value.sourceLocator), 'locus: localizador de origen requerido');
-  validateRefs(value.evidenceIds, context.evidenceIds, 'locus evidencias', errors, 1);
+  validateRefs(value.evidenceIds, context.verifiedEvidenceIds, 'locus evidencias', errors, 1);
 
   const status = value.referenceStatus;
   requireValue(errors, ['verified_reference', 'source_native_only', 'unresolved'].includes(String(status)),
@@ -370,7 +370,7 @@ export function validateApparatusReference(
     'aparato: localizador o convención inválidos');
   requireValue(errors, value.reusePolicy === 'reference_only',
     'aparato: P9.4.2 solo admite referencia externa');
-  validateRefs(value.sourceEvidenceIds, context.evidenceIds, 'aparato evidencias', errors, 1);
+  validateRefs(value.sourceEvidenceIds, context.verifiedEvidenceIds, 'aparato evidencias', errors, 1);
   return errors;
 }
 
@@ -386,7 +386,7 @@ function validateAttestation(
 
   requireValue(errors, identifier(value.witnessId, 'MAN'), 'lectura: ID de testigo inválido');
   requireValue(errors, nullableText(value.witnessLocator), 'lectura: localizador del testigo inválido');
-  requireValue(errors, context.evidenceIds.includes(String(value.sourceEvidenceId)),
+  requireValue(errors, context.verifiedEvidenceIds.includes(String(value.sourceEvidenceId)),
     'lectura: evidencia de atestación desconocida');
   requireValue(errors, readingEvidenceIds.includes(String(value.sourceEvidenceId)),
     'lectura: evidencia de atestación no declarada en la lectura');
@@ -435,7 +435,7 @@ export function validateVariantReading(
     'lectura: P9.4.2 no permite persistir transcripciones');
   requireValue(errors, ['documented', 'not_documented'].includes(String(value.witnessStatus)),
     'lectura: estado de testigos inválido');
-  const evidenceIds = validateRefs(value.sourceEvidenceIds, context.evidenceIds,
+  const evidenceIds = validateRefs(value.sourceEvidenceIds, context.verifiedEvidenceIds,
     'lectura evidencias', errors, 1);
   if (!Array.isArray(value.witnessAttestations)) {
     errors.push('lectura: atestaciones requeridas');
@@ -508,9 +508,9 @@ export function validateTextualVariant(
       'variante: edición sin ficha ENT19 documentada');
   }
   const readings = validateRefs(value.readingIds, readingIds, 'variante lecturas', errors, 2);
-  const internal = validateRefs(value.internalEvidenceIds, context.evidenceIds,
+  const internal = validateRefs(value.internalEvidenceIds, context.verifiedEvidenceIds,
     'variante evidencia interna', errors);
-  const external = validateRefs(value.externalEvidenceIds, context.evidenceIds,
+  const external = validateRefs(value.externalEvidenceIds, context.verifiedEvidenceIds,
     'variante evidencia externa', errors);
   requireValue(errors, internal.length + external.length > 0,
     'variante: sin evidencia interna ni externa');
@@ -561,7 +561,7 @@ export function validateTranslationProfile(
     'traducción alineaciones verificadas', errors);
   requireValue(errors, value.alignmentPolicy === 'verified_only',
     'traducción: solo se permiten alineaciones verificadas');
-  validateRefs(value.sourceEvidenceIds, context.evidenceIds,
+  validateRefs(value.sourceEvidenceIds, context.verifiedEvidenceIds,
     'traducción evidencias', errors, 1);
   return errors;
 }
