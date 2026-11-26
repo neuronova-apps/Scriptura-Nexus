@@ -1,0 +1,34 @@
+name: P8.3.3 Motor de análisis lingüístico
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/lib/term-analyzer.ts'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'scripts/lib/term-analyzer-oshb.mjs'
+      - 'scripts/lib/oshb-*.mjs'
+      - 'scripts/lib/greek-projection.mjs'
+      - 'scripts/project-greek-p83.py'
+      - 'scripts/validate-term-analyzer.mjs'
+      - 'tests/p8-term-analyzer.test.mjs'
+      - 'docs/P8/*.json'
+      - 'src/data/linguistica/registro.json'
+      - '.github/workflows/term-analyzer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Pruebas sintéticas del motor
+        run: node --test tests/p8-term-analyzer.test.mjs
+      - name: Validación real de ocurrencias hebreas arameas y griegas
+        run: node scripts/validate-term-analyzer.mjs
