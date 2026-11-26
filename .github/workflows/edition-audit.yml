@@ -1,0 +1,24 @@
+name: P9.1.1 Auditoría de ediciones bíblicas
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P9/candidatos-ediciones-p91.json'
+      - 'scripts/audit-editions-p91.py'
+      - 'tests/test_editions_p91.py'
+      - '.github/workflows/edition-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas de aislamiento, referencias y archivos
+        run: python3 -m unittest discover -s tests -p test_editions_p91.py
+      - name: Auditoría real de fuentes y huellas sin persistencia
+        run: python3 scripts/audit-editions-p91.py
