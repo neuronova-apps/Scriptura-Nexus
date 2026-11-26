@@ -90,7 +90,7 @@ P9.4.2 define el contrato, no acredita derechos ni verifica manuscritos concreto
 
 ## 8. Resultado de implementación y validación
 
-P9.4.2 quedó integrado en main mediante PR #67, commit \`7c6eec033e3197661ecd81a312631d929b674c7b\`. La ejecución especializada P9.4.2 (45912835477) aprobó 19 pruebas del contrato. La suite general registró 377 pruebas aprobadas y cero fallos; \`astro check\`, \`npm run build\` y \`npm run test:build\` finalizaron correctamente. La regresión P9.4.1 y las validaciones P9.2.4, P9.3.1, P9.3.2 y P9.3.4 también fueron satisfactorias.
+P9.4.2 quedó integrado en main mediante PR #67, commit `7c6eec033e3197661ecd81a312631d929b674c7b`. La ejecución especializada P9.4.2 (45912835477) aprobó 19 pruebas del contrato. La suite general registró 377 pruebas aprobadas y cero fallos; `astro check`, `npm run build` y `npm run test:build` finalizaron correctamente. La regresión P9.4.1 y las validaciones P9.2.4, P9.3.1, P9.3.2 y P9.3.4 también fueron satisfactorias.
 
 El despliegue Pages #195 (45912959296), asociado al commit de integración, terminó con build y deploy satisfactorios. Esta validación acredita los contratos y la integración técnica; no equivale a admitir manuscritos ni a revisar lecturas reales.
 
