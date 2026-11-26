@@ -18,10 +18,15 @@ export function validatePermissions(value:unknown,b:BibliographyRegistry):string
   const license=b.licenses.find(l=>l.id===x.licenseId);
   req(r&&edition&&r.editionId===edition.id&&r.sourceId===edition.sourceId,'recurso y edición incoherentes');
   req(x.licenseId===null||Boolean(license&&r?.licenseIds.includes(license.id)),'licencia no vinculada');
-  req(['pendiente','aprobada','rechazada'].includes(String(x.decision)),'decisión inválida');
+  req(str(x.decision)&&['pendiente','aprobada','rechazada'].includes(x.decision),'decisión inválida');
   req(str(x.basis)&&str(x.reviewedAt)&&/^\d{4}-\d{2}-\d{2}$/.test(x.reviewedAt)&&!Number.isNaN(Date.parse(x.reviewedAt))&&new Date(x.reviewedAt).toISOString().slice(0,10)===x.reviewedAt,'revisión inválida');
-  if(!obj(x.uses)||!exact(x.uses,['consulta','cita','reproduccion','adaptacion'])||!Object.values(x.uses).every(v=>['permitida','documentada','pendiente','restringida'].includes(String(v)))){errors.push('alcance inválido');continue;}
+  if(!obj(x.uses)||!exact(x.uses,['consulta','cita','reproduccion','adaptacion'])||!Object.values(x.uses).every(v=>str(v)&&['permitida','documentada','pendiente','restringida'].includes(v))){errors.push('alcance inválido');continue;}
   if(x.decision==='aprobada'){
+   const source=b.sources.find(s=>s.id===r?.sourceId);const work=b.works.find(w=>w.id===edition?.workId);
+   const authors=work?.contributors.map(c=>b.authors.find(a=>a.id===c.authorId))??[];
+   req(r?.licenseIds.length===1&&r.licenseIds[0]===x.licenseId,'licencias múltiples o alcance ambiguo');
+   req(str(license?.provenance.url)&&source?.provenance.verification==='verificada'&&work?.provenance.verification==='verificada'&&authors.length>0&&authors.every(a=>a?.provenance.verification==='verificada'),'cadena de procedencia incompleta');
+   req(str(x.reviewedAt)&&[r,edition,license,source,work,...authors].every(item=>item&&item.provenance.consultedAt<=String(x.reviewedAt)),'revisión anterior a la consulta documental');
    req(str(x.authorizationRef)&&str(x.reviewerRole)&&license?.provenance.verification==='verificada'&&str(license.url)&&r?.provenance.verification==='verificada'&&edition?.provenance.verification==='verificada'&&r.kind==='consulta_externa'&&r.admission!=='rechazado'&&r.admission!=='restringido','aprobación sin respaldo');
    req(x.uses.cita==='permitida'&&x.uses.adaptacion==='permitida','alcance editorial insuficiente');
   }else{req(x.authorizationRef===null&&x.reviewerRole===null,'decisión no aprobada con autorización');req(x.uses.cita!=='permitida'&&x.uses.reproduccion!=='permitida'&&x.uses.adaptacion!=='permitida','uso no aprobado');}

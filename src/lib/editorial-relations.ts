@@ -5,7 +5,7 @@ export interface ArgumentLink {claimId:string; evidenceId:string; role:'respalda
 export interface Position {id:string; studyId:string; traditionId:string; disciplineIds:string[]; authorId:string; claimIds:string[]; evidenceIds:string[]; scope:string; authority:string; assumptions:string; limitations:string}
 export interface StudyLink {targetStudyId:string; reason:string}
 export interface RelationSet {schemaVersion:1; studyId:string; evidence:Evidence[]; arguments:ArgumentLink[]; positions:Position[]; relatedStudies:StudyLink[]}
-export interface RelationContext {studyIds:readonly string[]; bibliographyIds:readonly string[]; resourceIds:readonly string[]; authorIds:readonly string[]; disciplineIds:readonly string[]; traditionIds:readonly string[]}
+export interface RelationContext {studyIds:readonly string[]; bibliographyIds:readonly string[]; resourceIds:readonly string[]; authorIds:readonly string[]; disciplineIds:readonly string[]; traditionIds:readonly string[]; resourceEditionIds?:Readonly<Record<string,string>>}
 export function validateRelations(value:unknown,record:EditorialRecord,context:RelationContext):string[]{
  const errors:string[]=[];
  const obj=(x:unknown):x is Record<string,unknown>=>typeof x==='object'&&x!==null&&!Array.isArray(x);
@@ -29,6 +29,7 @@ export function validateRelations(value:unknown,record:EditorialRecord,context:R
   req(e.bibliographyId!==undefined||e.resourceId!==undefined,'evidencia sin fuente');
   if(e.bibliographyId!==undefined)req(one(e.bibliographyId,context.bibliographyIds),'edición desconocida');
   if(e.resourceId!==undefined)req(one(e.resourceId,context.resourceIds),'recurso desconocido');
+  if(context.resourceEditionIds&&str(e.bibliographyId)&&str(e.resourceId))req(context.resourceEditionIds[e.resourceId]===e.bibliographyId,'edición y recurso de evidencia incoherentes');
   req(str(e.locator)&&str(e.language)&&validDate(e.consultedAt),'localizador, idioma o fecha inválidos');
   req(one(e.kind,['cita','parafrasis','traduccion_propia','observacion']),'tipo de evidencia inválido');
   req(one(e.verification,['pendiente','consultada','verificada'])&&one(e.permission,['pendiente','autorizada','restringida']),'estado de evidencia inválido');
