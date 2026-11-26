@@ -1,0 +1,9 @@
+---
+interface Props {
+  variant?: 'neutral' | 'info' | 'success' | 'warning';
+  class?: string;
+  label?: string;
+}
+const { variant = 'neutral', class: className, label } = Astro.props;
+---
+<span class:list={['sn-badge', `sn-badge--${variant}`, className]} aria-label={label}><slot /></span>

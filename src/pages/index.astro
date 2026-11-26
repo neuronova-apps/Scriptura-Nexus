@@ -1,14 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/Badge.astro';
+import Callout from '../components/Callout.astro';
+import Card from '../components/Card.astro';
 ---
 <BaseLayout title="Scriptura Nexus | Estudio bíblico y teológico" description="Estudio bíblico histórico, exegético y teológico comparado.">
-  <section class="hero" aria-labelledby="hero-title">
-    <p class="hero-kicker">Investigación bíblica y teológica</p>
-    <h1 id="hero-title">Scriptura Nexus</h1>
-    <p class="hero-description">Estudio bíblico histórico, exegético y teológico comparado.</p>
-    <div class="hero-status">
-      <span class="hero-status-mark" aria-hidden="true"></span>
-      <span>Infraestructura inicial en desarrollo. Los módulos de investigación se incorporarán progresivamente.</span>
-    </div>
+  <section aria-labelledby="hero-title">
+    <Card variant="editorial" class="hero">
+      <Badge variant="neutral" class="hero-kicker">Investigación bíblica y teológica</Badge>
+      <h1 id="hero-title">Scriptura Nexus</h1>
+      <p class="hero-description">Estudio bíblico histórico, exegético y teológico comparado.</p>
+      <Callout tone="info">Infraestructura inicial en desarrollo. Los módulos de investigación se incorporarán progresivamente.</Callout>
+    </Card>
   </section>
 </BaseLayout>
