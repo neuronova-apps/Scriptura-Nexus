@@ -30,7 +30,7 @@ for(const id of oshbFileIds){
  report.push(first);
 }
 console.log(JSON.stringify({schemaVersion:1,mode:'validation-only',files:report},null,2));
-if(process.argv.some(x=>['--occurrences','--lexical','--morphology'].includes(x))){
+if(process.argv.some(x=>['--occurrences','--lexical','--morphology','--integrity'].includes(x))){
  const {identifyOshb,summarizeOccurrences}=await import('./lib/oshb-occurrences.mjs');
  const a=identifyOshb(projections,manifest),b=identifyOshb(repeated,manifest);
  const summary=summarizeOccurrences(a);
@@ -42,7 +42,7 @@ if(process.argv.some(x=>['--occurrences','--lexical','--morphology'].includes(x)
  assert.ok(summary.alternatives>0);
  console.log(JSON.stringify({mode:'P8.2.3-validation-only',...summary},null,2));
  if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.3: unidades y ocurrencias\n\n`'+JSON.stringify(summary)+'`\n');
- if(process.argv.includes('--lexical')||process.argv.includes('--morphology')){
+ if(process.argv.some(x=>['--lexical','--morphology','--integrity'].includes(x))){
   const {organizeLexical,summarizeLexical}=await import('./lib/oshb-lexical.mjs');
   const first=organizeLexical(a,manifest),second=organizeLexical(b,manifest);
   const lexical=summarizeLexical(first);
@@ -53,7 +53,7 @@ if(process.argv.some(x=>['--occurrences','--lexical','--morphology'].includes(x)
   assert.equal(lexical.admittedIdentifiers,0);
   console.log(JSON.stringify({mode:'P8.2.4-validation-only',...lexical},null,2));
   if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.4: lemas e identificadores\n\n`'+JSON.stringify(lexical)+'`\n');
-  if(process.argv.includes('--morphology')){
+  if(process.argv.includes('--morphology')||process.argv.includes('--integrity')){
    const {organizeMorphology,summarizeMorphology,auditTehmc}=await import('./lib/oshb-morphology.mjs');
    const m=organizeMorphology(a,first,manifest),n=organizeMorphology(b,second,manifest);
    const morphology=summarizeMorphology(m);
@@ -69,6 +69,16 @@ if(process.argv.some(x=>['--occurrences','--lexical','--morphology'].includes(x)
    assert.equal(compatibility.semanticEquivalencesApproved,0);
    console.log(JSON.stringify({mode:'P8.2.5-validation-only',morphology,compatibility},null,2));
    if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.5: morfología y compatibilidad TEHMC\n\n`'+JSON.stringify({morphology,compatibility})+'`\n');
+   if(process.argv.includes('--integrity')){
+    const {auditIntegrity,summarizeIntegrity}=await import('./lib/oshb-integrity.mjs');
+    const audit=auditIntegrity(projections,a,first,m,manifest,{fixedBaseline:true});
+    const repeat=auditIntegrity(repeated,b,second,n,manifest,{fixedBaseline:true});
+    const integrity=summarizeIntegrity(audit);
+    assert.deepEqual(integrity,summarizeIntegrity(repeat));
+    assert.equal(integrity.pendingMorphology,333);
+    console.log(JSON.stringify({mode:'P8.2.6-validation-only',...integrity},null,2));
+    if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.6: auditoría de integridad\n\n`'+JSON.stringify(integrity)+'`\n');
+   }
   }
  }
 }
