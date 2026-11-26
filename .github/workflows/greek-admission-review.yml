@@ -1,0 +1,27 @@
+name: P8.3.2 Revisión de admisión griega
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/review-greek-p83.py'
+      - 'scripts/audit-greek-p83.py'
+      - 'tests/test_greek_p83_review.py'
+      - 'docs/P8/propuesta-admision-griega.json'
+      - 'docs/P8/candidatos-griegos-p83.json'
+      - 'src/data/linguistica/registro.json'
+      - '.github/workflows/greek-admission-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas sintéticas de admisión y divergencias
+        run: python3 -m unittest discover -s tests -p test_greek_p83_review.py
+      - name: Revisión doble real sin admisión ni persistencia
+        run: python3 scripts/review-greek-p83.py

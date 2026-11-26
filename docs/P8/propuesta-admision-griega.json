@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "mode": "review-only",
+  "status": "pendiente_aprobacion_explicita",
+  "book": "3John",
+  "audit": {
+    "pr": 37,
+    "runId": 45848265585
+  },
+  "sources": [
+    {
+      "id": "GRK-C01",
+      "decision": "propuesto",
+      "components": [
+        "texto_griego"
+      ],
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "fileSha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+      "licenseSha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+    },
+    {
+      "id": "GRK-C02",
+      "decision": "propuesto",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "fileSha256": "a75df82d9007bb673e7d27bcb86681e011befc24cbaef1c658965803d7ae490a",
+      "licenseSha256": "043bb6c0d654e85fa8a8db19e177ee035623e23b7ff1556e5431ad95184d5830",
+      "conditions": [
+        "No admitir columnas de texto o forma normalizada de MorphGNT; usar exclusivamente texto de SBLGNT oficial.",
+        "Vincular únicamente coincidencia exacta de referencia, posición y forma original; las divergencias se conservan sin anotación.",
+        "Conservar los códigos originales, lema del proveedor, versión y procedencia de las anotaciones; cumplir atribución, indicación de cambios y compartir igual cuando corresponda. No inferir Strong ni equivalencias."
+      ]
+    },
+    {
+      "id": "GRK-C03",
+      "decision": "aplazado",
+      "components": [],
+      "license": "CC BY 4.0 para capas propias; fuentes mixtas",
+      "fileSha256": "dddf65ff67f0f8e97397834537968ffbb4d0cf4ce57d54b28be2c04b6c1f1055",
+      "licenseSha256": "41b49a2387b628a7bc772ddfae3a8af9dd8f4d4470b27b6132f6da6c73e4a557",
+      "reason": "40 diferencias y origen de campos migrados pendiente; sin glosas, Strong, LN, dominios o datos sintácticos."
+    }
+  ],
+  "authorization": {
+    "approvedBy": null,
+    "evidence": null
+  },
+  "publication": false
+}
