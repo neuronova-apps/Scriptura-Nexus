@@ -58,11 +58,12 @@ class ComparisonEngine:
             result['status']='same_edition';return result
         s=self._locate(source_edition,source_ref);result['source']=deepcopy(s)
         t=self._locate(target_edition,target_ref) if target_ref is not None else None
-        if t is not None:result['target']=deepcopy(t)
+        if t is not None:
+            result['target']=deepcopy(t)
+            if 'endpoint' in t:result['target']['unit']=self._unit(t['endpoint'])
         if 'endpoint' not in s:
             result['status']='source_unavailable';return result
         result['source']['unit']=self._unit(s['endpoint'])
-        if t is not None and 'endpoint' in t:result['target']['unit']=self._unit(t['endpoint'])
         # Probe only metadata of same literal label, even when an explicit target differs.
         probe=self._locate(target_edition,source_ref)
         result['literalLabelProbe']={'status':probe['status'],'isAlignment':False}
