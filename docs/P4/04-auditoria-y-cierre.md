@@ -33,9 +33,9 @@ Se conserva la distinción entre /fundamentos/glosario/, recurso metodológico i
 
 ## 3. Hallazgos y correcciones aplicadas
 
-1. **Estado desactualizado en la portada general.** La tarjeta Fundamentos indicaba "Metodología base disponible · En ampliación". Se actualizó a "Fundamentos disponibles · P4 completada".
+1. **Estado desactualizado en la portada general.** La tarjeta Fundamentos indicaba "Metodología base disponible · En ampliación". Se actualizó a "Fundamentos disponibles · P4.4 en revisión".
 2. **Estado desactualizado en los metadatos del módulo.** La descripción interna afirmaba que todavía no había contenidos metodológicos publicados. Se sustituyó por el estado real: metodología base, cuatro guías y glosario inicial disponibles; los estudios individuales siguen previstos para P5/P6.
-3. **Estado de la página de Fundamentos.** Se actualizó a "Fundamentos metodológicos · P4 completada".
+3. **Estado de la página de Fundamentos.** Se actualizó a "Fundamentos metodológicos · P4.4 en revisión".
 4. **Nombres de enlaces repetidos.** Las cinco tarjetas de recursos usaban "Consultar guía". Ahora el texto identifica el recurso correspondiente, por ejemplo, "Consultar exégesis bíblica" y "Consultar glosario metodológico".
 5. **Cobertura insuficiente del verificador de build para P4.** Se amplió la verificación a seis páginas: Fundamentos, las cuatro guías y el glosario. Se comprueban idioma, landmarks, enlace para saltar al contenido, navegación, H1 único, ubicación actual, referencias aria-labelledby/aria-describedby, IDs únicos, rutas internas y anclas.
 

@@ -74,10 +74,10 @@ test('las cinco guías y recursos están vinculados desde Fundamentos con nombre
   assert.equal(new Set(labels).size,5);
 });
 
-test('el estado de Fundamentos identifica la fase P4 completada sin anunciar trabajo pendiente de P4', () => {
-  assert.match(home,/Fundamentos metodológicos · P4 completada/);
+test('el estado de Fundamentos identifica la fase P4.4 en revisión sin anunciar el cierre definitivo', () => {
+  assert.match(home,/Fundamentos metodológicos · P4.4 en revisión/);
   assert.doesNotMatch(home,/Metodología base disponible · En ampliación/);
-  assert.match(moduleCard,/Fundamentos disponibles · P4 completada/);
+  assert.match(moduleCard,/Fundamentos disponibles · P4.4 en revisión/);
   assert.match(moduleDetails,/la metodología base, las cuatro guías y el glosario metodológico inicial están disponibles/i);
   assert.doesNotMatch(moduleDetails,/Todavía no hay contenidos metodológicos publicados/);
   assert.match(home,/SN-001 · E09 Conducta y vida cristiana · Planificado/);
