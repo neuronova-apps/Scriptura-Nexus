@@ -64,7 +64,7 @@ def verify():
     require(p91.blob(metadata)==g['sourceMetadata']['sblgntXml']['gitBlobSha1'] and b'Michael W. Holmes' in metadata,'SBL metadata')
     stage='SBL-books';actual_g=[]
     for f in g['sourceFiles']:
-        stage='SBL-'+f['book'];b=p91.fixed(f);metrics=p91.greek(b);actual_g.append({'book':f['book'],'path':f['path'],'bytes':len(b),'sha256':sha(b),**metrics})
+        stage='SBL-'+f['book'];b=p91.fixed(f);metrics=p91.greek(b);actual_g.append({'book':f['book'],'order':f['order'],'path':f['path'],'bytes':len(b),'gitBlobSha1':f['gitBlobSha1'],'sha256':sha(b),**metrics})
         if f['book']=='John':
             refs={x.get('id') for x in ET.fromstring(b).iter('verse-number')}
             require('John 7:53' in refs and 'John 8:11' in refs,'SBL pericope markers')
