@@ -22,7 +22,7 @@ La clasificación corresponde a uso público en Scriptura Nexus y no a calidad a
 |---|---|---|---|---|---|
 | F01 | STEPBible Data (TAGNT, TAHOT, léxicos y tablas de códigos) | CC BY 4.0 declarada; comprobar cabecera y componentes | A | P8 | https://stepbible.github.io/STEPBible-Data/ |
 | F02 | Open Scriptures Hebrew Bible (OSHB) | Lemas y morfología CC BY 4.0; comprobar texto WLC por separado | A | P8 | https://github.com/openscriptures/morphhb/blob/master/LICENSE.md |
-| F03 | SBLGNT, distribución pública v1.1 (2022) | CC BY 4.0; conservar atribución SBL y Logos | A | P9 | https://github.com/Faithlife/SBLGNT |
+| F03 | SBLGNT, distribución pública v1.2 (2023-07-10) | CC BY 4.0; conservar atribución SBL y Logos | A | P9 | https://github.com/Faithlife/SBLGNT |
 | F04 | MorphGNT SBLGNT | Lemas y análisis morfológico CC BY-SA; verificar versión exacta y separar licencia del texto | B | P8 | https://github.com/morphgnt/sblgnt |
 | F05 | Reina-Valera 1909 (spaRV1909) | Dominio público declarado por distribuidor; conservar procedencia | A | P9 | https://ebible.org/spaRV1909/copyright.htm |
 | F06 | MACULA Greek | Licencias por componente; revisar datos sintácticos y glosas separadamente | B | P8 | https://github.com/Clear-Bible/macula-greek/blob/main/LICENSE.md |
@@ -52,7 +52,7 @@ La clasificación corresponde a uso público en Scriptura Nexus y no a calidad a
 
 - F01: https://github.com/STEPBible/STEPBible-Data y https://stepbible.github.io/STEPBible-Data/ declaran CC BY 4.0. Las tablas y sus encabezados deben revisarse por archivo.
 - F02: https://github.com/openscriptures/morphhb y https://github.com/openscriptures/morphhb/blob/master/LICENSE.md identifican CC BY 4.0 para lemas y morfología y una atribución específica. No extender automáticamente esta licencia a cualquier edición hebrea.
-- F03: https://github.com/Faithlife/SBLGNT/blob/master/README.md y https://github.com/Faithlife/SBLGNT/blob/master/LICENSE identifican la actualización pública v1.1 del 19 de diciembre de 2022 y CC BY 4.0. Las condiciones históricas de otras distribuciones no se transfieren automáticamente. Copyright 2010 Society of Biblical Literature y Logos Bible Software.
+- F03: el README de Faithlife/SBLGNT registra v1.2 (2023-07-10), que incorpora Jn 7:53–8:11, y declara CC BY 4.0; LICENSE contiene el texto de la licencia. P9 fija el corpus al commit 736fdc76158950c3d04b949b7e013ca14305145a (2023-07-11), con huellas por archivo. Copyright 2010 Society of Biblical Literature y Logos Bible Software. La versión v1.1 de 2022 queda como antecedente, no como snapshot admitido.
 - F04: https://github.com/morphgnt/sblgnt distingue licencia CC BY-SA de lematización/análisis morfológico y condiciones del texto SBLGNT. No se ha fijado todavía la versión de CC BY-SA ni el archivo exacto; comprobar antes de mezclar o adaptar.
 - F05: https://ebible.org/find/details.php?id=spaRV1909 y https://ebible.org/spaRV1909/copyright.htm declaran dominio público de esta distribución. Verificar procedencia, integridad, edición y aplicabilidad territorial antes de importar.
 - F06–F07: https://github.com/Clear-Bible/macula-greek/blob/main/LICENSE.md y https://github.com/Clear-Bible/macula-hebrew documentan diversas fuentes y licencias por componente. Pendiente auditoría de archivos.
@@ -65,7 +65,7 @@ La clasificación corresponde a uso público en Scriptura Nexus y no a calidad a
 
 P8: priorizar STEPBible para identificación léxica, concordancias, códigos Strong y datos morfológicos; OSHB como referencia complementaria hebrea. MorphGNT y MACULA quedan condicionados a auditoría de componentes y compatibilidad. No duplicar ni fusionar automáticamente formas, lemas o identificadores de diferentes ediciones.
 
-P9: priorizar RV1909 en español y SBLGNT v1.1 en griego; seleccionar una distribución hebrea concreta con licencia verificada. Para comparación TR/crítica y Septuaginta, seleccionar ediciones digitales específicas antes de importar. Las Biblias contemporáneas y católicas permanecerán disponibles como referencias externas y citas permitidas, no como textos completos alojados. Buscar una edición católica en español con autorización abierta comprobable antes de incorporar un corpus católico completo.
+P9: priorizar RV1909 en español y SBLGNT v1.2 en griego; seleccionar una distribución hebrea concreta con licencia verificada. Para comparación TR/crítica y Septuaginta, seleccionar ediciones digitales específicas antes de importar. Las Biblias contemporáneas y católicas permanecerán disponibles como referencias externas y citas permitidas, no como textos completos alojados. Buscar una edición católica en español con autorización abierta comprobable antes de incorporar un corpus católico completo.
 
 P7: fichas bibliográficas, autores, documentos doctrinales, referencias patrísticas y enlaces; no alojar monografías, comentarios o léxicos comerciales completos. Incorporar fuentes oficiales pentecostales, protestantes y católicas y estudios académicos según tema, con edición, página y autoridad institucional verificadas.
 

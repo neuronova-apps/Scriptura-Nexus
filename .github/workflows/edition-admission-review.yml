@@ -1,0 +1,31 @@
+name: P9.1.2 Admisión de ediciones bíblicas
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P9/admisiones-ediciones-p912.json'
+      - 'docs/P9/candidatos-ediciones-p91.json'
+      - 'scripts/audit-editions-p91.py'
+      - 'scripts/validate-editions-p912.py'
+      - 'tests/test_editions_p91.py'
+      - 'tests/test_editions_p912.py'
+      - '.github/workflows/edition-admission-review.yml'
+      - 'src/data/linguistica/registro.json'
+      - 'src/data/publicaciones/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  admission-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas de auditoría y admisión
+        run: |
+          python3 -m unittest discover -s tests -p test_editions_p91.py
+          python3 -m unittest discover -s tests -p test_editions_p912.py
+      - name: Verificar licencias, versiones, huellas e inventarios originales
+        run: python3 scripts/validate-editions-p912.py

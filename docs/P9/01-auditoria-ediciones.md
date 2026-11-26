@@ -1,16 +1,33 @@
 # P9.1.1. Auditoría de ediciones bíblicas
 
-Base main 546b1f34638e5a73abea56cc60be714d9fff87da. P8.5.5 PR #54 integrado, despliegue #148 (45888104367) comprobado. Ocho ejecuciones aprobadas; cierre técnico del alcance parcial. El responsable solicita expresamente avanzar con P9.1; se registra continuidad del alcance parcial, no aprobación de publicación ni resolución de pendientes. Se conserva checkpoint histórico P8 sin cambios.
+Base inicial: main 546b1f34638e5a73abea56cc60be714d9fff87da. P8.5.5 PR #54 integrado y despliegue #148 exitoso. La continuidad técnica a P9.1 se ejecutó con cobertura parcial de P8, sin autorizar publicación ni resolver pendientes de revisión manual.
 
-## Organización de P9.1
-1. P9.1.1 auditoría de fuentes, inventario, licencia y huellas. 
-2. P9.1.2 revisión de resultados, fijación de huellas y decisión de admisión por archivo/componente, con autorización interna limitada. 
-3. P9.1.3 contratos ENT19–23/37, proyección textual reproducible en memoria y cierre de admisión; no implementar lector hasta P9.2. Si una fuente no supera controles, registrar motivo y alternativa antes de admitir.
+## Resultado de P9.1.1
 
-## Candidatos
-- ED-C01 F05: RV1909, español, traducción, eBible.org spaRV1909. [Ficha](https://ebible.org/find/details.php?id=spaRV1909) y [licencia](https://ebible.org/spaRV1909/copyright.htm) declaran dominio público; fuente indicada por página HTML 10 agosto 2015, HTML generado 30 octubre 2026. No confundir fecha HTML con versión exacta del archivo. Archivo fuente USFM ZIP oficial https://ebible.org/Scriptures/spaRV1909_usfm.zip. La consulta web confirma enlace y declaración; no fue posible descargar el binario desde esta sesión. En CI se audita en memoria con límite, se calcula SHA-256 por archivo y ZIP, se contabilizan marcadores originales; no se fija huella antes de recibir bytes. No se autoriza redistribución por una etiqueta genérica; verificar procedencia/territorio y conservar atribución. 
-- ED-C02 F03: SBLGNT griego, edición crítica; 27 XML oficiales, orden de inventario explícito, revisión Git 736fdc76158950c3d04b949b7e013ca14305145a. [README fijado](https://raw.githubusercontent.com/Faithlife/SBLGNT/736fdc76158950c3d04b949b7e013ca14305145a/README.md) y LICENSE CC BY 4.0, copyright 2010 SBL/Logos. El README fijado no identifica etiqueta v1.1/v1.2; utilizar commit y huella, no afirmar equivalencia de etiqueta. Se coteja 3 Juan con P8, resto requiere huella y revisión por archivo. Excluir aparato, anotaciones y otras distribuciones; conservar prefijos/sufijos como elementos estructurales, no reconstruir texto desde tokens para publicación.
-- F19 WLC vía OSHB: candidato para evaluación posterior del lector, únicamente Génesis y Daniel admitidos en P8; no ampliar automáticamente. F16, F17, F18, F22: versiones concretas y evidencia pendientes, incluida una edición católica española abierta. F11–15 traducciones modernas y católicas sin permiso acreditado, F20–21 ediciones críticas comerciales, F24 NET Notes, F25 Logos, F10 léxicos comerciales: consulta externa/cita permitida, no importar. No equiparar TR, bizantino, NA28, UBS5 ni SBLGNT; no forzar canon de 66 libros a todas las ediciones.
+PR #55 integrado en main mediante commit 949a5610729308c85a48aa66ea7aa4954a1fd408. Despliegue de Pages #150, ejecución 45888740669, exitoso. Auditoría específica #1, ejecución 45888340290, exitosa con 10/10 pruebas.
 
-## Validación
-Diez pruebas sintéticas. Descargar XML por commit fijo, verificar tamaño/blob y huella previa cuando existe; identificar libros/referencias originales, recuentos de palabras/marcadores y elementos de puntuación. RV: ZIP limitado, sin extracción, comprobar identidad, tamaños, inventario esperado de 66 códigos (hipótesis a contrastar), UTF-8, capítulos y marcadores; registrar auxiliares sin admitirlos. Marcadores de rangos no equivalen necesariamente a versículos individuales. No inventar versificación, canon normativo ni alineación. Solo métricas y huellas en logs; sin persistencia ni publicación. Ningún permiso nuevo. Si la descarga RV cambia o falla, no sustituirla silenciosamente ni fijar una huella imaginaria. CI pendiente. P9.1.2 debe revisar resultados reales y congelar snapshot.
+### ED-C01. Reina-Valera 1909
+
+- Fuente eBible.org, identificador spaRV1909; revisión textual 1909.
+- La ficha oficial declara Public Domain / Dominio Público y fecha 2013-12-13; los archivos fuente se identifican como fechados 2015-08-10. La fecha del archivo fuente no es una fecha de revisión de la traducción.
+- ZIP USFM oficial: 2.384.901 bytes; SHA-256 56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5.
+- Inventario: 66 archivos de libros, 1.189 capítulos y 31.102 marcadores de versículo. Cuatro archivos auxiliares quedan fuera del corpus.
+- El proveedor declara dominio público para esta distribución. P9.1.1 registró el checksum y la estructura; P9.1.2 fijó las huellas de los 66 archivos y resolvió la admisión técnica limitada. No es un dictamen jurídico independiente.
+
+### ED-C02. SBL Greek New Testament
+
+- Fuente oficial Faithlife/SBLGNT, revisión fija 736fdc76158950c3d04b949b7e013ca14305145a, commit del 11 de julio de 2023.
+- La historia de versiones del README del repositorio identifica v1.2, fechada 10 de julio de 2023; el commit fijado incorpora Jn 7:53–8:11.
+- Licencia CC BY 4.0. Copyright 2010 Society of Biblical Literature y Logos Bible Software; editor Michael W. Holmes.
+- Inventario: 27 archivos XML, 260 capítulos, 7.939 marcadores de versículo y 137.741 elementos w. Las huellas SHA-256 de los 27 archivos, LICENSE y README se conservan en el manifiesto de admisión P9.1.2.
+- El commit no tiene firma verificada. Se fijan commit, Git blob SHA-1 y SHA-256 de los archivos para reproducibilidad; la firma no se presenta como validada.
+
+## Limitaciones y alcance
+
+Los recuentos son marcadores y elementos estructurales de cada fuente, no una versificación armonizada. No se asigna canonId ni versificationId. No se crean alineaciones entre traducción y texto griego. No se incorpora aparato crítico, manuscritos, MorphGNT ni glosas por esta auditoría. Los archivos originales no se guardan en el repositorio; el registro público permanece vacío. P9.1.1 solo auditó y calculó huellas; la decisión de admisión corresponde a P9.1.2.
+
+La distribución RV1909 contiene cuatro archivos auxiliares, entre ellos claves y firma. Su presencia se registra, pero no se declara verificada criptográficamente la firma PGP. El SHA-256 del ZIP protege la identidad del snapshot usado en esta fase.
+
+## Siguiente subfase
+
+P9.1.2 congela los hashes de cada archivo, revisa versión/licencia y decide la admisión técnica de los componentes permitidos. La publicación del portal continúa bloqueada hasta P11.4 y su aprobación específica.

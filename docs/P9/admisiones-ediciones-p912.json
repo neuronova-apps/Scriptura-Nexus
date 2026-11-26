@@ -1,0 +1,1326 @@
+{
+  "schemaVersion": 1,
+  "phase": "P9.1.2",
+  "decisionDate": "2026-11-26",
+  "baselineMain": "949a5610729308c85a48aa66ea7aa4954a1fd408",
+  "audit": {
+    "pr": 55,
+    "mergeCommit": "949a5610729308c85a48aa66ea7aa4954a1fd408",
+    "deployRun": 45888740669,
+    "sourceAuditRun": 45888340290,
+    "sourceAuditConclusion": "success",
+    "sourceAuditTests": 10
+  },
+  "decision": "admission_technical_scope_limited_to_P9.1.3_in_memory_projection",
+  "publication": {
+    "authorized": false,
+    "gate": "P11.4",
+    "publicCorpusPersisted": false,
+    "publicRegistriesRemainEmpty": true
+  },
+  "decisions": [
+    {
+      "sourceId": "F05",
+      "id": "ED-C01",
+      "name": "Reina-Valera 1909",
+      "language": "spa",
+      "type": "traduccion",
+      "provider": "eBible.org",
+      "edition": "spaRV1909",
+      "editionYear": 1909,
+      "digitalSourceDate": "2015-08-10",
+      "providerCopyrightPageDate": "2013-12-13",
+      "admissionStatus": "admitido",
+      "license": {
+        "type": "Public Domain",
+        "status": "declaracion_de_dominio_publico_del_distribuidor",
+        "provider": "eBible.org",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "detailsUrl": "https://ebible.org/find/details.php?id=spaRV1909",
+        "statement": "Public Domain / Dominio Público",
+        "pageSha256": "8fc61fe7d7f14af3586e733a711ca1024d27419f93276ec9f41d403421703687",
+        "territorialLegalOpinion": false,
+        "notes": "La declaración corresponde a la distribución spaRV1909 del proveedor; no se presenta como dictamen jurídico independiente ni como licencia de otras revisiones Reina-Valera."
+      },
+      "sourceArchive": {
+        "url": "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+        "format": "USFM ZIP",
+        "bytes": 2384901,
+        "sha256": "56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5",
+        "bookFileCount": 66,
+        "ancillaryFiles": [
+          {
+            "path": "copr.htm",
+            "bytes": 1763
+          },
+          {
+            "path": "keys.asc",
+            "bytes": 21585
+          },
+          {
+            "path": "signature.txt.asc",
+            "bytes": 7122
+          },
+          {
+            "path": "latin.css",
+            "bytes": 10931
+          }
+        ],
+        "files": [
+          {
+            "book": "GEN",
+            "path": "02-GENspaRV1909.usfm",
+            "bytes": 577639,
+            "sha256": "11a2f4b8e0973aa8ae1b94173cec647ae671f882562c5bff6e962f490cf6a9ca",
+            "chapters": 50,
+            "verseMarkers": 1533,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "EXO",
+            "path": "03-EXOspaRV1909.usfm",
+            "bytes": 461570,
+            "sha256": "12b0a7ecd52759e4b4838a6cba8db4509360f905d1fad72ac8f5f66dd76e3bf4",
+            "chapters": 40,
+            "verseMarkers": 1213,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "LEV",
+            "path": "04-LEVspaRV1909.usfm",
+            "bytes": 333805,
+            "sha256": "9457b52e6efd3cd41ebb21b9bb8f43f89b449c4d9a0d4636e72d07e87eacbd8d",
+            "chapters": 27,
+            "verseMarkers": 859,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "NUM",
+            "path": "05-NUMspaRV1909.usfm",
+            "bytes": 469602,
+            "sha256": "804bb03a74ababcf21a430ceb3e8d95706fd2031b595b313b5aa61f56b6a665e",
+            "chapters": 36,
+            "verseMarkers": 1288,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "DEU",
+            "path": "06-DEUspaRV1909.usfm",
+            "bytes": 396910,
+            "sha256": "5f731cebf3f7f53689e0ab9dc3cd8e0b1c863c78d20f2d88b9238db670ecabf0",
+            "chapters": 34,
+            "verseMarkers": 959,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JOS",
+            "path": "07-JOSspaRV1909.usfm",
+            "bytes": 276925,
+            "sha256": "80dd3ddd6334c2d2c78004545981ea653461480b0d4b6185ec2d6d28335f7e46",
+            "chapters": 24,
+            "verseMarkers": 658,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JDG",
+            "path": "08-JDGspaRV1909.usfm",
+            "bytes": 271847,
+            "sha256": "9a392d3cddb0139d035bba5a5c58868c979e56bc506d0dc4746cc3bac1d553c8",
+            "chapters": 21,
+            "verseMarkers": 618,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "RUT",
+            "path": "09-RUTspaRV1909.usfm",
+            "bytes": 36052,
+            "sha256": "39264ba33e2258f3dcc38eb7a46add7c52a7b5c92554fa6731386fa7feb10099",
+            "chapters": 4,
+            "verseMarkers": 85,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1SA",
+            "path": "10-1SAspaRV1909.usfm",
+            "bytes": 364086,
+            "sha256": "e1aa2aee9d160521ae174c9496bbe3d19f6f596549a7cfa037a2037988c25c47",
+            "chapters": 31,
+            "verseMarkers": 810,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2SA",
+            "path": "11-2SAspaRV1909.usfm",
+            "bytes": 301771,
+            "sha256": "6274b7f8e4399d807b6b1e76e2fb9ceb0e17a5500593be2468519db2a368669d",
+            "chapters": 24,
+            "verseMarkers": 695,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1KI",
+            "path": "12-1KIspaRV1909.usfm",
+            "bytes": 366138,
+            "sha256": "701740c2602e4a135a42f960ab4c4b93d5d92b03a093c41123c6a67a13b393a5",
+            "chapters": 22,
+            "verseMarkers": 816,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2KI",
+            "path": "13-2KIspaRV1909.usfm",
+            "bytes": 341682,
+            "sha256": "b80cc966d206ba865df7e41a5390bc09271ca31f29e8206f63d342b43c3f0782",
+            "chapters": 25,
+            "verseMarkers": 719,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1CH",
+            "path": "14-1CHspaRV1909.usfm",
+            "bytes": 314824,
+            "sha256": "58ae38c861e8e6efc7571fd3517a5b18139126dcc6825f3b1b5ba7c3b9e18b49",
+            "chapters": 29,
+            "verseMarkers": 942,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2CH",
+            "path": "15-2CHspaRV1909.usfm",
+            "bytes": 388012,
+            "sha256": "18ddca906cc417b3271dcb5804b78ab0c2540091f07d0fd3cadc11e7d658c30d",
+            "chapters": 36,
+            "verseMarkers": 822,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "EZR",
+            "path": "16-EZRspaRV1909.usfm",
+            "bytes": 111855,
+            "sha256": "90fb2046af31ea257ac1e54fe3578bc7b8ba0c6c8c10ca8fd6106a9a59b9a688",
+            "chapters": 10,
+            "verseMarkers": 280,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "NEH",
+            "path": "17-NEHspaRV1909.usfm",
+            "bytes": 159969,
+            "sha256": "71adfdfee4ee584db1e1994d2c0331a6cd457adf1891387c34daa44a573b4190",
+            "chapters": 13,
+            "verseMarkers": 406,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "EST",
+            "path": "18-ESTspaRV1909.usfm",
+            "bytes": 85262,
+            "sha256": "97498f124361253c53bb84ed1f38c83af40f6d3c78cc65c1f838d4b1c96e979d",
+            "chapters": 10,
+            "verseMarkers": 167,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JOB",
+            "path": "19-JOBspaRV1909.usfm",
+            "bytes": 255098,
+            "sha256": "fda4e0fa4e0b448650e6d85a70c980c289e91ff0ca401b9640a3d9ba16accacb",
+            "chapters": 42,
+            "verseMarkers": 1070,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "PSA",
+            "path": "20-PSAspaRV1909.usfm",
+            "bytes": 620492,
+            "sha256": "812bf94244c61e984b873ff696229f5f8c8ac349a784b20be44360deba8a7334",
+            "chapters": 150,
+            "verseMarkers": 2461,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "PRO",
+            "path": "21-PROspaRV1909.usfm",
+            "bytes": 217275,
+            "sha256": "83afd5015b5e1d11220779722334ca2361e80ee5d3a53eabd5bdde28f4f311e9",
+            "chapters": 31,
+            "verseMarkers": 915,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ECC",
+            "path": "22-ECCspaRV1909.usfm",
+            "bytes": 85076,
+            "sha256": "d8662c066c657195869b238f99c929738fd64ed164962cc8b45429224f014ed1",
+            "chapters": 12,
+            "verseMarkers": 222,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "SNG",
+            "path": "23-SNGspaRV1909.usfm",
+            "bytes": 38341,
+            "sha256": "ce4914f5e22be1416dee06eed0d6b29aa0ff6351833170bb2afe87636b7297be",
+            "chapters": 8,
+            "verseMarkers": 117,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ISA",
+            "path": "24-ISAspaRV1909.usfm",
+            "bytes": 515193,
+            "sha256": "af04af2cf69d46deac3e9d082b8526a46d7b65403a3b23eda169407d999fb5c9",
+            "chapters": 66,
+            "verseMarkers": 1292,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JER",
+            "path": "25-JERspaRV1909.usfm",
+            "bytes": 624279,
+            "sha256": "9dd018db85dd379268da351767ac58b6dbddedd15296bac319d7e9d6afb95ee4",
+            "chapters": 52,
+            "verseMarkers": 1364,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "LAM",
+            "path": "26-LAMspaRV1909.usfm",
+            "bytes": 48152,
+            "sha256": "aa64bc3ab07ebf783457dd2ca14e1c965fc75731dfb6b46aed990704ba5d9416",
+            "chapters": 5,
+            "verseMarkers": 154,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "EZK",
+            "path": "27-EZKspaRV1909.usfm",
+            "bytes": 549812,
+            "sha256": "668688539f5782df95a03977d6a47450cc3a11be66596a35b53653994470010c",
+            "chapters": 48,
+            "verseMarkers": 1273,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "DAN",
+            "path": "28-DANspaRV1909.usfm",
+            "bytes": 170567,
+            "sha256": "5c8c0504c7c43fcede990d2acabf7691fc6988ff3486e1f138b8782fadb38076",
+            "chapters": 12,
+            "verseMarkers": 357,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "HOS",
+            "path": "29-HOSspaRV1909.usfm",
+            "bytes": 71931,
+            "sha256": "256cf2f7c80d631f0a8746e9e9bc2ba09c5d6b0961302b6ed847f6691ce783ff",
+            "chapters": 14,
+            "verseMarkers": 197,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JOL",
+            "path": "30-JOLspaRV1909.usfm",
+            "bytes": 28875,
+            "sha256": "649480750bc2b08d03b641b00eabbfe41813eed26367a6eb1923214d6842b21d",
+            "chapters": 3,
+            "verseMarkers": 73,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "AMO",
+            "path": "31-AMOspaRV1909.usfm",
+            "bytes": 59339,
+            "sha256": "c0c5a2c07be68a0bb7b0de3ea269deb168c0200ed863561bebb8ce893dc56776",
+            "chapters": 9,
+            "verseMarkers": 146,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "OBA",
+            "path": "32-OBAspaRV1909.usfm",
+            "bytes": 8939,
+            "sha256": "8c086118f5fc426bb2e5e244c5c6a99fccf300156c9fdb2782146ebcbc040f53",
+            "chapters": 1,
+            "verseMarkers": 21,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JON",
+            "path": "33-JONspaRV1909.usfm",
+            "bytes": 19331,
+            "sha256": "9cde47f8ce78d612181b799b10de699060afb2536ed99a4d2e91bffbcd9b127e",
+            "chapters": 4,
+            "verseMarkers": 48,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "MIC",
+            "path": "34-MICspaRV1909.usfm",
+            "bytes": 41758,
+            "sha256": "2941c6ac4093758d4031cab925ddb72bee3d53820ff95f5c3c2313f0b8f864a9",
+            "chapters": 7,
+            "verseMarkers": 105,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "NAM",
+            "path": "35-NAMspaRV1909.usfm",
+            "bytes": 17554,
+            "sha256": "4eafd968bd8fbc3eb82bb71ee62d168752c76d138e97ed24717a12279263435f",
+            "chapters": 3,
+            "verseMarkers": 47,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "HAB",
+            "path": "36-HABspaRV1909.usfm",
+            "bytes": 20503,
+            "sha256": "62b0afd1721c8b8d4e9a36d19ed1e141cf99db4eb39926fe5299fd7e4bf73ec6",
+            "chapters": 3,
+            "verseMarkers": 56,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ZEP",
+            "path": "37-ZEPspaRV1909.usfm",
+            "bytes": 22898,
+            "sha256": "d19acf69419fcc06aec598d8838fb2d3aa3f8716bdd578a80357ab5a350e83ba",
+            "chapters": 3,
+            "verseMarkers": 53,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "HAG",
+            "path": "38-HAGspaRV1909.usfm",
+            "bytes": 17057,
+            "sha256": "e8b14530ee12990b88a35524755680ffef97d6c77b9d7709d774aa2f68a1898d",
+            "chapters": 2,
+            "verseMarkers": 38,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ZEC",
+            "path": "39-ZECspaRV1909.usfm",
+            "bytes": 90032,
+            "sha256": "ada9e08665505560ef41f96f3259a10f7d69a20da091e56f8dcd3265f6660c2e",
+            "chapters": 14,
+            "verseMarkers": 211,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "MAL",
+            "path": "40-MALspaRV1909.usfm",
+            "bytes": 26013,
+            "sha256": "1bf5c4c753c11944a4d3fb8e59067b852be9dd10b8afa9d20af784805838c7ec",
+            "chapters": 4,
+            "verseMarkers": 55,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "MAT",
+            "path": "70-MATspaRV1909.usfm",
+            "bytes": 488408,
+            "sha256": "0f41e8ab8e5a8090b369570109389bb4606a01d9d6aa78c6ee3232ef0f37dc06",
+            "chapters": 28,
+            "verseMarkers": 1071,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "MRK",
+            "path": "71-MRKspaRV1909.usfm",
+            "bytes": 300353,
+            "sha256": "2bab57371f0f9a2cc748cbb8d65273e715c4d4ee52b27e74c89f8cad7f5d23ad",
+            "chapters": 16,
+            "verseMarkers": 678,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "LUK",
+            "path": "72-LUKspaRV1909.usfm",
+            "bytes": 508635,
+            "sha256": "901f45c5770f6835447284dd1c22f7a4b732bdb25d4e372e5b83bf39a9aee8ce",
+            "chapters": 24,
+            "verseMarkers": 1151,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JHN",
+            "path": "73-JHNspaRV1909.usfm",
+            "bytes": 401142,
+            "sha256": "0f1fe8da64822dba2dc56f750a338cc45a90b0f11ec59fe802a670da954cda66",
+            "chapters": 21,
+            "verseMarkers": 879,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ACT",
+            "path": "74-ACTspaRV1909.usfm",
+            "bytes": 483154,
+            "sha256": "9ae979539168d694c84183f5627fd312332a267a5d9d3b6d0228ae4b26a963f8",
+            "chapters": 28,
+            "verseMarkers": 1007,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "ROM",
+            "path": "75-ROMspaRV1909.usfm",
+            "bytes": 191142,
+            "sha256": "785dfd315e4bdf6bf65885a60a7d786ee23441f31b2eac73c9b30394445013e5",
+            "chapters": 16,
+            "verseMarkers": 433,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1CO",
+            "path": "76-1COspaRV1909.usfm",
+            "bytes": 185531,
+            "sha256": "556729a9b74b203ff44f3112985db92b1c01d15937f2a239ef9aa063da8bd414",
+            "chapters": 16,
+            "verseMarkers": 437,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2CO",
+            "path": "77-2COspaRV1909.usfm",
+            "bytes": 120836,
+            "sha256": "e91e7d56329e5463c4ed5977d13ad8dff3e4814bfdbd103e1252e101a9b97607",
+            "chapters": 13,
+            "verseMarkers": 257,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "GAL",
+            "path": "78-GALspaRV1909.usfm",
+            "bytes": 62401,
+            "sha256": "9f6d7b16218572b73b44334191aa664a1576a4b6ff0859c806a0772cbf6fdba8",
+            "chapters": 6,
+            "verseMarkers": 149,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "EPH",
+            "path": "79-EPHspaRV1909.usfm",
+            "bytes": 63841,
+            "sha256": "f6d6396ea5936dd840e88ef58a4b9422d744bc1201ae91eb5103c090a3f2e883",
+            "chapters": 6,
+            "verseMarkers": 155,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "PHP",
+            "path": "80-PHPspaRV1909.usfm",
+            "bytes": 44012,
+            "sha256": "0b0640cd1a64a12af5cea3d6bb11329f36af2501e3db2fa9e9451c94c06987cf",
+            "chapters": 4,
+            "verseMarkers": 104,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "COL",
+            "path": "81-COLspaRV1909.usfm",
+            "bytes": 42619,
+            "sha256": "b0ad42b06ebadb32f3dfbbcb7062db5a08bd22a6dc90b425d75308c5f70acb30",
+            "chapters": 4,
+            "verseMarkers": 95,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1TH",
+            "path": "82-1THspaRV1909.usfm",
+            "bytes": 39375,
+            "sha256": "ed1751725ca246fd31ec21693e98a6fde22daef42e6ed9303fc706462deff245",
+            "chapters": 5,
+            "verseMarkers": 89,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2TH",
+            "path": "83-2THspaRV1909.usfm",
+            "bytes": 21816,
+            "sha256": "6a8a5d8b0127291fde51ea5171d2e1a3db5f078e66d3927b1973c3399af80c4d",
+            "chapters": 3,
+            "verseMarkers": 47,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1TI",
+            "path": "84-1TIspaRV1909.usfm",
+            "bytes": 46213,
+            "sha256": "5da3e7c89922d133f5c37bddee71046cabc03f0e2109a252c20eb5b11db8f5ad",
+            "chapters": 6,
+            "verseMarkers": 113,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2TI",
+            "path": "85-2TIspaRV1909.usfm",
+            "bytes": 34761,
+            "sha256": "5574f40f88ab6d0a09aa01bdcaff361fa6cee568bb3f3108e2606df2fc714939",
+            "chapters": 4,
+            "verseMarkers": 83,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "TIT",
+            "path": "86-TITspaRV1909.usfm",
+            "bytes": 19097,
+            "sha256": "4d5747a8521eb600ea9abd1b0959dacdc81b5532e8ec53be538ce6f1f8def6fd",
+            "chapters": 3,
+            "verseMarkers": 46,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "PHM",
+            "path": "87-PHMspaRV1909.usfm",
+            "bytes": 8916,
+            "sha256": "c1e9c1fb980b40758e6d5847290c528c8ad43ea9cca8f6774b6241025fc66c23",
+            "chapters": 1,
+            "verseMarkers": 25,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "HEB",
+            "path": "88-HEBspaRV1909.usfm",
+            "bytes": 135918,
+            "sha256": "0267401e3483336c30b9ea8d6b39f535e3e2bdecfca5b76b4ede6f8ab07ccfbc",
+            "chapters": 13,
+            "verseMarkers": 303,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JAS",
+            "path": "89-JASspaRV1909.usfm",
+            "bytes": 47711,
+            "sha256": "2b92594e1789bdea76b7d13b679da0f95498bc5585ea1d85b42d27862569b70c",
+            "chapters": 5,
+            "verseMarkers": 108,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1PE",
+            "path": "90-1PEspaRV1909.usfm",
+            "bytes": 48702,
+            "sha256": "00258750c458e03bbce20f10605e2ff74b67c552be1e6480ad06bb8249ed0e6b",
+            "chapters": 5,
+            "verseMarkers": 105,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2PE",
+            "path": "91-2PEspaRV1909.usfm",
+            "bytes": 30959,
+            "sha256": "ac051605da09f41dfd0ce24c2dd7a2bcc960d7d6b3460b505711ed7d337611a4",
+            "chapters": 3,
+            "verseMarkers": 61,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "1JN",
+            "path": "92-1JNspaRV1909.usfm",
+            "bytes": 55417,
+            "sha256": "42c868d59669e72f4107010cfc61d3c0d90cd34e9b51aa0affce056e8318e452",
+            "chapters": 5,
+            "verseMarkers": 105,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "2JN",
+            "path": "93-2JNspaRV1909.usfm",
+            "bytes": 6591,
+            "sha256": "bff8073088d098ae4f515c813e5ed35d582c22bf792810035107b457677396d9",
+            "chapters": 1,
+            "verseMarkers": 13,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "3JN",
+            "path": "94-3JNspaRV1909.usfm",
+            "bytes": 6037,
+            "sha256": "eff0ec5439b14cd29fb3ccf61df79594be17ef5066d0f5031c5157db0ddfcb4b",
+            "chapters": 1,
+            "verseMarkers": 14,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "JUD",
+            "path": "95-JUDspaRV1909.usfm",
+            "bytes": 12540,
+            "sha256": "9eda2d84ec5ebc801b9400a0472f41fcfefc7dab432a35caf98b0e54705097f3",
+            "chapters": 1,
+            "verseMarkers": 25,
+            "rangeMarkers": 0
+          },
+          {
+            "book": "REV",
+            "path": "96-REVspaRV1909.usfm",
+            "bytes": 251511,
+            "sha256": "12d879e04466c48ec352ad53483a5bbfe3b609d818f05bc81c9d7e680d7bfbd2",
+            "chapters": 22,
+            "verseMarkers": 404,
+            "rangeMarkers": 0
+          }
+        ],
+        "totals": {
+          "books": 66,
+          "chapters": 1189,
+          "verseMarkers": 31102
+        }
+      },
+      "scope": {
+        "approvedComponents": [
+          "Texto fuente de los 66 archivos USFM identificados en el snapshot",
+          "Marcadores estructurales y referencias originales tal como aparecen en el archivo"
+        ],
+        "excludedComponents": [
+          "Archivos auxiliares del ZIP como corpus bíblico",
+          "Otras revisiones o transcripciones RV no identificadas por el snapshot",
+          "Canon normativo y correspondencias de versificación inferidas",
+          "Alineaciones automáticas con SBLGNT u otras ediciones"
+        ],
+        "canonId": null,
+        "versificationId": null,
+        "alignmentAllowed": false
+      },
+      "authorizedOperations": [
+        "Verificación reproducible de fuente y licencia",
+        "Lectura y análisis en memoria",
+        "Proyección técnica en memoria durante P9.1.3"
+      ],
+      "prohibitedOperations": [
+        "Persistir el corpus en el registro público",
+        "Publicar el texto en Pages antes de P11.4",
+        "Cambiar marcadores o grafía de la fuente sin documentar una transformación separada"
+      ],
+      "projectPublication": {
+        "approved": false,
+        "gate": "P11.4",
+        "licenseBasedEligibility": "según declaración de dominio público del distribuidor; revisión territorial pendiente"
+      },
+      "provenance": {
+        "sourceId": "F05",
+        "translationCredit": "Reina y Valera, según ficha de eBible.org",
+        "sourceFileDate": "2015-08-10",
+        "signatureFilesPresentButNotCryptographicallyVerified": true
+      }
+    },
+    {
+      "sourceId": "F03",
+      "id": "ED-C02",
+      "name": "SBL Greek New Testament",
+      "language": "grc",
+      "type": "edicion_critica",
+      "provider": "Faithlife",
+      "edition": "SBLGNT",
+      "version": "v1.2",
+      "releaseDate": "2023-07-10",
+      "sourceCommit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "sourceCommitDate": "2023-07-11T00:28:38Z",
+      "sourceCommitMessage": "Add Jn 7:53-8:11 (Pericope Adulturae) to XML and plain-text.",
+      "sourceCommitSignatureVerified": false,
+      "admissionStatus": "admitido",
+      "license": {
+        "type": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "licenseFile": {
+          "path": "LICENSE",
+          "bytes": 18650,
+          "gitBlobSha1": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb",
+          "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+        },
+        "readmeAtCorpusCommit": {
+          "path": "README.md",
+          "bytes": 760,
+          "gitBlobSha1": "26f338de6a1cc51b08a46fc9db5128830c408761",
+          "sha256": "fe581fe29fe6081891f4744252d709765d1e443cc2fb7346e295be5fe47d2e61"
+        },
+        "conditions": [
+          "Atribuir a Society of Biblical Literature y Logos Bible Software",
+          "Identificar la edición SBLGNT y al editor Michael W. Holmes",
+          "Enlazar la licencia CC BY 4.0",
+          "Indicar los cambios efectuados en cada redistribución o adaptación"
+        ]
+      },
+      "versionEvidence": {
+        "repository": "Faithlife/SBLGNT",
+        "commit": "d7f35adca9ec410e1d1499c63b4dd989d76c8d4d",
+        "path": "README.md",
+        "gitBlobSha1": "949c3358b814fee23f58714217f03a0c24685e98",
+        "version": "v1.2",
+        "releaseDate": "2023-07-10",
+        "description": "Add Jn 7:53-8:11 (Pericope Adulterae)"
+      },
+      "attribution": {
+        "title": "The SBL Greek New Testament (SBLGNT)",
+        "editor": "Michael W. Holmes",
+        "copyright": "Copyright 2010 Society of Biblical Literature and Logos Bible Software.",
+        "suggestedCredit": "The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0. Source revision: 736fdc76158950c3d04b949b7e013ca14305145a. Changes, if any, are identified with the distributed version."
+      },
+      "sourceMetadata": {
+        "about": {
+          "path": "About.md",
+          "bytes": 3914,
+          "gitBlobSha1": "930258324114fc7520b482fcc57786b841191759"
+        },
+        "sblgntXml": {
+          "path": "data/sblgnt/xml/sblgnt.xml",
+          "bytes": 325,
+          "gitBlobSha1": "66cfbe15bdd263fdab5f55127d83dd979d059278",
+          "role": "metadatos_de_titulo_editor_y_copyright; no se admite como libro bíblico"
+        }
+      },
+      "sourceFiles": [
+        {
+          "book": "Matt",
+          "order": 1,
+          "path": "data/sblgnt/xml/Matt.xml",
+          "bytes": 909675,
+          "gitBlobSha1": "088ee8cd84251001c2a883e464fcdff78bfbedc8",
+          "sha256": "98030ff7ddec7d1b89811c912b64e52a6c6a5806048e619abc708fe19a416424",
+          "providerBookId": "Mt",
+          "referenceBookLabel": "Matthew",
+          "chapters": 28,
+          "verseMarkers": 1068,
+          "wordElements": 18329,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 826,
+          "suffixElements": 18329
+        },
+        {
+          "book": "Mark",
+          "order": 2,
+          "path": "data/sblgnt/xml/Mark.xml",
+          "bytes": 572329,
+          "gitBlobSha1": "3b4246c0035cf8ab1ee02f3b29ac126785104c2b",
+          "sha256": "5901ccefcd7d9aedfaf228b1f99c3a13f37b4509c1b38d16123a860247a59d76",
+          "providerBookId": "Mk",
+          "referenceBookLabel": "Mark",
+          "chapters": 16,
+          "verseMarkers": 673,
+          "wordElements": 11286,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 933,
+          "suffixElements": 11286
+        },
+        {
+          "book": "Luke",
+          "order": 3,
+          "path": "data/sblgnt/xml/Luke.xml",
+          "bytes": 970739,
+          "gitBlobSha1": "89b03e63aeb75b5b58e64ae9319d3487e7a8838d",
+          "sha256": "960c0f7743f6ee68b7ee341991b76e14e83143eac4ba1f2df179327ec4bae8d5",
+          "providerBookId": "Lu",
+          "referenceBookLabel": "Luke",
+          "chapters": 24,
+          "verseMarkers": 1149,
+          "wordElements": 19446,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 1144,
+          "suffixElements": 19446
+        },
+        {
+          "book": "John",
+          "order": 4,
+          "path": "data/sblgnt/xml/John.xml",
+          "bytes": 762321,
+          "gitBlobSha1": "11e232c7ab1b4955b6a982e9c2e7087ac7962083",
+          "sha256": "11fa4ec61127f109f4582845737963dc66a532e33dca7d489875b9dd91da00e2",
+          "providerBookId": "Jn",
+          "referenceBookLabel": "John",
+          "chapters": 21,
+          "verseMarkers": 878,
+          "wordElements": 15625,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 780,
+          "suffixElements": 15625
+        },
+        {
+          "book": "Acts",
+          "order": 5,
+          "path": "data/sblgnt/xml/Acts.xml",
+          "bytes": 921255,
+          "gitBlobSha1": "168d2faff82b0047805703dfe1892e5655c211c8",
+          "sha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+          "providerBookId": "Ac",
+          "referenceBookLabel": "Acts",
+          "chapters": 28,
+          "verseMarkers": 1002,
+          "wordElements": 18412,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 1088,
+          "suffixElements": 18412
+        },
+        {
+          "book": "Rom",
+          "order": 6,
+          "path": "data/sblgnt/xml/Rom.xml",
+          "bytes": 347059,
+          "gitBlobSha1": "4ed8b74438ddf46787b06a8f6e9738e0d3e63a61",
+          "sha256": "99f8cced61efe841d146bd1e0c67333d7a4cca78a55e14da8c9390166e0a6209",
+          "providerBookId": "Ro",
+          "referenceBookLabel": "Romans",
+          "chapters": 16,
+          "verseMarkers": 430,
+          "wordElements": 7055,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 230,
+          "suffixElements": 7055
+        },
+        {
+          "book": "1Cor",
+          "order": 7,
+          "path": "data/sblgnt/xml/1Cor.xml",
+          "bytes": 342330,
+          "gitBlobSha1": "2a0c1a309626f498d6ce76626385d9c2dbf83acd",
+          "sha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+          "providerBookId": "1Co",
+          "referenceBookLabel": "1 Corinthians",
+          "chapters": 16,
+          "verseMarkers": 437,
+          "wordElements": 6812,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 336,
+          "suffixElements": 6812
+        },
+        {
+          "book": "2Cor",
+          "order": 8,
+          "path": "data/sblgnt/xml/2Cor.xml",
+          "bytes": 222992,
+          "gitBlobSha1": "dc190c5371260c5a92be2af65385f8c84bef1e92",
+          "sha256": "897a92f3f010f796b8549e643c0ae96957827020a890808a689c6ba389085a43",
+          "providerBookId": "2Co",
+          "referenceBookLabel": "2 Corinthians",
+          "chapters": 13,
+          "verseMarkers": 256,
+          "wordElements": 4473,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 178,
+          "suffixElements": 4473
+        },
+        {
+          "book": "Gal",
+          "order": 9,
+          "path": "data/sblgnt/xml/Gal.xml",
+          "bytes": 111663,
+          "gitBlobSha1": "ef1d329c5771be079ec92d42e1043e2d66d03cfe",
+          "sha256": "02188ec87b20a983424693971f2710b7b77c53ae0a7d6c4bd95a7fc293f2f17a",
+          "providerBookId": "Gal",
+          "referenceBookLabel": "Galatians",
+          "chapters": 6,
+          "verseMarkers": 149,
+          "wordElements": 2226,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 87,
+          "suffixElements": 2226
+        },
+        {
+          "book": "Eph",
+          "order": 10,
+          "path": "data/sblgnt/xml/Eph.xml",
+          "bytes": 120457,
+          "gitBlobSha1": "8818f2079ec8139fe930ed506b0b5fb94e80c723",
+          "sha256": "9edf592842f0a94d35790ad999ed51049a19510178bd2b858c3f29849d44df45",
+          "providerBookId": "Eph",
+          "referenceBookLabel": "Ephesians",
+          "chapters": 6,
+          "verseMarkers": 155,
+          "wordElements": 2416,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 90,
+          "suffixElements": 2416
+        },
+        {
+          "book": "Phil",
+          "order": 11,
+          "path": "data/sblgnt/xml/Phil.xml",
+          "bytes": 80931,
+          "gitBlobSha1": "b40b431df84867230984db2c694b08e457617442",
+          "sha256": "2f8933cdf0f8f459a6e192ad99c8aa07cb06e94d400875f88e64290bf489ed54",
+          "providerBookId": "Php",
+          "referenceBookLabel": "Philippians",
+          "chapters": 4,
+          "verseMarkers": 104,
+          "wordElements": 1626,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 48,
+          "suffixElements": 1626
+        },
+        {
+          "book": "Col",
+          "order": 12,
+          "path": "data/sblgnt/xml/Col.xml",
+          "bytes": 79114,
+          "gitBlobSha1": "c77f562d49291d07faa291cd361126535571b7e6",
+          "sha256": "87079753db107d3034b8af8a91ccb0495da393389a02df4588cff3a4de4cd837",
+          "providerBookId": "Col",
+          "referenceBookLabel": "Colossians",
+          "chapters": 4,
+          "verseMarkers": 95,
+          "wordElements": 1580,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 73,
+          "suffixElements": 1580
+        },
+        {
+          "book": "1Thess",
+          "order": 13,
+          "path": "data/sblgnt/xml/1Thess.xml",
+          "bytes": 73887,
+          "gitBlobSha1": "70427d693af775c88788a446245f5eb977b70c77",
+          "sha256": "22a5dcf8e0cc80d06fcb8fcd01aef72860058cfab4b7b42cfa94dd229e2c7065",
+          "providerBookId": "1Th",
+          "referenceBookLabel": "1 Thessalonians",
+          "chapters": 5,
+          "verseMarkers": 89,
+          "wordElements": 1473,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 52,
+          "suffixElements": 1473
+        },
+        {
+          "book": "2Thess",
+          "order": 14,
+          "path": "data/sblgnt/xml/2Thess.xml",
+          "bytes": 40902,
+          "gitBlobSha1": "566699e2378988a305c5dda4e1e57bd3bb07d4a4",
+          "sha256": "3b7fbae3d238039f11bb599e1b99139a2d2a8626f293ccefc601d1a50a03d433",
+          "providerBookId": "2Th",
+          "referenceBookLabel": "2 Thessalonians",
+          "chapters": 3,
+          "verseMarkers": 47,
+          "wordElements": 820,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 30,
+          "suffixElements": 820
+        },
+        {
+          "book": "1Tim",
+          "order": 15,
+          "path": "data/sblgnt/xml/1Tim.xml",
+          "bytes": 81717,
+          "gitBlobSha1": "545fb4302fba34238a5e556ac1cd75a01b774fc8",
+          "sha256": "7078cf18cf4325e4fb093785da774b48cc8306fd24dd2aa00041335c1bc88efc",
+          "providerBookId": "1Tim",
+          "referenceBookLabel": "1 Timothy",
+          "chapters": 6,
+          "verseMarkers": 113,
+          "wordElements": 1591,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 47,
+          "suffixElements": 1591
+        },
+        {
+          "book": "2Tim",
+          "order": 16,
+          "path": "data/sblgnt/xml/2Tim.xml",
+          "bytes": 62532,
+          "gitBlobSha1": "4832ddbb5f3715d691d96849c37f5f191fd20a39",
+          "sha256": "6d3add4060e870089d71e4621bcec5cc12759ebb4689fe6864368ae56c76b6fc",
+          "providerBookId": "2Tim",
+          "referenceBookLabel": "2 Timothy",
+          "chapters": 4,
+          "verseMarkers": 83,
+          "wordElements": 1235,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 39,
+          "suffixElements": 1235
+        },
+        {
+          "book": "Titus",
+          "order": 17,
+          "path": "data/sblgnt/xml/Titus.xml",
+          "bytes": 33932,
+          "gitBlobSha1": "b85039ae5fe9bc6e77293493fb473ca4a6aaa7e2",
+          "sha256": "4c66c26c8ce316056d0423018d3497501e1a9ef033a1fc1ebd5829ba2d177fd9",
+          "providerBookId": "Tit",
+          "referenceBookLabel": "Titus",
+          "chapters": 3,
+          "verseMarkers": 46,
+          "wordElements": 659,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 24,
+          "suffixElements": 659
+        },
+        {
+          "book": "Phlm",
+          "order": 18,
+          "path": "data/sblgnt/xml/Phlm.xml",
+          "bytes": 16865,
+          "gitBlobSha1": "ed43eed05e9488ef69dd2e69600d7d358d3910a4",
+          "sha256": "5e055c7dbe6b8326b559f6d7d135a39e6da0b499271f1eec6eae87fd93590ef3",
+          "providerBookId": "Phm",
+          "referenceBookLabel": "Philemon",
+          "chapters": 1,
+          "verseMarkers": 25,
+          "wordElements": 334,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 17,
+          "suffixElements": 334
+        },
+        {
+          "book": "Heb",
+          "order": 19,
+          "path": "data/sblgnt/xml/Heb.xml",
+          "bytes": 247580,
+          "gitBlobSha1": "9c05ad5c9dc99a5090581a23b241c666ced10154",
+          "sha256": "50ee82c41b032b4b786ca7790eb3ce412865bd80e823d9cfdc22a812a1d6a865",
+          "providerBookId": "Heb",
+          "referenceBookLabel": "Hebrews",
+          "chapters": 13,
+          "verseMarkers": 303,
+          "wordElements": 4935,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 153,
+          "suffixElements": 4935
+        },
+        {
+          "book": "Jas",
+          "order": 20,
+          "path": "data/sblgnt/xml/Jas.xml",
+          "bytes": 87475,
+          "gitBlobSha1": "c13f7154f37163cc2a5c8f93de5ff8b29df64d10",
+          "sha256": "5cb6fdeefb734ef842e102938f0f10791415276ae09cbd33215a359e1025f7e5",
+          "providerBookId": "Jam",
+          "referenceBookLabel": "James",
+          "chapters": 5,
+          "verseMarkers": 108,
+          "wordElements": 1739,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 95,
+          "suffixElements": 1739
+        },
+        {
+          "book": "1Pet",
+          "order": 21,
+          "path": "data/sblgnt/xml/1Pet.xml",
+          "bytes": 85461,
+          "gitBlobSha1": "c97dee2ade8c537569a1929989e74863605514b0",
+          "sha256": "82693ac93851f9f415fa126508f6e893dfb4b2f8131ee953c822a342eb78d5fa",
+          "providerBookId": "1Pe",
+          "referenceBookLabel": "1 Peter",
+          "chapters": 5,
+          "verseMarkers": 105,
+          "wordElements": 1678,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 89,
+          "suffixElements": 1678
+        },
+        {
+          "book": "2Pet",
+          "order": 22,
+          "path": "data/sblgnt/xml/2Pet.xml",
+          "bytes": 55525,
+          "gitBlobSha1": "412fa72bb55158b85bf2b2771b8eedede86d67ae",
+          "sha256": "59612036f3847ddd1e6f5435b62458a9c1aa7eff4c6fc6107659e980346275b2",
+          "providerBookId": "2Pe",
+          "referenceBookLabel": "2 Peter",
+          "chapters": 3,
+          "verseMarkers": 61,
+          "wordElements": 1098,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 48,
+          "suffixElements": 1098
+        },
+        {
+          "book": "1John",
+          "order": 23,
+          "path": "data/sblgnt/xml/1John.xml",
+          "bytes": 102101,
+          "gitBlobSha1": "d664c314bdf41bcdb7cff9b31ab5799d425ab416",
+          "sha256": "3786d543f13a83d0e5f3cc1fd645c3b9e240a4c14fd412e0b2fa304d27d4a66b",
+          "providerBookId": "1Jn",
+          "referenceBookLabel": "1 John",
+          "chapters": 5,
+          "verseMarkers": 105,
+          "wordElements": 2137,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 67,
+          "suffixElements": 2137
+        },
+        {
+          "book": "2John",
+          "order": 24,
+          "path": "data/sblgnt/xml/2John.xml",
+          "bytes": 12074,
+          "gitBlobSha1": "b50b1739d8954812524660790dc367dcd8a6c3b1",
+          "sha256": "132d3e497afb40247097175b9de4a8791de14366a0c5a923ed59f05a7c0d9586",
+          "providerBookId": "2Jn",
+          "referenceBookLabel": "2 John",
+          "chapters": 1,
+          "verseMarkers": 13,
+          "wordElements": 245,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 14,
+          "suffixElements": 245
+        },
+        {
+          "book": "3John",
+          "order": 25,
+          "path": "data/sblgnt/xml/3John.xml",
+          "bytes": 11161,
+          "gitBlobSha1": "308cc92e958f729caae8d6e54492d51d0b63baca",
+          "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+          "providerBookId": "3Jn",
+          "referenceBookLabel": "3 John",
+          "chapters": 1,
+          "verseMarkers": 15,
+          "wordElements": 219,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 10,
+          "suffixElements": 219
+        },
+        {
+          "book": "Jude",
+          "order": 26,
+          "path": "data/sblgnt/xml/Jude.xml",
+          "bytes": 23202,
+          "gitBlobSha1": "205234a46d81fea141dd263359c1c8a7d3fa4577",
+          "sha256": "b83680c0d23b032273ec0e0c858f3c24ba684114b78ebddb2475dd78aac7165b",
+          "providerBookId": "Jud",
+          "referenceBookLabel": "Jude",
+          "chapters": 1,
+          "verseMarkers": 25,
+          "wordElements": 459,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 20,
+          "suffixElements": 459
+        },
+        {
+          "book": "Rev",
+          "order": 27,
+          "path": "data/sblgnt/xml/Rev.xml",
+          "bytes": 474728,
+          "gitBlobSha1": "db52226b1e2cdb4955cda42bf9d10b1739d37abf",
+          "sha256": "f6ba340dfd9010436aac55a17246ed45ef24c6b8e4510dc4bcb62c0a9ac4bc83",
+          "providerBookId": "Re",
+          "referenceBookLabel": "Revelation",
+          "chapters": 22,
+          "verseMarkers": 405,
+          "wordElements": 9833,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 441,
+          "suffixElements": 9833
+        }
+      ],
+      "totals": {
+        "books": 27,
+        "chapters": 260,
+        "verseMarkers": 7939,
+        "wordElements": 137741
+      },
+      "scope": {
+        "approvedComponents": [
+          "Texto oficial de los 27 archivos XML de libro",
+          "Marcadores verse-number y elementos w, prefix y suffix, conservados conforme a la fuente"
+        ],
+        "excludedComponents": [
+          "sblgnt.xml como unidad bíblica (solo metadatos de procedencia)",
+          "MorphGNT y cualquier análisis morfológico externo",
+          "Aparatos críticos, manuscritos o variantes no incluidos en estos XML",
+          "Strong, glosas o lemas no presentes en los archivos admitidos",
+          "Canon normativo y correspondencias de versificación inferidas"
+        ],
+        "canonId": null,
+        "versificationId": null,
+        "alignmentAllowed": false,
+        "pericopeAdulterae": {
+          "present": true,
+          "markers": [
+            "John 7:53",
+            "John 8:11"
+          ],
+          "treatment": "conservar como parte del contenido de esta edición; no inferir consenso canónico ni evidencia manuscrita a partir de su inclusión"
+        }
+      },
+      "authorizedOperations": [
+        "Verificación reproducible de fuente y licencia",
+        "Lectura y análisis en memoria",
+        "Proyección técnica en memoria durante P9.1.3"
+      ],
+      "prohibitedOperations": [
+        "Persistir el corpus en el registro público",
+        "Publicar el texto en Pages antes de P11.4",
+        "Fusionar anotaciones MorphGNT u otros conjuntos sin admisión separada"
+      ],
+      "projectPublication": {
+        "approved": false,
+        "gate": "P11.4",
+        "licenseBasedEligibility": "redistribución y adaptación permitidas bajo CC BY 4.0, cumpliendo atribución y señalamiento de cambios"
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "sourceId": "F19",
+      "status": "sin_ampliacion",
+      "existingScope": "P8: Génesis y Daniel únicamente; no se amplía a P9 ni al lector"
+    },
+    {
+      "sourceId": "F16",
+      "status": "pendiente_de_edicion_y_distribucion_concretas"
+    },
+    {
+      "sourceId": "F17",
+      "status": "pendiente_de_edicion_y_distribucion_concretas"
+    },
+    {
+      "sourceId": "F18",
+      "status": "pendiente_de_edicion_y_distribucion_concretas"
+    },
+    {
+      "sourceId": "F22",
+      "status": "pendiente_de_edicion_y_distribucion_concretas"
+    },
+    {
+      "sourceId": "F11",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F12",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F13",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F14",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F15",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F20",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F21",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F24",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F25",
+      "status": "consulta_externa_sin_admision_de_corpus"
+    },
+    {
+      "sourceId": "F10",
+      "status": "consulta_comercial_sin_admision"
+    }
+  ],
+  "controls": {
+    "canon": "no asignado",
+    "versification": "no asignada",
+    "alignment": "no generada",
+    "noAutomaticEquivalence": true,
+    "sourceTextStoredInRepository": false,
+    "publicRegistryChanged": false,
+    "pgpSignatureVerification": "no realizada para los ficheros auxiliares de RV1909"
+  }
+}
