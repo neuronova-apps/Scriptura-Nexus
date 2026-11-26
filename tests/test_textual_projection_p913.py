@@ -17,7 +17,7 @@ class TestUSFMProjection(unittest.TestCase):
   self.assertEqual([x['verse'] for x in units],['1a','2-3']);self.assertEqual(metrics['rangeMarkers'],1)
  def test_preserves_empty_marker_without_inventing_text(self):
   units,metrics=p.parse_usfm_units(usfm('\\v 1 \\f + \\ft nota\\f*'),'GEN')
-  self.assertEqual(units[0]['text'],'');self.assertEqual(metrics['emptyUnitLocators'],['GEN.1.1'])
+  self.assertEqual(units[0]['text'],'');self.assertEqual(metrics['emptyUnitLocators'],['GEN.1.1']);self.assertEqual(metrics['emptyUnitDiagnostics'][0]['rawWhitespaceOnly'],False)
  def test_rejects_verse_before_chapter_and_duplicate(self):
   with self.assertRaises(ValueError):p.parse_usfm_units(b'\\id GEN\n\\v 1 texto\n','GEN')
   with self.assertRaises(ValueError):p.parse_usfm_units(usfm('\\v 1 uno\n\\v 1 dos\n'),'GEN')

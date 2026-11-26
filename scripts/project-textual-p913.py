@@ -54,7 +54,7 @@ def parse_usfm_units(data,expected_book,edition_id='TXT-RV1909',book_id=None,res
     ids=re.findall(r'(?m)^\\id[ \t]+([A-Z0-9]{3})(?:[ \t].*)?$',source)
     require(ids==[expected_book],'USFM book')
     markers=list(re.finditer(r'\\([cv])[ \t]+([^\s]+)',source))
-    chapter=None;units=[];excluded={'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0};ranges=0
+    chapter=None;units=[];excluded={'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0};ranges=0;empty_diagnostics=[]
     for index,marker in enumerate(markers):
         kind,label=marker.group(1),marker.group(2)
         if kind=='c':
@@ -67,22 +67,24 @@ def parse_usfm_units(data,expected_book,edition_id='TXT-RV1909',book_id=None,res
         for k,v in counts.items():excluded[k]+=v
         locator=expected_book+'.'+chapter+'.'+label
         units.append(make_unit(edition_id,book_id or 'LIB-'+expected_book,chapter,label,order_start+len(units),text,resource_id,locator,sha(raw.encode('utf-8'))))
+        if not text:empty_diagnostics.append({'locator':locator,'rawCharacters':len(raw),'rawWhitespaceOnly':not raw.strip(),'markerNames':sorted(set(re.findall(r'\\([A-Za-z0-9+]+)\\*?',raw)))})
         ranges+=int('-' in label or '–' in label)
     require(units,'USFM no contiene unidades')
-    return units,{'chapters':len({x['chapter'] for x in units}),'unitCount':len(units),'emptyUnitCount':sum(not x['text'] for x in units),'wordElements':None,'rangeMarkers':ranges,'excluded':excluded,'emptyUnitLocators':[x['sourceLocator'] for x in units if not x['text']]}
+    return units,{'chapters':len({x['chapter'] for x in units}),'unitCount':len(units),'emptyUnitCount':sum(not x['text'] for x in units),'wordElements':None,'rangeMarkers':ranges,'excluded':excluded,'emptyUnitLocators':[x['sourceLocator'] for x in units if not x['text']],'emptyUnitDiagnostics':empty_diagnostics}
 def parse_sbl_xml(data,expected_provider_id,expected_label,edition_id='TXT-SBLGNT-V1-2',book_id='LIB-JHN',resource_id='REC-ED-C02-TEST',order_start=0):
     require(isinstance(data,bytes) and 0<len(data)<=4*1024*1024,'XML bytes')
     require(not re.search(br'<!\s*(?:DOCTYPE|ENTITY)',data,re.I),'XML DTD/entity')
     data.decode('utf-8-sig',errors='strict')
     root=ET.fromstring(data);require(root.tag=='book' and root.get('id')==expected_provider_id,'SBL book')
     allowed={'book','title','p','verse-number','w','prefix','suffix'}
-    units=[];current=None;words=0;prefixes=0;suffixes=0;chapters=set();seen=set()
+    units=[];current=None;words=0;prefixes=0;suffixes=0;chapters=set();seen=set();empty_diagnostics=[]
     def finish():
         nonlocal current
         if current is None:return
         require(not current['pendingPrefix'],'SBL prefix without word')
         text=current['text'].strip();events=canonical(current['events'])
         units.append(make_unit(edition_id,book_id,current['chapter'],current['verse'],order_start+len(units),text,resource_id,current['locator'],sha(events)))
+        if not text:empty_diagnostics.append({'locator':current['locator'],'eventCount':len(current['events']),'wordElements':sum(1 for x in current['events'] if x[0]=='w')})
         current=None
     for node in root.iter():
         tag=node.tag;require(tag in allowed,'SBL unsupported XML element')
@@ -106,7 +108,7 @@ def parse_sbl_xml(data,expected_provider_id,expected_label,edition_id='TXT-SBLGN
             else:current['text']+=content;suffixes+=1
         elif tag=='p' and node.text and node.text.strip():require(current is None,'SBL text outside word elements')
     finish();require(units and words>0,'SBL empty corpus')
-    return units,{'chapters':len(chapters),'unitCount':len(units),'emptyUnitCount':sum(x['text']=='' for x in units),'wordElements':words,'rangeMarkers':sum('-' in x['verse'] or '–' in x['verse'] for x in units),'prefixElements':prefixes,'suffixElements':suffixes,'emptyUnitLocators':[x['sourceLocator'] for x in units if not x['text']]}
+    return units,{'chapters':len(chapters),'unitCount':len(units),'emptyUnitCount':sum(x['text']=='' for x in units),'wordElements':words,'rangeMarkers':sum('-' in x['verse'] or '–' in x['verse'] for x in units),'prefixElements':prefixes,'suffixElements':suffixes,'emptyUnitLocators':[x['sourceLocator'] for x in units if not x['text']],'emptyUnitDiagnostics':empty_diagnostics}
 def verify_registry_empty():
     registry=json.loads((ROOT/'src/data/linguistica/registro.json').read_text(encoding='utf-8'))
     publications=json.loads((ROOT/'src/data/publicaciones/registro.json').read_text(encoding='utf-8'))
@@ -123,7 +125,7 @@ def verify_report(report):
         require(manifest['persistence']=='metadata_only' and manifest['publicationEnabled'] is False,'publication gate')
         require(len(manifest['resources'])==len(manifest['fragments'])==len(ed['resourceIds'])==len(ed['coverageBookIds']),'manifest coverage')
         require(manifest['integrity']['unitCount']==sum(x['unitCount'] for x in manifest['fragments']),'manifest units')
-        require(all(len(f['emptyUnitLocators'])==f['emptyUnitCount'] and len(set(f['emptyUnitLocators']))==f['emptyUnitCount'] and all(isinstance(x,str) and x for x in f['emptyUnitLocators']) and all(isinstance(n,int) and n>=0 for n in f['excludedStructures'].values()) for f in manifest['fragments']),'empty-unit audit')
+        require(all(len(f['emptyUnitLocators'])==f['emptyUnitCount'] and len(set(f['emptyUnitLocators']))==f['emptyUnitCount'] and all(isinstance(x,str) and x for x in f['emptyUnitLocators']) and len(f['emptyUnitDiagnostics'])==f['emptyUnitCount'] and all(isinstance(n,int) and n>=0 for n in f['excludedStructures'].values()) for f in manifest['fragments']),'empty-unit audit')
         require(re.fullmatch(r'[0-9a-f]{64}',manifest['integrity']['projectionSha256']),'manifest hash')
         require(all(x['sha256']==f['sourceFileSha256'] and re.fullmatch(r'[0-9a-f]{64}',x['sha256']) for x,f in zip(manifest['resources'],manifest['fragments'])),'resource fingerprints')
     return report
@@ -143,7 +145,7 @@ def build():
             require(metrics['unitCount']==meta['verseMarkers'] and metrics['chapters']==meta['chapters'] and metrics['rangeMarkers']==meta['rangeMarkers'],'RV projected coverage')
             rv_order+=len(units);all_units+=len(units);rv_book_ids.append(book_id)
             rv_resources.append({'id':resource_id,'sourceFileId':'ED-C01:'+code,'sourceId':'F05','path':meta['path'],'bytes':meta['bytes'],'sha256':meta['sha256'],'component':'texto_fuente','licenseRef':rv_license})
-            rv_fragments.append({'id':'FRAG-ED-C01-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':None,'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'excludedStructures':metrics['excluded'],'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
+            rv_fragments.append({'id':'FRAG-ED-C01-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':None,'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'emptyUnitDiagnostics':metrics['emptyUnitDiagnostics'],'excludedStructures':metrics['excluded'],'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
             books[book_id]={'id':book_id,'code':code,'names':{'es':SPANISH_NAMES[code]},'aliases':[code]}
     editions.append({'id':rv_id,'sourceId':'F05','name':'Reina-Valera 1909','language':'spa','kind':'traduccion','version':'spaRV1909','provider':'eBible.org','resourceIds':[x['id'] for x in rv_resources],'canonId':None,'versificationId':None,'coverageBookIds':rv_book_ids,'referencePolicy':'source_native_unmapped','licenseRef':rv_license,'attribution':'Reina y Valera, según ficha de eBible.org; distribución spaRV1909.','sourceRevision':{'archiveSha256':rv['sourceArchive']['sha256']}})
     rv_global=hashlib.sha256()
@@ -157,7 +159,7 @@ def build():
         require(metrics['prefixElements']==meta['prefixElements'] and metrics['suffixElements']==meta['suffixElements'],'SBL prefix/suffix inventory')
         gr_order+=len(units);all_units+=len(units);gr_book_ids.append(book_id)
         gr_resources.append({'id':resource_id,'sourceFileId':'ED-C02:'+meta['book'],'sourceId':'F03','path':meta['path'],'bytes':meta['bytes'],'sha256':meta['sha256'],'component':'texto_fuente','licenseRef':gr_license})
-        gr_fragments.append({'id':'FRAG-ED-C02-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':metrics['wordElements'],'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'excludedStructures':{'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0},'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
+        gr_fragments.append({'id':'FRAG-ED-C02-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':metrics['wordElements'],'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'emptyUnitDiagnostics':metrics['emptyUnitDiagnostics'],'excludedStructures':{'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0},'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
         books[book_id]['aliases'].extend([source_metrics['referenceBookLabel'],meta['book']])
     editions.append({'id':gr_id,'sourceId':'F03','name':'SBL Greek New Testament','language':'grc','kind':'edicion_critica','version':'v1.2','provider':'Faithlife/SBLGNT','resourceIds':[x['id'] for x in gr_resources],'canonId':None,'versificationId':None,'coverageBookIds':gr_book_ids,'referencePolicy':'source_native_unmapped','licenseRef':gr_license,'attribution':'The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.','sourceRevision':{'commit':greek['sourceCommit']}})
     gr_global=hashlib.sha256()
