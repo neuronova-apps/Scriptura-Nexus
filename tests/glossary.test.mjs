@@ -57,7 +57,7 @@ test('los vínculos metodológicos y las fuentes internas son válidos', () => {
 
 test('Strong, lema, morfología y significado contextual no se confunden', () => {
   assert.match(byId.get('GLO-028').definition,/no constituye un análisis morfológico/i);
-  assert.match(byId.get('GLO-028').definition,/no determina por sí solo el significado contextual/i);
+  assert.match(byId.get('GLO-028').definition,/ni determina por sí solo el significado contextual/i);
   assert.match(byId.get('GLO-027').definition,/No es lo mismo que una ocurrencia, una raíz ni un identificador Strong/i);
   assert.match(byId.get('GLO-031').definition,/sistema de etiquetado/i);
   assert.match(byId.get('GLO-035').definition,/morfología, la sintaxis y el contexto/i);
@@ -90,7 +90,7 @@ test('el glosario mantiene correspondencia con el modelo conceptual P0.7 y la me
 });
 
 test('la página incorpora mapa conceptual, categorías, enlaces relacionados y límites', () => {
-  for (const label of ['Mapa de relaciones conceptuales','Índice por categorías','Conceptos relacionados','Perspectivas','Ampliar','Glosario metodológico inicial','no incorpora corpus bíblicos']) {
+  for (const label of ['Mapa de relaciones conceptuales','Índice por categorías','Conceptos relacionados','Perspectivas','Ampliar','glosario metodológico inicial','no incorpora corpus bíblicos']) {
     assert.ok(page.includes(label),label);
   }
   assert.match(page,/aria-label="Categorías del glosario"/);
