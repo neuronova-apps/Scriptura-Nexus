@@ -144,7 +144,7 @@ test('las páginas heredan estructura semántica, idioma, navegación y controle
   assert.match(brandCss,/@media \(prefers-reduced-motion: reduce\)/);
   assert.match(brandCss,/@media \(forced-colors: active\)/);
   assert.match(componentCss,/:focus-visible/);
-  assert.match(moduleCss,/overflow/);
+  assert.match(moduleCss,/min-width: 0/);
 });
 
 test('las hojas de estilo de P4 contemplan reflujo y adaptación a pantallas estrechas', () => {
