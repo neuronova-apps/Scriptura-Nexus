@@ -1,0 +1,21 @@
+---
+interface Props { base:string; current:'analyzer'|'lexicon'; }
+const {base,current}=Astro.props;
+const tools=[{id:'analyzer',label:'Analizador de términos',href:base+'linguistica/analizador/'},{id:'lexicon',label:'Léxicos y concordancias',href:base+'linguistica/lexicos-concordancias/'}];
+const sections=current==='analyzer'?[['ta-reference-title','Seleccionar referencia'],['ta-occurrence-title','Seleccionar ocurrencia'],['ta-result-title','Análisis']]:[['lc-lex-title','Consulta léxica'],['lc-con-title','Concordancias y frecuencias']];
+---
+<nav class="linguistic-tools" aria-label="Herramientas lingüísticas">
+ <ul><li><a href={base+'linguistica/'}>Lingüística bíblica</a></li>{tools.map(t=><li>{current===t.id?<span aria-current="page">{t.label} (actual)</span>:<a href={t.href}>{t.label}</a>}</li>)}</ul>
+</nav>
+<nav class="linguistic-tools linguistic-sections" aria-label="Secciones de esta herramienta">
+ <ul>{sections.map(([id,label])=><li><a href={'#'+id}>{label}</a></li>)}</ul>
+</nav>
+<style>
+.linguistic-tools { min-width:0; padding:var(--sn-space-3); border:1px solid var(--sn-control-border); border-radius:var(--sn-radius-md); background:var(--sn-surface); color:var(--sn-ink); }
+.linguistic-tools ul { list-style:none; display:flex; flex-wrap:wrap; gap:var(--sn-space-2); margin:0; padding:0; }
+.linguistic-tools li { min-width:0; max-width:100%; margin:0; }
+.linguistic-tools a,.linguistic-tools span { display:flex; align-items:center; min-height:44px; padding:var(--sn-space-2) var(--sn-space-3); overflow-wrap:anywhere; color:var(--sn-navy); }
+.linguistic-tools [aria-current] { font-weight:700; border:1px solid var(--sn-control-border); border-radius:var(--sn-radius-sm); }
+.linguistic-sections { border-style:solid; }
+@media(max-width:40rem){.linguistic-tools li{flex:1 1 100%;}}
+</style>

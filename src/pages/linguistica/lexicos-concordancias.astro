@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 import Callout from '../../components/Callout.astro';
+import LinguisticToolsNav from '../../components/modules/LinguisticToolsNav.astro';
 import {basePath} from '../../lib/site';
 import '../../styles/modules.css';
 import '../../styles/term-analyzer.css';
@@ -12,17 +13,18 @@ const base=basePath(import.meta.env.BASE_URL);
 <div class="module-landing sn-analyzer sn-lexicons">
 <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'linguistica/'}>Lingüística bíblica</a></li><li aria-current="page">Léxicos y concordancias</li></ol></nav>
 <Card variant="editorial"><p class="module-phase">Lingüística bíblica · P8.4.6</p><h1>Léxicos y concordancias bíblicas</h1><p>Explora entradas de diccionario y referencias de una edición bíblica mediante consultas independientes. Una definición léxica no determina el sentido de una ocurrencia.</p><Callout tone="info" title="Disponibilidad">No hay diccionarios ni corpus autorizados para consulta pública. Los controles se habilitarán cuando exista una publicación aprobada.</Callout></Card>
-<section class="sn-card sn-card--default" aria-labelledby="lc-lex-title"><h2 id="lc-lex-title">1. Consulta léxica</h2><p id="lc-lex-help">Busca una forma original exacta en el índice o el identificador exacto de un diccionario. Conserva marcas, espacios y extensiones. Las definiciones se muestran en su idioma original.</p>
+<LinguisticToolsNav base={base} current="lexicon" />
+<section class="sn-card sn-card--default" aria-labelledby="lc-lex-title"><h2 id="lc-lex-title" tabindex="-1">1. Consulta léxica</h2><p id="lc-lex-help">Busca una forma original exacta en el índice o el identificador exacto de un diccionario. Conserva marcas, espacios y extensiones. Las definiciones se muestran en su idioma original.</p>
 <form id="lc-lex-form" aria-describedby="lc-lex-help"><fieldset id="lc-lex-fields" disabled><legend>Buscar entrada</legend><div class="ta-fields">
 <label for="lc-lex-mode">Modalidad<select id="lc-lex-mode"><option value="form">Forma original</option><option value="identifier">Identificador de diccionario</option></select></label>
 <label for="lc-lex-lang">Lengua<select id="lc-lex-lang"><option value="hbo">Hebreo</option><option value="arc">Arameo</option><option value="grc">Griego</option></select></label>
 <label for="lc-lex-system">Diccionario<select id="lc-lex-system" disabled><option value="">Sin diccionarios publicados</option></select></label>
 <label for="lc-lex-value">Forma o identificador<input id="lc-lex-value" dir="auto" maxlength="1024" required /></label>
 </div><button class="sn-button sn-button--primary" type="submit">Buscar entrada</button></fieldset></form>
-<p id="lc-lex-status" role="status" aria-live="polite">No hay recursos léxicos disponibles para consulta pública.</p>
+<p id="lc-lex-status" tabindex="-1" role="status" aria-live="polite">No hay recursos léxicos disponibles para consulta pública.</p>
 <div id="lc-lex-results" hidden></div><div id="lc-lex-pager" class="lc-pager" hidden><button id="lc-lex-prev" class="sn-button sn-button--secondary" type="button" disabled>Entradas anteriores</button><button id="lc-lex-next" class="sn-button sn-button--secondary" type="button" disabled>Entradas siguientes</button></div>
-<div id="lc-lex-detail" hidden tabindex="-1"></div></section>
-<section class="sn-card sn-card--default" aria-labelledby="lc-con-title"><h2 id="lc-con-title">2. Concordancias y frecuencias</h2><p id="lc-con-help">Selecciona la edición y lengua; el libro es opcional. Busca por forma exacta, ID de lema o código del proveedor. Los recuentos se limitan a la cobertura publicada de esa edición, no a toda la Biblia. Una ocurrencia puede tener más de un lema.</p>
+<div id="lc-lex-detail" role="region" aria-label="Detalle de entrada léxica" hidden tabindex="-1"></div></section>
+<section class="sn-card sn-card--default" aria-labelledby="lc-con-title"><h2 id="lc-con-title" tabindex="-1">2. Concordancias y frecuencias</h2><p id="lc-con-help">Selecciona la edición y lengua; el libro es opcional. Busca por forma exacta, ID de lema o código del proveedor. Los recuentos se limitan a la cobertura publicada de esa edición, no a toda la Biblia. Una ocurrencia puede tener más de un lema.</p>
 <form id="lc-con-form" aria-describedby="lc-con-help"><fieldset id="lc-con-fields" disabled><legend>Edición, filtros y consulta</legend><div class="ta-fields">
 <label for="lc-edition">Edición<select id="lc-edition" required><option value="">Sin ediciones disponibles</option></select></label>
 <label for="lc-lang">Lengua<select id="lc-lang" required><option value="">Selecciona una edición</option></select></label>
@@ -31,11 +33,10 @@ const base=basePath(import.meta.env.BASE_URL);
 <label for="lc-system">Sistema de proveedor<select id="lc-system" disabled><option value="OSHB-lemma">OSHB-lemma</option><option value="MorphGNT-lemma">MorphGNT-lemma</option></select></label>
 <label for="lc-value">Clave exacta<input id="lc-value" maxlength="1024" dir="auto" /></label>
 </div><div class="lc-pager"><button class="sn-button sn-button--primary" type="submit">Buscar ocurrencias</button><button class="sn-button sn-button--secondary" type="button" id="lc-frequency">Ver frecuencias</button></div></fieldset></form>
-<p id="lc-con-status" role="status" aria-live="polite">No hay ediciones disponibles para consulta pública.</p>
+<p id="lc-con-status" tabindex="-1" role="status" aria-live="polite">No hay ediciones disponibles para consulta pública.</p>
 <div id="lc-con-results" hidden></div><div id="lc-con-pager" class="lc-pager" hidden><button id="lc-con-prev" class="sn-button sn-button--secondary" type="button" disabled>Resultados anteriores</button><button id="lc-con-next" class="sn-button sn-button--secondary" type="button" disabled>Resultados siguientes</button></div>
 <noscript><p>La consulta interactiva requiere JavaScript. La explicación y la disponibilidad permanecen accesibles.</p></noscript></section>
-<a class="sn-button sn-button--secondary" href={base+'linguistica/analizador/'}>Ir al analizador</a>
-<a class="sn-button sn-button--secondary" href={base+'linguistica/'}>Volver a Lingüística bíblica</a>
+
 </div></BaseLayout>
 <script>
 import {createConcordance} from '../../lib/concordance';

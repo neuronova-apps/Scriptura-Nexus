@@ -16,3 +16,8 @@
 /* P8.3.5: semantic foreground/background must change together when switching themes.
    Do not interpolate colors of analyzer controls across light/dark contrast palettes. */
 .sn-analyzer .sn-button,.sn-analyzer .ta-word,.sn-analyzer select,.sn-analyzer input{transition:none}
+
+/* P8.5.3: focus destinations for native section links and result transitions. */
+.sn-analyzer h2[tabindex="-1"]:focus,.sn-analyzer [role="status"][tabindex="-1"]:focus{outline:3px solid var(--sn-focus);outline-offset:3px;scroll-margin-block-start:1rem}
+.sn-analyzer .sn-button{max-width:100%;white-space:normal;overflow-wrap:anywhere;min-height:44px}
+@media(prefers-reduced-motion:reduce){html:has(.sn-analyzer){scroll-behavior:auto}}

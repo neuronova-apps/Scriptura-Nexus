@@ -498,3 +498,12 @@ for(const f of readdirSync('dist',{recursive:true,withFileTypes:true}))if(f.isFi
  const s=readFileSync(f.parentPath+'/'+f.name,'utf8');assert.doesNotMatch(s,/LENTRY-[a-f0-9]{64}|Synthetic definition|fixture-index|admision-lexica-p84\.json|BrownDriverBriggs\.xml|HebrewStrong\.xml|LexicalIndex\.xml|AugIndex\.xml/);
 }
 console.log('P8.4.6: interfaz y etiquetas accesibles, enlaces y barrera pública sin corpus ni diccionarios.');
+
+// P8.5.3: native navigation across tools and focusable section destinations.
+for(const [html,other,ids] of [[analyzerHtml,'lexicos-concordancias',['ta-reference-title','ta-occurrence-title','ta-result-title']],[lexHtml,'analizador',['lc-lex-title','lc-con-title']]]){
+ assert.ok(html.includes('aria-label="Herramientas lingüísticas"')&&html.includes('aria-label="Secciones de esta herramienta"'));
+ assert.ok(html.includes('href="/Scriptura-Nexus/linguistica/'+other+'/"'));
+ for(const id of ids){assert.ok(html.includes('href="#'+id+'"'));assert.match(html,new RegExp('<h2[^>]*id="'+id+'"[^>]*tabindex="-1"'));}
+}
+assert.match(lexHtml,/<div[^>]*id="lc-lex-detail"[^>]*role="region"[^>]*aria-label="Detalle de entrada léxica"/);
+console.log('P8.5.3: navegación recíproca, destinos de sección y región de detalle conformes.');

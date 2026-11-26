@@ -9,7 +9,7 @@ export function mountAnalyzer(doc:Document,engine:Analyzer){
  const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const node=doc.createElement(tag);if(text!==undefined)node.textContent=text;return node;};
  const option=(value:string,label:string)=>{const o=el('option',label);o.value=value;return o;};
  const original=(form:string,language:Language)=>{const b=el('bdi',form);b.lang=language;b.dir=language==='grc'?'ltr':'rtl';b.className='ta-original';return b;};
- const origin=(o:Origin)=>el('p','Fuente: '+o.fileId+' · '+o.component+' · '+o.locator+' · revisión '+o.commit);
+ const origin=(o:Origin)=>el('p','Fuente: '+o.fileId+' · '+o.component+' · '+o.locator+' · revisión '+o.commit+' · SHA-256 '+o.sha256);
  const clearResult=()=>{result.replaceChildren();result.hidden=true;resultStatus.textContent='Selecciona una ocurrencia de la referencia consultada.';};
  const clearWords=()=>{word.replaceChildren(option('','Sin ocurrencias disponibles'));word.disabled=true;words.replaceChildren();words.hidden=true;clearResult();};
  const reset=()=>{session.reset();clearWords();status.textContent='Selecciona y consulta una referencia.';};
