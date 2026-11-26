@@ -1,7 +1,7 @@
-import { validateEditorial, type EditorialRecord } from './editorial-contracts.ts';
+import { validateEditorial, comparisonScopes, type EditorialRecord } from './editorial-contracts.ts';
 import { basePath } from './site.ts';
 export interface Evidence {id:string; bibliographyId?:string; resourceId?:string; locator:string; language:string; kind:'cita'|'parafrasis'|'traduccion_propia'|'observacion'; consultedAt:string; verification:'pendiente'|'consultada'|'verificada'; permission:'pendiente'|'autorizada'|'restringida'; excerpt?:string}
-export interface ArgumentLink {claimId:string; evidenceId:string; role:'respalda'|'refuta'|'contextualiza'; reasoning:string}
+export interface ArgumentLink {claimId:string; evidenceId:string; role:'respalda'|'refuta'|'contextualiza'; reasoning:string; comparisonScope:typeof comparisonScopes[number]; comparisonJustification:string}
 export interface Position {id:string; studyId:string; traditionId:string; disciplineIds:string[]; authorId:string; claimIds:string[]; evidenceIds:string[]; scope:string; authority:string; assumptions:string; limitations:string}
 export interface StudyLink {targetStudyId:string; reason:string}
 export interface RelationSet {schemaVersion:1; studyId:string; evidence:Evidence[]; arguments:ArgumentLink[]; positions:Position[]; relatedStudies:StudyLink[]}
@@ -41,7 +41,8 @@ export function validateRelations(value:unknown,record:EditorialRecord,context:R
  const pairs=new Set<string>();
  for(const l of list(value.arguments)){
   if(!obj(l)){errors.push('argumento inválido');continue;}
-  keys(l,['claimId','evidenceId','role','reasoning']);
+  keys(l,['claimId','evidenceId','role','reasoning','comparisonScope','comparisonJustification']);
+  req(one(l.comparisonScope,comparisonScopes)&&str(l.comparisonJustification),'alcance canónico o justificación inválida');
   req(one(l.claimId,claimIds)&&one(l.evidenceId,evidenceIds)&&str(l.reasoning)&&one(l.role,['respalda','refuta','contextualiza']),'vínculo argumental inválido');
   const key=[l.claimId,l.evidenceId,l.role].join('|');req(!pairs.has(key),'vínculo duplicado');pairs.add(key);
   const c=claims.find(c=>c.id===l.claimId);

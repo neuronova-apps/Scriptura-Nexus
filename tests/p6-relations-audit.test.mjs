@@ -12,10 +12,10 @@ function complete(){
  const c=s.record.claims[0];
  c.proposition=marker;c.opposingEvidenceIds=['EVD-900002'];
  s.relations.evidence.push({...s.relations.evidence[0],id:'EVD-900002',bibliographyId:'BIB-900002',locator:marker},{id:'EVD-900003',resourceId:'REC-900003',locator:marker,language:'es',kind:'observacion',consultedAt:'2026-11-26',verification:'verificada',permission:'autorizada'});
- s.relations.arguments.push({claimId:c.id,evidenceId:'EVD-900002',role:'refuta',reasoning:marker},{claimId:c.id,evidenceId:'EVD-900003',role:'contextualiza',reasoning:marker});
+ s.relations.arguments.push({claimId:c.id,evidenceId:'EVD-900002',role:'refuta',reasoning:marker,comparisonScope:'no_aplicable',comparisonJustification:marker},{claimId:c.id,evidenceId:'EVD-900003',role:'contextualiza',reasoning:marker,comparisonScope:'no_aplicable',comparisonJustification:marker});
  const alternative={...c,id:'AF-900002',grade:'discutido',supportingEvidenceIds:['EVD-900002'],opposingEvidenceIds:['EVD-900001']};
  s.record.claims.push(alternative);
- s.relations.arguments.push({claimId:alternative.id,evidenceId:'EVD-900002',role:'respalda',reasoning:marker},{claimId:alternative.id,evidenceId:'EVD-900001',role:'refuta',reasoning:marker});
+ s.relations.arguments.push({claimId:alternative.id,evidenceId:'EVD-900002',role:'respalda',reasoning:marker,comparisonScope:'no_aplicable',comparisonJustification:marker},{claimId:alternative.id,evidenceId:'EVD-900001',role:'refuta',reasoning:marker,comparisonScope:'no_aplicable',comparisonJustification:marker});
  s.record.sections[9].evidenceIds=['EVD-900001','EVD-900002','EVD-900003'];
  s.record.conclusions[0].claimIds=[c.id,alternative.id];s.record.conclusions[0].reservations=[marker];
  s.relations.positions=context.traditionIds.map((traditionId,i)=>({id:'POS-'+(900001+i),studyId:s.studyId,traditionId,disciplineIds:['DIS-900001'],authorId:i%2?'AUT-900002':'AUT-900001',claimIds:[i%2?alternative.id:c.id],evidenceIds:[i%2?'EVD-900002':'EVD-900001'],scope:marker,authority:marker,assumptions:marker,limitations:marker}));

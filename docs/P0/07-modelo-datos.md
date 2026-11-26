@@ -194,3 +194,7 @@ Casos negativos futuros: ID duplicado; referencia huérfana; código Strong trat
 Usar schemaVersion independiente de version editorial y dataVersion del corpus. Cambios incompatibles requieren migración explícita, pruebas y registro de cambios; conservar IDs y enlaces. Los esquemas ejecutables se introducirán gradualmente con las fases consumidoras, sin instalar una base SQL ni Supabase inicialmente. Revisar tamaño de fragmentos y límites de Pages en P1/P8/P9.
 
 Cierre documental: 38 entidades, relaciones, contratos, estados, procedencia, almacenamiento, ejemplo y 15 reglas de validación registrados. Verificar incorporación y conservación de README/P0.1–P0.6. No importar fuentes ni empezar P0.8 automáticamente. El modelo queda sujeto a pruebas de implementación y ajuste justificado durante los pilotos.
+
+
+## Ampliación editorial P6.5.5.1
+ENT17 añade outcome (afirmativa/refutatoria/interpretativa/indeterminada), separado de grade. Cada vínculo argumental añade comparisonScope (canon_compartido/canon_diferenciado/historico_documental/autoridad_teologica/no_aplicable) y comparisonJustification. Controles críticos adicionales: imparcialidad y contexto_canonico. Sin migración de publicaciones reales: registro vacío. Los campos son obligatorios en el contrato actualizado; no se generan conclusiones para fichas planificadas. El catálogo de cánones y ediciones documentadas se resolverá en las fases de fuentes y análisis textual.
