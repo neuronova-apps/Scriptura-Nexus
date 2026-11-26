@@ -5,14 +5,15 @@ import Button from '../Button.astro';
 import { basePath } from '../../lib/site';
 import '../../styles/modules.css';
 import '../../styles/methodology-guides.css';
-interface Props { title: string; description: string; slug: string; }
-const { title, description, slug } = Astro.props;
+interface Props { title: string; description: string; slug: string; phase?: 'P4.2' | 'P4.3'; }
+const { title, description, slug, phase = 'P4.2' } = Astro.props;
 const base = basePath(import.meta.env.BASE_URL);
 const guides = [
   { path: 'exegesis/', label: 'Exégesis bíblica' },
   { path: 'hermeneutica/', label: 'Hermenéutica bíblica' },
   { path: 'fuentes/', label: 'Fuentes y evidencias' },
   { path: 'licencias/', label: 'Licencias y atribuciones' },
+  { path: 'glosario/', label: 'Glosario metodológico' },
 ];
 ---
 <BaseLayout title={title + ' | Fundamentos | Scriptura Nexus'} description={description}>
@@ -25,11 +26,11 @@ const guides = [
       </ol>
     </nav>
     <Card variant="editorial">
-      <p class="module-phase">Guía metodológica · P4.2</p>
+      <p class="module-phase">{phase === 'P4.3' ? 'Recurso metodológico' : 'Guía metodológica'} · {phase}</p>
       <h1>{title}</h1>
       <p>{description}</p>
     </Card>
-    <nav aria-label="Otras guías metodológicas" class="method-guide-nav">
+    <nav aria-label="Recursos metodológicos relacionados" class="method-guide-nav">
       <ul>
         {guides.filter(item => item.path !== slug).map(item => <li><a href={basePath(base, 'fundamentos/' + item.path)}>{item.label}</a></li>)}
       </ul>
