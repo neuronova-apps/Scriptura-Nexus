@@ -1,0 +1,13 @@
+---
+import ModuleLanding from '../../components/modules/ModuleLanding.astro';
+import { homeModules } from '../../lib/home';
+import { moduleDetails } from '../../lib/module-details';
+export function getStaticPaths() {
+  return homeModules(import.meta.env.BASE_URL).map(item => {
+    const slug = item.path.replace(/\/$/, '') as keyof typeof moduleDetails;
+    return { params: { module: slug }, props: { label: item.label, description: item.description, phase: item.phase, ...moduleDetails[slug] } };
+  });
+}
+const props = Astro.props;
+---
+<ModuleLanding {...props} />

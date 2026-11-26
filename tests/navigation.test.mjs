@@ -9,11 +9,14 @@ test('la navegación conserva la base de Pages y marca la página actual', () =>
   assert.equal(items[0].current, true);
 });
 
-test('los módulos pendientes no producen enlaces rotos ni estados activos', () => {
-  const items = navigationFor('/Scriptura-Nexus/', '/Scriptura-Nexus/fundamentos/');
-  assert.equal(items.filter(item => item.current).length, 0);
-  assert.ok(items.filter(item => !item.available).every(item => item.href === null));
-  assert.equal(new Set(navigationItems.map(item => item.path)).size, navigationItems.length);
+test('las siete rutas iniciales están habilitadas y marcan su página actual', () => {
+  for (const item of navigationItems) {
+    const path = '/Scriptura-Nexus/' + item.path;
+    const items = navigationFor('/Scriptura-Nexus/', path);
+    assert.equal(items.filter(i => i.current).length, 1);
+    assert.equal(items.find(i => i.current).href, path);
+  }
+  assert.equal(new Set(navigationItems.map(i => i.path)).size, navigationItems.length);
 });
 
 test('la guía y 404 no se identifican falsamente como inicio', () => {

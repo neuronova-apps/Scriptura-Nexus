@@ -37,7 +37,6 @@ console.log('Estructura semántica y acceso alternativo: conformes.');
 for (const [name, html] of [['inicio', home], ['404', missing], ['guía', guide]]) {
   assert.match(html, /<nav[^>]*aria-label="Navegación principal"/);
   assert.match(html, /<nav[^>]*aria-label="Navegación del pie de página"/);
-  assert.match(html, /Próximamente/);
   assert.match(html, /href="\/Scriptura-Nexus\/design-system\/"/);
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
     const url = match[1];
@@ -57,3 +56,24 @@ assert.match(home, /href="#modulos"/);
 assert.match(home, /El buscador aún no está habilitado/);
 assert.match(home, /Investigar, consultar y contrastar/);
 console.log('Portada, áreas de acceso y estado del buscador: conformes.');
+
+const modulePaths = ['fundamentos','estudios','biblioteca','historia','linguistica','biblia','manuscritos'];
+for (const path of modulePaths) {
+  const url = '/Scriptura-Nexus/' + path + '/';
+  const html = readFileSync('dist/' + path + '/index.html', 'utf8');
+  assert.ok(home.includes('href="' + url + '"'), 'Acceso desde portada: ' + path);
+  assert.match(html, /Contenido en preparación/);
+  assert.match(html, /Recursos previstos/);
+  assert.match(html, /Módulo en desarrollo/);
+  assert.match(html, /data-appearance-panel/);
+  assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
+  assert.equal((html.match(/<a\b[^>]*aria-current="page"/g) || []).length, 1);
+  for (const match of html.matchAll(/href="([^"]+)"/g)) {
+    const href = match[1];
+    if (!href.startsWith('/')) continue;
+    assert.ok(href.startsWith('/Scriptura-Nexus/'));
+    const relative = href.slice('/Scriptura-Nexus/'.length);
+    assert.ok(existsSync('dist/' + relative + (relative === '' || relative.endsWith('/') ? 'index.html' : '')), 'Destino inexistente: ' + href);
+  }
+}
+console.log('Siete rutas iniciales, estados vacíos y navegación: conformes.');

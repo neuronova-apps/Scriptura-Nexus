@@ -2,16 +2,16 @@ import { basePath } from './site.ts';
 
 export const navigationItems = [
   { label: 'Inicio', path: '', available: true },
-  { label: 'Fundamentos', path: 'fundamentos/', available: false },
-  { label: 'Estudios bíblicos', path: 'estudios/', available: false },
-  { label: 'Biblioteca teológica', path: 'biblioteca/', available: false },
-  { label: 'Historia cristiana', path: 'historia/', available: false },
-  { label: 'Análisis lingüístico', path: 'linguistica/', available: false },
-  { label: 'Biblia y comparación', path: 'biblia/', available: false },
-  { label: 'Manuscritos', path: 'manuscritos/', available: false },
+  { label: 'Fundamentos', path: 'fundamentos/', available: true },
+  { label: 'Estudios bíblicos', path: 'estudios/', available: true },
+  { label: 'Biblioteca teológica', path: 'biblioteca/', available: true },
+  { label: 'Historia cristiana', path: 'historia/', available: true },
+  { label: 'Análisis lingüístico', path: 'linguistica/', available: true },
+  { label: 'Biblia y comparación', path: 'biblia/', available: true },
+  { label: 'Manuscritos', path: 'manuscritos/', available: true },
 ] as const;
 
-/** Solo las páginas disponibles reciben enlaces; P3.3 habilitará las rutas iniciales. */
+/** available indica una ruta existente, no un módulo funcional completo. */
 export function navigationFor(base: string, pathname: string) {
   const normalize = (path: string) => path.replace(/\/+$/, '') + '/';
   return navigationItems.map(item => ({
