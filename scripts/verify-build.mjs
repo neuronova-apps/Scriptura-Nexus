@@ -55,6 +55,7 @@ assert.match(home, /id="modulos"/);
 assert.match(home, /href="#modulos"/);
 assert.match(home, /El buscador aún no está habilitado/);
 assert.match(home, /Investigar, consultar y contrastar/);
+assert.match(home, /Fundamentos disponibles · P4 completada/);
 console.log('Portada, áreas de acceso y estado del buscador: conformes.');
 
 const modulePaths = ['fundamentos','estudios','biblioteca','historia','linguistica','biblia','manuscritos'];
@@ -64,7 +65,7 @@ for (const path of modulePaths) {
   assert.ok(home.includes('href="' + url + '"'), 'Acceso desde portada: ' + path);
   if (path === 'fundamentos') {
     for (const label of ['18 perspectivas de análisis','20 secciones de investigación','SN-001','¿Tatuarse es pecado?','Ejemplo metodológico, no resultado','Criterios de evidencia y aplicación']) assert.ok(html.includes(label), label);
-    assert.match(html, /Metodología base disponible/);
+    assert.match(html, /Fundamentos metodológicos · P4 completada/);
   } else {
     assert.match(html, /Contenido en preparación/);
     assert.match(html, /Recursos previstos/);

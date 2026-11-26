@@ -13,6 +13,8 @@ const p42 = readFileSync('docs/P4/02-guias-metodologicas.md','utf8');
 const p43 = readFileSync('docs/P4/03-glosario-y-navegacion-conceptual.md','utf8');
 const home = readFileSync('src/pages/fundamentos/index.astro','utf8');
 const guideLayout = readFileSync('src/components/methodology/MethodologyGuide.astro','utf8');
+const moduleCard = readFileSync('src/components/home/ModuleCard.astro','utf8');
+const moduleDetails = readFileSync('src/lib/module-details.ts','utf8');
 const glossaryPage = readFileSync('src/pages/fundamentos/glosario.astro','utf8');
 const glossarySource = readFileSync('src/lib/glossary.ts','utf8');
 const baseLayout = readFileSync('src/layouts/BaseLayout.astro','utf8');
@@ -75,6 +77,9 @@ test('las cinco guías y recursos están vinculados desde Fundamentos con nombre
 test('el estado de Fundamentos identifica la fase P4 completada sin anunciar trabajo pendiente de P4', () => {
   assert.match(home,/Fundamentos metodológicos · P4 completada/);
   assert.doesNotMatch(home,/Metodología base disponible · En ampliación/);
+  assert.match(moduleCard,/Fundamentos disponibles · P4 completada/);
+  assert.match(moduleDetails,/la metodología base, las cuatro guías y el glosario metodológico inicial están disponibles/i);
+  assert.doesNotMatch(moduleDetails,/Todavía no hay contenidos metodológicos publicados/);
   assert.match(home,/SN-001 · E09 Conducta y vida cristiana · Planificado/);
   assert.match(home,/Ejemplo metodológico, no resultado/);
   assert.match(home,/permanece pendiente de investigación/);

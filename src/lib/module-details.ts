@@ -5,7 +5,7 @@ export const moduleDetails = {
       "Criterios de evidencia y contexto",
       "Fuentes, referencias y licencias"
     ],
-    "empty": "La metodología pública se incorporará en P4. Todavía no hay contenidos metodológicos publicados."
+    "empty": "La metodología base, las cuatro guías y el glosario metodológico inicial están disponibles. Los estudios individuales se desarrollarán en las fases P5 y P6."
   },
   "estudios": {
     "planned": [
