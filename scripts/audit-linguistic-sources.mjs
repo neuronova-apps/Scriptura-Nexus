@@ -10,9 +10,14 @@ async function inspect(url){
  if(!res.ok||!res.body)throw new Error('HTTP '+res.status+' '+url);
  const reader=res.body.getReader();const chunks=[];let n=0;
  try{while(true){const {done,value}=await reader.read();if(done)break;n+=value.length;if(n>MAX)throw new Error('Límite de auditoría superado');chunks.push(Buffer.from(value));}}finally{await reader.cancel().catch(()=>{});}
- const result=inspectBytes(Buffer.concat(chunks,n));cache.set(url,result);return result;
+ const bytes=Buffer.concat(chunks,n);const result=inspectBytes(bytes);
+ const header=new TextDecoder('utf-8',{fatal:true}).decode(bytes.subarray(0,Math.min(bytes.length,18000)),{stream:true});
+ // Only licensing-related header lines, capped, no corpus or lexical records.
+ const notices=header.split(/\r?\n/).filter(line=>!line.includes('\t')&&/licen[cs]e|creative commons|cc[- ]by|copyright|redistribut|permission|attribut|public domain|credit/i.test(line)).slice(0,16).map(line=>line.trim().slice(0,240));
+ const audited={...result,notices};cache.set(url,audited);return audited;
 }
 const report=[];
+const headerReviews=[];
 for(const f of data.files){
  const key=f.repository+'@'+f.ref;
  if(!refs.has(key)){
@@ -22,9 +27,12 @@ for(const f of data.files){
  }
  const commit=refs.get(key);
  const raw=rawUrl(f,commit),licenseUrl=rawUrl(f,commit,f.licenseEvidencePath);
- const content=await inspect(raw),license=await inspect(licenseUrl);
+ const {notices,...content}=await inspect(raw),license=await inspect(licenseUrl);
+ headerReviews.push({id:f.id,notices});
  if(f.commit&&(f.commit!==commit||f.sha256!==content.sha256||f.bytes!==content.bytes||f.licenseEvidenceSha256!==license.sha256))throw new Error('Integridad distinta de la registrada: '+f.id);
  report.push({id:f.id,dataset:f.dataset,commit,path:f.path,raw,licenseUrl,...content,licenseEvidenceSha256:license.sha256,review:'pendiente_revision_humana'});
 }
 console.log(JSON.stringify({schemaVersion:1,files:report},null,2));
+console.log('Indicaciones de licencia en cabeceras (extractos orientativos; no aprobación):');
+console.log(JSON.stringify(headerReviews,null,2));
 if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## P8.1: auditoría de bytes (sin admisión)\n\n'+report.map(x=>'- '+x.id+' · '+x.dataset+' · '+x.bytes+' bytes · commit `'+x.commit+'` · SHA-256 `'+x.sha256+'` · evidencia de licencia `'+x.licenseEvidenceSha256+'`').join('\n')+'\n\nLas señales de cabecera son orientativas; requieren revisión humana por componente. No se guardaron ni publicaron archivos de datos.\n');
