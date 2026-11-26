@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
+import StudyTemplate from '../../components/studies/StudyTemplate.astro';
 import Callout from '../../components/Callout.astro';
 import { studies } from '../../lib/catalog';
 import { getAxis } from '../../lib/taxonomy';
@@ -17,6 +18,7 @@ const base = basePath(import.meta.env.BASE_URL);
 <Card variant="editorial"><p class="module-phase">{study.id} · {statusLabels[study.status]} · Versión {study.version}</p><h1>{study.title}</h1><Callout tone="info" title="Ficha preliminar del catálogo">Investigación planificada. No se ha publicado un estudio ni se han aprobado conclusiones. Las referencias iniciales orientan la investigación, no constituyen evidencia verificada.</Callout></Card>
 <Card><h2>Pregunta o foco de investigación</h2><p>{study.question}</p><h2>Eje principal</h2><p><a href={base + 'ejes/' + study.primaryAxisId + '/'}>{study.primaryAxisId} · {getAxis(study.primaryAxisId)?.name}</a></p><h2>Ejes relacionados</h2>{study.relatedAxisIds.length ? <ul>{study.relatedAxisIds.map(id => <li><a href={base + 'ejes/' + id + '/'}>{id} · {getAxis(id)?.name}</a></li>)}</ul> : <p>No hay ejes relacionados registrados.</p>}</Card>
 <Card><h2>Referencias preliminares</h2>{study.initialReferences.length ? <ul>{study.initialReferences.map(reference => <li>{reference}</li>)}</ul> : <p>{study.referenceSelectionPending}</p>}<h2>Registro editorial</h2><p>Estado: {statusLabels[study.status]}. Versión: {study.version}.</p><p>Registro: {study.createdAt}. Actualización: {study.updatedAt}.</p><p>Disciplinas específicas, métodos, tradiciones y evidencias pendientes de selección durante la investigación.</p><p>Procedencia: {study.sourceRefs.join(', ')}.</p></Card>
+<StudyTemplate studyId={study.id}/>
 <p><a href={base + 'fundamentos/'}>Consultar metodología de investigación</a></p>
 <a class="sn-button sn-button--secondary" href={base + 'estudios/'}>Volver al catálogo</a>
 </div></BaseLayout>

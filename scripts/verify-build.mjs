@@ -311,3 +311,18 @@ assert.match(searchPage,/id="search-more"/);
 assert.match(searchPage,/aria-live="polite"/);
 assert.match(catalogHtml,/aria-live="polite"/);
 console.log('P5.5: auditoría de 58 páginas, 42 fichas únicas, 70 relaciones, referencias ARIA, enlaces e índice conforme.');
+
+ 
+// P6.2: pending public templates, no draft body.
+for(const study of catalogData){
+  const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+  assert.match(html,/Estructura de la investigación/);
+  assert.match(html,/aria-label="Índice de secciones de investigación"/);
+  assert.equal([...html.matchAll(/data-section-state="pendiente"/g)].length,20,study.id);
+  const sectionIds=[...html.matchAll(/data-section-id="([^"]+)"/g)].map(m=>m[1]);
+  const expected=Array.from({length:20},(_,i)=>study.id+'/S'+String(i+1).padStart(2,'0'));
+  assert.deepEqual(sectionIds,expected);
+  for(let i=1;i<=20;i++){const anchor='seccion-'+String(i).padStart(2,'0');assert.ok(html.includes('id="'+anchor+'"'));assert.ok(html.includes('href="#'+anchor+'"'));}
+  assert.doesNotMatch(html,/PRUEBA SINTÉTICA|synthetic-only/);
+}
+console.log('P6.2: 42 plantillas, 840 secciones pendientes, índice y anclas conformes; sin cuerpos sintéticos.');

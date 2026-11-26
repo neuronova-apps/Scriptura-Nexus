@@ -1,0 +1,8 @@
+.study-template,.study-template-sections {display:grid;gap:var(--sn-space-4);min-width:0;}
+.study-template-nav ol {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:var(--sn-space-2) var(--sn-space-6);padding-inline-start:1.5rem;}
+.study-template-nav li {overflow-wrap:anywhere;}
+.study-template-section {scroll-margin-block-start:1rem;min-width:0;}
+.study-template-section h3,.study-template-nav h3 {font-family:var(--sn-font-display);color:var(--sn-navy);margin-block-start:0;overflow-wrap:anywhere;}
+.study-section-state {color:var(--sn-muted);}
+.study-template-section summary {cursor:pointer;font-weight:600;padding-block:.5rem;}
+.study-back-index {display:inline-block;margin-block-start:var(--sn-space-3);}
