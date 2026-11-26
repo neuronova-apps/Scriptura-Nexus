@@ -165,7 +165,11 @@ async function main(){
    for(const width of [320,1280]){
     stage='apariencia-'+theme+'-'+scale+'-'+width;
     await page.setViewportSize({width,height:900});
-    await page.evaluate(({theme,scale})=>{document.documentElement.dataset.theme=theme;document.documentElement.dataset.fontScale=scale;},{theme,scale});
+    await page.evaluate(async ({theme,scale})=>{
+     document.documentElement.dataset.theme=theme;document.documentElement.dataset.fontScale=scale;
+     // Allow the new computed styles and layout to settle, without masking contrast defects.
+     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    },{theme,scale});
     assert.equal(await page.evaluate(()=>{const x=document.querySelector('.sn-analyzer');return x.scrollWidth<=x.clientWidth+1;}),true);
     const focus=page.locator('#ta-occurrence');await focus.focus();
     assert.equal(await focus.evaluate(el=>document.activeElement===el),true);
@@ -174,8 +178,22 @@ async function main(){
   }
   await page.setViewportSize({width:320,height:900});
   stage='axe-'+theme;
-  const violations=await page.evaluate(async()=>{const r=await window.axe.run('.sn-analyzer',{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return r.violations.map(x=>x.id);});
-  if(violations.length)throw new Error('AXE:'+violations.join(','));
+  // Inspect the stable theme and keep only technical diagnostic data, never node text,
+  // HTML, arbitrary selectors, token ids or axe failureSummary (which can include corpus).
+  await page.evaluate(async()=>{await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
+  const violations=await page.evaluate(async()=>{
+   const r=await window.axe.run('.sn-analyzer',{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});
+   const known=['sn-button','sn-button--primary','sn-button--secondary','sn-card','sn-callout','sn-callout__title','module-phase','module-breadcrumb','ta-word','ta-original','ta-guide'];
+   const ids=['ta-status','ta-result-status','ta-help','ta-occurrence-help','ta-edition','ta-book','ta-chapter','ta-verse','ta-occurrence','ta-result'];
+   return r.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>{
+    let e;try{if(typeof n.target[0]==='string')e=document.querySelector(n.target[0]);}catch{}
+    const style=e?getComputedStyle(e):null;
+    const data=n.any.find(x=>x.id==='color-contrast')?.data;
+    const color=x=>typeof x==='string'&&/^(?:#[0-9a-f]{3,8}|rgba?\([0-9., %]+\))$/i.test(x)?x:null;
+    return {tag:e?.tagName.toLowerCase()??null,id:ids.includes(e?.id)?e.id:null,classes:known.filter(c=>e?.classList.contains(c)),foreground:color(data?.fgColor)??color(style?.color),background:color(data?.bgColor)??color(style?.backgroundColor),ratio:Number.isFinite(data?.contrastRatio)?data.contrastRatio:null,expected:typeof data?.expectedContrastRatio==='string'&&/^[0-9.]+:1$/.test(data.expectedContrastRatio)?data.expectedContrastRatio:null};
+   })}));
+  });
+  if(violations.length){console.error(JSON.stringify({stage,violations}));throw new Error('AXE:'+violations.map(x=>x.id).join(','));}
   checks.axeScans++;
  }
  assert.equal(errors.length,0);

@@ -14,3 +14,7 @@ Comando: node scripts/validate-term-analyzer-browser.mjs con P835_DEPS apuntando
 ## Corrección de la validación de navegador
 
 Ejecución #1: incompatibilidad del runner Ubuntu 26.04 con Playwright fijado. Se establece Ubuntu 24.04. Ejecución #2 (45854510925): instalación y lanzamiento de Chromium superados; fallo en etapa pública, sin detalle de aserción. Se revisa la prueba para comprobar estado nativo del fieldset y deshabilitación de cada control, comprobar HTTP 200 y aislar el aviso noscript por su sección. Se subdividen las etapas con etiquetas de diagnóstico fijas y no sensibles; no se imprimen referencias ni corpus. No se presupone que el sitio público haya fallado. Nueva ejecución requerida; código público intacto.
+
+## Corrección tras validación integral #3
+
+Ejecución [#3](https://github.com/neuronova-apps/Scriptura-Nexus/actions/runs/45857704639): superó los ocho casos reales, pruebas públicas con y sin JavaScript, interacción/teclado, y auditorías axe de claro y oscuro; falló en axe-contrast-light con color-contrast. La información previa no identifica el nodo exacto. Se elimina la interpolación de colores de controles exclusivamente en el analizador, manteniendo los tokens aprobados; se sincroniza el cambio de tema y se añaden diagnósticos limitados a etiquetas, clases/IDs permitidos, colores y ratios (sin texto, HTML, selectores de ocurrencias ni corpus). El posible contraste transitorio por animación se trata como hipótesis, no como causa confirmada. Se mantienen los criterios axe íntegros. Revalidar los cuatro temas antes de integrar.
