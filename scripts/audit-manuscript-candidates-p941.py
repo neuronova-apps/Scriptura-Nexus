@@ -35,13 +35,10 @@ def validate(data):
             "images": False, "transcriptions": False,
             "metadata": False, "apparatus": False,
         }, "reuse gate: " + candidate["id"])
-        require(candidate["publicationAuthorized"] if "publicationAuthorized" in candidate else False is False,
-                "candidate publication flag")
         require(candidate["blockedActions"] and set(BLOCKED).issubset(set(candidate["blockedActions"]))
                 if candidate["id"] in REPOSITORIES else True, "repository reuse controls")
         if candidate["id"] in REPOSITORIES:
-            require(candidate["status"] if "status" in candidate else "external_link_only" == "external_link_only",
-                    "repository status")
+            require(candidate["status"] == "external_link_only", "repository status")
             require(candidate["sourceUrl"].startswith("https://"), "source URL")
             require(candidate["rightsUrl"].startswith("https://"), "rights URL")
             require(candidate["rightsStatus"] == "verified_restrictions", "rights evidence")
@@ -49,6 +46,7 @@ def validate(data):
             require(candidate["allowedActions"] == ["external_link", "original_bibliographic_reference"],
                     "allowed actions")
         else:
+            require(candidate["status"] == "not_selected", "unselected edition status")
             require(candidate["sourceUrl"] is None and candidate["rightsUrl"] is None,
                     "unselected edition must not invent a source")
             require(candidate["rightsStatus"] == "not_verified_exact_edition", "edition rights")
