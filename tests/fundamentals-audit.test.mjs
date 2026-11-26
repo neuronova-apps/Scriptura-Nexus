@@ -58,7 +58,7 @@ test('P4.1, P4.2 y P4.3 mantienen el alcance editorial y las reservas aprobadas'
   assert.match(p42,/ni se ofrece dictamen jurídico/i);
   assert.match(p43,/70 conceptos/);
   assert.match(p43,/no es un léxico hebreo, arameo o griego/i);
-  assert.match(p43,/no modifica el modelo de entidades de P0\.7/i);
+  assert.match(p43,/ni se modifica el modelo de entidades de P0\.7/i);
 });
 
 test('las cinco guías y recursos están vinculados desde Fundamentos con nombres de enlace identificables', () => {
