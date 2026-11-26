@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sourceRefs": [
+    "docs/P0/03-ejes.md"
+  ],
+  "items": [
+    {
+      "id": "DIS-001",
+      "name": "Hermenéutica y exégesis",
+      "definition": "Métodos, interpretación, criterios de evidencia",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-002",
+      "name": "Bibliología y crítica textual",
+      "definition": "Inspiración, canon, transmisión y traducciones",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-003",
+      "name": "Teología propia",
+      "definition": "Naturaleza divina, Trinidad y nombres",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-004",
+      "name": "Cristología",
+      "definition": "Encarnación, persona, naturalezas y obra",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-005",
+      "name": "Pneumatología",
+      "definition": "Dones, bautismo espiritual y revelación",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-006",
+      "name": "Antropología teológica y hamartiología",
+      "definition": "Creación, caída, pecado y responsabilidad",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-007",
+      "name": "Soteriología y teología de los pactos",
+      "definition": "Justificación, salvación y continuidad de la ley",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-008",
+      "name": "Eclesiología",
+      "definition": "Ministerios, autoridad, comunidad y liderazgo",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-009",
+      "name": "Ética cristiana",
+      "definition": "Conducta, apariencia, libertad y conciencia",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-010",
+      "name": "Teología litúrgica y sacramental",
+      "definition": "Bautismo, ofrendas, adoración y observancias",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-011",
+      "name": "Escatología",
+      "definition": "Muerte, juicio, resurrección y consumación",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-012",
+      "name": "Angelología y demonología",
+      "definition": "Seres espirituales y conflicto espiritual",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-013",
+      "name": "Historia eclesiástica y patrística",
+      "definition": "Orígenes, concilios, cismas y Reforma",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "id": "DIS-014",
+      "name": "Apologética",
+      "definition": "Objeciones y argumentación racional y teológica",
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    }
+  ]
+}

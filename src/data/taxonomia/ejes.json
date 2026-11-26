@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sourceRefs": [
+    "docs/P0/03-ejes.md"
+  ],
+  "items": [
+    {
+      "id": "E01",
+      "name": "Fundamentos de investigación bíblica",
+      "baseDisciplineId": "DIS-001",
+      "scope": "Métodos, interpretación, criterios de evidencia",
+      "order": 1,
+      "initialPlannedCount": 1
+    },
+    {
+      "id": "E02",
+      "name": "Historia de las Escrituras",
+      "baseDisciplineId": "DIS-002",
+      "scope": "Inspiración, canon, transmisión y traducciones",
+      "order": 2,
+      "initialPlannedCount": 5
+    },
+    {
+      "id": "E03",
+      "name": "Dios y sus atributos",
+      "baseDisciplineId": "DIS-003",
+      "scope": "Naturaleza divina, Trinidad y nombres",
+      "order": 3,
+      "initialPlannedCount": 2
+    },
+    {
+      "id": "E04",
+      "name": "Persona y obra de Jesucristo",
+      "baseDisciplineId": "DIS-004",
+      "scope": "Encarnación, persona, naturalezas y obra",
+      "order": 4,
+      "initialPlannedCount": 3
+    },
+    {
+      "id": "E05",
+      "name": "Espíritu Santo y dones",
+      "baseDisciplineId": "DIS-005",
+      "scope": "Dones, bautismo espiritual y revelación",
+      "order": 5,
+      "initialPlannedCount": 6
+    },
+    {
+      "id": "E06",
+      "name": "Naturaleza humana y pecado",
+      "baseDisciplineId": "DIS-006",
+      "scope": "Creación, caída, pecado y responsabilidad",
+      "order": 6,
+      "initialPlannedCount": 1
+    },
+    {
+      "id": "E07",
+      "name": "Salvación, ley y gracia",
+      "baseDisciplineId": "DIS-007",
+      "scope": "Justificación, salvación y continuidad de la ley",
+      "order": 7,
+      "initialPlannedCount": 3
+    },
+    {
+      "id": "E08",
+      "name": "Iglesia y ministerios",
+      "baseDisciplineId": "DIS-008",
+      "scope": "Ministerios, autoridad, comunidad y liderazgo",
+      "order": 8,
+      "initialPlannedCount": 5
+    },
+    {
+      "id": "E09",
+      "name": "Conducta y vida cristiana",
+      "baseDisciplineId": "DIS-009",
+      "scope": "Conducta, apariencia, libertad y conciencia",
+      "order": 9,
+      "initialPlannedCount": 9
+    },
+    {
+      "id": "E10",
+      "name": "Culto y prácticas religiosas",
+      "baseDisciplineId": "DIS-010",
+      "scope": "Bautismo, ofrendas, adoración y observancias",
+      "order": 10,
+      "initialPlannedCount": 4
+    },
+    {
+      "id": "E11",
+      "name": "Muerte y acontecimientos futuros",
+      "baseDisciplineId": "DIS-011",
+      "scope": "Muerte, juicio, resurrección y consumación",
+      "order": 11,
+      "initialPlannedCount": 3
+    },
+    {
+      "id": "E12",
+      "name": "Ángeles y seres espirituales",
+      "baseDisciplineId": "DIS-012",
+      "scope": "Seres espirituales y conflicto espiritual",
+      "order": 12,
+      "initialPlannedCount": 0
+    },
+    {
+      "id": "E13",
+      "name": "Historia del cristianismo",
+      "baseDisciplineId": "DIS-013",
+      "scope": "Orígenes, concilios, cismas y Reforma",
+      "order": 13,
+      "initialPlannedCount": 0
+    },
+    {
+      "id": "E14",
+      "name": "Defensa y fundamentos de la fe",
+      "baseDisciplineId": "DIS-014",
+      "scope": "Objeciones y argumentación racional y teológica",
+      "order": 14,
+      "initialPlannedCount": 0
+    }
+  ]
+}

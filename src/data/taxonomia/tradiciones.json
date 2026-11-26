@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "sourceRefs": [
+    "docs/P0/03-ejes.md"
+  ],
+  "items": [
+    {
+      "id": "T01",
+      "name": "Protestantismo pentecostal",
+      "type": "confesional",
+      "scope": "Atención preferente; distinguir denominaciones y autores."
+    },
+    {
+      "id": "T02",
+      "name": "Otras corrientes protestantes",
+      "type": "confesional",
+      "scope": "Reformada, bautista, luterana, wesleyana y carismática no pentecostal, entre otras."
+    },
+    {
+      "id": "T03",
+      "name": "Catolicismo",
+      "type": "confesional",
+      "scope": "Exégesis, teología, Magisterio y renovación carismática cuando proceda."
+    },
+    {
+      "id": "T04",
+      "name": "Cristianismo ortodoxo",
+      "type": "confesional",
+      "scope": "Teología y tradiciones orientales pertinentes."
+    },
+    {
+      "id": "T05",
+      "name": "Judaísmo",
+      "type": "confesional",
+      "scope": "Diferenciar periodos y corrientes."
+    },
+    {
+      "id": "A01",
+      "name": "Investigación académica",
+      "type": "academico",
+      "scope": "Marco transversal, no una confesión."
+    }
+  ]
+}
