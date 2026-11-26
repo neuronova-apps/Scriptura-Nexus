@@ -14,7 +14,7 @@ export function mountAnalyzer(doc:Document,engine:Analyzer){
  const clearWords=()=>{word.replaceChildren(option('','Sin ocurrencias disponibles'));word.disabled=true;words.replaceChildren();words.hidden=true;clearResult();};
  const reset=()=>{session.reset();clearWords();status.textContent='Selecciona y consulta una referencia.';};
  const selectBook=()=>{reset();const e=coverage.find(c=>c.editionId===edition.value);book.replaceChildren(option('','Selecciona un libro'),...(e?.bookIds??[]).map(id=>option(id,books[id]??id)));chapter.value='';verse.value='';};
- function show(id:string){
+ const show=(id:string)=>{
   clearResult();
   if(!id){for(const b of words.querySelectorAll('button'))b.setAttribute('aria-pressed','false');return;}
   const a=session.choose(id);
@@ -32,7 +32,7 @@ export function mountAnalyzer(doc:Document,engine:Analyzer){
   for(const m of a.morphology.analyses){result.append(el('p',m.system+' '+m.version+' · '+m.code));const features=Object.entries(m.features);if(features.length){const dl=el('dl');for(const [k,v] of features)dl.append(el('dt',k),el('dd',v));result.append(dl);}else result.append(el('p','Rasgos no interpretados o no disponibles.'));result.append(origin(m.origin));}
   result.append(el('h3','Identificadores léxicos'),el('p',a.identifiers.length?'Identificadores documentados: '+a.identifiers.map(i=>i.system+' '+i.code).join('; '):'No disponibles.'),el('h3','Significados y variantes'),el('p','Significados no disponibles. Variantes no evaluadas en este análisis.'));
   result.hidden=false;
- }
+ };
  if(!coverage.length)return;
  edition.replaceChildren(option('','Selecciona una edición'),...coverage.map(e=>option(e.editionId,e.name+' · '+e.version)));
  fields.disabled=false;selectBook();
