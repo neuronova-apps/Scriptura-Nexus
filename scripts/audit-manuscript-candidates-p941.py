@@ -9,6 +9,13 @@ EXPECTED = {
     "ED-C01", "ED-C02", "ED-C03", "ED-C04", "ED-C05", "ED-C06",
 }
 REPOSITORIES = {"MS-C01", "MS-C02", "MS-C03", "MS-C04", "MS-C05"}
+OFFICIAL_URLS = {
+    "MS-C01": ("https://ntvmr.uni-muenster.de/en", "https://ntvmr.uni-muenster.de/license-agreement"),
+    "MS-C02": ("https://www.csntm.org/", "https://www.csntm.org/terms-of-use-copyright/"),
+    "MS-C03": ("https://codexsinaiticus.org/en/", "https://codexsinaiticus.org/en/copyright.aspx"),
+    "MS-C04": ("https://digi.vatlib.it/", "https://www.vaticanlibrary.va/en/information-for-readers/photographic-reproductions.html"),
+    "MS-C05": ("https://www.deadseascrolls.org.il/", "https://www.deadseascrolls.org.il/terms"),
+}
 BLOCKED = {
     "download", "scrape", "embed_images", "republish_images",
     "republish_transcriptions", "bulk_metadata_export",
@@ -39,8 +46,8 @@ def validate(data):
                 if candidate["id"] in REPOSITORIES else True, "repository reuse controls")
         if candidate["id"] in REPOSITORIES:
             require(candidate["status"] == "external_link_only", "repository status")
-            require(isinstance(candidate["sourceUrl"], str) and candidate["sourceUrl"].startswith("https://"), "source URL")
-            require(isinstance(candidate["rightsUrl"], str) and candidate["rightsUrl"].startswith("https://"), "rights URL")
+            require((candidate["sourceUrl"], candidate["rightsUrl"]) == OFFICIAL_URLS[candidate["id"]],
+                    "official source and rights URLs")
             require(candidate["rightsStatus"] == "verified_restrictions", "rights evidence")
             require(candidate["accessStatus"] != "not_selected", "repository access")
             require(candidate["allowedActions"] == ["external_link", "original_bibliographic_reference"],
