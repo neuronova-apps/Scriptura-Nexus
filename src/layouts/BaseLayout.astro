@@ -1,9 +1,12 @@
 ---
 import '../styles/brand.css';
+import SiteNavigation from '../components/navigation/SiteNavigation.astro';
+import SiteFooter from '../components/navigation/SiteFooter.astro';
+import { basePath } from '../lib/site';
 
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = basePath(import.meta.env.BASE_URL);
 ---
 <!doctype html>
 <html lang="es" data-theme="light" data-font-scale="100">
@@ -69,13 +72,10 @@ const base = import.meta.env.BASE_URL;
         </details>
         <noscript><p>Para cambiar la apariencia, habilita JavaScript en tu navegador.</p></noscript>
       </div>
+      <SiteNavigation base={base} pathname={Astro.url.pathname} />
     </header>
     <main id="contenido" class="site-main" tabindex="-1"><div class="site-main-inner"><slot /></div></main>
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <p>Scriptura Nexus · NeuroNova Apps</p>
-      </div>
-    </footer>
+    <SiteFooter base={base} />
   </div>
   <script>
     import '../scripts/appearance';
