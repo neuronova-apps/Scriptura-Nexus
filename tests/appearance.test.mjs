@@ -8,6 +8,7 @@ import {
   readAppearancePreferences,
   saveAppearancePreferences,
   clearAppearancePreferences,
+  applyAppearancePreferences,
 } from '../src/lib/appearance.ts';
 import { contrastRatio } from '../src/lib/contrast.ts';
 
@@ -15,11 +16,19 @@ const css = readFileSync('src/styles/design-tokens.css', 'utf8');
 
 function readThemeTokens(selector) {
   const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const block = css.match(new RegExp(`\\${escaped}\\s*\\{([^}]+)\\}`));
+  const block = css.match(new RegExp(`${escaped}\\s*\\{([^}]+)\\}`));
   assert.ok(block, `No se encontró el bloque ${selector}`);
   return Object.fromEntries(
-    [...block[1].matchAll(/(--[a-z0-9-]+):\s*([^;]+);/gi)].map((match) => [match[1], match[2].trim()]),
+    [...block[1].matchAll(/(--[a-z0-9-]+):\\s*([^;]+);/gi)].map((match) => [match[1], match[2].trim()]),
   );
+}
+
+function resolveToken(tokens, name, depth = 0) {
+  assert.ok(depth < 5, `Referencia circular en ${name}`);
+  const value = tokens[name];
+  assert.ok(value, `Falta el token ${name}`);
+  const reference = value.match(/^var\\((--[a-z0-9-]+)\\)$/i);
+  return reference ? resolveToken(tokens, reference[1], depth + 1) : value;
 }
 
 const themes = [
@@ -61,6 +70,12 @@ test('el almacenamiento no disponible no interrumpe la aplicación', () => {
   assert.equal(clearAppearancePreferences(null), false);
 });
 
+test('la aplicación actualiza los atributos globales del documento', () => {
+  const root = { dataset: {} };
+  applyAppearancePreferences(root, { theme: 'dark', fontScale: '115' });
+  assert.deepEqual(root.dataset, { theme: 'dark', fontScale: '115' });
+});
+
 test('los cuatro modos mantienen contraste AA en textos, enlaces y controles', () => {
   for (const [selector, label] of themes) {
     const tokens = readThemeTokens(selector);
@@ -74,9 +89,11 @@ test('los cuatro modos mantienen contraste AA en textos, enlaces y controles', (
     ];
 
     for (const [foreground, background] of pairs) {
+      const fg = resolveToken(tokens, foreground);
+      const bg = resolveToken(tokens, background);
       assert.ok(
-        contrastRatio(tokens[foreground], tokens[background]) >= 4.5,
-        `${label}: contraste insuficiente de ${foreground} sobre ${background}`,
+        contrastRatio(fg, bg) >= 4.5,
+        `${label}: contraste insuficiente de ${foreground} sobre ${background} (${fg} sobre ${bg})`,
       );
     }
   }
