@@ -1,0 +1,176 @@
+---
+import MethodologyGuide from '../../components/methodology/MethodologyGuide.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { glossaryCategories, glossaryTerms, glossaryTermId } from '../../lib/glossary';
+import { basePath } from '../../lib/site';
+import '../../styles/glossary.css';
+
+const base = basePath(import.meta.env.BASE_URL);
+const termById = new Map(glossaryTerms.map(item => [item.id, item]));
+const groups = glossaryCategories.map(category => ({
+  ...category,
+  terms: glossaryTerms
+    .filter(item => item.category === category.id)
+    .sort((left, right) => left.term.localeCompare(right.term, 'es'))
+}));
+const guidePaths = {
+  exegesis: 'exegesis/',
+  hermeneutica: 'hermeneutica/',
+  fuentes: 'fuentes/',
+  licencias: 'licencias/'
+};
+const guideLabels = {
+  exegesis: 'Guía de exégesis',
+  hermeneutica: 'Guía de hermenéutica',
+  fuentes: 'Guía de fuentes y evidencias',
+  licencias: 'Guía de licencias y atribuciones'
+};
+const conceptRoutes = [
+  {
+    title: 'De la pregunta a la conclusión',
+    description: 'El estudio delimita una pregunta, identifica pasajes y unidades de análisis, examina el contexto y formula una respuesta proporcional a la evidencia.',
+    steps: [
+      { id: 'GLO-001', label: 'Estudio bíblico' },
+      { id: 'GLO-002', label: 'Pasaje bíblico' },
+      { id: 'GLO-008', label: 'Perícopa' },
+      { id: 'GLO-004', label: 'Exégesis' },
+      { id: 'GLO-005', label: 'Hermenéutica' },
+      { id: 'GLO-007', label: 'Aplicación contemporánea' },
+      { id: 'GLO-023', label: 'Conclusión' }
+    ]
+  },
+  {
+    title: 'De la forma textual al análisis lingüístico',
+    description: 'La ocurrencia se estudia en su edición y contexto. Lema, Strong, morfología, sintaxis y semántica son datos relacionados, pero no intercambiables.',
+    steps: [
+      { id: 'GLO-024', label: 'Edición textual' },
+      { id: 'GLO-003', label: 'Unidad textual' },
+      { id: 'GLO-026', label: 'Ocurrencia o token' },
+      { id: 'GLO-025', label: 'Forma textual' },
+      { id: 'GLO-027', label: 'Lema' },
+      { id: 'GLO-028', label: 'Identificador Strong' },
+      { id: 'GLO-031', label: 'Morfología' },
+      { id: 'GLO-032', label: 'Sintaxis' },
+      { id: 'GLO-035', label: 'Significado contextual' }
+    ]
+  },
+  {
+    title: 'De los testigos a la traducción',
+    description: 'La crítica textual compara lecturas documentadas y explica las decisiones editoriales antes de examinar cómo se traducen y alinean los textos.',
+    steps: [
+      { id: 'GLO-043', label: 'Manuscrito' },
+      { id: 'GLO-044', label: 'Testigo textual' },
+      { id: 'GLO-045', label: 'Variante textual' },
+      { id: 'GLO-046', label: 'Aparato crítico' },
+      { id: 'GLO-047', label: 'Edición crítica' },
+      { id: 'GLO-052', label: 'Traducción bíblica' },
+      { id: 'GLO-055', label: 'Alineación textual' }
+    ]
+  },
+  {
+    title: 'De la fuente a la afirmación',
+    description: 'La atribución documental permite localizar la evidencia y distinguir lo que la fuente dice de la inferencia y la conclusión del estudio.',
+    steps: [
+      { id: 'GLO-056', label: 'Autor o institución' },
+      { id: 'GLO-057', label: 'Obra o documento' },
+      { id: 'GLO-058', label: 'Fuente primaria' },
+      { id: 'GLO-061', label: 'Evidencia' },
+      { id: 'GLO-062', label: 'Trazabilidad' },
+      { id: 'GLO-063', label: 'Localizador bibliográfico' },
+      { id: 'GLO-021', label: 'Afirmación' },
+      { id: 'GLO-066', label: 'Inferencia' },
+      { id: 'GLO-067', label: 'Grado de respaldo' }
+    ]
+  }
+];
+---
+<MethodologyGuide title="Glosario metodológico" slug="glosario/" phase="P4.3" description="Conceptos de investigación, interpretación, lenguas originales, transmisión textual, fuentes y trazabilidad, con relaciones para orientar la consulta.">
+  <section aria-labelledby="alcance-glosario">
+    <SectionHeading id="alcance-glosario" title="Cómo utilizar el glosario" description="Un vocabulario inicial para consultar los conceptos que aparecen en las guías y en el método de investigación." />
+    <Card>
+      <p>Los términos se organizan por áreas y conservan identificadores GLO estables. Cada entrada incluye una definición editorial, conceptos relacionados y, cuando corresponde, las perspectivas metodológicas y guías que ayudan a profundizar.</p>
+      <p>Las categorías del glosario ordenan la consulta; no sustituyen las dimensiones de clasificación de Scriptura Nexus. Una perspectiva metodológica, una disciplina teológica y una tradición confesional cumplen funciones distintas.</p>
+    </Card>
+  </section>
+
+  <section aria-labelledby="mapa-conceptual">
+    <SectionHeading id="mapa-conceptual" title="Mapa de relaciones conceptuales" description="Secuencias orientativas de consulta. Las relaciones no significan que todos los pasos sean obligatorios en cada investigación." />
+    <div class="glossary-route-grid">
+      {conceptRoutes.map(route => (
+        <Card>
+          <h3>{route.title}</h3>
+          <p>{route.description}</p>
+          <ol class="glossary-route">
+            {route.steps.map(step => (
+              <li>
+                <a href={'#' + glossaryTermId(step.id)}>{step.label}</a>
+              </li>
+            ))}
+          </ol>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="categorias-glosario">
+    <SectionHeading id="categorias-glosario" title="Índice por categorías" description={glossaryTerms.length + ' conceptos iniciales. Selecciona una categoría para ir a sus entradas.'} />
+    <nav aria-label="Categorías del glosario" class="glossary-category-nav">
+      <ul>
+        {groups.map(group => (
+          <li><a href={'#' + group.id}>{group.title} <span>({group.terms.length})</span></a></li>
+        ))}
+      </ul>
+    </nav>
+  </section>
+
+  {groups.map(group => (
+    <section aria-labelledby={group.id + '-title'} id={group.id} class="glossary-category">
+      <SectionHeading id={group.id + '-title'} title={group.title} description={group.description} />
+      <div class="glossary-entries">
+        {group.terms.map(item => {
+          const related = item.relatedIds.map(id => termById.get(id)).filter((entry): entry is NonNullable<typeof entry> => entry !== undefined);
+          return (
+            <article class="glossary-entry" id={glossaryTermId(item.id)} aria-labelledby={glossaryTermId(item.id) + '-title'}>
+              <p class="glossary-entry__meta">{item.id} · {group.title}</p>
+              <h3 id={glossaryTermId(item.id) + '-title'}>{item.term}</h3>
+              <p>{item.definition}</p>
+              {item.aliases.length > 0 && <p class="glossary-entry__detail"><strong>También denominado:</strong> {item.aliases.join(', ')}.</p>}
+              {related.length > 0 && (
+                <p class="glossary-entry__detail">
+                  <strong>Conceptos relacionados:</strong>{' '}
+                  {related.map((relatedItem, index) => (
+                    <>
+                      {index > 0 && ', '}
+                      <a href={'#' + glossaryTermId(relatedItem.id)}>{relatedItem.term}</a>
+                    </>
+                  ))}
+                </p>
+              )}
+              {item.methodRefs.length > 0 && (
+                <p class="glossary-entry__detail">
+                  <strong>Perspectivas:</strong>{' '}
+                  {item.methodRefs.join(', ')} · <a href={basePath(base, 'fundamentos/') + '#metodos'}>consultar las perspectivas</a>
+                </p>
+              )}
+              {item.guideRefs.length > 0 && (
+                <p class="glossary-entry__detail">
+                  <strong>Ampliar:</strong>{' '}
+                  {item.guideRefs.map((guide, index) => (
+                    <>
+                      {index > 0 && ', '}
+                      <a href={basePath(base, 'fundamentos/' + guidePaths[guide])}>{guideLabels[guide]}</a>
+                    </>
+                  ))}
+                </p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+
+  <Callout tone="info" title="Alcance de esta versión">Este es un glosario metodológico inicial. No constituye todavía un léxico hebreo, arameo o griego, no incorpora corpus bíblicos ni genera concordancias. Los datos de cada palabra y ocurrencia se incorporarán en las fases de herramientas lingüísticas, con edición, sistema, fuente y licencia identificados. Las definiciones no sustituyen las fuentes especializadas ni la revisión de cada estudio.</Callout>
+</MethodologyGuide>

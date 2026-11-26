@@ -92,7 +92,7 @@ for (const path of methodologyGuides) {
   assert.ok(fundamentals.includes('href="' + url + '"'), 'Acceso desde fundamentos: ' + path);
   assert.ok(html.includes(title), 'Título de guía: ' + path);
   assert.match(html, /Guía metodológica/);
-  assert.match(html, /aria-label="Otras guías metodológicas"/);
+  assert.match(html, /aria-label="Recursos metodológicos relacionados"/);
   assert.match(html, /aria-label="Ruta de navegación"/);
   assert.match(html, /data-appearance-panel/);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
@@ -106,3 +106,39 @@ for (const path of methodologyGuides) {
   }
 }
 console.log('Cuatro guías P4.2, enlaces de acceso, navegación y destinos: conformes.');
+
+
+const glossary = readFileSync('dist/fundamentos/glosario/index.html', 'utf8');
+assert.ok(fundamentals.includes('href="/Scriptura-Nexus/fundamentos/glosario/"'), 'Acceso al glosario desde fundamentos');
+assert.match(glossary, /Glosario metodológico/);
+assert.match(glossary, /Mapa de relaciones conceptuales/);
+assert.match(glossary, /aria-label="Recursos metodológicos relacionados"/);
+assert.match(glossary, /aria-label="Categorías del glosario"/);
+assert.match(glossary, /data-appearance-panel/);
+assert.equal((glossary.match(/<h1(?:\s|>)/g) || []).length, 1, 'Glosario: H1 único');
+assert.equal((glossary.match(/aria-current="page"/g) || []).length, 1, 'Glosario: página actual');
+const glossaryIds = [...glossary.matchAll(/\sid="(glo-\d{3})"/g)].map(match => match[1]);
+assert.equal(glossaryIds.length, 70, 'Cantidad de entradas GLO');
+assert.equal(new Set(glossaryIds).size, 70, 'IDs GLO únicos');
+const glossaryIdSet = new Set(glossaryIds);
+for (const match of glossary.matchAll(/href="#(glo-\d{3})"/g)) {
+  assert.ok(glossaryIdSet.has(match[1]), 'Relación conceptual sin destino: ' + match[1]);
+}
+for (const path of methodologyGuides) {
+  const html = readFileSync('dist/fundamentos/' + path + '/index.html', 'utf8');
+  assert.ok(html.includes('href="/Scriptura-Nexus/fundamentos/glosario/"'), 'Acceso al glosario desde ' + path);
+}
+for (const match of glossary.matchAll(/href="([^"]+)"/g)) {
+  const href = match[1];
+  if (href.startsWith('#')) continue;
+  if (!href.startsWith('/')) continue;
+  assert.ok(href.startsWith('/Scriptura-Nexus/'), 'Base de Pages incorrecta en glosario: ' + href);
+  const [relative, fragment] = href.slice('/Scriptura-Nexus/'.length).split('#');
+  const target = 'dist/' + relative + (relative === '' || relative.endsWith('/') ? 'index.html' : '');
+  assert.ok(existsSync(target), 'Destino interno inexistente en glosario: ' + href);
+  if (fragment && relative === 'fundamentos/glosario/') {
+    const targetHtml = readFileSync(target, 'utf8');
+    assert.ok(targetHtml.includes('id="' + fragment + '"'), 'Ancla de glosario inexistente: ' + href);
+  }
+}
+console.log('Glosario P4.3, 70 identificadores, relaciones, navegación y enlaces internos: conformes.');

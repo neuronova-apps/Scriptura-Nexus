@@ -12,6 +12,7 @@ const guides = [
   { path: 'hermeneutica/', title: 'Hermenéutica bíblica', description: 'Declarar principios interpretativos y justificar la aplicación contemporánea.' },
   { path: 'fuentes/', title: 'Fuentes y trazabilidad', description: 'Evaluar, verificar y documentar las evidencias y referencias.' },
   { path: 'licencias/', title: 'Licencias y atribuciones', description: 'Comprobar derechos y permisos antes de publicar materiales.' },
+  { path: 'glosario/', title: 'Glosario metodológico', description: 'Consultar 70 conceptos iniciales y sus relaciones con las perspectivas y guías de investigación.' },
 ];
 const home = basePath(import.meta.env.BASE_URL);
 ---
@@ -25,7 +26,7 @@ const home = basePath(import.meta.env.BASE_URL);
       <Callout tone="info" title="Investigación abierta a la evidencia">La perspectiva pentecostal recibe atención preferente, sin determinar de antemano la conclusión. Se consideran otras perspectivas protestantes, católicas y, cuando corresponda, ortodoxas, judías y académicas.</Callout>
     </Card>
     <section aria-labelledby="guias">
-      <SectionHeading id="guias" title="Guías metodológicas" description="Recursos de consulta para aplicar la metodología en cada investigación." />
+      <SectionHeading id="guias" title="Guías y recursos metodológicos" description="Procedimientos, fuentes y conceptos para aplicar la metodología en cada investigación." />
       <div class="method-guide-grid">{guides.map(item => <Card><h3>{item.title}</h3><p>{item.description}</p><a class="sn-button sn-button--secondary" href={basePath(import.meta.env.BASE_URL, 'fundamentos/' + item.path)}>Consultar guía</a></Card>)}</div>
     </section>
     <section aria-labelledby="metodos">
@@ -63,7 +64,7 @@ const home = basePath(import.meta.env.BASE_URL);
         <p>Flujo editorial: {editorialStages.join(' → ')}. Las actualizaciones conservan el historial. La publicación requiere aprobación del responsable y controles de exactitud, fuentes y licencias.</p>
       </Card>
     </section>
-    <Callout tone="info">Las páginas especializadas de metodología y el glosario se incorporarán en las siguientes subfases de P4. Los estudios individuales se organizarán en el catálogo de P5 y se desarrollarán progresivamente.</Callout>
+    <Callout tone="info">El glosario metodológico inicial ya está disponible para consultar conceptos y relaciones entre métodos, textos, lenguas y evidencias. No sustituye la investigación individual: los estudios del catálogo de P5 se desarrollarán progresivamente con fuentes verificadas y aprobación editorial.</Callout>
     <a class="sn-button sn-button--secondary" href={home}>Volver al inicio</a>
   </div>
 </BaseLayout>

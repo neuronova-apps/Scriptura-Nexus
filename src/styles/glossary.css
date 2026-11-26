@@ -1,0 +1,26 @@
+.glossary-route-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr)); gap:var(--sn-space-4); }
+.glossary-route-grid h3 { margin-top:0; color:var(--sn-navy); font-family:var(--sn-font-display); font-size:var(--sn-text-lg); }
+.glossary-route-grid p { color:var(--sn-muted); }
+.glossary-route { display:grid; gap:var(--sn-space-2); margin:0; padding-inline-start:1.5rem; }
+.glossary-route li { padding-inline-start:.2rem; }
+.glossary-route a { display:inline-block; min-height:2rem; }
+.glossary-category-nav ul { display:flex; flex-wrap:wrap; gap:var(--sn-space-3) var(--sn-space-5); list-style:none; margin:0; padding:0; }
+.glossary-category-nav a { display:inline-flex; align-items:center; min-height:2.75rem; }
+.glossary-category-nav span { margin-inline-start:.25rem; color:var(--sn-muted); }
+.glossary-category { scroll-margin-top:1rem; }
+.glossary-entries { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr)); column-gap:var(--sn-space-8); }
+.glossary-entry { min-width:0; padding-block:var(--sn-space-5); border-bottom:1px solid var(--sn-border); scroll-margin-top:1rem; }
+.glossary-entry__meta { margin:0 0 var(--sn-space-2); color:var(--sn-muted); font-size:var(--sn-text-xs); }
+.glossary-entry h3 { margin:0 0 var(--sn-space-2); color:var(--sn-navy); font-family:var(--sn-font-display); font-size:var(--sn-text-lg); line-height:1.35; }
+.glossary-entry > p { margin-block:var(--sn-space-2); }
+.glossary-entry__detail { font-size:var(--sn-text-sm); }
+.glossary-entry__detail strong { color:var(--sn-navy); }
+.glossary-entry a { overflow-wrap:anywhere; }
+@media (max-width:600px) {
+  .glossary-entries { grid-template-columns:minmax(0,1fr); }
+  .glossary-category-nav ul { display:grid; grid-template-columns:minmax(0,1fr); gap:0; }
+  .glossary-route-grid { grid-template-columns:minmax(0,1fr); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .glossary-entry, .glossary-category { scroll-margin-top:.5rem; }
+}
