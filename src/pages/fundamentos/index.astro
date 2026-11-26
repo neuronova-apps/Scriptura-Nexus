@@ -20,14 +20,14 @@ const home = basePath(import.meta.env.BASE_URL);
   <div class="module-landing methodology">
     <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={home}>Inicio</a></li><li aria-current="page">Fundamentos</li></ol></nav>
     <Card variant="editorial">
-      <p class="module-phase">Metodología base disponible · En ampliación</p>
+      <p class="module-phase">Fundamentos metodológicos · P4.4 en revisión</p>
       <h1>Fundamentos metodológicos</h1>
       <p>Investigar las Escrituras mediante preguntas delimitadas, evidencia verificable y contraste de interpretaciones. Distinguir lo que afirma el texto, las inferencias exegéticas, las doctrinas institucionales y su aplicación contemporánea.</p>
       <Callout tone="info" title="Investigación abierta a la evidencia">La perspectiva pentecostal recibe atención preferente, sin determinar de antemano la conclusión. Se consideran otras perspectivas protestantes, católicas y, cuando corresponda, ortodoxas, judías y académicas.</Callout>
     </Card>
     <section aria-labelledby="guias">
       <SectionHeading id="guias" title="Guías y recursos metodológicos" description="Procedimientos, fuentes y conceptos para aplicar la metodología en cada investigación." />
-      <div class="method-guide-grid">{guides.map(item => <Card><h3>{item.title}</h3><p>{item.description}</p><a class="sn-button sn-button--secondary" href={basePath(import.meta.env.BASE_URL, 'fundamentos/' + item.path)}>Consultar guía</a></Card>)}</div>
+      <div class="method-guide-grid">{guides.map(item => <Card><h3>{item.title}</h3><p>{item.description}</p><a class="sn-button sn-button--secondary" href={basePath(import.meta.env.BASE_URL, 'fundamentos/' + item.path)}>Consultar {item.title.toLowerCase()}</a></Card>)}</div>
     </section>
     <section aria-labelledby="metodos">
       <SectionHeading id="metodos" title="18 perspectivas de análisis" description="Se seleccionan según la pregunta y las fuentes disponibles. Las omisiones requieren justificación." />
