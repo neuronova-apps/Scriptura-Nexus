@@ -19,3 +19,14 @@ test('empty registry explicit',()=>{const a=createTermAnalyzer({schemaVersion:1,
 test('OSHB adapter separates primary from alternatives',()=>{const token={id:'TOK-a',unitId:'UNIT-a',language:'hbo'};const l={occurrenceId:token.id,unitId:token.unitId,language:'hbo',layer:'primary',raw:'1',origin:{fileId:'LING-011'},components:[{position:0,code:'1',lemmaId:'LEM-a',strongCandidate:'H1'}]};const mm={occurrenceId:token.id,unitId:token.unitId,language:'hbo',layer:'primary',state:'partial',analysisId:'MOR-a'};const s=oshbSupplements({links:[l,{...l,layer:'alternative'}]},{registry:{tokens:[token]},links:[mm]});assert.equal(s.length,1);assert.equal(s[0].morphology.state,'partial');assert.equal(s[0].lexical.components[0].strongCandidate,undefined);});
 test('reject supplemental Greek or mismatched identity',()=>{const r=make();assert.throws(()=>createTermAnalyzer(r,adm,[{tokenId:r.tokens[0].id,lexical:{raw:null,origin:null,components:[]},morphology:{state:'absent',analysisId:null}}]));});
 test('no implied variant or semantic equivalence',()=>{const {r,a}=engine();assert.equal(a.analyze(r.tokens[0].id).alternatives.state,'no_evaluadas');assert.equal(a.analyze(r.tokens[0].id).meaning.state,'no_disponible');});
+
+// A provider lemma is shared across books in the same OSHB version; its representative origin need not be the occurrence's file.
+test('OSHB shared lemma retains representative source and occurrence source separately',()=>{
+ const commit='a'.repeat(40),sha256='b'.repeat(64),shaDan='c'.repeat(64);
+ const files=[{id:'LING-011',commit,sha256,allowedComponents:['texto_wlc','anotaciones_lema','anotaciones_morfologia']},{id:'LING-012',commit,sha256:shaDan,allowedComponents:['texto_wlc','anotaciones_lema','anotaciones_morfologia']}];
+ const o=(f,component)=>({fileId:f.id,commit:f.commit,sha256:f.sha256,component,locator:'synthetic'});
+ const r={schemaVersion:1,editions:[{id:'TXT-oshb',name:'OSHB',languages:['hbo'],version:'2.2',versificationRef:'Bible.MT',canonRef:null,coverageBookIds:['LIB-Gen','LIB-Dan'],fileIds:files.map(f=>f.id)}],units:[{id:'UNIT-dan',editionId:'TXT-oshb',bookId:'LIB-Dan',chapter:'1',verse:'1',order:0,text:'א',origin:o(files[1],'texto_wlc')}],tokens:[{id:'TOK-dan',unitId:'UNIT-dan',position:0,form:'א',language:'hbo',direction:'rtl',origin:o(files[1],'texto_wlc'),analysisIds:[]}],lemmas:[{id:'LEM-shared',language:'hbo',form:null,homograph:null,providerKey:'1',system:'OSHB-lemma',origin:o(files[0],'anotaciones_lema')}],identifiers:[],analyses:[],morphCodes:[]};
+ const s={tokenId:'TOK-dan',lexical:{raw:'1',origin:o(files[1],'anotaciones_lema'),components:[{position:0,code:'1',lemmaId:'LEM-shared'}]},morphology:{state:'absent',analysisId:null}};
+ const a=createTermAnalyzer(r,files,[s]).analyze('TOK-dan');
+ assert.equal(a.lexical.origin.fileId,'LING-012');assert.equal(a.lexical.components[0].lemma.origin.fileId,'LING-011');assert.equal(a.lexical.components[0].lemma.form,null);
+});

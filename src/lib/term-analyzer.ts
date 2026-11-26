@@ -33,7 +33,7 @@ export function createTermAnalyzer(registry:LinguisticRegistry,admissions:readon
   }
   for(const [i,c] of l.components.entries()){
    const lemma=c.lemmaId===null?null:lemmas.get(c.lemmaId);
-   require(c.position===i&&(c.lemmaId===null||lemma&&lemma.language===t?.language&&lemma.providerKey===c.code&&lemma.origin.fileId===o?.fileId&&lemma.origin.commit===o?.commit),'Vínculo léxico inválido');
+   require(c.position===i&&(c.lemmaId===null||lemma&&lemma.language===t?.language&&lemma.providerKey===c.code&&lemma.system==='OSHB-lemma'&&lemma.origin.commit===o?.commit&&['LING-011','LING-012'].includes(lemma.origin.fileId)),'Vínculo léxico inválido');
   }
   const m=s.morphology,a=m.analysisId===null?null:analyses.get(m.analysisId);
   require(['documented','partial','unresolved','absent'].includes(m.state),'Estado morfológico inválido');
