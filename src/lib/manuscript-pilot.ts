@@ -28,6 +28,16 @@ const evidenceScope: Record<string, readonly [string,string]> = {
   'EVD-P943-WRIGHT-P66':['REC-P943-WRIGHT','secondary_attestation'],
   'EVD-P943-WRIGHT-A':['REC-P943-WRIGHT','secondary_attestation']
 };
+const locators: Record<string,string> = {
+  "EVD-P943-ED": "Acknowledgements: editor y naturaleza de la edición",
+  "EVD-P943-APP": "John 1:18, línea 10 del archivo; entrada y separador editorial",
+  "EVD-P943-P66": "Ficha GA P66, P. Bodmer II: identificación, custodia y datación",
+  "EVD-P943-A": "Ficha GA 02: identificación, custodia y datación",
+  "EVD-P943-BL": "Royal MS 1 D VIII, referencia de catálogo 040-002353500",
+  "EVD-P943-IGNTP": "Abstract e ID 1759; identidad y custodia del ejemplar",
+  "EVD-P943-WRIGHT-P66": "Apartado John 1:18, primera fila de la tabla de lecturas, testigo P66",
+  "EVD-P943-WRIGHT-A": "Apartado John 1:18, tercera fila de la tabla de lecturas, testigo A"
+};
 const readingScope = {
   'LEC-P943-JHN-1-18-A': ['MAN-GA-P66','EVD-P943-WRIGHT-P66','Lado izquierdo de la entrada del aparato de SBLGNT, John 1:18'],
   'LEC-P943-JHN-1-18-B': ['MAN-GA-02','EVD-P943-WRIGHT-A','Lado derecho de la entrada del aparato de SBLGNT, John 1:18']
@@ -50,7 +60,7 @@ export function validateManuscriptPilot(value: unknown, projection: TextualProje
   }
   for (const e of evidence) {
     const expected=Object.hasOwn(evidenceScope,String(e.id)) ? evidenceScope[String(e.id)] : undefined;
-    req(exact(e,['id','resourceId','locator','kind','reviewedOn','verification']) && expected && e.resourceId===expected[0] && e.kind===expected[1] && str(e.locator) && e.reviewedOn===value.reviewedOn && e.verification==='verified_reference','muestra: evidencia inválida');
+    req(exact(e,['id','resourceId','locator','kind','reviewedOn','verification']) && expected && e.resourceId===expected[0] && e.kind===expected[1] && e.locator===locators[String(e.id)] && e.reviewedOn===value.reviewedOn && e.verification==='verified_reference','muestra: evidencia inválida');
   }
   req(Array.isArray(value.readingRepresentation) && representations.length===value.readingRepresentation.length && ids(representations.map(x=>x.readingId),Object.keys(readingScope)),'muestra: representación de lecturas incompleta');
   for (const p of representations) req(exact(p,['readingId','kind','attestationBasis','directManuscriptInspection','apparatusProvidesWitnesses','folioVerified','handVerified']) && p.kind==='editorial_reference' && p.attestationBasis==='secondary_report' && p.directManuscriptInspection===false && p.apparatusProvidesWitnesses===false && p.folioVerified===false && p.handVerified===false,'muestra: representación o alcance documental alterados');
@@ -70,13 +80,13 @@ export function validateManuscriptPilot(value: unknown, projection: TextualProje
   req(ids(witnesses.map(w=>w.id),['MAN-GA-P66','MAN-GA-02']) && ids(variants.map(v=>v.id),[variantId]) && ids(readings.map(r=>r.id),Object.keys(readingScope)),'muestra: alcance del piloto alterado');
   for (const w of witnesses) {
     const p66=w.id==='MAN-GA-P66';
-    const refs=obj(w.sourceRefs)?w.sourceRefs:{}, custody=obj(w.custody)?w.custody:{}, dating=obj(w.dateRange)?w.dateRange:{};
+    const refs:Row=obj(w.sourceRefs)?w.sourceRefs:{}, custody:Row=obj(w.custody)?w.custody:{}, dating:Row=obj(w.dateRange)?w.dateRange:{};
     req(w.siglum===(p66?'P66':'A') && w.catalogIdentifier===(p66?'GA P66':'GA 02') && w.language==='grc' && custody.shelfmark===(p66?'P. Bodmer II':'Royal MS 1 D VIII') && custody.institution===(p66?'Bibliotheca Bodmeriana, Cologny':'British Library') && custody.catalogUrl===(p66?sources['REC-P943-P66'][1]:sources['REC-P943-BL'][1]),'muestra: identidad de testigo alterada');
     req(dating.earliestYear===(p66?101:401) && dating.latestYear===(p66?300:500) && dating.precision===(p66?'broad_range':'century') && dating.basisEvidenceId===(p66?'EVD-P943-P66':'EVD-P943-A'),'muestra: datación alterada');
     req(ids(refs.resourceIds,p66?['REC-P943-P66','REC-P943-IGNTP-P66']:['REC-P943-A','REC-P943-BL']) && ids(refs.evidenceIds,p66?['EVD-P943-P66','EVD-P943-IGNTP']:['EVD-P943-A','EVD-P943-BL']),'muestra: procedencia del testigo alterada');
   }
   for (const variant of variants) {
-    const locus=obj(variant.locus)?variant.locus:{}, apparatus=obj(variant.apparatus)?variant.apparatus:{}, assessment=obj(variant.assessment)?variant.assessment:{};
+    const locus:Row=obj(variant.locus)?variant.locus:{}, apparatus:Row=obj(variant.apparatus)?variant.apparatus:{}, assessment:Row=obj(variant.assessment)?variant.assessment:{};
     req(locus.textualEditionId===editionId && locus.referenceStatus==='source_native_only' && locus.sourceLocator==='John 1:18' && ids(locus.evidenceIds,['EVD-P943-APP']),'muestra: locus no autorizado');
     req(apparatus.textualEditionId===editionId && apparatus.resourceId==='REC-P943-SBL-APP' && apparatus.locator==='John 1:18, línea 10' && apparatus.reusePolicy==='reference_only' && ids(apparatus.sourceEvidenceIds,['EVD-P943-APP']),'muestra: aparato no autorizado');
     req(assessment.status==='not_assessed' && ids(variant.internalEvidenceIds,[]) && ids(variant.externalEvidenceIds,['EVD-P943-APP','EVD-P943-WRIGHT-P66','EVD-P943-WRIGHT-A']),'muestra: valoración o evidencia alterada');
@@ -87,7 +97,7 @@ export function validateManuscriptPilot(value: unknown, projection: TextualProje
     req(expected && reading.variantId===variantId && reading.readingReference===expected[2] && reading.readingText===null && reading.contentMode==='reference_only' && reading.witnessStatus==='documented' && ids(reading.sourceEvidenceIds,['EVD-P943-APP',expected[1]]) && att.length===1,'muestra: lectura no autorizada');
     if (!expected) continue;
     for (const a of att) {
-      const hand=obj(a.hand)?a.hand:{};
+      const hand:Row=obj(a.hand)?a.hand:{};
       req(a.witnessId===expected[0] && a.sourceEvidenceId===expected[1] && a.status==='attested' && a.witnessLocator==='Juan 1:18, según la tabla de Wright; folio y línea no comprobados' && hand.kind==='unknown' && hand.label===null,'muestra: atribución no respaldada por la fuente secundaria');
     }
   }
