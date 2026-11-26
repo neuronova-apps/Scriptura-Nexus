@@ -506,7 +506,7 @@ export function validateTextualVariant(
   if (locus && apparatus) {
     requireValue(errors, locus.textualEditionId === apparatus.textualEditionId,
       'variante: locus y aparato pertenecen a ediciones distintas');
-    const editionRecord = editionRecords.find(item => item.textualEditionId === locus.textualEditionId);
+    const editionRecord = editionRecords.find(item => record(item) && item.textualEditionId === locus.textualEditionId);
     requireValue(errors, Boolean(editionRecord && editionRecord.reviewStatus === 'documented' &&
       editionRecord.editionRole !== 'translation'),
       'variante: requiere ficha ENT19 documentada y no traducida');
@@ -537,7 +537,7 @@ export function validateTranslationProfile(
   ])) return ['traducción: estructura inválida'];
 
   const edition = editionMap(context).get(String(value.textualEditionId));
-  const editionRecord = editionRecords.find(item => item.textualEditionId === value.textualEditionId);
+  const editionRecord = editionRecords.find(item => record(item) && item.textualEditionId === value.textualEditionId);
   requireValue(errors, Boolean(edition && edition.kind === 'traduccion' &&
     editionRecord?.editionRole === 'translation'), 'traducción: requiere ENT19 y ficha de función traducción');
   requireValue(errors, value.bibliographyEditionId === null ||
@@ -637,8 +637,10 @@ export function validateManuscriptRegistry(
       'registro P9.4.2: lectura huérfana');
   }
   for (const item of translations) {
-    requireValue(errors, !witnessIds.includes(item.textualEditionId),
-      'registro P9.4.2: una traducción no puede ser testigo manuscrito');
+    if (record(item)) {
+      requireValue(errors, !witnessIds.includes(String(item.textualEditionId)),
+        'registro P9.4.2: una traducción no puede ser testigo manuscrito');
+    }
   }
   return errors;
 }
