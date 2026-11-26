@@ -1,0 +1,31 @@
+name: P9.2.2 Navegación y referencias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/reader-navigation-p922.py'
+      - 'scripts/project-textual-p913.py'
+      - 'scripts/validate-editions-p912.py'
+      - 'scripts/audit-editions-p91.py'
+      - 'docs/P9/proyeccion-ediciones-p913.json'
+      - 'docs/P9/admisiones-ediciones-p912.json'
+      - 'docs/P9/candidatos-ediciones-p91.json'
+      - 'tests/test_reader_navigation_p922.py'
+      - '.github/workflows/reader-navigation-p922.yml'
+      - 'src/data/linguistica/registro.json'
+      - 'src/data/publicaciones/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reader-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas sintéticas de navegación
+        run: python3 -m unittest discover -s tests -p 'test_reader_navigation_p922.py'
+      - name: Validación de las 39041 referencias reales y huellas
+        run: python3 scripts/reader-navigation-p922.py

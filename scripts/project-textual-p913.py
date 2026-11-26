@@ -134,7 +134,9 @@ def verify_report(report):
         require(re.fullmatch(r'[0-9a-f]{64}',manifest['integrity']['projectionSha256']),'manifest hash')
         require(all(x['sha256']==f['sourceFileSha256'] and re.fullmatch(r'[0-9a-f]{64}',x['sha256']) for x,f in zip(manifest['resources'],manifest['fragments'])),'resource fingerprints')
     return report
-def build():
+def build(on_fragment=None):
+    # Optional internal consumer; receives detached units after source validation.
+    require(on_fragment is None or callable(on_fragment),'fragment consumer')
     admission_bytes=ADMISSION.read_bytes();admission=json.loads(admission_bytes);candidates=json.loads(CANDIDATES.read_text(encoding='utf-8'))
     P912.validate_manifest(admission,candidates);verify_registry_empty()
     rv,greek=admission['decisions'];editions=[];books={};manifests=[];all_units=0
@@ -152,6 +154,7 @@ def build():
             rv_resources.append({'id':resource_id,'sourceFileId':'ED-C01:'+code,'sourceId':'F05','path':meta['path'],'bytes':meta['bytes'],'sha256':meta['sha256'],'component':'texto_fuente','licenseRef':rv_license})
             rv_fragments.append({'id':'FRAG-ED-C01-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':None,'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'emptyUnitDiagnostics':metrics['emptyUnitDiagnostics'],'excludedStructures':metrics['excluded'],'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
             books[book_id]={'id':book_id,'code':code,'names':{'es':SPANISH_NAMES[code]},'aliases':[code]}
+            if on_fragment is not None:on_fragment(rv_id,book_id,tuple(dict(u) for u in units))
     editions.append({'id':rv_id,'sourceId':'F05','name':'Reina-Valera 1909','language':'spa','kind':'traduccion','version':'spaRV1909','provider':'eBible.org','resourceIds':[x['id'] for x in rv_resources],'canonId':None,'versificationId':None,'coverageBookIds':rv_book_ids,'referencePolicy':'source_native_unmapped','licenseRef':rv_license,'attribution':'Reina y Valera, según ficha de eBible.org; distribución spaRV1909.','sourceRevision':{'archiveSha256':rv['sourceArchive']['sha256']}})
     rv_global=hashlib.sha256()
     for f,r in zip(rv_fragments,rv_resources):rv_global.update(canonical({'fragment':f['projectionSha256'],'source':r['sha256'],'resource':r['id']})+b'\n')
@@ -166,6 +169,7 @@ def build():
         gr_resources.append({'id':resource_id,'sourceFileId':'ED-C02:'+meta['book'],'sourceId':'F03','path':meta['path'],'bytes':meta['bytes'],'sha256':meta['sha256'],'component':'texto_fuente','licenseRef':gr_license})
         gr_fragments.append({'id':'FRAG-ED-C02-'+code,'bookId':book_id,'resourceId':resource_id,'chapters':metrics['chapters'],'unitCount':metrics['unitCount'],'emptyUnitCount':metrics['emptyUnitCount'],'wordElements':metrics['wordElements'],'rangeMarkers':metrics['rangeMarkers'],'emptyUnitLocators':metrics['emptyUnitLocators'],'emptyUnitDiagnostics':metrics['emptyUnitDiagnostics'],'excludedStructures':{'footnotes':0,'crossReferences':0,'figures':0,'sidebars':0},'sourceFileSha256':meta['sha256'],'projectionSha256':digest_units(units)})
         books[book_id]['aliases']=merge_book_aliases(books[book_id]['aliases'],source_metrics['referenceBookLabel'],meta['book'])
+        if on_fragment is not None:on_fragment(gr_id,book_id,tuple(dict(u) for u in units))
     editions.append({'id':gr_id,'sourceId':'F03','name':'SBL Greek New Testament','language':'grc','kind':'edicion_critica','version':'v1.2','provider':'Faithlife/SBLGNT','resourceIds':[x['id'] for x in gr_resources],'canonId':None,'versificationId':None,'coverageBookIds':gr_book_ids,'referencePolicy':'source_native_unmapped','licenseRef':gr_license,'attribution':'The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.','sourceRevision':{'commit':greek['sourceCommit']}})
     gr_global=hashlib.sha256()
     for f,r in zip(gr_fragments,gr_resources):gr_global.update(canonical({'fragment':f['projectionSha256'],'source':r['sha256'],'resource':r['id']})+b'\n')
