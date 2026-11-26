@@ -30,7 +30,7 @@ for(const id of oshbFileIds){
  report.push(first);
 }
 console.log(JSON.stringify({schemaVersion:1,mode:'validation-only',files:report},null,2));
-if(process.argv.includes('--occurrences')){
+if(process.argv.includes('--occurrences')||process.argv.includes('--lexical')){
  const {identifyOshb,summarizeOccurrences}=await import('./lib/oshb-occurrences.mjs');
  const a=identifyOshb(projections,manifest),b=identifyOshb(repeated,manifest);
  const summary=summarizeOccurrences(a);
@@ -42,6 +42,18 @@ if(process.argv.includes('--occurrences')){
  assert.ok(summary.alternatives>0);
  console.log(JSON.stringify({mode:'P8.2.3-validation-only',...summary},null,2));
  if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.3: unidades y ocurrencias\n\n`'+JSON.stringify(summary)+'`\n');
+ if(process.argv.includes('--lexical')){
+  const {organizeLexical,summarizeLexical}=await import('./lib/oshb-lexical.mjs');
+  const first=organizeLexical(a,manifest),second=organizeLexical(b,manifest);
+  const lexical=summarizeLexical(first);
+  assert.deepEqual(lexical,summarizeLexical(second));
+  assert.equal(lexical.primary,summary.tokens+summary.unknown);
+  assert.equal(lexical.alternative,summary.alternativeWords);
+  assert.ok(lexical.lemmas>0&&lexical.numeric>0&&lexical.alphabetic>0&&lexical.homograph>0);
+  assert.equal(lexical.admittedIdentifiers,0);
+  console.log(JSON.stringify({mode:'P8.2.4-validation-only',...lexical},null,2));
+  if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.4: lemas e identificadores\n\n`'+JSON.stringify(lexical)+'`\n');
+ }
 }
 if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,
  '## P8.2.2: importación reproducible, sin publicación\n\n'+
