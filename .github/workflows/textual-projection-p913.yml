@@ -12,6 +12,7 @@ on:
       - 'tests/p913-textual-contracts.test.mjs'
       - 'tests/test_textual_projection_p913.py'
       - 'docs/P9/03-contratos-proyeccion.md'
+      - 'docs/P9/proyeccion-ediciones-p913.json'
       - '.github/workflows/textual-projection-p913.yml'
       - 'src/data/linguistica/registro.json'
       - 'src/data/publicaciones/registro.json'
