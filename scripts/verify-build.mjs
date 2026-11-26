@@ -142,3 +142,57 @@ for (const match of glossary.matchAll(/href="([^"]+)"/g)) {
   }
 }
 console.log('Glosario P4.3, 70 identificadores, relaciones, navegación y enlaces internos: conformes.');
+
+
+// Auditoría P4.4: estructura semántica, enlaces y anclas en todas las páginas de fundamentos.
+const fundamentalsPages = [
+  ['fundamentos', 'dist/fundamentos/index.html'],
+  ['exegesis', 'dist/fundamentos/exegesis/index.html'],
+  ['hermeneutica', 'dist/fundamentos/hermeneutica/index.html'],
+  ['fuentes', 'dist/fundamentos/fuentes/index.html'],
+  ['licencias', 'dist/fundamentos/licencias/index.html'],
+  ['glosario', 'dist/fundamentos/glosario/index.html']
+];
+for (const [name, file] of fundamentalsPages) {
+  const html = readFileSync(file, 'utf8');
+  assert.match(html, /<html[^>]*lang="es"/, name + ': idioma');
+  assert.match(html, /<main[^>]*id="contenido"/, name + ': región principal');
+  assert.match(html, /href="#contenido"/, name + ': enlace para saltar contenido');
+  assert.match(html, /<nav[^>]*aria-label="Navegación principal"/, name + ': navegación principal');
+  assert.match(html, /<nav[^>]*aria-label="Navegación del pie de página"/, name + ': navegación de pie');
+  assert.match(html, /<nav[^>]*aria-label="Ruta de navegación"/, name + ': ruta de navegación');
+  assert.match(html, /data-appearance-panel/, name + ': preferencias visuales');
+  assert.equal((html.match(/<h1(?:\\s|>)/g) || []).length, 1, name + ': H1 único');
+  assert.equal((html.match(/aria-current="page"/g) || []).length, 1, name + ': página actual única');
+
+  const ids = [...html.matchAll(/\\sid="([^"]+)"/g)].map(match => match[1]);
+  const idSet = new Set(ids);
+  assert.equal(idSet.size, ids.length, name + ': IDs HTML únicos');
+
+  for (const attribute of ['aria-labelledby', 'aria-describedby']) {
+    for (const match of html.matchAll(new RegExp(attribute + '="([^"]+)"', 'g'))) {
+      for (const id of match[1].split(/\\s+/)) {
+        assert.ok(idSet.has(id), name + ': ' + attribute + ' sin destino: ' + id);
+      }
+    }
+  }
+
+  for (const match of html.matchAll(/href="([^"]+)"/g)) {
+    const href = match[1].replace(/&amp;/g, '&');
+    if (href.startsWith('#')) {
+      const fragment = decodeURIComponent(href.slice(1));
+      assert.ok(idSet.has(fragment), name + ': ancla interna inexistente: ' + href);
+      continue;
+    }
+    if (!href.startsWith('/Scriptura-Nexus/')) continue;
+    const [relative, rawFragment] = href.slice('/Scriptura-Nexus/'.length).split('#');
+    const targetFile = 'dist/' + relative + (relative === '' || relative.endsWith('/') ? 'index.html' : '');
+    assert.ok(existsSync(targetFile), name + ': destino interno inexistente: ' + href);
+    if (rawFragment) {
+      const targetHtml = readFileSync(targetFile, 'utf8');
+      const targetId = decodeURIComponent(rawFragment);
+      assert.ok(targetHtml.includes('id="' + targetId + '"'), name + ': ancla de destino inexistente: ' + href);
+    }
+  }
+}
+console.log('P4.4: seis páginas de fundamentos, landmarks, referencias ARIA, IDs, rutas y anclas: conformes.');
