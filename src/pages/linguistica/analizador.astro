@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 import Callout from '../../components/Callout.astro';
+import LinguisticToolsNav from '../../components/modules/LinguisticToolsNav.astro';
 import {basePath} from '../../lib/site';
 import '../../styles/modules.css';
 import '../../styles/term-analyzer.css';
@@ -11,8 +12,9 @@ const base=basePath(import.meta.env.BASE_URL);
 <div class="module-landing sn-analyzer">
 <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'linguistica/'}>Lingüística bíblica</a></li><li aria-current="page">Analizador</li></ol></nav>
 <Card variant="editorial"><p class="module-phase">Lingüística bíblica · P8.3.4</p><h1>Analizador de términos bíblicos</h1><p>Selecciona una edición, una referencia y la ocurrencia exacta de una palabra. El análisis distingue forma original, lema, morfología y fuentes, sin inferir significados que no estén documentados.</p><Callout tone="info" title="Disponibilidad del corpus">La interfaz está preparada. No hay ediciones lingüísticas publicadas para consulta. La validación interna de datos no equivale a autorización de publicación.</Callout></Card>
+<LinguisticToolsNav base={base} current="analyzer" />
 <section aria-labelledby="ta-reference-title" class="sn-card sn-card--default">
-<h2 id="ta-reference-title">1. Seleccionar referencia</h2>
+<h2 id="ta-reference-title" tabindex="-1">1. Seleccionar referencia</h2>
 <p id="ta-help">La selección se habilitará únicamente cuando existan ediciones publicadas. Las referencias se consultan según la versificación de cada edición.</p>
 <form id="ta-form" aria-describedby="ta-help"><fieldset id="ta-fields" disabled><legend>Edición y referencia</legend><div class="ta-fields">
 <label for="ta-edition">Edición<select id="ta-edition" required><option value="">Sin ediciones disponibles</option></select></label>
@@ -24,19 +26,19 @@ const base=basePath(import.meta.env.BASE_URL);
 <p id="ta-status" role="status" aria-live="polite">No hay ediciones disponibles para consulta pública.</p>
 </section>
 <section class="sn-card sn-card--default" aria-labelledby="ta-occurrence-title">
-<h2 id="ta-occurrence-title">2. Seleccionar ocurrencia</h2>
+<h2 id="ta-occurrence-title" tabindex="-1">2. Seleccionar ocurrencia</h2>
 <p id="ta-occurrence-help">Las formas se conservan en su escritura original. La posición identifica la ocurrencia, aunque una misma palabra aparezca varias veces.</p>
 <label for="ta-occurrence">Palabra y posición<select id="ta-occurrence" disabled aria-describedby="ta-occurrence-help"><option value="">Sin ocurrencias disponibles</option></select></label>
 <div id="ta-words" class="ta-words" role="group" aria-label="Ocurrencias de la referencia" hidden></div>
 </section>
 <section class="sn-card sn-card--default" aria-labelledby="ta-result-title">
-<h2 id="ta-result-title">3. Análisis de la ocurrencia</h2>
+<h2 id="ta-result-title" tabindex="-1">3. Análisis de la ocurrencia</h2>
 <p id="ta-result-status" role="status" aria-live="polite">Selecciona una ocurrencia cuando exista una referencia disponible.</p>
 <div id="ta-result" hidden></div>
 <dl class="ta-guide"><dt>Forma original</dt><dd>Escritura y lengua de la ocurrencia.</dd><dt>Lema</dt><dd>Forma léxica o código del proveedor, cuando esté documentado.</dd><dt>Morfología</dt><dd>Código y rasgos documentados, con estado de interpretación.</dd><dt>Procedencia</dt><dd>Edición, archivo, versión y localizador de cada componente.</dd></dl>
 <p>Los significados léxicos, identificadores Strong y variantes no se deducen automáticamente.</p>
 </section>
-<a class="sn-button sn-button--secondary" href={base+'linguistica/'}>Volver a Lingüística bíblica</a>
+
 </div></BaseLayout>
 <script>
 import {createTermAnalyzer} from '../../lib/term-analyzer';

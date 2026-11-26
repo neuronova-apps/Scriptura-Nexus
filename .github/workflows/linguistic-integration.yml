@@ -1,0 +1,37 @@
+name: P8.5.3 Accesibilidad e integración lingüística
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/components/modules/LinguisticToolsNav.astro'
+      - 'src/pages/linguistica/**'
+      - 'src/scripts/term-analyzer-ui.ts'
+      - 'src/scripts/lexicon-concordance-ui.ts'
+      - 'src/styles/term-analyzer.css'
+      - 'src/lib/appearance.ts'
+      - 'src/styles/design-tokens.css'
+      - 'scripts/verify-build.mjs'
+      - 'scripts/validate-linguistic-integration-p85.mjs'
+      - '.github/workflows/linguistic-integration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Compilación y comprobaciones estáticas
+        run: npm ci && npm run build && npm run test:build
+      - name: Chromium y axe aislados
+        run: |
+          mkdir -p "$RUNNER_TEMP/p853-browser"
+          npm install --prefix "$RUNNER_TEMP/p853-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p853-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P853_DEPS="$RUNNER_TEMP/p853-browser" node scripts/validate-linguistic-integration-p85.mjs

@@ -1,7 +1,7 @@
 import type {createLexicalQuery,LexicalQuery} from '../lib/lexical-query';
 import type {createConcordance,ConcordanceQuery,FrequencyQuery} from '../lib/concordance';
 import type {Language,Origin} from '../lib/linguistic-contracts';
-import {languageNames} from '../lib/term-analyzer-view';
+import {languageNames,statusLabels} from '../lib/term-analyzer-view';
 type Lexicon=ReturnType<typeof createLexicalQuery>;
 type Concordance=ReturnType<typeof createConcordance>;
 const books:Record<string,string>={'LIB-Gen':'Génesis','LIB-Dan':'Daniel','LIB-3John':'3 Juan'};
@@ -42,7 +42,7 @@ export function mountLexiconConcordance(doc:Document,lexicon:Lexicon,engine:Conc
   ls.replaceChildren(...lexicon.available().map(s=>opt(s,systems[s])));lfields.disabled=false;mode();
   lm.addEventListener('change',mode);for(const c of [ll,ls,lv])c.addEventListener('input',clear);
   lf.addEventListener('submit',e=>{e.preventDefault();clear();if(!lv.value.trim()){lstatus.textContent='Introduce una clave.';return;}active=lm.value==='form'?{mode:'form',language:ll.value as Language,value:lv.value}:{mode:'identifier',system:ls.value as keyof typeof systems,value:lv.value};render();});
-  lprev.addEventListener('click',()=>{offset=Math.max(0,offset-20);render();});lnext.addEventListener('click',()=>{if(next!==null){offset=next;render();}});
+  lprev.addEventListener('click',()=>{offset=Math.max(0,offset-20);render();if(lprev.disabled)lstatus.focus();});lnext.addEventListener('click',()=>{if(next!==null){offset=next;render();if(lnext.disabled)lstatus.focus();}});
  }
  const cf=get<HTMLFormElement>('lc-con-form'),fields=get<HTMLFieldSetElement>('lc-con-fields'),ed=get<HTMLSelectElement>('lc-edition'),lang=get<HTMLSelectElement>('lc-lang'),book=get<HTMLSelectElement>('lc-book'),cm=get<HTMLSelectElement>('lc-mode'),sys=get<HTMLSelectElement>('lc-system'),value=get<HTMLInputElement>('lc-value'),freq=get<HTMLButtonElement>('lc-frequency'),cs=get('lc-con-status'),cr=get('lc-con-results'),cp=get('lc-con-pager'),prev=get<HTMLButtonElement>('lc-con-prev'),nextButton=get<HTMLButtonElement>('lc-con-next');
  const coverage=engine.coverage();
@@ -58,13 +58,13 @@ export function mountLexiconConcordance(doc:Document,lexicon:Lexicon,engine:Conc
    if(r.status!=='disponible'){cs.textContent=labels[r.status]??'Frecuencias no disponibles.';return;}
    cs.textContent=r.totalKeys+' claves · '+r.totalPostings+' referencias acumuladas por clave. No son necesariamente ocurrencias únicas.';
    const list=el('ol');list.start=offset+1;
-   for(const row of r.entries){const li=el('li');const key=row.key;const b=button('Consultar '+key+' ('+row.count+')',()=>{value.value=key;clear();active={kind:'search',q:query(key)};render();});b.dir='auto';li.append(b);list.append(li);}cr.append(list);
+   for(const row of r.entries){const li=el('li');const key=row.key;const b=button('Consultar '+key+' ('+row.count+')',()=>{value.value=key;clear();active={kind:'search',q:query(key)};render();cs.focus();});b.dir='auto';li.append(b);list.append(li);}cr.append(list);
   }else{
    const r=engine.search({...active.q,offset,limit:20});next=r.nextOffset;
    if(r.status!=='disponible'){cs.textContent=labels[r.status]??'Consulta no disponible.';return;}
    cs.textContent=r.total+' ocurrencias.'+(r.total?' Página desde '+(offset+1)+'.':' Sin coincidencias exactas.');
    const list=el('ol');list.start=offset+1;
-   for(const t of r.occurrences){const li=el('li');const p=el('p');p.append(original(t.form,t.language),doc.createTextNode(' · '+(books[t.bookId]??t.bookId)+' '+t.chapter+':'+t.verse+' · posición '+(t.position+1)));li.append(p,el('p',languageNames[t.language]+' · '+t.lexicalState),source(t.origin));for(const l of t.lemmas){li.append(el('p','Lema: '+l.lemmaId+' · '+l.system+' · '+l.providerKey),source(l.annotationOrigin));}if(!t.lemmas.length)li.append(el('p','Lema no disponible.'));list.append(li);}cr.append(list);
+   for(const t of r.occurrences){const li=el('li');const p=el('p');p.append(original(t.form,t.language),doc.createTextNode(' · '+(books[t.bookId]??t.bookId)+' '+t.chapter+':'+t.verse+' · posición '+(t.position+1)));li.append(p,el('p',languageNames[t.language]+' · '+(statusLabels[t.lexicalState]??t.lexicalState)),source(t.origin));for(const l of t.lemmas){li.append(el('p','Lema: '+l.lemmaId+' · '+l.system+' · '+l.providerKey),source(l.annotationOrigin));}if(!t.lemmas.length)li.append(el('p','Lema no disponible.'));list.append(li);}cr.append(list);
   }
   cr.hidden=false;cp.hidden=false;prev.disabled=offset===0;nextButton.disabled=next===null;
  };
@@ -75,5 +75,5 @@ export function mountLexiconConcordance(doc:Document,lexicon:Lexicon,engine:Conc
  for(const c of [lang,book,sys,value])c.addEventListener('input',clear);
  cf.addEventListener('submit',e=>{e.preventDefault();clear();if(!cf.reportValidity()||!value.value.trim()){cs.textContent='Selecciona edición, lengua y clave exacta.';return;}active={kind:'search',q:query(value.value)};render();});
  freq.addEventListener('click',()=>{clear();if(!cf.reportValidity())return;active={kind:'frequency',q:frequency()};render();});
- prev.addEventListener('click',()=>{offset=Math.max(0,offset-20);render();});nextButton.addEventListener('click',()=>{if(next!==null){offset=next;render();}});
+ prev.addEventListener('click',()=>{offset=Math.max(0,offset-20);render();if(prev.disabled)cs.focus();});nextButton.addEventListener('click',()=>{if(next!==null){offset=next;render();if(nextButton.disabled)cs.focus();}});
 }
