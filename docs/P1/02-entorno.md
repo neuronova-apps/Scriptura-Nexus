@@ -1,0 +1,3 @@
+# P1.2–P1.3. Entorno y estructura inicial
+
+Propuesta implementada: Node 24 LTS, Astro 7.4.9, TypeScript 5.9.3 y @astrojs/check 0.9.12; versiones directas exactas. Astro 7.4 requiere Node 22.22 o superior (https://astro.build/blog/astro-740/); la compatibilidad efectiva se comprobará en CI. El entorno local disponible tiene Node 22.16 y npm 10.9.2; npm view falló con EAI_AGAIN al resolver registry.npmjs.org. No se ha generado lockfile ni ejecutado build. La página inicial y 404 son deliberadamente mínimas, sin identidad P2 ni módulos posteriores. Generar package-lock.json con Node 24 y npm, revisar y registrar; ejecutar npm ci, npm run check, npm test, npm run build y npm run test:build. No integrar en main sin estas comprobaciones.
