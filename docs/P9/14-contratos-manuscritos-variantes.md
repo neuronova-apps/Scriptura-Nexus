@@ -33,7 +33,7 @@ Las referencias de procedencia se separan en ediciones bibliográficas, recursos
 
 ### ENT19. Registro de edición textual
 
-La ficha enlaza el TXT existente con un BIB opcional, responsables editoriales, evidencias y estado documental. Las funciones permitidas son texto crítico, transcripción documental, edición textual histórica y traducción. La función traducción debe coincidir con kind=traduccion en ENT19; las otras funciones requieren kind=edicion_critica. El registro no duplica nombre, idioma, versión, proveedor, recursos ni cobertura que ya pertenecen a ENT19.
+La ficha enlaza el TXT existente con un BIB opcional, responsables editoriales, evidencias y estado documental. Las funciones permitidas son texto crítico, edición textual histórica y traducción. La función traducción debe coincidir con kind=traduccion en ENT19; las otras funciones requieren kind=edicion_critica. Una transcripción documental no se reclasifica como edición crítica por conveniencia: si no cuenta con un registro ENT19 y admisión propios, permanece como referencia externa. El registro no duplica nombre, idioma, versión, proveedor, recursos ni cobertura que ya pertenecen a ENT19.
 
 ### Locus
 
@@ -47,7 +47,7 @@ La referencia de aparato debe apuntar a una edición textual crítica conocida y
 
 ### ENT32. Variante textual
 
-La variante relaciona un locus con el aparato de la misma edición, al menos dos lecturas identificadas y listas separadas de evidencia interna y externa. Se rechaza una variante sin evidencia. La valoración admite not_assessed, reviewed o inconclusive. Una valoración no iniciada debe dejar método, fundamento, responsable, fecha y evidencias en null o vacío. Una valoración realizada requiere método, fundamento, responsable, fecha y evidencia vinculada. El validador no determina cuál lectura es original ni calcula una preferencia por mayoría.
+La variante relaciona un locus con el aparato de la misma edición, cuya ficha ENT19 debe estar documentada y no ser una traducción, al menos dos lecturas identificadas y listas separadas y no solapadas de evidencia interna y externa. Se rechaza una variante sin evidencia. La valoración admite not_assessed, reviewed o inconclusive. Una valoración no iniciada debe dejar método, fundamento, responsable, fecha y evidencias en null o vacío. Una valoración realizada requiere método, fundamento, responsable, fecha y evidencia vinculada. El validador no determina cuál lectura es original ni calcula una preferencia por mayoría.
 
 ### ENT33. Lectura variante y atestación
 
