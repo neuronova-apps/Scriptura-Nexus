@@ -532,3 +532,31 @@ for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(fil
  assert.doesNotMatch(s,/reader-fixture-only|TXT-reader-fixture|Texto de prueba exclusivo P923|proyeccion-ediciones-p913\.json|admisiones-ediciones-p912\.json|FRAG-ED-C01-GEN|56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5/,'Datos de validación no publicables: '+file.name);
 }
 console.log('P9.2.3: lector enlazado, controles bloqueados, ARIA y ausencia de corpus/fixtures conformes.');
+
+// P9.3.3: parallel reading interface, strict empty release, no corpus or alignment evidence in public artifacts.
+const comparatorHtml=readFileSync('dist/biblia/comparador/index.html','utf8');
+assert.ok(bibleHtml.includes('href="/Scriptura-Nexus/biblia/comparador/"'));
+assert.ok(readerHtml.includes('href="/Scriptura-Nexus/biblia/comparador/"'));
+for(const path of ['biblia/','biblia/lector/','fundamentos/licencias/'])assert.ok(comparatorHtml.includes('href="/Scriptura-Nexus/'+path+'"'));
+assert.equal((comparatorHtml.match(/<h1(?:\s|>)/g)||[]).length,1);
+assert.match(comparatorHtml,/No hay ediciones autorizadas para comparación pública/);
+assert.match(comparatorHtml,/<fieldset[^>]*id="bc-fields"[^>]*disabled/);
+assert.match(comparatorHtml,/<button[^>]*id="bc-consult"[^>]*disabled/);
+for(const side of ['origin','target'])for(const field of ['edition','book','chapter','verse']){
+ const id='bc-'+side+'-'+field;assert.ok(comparatorHtml.includes('id="'+id+'"')&&comparatorHtml.includes('for="'+id+'"'));
+ if(field!=='edition')assert.match(comparatorHtml,new RegExp('<select[^>]*id="'+id+'"[^>]*disabled'));
+}
+const comparatorIds=[...comparatorHtml.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(new Set(comparatorIds).size,comparatorIds.length);
+for(const m of comparatorHtml.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g))for(const id of m[1].split(/\s+/))assert.ok(comparatorIds.includes(id),'ARIA sin destino');
+for(const id of ['bc-selection-title','bc-result-title','bc-evidence-title']){
+ assert.ok(comparatorHtml.includes('href="#'+id+'"'));assert.match(comparatorHtml,new RegExp('<h2[^>]*id="'+id+'"[^>]*tabindex="-1"'));
+}
+assert.match(comparatorHtml,/<noscript>/);
+assert.match(comparatorHtml,/id="bc-status"[^>]*role="status"[^>]*aria-live="polite"/);
+assert.ok(!existsSync('dist/data/biblia/'));
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile()&&/\.(?:html?|json|js|mjs|xml|txt|map|css)$/i.test(file.name)){
+ const s=readFileSync(file.parentPath+'/'+file.name,'utf8');
+ assert.doesNotMatch(s,/comparator-fixture-only|TXT-comparator-fixture|P933 PRIVATE FIXTURE|ALI-comparator-test|EVD-comparator-test|alineaciones-p931\.json|comparison-engine-p932\.py/,'Datos internos del comparador en '+file.name);
+}
+console.log('P9.3.3: comparador enlazado, controles bloqueados, etiquetas y ARIA conformes; sin corpus ni registros internos.');

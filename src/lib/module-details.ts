@@ -45,7 +45,7 @@ export const moduleDetails = {
       "Referencias y versificación",
       "Comparación de traducciones"
     ],
-    "empty": "La interfaz del lector está preparada. El comparador se incorporará en P9.3. Todavía no hay ediciones autorizadas para consulta pública."
+    "empty": "Las interfaces del lector y del comparador están preparadas. Todavía no hay ediciones autorizadas para consulta pública."
   },
   "manuscritos": {
     "planned": [

@@ -1,0 +1,19 @@
+.sn-bible-comparator section,.sn-bible-comparator fieldset,.bc-panel{min-width:0;overflow-wrap:anywhere}
+.sn-bible-comparator fieldset{border:0;margin:0;padding:0}
+.sn-bible-comparator legend{font-weight:600;margin-block-end:var(--sn-space-3)}
+.bc-links{list-style:none;display:flex;flex-wrap:wrap;gap:var(--sn-space-3);padding:0;margin:0}
+.bc-links a{display:inline-flex;min-height:44px;align-items:center}
+.bc-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sn-space-4);margin-block-end:var(--sn-space-4)}
+.sn-bible-comparator .bc-side,.bc-panel{border:1px solid var(--sn-control-border);border-radius:var(--sn-radius-md);padding:var(--sn-space-4);background:var(--sn-surface);color:var(--sn-ink)}
+.bc-side legend{padding-inline:var(--sn-space-2)}
+.sn-bible-comparator label{display:grid;gap:var(--sn-space-2);margin-block-end:var(--sn-space-3);min-width:0}
+.sn-bible-comparator select{font:inherit;color:var(--sn-ink);background:var(--sn-surface);border:1px solid var(--sn-control-border);border-radius:var(--sn-radius-md);padding:var(--sn-space-3);min-height:44px;width:100%;min-width:0}
+.sn-bible-comparator :disabled{cursor:not-allowed;opacity:1;color:var(--sn-muted);background:var(--sn-paper)}
+.sn-bible-comparator :focus-visible,.sn-bible-comparator h2[tabindex="-1"]:focus{outline:3px solid var(--sn-focus);outline-offset:3px;scroll-margin-block-start:1rem}
+.sn-bible-comparator .sn-button,.sn-bible-comparator select{transition:none}
+.sn-bible-comparator .sn-button{min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.bc-reading{background:var(--sn-paper);color:var(--sn-ink);border:1px solid var(--sn-control-border);border-radius:var(--sn-radius-md);padding:var(--sn-space-4);font-family:var(--sn-font-display);line-height:1.8;font-size:1.125em;white-space:pre-wrap;overflow-wrap:anywhere}
+.sn-bible-comparator dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--sn-space-2)}
+.sn-bible-comparator dt{font-weight:600}.sn-bible-comparator dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:48rem){.bc-columns,.sn-bible-comparator dl{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){html:has(.sn-bible-comparator){scroll-behavior:auto}}
