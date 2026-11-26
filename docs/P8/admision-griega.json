@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "scope": "3John-validation-only",
+  "authorization": {
+    "date": "2026-11-26",
+    "basis": "Continuidad autorizada por el responsable en el chat tras la propuesta explícita de admisión limitada de SBLGNT y MorphGNT (PR #38): «Entendido, con lo que sigue». No autoriza publicación."
+  },
+  "publication": false,
+  "files": [
+    {
+      "id": "LING-013",
+      "candidateId": "GRK-C01",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/3John.xml",
+      "bytes": 11161,
+      "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+      "licenseEvidence": {
+        "path": "LICENSE",
+        "bytes": 18650,
+        "gitBlobSha1": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb",
+        "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+      },
+      "allowedComponents": [
+        "texto_griego"
+      ],
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "approvalRef": "docs/P8/12-admision-griega.md",
+      "review": "aprobado",
+      "conditions": [
+        "Texto oficial de 3 Juan únicamente; conservar forma Unicode y atribución. No publicar en esta fase."
+      ]
+    },
+    {
+      "id": "LING-014",
+      "candidateId": "GRK-C02",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "85-3Jn-morphgnt.txt",
+      "bytes": 14477,
+      "sha256": "a75df82d9007bb673e7d27bcb86681e011befc24cbaef1c658965803d7ae490a",
+      "licenseEvidence": {
+        "path": "README.md",
+        "bytes": 1630,
+        "gitBlobSha1": "a3256051467a61ddb5099254dd9abaf5d03e5e80",
+        "sha256": "043bb6c0d654e85fa8a8db19e177ee035623e23b7ff1556e5431ad95184d5830"
+      },
+      "allowedComponents": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "approvalRef": "docs/P8/12-admision-griega.md",
+      "review": "aprobado",
+      "conditions": [
+        "No admitir columnas de texto o forma normalizada de MorphGNT; usar exclusivamente texto de SBLGNT oficial.",
+        "Vincular únicamente coincidencia exacta de referencia, posición y forma original; las divergencias se conservan sin anotación.",
+        "Conservar los códigos originales, lema del proveedor, versión y procedencia de las anotaciones; cumplir atribución, indicación de cambios y compartir igual cuando corresponda. No inferir Strong ni equivalencias."
+      ]
+    }
+  ],
+  "deferred": [
+    "GRK-C03"
+  ]
+}
