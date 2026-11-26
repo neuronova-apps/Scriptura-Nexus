@@ -1,6 +1,9 @@
 ---
+import '../styles/brand.css';
+
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
 <html lang="es">
@@ -8,19 +11,30 @@ const { title, description } = Astro.props;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
+  <meta name="theme-color" content="#142b3c" />
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <title>{title}</title>
 </head>
 <body>
   <a class="skip" href="#contenido">Ir al contenido</a>
-  <main id="contenido" tabindex="-1"><slot /></main>
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand-lockup" href={base} aria-label="Scriptura Nexus, inicio">
+          <img class="brand-mark" src={`${base}brand/scriptura-mark.svg`} alt="" width="60" height="60" />
+          <span>
+            <span class="brand-name">Scriptura Nexus</span>
+            <span class="brand-descriptor">Estudio bíblico histórico, exegético y teológico comparado</span>
+          </span>
+        </a>
+      </div>
+    </header>
+    <main id="contenido" class="site-main" tabindex="-1"><div class="site-main-inner"><slot /></div></main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p>Scriptura Nexus · NeuroNova Apps</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
-<style is:global>
-  :root { font-family: system-ui, sans-serif; color: #20252a; background: #fff; }
-  body { margin: 0; line-height: 1.6; }
-  main { max-width: 46rem; margin-inline: auto; padding: 2rem 1rem; overflow-wrap: anywhere; }
-  a { color: #164a80; }
-  :focus-visible { outline: 3px solid #164a80; outline-offset: 3px; }
-  .skip { position: absolute; left: 1rem; top: -10rem; background: #fff; padding: .5rem; }
-  .skip:focus { top: 0; }
-</style>

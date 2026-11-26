@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo de Scriptura Nexus</title>
+  <desc id="desc">Libro abierto estilizado con un punto central que representa el estudio y la conexión del conocimiento.</desc>
+  <rect width="96" height="96" rx="18" fill="#142B3C"/>
+  <g fill="none" stroke="#D5B77C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 31C36 21 22 20 12 24v43c13-4 25-2 36 7 11-9 23-11 36-7V24c-10-4-24-3-36 7Z"/>
+    <path d="M48 31v43M19 34c9-2 17 0 23 5M19 45c9-2 17 0 23 5M19 56c9-2 17 0 23 5M77 34c-9-2-17 0-23 5M77 45c-9-2-17 0-23 5M77 56c-9-2-17 0-23 5"/>
+    <path d="M48 15v7"/>
+  </g>
+  <circle cx="48" cy="11" r="4" fill="#D5B77C"/>
+</svg>
