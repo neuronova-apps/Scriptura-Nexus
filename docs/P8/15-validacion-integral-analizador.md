@@ -10,3 +10,7 @@ Base b4add79f2e1962e85c77cf31d3178d78f93f778f, PR #41 integrado tras CI #113. No
 - No afirmar cumplimiento WCAG integral ni validación manual: lector de pantalla, dispositivos reales, zoom manual y revisión visual humana permanecen pendientes de aceptación; registrar esos límites. P8.3.5 cierre técnico condicionado a ejecución real del workflow, CI global, integración y deploy. P8.4 posterior, sin habilitar publicación.
 
 Comando: node scripts/validate-term-analyzer-browser.mjs con P835_DEPS apuntando a las dependencias aisladas y dist compilado. Resultados pendientes de CI.
+
+## Corrección de la validación de navegador
+
+Ejecución #1: incompatibilidad del runner Ubuntu 26.04 con Playwright fijado. Se establece Ubuntu 24.04. Ejecución #2 (45854510925): instalación y lanzamiento de Chromium superados; fallo en etapa pública, sin detalle de aserción. Se revisa la prueba para comprobar estado nativo del fieldset y deshabilitación de cada control, comprobar HTTP 200 y aislar el aviso noscript por su sección. Se subdividen las etapas con etiquetas de diagnóstico fijas y no sensibles; no se imprimen referencias ni corpus. No se presupone que el sitio público haya fallado. Nueva ejecución requerida; código público intacto.

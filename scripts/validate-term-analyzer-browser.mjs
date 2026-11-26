@@ -69,18 +69,37 @@ async function main(){
  await context.route('**/*',route=>route.request().url().startsWith(url+'/')?route.continue():route.abort());
  const page=await context.newPage();
  const errors=[];page.on('pageerror',()=>errors.push('pageerror'));
- stage='publico';
- await page.goto(url+pagePath);
+ stage='publico-http';
+ const response=await page.goto(url+pagePath);
+ assert.equal(response?.status(),200);
  await page.waitForLoadState('networkidle');
- assert.equal(await page.locator('#ta-fields').isDisabled(),true);
- assert.equal(await page.locator('#ta-occurrence').isDisabled(),true);
+ stage='publico-controles';
+ // fieldset is not a focusable control; test its native disabled property and its descendants separately.
+ assert.equal(await page.locator('#ta-fields').evaluate(el=>el.disabled),true);
+ for(const id of ['ta-edition','ta-book','ta-chapter','ta-verse','ta-occurrence']){
+  stage='publico-control-'+id;
+  assert.equal(await page.locator('#'+id).isDisabled(),true);
+ }
+ stage='publico-boton';
+ assert.equal(await page.getByRole('button',{name:'Consultar referencia'}).isDisabled(),true);
+ stage='publico-estado';
  assert.match(await page.locator('#ta-status').innerText(),/No hay ediciones disponibles/);
  assert.equal(await page.locator('#ta-result').isVisible(),false);
  assert.equal(await page.locator('#ta-edition option').count(),1);
+ assert.equal(errors.length,0);
  checks.publicEmpty=true;
+ stage='publico-sin-js-http';
  const nojs=await browser.newContext({javaScriptEnabled:false});
- const np=await nojs.newPage();await np.goto(url+pagePath);
- assert.equal(await np.locator('#ta-fields').isDisabled(),true);assert.match(await np.locator('noscript').last().innerText(),/consulta interactiva requiere JavaScript/);checks.noJavaScript=true;await nojs.close();
+ await nojs.route('**/*',route=>route.request().url().startsWith(url+'/')?route.continue():route.abort());
+ const np=await nojs.newPage();const nr=await np.goto(url+pagePath);assert.equal(nr?.status(),200);
+ stage='publico-sin-js-controles';
+ assert.equal(await np.locator('#ta-fields').evaluate(el=>el.disabled),true);
+ assert.equal(await np.locator('#ta-edition').isDisabled(),true);
+ assert.equal(await np.locator('#ta-occurrence').isDisabled(),true);
+ stage='publico-sin-js-aviso';
+ // Read the specific noscript node, not the rendered text of the last unrelated noscript.
+ assert.match(await np.locator('section[aria-labelledby="ta-reference-title"] noscript').textContent(),/consulta interactiva requiere JavaScript/);
+ checks.noJavaScript=true;await nojs.close();
  stage='interfaz-aislada';
  await page.goto(url+'/__isolated/analyzer');
  await page.evaluate(async payload=>{
@@ -88,7 +107,9 @@ async function main(){
   const {mountAnalyzer}=await import('/__isolated/modules/term-analyzer-ui.js');
   mountAnalyzer(document,createTermAnalyzer(payload.registry,payload.admissions,payload.supplements));
  },data);
- assert.equal(await page.locator('#ta-fields').isEnabled(),true);
+ stage='interfaz-aislada-controles';
+ assert.equal(await page.locator('#ta-fields').evaluate(el=>el.disabled),false);
+ assert.equal(await page.locator('#ta-edition').isEnabled(),true);
  const labels={documentado:'Documentado',parcial:'Parcial',sin_interpretar:'Código sin interpretar',ausente:'No disponible'};
  const open=async c=>{
   await page.locator('#ta-edition').selectOption(c.reference.editionId);
@@ -105,21 +126,28 @@ async function main(){
  };
  for(const c of cases){
   stage='caso-'+c.k;
+  const caseStage=stage;
+  stage=caseStage+'-referencia';
   const button=await open(c);
+  stage=caseStage+'-teclado';
   await button.focus();await page.keyboard.press('Enter');
   assert.equal(await button.getAttribute('aria-pressed'),'true');
   assert.equal(await page.locator('#ta-occurrence').inputValue(),c.token.id);
   assert.equal(await page.locator('#ta-result').isVisible(),true);
+  stage=caseStage+'-forma';
   const bdi=page.locator('#ta-result bdi').first();
   assert.equal(await bdi.textContent(),c.token.form);
   assert.equal(await bdi.getAttribute('dir'),c.token.direction);
   assert.equal(await bdi.getAttribute('lang'),c.token.language);
+  stage=caseStage+'-analisis';
   assert.ok((await page.locator('#ta-result').innerText()).includes(labels[c.analysis.morphology.state]));
   assert.ok((await page.locator('#ta-result').innerText()).includes(c.token.origin.fileId));
   assert.match(await page.locator('#ta-result').innerText(),/Significados no disponibles/);
   if(c.analysis.morphology.analyses.length)assert.ok((await page.locator('#ta-result').innerText()).includes(c.analysis.morphology.analyses[0].code));
+  stage=caseStage+'-sincronizacion';
   await page.locator('#ta-occurrence').selectOption(c.token.id);
   assert.equal(await button.getAttribute('aria-pressed'),'true');
+  stage=caseStage+'-reinicio';
   await page.locator('#ta-verse').fill('99999');
   assert.equal(await page.locator('#ta-result').isVisible(),false);
   assert.equal(await page.locator('#ta-occurrence').isDisabled(),true);
@@ -135,6 +163,7 @@ async function main(){
  for(const theme of ['light','dark','contrast-light','contrast-dark']){
   for(const scale of ['100','115','130']){
    for(const width of [320,1280]){
+    stage='apariencia-'+theme+'-'+scale+'-'+width;
     await page.setViewportSize({width,height:900});
     await page.evaluate(({theme,scale})=>{document.documentElement.dataset.theme=theme;document.documentElement.dataset.fontScale=scale;},{theme,scale});
     assert.equal(await page.evaluate(()=>{const x=document.querySelector('.sn-analyzer');return x.scrollWidth<=x.clientWidth+1;}),true);
@@ -144,6 +173,7 @@ async function main(){
    }
   }
   await page.setViewportSize({width:320,height:900});
+  stage='axe-'+theme;
   const violations=await page.evaluate(async()=>{const r=await window.axe.run('.sn-analyzer',{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return r.violations.map(x=>x.id);});
   if(violations.length)throw new Error('AXE:'+violations.join(','));
   checks.axeScans++;
