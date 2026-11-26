@@ -12,7 +12,8 @@ def fixture():
     for e,items in [(A,[('LIB-JHN','1','1','A'),('LIB-JHN','1','2-3','B'),('LIB-JHN','1','4',''),('LIB-GEN','1','1','G')]),(B,[('LIB-JHN','1','1','α'),('LIB-JHN','1','2','β'),('LIB-JHN','1','3','γ'),('LIB-JHN','1','5','δ'),('LIB-JHN','2','1','ε')])]:
         for i,(book,ch,v,text) in enumerate(items):
             u=p.make_unit(e,book,ch,v,i,text,'REC-'+e+'-'+book,book+'.'+ch+'.'+v,p.sha(text.encode()))
-            rows[(e,book,ch,v)]={k:x for k,x in u.items() if k!='text'}
+            # Source navigation metadata must be independent of the mutable text payload.
+            rows[(e,book,ch,v)]={**{k:x for k,x in u.items() if k!='text'},'empty':not text}
             texts[u['id']]=text
     class Nav:
         def books(self,e):return {'status':'available','books':list(dict.fromkeys(k[1] for k in rows if k[0]==e))}
@@ -23,7 +24,7 @@ def fixture():
             if c not in self.chapters(e,b)['chapters']:return {'status':'chapter_not_found'}
             row=rows.get((e,b,c,v))
             if row is None:return {'status':'reference_not_found'}
-            return {'status':'verified_fragment' if texts[row['id']] else 'empty_marker','reference':copy.deepcopy(row)}
+            return {'status':'empty_marker' if row['empty'] else 'verified_fragment','reference':copy.deepcopy(row)}
     def ed(e,lang):
         return {'id':e,'name':e,'language':lang,'version':'fixture','provider':'test','licenseRef':'LIC-test','attribution':'test','sourceRevision':{'commit':'a'*40}}
     report={'editions':[ed(A,'spa'),ed(B,'grc')]}
@@ -88,8 +89,13 @@ class Comparison(unittest.TestCase):
     def test_integrity_of_texts_and_registry(self):
         n,r,g,t=fixture();t[next(iter(t))]='altered'
         with self.assertRaisesRegex(ValueError,'fingerprint'):m.ComparisonEngine(n,r,g,t)
-        n,r,g,t=fixture();t.pop(next(iter(t)))
+        n,r,g,t=fixture();removed=t.pop(next(iter(t)))
+        self.assertEqual(removed,'A')
+        self.assertEqual(n.locate(A,'LIB-JHN','1','1')['status'],'verified_fragment')
         with self.assertRaisesRegex(ValueError,'inventory'):m.ComparisonEngine(n,r,g,t)
+        n,r,g,t=fixture();t[next(iter(t))]=''
+        self.assertEqual(n.locate(A,'LIB-JHN','1','1')['status'],'verified_fragment')
+        with self.assertRaisesRegex(ValueError,'fingerprint'):m.ComparisonEngine(n,r,g,t)
         n,r,g,t=fixture();g['publicationAuthorized']=True
         with self.assertRaises(ValueError):m.ComparisonEngine(n,r,g,t)
     def test_detached_result_and_attribution(self):
