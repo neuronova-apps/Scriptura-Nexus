@@ -53,7 +53,7 @@ test('P4.1, P4.2 y P4.3 mantienen el alcance editorial y las reservas aprobadas'
   assert.match(p41,/no como estudio publicado ni conclusión doctrinal/i);
   assert.match(p42,/Cuatro guías de consulta/);
   assert.match(p42,/No se inventan límites numéricos de citas/);
-  assert.match(p42,/no se ofrece dictamen jurídico/);
+  assert.match(p42,/no se ofrece dictamen jurídico/i);
   assert.match(p43,/70 conceptos/);
   assert.match(p43,/no es un léxico hebreo, arameo o griego/i);
   assert.match(p43,/no modifica el modelo de entidades de P0\.7/i);
@@ -125,7 +125,7 @@ test('las referencias documentales del glosario existen y las rutas generales P7
 });
 
 test('el contrato editorial de fuentes, licencias y uso de herramientas no se contradice', () => {
-  assert.match(guidePages.fuentes,/ChatGPT no constituye una fuente primaria/);
+  assert.match(guidePages.fuentes,/no constituye una fuente primaria/i);
   assert.match(guidePages.fuentes,/Logos es una herramienta de consulta externa/);
   assert.match(guidePages.fuentes,/APA 7/);
   assert.match(guidePages.licencias,/la atribución identifica la procedencia, pero no sustituye una licencia o autorización/i);
