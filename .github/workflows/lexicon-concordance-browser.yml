@@ -1,0 +1,45 @@
+name: P8.4.7 Validación integral aislada de léxicos y concordancias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/validate-lexicon-concordance-browser.mjs'
+      - 'scripts/project-lexical-model-p84.py'
+      - 'scripts/review-lexicon-admission-p84.py'
+      - 'scripts/lib/term-analyzer-validation-data.mjs'
+      - 'src/lib/lexical-query.ts'
+      - 'src/lib/concordance.ts'
+      - 'src/lib/term-analyzer*.ts'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'src/scripts/lexicon-concordance-ui.ts'
+      - 'src/pages/linguistica/lexicos-concordancias.astro'
+      - 'src/styles/lexicon-concordance.css'
+      - 'src/styles/term-analyzer.css'
+      - 'src/styles/design-tokens.css'
+      - 'src/data/linguistica/registro.json'
+      - 'docs/P8/*.json'
+      - '.github/workflows/lexicon-concordance-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Instalación limpia y compilación
+        run: npm ci && npm run build && npm run test:build
+      - name: Dependencias aisladas del navegador
+        run: |
+          mkdir -p "$RUNNER_TEMP/p847-browser"
+          npm install --prefix "$RUNNER_TEMP/p847-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p847-browser/node_modules/.bin/playwright" install --with-deps chromium
+          echo "P847_DEPS=$RUNNER_TEMP/p847-browser" >> "$GITHUB_ENV"
+      - name: Validación integral de interfaz con fuentes reales en memoria
+        run: node scripts/validate-lexicon-concordance-browser.mjs
