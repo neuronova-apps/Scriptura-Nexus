@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "scope": "P8.5.5-technical-checkpoint",
+  "baseline": "01b0ed9ebbd16c96f43c1452e0966b3c4ca609d4",
+  "baselineTree": "c2d63a6fd4f001792f137f53a43b0356aa027ab5",
+  "status": "validacion_tecnica_pendiente_CI_y_aceptacion",
+  "publication": false,
+  "fullCanon": false,
+  "formalAcceptance": null,
+  "coverageException": {
+    "status": "propuesta_pendiente_aceptacion",
+    "reason": "Cobertura parcial validada; ampliación exige admisión específica y adecuación de importadores.",
+    "candidates": [
+      "EXP-C01",
+      "EXP-C02",
+      "EXP-C03"
+    ],
+    "directWordCandidates": 32416,
+    "admitted": false
+  },
+  "milestones": [
+    {
+      "phase": "P8.1",
+      "pr": 29,
+      "merge": "a69bf2b3ec736eda8705cfb22f652074e4388dd8",
+      "runId": 45832063851,
+      "runNumber": 88,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.2",
+      "pr": 36,
+      "merge": "4cb3d4d67cf53abe86f447ffc040a8d5b5627d4d",
+      "runId": 45847935848,
+      "runNumber": 102,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.3",
+      "pr": 42,
+      "merge": "07658a3740e85a5ff505fcfcd77a0ff257113f06",
+      "runId": 45863217439,
+      "runNumber": 119,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.4",
+      "pr": 49,
+      "merge": "b0cf70833d2ba0e132d200d2add54070536f97c3",
+      "runId": 45876837207,
+      "runNumber": 137,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.5.1",
+      "pr": 50,
+      "merge": "145290def901b3c1567828279715c426259a7b3c",
+      "runId": 45878628753,
+      "runNumber": 139,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.5.2",
+      "pr": 51,
+      "merge": "ac9002ea65d14e35de6a11c730c198214bf55a76",
+      "runId": 45879240085,
+      "runNumber": 141,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.5.3",
+      "pr": 52,
+      "merge": "caff8493318f9881bff140edf0f13c118270d317",
+      "runId": 45883363903,
+      "runNumber": 144,
+      "conclusion": "success"
+    },
+    {
+      "phase": "P8.5.4",
+      "pr": 53,
+      "merge": "01b0ed9ebbd16c96f43c1452e0966b3c4ca609d4",
+      "runId": 45887514502,
+      "runNumber": 146,
+      "conclusion": "success"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "motor",
+      "runId": 45883577408,
+      "jobId": 140128624302,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "indices",
+      "runId": 45883577364,
+      "jobId": 140128624306,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "cobertura",
+      "runId": 45883577363,
+      "jobId": 140128624248,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "analizador-navegador",
+      "runId": 45883577437,
+      "jobId": 140128624395,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "lexicos-navegador",
+      "runId": 45883577496,
+      "jobId": 140128624622,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "publicacion",
+      "runId": 45883577421,
+      "jobId": 140128624621,
+      "head": "9f809502e373f0e07213f290a097fe405580b81c",
+      "conclusion": "success"
+    },
+    {
+      "name": "integracion",
+      "runId": 45882445363,
+      "jobId": 140124831764,
+      "head": "46b0498a47e07ae6d709d9e503bfab07ce7808f3",
+      "conclusion": "success"
+    },
+    {
+      "name": "rendimiento",
+      "runId": 45882445256,
+      "jobId": 140124831524,
+      "head": "46b0498a47e07ae6d709d9e503bfab07ce7808f3",
+      "conclusion": "success"
+    }
+  ],
+  "metrics": {
+    "editions": 2,
+    "books": 3,
+    "units": 1905,
+    "occurrences": 26750,
+    "languageCounts": {
+      "hbo": 22930,
+      "arc": 3601,
+      "grc": 219
+    },
+    "withLemma": 26156,
+    "withoutLemma": 594,
+    "morphologyDocumented": 26411,
+    "morphologyPending": 339,
+    "lexicalEntries": 30740,
+    "lexicalForms": 10221,
+    "definitions": 35496,
+    "verifiedQueries": 41404,
+    "postingsChecked": 158124,
+    "frequencyScopes": 24,
+    "admittedFiles": 9,
+    "incorporatedFiles": 8,
+    "publicRegistryEmpty": true,
+    "analyzerDigest": "e34e5f2960ee117f79df4453645fa4a194862a49c80eb171756dc03f7e209189",
+    "coverageDigest": "5d9a10211b4c54777a43d9a7da663f49f99c8da009efbaf6d76ae24863ef7c6d",
+    "indexDigest": "5f7181ebc6c7fc1e4832c87e6417eabe9d34c779937709323f3e6386e4a98c2d",
+    "lexicalDigest": "26c8e8897f24c1991180cbbf0c0796afa130a6f6a088b1039cf69f137fe73f62"
+  },
+  "accessibility": {
+    "analyzerRealCases": 8,
+    "lexicalCases": 8,
+    "concordanceCases": 15,
+    "frequencyCases": 9,
+    "analyzerLayouts": 24,
+    "lexicalLayouts": 24,
+    "integrationLayouts": 180,
+    "analyzerAxe": 4,
+    "lexicalAxe": 4,
+    "integrationAxe": 12,
+    "navigation": 8,
+    "sectionLinks": 5,
+    "preferenceTransitions": 3,
+    "noJsNavigation": 2,
+    "manual": "pendiente"
+  },
+  "performance": {
+    "runId": 45882445256,
+    "homeJsBytes": 1209,
+    "homeTransferBytes": 9374,
+    "maxJsBytes": 10720,
+    "maxSampleFragmentBytes": 10028,
+    "maxLcpMs": 52,
+    "maxCls": 0,
+    "maxObservedInteractionMs": 32,
+    "labRuns": 18,
+    "baselineP50ms": 0.451,
+    "optimizedP50ms": 0.003,
+    "responsesEqual": true,
+    "fieldINP": "no_medido",
+    "budgets": {
+      "jsBytes": 153600,
+      "homeTransferBytes": 512000,
+      "fragmentBytes": 256000,
+      "lcpMs": 2500,
+      "cls": 0.1,
+      "interactionMs": 200
+    }
+  },
+  "pending": {
+    "morphologyPartial": 326,
+    "morphologyUninterpreted": 10,
+    "morphologyAbsent": 3,
+    "withoutAdmittedLemma": 594,
+    "unresolvedStrongLinks": 8,
+    "unresolvedAugAttributes": 1157,
+    "greekLexicon": "no_disponible",
+    "TEHMC": "no_incorporada",
+    "manualAccessibility": "pendiente",
+    "fieldINP": "no_medido"
+  },
+  "releaseRequirements": [
+    "aprobacion_explicita_por_archivo_componente_y_version",
+    "atribucion_licencia_y_cambios_visibles",
+    "separar_texto_y_anotaciones_CC_BY_SA",
+    "proyeccion_reproducible_y_exclusion_de_componentes_no_admitidos",
+    "revision_manual_accesibilidad_y_presupuestos_o_excepcion_aprobada",
+    "verificacion_de_salida_publica_y_reversion"
+  ],
+  "next": "P9.1_planificacion_tras_aceptacion_tecnica_sin_publicacion"
+}
