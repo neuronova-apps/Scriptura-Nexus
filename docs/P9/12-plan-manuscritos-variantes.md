@@ -48,7 +48,7 @@ Inventario versionado, evidencia oficial de condiciones de acceso/reutilización
 | Subfase | Estado | Evidencia y límite |
 |---|---|---|
 | P9.4.1 | Completada | PR #66 integrado en main mediante f64d295; Pages #184 con build y deploy satisfactorios. Inventario de 11 candidatos; cero testigos admitidos y cero corpus importados. |
-| P9.4.2 | Implementación preparada en rama | Contratos TypeScript, registro metadata-only, pruebas sintéticas y workflow específico. Cierre sujeto a CI, revisión del diff, integración y Pages. |
+| P9.4.2 | Completada | PR #67 integrado en main mediante 7c6eec0; 19 pruebas específicas, 377 pruebas del proyecto y regresiones P9.2.4/P9.3.1/P9.3.2/P9.3.4/P9.4.1 satisfactorias; Pages #195 con build y deploy exitosos. Registro metadata-only vacío. |
 | P9.4.3 | Pendiente | No crear fichas ni lecturas reales hasta verificar objeto, fuente, derechos y evidencia. |
 | P9.4.4 | Pendiente | La interfaz depende de registros aptos y de la validación funcional y accesible. |
 
