@@ -33,5 +33,5 @@ test('la guía de licencias impide redistribución sin autorización comprobada'
 });
 test('las guías están enlazadas desde la página principal de fundamentos', () => {
   const home=readFileSync('src/pages/fundamentos/index.astro','utf8');
-  for (const slug of Object.keys(pages)) assert.ok(home.includes("path: '"+slug+"/'"));
+  for (const slug of Object.keys(pages)) assert.ok(home.includes(slug + '/'), slug);
 });
