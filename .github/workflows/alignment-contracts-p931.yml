@@ -1,0 +1,30 @@
+name: P9.3.1 Contratos y correspondencias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/alignment-contracts-p931.py'
+      - 'scripts/reader-navigation-p922.py'
+      - 'scripts/project-textual-p913.py'
+      - 'scripts/validate-editions-p912.py'
+      - 'scripts/audit-editions-p91.py'
+      - 'docs/P9/*.json'
+      - 'tests/test_alignment_contracts_p931.py'
+      - '.github/workflows/alignment-contracts-p931.yml'
+      - 'src/data/linguistica/registro.json'
+      - 'src/data/publicaciones/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  alignment-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validar contratos ENT30 y casos negativos
+        run: python3 -m unittest discover -s tests -p 'test_alignment_contracts_p931.py'
+      - name: Reproyectar ediciones y auditar cobertura literal sin generar alineaciones
+        run: python3 scripts/alignment-contracts-p931.py
