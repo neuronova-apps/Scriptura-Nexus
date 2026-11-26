@@ -63,7 +63,7 @@ if (root && form && query && status && results && more) {
         const response=await fetch(root.dataset.index ?? '');
         if(!response.ok) throw new Error('Índice no disponible');
         const data=await response.json();
-        if(data.schemaVersion!==SEARCH_INDEX_VERSION || !Array.isArray(data.items)) throw new Error('Índice incompatible');
+        if(data.schemaVersion!==SEARCH_INDEX_VERSION || !Array.isArray(data.items) || !data.items.every((item: SearchEntry) => item && /^SN-\d{3}$/.test(item.id) && item.status==='planificado' && ['title','question','axis','terms'].every(key => typeof item[key as keyof SearchEntry]==='string'))) throw new Error('Índice incompatible');
         index=data.items as SearchEntry[];
       }
       if(current!==sequence) return;

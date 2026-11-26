@@ -260,3 +260,54 @@ for(const entry of searchIndex.items){
   assert.ok(existsSync('dist/estudios/'+entry.id+'/index.html'));
 }
 console.log('P5.4: índice público, 42 fichas, rutas y exclusión de contenido no autorizado: conformes.');
+
+ 
+// P5.5: exhaustive output audit, without claiming browser accessibility certification.
+const auditRoutes=['estudios/','buscar/',...axesData.map(a=>'ejes/'+a.id+'/'),...catalogData.map(s=>'estudios/'+s.id+'/')];
+assert.equal(auditRoutes.length,58);
+for(const route of auditRoutes){
+  const html=readFileSync('dist/'+route+'index.html','utf8');
+  assert.match(html,/<html[^>]*lang="es"/,route);
+  assert.match(html,/<main[^>]*id="contenido"/,route);
+  assert.match(html,/href="#contenido"/,route);
+  assert.match(html,/aria-label="Navegación principal"/,route);
+  assert.match(html,/aria-label="Navegación del pie de página"/,route);
+  assert.match(html,/data-appearance-panel/,route);
+  assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,route);
+  assert.equal((html.match(/<li aria-current="page"/g)||[]).length,1,route);
+  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+  const unique=new Set(ids);assert.equal(unique.size,ids.length,route+' IDs');
+  for(const [,refs] of html.matchAll(/(?:aria-labelledby|aria-describedby|\sfor)="([^"]+)"/g))
+    for(const id of refs.split(/\s+/))assert.ok(unique.has(id),route+' referencia '+id);
+  for(const [,raw] of html.matchAll(/href="([^"]+)"/g)){
+    const href=raw.replace(/&amp;/g,'&');
+    if(href.startsWith('#')){assert.ok(unique.has(decodeURIComponent(href.slice(1))),route+' ancla '+href);continue;}
+    if(!href.startsWith('/'))continue;
+    assert.ok(href.startsWith('/Scriptura-Nexus/'),route+' base '+href);
+    const [relative,fragment]=href.slice('/Scriptura-Nexus/'.length).split('#');
+    const target='dist/'+relative+(relative===''||relative.endsWith('/')?'index.html':'');
+    assert.ok(existsSync(target),route+' destino '+href);
+    if(fragment)assert.ok(readFileSync(target,'utf8').includes('id="'+decodeURIComponent(fragment)+'"'),href);
+  }
+}
+const listIds=html=>[...html.matchAll(/data-study-id="(SN-\d{3})"/g)].map(m=>m[1]).sort();
+assert.deepEqual(listIds(catalogHtml),catalogData.map(s=>s.id).sort());
+for(const a of axesData){
+  const html=readFileSync('dist/ejes/'+a.id+'/index.html','utf8');
+  const primary=catalogData.filter(s=>s.primaryAxisId===a.id).map(s=>s.id).sort();
+  const related=catalogData.filter(s=>s.relatedAxisIds.includes(a.id)).map(s=>s.id).sort();
+  const primarySection=html.split('id="principales"')[1].split('</section>')[0];
+  const relatedSection=html.split('id="relacionadas"')[1].split('</section>')[0];
+  assert.deepEqual(listIds(primarySection),primary,a.id+' principales');
+  assert.deepEqual(listIds(relatedSection),related,a.id+' relacionados');
+}
+assert.deepEqual(searchIndex.items.map(x=>x.id).sort(),catalogData.map(x=>x.id).sort());
+for(const x of catalogData.filter(x=>x.referenceSelectionPending)){
+  const html=readFileSync('dist/estudios/'+x.id+'/index.html','utf8');
+  assert.ok(html.includes(x.referenceSelectionPending),x.id+' selección pendiente');
+}
+assert.match(searchPage,/role="search"/);
+assert.match(searchPage,/id="search-more"/);
+assert.match(searchPage,/aria-live="polite"/);
+assert.match(catalogHtml,/aria-live="polite"/);
+console.log('P5.5: auditoría de 58 páginas, 42 fichas únicas, 70 relaciones, referencias ARIA, enlaces e índice conforme.');
