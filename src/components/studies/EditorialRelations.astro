@@ -1,0 +1,18 @@
+---
+import { relationAnchor, type RelationSet } from '../../lib/editorial-relations';
+import type { EditorialRecord } from '../../lib/editorial-contracts';
+import { basePath } from '../../lib/site';
+import '../../styles/study-relations.css';
+interface Props {record:EditorialRecord; relations:RelationSet; studyTitles:Record<string,string>; traditionNames:Record<string,string>}
+const {record,relations,studyTitles,traditionNames}=Astro.props;
+// Reserved for validated, approved records in P6.4. Not mounted in public routes in P6.3.
+---
+<div class="study-relations">
+<section aria-labelledby="argumentos-titulo"><h2 id="argumentos-titulo">Argumentos y contraargumentos</h2>
+{record.claims.map(c=><article id={relationAnchor(c.id)}><h3>{c.id}</h3><p>{c.proposition}</p><p>Grado: {c.grade} · {c.gradeJustification}</p><p>{c.reasoning}</p><ul>{relations.arguments.filter(a=>a.claimId===c.id).map(a=><li>{a.role}: <a href={'#'+relationAnchor(a.evidenceId)}>{a.evidenceId}</a> — {a.reasoning}</li>)}</ul></article>)}
+</section>
+<section aria-labelledby="evidencias-titulo"><h2 id="evidencias-titulo">Evidencias y citas</h2>{relations.evidence.map(e=><article id={relationAnchor(e.id)}><h3>{e.id}</h3><p>Fuente: {[e.bibliographyId,e.resourceId].filter(Boolean).join(' / ')}</p><p>Localizador: {e.locator} · {e.language} · {e.kind}</p><p>Verificación: {e.verification} · Permiso: {e.permission}</p>{e.permission==='autorizada'&&e.excerpt&&<p>{e.excerpt}</p>}</article>)}</section>
+<section aria-labelledby="posturas-titulo"><h2 id="posturas-titulo">Perspectivas teológicas</h2>{relations.positions.map(p=><article id={relationAnchor(p.id)}><h3>{traditionNames[p.traditionId]??p.traditionId} · {p.id}</h3><p>Autor o institución: {p.authorId} · {p.authority}</p><p>{p.scope}</p><p>Presupuestos: {p.assumptions}</p><p>Límites: {p.limitations}</p><ul>{p.claimIds.map(id=><li><a href={'#'+relationAnchor(id)}>{id}</a></li>)}{p.evidenceIds.map(id=><li><a href={'#'+relationAnchor(id)}>{id}</a></li>)}</ul></article>)}</section>
+<section aria-labelledby="conclusiones-titulo"><h2 id="conclusiones-titulo">Trazabilidad de conclusiones</h2>{record.conclusions.map(c=><article id={relationAnchor(c.id)}><h3>{c.id}</h3><p>{c.synthesis}</p><p>{c.grade} · {c.gradeJustification}</p><ul>{c.claimIds.map(id=><li><a href={'#'+relationAnchor(id)}>{id}</a></li>)}</ul>{c.reservations.map(r=><p>Reserva: {r}</p>)}</article>)}</section>
+<section aria-labelledby="cruces-titulo"><h2 id="cruces-titulo">Referencias cruzadas</h2><ul>{relations.relatedStudies.map(r=><li><a href={basePath(import.meta.env.BASE_URL,'estudios/'+r.targetStudyId+'/')}>{studyTitles[r.targetStudyId]??r.targetStudyId}</a> — {r.reason}</li>)}</ul></section>
+</div>
