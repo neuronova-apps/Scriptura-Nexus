@@ -165,7 +165,7 @@ for (const [name, file] of fundamentalsPages) {
   assert.match(html, /data-appearance-panel/, name + ': preferencias visuales');
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, name + ': H1 único');
   assert.equal((html.match(/<li aria-current="page"/g) || []).length, 1, name + ': ubicación actual en la ruta de navegación');
-  assert.ok((html.match(/<a\\b[^>]*aria-current="page"/g) || []).length <= 1, name + ': máximo un enlace actual en navegación principal');
+  assert.ok((html.match(/<a[^>]*aria-current="page"/g) || []).length <= 1, name + ': máximo un enlace actual en navegación principal');
 
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
   const idSet = new Set(ids);
