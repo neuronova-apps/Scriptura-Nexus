@@ -1,0 +1,20 @@
+# P8.5.4. Condiciones de publicación y ampliación lingüística
+
+Base main caff8493318f9881bff140edf0f13c118270d317; P8.5.3 integrado PR #52, deploy #144, corrección 46b0498: CI #143 y cuatro workflows especializados exitosos; 180 diseños, 12 axe, ocho navegaciones, cinco saltos, tres transiciones, dos sin JS. Revisión manual pendiente.
+
+## Decisión operativa
+Mantener cerrado el acceso a los datos lingüísticos. La continuidad solicitada autoriza esta revisión y preparación, no una publicación ni admisión adicional. El manifiesto revision-publicacion-p85.json es un inventario de revisión, NO una allowlist consumible por importadores. Nueve archivos admitidos internamente; ocho incorporados a validación y TEHMC aún no incorporada. Se conservan componentes, selectores, atribuciones, versiones y huellas fijadas. No es un dictamen jurídico ni un permiso del titular.
+
+## Condiciones por familia
+- WLC: dominio público declarado por OSHB; anotaciones Gen/Dan CC BY 4.0, atribución exacta del proyecto, enlace de licencia, cambios e identificación de capas. Solo los libros admitidos, no XML íntegro ni materiales ajenos.
+- SBLGNT: texto oficial 3 Juan, CC BY 4.0, crédito SBL/Logos, edición y cambios. Confirmar presentación de versión en autorización final.
+- MorphGNT: lema y análisis morfológico CC BY-SA 3.0; excluir sus columnas de texto y normalización como fuente de texto. Conservar procedencia, versión exacta fijada por commit, atribución Tauber y aviso de cambios; mantener separadas anotaciones y texto, cumplir compartir igual cuando corresponda y no añadir restricciones incompatibles. No afirmar equivalencia exacta del commit con etiqueta v6.12.
+- HebrewLexicon: CC BY 4.0 para los archivos, textos históricos BDB/Strong de dominio público según README; conservar selectores admitidos, jerarquía y atribución al proyecto. Excluir TWOT, notas, campos ajenos, texto mixto y BDB abreviado de Online Bible.
+- TEHMC: CC BY 4.0, solo códigos y descripciones gramaticales, no glosas ni ejemplos; no tratar como tabla OSHB sin equivalencia documentada.
+- Fuentes diferidas: TAGNT/TAHOT/TEGMC, TBESG/TBESH, Macula y Dodson; mantener motivos históricos y no contar duplicados como recursos adicionales. Para Dodson revisar representación y procedencia; para léxicos STEP revisar componentes y permiso específico de Online Bible. No admitir por esta revisión.
+
+## Ampliación
+Éxodo, Levítico y Esdras: se fijan los tres SHA-256 obtenidos en auditoría #1 (45877083212). Revalidar licencia OSHB y cada archivo, recuentos de palabras directas candidatas y otros elementos w, prefijo morfológico por ocurrencia, ausencias y referencias. No se proyectan registros ni se exponen palabras. El parser y el importador de P8.2.2 restringen Gen/Dan, al igual que identificador de ocurrencias y validaciones posteriores. Se prueba que los candidatos siguen rechazados. Propuesta de admisión interna futura por archivo: requiere autorización explícita de alcance y revisión del importador, identidad y orden, validación cruzada de lemas/morfología, referencias y variantes, Unicode y regresiones; no cambiar la allowlist histórica en esta fase. Las cifras de preflight no son cobertura incorporada. Conservar 26.750 ocurrencias actuales, 594 sin lema, 339 pendientes morfológicos, 8 Strong y 1.157 atributos aug sin resolver; no sumar estas categorías. Griego léxico ausente. Si se decide diferir ampliación, registrar excepción de cobertura parcial para P8.5.5, no afirmar canon completo.
+
+## Barrera de publicación y cierre
+Antes de activar datos: aprobación explícita por archivo/componente/versión, créditos y cambios visibles por recurso, separación CC BY-SA, proyección reproducible y revisión de exclusiones, prueba de salida pública y reversión, revisión manual de accesibilidad y presupuestos con medición o excepción aprobada. INP de campo no medido. P8.5.5 comprobará evidencia, pendientes y decisiones; P9.1 tratará admisión de ediciones según P0.8. No publicar corpus, no modificar aplicación, dependencias ni manifiestos previos. Nueve pruebas sintéticas y revisión real de cinco documentos de licencia y tres candidatos. CI pendiente.
