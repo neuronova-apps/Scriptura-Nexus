@@ -29,7 +29,7 @@ RV1909 continúa siendo una traducción y SBLGNT v1.2 una edición textual grieg
 
 El registro MAN exige sigla o identificador de catálogo, idioma, datación, custodia y procedencia. La custodia identifica institución, colección, shelfmark y URL de catálogo cuando se conocen. La datación conserva etiqueta original, límites cronológicos opcionales, precisión y evidencia. Se permiten intervalos amplios y datación indeterminada; no se fuerza un año exacto. Los años se expresan como enteros con BCE negativo y CE positivo, sin año cero. Una datación no indeterminada requiere evidencia.
 
-Las referencias de procedencia se separan en ediciones bibliográficas, recursos y evidencias. Debe existir al menos una referencia bibliográfica o recurso y una evidencia identificable. La ausencia de sigla o de shelfmark se conserva como dato desconocido, pero se exige al menos una identidad estable de catálogo o sigla y una referencia de custodia.
+Las referencias de procedencia se separan en ediciones bibliográficas, recursos y evidencias. Debe existir al menos una referencia bibliográfica o recurso y una evidencia identificable. El contexto del validador recibe una lista explícita de EVD verificadas; una fuente solo consultada o pendiente no puede respaldar un dato de testigo, locus, aparato o lectura. La ausencia de sigla o de shelfmark se conserva como dato desconocido, pero se exige al menos una identidad estable de catálogo o sigla y una referencia de custodia.
 
 ### ENT19. Registro de edición textual
 
