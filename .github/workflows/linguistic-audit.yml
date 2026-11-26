@@ -1,0 +1,25 @@
+name: P8.1 Auditoría de candidatos lingüísticos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P8/candidatos-linguisticos.json'
+      - 'scripts/audit-linguistic-sources.mjs'
+      - 'scripts/lib/linguistic-audit.mjs'
+      - '.github/workflows/linguistic-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Auditoría por archivo, sin importación ni despliegue
+        run: node scripts/audit-linguistic-sources.mjs
