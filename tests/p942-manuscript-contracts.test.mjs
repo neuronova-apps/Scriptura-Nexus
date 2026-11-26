@@ -289,3 +289,12 @@ test('P9.4.2: una evidencia consultada o pendiente fuera de la lista verificada 
   const restrictedContext = {...context, verifiedEvidenceIds: ['EVD-SYNTH-003']};
   assert.ok(validateManuscriptRegistry(registry(), restrictedContext).length > 0);
 });
+
+test('P9.4.2: los registros nulos se rechazan sin interrumpir la validación', () => {
+  const badEdition = registry();
+  badEdition.editions[0] = null;
+  assert.ok(validateManuscriptRegistry(badEdition, context).length > 0);
+  const badTranslation = registry();
+  badTranslation.translations[0] = null;
+  assert.ok(validateManuscriptRegistry(badTranslation, context).length > 0);
+});
