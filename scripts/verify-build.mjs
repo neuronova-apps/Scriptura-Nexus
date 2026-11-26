@@ -50,3 +50,10 @@ for (const [name, html] of [['inicio', home], ['404', missing], ['guía', guide]
 assert.match(home, /aria-current="page"/);
 assert.doesNotMatch(guide, /aria-current="page"/);
 console.log('Navegación compartida y destinos existentes: conformes.');
+
+assert.equal((home.match(/class="[^"]*\bhome-module\b[^"]*"/g) || []).length >= 7, true);
+assert.match(home, /id="modulos"/);
+assert.match(home, /href="#modulos"/);
+assert.match(home, /El buscador aún no está habilitado/);
+assert.match(home, /Investigar, consultar y contrastar/);
+console.log('Portada, áreas de acceso y estado del buscador: conformes.');
