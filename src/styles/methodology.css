@@ -1,0 +1,8 @@
+.method-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap:var(--sn-space-3); }
+.methodology h3 { color:var(--sn-navy); font-family:var(--sn-font-display); font-size:var(--sn-text-lg); margin-top:0; }
+.method-grid p { margin-bottom:0; }
+.method-list { padding-inline-start:1.8rem; margin:0; }
+.method-list li + li { margin-top:.4rem; }
+.method-grades dt { font-weight:700; color:var(--sn-navy); }
+.method-grades dd { margin:0 0 var(--sn-space-4); }
+.methodology > .sn-button { justify-self:start; }
