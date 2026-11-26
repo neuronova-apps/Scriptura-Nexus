@@ -411,7 +411,7 @@ assert.deepEqual(validateBibliography(bibliographyData,bibliographyTraditions),[
 assert.equal(bibliographyData.works.length,6);
 assert.ok(bibliographyData.resources.every(r=>r.kind==='consulta_externa'&&r.admission==='en_revision'&&!r.filePath&&!r.checksum));
 assert.equal(bibliographyData.evidence.length,0);
-assert.equal(bibliographyData.licenses.length,0);
+assert.equal(bibliographyData.licenses.length,1);
 assert.equal(publicationRegistry.snapshots.length,0);
 console.log('P7.2: seis cadenas documentales verificadas estructuralmente; sin archivos, permisos ni publicación real.');
 
@@ -431,3 +431,9 @@ assert.ok(glossary.includes('href="/Scriptura-Nexus/biblioteca/"'));
 assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/fundamentos/glosario/"'));
 for(const html of [libraryHtml,historyHtml])assert.doesNotMatch(html,/PRUEBA SINTÉTICA|example\.invalid/);
 console.log('P7.3: 6 fichas documentales, 6 de autor, catálogo, historia y glosario enlazados.');
+
+const {validatePermissions,publicationAdmissions}=await import('../src/lib/source-permissions.ts');
+const permissionData=JSON.parse(readFileSync('src/data/referencias/permisos.json','utf8'));
+assert.deepEqual(validatePermissions(permissionData,bibliographyData),[]);assert.deepEqual(publicationAdmissions(bibliographyData,permissionData),[]);
+const permissionHtml=readFileSync('dist/biblioteca/permisos/index.html','utf8');assert.match(permissionHtml,/CC BY 4\.0/);assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/biblioteca/permisos/"'));assert.equal((permissionHtml.match(/Decisión editorial: pendiente/g)||[]).length,6);
+console.log('P7.4: seis decisiones, una licencia documentada, cero admisiones editoriales reales.');

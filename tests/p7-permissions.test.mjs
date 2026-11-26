@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {validatePermissions,publicationAdmissions} from '../src/lib/source-permissions.ts';
+const read=p=>JSON.parse(readFileSync(p,'utf8'));
+const b=read('src/data/referencias/biblioteca.json'),p=read('src/data/referencias/permisos.json');
+test('P7.4: licencia documentada no implica admisión',()=>{assert.deepEqual(validatePermissions(p,b),[]);assert.deepEqual(publicationAdmissions(b,p),[]);assert.equal(p.items.length,6);});
+test('P7.4: permiso único y completo por recurso',()=>{for(const mutate of [x=>x.items.pop(),x=>x.items.push(x.items[0]),x=>x.items[0].editionId='BIB-000002',x=>x.items[0].licenseId='LIC-000001']){const q=structuredClone(p);mutate(q);assert.ok(validatePermissions(q,b).length);}});
+test('P7.4: no se autoriza uso sin aprobación',()=>{const q=structuredClone(p);q.items[3].uses.cita='permitida';assert.ok(validatePermissions(q,b).length);});
+test('P7.4: aprobación incompleta no habilita publicación',()=>{const q=structuredClone(p);q.items[3].decision='aprobada';assert.throws(()=>publicationAdmissions(b,q));});
+test('P7.4: aprobación sintética completa proyecta únicamente edición y recurso',()=>{const q=structuredClone(p);Object.assign(q.items[3],{decision:'aprobada',authorizationRef:'PRUEBA SINTÉTICA P7.4',reviewerRole:'PRUEBA SINTÉTICA P7.4'});q.items[3].uses.cita='permitida';q.items[3].uses.adaptacion='permitida';assert.deepEqual(publicationAdmissions(b,q).map(x=>x.id),['BIB-000004','REC-000004']);});
+test('P7.4: campos extra, licencia o fecha inválida bloquean',()=>{for(const mutate of [x=>x.items[3].privateNotes='x',x=>x.items[3].licenseId='LIC-999',x=>x.items[3].reviewedAt='2026-02-30']){const q=structuredClone(p);mutate(q);assert.ok(validatePermissions(q,b).length);}});

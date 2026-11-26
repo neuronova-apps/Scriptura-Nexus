@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Card from '../../../components/Card.astro';
+import {bibliographyRegistry} from '../../../lib/bibliography';
+import {permissionRegistry} from '../../../lib/permissions';
+import {basePath} from '../../../lib/site';
+import '../../../styles/modules.css';
+import '../../../styles/library.css';
+const base=basePath(import.meta.env.BASE_URL);
+const b=bibliographyRegistry();
+const permissions=permissionRegistry();
+---
+<BaseLayout title="Licencias y permisos documentales | Scriptura Nexus" description="Registro público de licencias, atribuciones y alcance de uso."><div class="module-landing">
+<nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'biblioteca/'}>Biblioteca teológica</a></li><li aria-current="page">Licencias y permisos</li></ol></nav>
+<Card variant="editorial"><h1>Licencias y permisos documentales</h1><p>Consulta externa, cita, reproducción y adaptación son usos diferentes. Una licencia documentada no equivale a aprobación editorial. No se alojan obras completas.</p></Card>
+{permissions.items.map(p=>{const e=b.editions.find(e=>e.id===p.editionId);const w=b.works.find(w=>w.id===e?.workId);const l=b.licenses.find(l=>l.id===p.licenseId);return <Card><h2><a href={base+'biblioteca/documentos/'+p.editionId+'/'}>{w?.title??p.editionId}</a></h2><p>{p.resourceId} · Decisión editorial: {p.decision}</p><dl class="library-meta">{Object.entries(p.uses).map(([use,state])=><><dt>{use}</dt><dd>{state}</dd></>)}</dl><p>{p.basis}</p><p>Revisión: {p.reviewedAt}</p>{l&&<><p>Licencia: <a href={l.url}>{l.identifier}</a></p><p>{l.attribution}</p><p>{l.scope} {l.restrictions}</p>{l.provenance.url&&<p><a href={l.provenance.url}>Declaración de licencia de la fuente</a></p>}</>}</Card>})}
+<p><a href={base+'biblioteca/'}>Volver a biblioteca</a></p></div></BaseLayout>

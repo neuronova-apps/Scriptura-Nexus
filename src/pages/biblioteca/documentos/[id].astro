@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Card from '../../../components/Card.astro';
+import {permissionRegistry} from '../../../lib/permissions';
 import {bibliographyRegistry} from '../../../lib/bibliography';
 import {documentaryEntries,documentTypes,languageLabels,roleLabels} from '../../../lib/bibliography-exploration';
 import {traditions} from '../../../lib/taxonomy';
@@ -9,6 +10,7 @@ import '../../../styles/modules.css';
 import '../../../styles/library.css';
 export function getStaticPaths(){return documentaryEntries(bibliographyRegistry()).map(entry=>({params:{id:entry.edition.id},props:{entry}}));}
 const {entry:e}=Astro.props;
+const permissions=permissionRegistry().items.filter(p=>p.editionId===e.edition.id);
 const base=basePath(import.meta.env.BASE_URL);
 const names=new Map(traditions.map(t=>[t.id,t.name]));
 ---
@@ -17,6 +19,6 @@ const names=new Map(traditions.map(t=>[t.id,t.name]));
 <Card variant="editorial"><p class="module-phase">{e.work.id} · {e.edition.id}</p><h1>{e.work.title}</h1><p>{documentTypes[e.work.kind]}</p><p>{e.work.authority}</p></Card>
 <Card><h2>Autoría y alcance</h2><ul>{e.authors.map(a=><li><a href={base+'biblioteca/autores/'+a.id+'/'}>{a.name}</a> · {roleLabels[a.role]}</li>)}</ul><p>Tradición o marco: {e.traditionIds.length?e.traditionIds.map(t=>names.get(t)??t).join('; '):'Sin atribución confesional moderna'}</p><p>Fecha del documento: {e.work.dateLabel??'No indicada'}</p><p>Idioma original registrado: {languageLabels[e.work.language]??e.work.language}</p></Card>
 <Card><h2>Referencia bibliográfica</h2><dl class="library-meta"><dt>Edición</dt><dd>{e.edition.edition}</dd><dt>Fecha de edición</dt><dd>{e.edition.yearLabel}</dd><dt>Editorial o proveedor</dt><dd>{e.edition.publisher}</dd><dt>Idioma de la edición</dt><dd>{languageLabels[e.edition.language]??e.edition.language}</dd><dt>Localizador</dt><dd>{e.edition.provenance.locator}</dd><dt>Consulta registrada</dt><dd>{e.edition.provenance.consultedAt}</dd>{e.edition.doi&&<><dt>DOI</dt><dd>{e.edition.doi}</dd></>}{e.edition.isbn&&<><dt>ISBN</dt><dd>{e.edition.isbn}</dd></>}</dl></Card>
-<Card><h2>Fuentes y permisos</h2><p>{e.source.id} · {e.source.conditions}</p><p>Clase de fuente: {e.source.class}. La clasificación no constituye autorización de reproducción.</p><ul>{e.resources.map(r=><li><a href={r.originUrl} rel="noopener noreferrer">Consultar fuente original ({r.id})</a><p>Consulta externa · Admisión: {r.admission.replaceAll('_',' ')}.</p></li>)}</ul><p>No se aloja el texto completo ni se publican citas o evidencias de investigación en esta fase.</p></Card>
+<Card><h2>Fuentes y permisos</h2><p>{e.source.id} · {e.source.conditions}</p><p>Clase de fuente: {e.source.class}. La clasificación no constituye autorización de reproducción.</p><ul>{e.resources.map(r=><li><a href={r.originUrl} rel="noopener noreferrer">Consultar fuente original ({r.id})</a><p>Consulta externa · Admisión: {r.admission.replaceAll('_',' ')}.</p></li>)}</ul><p><a href={base+'biblioteca/permisos/'}>Consultar registro de licencias y permisos</a></p>{permissions.map(p=><p>{p.resourceId} · Decisión editorial: {p.decision} · {p.basis}</p>)}<p>No se aloja el texto completo ni se publican citas o evidencias de investigación en esta fase.</p></Card>
 <nav aria-label="Recursos relacionados" class="library-links"><a href={base+'biblioteca/'}>Volver al catálogo documental</a><a href={base+'fundamentos/glosario/'}>Glosario metodológico</a><a href={base+'historia/'}>Historia cristiana</a></nav>
 </div></BaseLayout>

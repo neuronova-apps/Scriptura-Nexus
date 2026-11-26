@@ -402,7 +402,7 @@
       "name": "Consulta documental: Critical Reflections on the Role of the Canon in New Testament Scholarship",
       "class": "A",
       "provider": "Cambridge University Press",
-      "conditions": "La página declara CC BY 4.0; admisión específica pendiente P7.4.",
+      "conditions": "CC BY 4.0 declarada por la editorial y registrada; aprobación editorial de uso y revisión de componentes pendientes.",
       "phases": [
         "P7"
       ],
@@ -506,7 +506,9 @@
       "originUrl": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
       "kind": "consulta_externa",
       "admission": "en_revision",
-      "licenseIds": [],
+      "licenseIds": [
+        "LIC-000001"
+      ],
       "provenance": {
         "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
         "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
@@ -547,6 +549,22 @@
       }
     }
   ],
-  "licenses": [],
+  "licenses": [
+    {
+      "id": "LIC-000001",
+      "identifier": "CC BY 4.0",
+      "holder": "Francis Watson (autor del artículo; declaración de derechos de la edición por verificar en detalle)",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Watson, Francis (2024). Critical Reflections on the Role of the Canon in New Testament Scholarship. New Testament Studies, 70(1), 111–124. https://doi.org/10.1017/S0028688523000176. CC BY 4.0.",
+      "restrictions": "Atribuir, enlazar licencia, indicar modificaciones y comprobar materiales de terceros y otros derechos.",
+      "scope": "Artículo identificado por DOI; no se extiende a otras obras ni componentes de terceros.",
+      "provenance": {
+        "locator": "Declaración de acceso abierto y licencia del artículo, DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
   "evidence": []
 }
