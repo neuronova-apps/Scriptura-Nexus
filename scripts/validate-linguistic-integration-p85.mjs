@@ -50,8 +50,23 @@ try{
   stage='sections-'+name;await go(name);
   const section=page.getByRole('navigation',{name:'Secciones de esta herramienta',exact:true});
   const links=section.getByRole('link');const n=await links.count();
-  for(let i=0;i<n;i++){const link=links.nth(i),hash=await link.getAttribute('href');assert.ok(hash?.startsWith('#'));await link.focus();await page.keyboard.press('Enter');await page.waitForURL(origin+paths[name]+hash);assert.equal(await page.evaluate(()=>document.activeElement?.id),hash.slice(1));counts.sectionLinks++;}
-  const disabled=name==='analyzer'?['ta-fields','ta-occurrence']:['lc-lex-fields','lc-con-fields'];for(const id of disabled)assert.equal(await page.locator('#'+id).isDisabled(),true);
+  assert.equal(n,name==='analyzer'?3:2);
+  for(let i=0;i<n;i++){
+   stage='sections-'+name+'-link-'+(i+1);
+   const link=links.nth(i),hash=await link.getAttribute('href');assert.ok(hash?.startsWith('#'));
+   const target=hash.slice(1);assert.equal(await page.locator(hash).getAttribute('tabindex'),'-1');
+   await link.focus();assert.equal(await link.evaluate(e=>e===document.activeElement),true);
+   await Promise.all([page.waitForURL(origin+paths[name]+hash),page.keyboard.press('Enter')]);
+   stage='sections-'+name+'-focus-'+(i+1);
+   // Wait for the browser's native fragment navigation and focus, not a forced focus in the test.
+   await page.waitForFunction(id=>document.activeElement?.id===id,target,{timeout:5000});
+   assert.equal(await page.evaluate(()=>document.activeElement?.id),target);counts.sectionLinks++;
+  }
+  stage='sections-'+name+'-release-gate';
+  const fieldsets=name==='analyzer'?['ta-fields']:['lc-lex-fields','lc-con-fields'];
+  for(const id of fieldsets)assert.equal(await page.locator('#'+id).evaluate(e=>e instanceof HTMLFieldSetElement&&e.disabled),true);
+  const controls=name==='analyzer'?['ta-edition','ta-book','ta-chapter','ta-verse','ta-occurrence']:['lc-lex-mode','lc-lex-lang','lc-lex-system','lc-lex-value','lc-edition','lc-lang','lc-book','lc-mode','lc-system','lc-value','lc-frequency'];
+  for(const id of controls)assert.equal(await page.locator('#'+id).isDisabled(),true);
  }
  for(const name of ['hub','analyzer','lexicon']){
   stage='layout-'+name;await go(name);await page.addScriptTag({path:axe});
@@ -68,9 +83,10 @@ try{
   }
  }
  stage='no-js';const n=await browser.newContext({javaScriptEnabled:false,serviceWorkers:'block'});await n.route('**/*',r=>r.request().url().startsWith(origin+'/')?r.continue():r.abort());const p=await n.newPage();
- assert.equal((await p.goto(origin+paths.analyzer))?.status(),200);assert.equal(await p.locator('#ta-fields').isDisabled(),true);
+ assert.equal((await p.goto(origin+paths.analyzer))?.status(),200);assert.equal(await p.locator('#ta-fields').evaluate(e=>e instanceof HTMLFieldSetElement&&e.disabled),true);assert.equal(await p.locator('#ta-edition').isDisabled(),true);assert.equal(await p.locator('#ta-occurrence').isDisabled(),true);
  await Promise.all([p.waitForURL(origin+paths.lexicon),p.getByRole('navigation',{name:'Herramientas lingüísticas'}).getByRole('link',{name:'Léxicos y concordancias',exact:true}).click()]);counts.noJsNavigation++;
- assert.equal(await p.locator('#lc-con-fields').isDisabled(),true);await Promise.all([p.waitForURL(origin+paths.hub),p.getByRole('navigation',{name:'Herramientas lingüísticas'}).getByRole('link',{name:'Lingüística bíblica',exact:true}).click()]);counts.noJsNavigation++;await n.close();
+ for(const id of ['lc-lex-fields','lc-con-fields'])assert.equal(await p.locator('#'+id).evaluate(e=>e instanceof HTMLFieldSetElement&&e.disabled),true);assert.equal(await p.locator('#lc-edition').isDisabled(),true);assert.equal(await p.locator('#lc-lex-value').isDisabled(),true);await Promise.all([p.waitForURL(origin+paths.hub),p.getByRole('navigation',{name:'Herramientas lingüísticas'}).getByRole('link',{name:'Lingüística bíblica',exact:true}).click()]);counts.noJsNavigation++;await n.close();
+ assert.deepEqual(counts,{navigation:8,sectionLinks:5,layoutCases:180,axeScans:12,preferenceTransitions:3,noJsNavigation:2});
  assert.equal(external.length,0);assert.equal(errors.length,0);
  console.log(JSON.stringify({mode:'P8.5.3-public-integration',...counts,manualScreenReader:'pending',manualZoom:'pending',manualDevices:'pending',corpusPublished:0},null,2));
-}catch{throw Error('P8.5.3 failed at '+stage);}finally{if(browser)await browser.close();server.close();}
+}catch(e){console.error('P8.5.3 public-only diagnostic at '+stage+': '+String(e?.message??e));throw Error('P8.5.3 failed at '+stage);}finally{if(browser)await browser.close();server.close();}
