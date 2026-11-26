@@ -1,0 +1,52 @@
+name: P9.3.4 Validación integral del comparador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/biblia/**'
+      - 'src/lib/comparator-view.ts'
+      - 'src/lib/reader-view.ts'
+      - 'src/scripts/comparator-ui.ts'
+      - 'src/styles/bible-comparator.css'
+      - 'src/styles/design-tokens.css'
+      - 'src/lib/appearance.ts'
+      - 'src/layouts/**'
+      - 'src/components/modules/ModuleLanding.astro'
+      - 'scripts/verify-build.mjs'
+      - 'scripts/alignment-contracts-p931.py'
+      - 'scripts/comparison-engine-p932.py'
+      - 'scripts/reader-navigation-p922.py'
+      - 'scripts/project-textual-p913.py'
+      - 'scripts/validate-comparator-browser-p934.mjs'
+      - 'tests/p933-comparator-view.test.mjs'
+      - 'tests/test_alignment_contracts_p931.py'
+      - 'tests/test_comparison_engine_p932.py'
+      - 'docs/P9/**'
+      - '.github/workflows/comparator-closure-p934.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparator-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contratos, regresión y artefacto público
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Contratos ENT30 y auditoría exhaustiva del motor privado
+        run: |
+          python3 -m unittest discover -s tests -p 'test_alignment_contracts_p931.py'
+          python3 -m unittest discover -s tests -p 'test_comparison_engine_p932.py'
+          python3 scripts/comparison-engine-p932.py
+      - name: Chromium, axe, navegación, fixtures aislados y presupuesto
+        run: |
+          mkdir -p "$RUNNER_TEMP/p934-browser"
+          npm install --prefix "$RUNNER_TEMP/p934-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p934-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P934_DEPS="$RUNNER_TEMP/p934-browser" node scripts/validate-comparator-browser-p934.mjs
