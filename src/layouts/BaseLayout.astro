@@ -6,7 +6,7 @@ const { title, description } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light" data-font-scale="100">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,6 +14,21 @@ const base = import.meta.env.BASE_URL;
   <meta name="theme-color" content="#142b3c" />
   <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <title>{title}</title>
+  <script is:inline>
+    (() => {
+      try {
+        const stored = window.localStorage.getItem('scriptura-nexus:appearance:v1');
+        if (!stored) return;
+        const preferences = JSON.parse(stored);
+        const themes = ['light', 'dark', 'contrast-light', 'contrast-dark'];
+        const scales = ['100', '115', '130'];
+        document.documentElement.dataset.theme = themes.includes(preferences.theme) ? preferences.theme : 'light';
+        document.documentElement.dataset.fontScale = scales.includes(String(preferences.fontScale)) ? String(preferences.fontScale) : '100';
+      } catch {
+        // La página conserva la apariencia clara predeterminada si el almacenamiento no está disponible.
+      }
+    })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#contenido">Ir al contenido</a>
@@ -27,6 +42,31 @@ const base = import.meta.env.BASE_URL;
             <span class="brand-descriptor">Estudio bíblico histórico, exegético y teológico comparado</span>
           </span>
         </a>
+        <details class="appearance-settings">
+          <summary aria-label="Abrir preferencias visuales">Apariencia</summary>
+          <div class="appearance-settings__panel">
+            <p class="appearance-settings__title">Preferencias visuales</p>
+            <label class="appearance-settings__field" for="sn-appearance-theme">
+              <span>Modo de visualización</span>
+              <select id="sn-appearance-theme" data-appearance-theme>
+                <option value="light">Claro</option>
+                <option value="dark">Oscuro</option>
+                <option value="contrast-light">Alto contraste claro</option>
+                <option value="contrast-dark">Alto contraste oscuro</option>
+              </select>
+            </label>
+            <label class="appearance-settings__field" for="sn-appearance-font-scale">
+              <span>Tamaño de letra</span>
+              <select id="sn-appearance-font-scale" data-appearance-font-scale>
+                <option value="100">Estándar (100 %)</option>
+                <option value="115">Grande (115 %)</option>
+                <option value="130">Muy grande (130 %)</option>
+              </select>
+            </label>
+            <button class="sn-button sn-button--secondary appearance-settings__reset" type="button" data-appearance-reset>Restablecer preferencias</button>
+            <p class="appearance-settings__status" data-appearance-status role="status" aria-live="polite">Las preferencias se guardan únicamente en este navegador.</p>
+          </div>
+        </details>
       </div>
     </header>
     <main id="contenido" class="site-main" tabindex="-1"><div class="site-main-inner"><slot /></div></main>
@@ -36,5 +76,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </footer>
   </div>
+  <script>
+    import '../scripts/appearance';
+  </script>
 </body>
 </html>
