@@ -6,6 +6,7 @@ import Card from '../components/Card.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ModuleCard from '../components/home/ModuleCard.astro';
 import { homeModules } from '../lib/home';
+import { basePath } from '../lib/site';
 import '../styles/home.css';
 const modules = homeModules(import.meta.env.BASE_URL);
 ---
@@ -29,9 +30,10 @@ const modules = homeModules(import.meta.env.BASE_URL);
       </div>
     </section>
     <section aria-labelledby="busqueda">
-      <SectionHeading id="busqueda" title="Búsqueda general" description="Se incorporará progresivamente conforme estén disponibles los índices y recursos autorizados." />
+      <SectionHeading id="busqueda" title="Búsqueda general" description="Consulta el catálogo inicial por identificador, título o términos." />
       <Card variant="outlined">
-        <p class="home-search-note">Próximamente: consulta por temas, referencias bíblicas, autores y términos. El buscador aún no está habilitado.</p>
+        <p>El buscador consulta las fichas planificadas del catálogo. Los demás recursos se incorporarán progresivamente.</p>
+        <a class="sn-button sn-button--primary" href={basePath(import.meta.env.BASE_URL, 'buscar/')}>Buscar investigaciones</a>
       </Card>
     </section>
     <section aria-labelledby="enfoque">

@@ -53,7 +53,8 @@ console.log('Navegación compartida y destinos existentes: conformes.');
 assert.equal((home.match(/class="[^"]*\bhome-module\b[^"]*"/g) || []).length >= 7, true);
 assert.match(home, /id="modulos"/);
 assert.match(home, /href="#modulos"/);
-assert.match(home, /El buscador aún no está habilitado/);
+assert.match(home, /Buscar investigaciones/);
+assert.ok(home.includes('href="/Scriptura-Nexus/buscar/"'));
 assert.match(home, /Investigar, consultar y contrastar/);
 assert.match(home, /Fundamentos disponibles · P4.4 en revisión/);
 console.log('Portada, áreas de acceso y estado del buscador: conformes.');
@@ -235,3 +236,27 @@ for (const item of [...axesData,...catalogData]) {
 assert.ok(!existsSync('dist/estudios/SN-999/index.html'));
 assert.ok(!existsSync('dist/ejes/E99/index.html'));
 console.log('P5.3: 14 ejes, 42 fichas, relaciones, filtros y enlaces estáticos conformes.');
+
+const searchPage=readFileSync('dist/buscar/index.html','utf8');
+const searchIndex=JSON.parse(readFileSync('dist/data/catalog-search.json','utf8'));
+assert.equal(searchIndex.schemaVersion,1);
+assert.equal(searchIndex.items.length,42);
+assert.equal(new Set(searchIndex.items.map(x=>x.id)).size,42);
+assert.ok(searchPage.includes('data-index="/Scriptura-Nexus/data/catalog-search.json"'));
+assert.ok(catalogHtml.includes('href="/Scriptura-Nexus/buscar/"'));
+assert.match(searchPage,/id="search-query"/);
+assert.match(searchPage,/for="search-query"/);
+assert.match(searchPage,/role="status"/);
+assert.match(searchPage,/data-appearance-panel/);
+assert.match(searchPage,/<noscript>/);
+assert.equal((searchPage.match(/<h1(?:\s|>)/g)||[]).length,1);
+for(const entry of searchIndex.items){
+  assert.equal(entry.status,'planificado');
+  assert.deepEqual(Object.keys(entry).sort(),['axis','id','question','status','terms','title']);
+  const source=catalogData.find(x=>x.id===entry.id);
+  assert.ok(source);
+  assert.equal(entry.title,source.title);
+  assert.equal(entry.question,source.question);
+  assert.ok(existsSync('dist/estudios/'+entry.id+'/index.html'));
+}
+console.log('P5.4: índice público, 42 fichas, rutas y exclusión de contenido no autorizado: conformes.');

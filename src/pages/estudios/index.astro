@@ -18,6 +18,7 @@ const base = basePath(import.meta.env.BASE_URL);
 {axes.map(axis => <Card><p class="module-phase">{axis.id}</p><h3><a href={base + 'ejes/' + axis.id + '/'}>{axis.name}</a></h3><p>{axis.scope}</p><p>{studiesByAxis(axis.id).length} investigaciones principales</p>{!studiesByAxis(axis.id).length && <p>Sin investigaciones principales por ahora. Consulta sus relaciones transversales.</p>}</Card>)}
 </div></section>
 <section aria-labelledby="catalogo-titulo" id="catalogo"><h2 id="catalogo-titulo">Catálogo de investigaciones</h2>
+<p><a class="sn-button sn-button--secondary" href={base+'buscar/'}>Buscar investigaciones</a></p>
 <div class="catalog-filters" data-catalog-filters hidden>
 <label for="catalog-axis">Eje principal<select id="catalog-axis"><option value="">Todos los ejes</option>{axes.map(axis => <option value={axis.id}>{axis.id} · {axis.name}</option>)}</select></label>
 <label for="catalog-status">Estado editorial<select id="catalog-status"><option value="">Todos los estados</option>{Object.entries(statusLabels).map(([id,label]) => <option value={id}>{label}</option>)}</select></label>
