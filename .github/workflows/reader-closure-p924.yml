@@ -1,0 +1,47 @@
+name: P9.2.4 Validación integral del lector
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/biblia/**'
+      - 'src/lib/reader-*.ts'
+      - 'src/scripts/reader-ui.ts'
+      - 'src/styles/bible-reader.css'
+      - 'src/styles/design-tokens.css'
+      - 'src/lib/appearance.ts'
+      - 'src/layouts/**'
+      - 'src/components/modules/ModuleLanding.astro'
+      - 'scripts/verify-build.mjs'
+      - 'scripts/reader-navigation-p922.py'
+      - 'scripts/project-textual-p913.py'
+      - 'scripts/validate-reader-browser-p924.mjs'
+      - 'tests/p92*-reader*.test.mjs'
+      - 'tests/test_reader_navigation_p922.py'
+      - 'docs/P9/**'
+      - '.github/workflows/reader-closure-p924.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reader-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contratos, regresión y artefacto público
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Reproyectar referencias y comprobar huellas
+        run: |
+          python3 -m unittest discover -s tests -p 'test_reader_navigation_p922.py'
+          python3 scripts/reader-navigation-p922.py
+      - name: Chromium, axe, teclado, fixtures aislados y presupuesto
+        run: |
+          mkdir -p "$RUNNER_TEMP/p924-browser"
+          npm install --prefix "$RUNNER_TEMP/p924-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p924-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P924_DEPS="$RUNNER_TEMP/p924-browser" node scripts/validate-reader-browser-p924.mjs
