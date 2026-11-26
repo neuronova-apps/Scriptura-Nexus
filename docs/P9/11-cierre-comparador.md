@@ -1,6 +1,6 @@
 # P9.3.4. Validación integral y cierre del comparador
 
-Base main fd92fd9f6df471e00e33961f5229d2b68e29d203. PR #64 integrado y ejecución #177 (45908758339) con build y deploy exitosos. P9.3.1–P9.3.3 fueron validadas en PR #62–#64 y despliegues #172, #175 y #177. P9.3.2: 39041 consultas reales, 23 pruebas especializadas y cero alineaciones automáticas. P9.3.3: 358 pruebas generales aprobadas, incluida la presentación del comparador.
+Base main d729ea0c447ae7d1016888ecd51c5e0ec34b8878. PR #64 integrado y ejecución #177 (45908758339) con build y deploy exitosos. PR #65 de cierre integral integrado mediante commit d729ea0c447ae7d1016888ecd51c5e0ec34b8878; ejecución Pages #179 (45909728414) con build y deploy exitosos. P9.3.1–P9.3.3 fueron validadas en PR #62–#64 y despliegues #172, #175 y #177. P9.3.2: 39041 consultas reales, 23 pruebas especializadas y cero alineaciones automáticas. P9.3.3: 358 pruebas generales aprobadas, incluida la presentación del comparador.
 
 ## Criterios de aceptación
 
@@ -14,4 +14,4 @@ Base main fd92fd9f6df471e00e33961f5229d2b68e29d203. PR #64 integrado y ejecució
 
 ## Límites y estado
 
-Cierre técnico condicionado a resultados satisfactorios de CI, integración y despliegue. Los resultados efectivos se registran en GitHub Actions; este documento no los declara antes de su ejecución. Las pruebas manuales con lector de pantalla, zoom y dispositivos físicos permanecen pendientes. No se ha admitido una fuente documental específica de alineación; la coincidencia literal no es correspondencia. No se habilita el corpus ni se incorpora un adaptador de publicación real. P11.4 mantiene su barrera editorial. No se modifican el lector, el motor privado, el registro ENT30, las fuentes ni la interfaz ya validada. Tras el cierre corresponde P9.4, manuscritos y variantes.
+Cierre técnico completado: workflow general y especializado, integración PR #65 y despliegue Pages #179 satisfactorios. La evidencia de cada ejecución permanece en GitHub Actions. Las pruebas manuales con lector de pantalla, zoom y dispositivos físicos permanecen pendientes. No se ha admitido una fuente documental específica de alineación; la coincidencia literal no es correspondencia. No se habilita el corpus ni se incorpora un adaptador de publicación real. P11.4 mantiene su barrera editorial. No se modifican el lector, el motor privado, el registro ENT30, las fuentes ni la interfaz ya validada. Tras el cierre corresponde P9.4, manuscritos y variantes.
