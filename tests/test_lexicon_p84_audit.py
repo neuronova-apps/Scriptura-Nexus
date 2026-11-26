@@ -24,6 +24,9 @@ class AuditTest(unittest.TestCase):
     def test_step(self):
         r=mod.table_stats('Online Bible permission CC BY\neStrong#\tdStrong\tMeaning\nH0001\tH0001\tprivate','step-tsv')
         self.assertEqual(r['dataRows'],1);self.assertTrue(r['headerSignals']['permission']);self.assertNotIn('private',json.dumps(r))
+    def test_step_unrecognized_header_is_not_permission(self):
+        r=mod.table_stats('Other header\nG0001\tG0001\tprivate','step-tsv')
+        self.assertEqual(r['dataRows'],1);self.assertFalse(r['headerRecognized']);self.assertTrue(r['requiresHeaderReview']);self.assertNotIn('private',json.dumps(r))
     def test_dodson(self):
         r=mod.table_stats("\"Strong's\"\t\"Goodrick-Kohlenberger\"\t\"Greek Word\"\t\"English Definition (brief)\"\t\"English Definition (longer)\"\n\"0001\"\t\"0001\"\t\"a)/lfa\"\t\"private\"\t\"private\"", 'dodson-tsv')
         self.assertEqual(r['uniqueStrongKeys'],1);self.assertEqual(r['headerColumns'],5);self.assertNotIn('private',json.dumps(r))

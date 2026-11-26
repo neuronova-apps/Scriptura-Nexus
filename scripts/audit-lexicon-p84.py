@@ -77,13 +77,20 @@ def xml_stats(s,kind):
 def table_stats(s,kind):
     lines=s.splitlines()
     if kind=='step-tsv':
-        ix=next((i for i,line in enumerate(lines) if re.match(r'^\s*eStrong#?\s*\t\s*dStrong',line,re.I) and '\t' in line and re.search(r'\bMeaning\b',line,re.I)),None)
-        if ix is None: raise ValueError('missing STEP header')
-        fields=lines[ix].split('\t')
-        header='\n'.join(lines[:ix]).lower()
-        rows=[line.split('\t') for line in lines[ix+1:] if re.match(r'^[HG]\d{1,5}',line)]
-        if not rows: raise ValueError('no STEP data rows')
-        return {'headerColumns':len(fields),'dataRows':len(rows),'rowWidths':dict(sorted(collections.Counter(len(r) for r in rows).items())),'headerSignals':{'onlineBible':'online bible' in header,'permission':'permission' in header,'abbottSmith':'abbott' in header,'liddell':'liddell' in header,'ccBy':'cc by' in header or 'cc-by' in header,'gloss':'gloss' in header,'meaning':'meaning' in header}}
+        # Discover table structure from the fixed file; do not presume TBESH and
+        # TBESG share identical headings. An unrecognized header is a finding,
+        # never permission to use the fields.
+        data_positions=[i for i,line in enumerate(lines) if re.match(r'^\s*[HG]\d{1,5}(?:\s|[A-Za-z=])',line) and '\t' in line]
+        if not data_positions: raise ValueError('no STEP data rows')
+        before=lines[:data_positions[0]]
+        candidates=[line.split('\t') for line in before if '\t' in line and re.search(r'\b(?:eStrong|Strong)\b',line,re.I) and re.search(r'\b(?:Meaning|Definition|Gloss)\b',line,re.I)]
+        fields=candidates[-1] if candidates else []
+        header='\n'.join(before).lower()
+        rows=[lines[i].split('\t') for i in data_positions]
+        recognized=bool(fields)
+        known_labels={'estrong','dstrong','ustrong','strong','hebrew','greek','transliteration','morph','gloss','meaning','definition'}
+        labels=[re.sub(r'[^a-z]','',f.strip().lower()) for f in fields]
+        return {'headerRecognized':recognized,'headerColumns':len(fields) if recognized else None,'knownHeaderLabels':[f for f in labels if f in known_labels],'requiresHeaderReview':not recognized,'dataRows':len(rows),'rowWidths':dict(sorted(collections.Counter(len(r) for r in rows).items())),'headerSignals':{'onlineBible':'online bible' in header,'permission':'permission' in header,'abbottSmith':'abbott' in header,'liddell':'liddell' in header,'ccBy':'cc by' in header or 'cc-by' in header,'gloss':'gloss' in header,'meaning':'meaning' in header}}
     rows=list(csv.reader(io.StringIO(s),delimiter='\t',strict=True))
     rows=[r for r in rows if r and any(r)]
     expected=["Strong's","Goodrick-Kohlenberger","Greek Word","English Definition (brief)","English Definition (longer)"]

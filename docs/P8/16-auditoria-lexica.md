@@ -28,3 +28,7 @@ Tras aprobar auditoría y verificar huellas, preparar decisión por archivo/comp
 ## Corrección de auditoría real #1
 
 Las siete pruebas sintéticas pasaron, pero la auditoría real #1 (45863771487) falló con diagnóstico genérico. Se verificó por separado el CSV fijo de Dodson y su discrepancia con README-ulrikp; se ajusta el lector a TSV entrecomillado con cinco columnas y recuento Unicode sin convertir Beta Code, y se añade diagnóstico por candidato y razón técnica sin exponer entradas. El origen exacto de la falla #1 aún no está confirmado. El inventario y huellas permanecen idénticos; no se relaja integridad.
+
+## Corrección de auditoría real #2
+
+La segunda ejecución (45863931215) identificó el fallo en LEX-C01 (TBESG): encabezado STEP no reconocido. Se sustituye la suposición de encabezado idéntico a TBESH por descubrimiento de etiquetas técnicas conocidas y recuento de registros con código H/G al inicio. Un encabezado no reconocido se registra como hallazgo y requiere revisión por componentes; no se asignan significados a columnas desconocidas ni se autoriza admisión. Se añade octava prueba sintética. Se conserva verificación estricta de integridad, licencia y ausencia de publicación.
