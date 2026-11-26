@@ -398,3 +398,12 @@ for(const file of readdirSync('dist',{recursive:true,withFileTypes:true})){
 }
 assert.ok(auditedOutput>0);
 console.log('P6.5.4: '+auditedOutput+' archivos de salida auditados; rutas privadas, fixtures y marcadores excluidos.');
+
+// P7.1: bibliography contracts only; no public data or premature admission.
+const {validateBibliography}=await import('../src/lib/bibliography-contracts.ts');
+const bibliographyData=JSON.parse(readFileSync('src/data/referencias/biblioteca.json','utf8'));
+const bibliographyTraditions=JSON.parse(readFileSync('src/data/taxonomia/tradiciones.json','utf8')).items.map(t=>t.id);
+assert.deepEqual(validateBibliography(bibliographyData,bibliographyTraditions),[]);
+assert.ok(Object.entries(bibliographyData).filter(([key])=>key!=='schemaVersion').every(([,items])=>Array.isArray(items)&&items.length===0));
+assert.equal(publicationRegistry.snapshots.length,0);
+console.log('P7.1: siete colecciones bibliográficas vacías y válidas; sin admisión ni publicación real.');
