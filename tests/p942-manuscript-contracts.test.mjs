@@ -279,3 +279,8 @@ test('P9.4.2: el registro versionado conserva listas vacías y barreras', () => 
     assert.deepEqual(stored[key], []);
   }
 });
+
+test('P9.4.2: una evidencia consultada o pendiente fuera de la lista verificada no respalda registros', () => {
+  const restrictedContext = {...context, verifiedEvidenceIds: ['EVD-SYNTH-003']};
+  assert.ok(validateManuscriptRegistry(registry(), restrictedContext).length > 0);
+});
