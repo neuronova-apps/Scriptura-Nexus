@@ -1,14 +1,16 @@
 ---
 interface Props {
   title: string;
+  level?: 1 | 2;
   eyebrow?: string;
   description?: string;
   id?: string;
 }
-const { title, eyebrow, description, id } = Astro.props;
+const { title, eyebrow, description, id, level = 2 } = Astro.props;
+const Heading = level === 1 ? 'h1' : 'h2';
 ---
 <header class="sn-section-heading">
   {eyebrow && <p class="sn-section-heading__eyebrow">{eyebrow}</p>}
-  <h2 id={id}>{title}</h2>
+  <Heading id={id}>{title}</Heading>
   {description && <p class="sn-section-heading__description">{description}</p>}
 </header>

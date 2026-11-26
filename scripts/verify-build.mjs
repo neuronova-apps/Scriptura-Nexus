@@ -23,3 +23,13 @@ assert.ok(existsSync('dist/favicon.svg'));
 assert.ok(existsSync('dist/brand/scriptura-mark.svg'));
 
 console.log('HTML inicial, preferencias visuales, 404, guía de diseño, componentes y base de Pages: conformes.');
+
+for (const [name, html] of [['inicio', home], ['404', missing], ['guía', guide]]) {
+  assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, name + ': H1 único');
+  assert.match(html, /<main[^>]*id="contenido"/);
+  assert.match(html, /href="#contenido"/);
+  assert.match(html, /data-appearance-panel/);
+  assert.match(html, /<noscript>/);
+}
+assert.ok(guide.indexOf('<h1') < guide.indexOf('<h2'), 'Jerarquía inicial de la guía');
+console.log('Estructura semántica y acceso alternativo: conformes.');

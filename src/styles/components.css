@@ -1,4 +1,7 @@
 .sn-button {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
@@ -26,7 +29,7 @@
 
 .sn-button--primary { background: var(--sn-button-primary-bg); color: var(--sn-button-primary-text); }
 .sn-button--primary:hover { background: var(--sn-button-primary-hover-bg); color: var(--sn-button-primary-text); }
-.sn-button--secondary { border-color: var(--sn-border); background: var(--sn-button-secondary-bg); color: var(--sn-button-secondary-text); }
+.sn-button--secondary { border-color: var(--sn-control-border); background: var(--sn-button-secondary-bg); color: var(--sn-button-secondary-text); }
 .sn-button--secondary:hover { border-color: var(--sn-focus); background: var(--sn-button-secondary-hover-bg); color: var(--sn-button-secondary-text); }
 .sn-button--ghost { background: transparent; color: var(--sn-navy); }
 .sn-button--ghost:hover { background: var(--sn-neutral-bg); color: var(--sn-neutral-ink); }
@@ -77,7 +80,7 @@
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-.sn-section-heading h2 {
+.sn-section-heading :is(h1, h2) {
   margin: 0;
   color: var(--sn-navy);
   font: 700 var(--sn-heading-md)/var(--sn-leading-tight) var(--sn-font-display);
@@ -94,6 +97,7 @@
   background: var(--sn-paper);
   color: var(--sn-ink);
 }
+.sn-callout__content { min-width: 0; }
 .sn-callout__title { display: block; margin: 0 0 var(--sn-space-1); font-weight: 700; }
 .sn-callout__content > :first-child { margin-top: 0; }
 .sn-callout__content > :last-child { margin-bottom: 0; }
@@ -104,7 +108,7 @@
 .sn-divider { height: 1px; margin-block: var(--sn-space-6); border: 0; background: var(--sn-border); }
 .sn-showcase { display: grid; gap: var(--sn-space-6); }
 .sn-showcase-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sn-space-4); }
-.sn-swatch-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: var(--sn-space-3); }
+.sn-swatch-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); gap: var(--sn-space-3); }
 .sn-swatch { overflow: hidden; border: 1px solid var(--sn-border); border-radius: var(--sn-radius-sm); background: var(--sn-surface); }
 .sn-swatch__color { height: 3.25rem; }
 .sn-swatch__label { padding: var(--sn-space-2); font-size: var(--sn-text-xs); }

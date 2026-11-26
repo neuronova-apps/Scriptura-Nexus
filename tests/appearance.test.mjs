@@ -9,6 +9,7 @@ import {
   saveAppearancePreferences,
   clearAppearancePreferences,
   applyAppearancePreferences,
+  initializeAppearance,
 } from '../src/lib/appearance.ts';
 import { contrastRatio } from '../src/lib/contrast.ts';
 
@@ -112,4 +113,60 @@ test('el layout ofrece controles accesibles y restablecimiento', () => {
   assert.match(layout, /data-appearance-reset/);
   assert.match(layout, /aria-live="polite"/);
   assert.match(layout, /localStorage/);
+});
+
+test('bordes y foco alcanzan contraste no textual de 3:1 en los cuatro temas', () => {
+  for (const [selector, label] of themes) {
+    const tokens = readThemeTokens(selector);
+    for (const foreground of ['--sn-control-border', '--sn-focus']) {
+      for (const background of ['--sn-paper', '--sn-surface']) {
+        assert.ok(contrastRatio(resolveToken(tokens, foreground), resolveToken(tokens, background)) >= 3, label + ': ' + foreground);
+      }
+    }
+    for (const tone of ['info', 'success', 'warning', 'neutral']) {
+      assert.ok(contrastRatio(resolveToken(tokens, '--sn-' + tone + '-ink'), resolveToken(tokens, '--sn-' + tone + '-bg')) >= 4.5, label + ': ' + tone);
+    }
+  }
+});
+
+test('los cambios, el restablecimiento y Escape actualizan los controles', () => {
+  const node = () => Object.assign(new EventTarget(), { value: '', textContent: '', hidden: true, open: true });
+  const theme = node(), scale = node(), reset = node(), status = node(), panel = node();
+  let focused = false;
+  panel.querySelector = () => ({ focus: () => { focused = true; } });
+  const root = { dataset: {} };
+  const nodes = {
+    '[data-appearance-theme]': theme,
+    '[data-appearance-font-scale]': scale,
+    '[data-appearance-reset]': reset,
+    '[data-appearance-status]': status,
+    '[data-appearance-panel]': panel,
+  };
+  const doc = { documentElement: root, querySelector: (selector) => nodes[selector] };
+  const data = new Map();
+  const storage = { getItem: k => data.get(k) ?? null, setItem: (k,v) => data.set(k,v), removeItem: k => data.delete(k) };
+  initializeAppearance(doc, storage);
+  assert.equal(panel.hidden, false);
+  theme.value = 'dark';
+  theme.dispatchEvent(new Event('change'));
+  scale.value = '130';
+  scale.dispatchEvent(new Event('change'));
+  assert.deepEqual(root.dataset, { theme: 'dark', fontScale: '130' });
+  assert.deepEqual(readAppearancePreferences(storage), { theme: 'dark', fontScale: '130' });
+  const escape = new Event('keydown', { cancelable: true });
+  Object.defineProperty(escape, 'key', { value: 'Escape' });
+  panel.dispatchEvent(escape);
+  assert.equal(panel.open, false);
+  assert.equal(focused, true);
+  reset.dispatchEvent(new Event('click'));
+  assert.deepEqual(root.dataset, { theme: 'light', fontScale: '100' });
+  assert.equal(data.has(APPEARANCE_STORAGE_KEY), false);
+});
+
+test('las reglas de reflow y colores forzados permanecen presentes', () => {
+  const styles = readFileSync('src/styles/brand.css', 'utf8');
+  assert.match(styles, /@media \(max-width: 720px\)/);
+  assert.match(styles, /appearance-settings__panel \{ position: static; width: 100%/);
+  assert.match(styles, /@media \(forced-colors: active\)/);
+  assert.doesNotMatch(styles, /min-width: 320px/);
 });

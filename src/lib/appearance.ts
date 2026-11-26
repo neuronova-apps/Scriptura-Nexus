@@ -115,6 +115,7 @@ export function initializeAppearance(
   const root = documentRef.documentElement;
   const status = documentRef.querySelector<HTMLElement>('[data-appearance-status]');
   const resetButton = documentRef.querySelector<HTMLButtonElement>('[data-appearance-reset]');
+  const panel = documentRef.querySelector<HTMLDetailsElement>('[data-appearance-panel]');
   let preferences = readAppearancePreferences(storage);
 
   const apply = (next: AppearancePreferences, persist: boolean): void => {
@@ -131,6 +132,15 @@ export function initializeAppearance(
   };
 
   apply(preferences, false);
+  if (panel) {
+    panel.hidden = false;
+    panel.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !panel.open) return;
+      event.preventDefault();
+      panel.open = false;
+      panel.querySelector('summary')?.focus();
+    });
+  }
 
   themeSelect.addEventListener('change', () => {
     apply({ ...preferences, theme: themeSelect.value as AppearanceTheme }, true);
