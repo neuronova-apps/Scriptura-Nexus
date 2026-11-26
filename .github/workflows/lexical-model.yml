@@ -1,0 +1,28 @@
+name: P8.4.3 Modelo de entradas léxicas
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/project-lexical-model-p84.py'
+      - 'scripts/review-lexicon-admission-p84.py'
+      - 'scripts/audit-lexicon-p84.py'
+      - 'docs/P8/admision-lexica-p84.json'
+      - 'docs/P8/candidatos-lexicos-p84.json'
+      - 'tests/test_lexical_model_p84.py'
+      - '.github/workflows/lexical-model.yml'
+      - 'src/data/linguistica/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  model:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas del modelo y permisos
+        run: python3 -m unittest discover -s tests -p test_lexical_model_p84.py
+      - name: Proyección real determinista sin persistencia
+        run: python3 scripts/project-lexical-model-p84.py
