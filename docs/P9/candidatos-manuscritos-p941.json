@@ -36,7 +36,8 @@
         "republish_transcriptions",
         "bulk_metadata_export"
       ],
-      "rightsNote": "El acuerdo limita el uso externo de imágenes sin permiso del instituto custodio. La licencia CC BY indicada para contribuciones de usuarios no se extiende automáticamente a imágenes ni a todo el catálogo."
+      "rightsNote": "El acuerdo limita el uso externo de imágenes sin permiso del instituto custodio. La licencia CC BY indicada para contribuciones de usuarios no se extiende automáticamente a imágenes ni a todo el catálogo.",
+      "status": "external_link_only"
     },
     {
       "id": "MS-C02",
@@ -68,7 +69,8 @@
         "republish_transcriptions",
         "bulk_metadata_export"
       ],
-      "rightsNote": "Las imágenes pueden pertenecer a instituciones custodias y CSNTM actúa como custodio digital; el uso externo requiere permisos específicos de ambos titulares. La consulta web se limita a investigación no comercial."
+      "rightsNote": "Las imágenes pueden pertenecer a instituciones custodias y CSNTM actúa como custodio digital; el uso externo requiere permisos específicos de ambos titulares. La consulta web se limita a investigación no comercial.",
+      "status": "external_link_only"
     },
     {
       "id": "MS-C03",
@@ -100,7 +102,8 @@
         "republish_transcriptions",
         "bulk_metadata_export"
       ],
-      "rightsNote": "El objeto antiguo puede ser de dominio público en muchas jurisdicciones, pero la copia digital y ciertos metadatos pertenecen a las instituciones colaboradoras. El uso indicado es personal y educativo no comercial; otros usos requieren permiso escrito."
+      "rightsNote": "El objeto antiguo puede ser de dominio público en muchas jurisdicciones, pero la copia digital y ciertos metadatos pertenecen a las instituciones colaboradoras. El uso indicado es personal y educativo no comercial; otros usos requieren permiso escrito.",
+      "status": "external_link_only"
     },
     {
       "id": "MS-C04",
@@ -132,7 +135,8 @@
         "republish_transcriptions",
         "bulk_metadata_export"
       ],
-      "rightsNote": "Algunos manuscritos pueden consultarse en línea con marca de agua. Las reproducciones y los derechos de publicación se tramitan por solicitud y pueden tener tarifas; el sitio reserva los derechos sobre textos e imágenes."
+      "rightsNote": "Algunos manuscritos pueden consultarse en línea con marca de agua. Las reproducciones y los derechos de publicación se tramitan por solicitud y pueden tener tarifas; el sitio reserva los derechos sobre textos e imágenes.",
+      "status": "external_link_only"
     },
     {
       "id": "MS-C05",
@@ -164,7 +168,8 @@
         "republish_transcriptions",
         "bulk_metadata_export"
       ],
-      "rightsNote": "El sitio, textos e imágenes son de la Israel Antiquities Authority. La reproducción, exhibición, modificación o distribución requiere autorización escrita previa, salvo una copia individual para uso privado."
+      "rightsNote": "El sitio, textos e imágenes son de la Israel Antiquities Authority. La reproducción, exhibición, modificación o distribución requiere autorización escrita previa, salvo una copia individual para uso privado.",
+      "status": "external_link_only"
     },
     {
       "id": "ED-C01",
@@ -191,7 +196,8 @@
         "republish_text",
         "republish_apparatus"
       ],
-      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato."
+      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato.",
+      "status": "not_selected"
     },
     {
       "id": "ED-C02",
@@ -218,7 +224,8 @@
         "republish_text",
         "republish_apparatus"
       ],
-      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato."
+      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato.",
+      "status": "not_selected"
     },
     {
       "id": "ED-C03",
@@ -245,7 +252,8 @@
         "republish_text",
         "republish_images"
       ],
-      "rightsNote": "Falta seleccionar ejemplar, proveedor, edición digital y derechos de la digitalización; la antigüedad del impreso no resuelve los derechos de la copia."
+      "rightsNote": "Falta seleccionar ejemplar, proveedor, edición digital y derechos de la digitalización; la antigüedad del impreso no resuelve los derechos de la copia.",
+      "status": "not_selected"
     },
     {
       "id": "ED-C04",
@@ -272,7 +280,8 @@
         "republish_text",
         "republish_apparatus"
       ],
-      "rightsNote": "No constituye una edición única. Se debe seleccionar una edición y transcripción digital concretas; no se asume identidad entre sus recensiones."
+      "rightsNote": "No constituye una edición única. Se debe seleccionar una edición y transcripción digital concretas; no se asume identidad entre sus recensiones.",
+      "status": "not_selected"
     },
     {
       "id": "ED-C05",
@@ -299,7 +308,8 @@
         "republish_text",
         "republish_apparatus"
       ],
-      "rightsNote": "Falta identificar edición y fuente digital; no se equipara automáticamente con el Textus Receptus."
+      "rightsNote": "Falta identificar edición y fuente digital; no se equipara automáticamente con el Textus Receptus.",
+      "status": "not_selected"
     },
     {
       "id": "ED-C06",
@@ -326,7 +336,8 @@
         "republish_text",
         "republish_apparatus"
       ],
-      "rightsNote": "Cada tradición requiere edición, transcripción, proveedor y licencia específicos; no se agrupan como una sola fuente."
+      "rightsNote": "Cada tradición requiere edición, transcripción, proveedor y licencia específicos; no se agrupan como una sola fuente.",
+      "status": "not_selected"
     }
   ],
   "separationRules": {
