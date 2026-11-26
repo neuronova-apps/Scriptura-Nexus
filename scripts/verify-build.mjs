@@ -351,3 +351,50 @@ assert.ok(!existsSync('dist/editorial-private'));
 assert.ok(!existsSync('dist/drafts'));
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA|EVD-900001/);
 console.log('P6.4: registro inicial vacío, 42 fichas sin versión aprobada, sin borradores en rutas ni índice.');
+
+// P6.5.2: actual production HTML and synthetic-data isolation.
+let auditedPositions=0;
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ const sections=[...html.matchAll(/<section[^>]*data-section-id="([^"]+)"[^>]*>/g)];
+ assert.equal(sections.length,20,study.id);auditedPositions+=sections.length;
+ for(let i=1;i<=20;i++){const anchor='seccion-'+String(i).padStart(2,'0');assert.ok(html.includes('id="'+anchor+'-titulo"'));assert.ok(html.includes('aria-labelledby="'+anchor+'-titulo"'));}
+ assert.equal((html.match(/href="#indice-secciones"/g)||[]).length,20);
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.5\.2/);
+}
+assert.equal(auditedPositions,840);
+assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.2/);
+console.log('P6.5.2: 840 posiciones HTML, títulos, anclas de retorno y aislamiento de fixtures conformes.');
+
+// P6.5.3: no synthetic editorial relations in production pages or search.
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.5\.3|id="rel-(?:AF|EVD|POS|CON)-/);
+ const expected=new Set([study.primaryAxisId,...study.relatedAxisIds]);
+ const related=catalogData.filter(t=>t.id!==study.id&&[t.primaryAxisId,...t.relatedAxisIds].some(id=>expected.has(id))).map(t=>t.id).sort();
+ const section=html.split('aria-labelledby="relaciones-titulo"')[1].split('</section>')[0];
+ const actual=[...section.matchAll(/href="\/Scriptura-Nexus\/estudios\/(SN-\d{3})\/"/g)].map(m=>m[1]).sort();
+ assert.deepEqual(actual,related,study.id+' vínculos taxonómicos exactos');
+}
+assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.3|POS-90000/);
+console.log('P6.5.3: relaciones exactas de 42 fichas y exclusión de trazas sintéticas.');
+
+// P6.5.4: scan the entire publishable output, not only study pages.
+const {readdirSync}=await import('node:fs');
+const {execFileSync}=await import('node:child_process');
+const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
+const privatePath=/(?:^|\/)(?:editorial-private|drafts|fixtures|tests)(?:\/|$)/i;
+for(const file of tracked)assert.ok(!/(?:^|\/)(?:editorial-private|drafts)(?:\/|$)/i.test(file),'ruta privada versionada: '+file);
+let auditedOutput=0;
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true})){
+ const path=file.parentPath+'/'+file.name;
+ assert.ok(!privatePath.test(path),'ruta no publicable: '+path);
+ assert.ok(!file.isSymbolicLink(),'enlace simbólico en salida: '+path);
+ if(!file.isFile())continue;
+ auditedOutput++;
+ if(/\.(?:html?|json|js|mjs|css|txt|xml|svg|map|md|csv|webmanifest)$/i.test(file.name)){
+  const content=readFileSync(path,'utf8');assert.doesNotMatch(content,/PRUEBA SINTÉTICA|synthetic-only|EVD-90000[1-3]|AF-90000[1-2]|POS-90000[1-6]/,path);
+ }
+}
+assert.ok(auditedOutput>0);
+console.log('P6.5.4: '+auditedOutput+' archivos de salida auditados; rutas privadas, fixtures y marcadores excluidos.');

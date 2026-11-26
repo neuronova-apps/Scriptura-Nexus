@@ -2,14 +2,14 @@
 import { catalogRelations, type CatalogStudy } from '../../lib/editorial-relations';
 import { getAxis } from '../../lib/taxonomy';
 import '../../styles/study-relations.css';
-interface Props {study:CatalogStudy; catalog:readonly CatalogStudy[]}
-const {study,catalog}=Astro.props;
+interface Props {study:CatalogStudy; catalog:readonly CatalogStudy[]; published?:boolean}
+const {study,catalog,published=false}=Astro.props;
 const related=catalogRelations(study,catalog,import.meta.env.BASE_URL);
 ---
 <section class="sn-card sn-card--outlined study-relations" aria-labelledby="relaciones-titulo">
 <h2 id="relaciones-titulo">Relaciones de investigación</h2>
-<p>Los vínculos documentales y las posturas teológicas se incorporarán cuando se desarrollen y aprueben las investigaciones.</p>
-<dl><dt>Evidencias y citas</dt><dd>Pendientes de consulta y verificación.</dd><dt>Argumentos y contraargumentos</dt><dd>Pendientes de análisis.</dd><dt>Perspectivas teológicas</dt><dd>Pendientes de atribución documentada.</dd></dl>
+{!published && <><p>Los vínculos documentales y las posturas teológicas se incorporarán cuando se desarrollen y aprueben las investigaciones.</p>
+<dl><dt>Evidencias y citas</dt><dd>Pendientes de consulta y verificación.</dd><dt>Argumentos y contraargumentos</dt><dd>Pendientes de análisis.</dd><dt>Perspectivas teológicas</dt><dd>Pendientes de atribución documentada.</dd></dl></>}
 <h3>Otras fichas con ejes compartidos</h3>
 <p>Estas coincidencias de clasificación no constituyen relaciones doctrinales, citas ni argumentos verificados.</p>
 {related.length ? <details><summary>Consultar {related.length} fichas relacionadas por taxonomía</summary><ul>{related.map(r=><li><a href={r.href}>{r.id} · {r.title}</a><p>Ejes compartidos: {r.sharedAxes.map(id=>getAxis(id)?.name??id).join('; ')}.</p></li>)}</ul></details> : <p>No se registran coincidencias de clasificación.</p>}

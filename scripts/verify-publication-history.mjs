@@ -1,0 +1,10 @@
+import {execFileSync} from 'node:child_process';
+import {readFileSync} from 'node:fs';
+import {validateHistoryPrefix} from '../src/lib/publication.ts';
+const base=process.argv[2];
+if(!base||!/^([a-f0-9]{40})$/.test(base)||/^0+$/.test(base))throw new Error('Commit base requerido');
+const path='src/data/publicaciones/registro.json';
+const previous=JSON.parse(execFileSync('git',['show',base+':'+path],{encoding:'utf8'}));
+const current=JSON.parse(readFileSync(path,'utf8'));
+validateHistoryPrefix(previous,current);
+console.log('Historial publicado preservado frente a '+base);
