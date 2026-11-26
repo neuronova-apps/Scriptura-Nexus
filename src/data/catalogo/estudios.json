@@ -1,0 +1,1157 @@
+{
+  "schemaVersion": 1,
+  "sourceRefs": [
+    "docs/P0/03-ejes.md",
+    "docs/P0/07-modelo-datos.md"
+  ],
+  "items": [
+    {
+      "schemaVersion": 1,
+      "id": "SN-001",
+      "title": "¿Tatuarse es pecado?",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E06",
+        "E07"
+      ],
+      "question": "Alcance de la prohibición y contexto ritual",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Lv 19:28",
+        "Dt 14:1"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-002",
+      "title": "Vestimenta y pantalones en mujeres",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E01",
+        "E07"
+      ],
+      "question": "Sentido de las expresiones originales y aplicación actual",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Dt 22:5"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-003",
+      "title": "Aretes en varones y mujeres",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E07"
+      ],
+      "question": "Adorno, género, cultura y prohibiciones",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Gn 24:22",
+        "35:4",
+        "Ex 32:2-3",
+        "Ez 16:12"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-004",
+      "title": "Maquillaje y adornos",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E06"
+      ],
+      "question": "Adorno, modestia y ostentación",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "1 Ti 2:9-10",
+        "1 P 3:3-4"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-005",
+      "title": "Cabello largo en varones y corto en mujeres",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E01"
+      ],
+      "question": "Contexto cultural y argumentación paulina",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "1 Co 11:2-16",
+        "Nm 6:1-5"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-006",
+      "title": "Consumo de carne de cerdo",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E07"
+      ],
+      "question": "Restricciones alimentarias y nuevo pacto",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Lv 11:7-8",
+        "Mc 7:14-23",
+        "Hch 10",
+        "Ro 14"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-007",
+      "title": "Consumo de bebidas alcohólicas",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E06"
+      ],
+      "question": "Consumo, embriaguez y conciencia",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Jn 2:1-11",
+        "Ef 5:18",
+        "1 Ti 5:23"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-008",
+      "title": "Hablar en lenguas",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E08"
+      ],
+      "question": "Naturaleza, función y regulación de las lenguas",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Hch 2",
+        "10",
+        "19",
+        "1 Co 12–14"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-009",
+      "title": "Dones espirituales",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E08"
+      ],
+      "question": "Clasificación, finalidad y vigencia",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ro 12",
+        "1 Co 12–14",
+        "Ef 4"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-010",
+      "title": "Bautismo del Espíritu Santo",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E07"
+      ],
+      "question": "Relación con conversión y lenguas",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Hch 1:5",
+        "2:1-4",
+        "1 Co 12:13"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-011",
+      "title": "Profetas en la actualidad",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [
+        "E05",
+        "E02"
+      ],
+      "question": "Profecía, autoridad y discernimiento",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Hch 11:27-28",
+        "21:10-11",
+        "1 Co 14"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-012",
+      "title": "Apóstoles en la actualidad",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [
+        "E05",
+        "E13"
+      ],
+      "question": "Apostolado fundacional y sentido de enviado",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Hch 1:21-26",
+        "Ef 2:20",
+        "4:11",
+        "1 Co 15:8-9"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-013",
+      "title": "Sanidades y milagros",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E02",
+        "E08"
+      ],
+      "question": "Vigencia, discernimiento y evidencia textual",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mc 16:17-18",
+        "Stg 5:14-16",
+        "1 Co 12"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-014",
+      "title": "Revelaciones y sueños",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E02",
+        "E12"
+      ],
+      "question": "Revelación contemporánea y autoridad bíblica",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Jl 2:28",
+        "Hch 2:17",
+        "Heb 1:1-2"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-015",
+      "title": "Obligatoriedad del diezmo",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E07",
+        "E08",
+        "E09"
+      ],
+      "question": "Diezmo, pactos y generosidad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Gn 14:20",
+        "Lv 27:30",
+        "Mal 3:8-10",
+        "Mt 23:23",
+        "2 Co 9:7"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-016",
+      "title": "Vigencia de la ley de Moisés",
+      "primaryAxisId": "E07",
+      "relatedAxisIds": [
+        "E01",
+        "E09"
+      ],
+      "question": "Continuidad y discontinuidad entre pactos",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 5:17-20",
+        "Hch 15",
+        "Gá 3",
+        "Ro 7"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-017",
+      "title": "Guardar el sábado o el domingo",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E07",
+        "E13"
+      ],
+      "question": "Observancia, culto y descanso",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ex 20:8-11",
+        "Hch 20:7",
+        "Col 2:16-17"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-018",
+      "title": "Salvación por fe y obras",
+      "primaryAxisId": "E07",
+      "relatedAxisIds": [
+        "E01"
+      ],
+      "question": "Justificación y relación entre fe y obras",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ro 3:28",
+        "Ef 2:8-10",
+        "Stg 2:14-26"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-019",
+      "title": "Pérdida de la salvación",
+      "primaryAxisId": "E07",
+      "relatedAxisIds": [
+        "E06"
+      ],
+      "question": "Perseverancia y advertencias bíblicas",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Jn 10:27-29",
+        "Heb 6:4-6",
+        "10:26-31"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-020",
+      "title": "Bautismo en agua",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E07",
+        "E08"
+      ],
+      "question": "Significado, función y relación con salvación",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 28:19",
+        "Hch 2:38",
+        "Ro 6:3-4"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-021",
+      "title": "¿Por qué me has desamparado?",
+      "primaryAxisId": "E04",
+      "relatedAxisIds": [
+        "E03",
+        "E07",
+        "E01"
+      ],
+      "question": "Persona de Cristo, sufrimiento, Trinidad e intertextualidad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Sal 22",
+        "Mt 27:46",
+        "Mc 15:34"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-022",
+      "title": "Naturaleza humana y divina de Jesús",
+      "primaryAxisId": "E04",
+      "relatedAxisIds": [
+        "E03",
+        "E13"
+      ],
+      "question": "Unidad personal y dos naturalezas",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Jn 1:1-14",
+        "Fil 2:5-11",
+        "Heb 2:14-18"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-023",
+      "title": "La Trinidad",
+      "primaryAxisId": "E03",
+      "relatedAxisIds": [
+        "E04",
+        "E05",
+        "E13"
+      ],
+      "question": "Fundamentos y desarrollo doctrinal",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 28:19",
+        "Jn 1:1",
+        "2 Co 13:14"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-024",
+      "title": "El Espíritu Santo",
+      "primaryAxisId": "E05",
+      "relatedAxisIds": [
+        "E03"
+      ],
+      "question": "Personalidad y divinidad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Jn 14:16-17",
+        "16:13",
+        "Hch 5:3-4"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-025",
+      "title": "Los nombres de Dios",
+      "primaryAxisId": "E03",
+      "relatedAxisIds": [
+        "E02"
+      ],
+      "question": "Nombres, títulos y transmisión lingüística",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ex 3:13-15",
+        "6:2-3"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-026",
+      "title": "Jesús y el conocimiento del día final",
+      "primaryAxisId": "E04",
+      "relatedAxisIds": [
+        "E03",
+        "E11"
+      ],
+      "question": "Conocimiento y naturalezas de Cristo",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mc 13:32"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-027",
+      "title": "Autoridad de pastores y líderes",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [
+        "E09"
+      ],
+      "question": "Alcances y límites de la autoridad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 20:25-28",
+        "Heb 13:17",
+        "1 P 5:1-3"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-028",
+      "title": "Mujeres en el ministerio",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [
+        "E01",
+        "E09"
+      ],
+      "question": "Enseñanza, liderazgo y contexto",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ro 16",
+        "1 Co 14:34-35",
+        "1 Ti 2:11-12"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-029",
+      "title": "Congregarse obligatoriamente",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [
+        "E10"
+      ],
+      "question": "Comunidad y pertenencia institucional",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 18:20",
+        "Hch 2:42-47",
+        "Heb 10:25"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-030",
+      "title": "Divorcio y nuevo matrimonio",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E06",
+        "E10"
+      ],
+      "question": "Matrimonio, excepciones y aplicación",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 19:3-9",
+        "1 Co 7"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-031",
+      "title": "Veneración de imágenes e idolatría",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E03",
+        "E13",
+        "E09"
+      ],
+      "question": "Distinción entre representación, veneración y adoración",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ex 20:4-5",
+        "25:18-22",
+        "Nm 21:8-9"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-032",
+      "title": "Evangelio de la prosperidad",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E07",
+        "E08"
+      ],
+      "question": "Prosperidad, promesas y sufrimiento",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 6:19-34",
+        "1 Ti 6:5-10",
+        "Fil 4:11-13"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-033",
+      "title": "Qué sucede después de la muerte",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [
+        "E06"
+      ],
+      "question": "Estado intermedio y conciencia",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Ec 9:5",
+        "Lc 16:19-31",
+        "Fil 1:23"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-034",
+      "title": "El infierno",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [
+        "E07"
+      ],
+      "question": "Seol, Hades, Gehena y juicio",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 10:28",
+        "25:46",
+        "Ap 20"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-035",
+      "title": "Arrebatamiento de la Iglesia",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [
+        "E08"
+      ],
+      "question": "Relación temporal con tribulación y venida",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 24",
+        "1 Ts 4:13-18"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-036",
+      "title": "El pecado imperdonable",
+      "primaryAxisId": "E06",
+      "relatedAxisIds": [
+        "E05",
+        "E07"
+      ],
+      "question": "Blasfemia contra el Espíritu Santo",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mt 12:31-32",
+        "Mc 3:28-30"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-037",
+      "title": "Inspiración bíblica",
+      "primaryAxisId": "E02",
+      "relatedAxisIds": [
+        "E01",
+        "E03"
+      ],
+      "question": "Inspiración, autoría humana y autoridad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "2 Ti 3:16",
+        "2 P 1:20-21"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-038",
+      "title": "Formación del canon",
+      "primaryAxisId": "E02",
+      "relatedAxisIds": [
+        "E13"
+      ],
+      "question": "Reconocimiento histórico y criterios de canonicidad",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Lc 24:44",
+        "2 P 3:15-16"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-039",
+      "title": "Biblias de 66 y 73 libros",
+      "primaryAxisId": "E02",
+      "relatedAxisIds": [
+        "E13",
+        "E14"
+      ],
+      "question": "Origen de las diferencias canónicas",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [],
+      "referenceSelectionPending": "Referencias canónicas y documentos históricos por seleccionar",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-040",
+      "title": "Textus Receptus y texto crítico",
+      "primaryAxisId": "E02",
+      "relatedAxisIds": [
+        "E01",
+        "E13"
+      ],
+      "question": "Historia, fuentes, variantes y límites metodológicos",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [],
+      "referenceSelectionPending": "Testigos manuscritos y ediciones por seleccionar",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-041",
+      "title": "Pasajes bíblicos discutidos",
+      "primaryAxisId": "E02",
+      "relatedAxisIds": [
+        "E01",
+        "E14"
+      ],
+      "question": "Evaluación de variantes y evidencias",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [
+        "Mc 16:9-20",
+        "Jn 7:53–8:11",
+        "Hch 8:37",
+        "1 Jn 5:7-8"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-042",
+      "title": "Traducción e interpretación bíblica",
+      "primaryAxisId": "E01",
+      "relatedAxisIds": [
+        "E02",
+        "E14"
+      ],
+      "question": "Equivalencia formal, funcional y fidelidad contextual",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes de comparación por seleccionar",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md"
+      ]
+    }
+  ]
+}
