@@ -1,0 +1,31 @@
+name: P8.5.5 Cierre técnico lingüístico
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P8/cierre-tecnico-p85.json'
+      - 'docs/P8/27-cierre-tecnico-linguistico.md'
+      - 'scripts/validate-linguistic-closure-p85.py'
+      - 'tests/test_linguistic_closure_p85.py'
+      - '.github/workflows/linguistic-closure.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Pruebas del checkpoint y barrera
+        run: python3 -m unittest discover -s tests -p test_linguistic_closure_p85.py
+      - name: Reproducción final de motores, índices, cobertura y licencias
+        run: python3 scripts/validate-linguistic-closure-p85.py
+      - name: Compilación y barrera de salida pública
+        run: npm ci && npm run check && npm run build && npm run test:build
