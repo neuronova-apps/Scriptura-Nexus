@@ -479,3 +479,22 @@ for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(fil
  assert.doesNotMatch(content,/TOK-demo[123]|TXT-demo[123]|LING-demo|candidatos-griegos-p83\.json|85-3Jn-morphgnt\.txt|wlc\/Gen\.xml|wlc\/Dan\.xml/,'Material no publicable: '+file.name);
 }
 console.log('P8.3.4: interfaz enlazada, estado vacío, controles deshabilitados, etiquetas ARIA y ausencia de corpus/fixtures.');
+
+// P8.4.6: accessible public interface and strict empty release gate.
+const lexHtml=readFileSync('dist/linguistica/lexicos-concordancias/index.html','utf8');
+assert.ok(linguisticsHtml.includes('href="/Scriptura-Nexus/linguistica/lexicos-concordancias/"'));
+assert.ok(lexHtml.includes('href="/Scriptura-Nexus/linguistica/"'));
+assert.equal((lexHtml.match(/<h1(?:\s|>)/g)||[]).length,1);
+assert.match(lexHtml,/No hay diccionarios ni corpus autorizados/);
+for(const id of ['lc-lex-fields','lc-con-fields'])assert.match(lexHtml,new RegExp('<fieldset[^>]*id="'+id+'"[^>]*disabled'));
+for(const id of ['lc-lex-mode','lc-lex-lang','lc-lex-system','lc-lex-value','lc-edition','lc-lang','lc-book','lc-mode','lc-system','lc-value'])assert.ok(lexHtml.includes('for="'+id+'"')&&lexHtml.includes('id="'+id+'"'));
+const lexIds=[...lexHtml.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(new Set(lexIds).size,lexIds.length);
+for(const m of lexHtml.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g))for(const id of m[1].split(/\s+/))assert.ok(lexIds.includes(id));
+for(const id of ['lc-lex-status','lc-con-status'])assert.match(lexHtml,new RegExp('id="'+id+'"[^>]*role="status"[^>]*aria-live="polite"'));
+assert.match(lexHtml,/<noscript>/);
+assert.doesNotMatch(lexHtml,/LENTRY-[a-f0-9]{64}|Synthetic definition|fixture-index/);
+for(const f of readdirSync('dist',{recursive:true,withFileTypes:true}))if(f.isFile()&&/\.(?:html?|json|js|mjs|xml|txt|map)$/i.test(f.name)){
+ const s=readFileSync(f.parentPath+'/'+f.name,'utf8');assert.doesNotMatch(s,/LENTRY-[a-f0-9]{64}|Synthetic definition|fixture-index|admision-lexica-p84\.json|BrownDriverBriggs\.xml|HebrewStrong\.xml|LexicalIndex\.xml|AugIndex\.xml/);
+}
+console.log('P8.4.6: interfaz y etiquetas accesibles, enlaces y barrera pública sin corpus ni diccionarios.');

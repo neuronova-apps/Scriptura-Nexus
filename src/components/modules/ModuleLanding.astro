@@ -19,6 +19,7 @@ const home = basePath(import.meta.env.BASE_URL);
       <Callout tone="info" title="Módulo en desarrollo">{empty}</Callout>
     </Card>
     {analyzerLink && <section aria-labelledby="analyzer-link-title"><h2 id="analyzer-link-title">Analizador de términos bíblicos</h2><Card><p>Interfaz disponible en preparación. Los datos validados internamente aún no se han autorizado para consulta pública.</p><Button href={home + "linguistica/analizador/"} variant="secondary">Abrir analizador</Button></Card></section>}
+    {analyzerLink && <section aria-labelledby="lexicon-link-title"><h2 id="lexicon-link-title">Léxicos y concordancias bíblicas</h2><Card><p>Consulta independiente de diccionarios, referencias y frecuencias. Interfaz preparada; datos públicos pendientes de autorización.</p><Button href={home + "linguistica/lexicos-concordancias/"} variant="secondary">Abrir léxicos y concordancias</Button></Card></section>}
     <section aria-labelledby="planned-title">
       <h2 id="planned-title">Recursos previstos</h2>
       <Card><ul class="module-planned">{planned.map(item => <li>{item}</li>)}</ul></Card>

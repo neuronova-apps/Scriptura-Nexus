@@ -37,7 +37,7 @@ export const moduleDetails = {
       "Lemas, Strong y morfología",
       "Léxicos y concordancias"
     ],
-    "empty": "El motor y la interfaz del analizador se preparan en P8. Todavía no hay corpus lingüístico autorizado para consulta pública."
+    "empty": "Las interfaces de análisis, léxicos y concordancias están preparadas. Todavía no hay corpus lingüístico autorizado para consulta pública."
   },
   "biblia": {
     "planned": [
