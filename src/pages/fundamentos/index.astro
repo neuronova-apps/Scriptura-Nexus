@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { basePath } from '../../lib/site';
+import { perspectives, studySections, evidenceGrades, editorialStages } from '../../lib/methodology';
+import '../../styles/modules.css';
+import '../../styles/methodology.css';
+const home = basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title="Fundamentos metodológicos | Scriptura Nexus" description="Metodología, perspectivas de análisis y criterios de investigación bíblica de Scriptura Nexus.">
+  <div class="module-landing methodology">
+    <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={home}>Inicio</a></li><li aria-current="page">Fundamentos</li></ol></nav>
+    <Card variant="editorial">
+      <p class="module-phase">Metodología base disponible · En ampliación</p>
+      <h1>Fundamentos metodológicos</h1>
+      <p>Investigar las Escrituras mediante preguntas delimitadas, evidencia verificable y contraste de interpretaciones. Distinguir lo que afirma el texto, las inferencias exegéticas, las doctrinas institucionales y su aplicación contemporánea.</p>
+      <Callout tone="info" title="Investigación abierta a la evidencia">La perspectiva pentecostal recibe atención preferente, sin determinar de antemano la conclusión. Se consideran otras perspectivas protestantes, católicas y, cuando corresponda, ortodoxas, judías y académicas.</Callout>
+    </Card>
+    <section aria-labelledby="metodos">
+      <SectionHeading id="metodos" title="18 perspectivas de análisis" description="Se seleccionan según la pregunta y las fuentes disponibles. Las omisiones requieren justificación." />
+      <div class="method-grid">{perspectives.map(item => <Card padding="sm"><h3>{item.id} · {item.name}</h3><p>{item.question}</p></Card>)}</div>
+    </section>
+    <section aria-labelledby="plantilla">
+      <SectionHeading id="plantilla" title="20 secciones de investigación" description="Estructura maestra de cada estudio individual. No equivale a una investigación concluida." />
+      <Card><ol class="method-list">{studySections.map(item => <li>{item}</li>)}</ol></Card>
+    </section>
+    <section aria-labelledby="ejemplo">
+      <SectionHeading id="ejemplo" title="Ejemplo de organización de un estudio" />
+      <Card variant="editorial">
+        <p class="module-phase">SN-001 · E09 Conducta y vida cristiana · Planificado</p>
+        <h3>¿Tatuarse es pecado?</h3>
+        <p><strong>Pregunta:</strong> ¿Cuál es el alcance de la prohibición de Levítico 19:28 y cómo debe evaluarse su aplicación a los cristianos en la actualidad?</p>
+        <p><strong>Pasajes iniciales:</strong> Levítico 19:28 y Deuteronomio 14:1.</p>
+        <p><strong>Aspectos por investigar:</strong> expresiones hebreas, contexto histórico y ritual, relación entre pactos, interpretaciones confesionales y argumentos éticos.</p>
+        <Callout tone="info" title="Ejemplo metodológico, no resultado">La respuesta sobre si tatuarse está permitido o prohibido permanece pendiente de investigación, fuentes verificadas y aprobación editorial.</Callout>
+      </Card>
+    </section>
+    <section aria-labelledby="criterios">
+      <SectionHeading id="criterios" title="Criterios de evidencia y aplicación" />
+      <Card>
+        <p>La identificación Strong no sustituye el análisis del lema, la forma original, la morfología, la sintaxis ni el sentido contextual. La crítica textual distingue testigos, ediciones, variantes y decisiones de traducción.</p>
+        <p>Las conclusiones distinguen mandamientos explícitos, principios aplicables, disposiciones del antiguo pacto, prácticas culturales, interpretaciones teológicas, tradiciones denominacionales y convicciones personales. La vigencia de una norma debe justificarse.</p>
+        <dl class="method-grades">{evidenceGrades.map(item => <div><dt>{item.name}</dt><dd>{item.definition}</dd></div>)}</dl>
+      </Card>
+    </section>
+    <section aria-labelledby="fuentes">
+      <SectionHeading id="fuentes" title="Fuentes, Logos y revisión editorial" />
+      <Card>
+        <p>Consultar fuentes primarias y secundarias especializadas según su pertinencia. Registrar autor o institución, obra, edición, fecha, página o localizador, procedencia, licencia y estado de verificación. Distinguir documentos oficiales de opiniones individuales.</p>
+        <p>Logos Bible Software y los textos aportados por el responsable se emplearán como recursos de consulta. ChatGPT apoyará el análisis y la redacción, sin sustituir las fuentes originales. No se presupone acceso a bibliotecas privadas ni autorización para redistribuirlas.</p>
+        <p>Flujo editorial: {editorialStages.join(' → ')}. Las actualizaciones conservan el historial. La publicación requiere aprobación del responsable y controles de exactitud, fuentes y licencias.</p>
+      </Card>
+    </section>
+    <Callout tone="info">Las páginas especializadas de metodología y el glosario se incorporarán en las siguientes subfases de P4. Los estudios individuales se organizarán en el catálogo de P5 y se desarrollarán progresivamente.</Callout>
+    <a class="sn-button sn-button--secondary" href={home}>Volver al inicio</a>
+  </div>
+</BaseLayout>
