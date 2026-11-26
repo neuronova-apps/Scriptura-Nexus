@@ -448,3 +448,12 @@ for(const e of bibliographyData.editions){
 }
 for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile())assert.doesNotMatch(file.name,/\.(?:pdf|epub|mobi|docx?|zip|7z|rar)$/i,'archivo documental no admitido: '+file.name);
 console.log('P7.5: trazabilidad recíproca, permisos, ausencia de archivos documentales y cero publicaciones reales conformes.');
+
+// P8.2.1: no linguistic content until admitted imports are implemented.
+const {readAdmissions}=await import('./lib/linguistic-admission.mjs');
+const {validateLinguisticRegistry}=await import('../src/lib/linguistic-contracts.ts');
+const linguisticRegistry=JSON.parse(readFileSync('src/data/linguistica/registro.json','utf8'));
+assert.deepEqual(validateLinguisticRegistry(linguisticRegistry,readAdmissions()),[]);
+for(const [key,value] of Object.entries(linguisticRegistry))if(key!=='schemaVersion')assert.deepEqual(value,[]);
+assert.ok(!existsSync('dist/data/linguistica/'));
+console.log('P8.2.1: contratos lingüísticos válidos, registro vacío y sin publicación de corpus.');
