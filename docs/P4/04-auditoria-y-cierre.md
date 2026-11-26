@@ -5,7 +5,7 @@ Repositorio: neuronova-apps/Scriptura-Nexus
 Rama de trabajo: feature/p4.4-fundamentals-audit  
 Base auditada: 1e64c23e0e8ee96108e2cc5c15981a3b5267a0e5 (P4.3 integrado)  
 Pull request: [#13 - P4.4: auditoría integral y cierre de fundamentos](https://github.com/neuronova-apps/Scriptura-Nexus/pull/13)  
-Workflow de validación: [GitHub Actions 45755224530](https://github.com/neuronova-apps/Scriptura-Nexus/actions/runs/45755224530), concluido con éxito sobre el commit aa3b120087812a73a3fc50ac031b38ded6bd962c.
+Workflow de validación final: [GitHub Actions 45755440767](https://github.com/neuronova-apps/Scriptura-Nexus/actions/runs/45755440767), concluido con éxito sobre el commit 1d7d3e9cdb8c2ec65500f28f10d509feddf77765. Pull request #13 integrado en el commit 49a7aded3a8165616eec53a49d0789157744e1a4.
 
 ## 1. Objetivo y alcance
 
@@ -45,14 +45,14 @@ No se modificaron los contenidos de P0.1–P0.9, la taxonomía ni los registros 
 
 | Control P0.8 | Revisión ejecutada | Estado |
 |---|---|---|
-| QA-01 Integridad Git y alcance | Diff limitado a portada, estado de módulo, verificador y pruebas P4.4; sin cambios en archivos P0 protegidos | Conforme |
+| QA-01 Integridad Git y alcance | Cambios acotados a portada, estado de módulo, verificador, pruebas y documentación P4.4; sin cambios en archivos P0 protegidos | Conforme |
 | QA-02 Build reproducible | Instalación limpia, comprobación Astro/TypeScript, pruebas, build y verificación de salida | Conforme |
 | QA-03 Rutas y enlaces | Base /Scriptura-Nexus/, destinos internos y fragmentos de seis páginas de Fundamentos | Conforme |
 | QA-05 Evidencia y referencias | Correspondencia editorial con P0.4/P0.7; no se inventan fuentes ni evidencias | Conforme |
 | QA-07 Licencias y atribuciones | Se mantienen las restricciones de P4.2; no se habilita redistribución sin permiso | Conforme |
 | QA-10 Accesibilidad | Contraste automatizado de texto y controles, landmarks, referencias ARIA, foco, colores forzados y movimiento reducido | Parcial; revisión manual pendiente |
 | QA-11 Responsive | Reglas de reflujo, rejillas adaptables y puntos de quiebre presentes en las hojas de estilo | Parcial; prueba manual por viewport pendiente |
-| QA-13 Despliegue y recuperación | Build de PR satisfactorio; el despliegue de Pages se verifica después de integrar a main | Pendiente de integración |
+| QA-13 Despliegue y recuperación | Despliegue de Pages posterior al merge verificado en Actions 45755496015; commit publicado 49a7aded3a8165616eec53a49d0789157744e1a4 | Conforme |
 | QA-14 Separación editorial | SN-001 sigue planificado; no se incorporan borradores ni resultados de investigación | Conforme |
 | QA-15 Regresión | Suite completa y verificador de salida ejecutados | Conforme |
 
@@ -77,7 +77,7 @@ La comprobación de enlaces se realiza sobre el HTML generado, no únicamente so
 
 ## 5. Resultados de CI
 
-Workflow 45755224530, asociado al commit aa3b120087812a73a3fc50ac031b38ded6bd962c:
+Workflow final 45755440767, asociado al commit 1d7d3e9cdb8c2ec65500f28f10d509feddf77765:
 
 | Etapa | Resultado |
 |---|---|
@@ -88,7 +88,7 @@ Workflow 45755224530, asociado al commit aa3b120087812a73a3fc50ac031b38ded6bd962
 | npm run test:build | Exitoso |
 | Verificación P4.4 | Seis páginas, estructura, ARIA, IDs, rutas y anclas conformes |
 
-La ejecución completa de CI terminó con success. El workflow de validación de la rama no publicó Pages; el despliegue se produce tras integrar los cambios en main.
+La ejecución completa de CI terminó con success. Tras integrar el PR #13, el workflow 45755496015 publicó el commit 49a7aded3a8165616eec53a49d0789157744e1a4 en GitHub Pages y reportó éxito.
 
 ## 6. Comprobaciones manuales pendientes
 
@@ -105,7 +105,7 @@ La prueba automatizada de contraste y estructura no reemplaza estas comprobacion
 
 ## 7. Estado de P4.4
 
-**Cierre técnico y documental:** conforme, sujeto a la integración y verificación del despliegue de Pages.
+**Cierre técnico y documental:** conforme; integración en main y despliegue de GitHub Pages verificados.
 
 **Cierre editorial y accesibilidad manual:** pendiente de revisión y aprobación del responsable.
 
