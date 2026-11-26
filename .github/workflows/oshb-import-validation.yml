@@ -5,6 +5,9 @@ on:
     paths:
       - 'scripts/lib/oshb-osis.py'
       - 'scripts/lib/oshb-importer.mjs'
+      - 'scripts/lib/oshb-occurrences.mjs'
+      - 'tests/p8-oshb-occurrences.test.mjs'
+      - 'src/lib/linguistic-contracts.ts'
       - 'scripts/import-oshb.mjs'
       - 'scripts/lib/linguistic-admission.mjs'
       - 'scripts/lib/linguistic-audit.mjs'
@@ -31,3 +34,7 @@ jobs:
         run: node --test tests/p8-oshb-importer.test.mjs
       - name: Importación real reproducible sin persistencia
         run: node scripts/import-oshb.mjs
+      - name: Unidades y ocurrencias sintéticas
+        run: node --test tests/p8-oshb-occurrences.test.mjs
+      - name: Unidades y ocurrencias reales reproducibles
+        run: node scripts/import-oshb.mjs --occurrences

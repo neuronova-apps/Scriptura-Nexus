@@ -15,19 +15,34 @@ async function download(file){
  }finally{await reader.cancel().catch(()=>{});}
  return Buffer.concat(chunks,count);
 }
-const report=[];
+const report=[],projections=[],repeated=[];
 for(const id of oshbFileIds){
  const file=manifest.files.find(f=>f.id===id);
  if(!file||file.review!=='aprobado')throw new Error('Admisión no vigente');
  const bytes=await download(file);
- const first=summarizeOshb(importOshb(manifest,id,bytes));
- const second=summarizeOshb(importOshb(manifest,id,bytes));
+ const a=importOshb(manifest,id,bytes),b=importOshb(manifest,id,bytes);
+ projections.push(a);repeated.push(b);
+ const first=summarizeOshb(a);
+ const second=summarizeOshb(b);
  assert.deepEqual(first,second,'Proyección no reproducible');
  assert.equal(first.chapters,id==='LING-011'?50:12);
  assert.ok(first.verses>0&&first.words>0&&first.segments>0);
  report.push(first);
 }
 console.log(JSON.stringify({schemaVersion:1,mode:'validation-only',files:report},null,2));
+if(process.argv.includes('--occurrences')){
+ const {identifyOshb,summarizeOccurrences}=await import('./lib/oshb-occurrences.mjs');
+ const a=identifyOshb(projections,manifest),b=identifyOshb(repeated,manifest);
+ const summary=summarizeOccurrences(a);
+ assert.deepEqual(summary,summarizeOccurrences(b));
+ assert.equal(summary.units,report.reduce((n,x)=>n+x.verses,0));
+ assert.equal(summary.tokens+summary.unknown,report.reduce((n,x)=>n+x.words,0));
+ assert.equal(summary.segments,report.reduce((n,x)=>n+x.segments,0));
+ assert.ok(summary.hbo>0&&summary.arc>0);
+ assert.ok(summary.alternatives>0);
+ console.log(JSON.stringify({mode:'P8.2.3-validation-only',...summary},null,2));
+ if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.3: unidades y ocurrencias\n\n`'+JSON.stringify(summary)+'`\n');
+}
 if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,
  '## P8.2.2: importación reproducible, sin publicación\n\n'+
  report.map(x=>'- '+x.book+': '+x.chapters+' capítulos, '+x.verses+' versículos, '+x.words+' palabras directas, '+x.segments+' segmentos; SHA-256 proyección: '+x.projectionSha256+'; estructuras pendientes: '+JSON.stringify(x.pendingStructures)).join('\n')+
