@@ -1,0 +1,24 @@
+---
+import { plannedTemplate } from '../../lib/study-template';
+import '../../styles/study-template.css';
+interface Props { studyId:string }
+const {studyId}=Astro.props;
+const sections=plannedTemplate(studyId);
+---
+<section class="study-template" aria-labelledby="plantilla-titulo">
+  <h2 id="plantilla-titulo">Estructura de la investigación</h2>
+  <p>Plantilla metodológica de 20 secciones. Todas están pendientes de desarrollo editorial. Las orientaciones describen el trabajo previsto, no resultados de investigación.</p>
+  <nav class="study-template-nav sn-card sn-card--outlined" id="indice-secciones" aria-label="Índice de secciones de investigación">
+    <h3>Índice de secciones</h3>
+    <ol>{sections.map(s=><li><a href={'#'+s.anchor}>{s.title}</a></li>)}</ol>
+  </nav>
+  <div class="study-template-sections">
+    {sections.map(s=><section id={s.anchor} data-section-id={s.id} data-section-state={s.state} aria-labelledby={s.anchor+'-titulo'} class="sn-card sn-card--default study-template-section">
+      <h3 id={s.anchor+'-titulo'}>{String(s.order).padStart(2,'0')}. {s.title}</h3>
+      <p class="study-section-state">Estado: <strong>{s.label}</strong></p>
+      <p>{s.explanation}</p>
+      <details><summary>Orientación metodológica</summary><p>{s.procedure}</p><p><strong>Entregable previsto:</strong> {s.deliverable}</p></details>
+      <a class="study-back-index" href="#indice-secciones">Volver al índice de secciones</a>
+    </section>)}
+  </div>
+</section>
