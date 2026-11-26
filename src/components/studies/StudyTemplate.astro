@@ -17,7 +17,7 @@ const sections=snapshot?snapshot.record.sections.map(s=>sectionView(s,ref=>snaps
     {sections.map(s=><section id={s.anchor} data-section-id={s.id} data-section-state={s.state} aria-labelledby={s.anchor+'-titulo'} class="sn-card sn-card--default study-template-section">
       <h3 id={s.anchor+'-titulo'}>{String(s.order).padStart(2,'0')}. {s.title}</h3>
       <p class="study-section-state">Estado: <strong>{s.label}</strong></p>
-      <p>{s.explanation}</p>{s.body && <p class="study-approved-body">{s.body}</p>}
+      <p>{snapshot && s.state==='revisada' ? 'Contenido revisado de la versión aprobada.' : s.explanation}</p>{s.body && <p class="study-approved-body">{s.body}</p>}
       <details><summary>Orientación metodológica</summary><p>{s.procedure}</p><p><strong>Entregable previsto:</strong> {s.deliverable}</p></details>
       <a class="study-back-index" href="#indice-secciones">Volver al índice de secciones</a>
     </section>)}

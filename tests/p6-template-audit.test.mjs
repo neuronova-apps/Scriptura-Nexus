@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {makeSections} from '../src/lib/editorial-contracts.ts';
 import {plannedTemplate,sectionView} from '../src/lib/study-template.ts';
 import {appendSnapshot,approvedSnapshot,validateSnapshot} from '../src/lib/publication.ts';
-import {fixture,seal,ctx,label} from './fixtures/p6-template.mjs';
+import {fixture,seal,approve,ctx,label} from './fixtures/p6-template.mjs';
 const empty={schemaVersion:1,snapshots:[]};
 test('P6.5.2: 20 cuerpos revisados resueltos desde snapshot validado',()=>{
  const s=approvedSnapshot(appendSnapshot(empty,fixture(),ctx),'SN-001',ctx);
@@ -22,7 +22,7 @@ test('P6.5.2: cinco estados y ausencia de resolución de cuerpos pendientes',()=
 });
 test('P6.5.2: omisión justificada conserva las 20 posiciones y anclas',()=>{
  const s=fixture();const section=s.record.sections[7];section.applicability='no_aplicable';section.justification=label;delete section.contentRef;delete s.bodies[section.id];
- const approved=approvedSnapshot(appendSnapshot(empty,seal(s),ctx),'SN-001',ctx);
+ const approved=approvedSnapshot(appendSnapshot(empty,approve(s),ctx),'SN-001',ctx);
  const views=approved.record.sections.map(x=>sectionView(x,id=>approved.bodies[id]));
  assert.equal(views.length,20);assert.equal(views[7].explanation,label);assert.equal(views[7].body,undefined);assert.equal(views[7].anchor,'seccion-08');
 });

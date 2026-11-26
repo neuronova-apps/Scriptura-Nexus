@@ -13,7 +13,7 @@ export interface Section { id:string; order:number; title:string; applicability:
 export interface Claim { id:string; studyId:string; sectionId:string; proposition:string; type:typeof claimTypes[number]; grade:Grade; gradeJustification:string; supportingEvidenceIds:string[]; opposingEvidenceIds:string[]; reasoning:string }
 export interface Conclusion { id:string; studyId:string; claimIds:string[]; synthesis:string; grade:Grade; gradeJustification:string; reservations:string[] }
 export interface ReviewControl { id:string; result:typeof controlResults[number]; justification?:string }
-export interface Review { id:string; studyId:string; version:string; date:string; reviewerRole:string; result:typeof reviewResults[number]; controls:ReviewControl[] }
+export interface Review { id:string; studyId:string; version:string; date:string; reviewerRole:string; result:typeof reviewResults[number]; controls:ReviewControl[]; reviewedDigest?:string }
 export interface EditorialRecord { schemaVersion:1; studyId:string; version:string; createdAt:string; updatedAt:string; objective:string; scope:string; sections:Section[]; claims:Claim[]; conclusions:Conclusion[]; reviews:Review[] }
 export interface ValidationContext { studyIds:readonly string[]; evidenceIds:readonly string[] }
 const transitions:Record<EditorialState,readonly EditorialState[]> = {
@@ -87,10 +87,11 @@ export function validateEditorial(value:unknown,context:ValidationContext):strin
   const reviewIds=new Set<string>();
   for(const r of arr(value.reviews)){
     if(!obj(r)){errors.push('revisión inválida');continue;}
-    keys(r,['id','studyId','version','date','reviewerRole','result','controls'],'revisión');
+    keys(r,['id','studyId','version','date','reviewerRole','result','controls','reviewedDigest'],'revisión');
     require(str(r.id)&&/^REV-\d+$/.test(r.id)&&!reviewIds.has(r.id),'ID revisión inválido o duplicado');
     if(str(r.id))reviewIds.add(r.id);
     require(r.studyId===studyId&&r.version===value.version&&date(r.date)&&str(r.reviewerRole)&&enumHas(reviewResults,r.result),'revisión sin vínculo válido');
+    if(r.reviewedDigest!==undefined)require(str(r.reviewedDigest)&&/^[a-f0-9]{64}$/.test(r.reviewedDigest),'huella de revisión inválida');
     require(Array.isArray(r.controls),'controles requeridos');
     const controls=new Map<string,unknown>();
     for(const c of arr(r.controls)){

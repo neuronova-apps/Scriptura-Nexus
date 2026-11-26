@@ -13,6 +13,12 @@ function canonical(value:unknown):string {
  const json=JSON.stringify(value);if(json===undefined)throw new Error('Valor no serializable');return json;
 }
 export function snapshotDigest(value:Omit<Snapshot,'digest'>):string{return sha256(canonical(value));}
+// Review binds the exact research content, excluding the review log itself.
+export function reviewedContentDigest(s:Pick<Snapshot,'studyId'|'version'|'previousVersion'|'record'|'relations'|'bodies'>):string{
+ const {reviews,...record}=s.record;
+ void reviews;
+ return sha256(canonical({studyId:s.studyId,version:s.version,previousVersion:s.previousVersion,record,relations:s.relations,bodies:s.bodies}));
+}
 function versionGreater(a:string,b:string):boolean{const x=a.split('.').map(BigInt),y=b.split('.').map(BigInt);for(let i=0;i<3;i++){if(x[i]!==y[i])return x[i]>y[i];}return false;}
 export function validateSnapshot(s:Snapshot,ctx:PublicationContext):string[]{
  const errors:string[]=[];const req=(ok:unknown,msg:string)=>{if(!ok)errors.push(msg);};
@@ -27,6 +33,7 @@ export function validateSnapshot(s:Snapshot,ctx:PublicationContext):string[]{
   errors.push(...validateRelations(s.relations,s.record,ctx));
   const review=s.record.reviews.find(r=>r.id===s.reviewId);
   req(review?.result==='aprobada'&&review.version===s.version&&review.date>=s.record.updatedAt&&review.date<=s.publishedAt,'revisión aprobada de esta versión requerida');
+  req(review?.reviewedDigest===reviewedContentDigest(s),'huella del contenido revisado no coincide');
   req(!s.record.reviews.some(r=>r.result!=='aprobada'&&r.date>=(review?.date??'')),'revisión posterior o simultánea no aprobada');
   req(s.record.claims.length>0&&s.record.conclusions.length>0&&s.relations.evidence.length>0,'investigación sin afirmaciones, conclusiones o evidencias');
   req(s.bodies!==null&&typeof s.bodies==='object'&&!Array.isArray(s.bodies),'cuerpos inválidos');
@@ -65,10 +72,14 @@ export function validateRegistry(value:unknown,ctx:PublicationContext):asserts v
   latest.set(s.studyId,s);
  }
 }
+export function validateHistoryPrefix(previous:PublicationRegistry,next:PublicationRegistry):void{
+ if(previous.schemaVersion!==1||next.schemaVersion!==1||!Array.isArray(previous.snapshots)||!Array.isArray(next.snapshots)||next.snapshots.length<previous.snapshots.length)throw new Error('Historial eliminado o inválido');
+ for(const [i,s] of previous.snapshots.entries())if(canonical(s)!==canonical(next.snapshots[i]))throw new Error('Historial publicado modificado: '+s.studyId+'/'+s.version);
+}
 export function appendSnapshot(registry:PublicationRegistry,snapshot:Snapshot,ctx:PublicationContext):PublicationRegistry{
  validateRegistry(registry,ctx);
  const next:PublicationRegistry={schemaVersion:1,snapshots:[...structuredClone(registry.snapshots),structuredClone(snapshot)]};
- validateRegistry(next,ctx);return next;
+ validateRegistry(next,ctx);validateHistoryPrefix(registry,next);return next;
 }
 export function approvedSnapshot(registry:PublicationRegistry,studyId:string,ctx:PublicationContext):Snapshot|undefined{
  validateRegistry(registry,ctx);const s=registry.snapshots.filter(x=>x.studyId===studyId).at(-1);return s?structuredClone(s):undefined;

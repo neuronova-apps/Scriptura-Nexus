@@ -17,6 +17,7 @@ export function validateRelations(value:unknown,record:EditorialRecord,context:R
  const refs=(x:unknown,allowed:readonly string[],label:string,required=false)=>{req(Array.isArray(x),label+' lista requerida');const a=list(x);req(!required||a.length>0,label+' vacío');req(new Set(a).size===a.length,label+' duplicados');for(const id of a)req(one(id,allowed),label+' referencia desconocida');};
  const validDate=(x:unknown)=>str(x)&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&!Number.isNaN(Date.parse(x))&&new Date(x).toISOString().slice(0,10)===x;
  if(!obj(value))return ['relaciones inválidas'];
+ if(!obj(record))return ['registro editorial inválido'];
  keys(value,['schemaVersion','studyId','evidence','arguments','positions','relatedStudies']);
  req(value.schemaVersion===1&&value.studyId===record.studyId&&context.studyIds.includes(record.studyId),'identidad de relaciones inválida');
  for(const k of ['evidence','arguments','positions','relatedStudies'])req(Array.isArray(value[k]),k+' lista requerida');
@@ -33,7 +34,8 @@ export function validateRelations(value:unknown,record:EditorialRecord,context:R
   req(one(e.verification,['pendiente','consultada','verificada'])&&one(e.permission,['pendiente','autorizada','restringida']),'estado de evidencia inválido');
   if(e.excerpt!==undefined)req(str(e.excerpt)&&e.permission==='autorizada','fragmento sin permiso');
  }
- errors.push(...validateEditorial(record,{studyIds:context.studyIds,evidenceIds}));
+ const editorialErrors=validateEditorial(record,{studyIds:context.studyIds,evidenceIds});
+ errors.push(...editorialErrors);if(editorialErrors.length)return errors;
  const claims=Array.isArray(record.claims)?record.claims:[];
  const claimIds=claims.map(c=>c.id);
  const pairs=new Set<string>();

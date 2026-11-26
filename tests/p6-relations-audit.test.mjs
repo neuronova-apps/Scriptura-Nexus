@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {validateRelations,catalogRelations,relationAnchor} from '../src/lib/editorial-relations.ts';
 import {appendSnapshot,approvedSnapshot,validateSnapshot} from '../src/lib/publication.ts';
-import {fixture,seal,ctx} from './fixtures/p6-template.mjs';
+import {fixture,seal,approve,ctx} from './fixtures/p6-template.mjs';
 const marker='PRUEBA SINTÉTICA P6.5.3';
 const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
 const context={...ctx,studyIds:catalog.map(s=>s.id),bibliographyIds:[...ctx.bibliographyIds,'BIB-900002'],resourceIds:['REC-900003'],authorIds:['AUT-900001','AUT-900002'],disciplineIds:['DIS-900001'],traditionIds:['T01','T02','T03','T04','T05','A01'],admittedSources:[...ctx.admittedSources,...['BIB-900002','REC-900003'].map(id=>({id,admission:'admitido',scope:'publicacion',licenseRef:'LIC-900002',attribution:marker,authorizationRef:marker}))]};
@@ -20,7 +20,7 @@ function complete(){
  s.record.conclusions[0].claimIds=[c.id,alternative.id];s.record.conclusions[0].reservations=[marker];
  s.relations.positions=context.traditionIds.map((traditionId,i)=>({id:'POS-'+(900001+i),studyId:s.studyId,traditionId,disciplineIds:['DIS-900001'],authorId:i%2?'AUT-900002':'AUT-900001',claimIds:[i%2?alternative.id:c.id],evidenceIds:[i%2?'EVD-900002':'EVD-900001'],scope:marker,authority:marker,assumptions:marker,limitations:marker}));
  s.relations.relatedStudies=[{targetStudyId:'SN-002',reason:marker}];
- return seal(s);
+ return approve(s);
 }
 const reject=change=>{const s=complete();change(s);assert.ok(validateSnapshot(seal(s),context).length);};
 test('P6.5.3: cadena completa aprobada con argumentos, seis marcos y reservas',()=>{
