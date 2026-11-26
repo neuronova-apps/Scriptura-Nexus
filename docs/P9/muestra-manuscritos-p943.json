@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "phase": "P9.4.3",
+  "baselineMain": "7572a0c5566d9a8f49211e029ea58deade88a702",
+  "reviewedOn": "2026-11-26",
+  "scope": "reference_only_pilot",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "sourceFilesAdmitted": 0,
+  "resources": [
+    {
+      "id": "REC-P943-SBL-ABOUT",
+      "sourceId": "F03",
+      "title": "About the SBLGNT",
+      "url": "https://github.com/Faithlife/SBLGNT/blob/736fdc76158950c3d04b949b7e013ca14305145a/About.md",
+      "rightsUrl": "https://github.com/Faithlife/SBLGNT/blob/736fdc76158950c3d04b949b7e013ca14305145a/README.md",
+      "rights": "CC BY 4.0 declarada por el proveedor",
+      "revision": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "gitBlobSha": "930258324114fc7520b482fcc57786b841191759",
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-SBL-APP",
+      "sourceId": "F03",
+      "title": "SBLGNT apparatus: John",
+      "url": "https://github.com/Faithlife/SBLGNT/blob/736fdc76158950c3d04b949b7e013ca14305145a/data/sblgntapp/text/John.txt",
+      "rightsUrl": "https://github.com/Faithlife/SBLGNT/blob/736fdc76158950c3d04b949b7e013ca14305145a/LICENSE",
+      "rights": "CC BY 4.0 declarada para SBLGNT; no se admite el archivo",
+      "revision": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "gitBlobSha": "1cc4af0bdc3fca51b38be7ef100431c58f086ccd",
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-P66",
+      "sourceId": "F23",
+      "title": "CSNTM: GA P66, P. Bodmer II",
+      "url": "https://manuscripts.csntm.org/manuscript/View/GA_P66_Bodmer",
+      "rightsUrl": "https://www.csntm.org/terms-of-use-copyright/",
+      "rights": "Consulta y referencia bibliográfica original; no reutilización de catálogo o imágenes",
+      "revision": null,
+      "gitBlobSha": null,
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-A",
+      "sourceId": "F23",
+      "title": "CSNTM: GA 02",
+      "url": "https://manuscripts.csntm.org/manuscript/View/GA_02",
+      "rightsUrl": "https://www.csntm.org/terms-of-use-copyright/",
+      "rights": "Consulta y referencia bibliográfica original; no reutilización de catálogo o imágenes",
+      "revision": null,
+      "gitBlobSha": null,
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-BL",
+      "sourceId": "F23",
+      "title": "British Library, Royal MS 1 D VIII",
+      "url": "https://searcharchives.bl.uk/catalog/040-002353500",
+      "rightsUrl": "https://www.bl.uk/terms",
+      "rights": "Referencia bibliográfica al objeto; no descarga ni reutilización de registros o imágenes",
+      "revision": null,
+      "gitBlobSha": null,
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-IGNTP-P66",
+      "sourceId": "F23",
+      "title": "IGNTP (2013), A transcription of P66",
+      "url": "https://epapers.bham.ac.uk/id/eprint/1759/",
+      "rightsUrl": "https://epapers.bham.ac.uk/id/eprint/1759/",
+      "rights": "Depósito declara CC BY-NC-SA; versión exacta del encabezado no comprobada; solo enlace",
+      "revision": "Depósito de 2013, ID 1759",
+      "gitBlobSha": null,
+      "use": "reference_only"
+    },
+    {
+      "id": "REC-P943-WRIGHT",
+      "sourceId": "F27",
+      "title": "Brian J. Wright (2007), Jesus as Θεός (God): A Textual Examination",
+      "url": "https://bible.org/article/jesus-%CE%B8%CE%B5%CF%8C%CF%82-god-textual-examination",
+      "rightsUrl": "https://bible.org/article/linking-bibleorg",
+      "rights": "Enlace permitido; no reproducción de artículo ni tabla",
+      "revision": "Publicación web del 2 de abril de 2007",
+      "gitBlobSha": null,
+      "use": "reference_only"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EVD-P943-ED",
+      "resourceId": "REC-P943-SBL-ABOUT",
+      "locator": "Acknowledgements: editor y naturaleza de la edición",
+      "kind": "edition_identity",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-APP",
+      "resourceId": "REC-P943-SBL-APP",
+      "locator": "John 1:18, línea 10 del archivo; entrada y separador editorial",
+      "kind": "edition_apparatus",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-P66",
+      "resourceId": "REC-P943-P66",
+      "locator": "Ficha GA P66, P. Bodmer II: identificación, custodia y datación",
+      "kind": "catalog_identity",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-A",
+      "resourceId": "REC-P943-A",
+      "locator": "Ficha GA 02: identificación, custodia y datación",
+      "kind": "catalog_identity",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-BL",
+      "resourceId": "REC-P943-BL",
+      "locator": "Royal MS 1 D VIII, referencia de catálogo 040-002353500",
+      "kind": "catalog_identity",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-IGNTP",
+      "resourceId": "REC-P943-IGNTP-P66",
+      "locator": "Abstract e ID 1759; identidad y custodia del ejemplar",
+      "kind": "bibliographic_reference",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-WRIGHT-P66",
+      "resourceId": "REC-P943-WRIGHT",
+      "locator": "Apartado John 1:18, primera fila de la tabla de lecturas, testigo P66",
+      "kind": "secondary_attestation",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    },
+    {
+      "id": "EVD-P943-WRIGHT-A",
+      "resourceId": "REC-P943-WRIGHT",
+      "locator": "Apartado John 1:18, tercera fila de la tabla de lecturas, testigo A",
+      "kind": "secondary_attestation",
+      "reviewedOn": "2026-11-26",
+      "verification": "verified_reference"
+    }
+  ],
+  "readingRepresentation": [
+    {
+      "readingId": "LEC-P943-JHN-1-18-A",
+      "kind": "editorial_reference",
+      "attestationBasis": "secondary_report",
+      "directManuscriptInspection": false,
+      "apparatusProvidesWitnesses": false,
+      "folioVerified": false,
+      "handVerified": false
+    },
+    {
+      "readingId": "LEC-P943-JHN-1-18-B",
+      "kind": "editorial_reference",
+      "attestationBasis": "secondary_report",
+      "directManuscriptInspection": false,
+      "apparatusProvidesWitnesses": false,
+      "folioVerified": false,
+      "handVerified": false
+    }
+  ],
+  "registry": {
+    "schemaVersion": 1,
+    "phase": "P9.4.2",
+    "reviewedOn": "2026-11-26",
+    "baselineMain": "f64d2953bba01f599764be0fc38e298b478c47d7",
+    "publicationAuthorized": false,
+    "corpusImportAuthorized": false,
+    "textualContentPersisted": false,
+    "apparatusContentPersisted": false,
+    "imagesPersisted": false,
+    "automaticWitnessAttribution": false,
+    "automaticAlignment": false,
+    "editions": [
+      {
+        "textualEditionId": "TXT-SBLGNT-V1-2",
+        "bibliographyEditionId": null,
+        "editionRole": "critical_text",
+        "editorAuthorIds": [],
+        "sourceEvidenceIds": [
+          "EVD-P943-ED"
+        ],
+        "reviewStatus": "documented"
+      }
+    ],
+    "witnesses": [
+      {
+        "id": "MAN-GA-P66",
+        "siglum": "P66",
+        "catalogIdentifier": "GA P66",
+        "dateRange": {
+          "label": "Siglos II–III, datación aproximada de catálogo",
+          "earliestYear": 101,
+          "latestYear": 300,
+          "precision": "broad_range",
+          "basisEvidenceId": "EVD-P943-P66"
+        },
+        "language": "grc",
+        "custody": {
+          "institution": "Bibliotheca Bodmeriana, Cologny",
+          "collection": null,
+          "shelfmark": "P. Bodmer II",
+          "catalogUrl": "https://manuscripts.csntm.org/manuscript/View/GA_P66_Bodmer"
+        },
+        "sourceRefs": {
+          "bibliographyEditionIds": [],
+          "resourceIds": [
+            "REC-P943-P66",
+            "REC-P943-IGNTP-P66"
+          ],
+          "evidenceIds": [
+            "EVD-P943-P66",
+            "EVD-P943-IGNTP"
+          ]
+        }
+      },
+      {
+        "id": "MAN-GA-02",
+        "siglum": "A",
+        "catalogIdentifier": "GA 02",
+        "dateRange": {
+          "label": "Siglo V, datación de catálogo",
+          "earliestYear": 401,
+          "latestYear": 500,
+          "precision": "century",
+          "basisEvidenceId": "EVD-P943-A"
+        },
+        "language": "grc",
+        "custody": {
+          "institution": "British Library",
+          "collection": null,
+          "shelfmark": "Royal MS 1 D VIII",
+          "catalogUrl": "https://searcharchives.bl.uk/catalog/040-002353500"
+        },
+        "sourceRefs": {
+          "bibliographyEditionIds": [],
+          "resourceIds": [
+            "REC-P943-A",
+            "REC-P943-BL"
+          ],
+          "evidenceIds": [
+            "EVD-P943-A",
+            "EVD-P943-BL"
+          ]
+        }
+      }
+    ],
+    "variants": [
+      {
+        "id": "VAR-P943-JHN-1-18",
+        "locus": {
+          "textualEditionId": "TXT-SBLGNT-V1-2",
+          "bookId": null,
+          "chapter": null,
+          "verse": null,
+          "unitId": null,
+          "versificationId": null,
+          "sourceLocator": "John 1:18",
+          "referenceStatus": "source_native_only",
+          "evidenceIds": [
+            "EVD-P943-APP"
+          ]
+        },
+        "apparatus": {
+          "textualEditionId": "TXT-SBLGNT-V1-2",
+          "bibliographyEditionId": null,
+          "resourceId": "REC-P943-SBL-APP",
+          "locator": "John 1:18, línea 10",
+          "convention": "Comparación editorial entre ediciones; no aparato de testigos manuscritos",
+          "reusePolicy": "reference_only",
+          "sourceEvidenceIds": [
+            "EVD-P943-APP"
+          ]
+        },
+        "readingIds": [
+          "LEC-P943-JHN-1-18-A",
+          "LEC-P943-JHN-1-18-B"
+        ],
+        "internalEvidenceIds": [],
+        "externalEvidenceIds": [
+          "EVD-P943-APP",
+          "EVD-P943-WRIGHT-P66",
+          "EVD-P943-WRIGHT-A"
+        ],
+        "assessment": {
+          "status": "not_assessed",
+          "method": null,
+          "rationale": null,
+          "reviewerRole": null,
+          "reviewedAt": null,
+          "evidenceIds": []
+        }
+      }
+    ],
+    "readings": [
+      {
+        "id": "LEC-P943-JHN-1-18-A",
+        "variantId": "VAR-P943-JHN-1-18",
+        "readingReference": "Lado izquierdo de la entrada del aparato de SBLGNT, John 1:18",
+        "contentMode": "reference_only",
+        "readingText": null,
+        "witnessStatus": "documented",
+        "witnessAttestations": [
+          {
+            "witnessId": "MAN-GA-P66",
+            "status": "attested",
+            "witnessLocator": "Juan 1:18, según la tabla de Wright; folio y línea no comprobados",
+            "hand": {
+              "kind": "unknown",
+              "label": null
+            },
+            "sourceEvidenceId": "EVD-P943-WRIGHT-P66"
+          }
+        ],
+        "sourceEvidenceIds": [
+          "EVD-P943-APP",
+          "EVD-P943-WRIGHT-P66"
+        ]
+      },
+      {
+        "id": "LEC-P943-JHN-1-18-B",
+        "variantId": "VAR-P943-JHN-1-18",
+        "readingReference": "Lado derecho de la entrada del aparato de SBLGNT, John 1:18",
+        "contentMode": "reference_only",
+        "readingText": null,
+        "witnessStatus": "documented",
+        "witnessAttestations": [
+          {
+            "witnessId": "MAN-GA-02",
+            "status": "attested",
+            "witnessLocator": "Juan 1:18, según la tabla de Wright; folio y línea no comprobados",
+            "hand": {
+              "kind": "unknown",
+              "label": null
+            },
+            "sourceEvidenceId": "EVD-P943-WRIGHT-A"
+          }
+        ],
+        "sourceEvidenceIds": [
+          "EVD-P943-APP",
+          "EVD-P943-WRIGHT-A"
+        ]
+      }
+    ],
+    "translations": []
+  }
+}
