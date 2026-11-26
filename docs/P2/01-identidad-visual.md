@@ -63,3 +63,8 @@ Esta entrega corresponde únicamente a P2.1. No implementa todavía un sistema c
 - Revisión de contraste de combinaciones utilizadas antes de cerrar la fase.
 
 La aprobación final de la implementación corresponde al responsable del proyecto.
+
+
+## 8. Compatibilidad de GitHub Actions
+
+Durante la validación del PR #2, la construcción fue satisfactoria, pero GitHub informó que `actions/checkout@v4` y `actions/setup-node@v4` usaban Node.js 20 y se ejecutarían forzadas en Node.js 24. Para evitar depender de la compatibilidad transitoria, el workflow de esta rama actualiza las acciones a versiones con runtime Node.js 24: checkout v7, setup-node v7, upload-pages-artifact v5 y deploy-pages v5. La nueva ejecución del PR debe confirmar la compatibilidad. El despliegue permanece restringido a push en main; por ello el job deploy se omite correctamente en pull_request.
