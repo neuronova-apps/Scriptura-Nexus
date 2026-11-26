@@ -43,7 +43,7 @@ const context = {
   bibliographyEditionIds: ['BIB-SYNTH-CRITICAL', 'BIB-SYNTH-TRANSLATION'],
   resourceIds: ['REC-SYNTH-TEXT', 'REC-SYNTH-APPARATUS', 'REC-SYNTH-WITNESS', 'REC-SYNTH-TRANSLATION'],
   authorIds: ['AUT-SYNTH-EDITOR', 'AUT-SYNTH-TRANSLATOR'],
-  evidenceIds: ['EVD-SYNTH-001', 'EVD-SYNTH-002', 'EVD-SYNTH-003'],
+  verifiedEvidenceIds: ['EVD-SYNTH-001', 'EVD-SYNTH-002', 'EVD-SYNTH-003'],
   bibleBooks: [book],
   textualUnits: [unit],
   versificationIds: [],
