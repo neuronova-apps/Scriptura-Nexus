@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badge from '../../components/Badge.astro';
+import Button from '../../components/Button.astro';
+import Callout from '../../components/Callout.astro';
+import Card from '../../components/Card.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { basePath } from '../../lib/site';
+const home = basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title="Sistema de diseño | Scriptura Nexus" description="Guía visual de los tokens, componentes y estados de interfaz de Scriptura Nexus.">
+  <div class="sn-showcase">
+    <SectionHeading eyebrow="P2.2 · Guía de interfaz" title="Sistema de diseño" description="Referencia visual de los colores, la tipografía, los componentes y sus estados. Esta página es una muestra técnica para revisar la consistencia antes de construir el portal principal." />
+    <Card variant="editorial">
+      <h1 class="sn-showcase-title">Identidad académica clásica</h1>
+      <p>El sistema utiliza azul profundo, acentos dorados, superficies cálidas y tipografía serif para títulos con sans serif para lectura funcional.</p>
+      <div class="sn-button-row">
+        <Button href={home} variant="primary">Volver al inicio</Button>
+        <Button href={home} variant="secondary">Acción secundaria</Button>
+        <Button variant="ghost" disabled>Acción no disponible</Button>
+      </div>
+    </Card>
+    <section aria-labelledby="colors-title">
+      <SectionHeading id="colors-title" title="Paleta cromática" description="Colores institucionales y semánticos definidos mediante tokens CSS." />
+      <div class="sn-swatch-list">
+        <div class="sn-swatch"><div class="sn-swatch__color" style="background:#142b3c"></div><div class="sn-swatch__label">Azul profundo<br /><code>#142B3C</code></div></div>
+        <div class="sn-swatch"><div class="sn-swatch__color" style="background:#b99559"></div><div class="sn-swatch__label">Dorado<br /><code>#B99559</code></div></div>
+        <div class="sn-swatch"><div class="sn-swatch__color" style="background:#f6f1e7"></div><div class="sn-swatch__label">Marfil<br /><code>#F6F1E7</code></div></div>
+        <div class="sn-swatch"><div class="sn-swatch__color" style="background:#fffdf9"></div><div class="sn-swatch__label">Superficie<br /><code>#FFFDF9</code></div></div>
+        <div class="sn-swatch"><div class="sn-swatch__color" style="background:#202a32"></div><div class="sn-swatch__label">Texto principal<br /><code>#202A32</code></div></div>
+      </div>
+    </section>
+    <section aria-labelledby="components-title">
+      <SectionHeading id="components-title" title="Componentes reutilizables" description="Elementos de interfaz disponibles para las siguientes fases del portal." />
+      <div class="sn-showcase-grid">
+        <Card variant="raised">
+          <h3>Insignias de estado</h3>
+          <div class="sn-button-row">
+            <Badge variant="neutral">Planificado</Badge>
+            <Badge variant="info">En revisión</Badge>
+            <Badge variant="success">Verificado</Badge>
+            <Badge variant="warning">Pendiente</Badge>
+          </div>
+        </Card>
+        <Card>
+          <h3>Botones y acciones</h3>
+          <div class="sn-button-row">
+            <Button size="sm">Pequeño</Button>
+            <Button>Estándar</Button>
+            <Button size="lg" variant="secondary">Ampliado</Button>
+          </div>
+        </Card>
+      </div>
+      <div class="sn-showcase-grid">
+        <Card variant="outlined">
+          <h3>Tarjeta editorial</h3>
+          <p>Contenedor para presentar información, resúmenes y accesos a contenidos.</p>
+        </Card>
+        <Card variant="editorial">
+          <h3>Tarjeta destacada</h3>
+          <p>Variante con acento dorado para contenidos que requieren jerarquía visual.</p>
+        </Card>
+      </div>
+      <Callout tone="info" title="Nota informativa">Componente para aclaraciones metodológicas, referencias y mensajes de contexto.</Callout>
+      <Callout tone="success" title="Estado verificado">Componente para comunicar una comprobación satisfactoria.</Callout>
+      <Callout tone="warning" title="Pendiente de revisión">Componente para advertencias y tareas que requieren validación.</Callout>
+    </section>
+    <p class="sn-showcase-note"><a href={home}>Regresar a Scriptura Nexus</a></p>
+  </div>
+</BaseLayout>

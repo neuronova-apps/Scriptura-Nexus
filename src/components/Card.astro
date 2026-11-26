@@ -1,0 +1,11 @@
+---
+interface Props {
+  variant?: 'default' | 'raised' | 'outlined' | 'editorial';
+  padding?: 'sm' | 'md' | 'lg';
+  interactive?: boolean;
+  class?: string;
+}
+const { variant = 'default', padding = 'md', interactive = false, class: className } = Astro.props;
+const classes = ['sn-card', `sn-card--${variant}`, padding !== 'md' ? `sn-card--${padding}` : '', interactive ? 'sn-card--interactive' : '', className];
+---
+<article class:list={classes}><slot /></article>
