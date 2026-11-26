@@ -1,0 +1,51 @@
+name: P9.1.3 Contratos y proyección textual
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/lib/textual-contracts.ts'
+      - 'scripts/project-textual-p913.py'
+      - 'scripts/validate-editions-p912.py'
+      - 'scripts/audit-editions-p91.py'
+      - 'docs/P9/admisiones-ediciones-p912.json'
+      - 'docs/P9/candidatos-ediciones-p91.json'
+      - 'tests/p913-textual-contracts.test.mjs'
+      - 'tests/test_textual_projection_p913.py'
+      - 'docs/P9/03-contratos-proyeccion.md'
+      - '.github/workflows/textual-projection-p913.yml'
+      - 'src/data/linguistica/registro.json'
+      - 'src/data/publicaciones/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  textual-projection:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Entorno Node y dependencias fijadas
+        run: |
+          node --version
+          npm ci
+      - name: Contratos y pruebas de proyecto
+        run: |
+          npm run check
+          node --test tests/p913-textual-contracts.test.mjs
+          python3 -m unittest discover -s tests -p 'test_textual_projection_p913.py'
+      - name: Regresión completa
+        run: |
+          npm test
+          npm run build
+          npm run test:build
+      - name: Revalidar admisión y licencias P9.1.2
+        run: python3 scripts/validate-editions-p912.py
+      - name: Proyección real de ambas ediciones, solo en memoria
+        run: |
+          python3 scripts/project-textual-p913.py > "$RUNNER_TEMP/p913-report.json"
+          cat "$RUNNER_TEMP/p913-report.json"
