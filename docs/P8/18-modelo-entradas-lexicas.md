@@ -14,3 +14,7 @@ P8.4.2: 0/9.299 enlaces raw exactos. La revisión fija del proveedor documenta e
 
 ## Validación
 Diez pruebas sintéticas: identidad, vínculos exactos, regla documentada, rechazo de falsas correspondencias, jerarquía de definiciones, alcance, determinismo y ausencia. Proyección real repetida, huella canónica reproducible, control de base de 30.740 entradas (10.221 índice, 8.674 Strong, 11.845 BDB), 10.221 formas y 35.496 definiciones textuales; comprobar 9.299 destinos AugIndex y 10.175 BDB exactos. Recuento de vínculos Strong/aug y ausencias se obtiene de CI, no se presupone. Mantener registro público vacío, cero publicación y cero enlaces de corpus. Los datos no se imprimen, solo conteos y huellas. Modelo Python reutilizable para pruebas internas; interfaz y motor de concordancias se implementarán posteriormente. P8.4.4 deberá usar ocurrencias por edición y claves reales, no sumar entradas léxicas como ocurrencias. P8.5 conserva ampliación, Dodson pendiente y restricciones STEP; revisiones manuales anteriores pendientes. CI pendiente.
+
+## Corrección de validación #1
+
+10 pruebas aprobadas; la ejecución real falló en verified sources (blob mismatch). El árbol Git fijo del proveedor confirma que el identificador correcto de StrongControl.js es 2382264d93a803a4b35f976801060ae77706807a; se elimina un carácter final transcrito por error. Se añaden etiquetas de comprobación por candidato/evidencia sin contenido de entradas. Integridad y criterios permanecen intactos; revalidar.

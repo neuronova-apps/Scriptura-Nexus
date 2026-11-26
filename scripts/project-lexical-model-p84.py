@@ -16,7 +16,7 @@ require=admission.require
 # Evidence for the ID representation, not executable code or licensed corpus components.
 # Both files belong to the same fixed revision as the dictionary.
 RULE_EVIDENCE=[
- {'path':'HomeFiles/Script/StrongControl.js','bytes':1666,'gitBlobSha1':'2382264d93a803a4b35f976801060ae77706807a7','sha256':None},
+ {'path':'HomeFiles/Script/StrongControl.js','bytes':1666,'gitBlobSha1':'2382264d93a803a4b35f976801060ae77706807a','sha256':None},
  {'path':'HomeFiles/Script/WordGroup.js','bytes':4091,'gitBlobSha1':'6596766f0818ece1ed8fdbba83916ff0cd15d94d','sha256':None}
 ]
 RULE='OSHB-lexicon-xref-strong-H-prefix-v1'
@@ -42,6 +42,7 @@ def strong_target(raw,targets,rule_verified):
 def verify_rule(fetch,source):
     evidence=[]
     for e in RULE_EVIDENCE:
+        print('Verify rule evidence '+e['path'],file=sys.stderr)
         b=fetch(source['repository'],source['commit'],e)
         sha=admission.audit.check_bytes(b,e)
         s=b.decode('utf-8-sig')
@@ -170,6 +171,7 @@ def load_verified(fetch=admission.audit.download):
     ds=admission.verified_decisions(m,prior)
     roots={};seen=set()
     for d in ds:
+        print('Verify '+d['candidateId'],file=sys.stderr)
         for e in d['licenseEvidence']:
             key=(d['repository'],d['commit'],e['path'])
             if key not in seen:
