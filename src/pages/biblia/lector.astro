@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import {basePath} from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/bible-reader.css';
+const base=basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title="Lector bíblico | Scriptura Nexus" description="Consulta por edición y referencia original. Publicación de textos pendiente de autorización.">
+ <div class="module-landing sn-bible-reader">
+  <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'biblia/'}>Biblia</a></li><li aria-current="page">Lector bíblico</li></ol></nav>
+  <Card variant="editorial">
+   <p class="module-phase">Biblia · P9.2.3</p>
+   <h1>Lector bíblico</h1>
+   <p>Consulta de las Escrituras por edición, libro y referencia original. La cobertura y las referencias dependen de cada edición.</p>
+   <Callout tone="info" title="Disponibilidad de lectura">No hay ediciones autorizadas para consulta pública. La validación técnica de las fuentes no equivale a autorización de publicación.</Callout>
+  </Card>
+  <nav aria-label="Secciones del lector"><ul class="br-sections"><li><a href="#br-reference-title">Seleccionar referencia</a></li><li><a href="#br-passage-title">Lectura del pasaje</a></li><li><a href="#br-source-title">Procedencia y licencia</a></li></ul></nav>
+  <section class="sn-card sn-card--default" aria-labelledby="br-reference-title">
+   <h2 id="br-reference-title" tabindex="-1">1. Seleccionar referencia</h2>
+   <p id="br-help">Los controles se habilitarán cuando exista una edición autorizada. Los capítulos y versículos conservarán las etiquetas originales, incluidos rangos y sufijos.</p>
+   <form id="br-form" aria-describedby="br-help"><fieldset id="br-fields" disabled>
+    <legend>Edición y referencia</legend>
+    <div class="br-fields">
+     <label for="br-edition">Edición bíblica<select id="br-edition" required><option value="">Sin ediciones disponibles</option></select></label>
+     <label for="br-book">Libro<select id="br-book" required disabled><option value="">Selecciona una edición</option></select></label>
+     <label for="br-chapter">Capítulo<select id="br-chapter" required disabled><option value="">Selecciona un libro</option></select></label>
+     <label for="br-verse">Versículo o rango<select id="br-verse" required disabled><option value="">Selecciona un capítulo</option></select></label>
+    </div>
+    <button id="br-consult" class="sn-button sn-button--primary" type="submit" disabled>Consultar referencia</button>
+   </fieldset></form>
+   <noscript><p>La selección interactiva requiere JavaScript. El estado de disponibilidad permanece accesible.</p></noscript>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="br-passage-title">
+   <h2 id="br-passage-title" tabindex="-1">2. Lectura del pasaje</h2>
+   <p id="br-status" role="status" aria-live="polite">No hay ediciones disponibles para consulta pública.</p>
+   <div class="br-reading"><p id="br-passage">El pasaje se mostrará cuando exista una edición autorizada para consulta.</p></div>
+   <div class="br-actions" role="group" aria-label="Navegación dentro del libro">
+    <button id="br-previous" type="button" class="sn-button sn-button--secondary" disabled>Referencia anterior</button>
+    <button id="br-next" type="button" class="sn-button sn-button--secondary" disabled>Referencia siguiente</button>
+   </div>
+   <p>Un marcador vacío no se interpreta como ausencia canónica. No se equiparan automáticamente referencias de distintas ediciones.</p>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="br-source-title">
+   <h2 id="br-source-title" tabindex="-1">3. Procedencia y licencia</h2>
+   <p>La consulta identificará edición, versión, idioma, referencia original, recurso, fuente y atribución cuando los datos estén autorizados.</p>
+   <div id="br-detail" hidden><div id="br-source"></div></div>
+   <p><a href={base+'fundamentos/licencias/'}>Criterios de licencias y uso de fuentes</a></p>
+  </section>
+  <p><a href={base+'biblia/'}>Volver al módulo Biblia</a></p>
+ </div>
+</BaseLayout>
+<script>
+ import {createReaderView,emptyReaderRelease} from '../../lib/reader-view';
+ import {mountReader} from '../../scripts/reader-ui';
+ // P11.4: no manifest, source files, validation fixtures or corpus in the browser.
+ mountReader(document,createReaderView(emptyReaderRelease()));
+</script>
