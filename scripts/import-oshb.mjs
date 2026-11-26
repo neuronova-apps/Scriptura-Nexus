@@ -30,7 +30,7 @@ for(const id of oshbFileIds){
  report.push(first);
 }
 console.log(JSON.stringify({schemaVersion:1,mode:'validation-only',files:report},null,2));
-if(process.argv.includes('--occurrences')||process.argv.includes('--lexical')){
+if(process.argv.some(x=>['--occurrences','--lexical','--morphology'].includes(x))){
  const {identifyOshb,summarizeOccurrences}=await import('./lib/oshb-occurrences.mjs');
  const a=identifyOshb(projections,manifest),b=identifyOshb(repeated,manifest);
  const summary=summarizeOccurrences(a);
@@ -42,7 +42,7 @@ if(process.argv.includes('--occurrences')||process.argv.includes('--lexical')){
  assert.ok(summary.alternatives>0);
  console.log(JSON.stringify({mode:'P8.2.3-validation-only',...summary},null,2));
  if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.3: unidades y ocurrencias\n\n`'+JSON.stringify(summary)+'`\n');
- if(process.argv.includes('--lexical')){
+ if(process.argv.includes('--lexical')||process.argv.includes('--morphology')){
   const {organizeLexical,summarizeLexical}=await import('./lib/oshb-lexical.mjs');
   const first=organizeLexical(a,manifest),second=organizeLexical(b,manifest);
   const lexical=summarizeLexical(first);
@@ -53,6 +53,23 @@ if(process.argv.includes('--occurrences')||process.argv.includes('--lexical')){
   assert.equal(lexical.admittedIdentifiers,0);
   console.log(JSON.stringify({mode:'P8.2.4-validation-only',...lexical},null,2));
   if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.4: lemas e identificadores\n\n`'+JSON.stringify(lexical)+'`\n');
+  if(process.argv.includes('--morphology')){
+   const {organizeMorphology,summarizeMorphology,auditTehmc}=await import('./lib/oshb-morphology.mjs');
+   const m=organizeMorphology(a,first,manifest),n=organizeMorphology(b,second,manifest);
+   const morphology=summarizeMorphology(m);
+   assert.deepEqual(morphology,summarizeMorphology(n));
+   assert.equal(morphology.primary,lexical.primary);assert.equal(morphology.alternative,lexical.alternative);
+   assert.ok(morphology.documented>0);
+   const table=manifest.files.find(f=>f.id==='LING-010');
+   assert.ok(table&&table.review==='aprobado');
+   const bytes=await download(table);
+   const compatibility=auditTehmc(manifest,bytes,m);
+   assert.deepEqual(compatibility,auditTehmc(manifest,bytes,n));
+   assert.ok(compatibility.exactCodeMatches>0);
+   assert.equal(compatibility.semanticEquivalencesApproved,0);
+   console.log(JSON.stringify({mode:'P8.2.5-validation-only',morphology,compatibility},null,2));
+   if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n## P8.2.5: morfología y compatibilidad TEHMC\n\n`'+JSON.stringify({morphology,compatibility})+'`\n');
+  }
  }
 }
 if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,
