@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { basePath } from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/search.css';
+const base = basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title="Buscar en el catálogo | Scriptura Nexus" description="Búsqueda local de investigaciones planificadas por identificador, título y términos.">
+<div class="module-landing" data-search-root data-index={base+'data/catalog-search.json'} data-base={base}>
+<nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li aria-current="page">Búsqueda</li></ol></nav>
+<Card variant="editorial"><p class="module-phase">Búsqueda inicial · P5.4</p><h1>Buscar en el catálogo</h1><p>Consulta por identificador, título, términos del foco, eje principal o referencias preliminares. Los resultados son fichas planificadas, no investigaciones publicadas. Aún no se consultan textos bíblicos, autores, léxicos ni manuscritos.</p></Card>
+<section aria-labelledby="buscar-titulo"><h2 id="buscar-titulo">Consulta de investigaciones</h2>
+<form id="search-form" class="catalog-search-form" role="search" hidden>
+<label for="search-query">Identificador, título o términos</label>
+<input id="search-query" type="search" maxlength="200" autocomplete="off" aria-describedby="search-help" placeholder="Ejemplo: SN-001 o tatuarse"/>
+<p id="search-help">Puedes buscar sin tildes y sin distinguir mayúsculas. Las consultas se procesan en tu navegador.</p>
+<div class="catalog-search-actions"><button type="submit" class="sn-button sn-button--primary">Buscar</button><button type="reset" class="sn-button sn-button--secondary">Limpiar</button></div>
+</form>
+<noscript><p>La búsqueda interactiva requiere JavaScript. Puedes consultar todas las fichas en el catálogo.</p></noscript>
+<p id="search-status" role="status" aria-live="polite">Consulta el catálogo o habilita el buscador.</p>
+<ol id="search-results" class="catalog-search-results"></ol>
+<button type="button" id="search-more" class="sn-button sn-button--secondary" hidden>Mostrar más resultados</button>
+</section>
+<a class="sn-button sn-button--secondary" href={base+'estudios/'}>Explorar catálogo completo</a>
+</div></BaseLayout>
+<script>
+import { searchCatalog, PAGE_SIZE, SEARCH_INDEX_VERSION, type SearchEntry } from '../../lib/catalog-search';
+const root = document.querySelector<HTMLElement>('[data-search-root]');
+const form = document.querySelector<HTMLFormElement>('#search-form');
+const query = document.querySelector<HTMLInputElement>('#search-query');
+const status = document.querySelector<HTMLElement>('#search-status');
+const results = document.querySelector<HTMLOListElement>('#search-results');
+const more = document.querySelector<HTMLButtonElement>('#search-more');
+if (root && form && query && status && results && more) {
+  let index: SearchEntry[] | undefined;
+  let matches: SearchEntry[] = [];
+  let shown = 0;
+  let sequence = 0;
+  const renderNext = () => {
+    for (const item of matches.slice(shown, shown+PAGE_SIZE)) {
+      const li=document.createElement('li'); li.className='sn-card sn-card--default';
+      const meta=document.createElement('p'); meta.className='module-phase'; meta.textContent=item.id+' · Planificado';
+      const heading=document.createElement('h3');
+      const link=document.createElement('a'); link.href=root.dataset.base+'estudios/'+item.id+'/'; link.textContent=item.title; heading.append(link);
+      const detail=document.createElement('p'); detail.textContent=item.question;
+      const axis=document.createElement('p'); axis.textContent='Eje principal: '+item.axis;
+      li.append(meta,heading,detail,axis); results.append(li);
+    }
+    shown=Math.min(shown+PAGE_SIZE,matches.length);
+    more.hidden=shown>=matches.length;
+    status.textContent=matches.length ? 'Resultados: '+matches.length+'. Mostrados: '+shown+'.' : 'No se encontraron investigaciones para esta consulta.';
+  };
+  const clear = () => { matches=[]; shown=0; results.replaceChildren(); more.hidden=true; };
+  form.hidden=false; status.textContent='Escribe una consulta y selecciona Buscar.';
+  form.addEventListener('submit', async event => {
+    event.preventDefault(); const current=++sequence; clear();
+    const value=query.value.trim();
+    if(!value){ status.textContent='Escribe una consulta para buscar.'; return; }
+    status.textContent='Consultando catálogo…';
+    try {
+      if(!index){
+        const response=await fetch(root.dataset.index ?? '');
+        if(!response.ok) throw new Error('Índice no disponible');
+        const data=await response.json();
+        if(data.schemaVersion!==SEARCH_INDEX_VERSION || !Array.isArray(data.items)) throw new Error('Índice incompatible');
+        index=data.items as SearchEntry[];
+      }
+      if(current!==sequence) return;
+      matches=searchCatalog(index,value); renderNext();
+    } catch { if(current===sequence) status.textContent='No se pudo cargar el índice. Intenta nuevamente o consulta el catálogo completo.'; }
+  });
+  form.addEventListener('reset',()=>{++sequence;clear();status.textContent='Escribe una consulta y selecciona Buscar.';});
+  more.addEventListener('click',()=>{const previous=shown;renderNext();results.children[previous]?.querySelector('a')?.focus();});
+}
+</script>
