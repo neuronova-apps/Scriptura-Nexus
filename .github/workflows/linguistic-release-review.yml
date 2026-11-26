@@ -1,0 +1,29 @@
+name: P8.5.4 Revisión de publicación y ampliación
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P8/revision-publicacion-p85.json'
+      - 'docs/P8/candidatos-ampliacion-p85.json'
+      - 'scripts/review-linguistic-release-p85.py'
+      - 'scripts/audit-linguistic-coverage-p85.py'
+      - 'scripts/lib/oshb-osis.py'
+      - 'scripts/lib/oshb-importer.mjs'
+      - 'src/data/linguistica/registro.json'
+      - 'tests/test_linguistic_release_p85.py'
+      - '.github/workflows/linguistic-release-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas de barrera de publicación
+        run: python3 -m unittest discover -s tests -p test_linguistic_release_p85.py
+      - name: Revisión real de licencias y candidatos sin admisión
+        run: python3 scripts/review-linguistic-release-p85.py

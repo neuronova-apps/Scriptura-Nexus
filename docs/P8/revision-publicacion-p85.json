@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "scope": "P8.5.4-release-review-only",
+  "publication": false,
+  "newAdmissions": false,
+  "authorization": null,
+  "baseline": "caff8493318f9881bff140edf0f13c118270d317",
+  "existing": [
+    {
+      "id": "LING-010",
+      "repository": "STEPBible/STEPBible-Data",
+      "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+      "path": "Morphology codes/TEHMC - Translators Expansion of Hebrew Morphology Codes - STEPBible.org CC BY.txt",
+      "sha256": "fe37e62b97e531410159e5f1b1ac8a69db4512c3e8407c03bae38639bd09f97f",
+      "bytes": 394651,
+      "allowedComponents": [
+        "codigo_morfologico",
+        "descripcion_gramatical"
+      ],
+      "selectors": [],
+      "declaredLicense": "CC BY 4.0 (declaración general; confirmar cabecera y componentes)",
+      "attribution": "STEP Bible (https://www.STEPBible.org), basado en el trabajo de Tyndale House, Cambridge; https://stepbible.github.io/STEPBible-Data/; CC BY 4.0.",
+      "conditions": [
+        "Incorporación transformada a la aplicación, no espejo ni archivo original.",
+        "Preservar código y sistema; distinguir códigos léxicos y de ocurrencia.",
+        "Atribuir, enlazar CC BY 4.0 y registrar modificaciones; excluir ejemplos y glosas."
+      ],
+      "incorporatedInternally": false,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-011",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Gen.xml",
+      "sha256": "e5ab737c323d3879733e03882ecf17b7d917115133f87f9cd97895ac98f2b1a4",
+      "bytes": 1859929,
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "selectors": [],
+      "declaredLicense": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "conditions": [
+        "Conservar escritura, diacríticos, posiciones, versificación y procedencia del libro.",
+        "Atribución exacta OSHB, enlace a CC BY 4.0 y registro de cambios de anotaciones.",
+        "No copiar metadatos o materiales ajenos a las capas autorizadas; no redistribuir XML íntegro en esta fase."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-012",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Dan.xml",
+      "sha256": "e63592e843bfe907758853affb352f049296cce1df95e747d65a48b29ab486a4",
+      "bytes": 569236,
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "selectors": [],
+      "declaredLicense": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "conditions": [
+        "Conservar escritura, diacríticos, posiciones, versificación y procedencia del libro.",
+        "Atribución exacta OSHB, enlace a CC BY 4.0 y registro de cambios de anotaciones.",
+        "No copiar metadatos o materiales ajenos a las capas autorizadas; no redistribuir XML íntegro en esta fase."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-013",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/3John.xml",
+      "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+      "bytes": 11161,
+      "allowedComponents": [
+        "texto_griego"
+      ],
+      "selectors": [],
+      "declaredLicense": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "conditions": [
+        "Texto oficial de 3 Juan únicamente; conservar forma Unicode y atribución. No publicar en esta fase."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-014",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "85-3Jn-morphgnt.txt",
+      "sha256": "a75df82d9007bb673e7d27bcb86681e011befc24cbaef1c658965803d7ae490a",
+      "bytes": 14477,
+      "allowedComponents": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "selectors": [],
+      "declaredLicense": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "conditions": [
+        "No admitir columnas de texto o forma normalizada de MorphGNT; usar exclusivamente texto de SBLGNT oficial.",
+        "Vincular únicamente coincidencia exacta de referencia, posición y forma original; las divergencias se conservan sin anotación.",
+        "Conservar los códigos originales, lema del proveedor, versión y procedencia de las anotaciones; cumplir atribución, indicación de cambios y compartir igual cuando corresponda. No inferir Strong ni equivalencias."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-015",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "AugIndex.xml",
+      "sha256": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+      "bytes": 213975,
+      "allowedComponents": [
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/w/@aug",
+        "index/w/text()"
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "conditions": [
+        "Conservar código aumentado exacto y destino ID del índice; no eliminar espacios, homógrafos ni extensiones.",
+        "No establecer equivalencia con Strong estándar ni vincular automáticamente a otra revisión OSHB."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-016",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "LexicalIndex.xml",
+      "sha256": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+      "bytes": 1782592,
+      "allowedComponents": [
+        "anotaciones_lema",
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/part/@xml:lang",
+        "index/part/entry/@id",
+        "index/part/entry/w/text()",
+        "index/part/entry/xref/@aug",
+        "index/part/entry/xref/@strong",
+        "index/part/entry/xref/@bdb"
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "conditions": [
+        "Forma de entrada y lengua declarada; preservar valores originales; los vínculos son afirmaciones del proveedor, no sinonimia.",
+        "Excluir TWOT, etym, def, pos, xlit, texto mixto y cualquier campo no enumerado."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-017",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "HebrewStrong.xml",
+      "sha256": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+      "bytes": 2749042,
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/entry/@id",
+        "lexicon/entry/meaning/def/text()"
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "conditions": [
+        "Definiciones explícitas de Strong solo cuando el elemento def sea hijo directo de meaning y contenga exclusivamente texto; no extraer texto mixto, referencias, notas, source ni usage.",
+        "Preservar ubicación y contexto de entrada; no presentar una glosa como sentido contextual de una ocurrencia."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-018",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "BrownDriverBriggs.xml",
+      "sha256": "2b52658a4323d91674cda4090ab8b3ebddfff640f4f18143c28300e80b2c38f8",
+      "bytes": 2911253,
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/part/@xml:lang",
+        "lexicon/part/section/entry/@id",
+        "lexicon/part/section/entry/def/text()",
+        "lexicon/part/section/entry/sense//def/text()"
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "conditions": [
+        "Definiciones explícitas de BDB solo en elementos def exclusivamente textuales; preservar ruta exacta del sentido, no aplanar sentidos anidados.",
+        "Excluir elementos externos, notas, referencias bíblicas, foreign, y texto mixto; no publicar BDB abreviado de Online Bible."
+      ],
+      "incorporatedInternally": true,
+      "publication": false,
+      "releaseStatus": "pendiente_autorizacion"
+    }
+  ],
+  "expansion": [
+    {
+      "id": "EXP-C01",
+      "book": "Exod",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Exod.xml",
+      "bytes": 1524392,
+      "gitBlobSha1": "9f1174a401696a1625e88c0d87ed2359889fb79e",
+      "sha256": "5e53e6841562f2c7af6756984a643b05628b29c39dc690d914dce6c70c6c38cb",
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "allowedComponents": [],
+      "review": "propuesto_no_admitido",
+      "publication": false,
+      "importerCompatible": false
+    },
+    {
+      "id": "EXP-C02",
+      "book": "Lev",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Lev.xml",
+      "bytes": 1085069,
+      "gitBlobSha1": "6025e0713ccfc79de0c90cb92ed0e8c0062d2614",
+      "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "allowedComponents": [],
+      "review": "propuesto_no_admitido",
+      "publication": false,
+      "importerCompatible": false
+    },
+    {
+      "id": "EXP-C03",
+      "book": "Ezra",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Ezra.xml",
+      "bytes": 369920,
+      "gitBlobSha1": "03b112205f559c24d00e35109f950c42e3f9464b",
+      "sha256": "f0104ad778bedd7cd67c7fa6529c0b157837fca140fd5a3594b5e44a28b5d474",
+      "proposedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "allowedComponents": [],
+      "review": "propuesto_no_admitido",
+      "publication": false,
+      "importerCompatible": false
+    }
+  ],
+  "deferred": {
+    "historical": [
+      "LING-001",
+      "LING-002",
+      "LING-003",
+      "LING-004",
+      "LING-005",
+      "LING-006",
+      "LING-007",
+      "LING-008",
+      "LING-009"
+    ],
+    "greek": [
+      "GRK-C03"
+    ],
+    "lexical": [
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07"
+    ]
+  },
+  "releaseRequirements": [
+    "aprobacion_explicita_por_archivo_componente_y_version",
+    "atribucion_licencia_y_cambios_visibles",
+    "separar_texto_y_anotaciones_CC_BY_SA",
+    "proyeccion_reproducible_y_exclusion_de_componentes_no_admitidos",
+    "revision_manual_accesibilidad_y_presupuestos_o_excepcion_aprobada",
+    "verificacion_de_salida_publica_y_reversion"
+  ],
+  "pending": {
+    "morphologyPartial": 326,
+    "morphologyUninterpreted": 10,
+    "morphologyAbsent": 3,
+    "withoutAdmittedLemma": 594,
+    "unresolvedStrongLinks": 8,
+    "unresolvedAugAttributes": 1157,
+    "greekLexicon": "no_disponible",
+    "TEHMC": "no_incorporada",
+    "manualAccessibility": "pendiente",
+    "fieldINP": "no_medido"
+  }
+}
