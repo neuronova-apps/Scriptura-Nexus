@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createConcordance} from '../src/lib/concordance.ts';
+import {projectGreek,greekAdmissions} from '../scripts/lib/greek-projection.mjs';
+const m=JSON.parse(readFileSync('docs/P8/admision-griega.json','utf8'));
+const ann={pos:'N-',parsing:'----NSM-',lemma:'α'};
+const make=()=>projectGreek([{verse:1,position:1,form:'α',annotation:ann},{verse:1,position:2,form:'α',annotation:ann},{verse:1,position:3,form:'α\u0301',annotation:null},{verse:2,position:1,form:'β',annotation:ann}],m,{fixedBaseline:false}).registry;
+const setup=()=>{const r=make();return {r,c:createConcordance(r,greekAdmissions(m)),q:{editionId:r.editions[0].id,language:'grc'}}};
+test('exact original form, no normalization',()=>{const {c,q}=setup();assert.equal(c.search({...q,mode:'form',value:'α'}).total,2);assert.equal(c.search({...q,mode:'form',value:'α\u0301'}).total,1);assert.equal(c.search({...q,mode:'form',value:'ά'}).total,0);});
+test('lemma and provider key include inflected forms and exclude missing annotation',()=>{const {c,q,r}=setup();const x=c.search({...q,mode:'lemma',lemmaId:r.lemmas[0].id});assert.equal(x.total,3);assert.deepEqual(x.occurrences.map(t=>t.form),['α','α','β']);assert.equal(c.search({...q,mode:'provider',system:'MorphGNT-lemma',value:'α'}).total,3);});
+test('no invented Strong correspondence',()=>{const {c,q}=setup();assert.equal(c.search({...q,mode:'provider',system:'Strong',value:'G1'}).status,'sistema_no_disponible');});
+test('coverage and absent lemma are distinct from zero results',()=>{const {c,q}=setup();assert.equal(c.search({...q,mode:'form',value:'χ'}).total,0);assert.equal(c.search({...q,editionId:'TXT-none',mode:'form',value:'α'}).status,'edicion_no_disponible');assert.equal(c.search({...q,language:'hbo',mode:'form',value:'α'}).status,'lengua_fuera_de_cobertura');assert.equal(c.search({...q,bookId:'LIB-Gen',mode:'form',value:'α'}).status,'libro_fuera_de_cobertura');assert.equal(c.search({...q,mode:'lemma',lemmaId:'LEM-none'}).status,'lema_no_disponible');});
+test('pagination ordered by unit and position, counts unchanged',()=>{const {c,q,r}=setup();const k={...q,mode:'lemma',lemmaId:r.lemmas[0].id,limit:2};const a=c.search(k),b=c.search({...k,offset:a.nextOffset});assert.equal(a.total,3);assert.equal(a.nextOffset,2);assert.equal(b.total,3);assert.equal(b.nextOffset,null);assert.deepEqual([...a.occurrences,...b.occurrences].map(x=>[x.verse,x.position]),[['1',0],['1',1],['2',0]]);});
+test('invalid query rejected',()=>{const {c,q}=setup();for(const args of [{limit:0},{limit:101},{offset:-1},{offset:0.5},{value:''}])assert.throws(()=>c.search({...q,mode:'form',value:'α',...args}));});
+test('source attribution and no mutation through inputs or results',()=>{const {c,q,r}=setup();const k={...q,mode:'lemma',lemmaId:r.lemmas[0].id};r.tokens[0].form='x';const a=c.search(k);assert.equal(a.occurrences[0].origin.fileId,'LING-013');assert.equal(a.occurrences[0].lemmas[0].origin.fileId,'LING-014');assert.equal(a.occurrences[0].lemmas[0].annotationOrigin.fileId,'LING-014');a.occurrences[0].form='y';assert.equal(c.search(k).occurrences[0].form,'α');});
+test('invalid admissions rejected',()=>{assert.throws(()=>createConcordance(make(),[]));});
+test('empty corpus is not zero frequency',()=>{const c=createConcordance({schemaVersion:1,editions:[],units:[],tokens:[],lemmas:[],identifiers:[],analyses:[],morphCodes:[]},[]);assert.deepEqual(c.coverage(),[]);assert.equal(c.search({editionId:'TXT-none',language:'grc',mode:'form',value:'α'}).total,null);});
+test('OSHB exact repeated components count one occurrence, language scope and raw preserved',()=>{
+ const commit='a'.repeat(40),sha256='b'.repeat(64),files=[{id:'LING-011',commit,sha256,allowedComponents:['texto_wlc','anotaciones_lema']}];
+ const o=(component)=>({fileId:files[0].id,commit,sha256,component,locator:'fixture'});
+ const r={schemaVersion:1,editions:[{id:'TXT-oshb',name:'OSHB',languages:['hbo','arc'],version:'2.2',versificationRef:'Bible.MT',canonRef:null,coverageBookIds:['LIB-Gen'],fileIds:['LING-011']}],units:[{id:'UNIT-a',editionId:'TXT-oshb',bookId:'LIB-Gen',chapter:'1',verse:'1',order:0,text:'א',origin:o('texto_wlc')}],tokens:[{id:'TOK-a',unitId:'UNIT-a',position:0,form:'א',language:'hbo',direction:'rtl',origin:o('texto_wlc'),analysisIds:[]}],lemmas:[{id:'LEM-a',language:'hbo',form:null,homograph:'a',providerKey:'1 a',system:'OSHB-lemma',origin:o('anotaciones_lema')}],identifiers:[],analyses:[],morphCodes:[]};
+ const s={tokenId:'TOK-a',lexical:{raw:'1 a/1 a',origin:o('anotaciones_lema'),components:[{position:0,code:'1 a',lemmaId:'LEM-a'},{position:1,code:'1 a',lemmaId:'LEM-a'}]},morphology:{state:'absent',analysisId:null}};
+ const c=createConcordance(r,files,[s]);const q={editionId:'TXT-oshb',language:'hbo',mode:'provider',system:'OSHB-lemma',value:'1 a'};
+ const a=c.search(q);assert.equal(a.total,1);assert.deepEqual(a.occurrences[0].lemmas[0].componentPositions,[0,1]);assert.equal(c.search({...q,value:'1'}).total,0);assert.equal(c.search({...q,language:'arc'}).status,'sistema_no_disponible');
+});
