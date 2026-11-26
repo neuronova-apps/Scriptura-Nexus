@@ -13,7 +13,7 @@ export const moduleDetails = {
       "Catálogo inicial de 42 temas planificados",
       "Fichas y estudios revisados"
     ],
-    "empty": "El catálogo se incorporará en P5 y el motor editorial en P6. Todavía no hay estudios publicados en este módulo."
+    "empty": "El catálogo inicial, las fichas y la búsqueda están disponibles. El motor editorial se incorporará en P6. Todavía no hay estudios publicados en este módulo."
   },
   "biblioteca": {
     "planned": [
