@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "mode": "audit-only",
+  "files": [
+    {
+      "id": "GRK-C01",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/3John.xml",
+      "bytes": 11161,
+      "gitBlobSha1": "308cc92e958f729caae8d6e54492d51d0b63baca",
+      "licenseEvidence": {
+        "path": "LICENSE",
+        "bytes": 18650,
+        "gitBlobSha1": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb"
+      },
+      "book": "3John",
+      "review": "pendiente",
+      "proposedComponents": [
+        "texto_griego"
+      ],
+      "restriction": "CC BY 4.0 declarada; texto oficial v1.2, no contiene por sí solo morfología."
+    },
+    {
+      "id": "GRK-C02",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "85-3Jn-morphgnt.txt",
+      "bytes": 14477,
+      "gitBlobSha1": "27a36b65129ba367a8ea92dc3507ef1a0cfee730",
+      "licenseEvidence": {
+        "path": "README.md",
+        "bytes": 1630,
+        "gitBlobSha1": "a3256051467a61ddb5099254dd9abaf5d03e5e80"
+      },
+      "book": "3John",
+      "review": "pendiente",
+      "proposedComponents": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "restriction": "README declara CC BY-SA 3.0 para análisis y lemas; texto sujeto a EULA histórica. No redistribuir la columna de texto ni presumir compatibilidad de versiones."
+    },
+    {
+      "id": "GRK-C03",
+      "repository": "Clear-Bible/macula-greek",
+      "commit": "8423afe47b9e8f24b7772e808af45c7159a6fe7e",
+      "path": "SBLGNT/nodes/25-3john.xml",
+      "bytes": 167017,
+      "gitBlobSha1": "4c12ee61652f563d766a3a49be29f73a7bd5ca29",
+      "licenseEvidence": {
+        "path": "LICENSE.md",
+        "bytes": 3573,
+        "gitBlobSha1": "3becb16406493d31853996281fe1ba3b7fdfaa55"
+      },
+      "book": "3John",
+      "review": "pendiente",
+      "proposedComponents": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "restriction": "CC BY 4.0 declarada para capas propias; XML contiene atributos de múltiples fuentes. Auditar procedencia de campos exactos; no admitir glosas, Strong, LN, dominio ni árbol sintáctico."
+    }
+  ]
+}

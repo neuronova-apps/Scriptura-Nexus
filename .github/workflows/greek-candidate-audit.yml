@@ -1,0 +1,24 @@
+name: P8.3.1 Auditoría griega sin admisión
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audit-greek-p83.py'
+      - 'tests/test_greek_p83.py'
+      - 'docs/P8/candidatos-griegos-p83.json'
+      - '.github/workflows/greek-candidate-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas sintéticas del auditor
+        run: python3 -m unittest discover -s tests -p test_greek_p83.py
+      - name: Auditoría real doble de candidatos griegos
+        run: python3 scripts/audit-greek-p83.py
