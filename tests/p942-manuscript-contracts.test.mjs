@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {
   parseManuscriptRegistry,
   validateManuscriptRegistry,
@@ -269,4 +270,12 @@ test('P9.4.2: el parser devuelve una copia independiente', () => {
   const parsed = parseManuscriptRegistry(value, context);
   parsed.witnesses[0].siglum = 'CAMBIO LOCAL';
   assert.equal(value.witnesses[0].siglum, witness.siglum);
+});
+
+test('P9.4.2: el registro versionado conserva listas vacías y barreras', () => {
+  const stored = JSON.parse(readFileSync('docs/P9/registro-manuscritos-p942.json', 'utf8'));
+  assert.deepEqual(validateManuscriptRegistry(stored, context), []);
+  for (const key of ['editions', 'witnesses', 'variants', 'readings', 'translations']) {
+    assert.deepEqual(stored[key], []);
+  }
 });
