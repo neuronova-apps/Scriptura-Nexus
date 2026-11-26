@@ -66,6 +66,9 @@ for (const path of modulePaths) {
   if (path === 'fundamentos') {
     for (const label of ['18 perspectivas de análisis','20 secciones de investigación','SN-001','¿Tatuarse es pecado?','Ejemplo metodológico, no resultado','Criterios de evidencia y aplicación']) assert.ok(html.includes(label), label);
     assert.match(html, /Fundamentos metodológicos · P4.4 en revisión/);
+  } else if (path === 'estudios') {
+    assert.match(html, /Catálogo de investigaciones/);
+    assert.match(html, /Ejes temáticos/);
   } else {
     assert.match(html, /Contenido en preparación/);
     assert.match(html, /Recursos previstos/);
@@ -198,3 +201,37 @@ for (const [name, file] of fundamentalsPages) {
   }
 }
 console.log('P4.4: seis páginas de fundamentos, landmarks, referencias ARIA, IDs, rutas y anclas: conformes.');
+
+const catalogData = JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const axesData = JSON.parse(readFileSync('src/data/taxonomia/ejes.json','utf8')).items;
+const catalogHtml = readFileSync('dist/estudios/index.html','utf8');
+assert.equal([...catalogHtml.matchAll(/data-study-id="SN-\d{3}"/g)].length,42);
+assert.match(catalogHtml,/id="catalog-axis"/);
+assert.match(catalogHtml,/id="catalog-status"/);
+assert.match(catalogHtml,/id="catalog-reset"/);
+assert.match(catalogHtml,/role="status"/);
+for (const item of [...axesData,...catalogData]) {
+  const route = (item.id.startsWith('SN-')?'estudios/':'ejes/')+item.id+'/';
+  assert.ok(catalogHtml.includes('href="/Scriptura-Nexus/'+route+'"'),route);
+  const html=readFileSync('dist/'+route+'index.html','utf8');
+  assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,route);
+  assert.match(html,/data-appearance-panel/);
+  assert.match(html,/aria-label="Ruta de navegación"/);
+  if(item.id.startsWith('SN-')) {
+    assert.match(html,/Ficha preliminar del catálogo/);
+    assert.match(html,/Planificado/);
+    for(const id of [item.primaryAxisId,...item.relatedAxisIds]) assert.ok(html.includes('href="/Scriptura-Nexus/ejes/'+id+'/"'));
+  } else {
+    if(!item.initialPlannedCount) assert.match(html,/aún no tiene investigaciones principales/);
+    for(const s of catalogData.filter(s=>s.primaryAxisId===item.id||s.relatedAxisIds.includes(item.id))) assert.ok(html.includes('href="/Scriptura-Nexus/estudios/'+s.id+'/"'));
+  }
+  for(const [,href] of html.matchAll(/href="([^"]+)"/g)) {
+    if(!href.startsWith('/')) continue;
+    assert.ok(href.startsWith('/Scriptura-Nexus/'));
+    const target=href.slice('/Scriptura-Nexus/'.length).split('#')[0];
+    assert.ok(existsSync('dist/'+target+(target===''||target.endsWith('/')?'index.html':'')),href);
+  }
+}
+assert.ok(!existsSync('dist/estudios/SN-999/index.html'));
+assert.ok(!existsSync('dist/ejes/E99/index.html'));
+console.log('P5.3: 14 ejes, 42 fichas, relaciones, filtros y enlaces estáticos conformes.');

@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { matchesCatalogFilter, statusLabels } from '../src/lib/catalog-exploration.ts';
+const items=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const axes=JSON.parse(readFileSync('src/data/taxonomia/ejes.json','utf8')).items;
+const filter=(a,s)=>items.filter(x=>matchesCatalogFilter(x.primaryAxisId,x.status,a,s));
+test('P5.3 catálogo completo sin filtros',()=>assert.equal(filter('','').length,42));
+test('P5.3 filtros por cada eje coinciden con P0.3',()=>{for(const a of axes) assert.equal(filter(a.id,'').length,a.initialPlannedCount);});
+test('P5.3 combina eje y estado',()=>assert.equal(filter('E09','planificado').length,9));
+test('P5.3 estados sin resultados',()=>{for(const s of Object.keys(statusLabels).filter(s=>s!=='planificado')) assert.equal(filter('',s).length,0);});
+test('P5.3 filtros desconocidos no devuelven registros',()=>{assert.equal(filter('E99','').length,0);assert.equal(filter('','invalido').length,0);});
+test('P5.3 relaciones no duplican el eje principal',()=>{for(const x of items) assert.ok(!x.relatedAxisIds.includes(x.primaryAxisId));});
