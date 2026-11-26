@@ -501,15 +501,17 @@ export function validateTextualVariant(
   const locusErrors = validateTextualLocus(value.locus, context);
   const apparatusErrors = validateApparatusReference(value.apparatus, context);
   errors.push(...locusErrors, ...apparatusErrors);
-  if (record(value.locus) && record(value.apparatus)) {
-    requireValue(errors, value.locus.textualEditionId === value.apparatus.textualEditionId,
+  const locus = record(value.locus) ? value.locus : null;
+  const apparatus = record(value.apparatus) ? value.apparatus : null;
+  if (locus && apparatus) {
+    requireValue(errors, locus.textualEditionId === apparatus.textualEditionId,
       'variante: locus y aparato pertenecen a ediciones distintas');
-    const editionRecord = editionRecords.find(item => item.textualEditionId === value.locus.textualEditionId);
+    const editionRecord = editionRecords.find(item => item.textualEditionId === locus.textualEditionId);
     requireValue(errors, Boolean(editionRecord && editionRecord.reviewStatus === 'documented' &&
       editionRecord.editionRole !== 'translation'),
       'variante: requiere ficha ENT19 documentada y no traducida');
   }
-  const readings = validateRefs(value.readingIds, readingIds, 'variante lecturas', errors, 2);
+  validateRefs(value.readingIds, readingIds, 'variante lecturas', errors, 2);
   const internal = validateRefs(value.internalEvidenceIds, context.verifiedEvidenceIds,
     'variante evidencia interna', errors);
   const external = validateRefs(value.externalEvidenceIds, context.verifiedEvidenceIds,
