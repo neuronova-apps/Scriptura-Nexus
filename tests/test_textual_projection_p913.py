@@ -45,4 +45,15 @@ class TestSBLProjection(unittest.TestCase):
  def test_rejects_non_greek_words_and_invalid_utf8(self):
   with self.assertRaises(ValueError):p.parse_sbl_xml(xml('<verse-number id="John 1:1">1</verse-number><w>word</w>'),'Jn','John')
   with self.assertRaises(UnicodeDecodeError):p.parse_sbl_xml(b'<book id="Jn"><w>\xff</w></book>','Jn','John')
+class TestBookAliases(unittest.TestCase):
+ def test_preserves_unique_exact_aliases_in_source_order(self):
+  self.assertEqual(p.merge_book_aliases(['MRK'],'Mark','Mark'),['MRK','Mark'])
+  self.assertEqual(p.merge_book_aliases(['MAT'],'Matthew','Matt'),['MAT','Matthew','Matt'])
+  self.assertEqual(p.merge_book_aliases(['JHN','John'],'John','john'),['JHN','John','john'])
+ def test_real_manifest_rejects_duplicate_aliases(self):
+  import json
+  report=json.loads((ROOT/'docs/P9/proyeccion-ediciones-p913.json').read_text(encoding='utf-8'))
+  p.verify_report(report)
+  report['books'][0]['aliases'].append(report['books'][0]['aliases'][0])
+  with self.assertRaisesRegex(ValueError,'book identities'):p.verify_report(report)
 if __name__=='__main__':unittest.main()
