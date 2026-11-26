@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "scope": "P8.4.1-audit-only",
+  "publication": false,
+  "admission": false,
+  "baseline": "07658a3740e85a5ff505fcfcd77a0ff257113f06",
+  "files": [
+    {
+      "id": "LEX-C01",
+      "repository": "STEPBible/STEPBible-Data",
+      "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+      "path": "Lexicons/TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt",
+      "bytes": 4736983,
+      "gitBlobSha1": "d61029c1f7aaaa629d272aa4bc2ba14678ede0de",
+      "sha256": "734a5b64a1152f67604bf09d32f15c0ba537151961752fcf168087b41b4d93ea",
+      "format": "step-tsv",
+      "language": "grc",
+      "licenseEvidence": [
+        {
+          "path": "README.md",
+          "bytes": 14495,
+          "gitBlobSha1": "708f06253e0cbb64dcbc1bd1842715bf37ddb102",
+          "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+        }
+      ],
+      "declaredLicense": "CC BY 4.0 general; fuentes múltiples",
+      "review": "revision_por_componentes",
+      "componentsProposed": [
+        "identificadores de proveedor; revisar correspondencias"
+      ],
+      "excludedComponents": [
+        "definiciones completas; glosas y formas hasta comprobar su procedencia"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C02",
+      "repository": "STEPBible/STEPBible-Data",
+      "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+      "path": "Lexicons/TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt",
+      "bytes": 3288115,
+      "gitBlobSha1": "df4dabb25973ed2df6fbdae0345b8cb446711e2f",
+      "sha256": "848eef2ac16753a43694897dbb9e8f266725e7cc9da4809f367ee5b990f05dbb",
+      "format": "step-tsv",
+      "language": "hbo-arc",
+      "licenseEvidence": [
+        {
+          "path": "README.md",
+          "bytes": 14495,
+          "gitBlobSha1": "708f06253e0cbb64dcbc1bd1842715bf37ddb102",
+          "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+        }
+      ],
+      "declaredLicense": "CC BY 4.0 general; Meaning de Online Bible sujeto a permiso",
+      "review": "revision_por_componentes",
+      "componentsProposed": [
+        "eStrong/dStrong/uStrong como sistemas separados; Gloss y Morph de Tyndale, previa revisión"
+      ],
+      "excludedComponents": [
+        "Meaning completo, incluidas adiciones mezcladas; formas/transliteraciones hasta aclarar procedencia"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C03",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "AugIndex.xml",
+      "bytes": 213975,
+      "gitBlobSha1": "7fdfaa8b9cf83e41c72cb58ac84494f74bd6296c",
+      "sha256": null,
+      "format": "xml-aug",
+      "language": "hbo-arc",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": null
+        }
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "review": "prioritario_para_propuesta",
+      "componentsProposed": [
+        "enlace documentado código aumentado a ID léxico"
+      ],
+      "excludedComponents": [
+        "equivalencia automática con Strong estándar; coincidencia automática entre versiones"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C04",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "LexicalIndex.xml",
+      "bytes": 1782592,
+      "gitBlobSha1": "d11eb2078532f3119c70822bd27a91b484d4727b",
+      "sha256": null,
+      "format": "xml-index",
+      "language": "hbo-arc",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": null
+        }
+      ],
+      "declaredLicense": "CC BY 4.0",
+      "review": "prioritario_para_propuesta",
+      "componentsProposed": [
+        "ID, lengua, forma, referencias Strong/BDB como vínculos de proveedor"
+      ],
+      "excludedComponents": [
+        "texto TWOT; equivalencias semánticas inferidas; glosas y etimología hasta auditar componentes"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C05",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "HebrewStrong.xml",
+      "bytes": 2749042,
+      "gitBlobSha1": "6ea1abdaf8c095a634097014dea43428ea5f358f",
+      "sha256": null,
+      "format": "xml-strong",
+      "language": "hbo-arc",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": null
+        }
+      ],
+      "declaredLicense": "CC BY 4.0 para edición digital; Strong original declarado dominio público",
+      "review": "prioritario_para_propuesta",
+      "componentsProposed": [
+        "entradas y definiciones de Strong con atribución"
+      ],
+      "excludedComponents": [
+        "deducir sentido de una ocurrencia; contenido TWOT"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C06",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "BrownDriverBriggs.xml",
+      "bytes": 2911253,
+      "gitBlobSha1": "21bb98cab34334cd500553addc38aca6792f7bce",
+      "sha256": null,
+      "format": "xml-bdb",
+      "language": "hbo-arc",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": null
+        }
+      ],
+      "declaredLicense": "CC BY 4.0 para edición digital; BDB original declarado dominio público",
+      "review": "prioritario_para_propuesta",
+      "componentsProposed": [
+        "entradas BDB y sentidos documentados con atribución"
+      ],
+      "excludedComponents": [
+        "contenido TWOT; confundir con BDB abreviado de Online Bible"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "LEX-C07",
+      "repository": "biblicalhumanities/Dodson-Greek-Lexicon",
+      "commit": "74f70358d4acfaf2f980bf2feb58ab7115cbbcbc",
+      "path": "dodson.csv",
+      "bytes": 539071,
+      "gitBlobSha1": "7a729b69688f3bf88ea54b7f79405359dbaa6b82",
+      "sha256": null,
+      "format": "dodson-tsv",
+      "language": "grc",
+      "licenseEvidence": [
+        {
+          "path": "LICENSE",
+          "bytes": 6554,
+          "gitBlobSha1": "3bbbc1ee92562e6a2eebfc6a366f4309d06c7d54",
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 557,
+          "gitBlobSha1": "7b6a42b80a098065b2c825ddae52cf13094d46c3",
+          "sha256": null
+        },
+        {
+          "path": "README-ulrikp.txt",
+          "bytes": 3665,
+          "gitBlobSha1": "d7f5f2c3b8b9826d1b769df1dbb7c9e66ae64671",
+          "sha256": null
+        }
+      ],
+      "declaredLicense": "Dominio público declarado por autor; LICENSE CC0-1.0",
+      "review": "prioritario_para_propuesta",
+      "componentsProposed": [
+        "Strong y GK como campos originales, escritura Beta Code pendiente de conversión comprobada, glosas breves y largas"
+      ],
+      "excludedComponents": [
+        "morfología de ocurrencia; enlaces por mera coincidencia de escritura; equivalencia automática GK/Strong",
+        "categoría léxica no presente en el CSV fijo; no presumir Unicode según README"
+      ],
+      "allowedComponents": [],
+      "publication": false
+    }
+  ]
+}
