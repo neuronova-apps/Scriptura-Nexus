@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import { sha256 } from './publication-digest.mjs';
 import { type EditorialRecord, validateEditorial } from './editorial-contracts.ts';
 import { type RelationSet, type RelationContext, validateRelations } from './editorial-relations.ts';
 export interface SourceAdmission {id:string; admission:'admitido'; scope:'publicacion'; licenseRef:string; attribution:string; authorizationRef:string}
@@ -12,7 +12,7 @@ function canonical(value:unknown):string {
  if(value!==null&&typeof value==='object'){const o=value as Record<string,unknown>;return '{'+Object.keys(o).sort().map(k=>JSON.stringify(k)+':'+canonical(o[k])).join(',')+'}';}
  const json=JSON.stringify(value);if(json===undefined)throw new Error('Valor no serializable');return json;
 }
-export function snapshotDigest(value:Omit<Snapshot,'digest'>):string{return createHash('sha256').update(canonical(value)).digest('hex');}
+export function snapshotDigest(value:Omit<Snapshot,'digest'>):string{return sha256(canonical(value));}
 function versionGreater(a:string,b:string):boolean{const x=a.split('.').map(BigInt),y=b.split('.').map(BigInt);for(let i=0;i<3;i++){if(x[i]!==y[i])return x[i]>y[i];}return false;}
 export function validateSnapshot(s:Snapshot,ctx:PublicationContext):string[]{
  const errors:string[]=[];const req=(ok:unknown,msg:string)=>{if(!ok)errors.push(msg);};
@@ -51,7 +51,9 @@ export function validateSnapshot(s:Snapshot,ctx:PublicationContext):string[]{
  }catch{errors.push('snapshot mal formado o no serializable');}
  return errors;
 }
-export function validateRegistry(registry:PublicationRegistry,ctx:PublicationContext):void{
+export function validateRegistry(value:unknown,ctx:PublicationContext):asserts value is PublicationRegistry{
+ if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Registro de publicación inválido');
+ const registry=value as PublicationRegistry;
  if(!registry||registry.schemaVersion!==1||!Array.isArray(registry.snapshots)||Object.keys(registry).some(k=>!['schemaVersion','snapshots'].includes(k)))throw new Error('Registro de publicación inválido');
  const latest=new Map<string,Snapshot>();
  const seen=new Set<string>();
