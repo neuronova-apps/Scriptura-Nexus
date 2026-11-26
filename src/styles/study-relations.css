@@ -1,0 +1,7 @@
+.study-relations {min-width:0;overflow-wrap:anywhere;}
+.study-relations dl {display:grid;gap:var(--sn-space-2);}
+.study-relations dt {font-weight:600;color:var(--sn-navy);}
+.study-relations dd {margin:0 0 var(--sn-space-2);}
+.study-relations summary {cursor:pointer;font-weight:600;padding-block:.5rem;}
+.study-relations li+li {margin-block-start:var(--sn-space-2);}
+.study-relations article {border-block-start:1px solid var(--sn-border);padding-block:var(--sn-space-3);scroll-margin-block-start:1rem;}

@@ -326,3 +326,15 @@ for(const study of catalogData){
   assert.doesNotMatch(html,/PRUEBA SINTÉTICA|synthetic-only/);
 }
 console.log('P6.2: 42 plantillas, 840 secciones pendientes, índice y anclas conformes; sin cuerpos sintéticos.');
+
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ assert.match(html,/Relaciones de investigación/);
+ assert.match(html,/no constituyen relaciones doctrinales/);
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA|EVD-900001|AF-900001|POS-900001/);
+ const ids=new Set([study.primaryAxisId,...study.relatedAxisIds]);
+ for(const other of catalogData.filter(s=>s.id!==study.id&&[s.primaryAxisId,...s.relatedAxisIds].some(id=>ids.has(id)))){
+  assert.ok(html.includes('href="/Scriptura-Nexus/estudios/'+other.id+'/"'),study.id+' relación '+other.id);
+ }
+}
+console.log('P6.3: relaciones taxonómicas en 42 fichas; sin evidencias o posturas sintéticas.');
