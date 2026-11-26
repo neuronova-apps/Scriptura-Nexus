@@ -212,10 +212,11 @@
       "declaredLicense": "Dominio público declarado por autor; LICENSE CC0-1.0",
       "review": "prioritario_para_propuesta",
       "componentsProposed": [
-        "forma griega, Strong, GK, categoría léxica, glosas breves y largas"
+        "Strong y GK como campos originales, escritura Beta Code pendiente de conversión comprobada, glosas breves y largas"
       ],
       "excludedComponents": [
-        "morfología de ocurrencia; enlaces por mera coincidencia de escritura; equivalencia automática GK/Strong"
+        "morfología de ocurrencia; enlaces por mera coincidencia de escritura; equivalencia automática GK/Strong",
+        "categoría léxica no presente en el CSV fijo; no presumir Unicode según README"
       ],
       "allowedComponents": [],
       "publication": false

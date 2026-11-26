@@ -11,7 +11,7 @@ Base main 07658a3740e85a5ff505fcfcd77a0ff257113f06, P8.3.5 integrado y deploy #1
 | LEX-C04 | OSHB LexicalIndex.xml | Candidato prioritario: lengua declarada por parte, ID, forma y vínculos BDB/Strong. TWOT es referencia, no contenido autorizado. |
 | LEX-C05 | OSHB HebrewStrong.xml | Candidato prioritario: diccionario Strong hebreo, distinguir versión digital y texto original. |
 | LEX-C06 | OSHB BrownDriverBriggs.xml | Candidato prioritario: BDB en edición digital, trabajo en progreso; independiente de Online Bible. |
-| LEX-C07 | Dodson dodson.csv | Candidato prioritario: seis columnas, Strong, GK, categoría léxica, forma griega, glosas cortas/largas. POS añadido por Sandborg-Petersen; no es análisis morfológico de ocurrencia. |
+| LEX-C07 | Dodson dodson.csv | Candidato prioritario: README-ulrikp describe seis columnas Unicode/POS; el CSV fijo consultado contiene cinco columnas entrecomilladas, Strong/GK numéricos, forma en Beta Code y glosas corta/larga. No tiene columna POS. Verificar codificación y versión antes de admisión; no convertir automáticamente ni asumir equivalencia con la descripción del README. |
 
 Evidencia fija:
 - STEP [README](https://github.com/STEPBible/STEPBible-Data/blob/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/README.md) declara CC BY 4.0; cabecera [TBESH](https://github.com/STEPBible/STEPBible-Data/blob/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Lexicons/TBESH%20-%20Translators%20Brief%20lexicon%20of%20Extended%20Strongs%20for%20Hebrew%20-%20STEPBible.org%20CC%20BY.txt) especifica permiso Online Bible para Meaning; atribuir STEP Bible y Tyndale House, enlazar origen y registrar cambios. No distribuir archivos íntegros.
@@ -24,3 +24,7 @@ Siete candidatos (dos STEP, cuatro OSHB, uno Dodson), cinco archivos únicos de 
 
 ## P8.4.2 (posterior)
 Tras aprobar auditoría y verificar huellas, preparar decisión por archivo/componente priorizando OSHB y Dodson. Confirmar cobertura de arameo, correspondencia explícita de AugIndex con las claves OSHB (incluidos homógrafos y extensiones), forma y lengua de MorphGNT frente a Dodson; no vincular por número o coincidencia superficial. Conservar ausencia/ambigüedad; separar Strong, extensiones, GK, BDB, lemas y morfología. No traducir ni inventar sentidos. P8.4.3–7: modelo, concordancias, índices, interfaz, validación. Los 333 pendientes OSHB, seis griegos y revisiones humanas anteriores se conservan.
+
+## Corrección de auditoría real #1
+
+Las siete pruebas sintéticas pasaron, pero la auditoría real #1 (45863771487) falló con diagnóstico genérico. Se verificó por separado el CSV fijo de Dodson y su discrepancia con README-ulrikp; se ajusta el lector a TSV entrecomillado con cinco columnas y recuento Unicode sin convertir Beta Code, y se añade diagnóstico por candidato y razón técnica sin exponer entradas. El origen exacto de la falla #1 aún no está confirmado. El inventario y huellas permanecen idénticos; no se relaja integridad.

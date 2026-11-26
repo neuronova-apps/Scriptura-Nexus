@@ -1,5 +1,7 @@
 """P8.4.1: reproducible metadata-only audit of fixed lexical candidates."""
 import collections
+import csv
+import io
 import hashlib
 import json
 import pathlib
@@ -82,10 +84,14 @@ def table_stats(s,kind):
         rows=[line.split('\t') for line in lines[ix+1:] if re.match(r'^[HG]\d{1,5}',line)]
         if not rows: raise ValueError('no STEP data rows')
         return {'headerColumns':len(fields),'dataRows':len(rows),'rowWidths':dict(sorted(collections.Counter(len(r) for r in rows).items())),'headerSignals':{'onlineBible':'online bible' in header,'permission':'permission' in header,'abbottSmith':'abbott' in header,'liddell':'liddell' in header,'ccBy':'cc by' in header or 'cc-by' in header,'gloss':'gloss' in header,'meaning':'meaning' in header}}
-    rows=[line.split('\t') for line in lines if line.strip()]
-    data=[r for r in rows if re.fullmatch(r'G\d{1,5}',r[0].strip())]
+    rows=list(csv.reader(io.StringIO(s),delimiter='\t',strict=True))
+    rows=[r for r in rows if r and any(r)]
+    expected=["Strong's","Goodrick-Kohlenberger","Greek Word","English Definition (brief)","English Definition (longer)"]
+    if not rows or rows[0]!=expected: raise ValueError('unexpected Dodson CSV header')
+    data=rows[1:]
     if not data: raise ValueError('no Dodson data rows')
-    return {'dataRows':len(data),'nonDataRows':len(rows)-len(data),'rowWidths':dict(sorted(collections.Counter(len(r) for r in data).items())),'uniqueStrongKeys':len({r[0] for r in data})}
+    return {'dataRows':len(data),'headerColumns':len(rows[0]),'rowWidths':dict(sorted(collections.Counter(len(r) for r in data).items())),'numericStrongRows':sum(bool(re.fullmatch(r'\d{1,5}',r[0])) for r in data),'uniqueStrongKeys':len({r[0] for r in data}),'greekUnicodeRows':sum(len(r)>2 and bool(re.search(r'[\u0370-\u03ff\u1f00-\u1fff]',r[2])) for r in data),'format':'quoted TSV, five documented-by-file columns; Greek encoding requires separate validation'}
+
 def audit(m,fetch=download):
     fs=validate(m)
     cache={}
@@ -96,6 +102,7 @@ def audit(m,fetch=download):
         return b,check_bytes(b,item)
     results=[]
     for f in fs:
+        print('Audit candidate '+f['id'],file=sys.stderr)
         b,sha=get(f,f)
         evidence=[]
         for e in f['licenseEvidence']:
@@ -115,8 +122,10 @@ def main():
         stage='audit'
         report=audit(m)
         print(json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2))
-    except Exception:
-        print('P8.4.1 audit failed at '+stage+'; source content omitted',file=sys.stderr)
+    except Exception as e:
+        allowed={'audit gate','candidate inventory','candidate scope','file metadata','sha256','blob mismatch','sha256 mismatch','redirect prohibited','unexpected response','unsafe xml','missing augmented index','missing entries','missing STEP header','no STEP data rows','unexpected Dodson CSV header','no Dodson data rows','public registry changed'}
+        detail=str(e) if str(e) in allowed else type(e).__name__
+        print('P8.4.1 audit failed at '+stage+' ('+detail+'); source content omitted',file=sys.stderr)
         return 1
     return 0
 if __name__=='__main__': sys.exit(main())
