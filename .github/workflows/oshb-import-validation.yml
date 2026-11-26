@@ -1,0 +1,33 @@
+name: P8.2.2 Validación importador OSHB
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/lib/oshb-osis.py'
+      - 'scripts/lib/oshb-importer.mjs'
+      - 'scripts/import-oshb.mjs'
+      - 'scripts/lib/linguistic-admission.mjs'
+      - 'scripts/lib/linguistic-audit.mjs'
+      - 'docs/P8/candidatos-linguisticos.json'
+      - 'tests/p8-oshb-importer.test.mjs'
+      - '.github/workflows/oshb-import-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-oshb:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Intérprete XML aislado
+        run: python3 --version
+      - name: Pruebas sintéticas
+        run: node --test tests/p8-oshb-importer.test.mjs
+      - name: Importación real reproducible sin persistencia
+        run: node scripts/import-oshb.mjs
