@@ -75,6 +75,7 @@ def parse(data, book):
                 continue
             vid = reference(verse.get("osisID"), re.escape(cid) + r"\.[1-9]\d*[a-z]?")
             events = []
+            alternatives = []
             check_text(verse.text, "versiculo")
             for child in verse:
                 if child.tag in (q("w"), q("seg")) and len(child) == 0:
@@ -89,10 +90,28 @@ def parse(data, book):
                         events.append({"kind":"segment","form":form,"type":child.get("type")})
                 else:
                     unknown(child, "versiculo")
+                    if child.tag == q("note") and child.get("type") == "variant":
+                        for index, reading in enumerate(child):
+                            if reading.tag != q("rdg") or reading.get("type") != "x-qere":
+                                continue
+                            words = []
+                            if any(w.tag != q("w") or len(w) or not w.text or not w.text.strip() for w in reading):
+                                pending["variante:qere_no_resuelta"] += 1
+                                continue
+                            if reading.text and reading.text.strip() or any(w.tail and w.tail.strip() for w in reading):
+                                pending["variante:qere_no_resuelta"] += 1
+                                continue
+                            for w in reading:
+                                words.append({"kind":"word","form":w.text,"providerId":w.get("id"),
+                                    "type":w.get("type"),"lemmaRaw":w.get("lemma"),"morphRaw":w.get("morph")})
+                            if words:
+                                alternatives.append({"kind":"qere","noteChildIndex":index,
+                                    "afterEvent":len(events)-1,"words":words})
+
                 check_text(child.tail, "versiculo")
             if not any(e["kind"] == "word" for e in events):
                 raise ValueError("Versículo sin palabras directas")
-            verses.append({"reference":vid,"events":events})
+            verses.append({"reference":vid,"events":events,**({"alternatives":alternatives} if alternatives else {})})
             check_text(verse.tail, "capitulo")
         if not verses:
             raise ValueError("Capítulo sin versículos")
