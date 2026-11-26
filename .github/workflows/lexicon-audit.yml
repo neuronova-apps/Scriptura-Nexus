@@ -1,0 +1,25 @@
+name: P8.4.1 Auditoría de fuentes léxicas
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P8/candidatos-lexicos-p84.json'
+      - 'scripts/audit-lexicon-p84.py'
+      - 'tests/test_lexicon_p84_audit.py'
+      - '.github/workflows/lexicon-audit.yml'
+      - 'src/data/linguistica/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas de integridad y aislamiento
+        run: python3 -m unittest discover -s tests -p test_lexicon_p84_audit.py
+      - name: Auditoría de archivos fijos y metadatos sin persistencia
+        run: python3 scripts/audit-lexicon-p84.py

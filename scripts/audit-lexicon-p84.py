@@ -1,0 +1,122 @@
+"""P8.4.1: reproducible metadata-only audit of fixed lexical candidates."""
+import collections
+import hashlib
+import json
+import pathlib
+import re
+import sys
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
+
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+MANIFEST=ROOT/'docs/P8/candidatos-lexicos-p84.json'
+ALLOWED={'STEPBible/STEPBible-Data','openscriptures/HebrewLexicon','biblicalhumanities/Dodson-Greek-Lexicon'}
+MAX_BYTES=6*1024*1024
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self,*args,**kwargs):
+        raise ValueError('redirect prohibited')
+def valid_path(p):
+    return isinstance(p,str) and bool(p) and not re.search(r'[\\?#:\x00-\x1f]',p) and all(x not in ('','.','..') for x in p.split('/'))
+def validate(m):
+    if m.get('schemaVersion')!=1 or m.get('scope')!='P8.4.1-audit-only' or m.get('publication') is not False or m.get('admission') is not False:
+        raise ValueError('audit gate')
+    fs=m['files']
+    if len(fs)!=7 or {f['id'] for f in fs}!={f'LEX-C{i:02d}' for i in range(1,8)}:
+        raise ValueError('candidate inventory')
+    for f in fs:
+        if f['repository'] not in ALLOWED or not re.fullmatch('[a-f0-9]{40}',f['commit']) or f['allowedComponents']!=[] or f['publication'] is not False or f['review'] not in ('revision_por_componentes','prioritario_para_propuesta') or not f['licenseEvidence']:
+            raise ValueError('candidate scope')
+        for item in [f,*f['licenseEvidence']]:
+            if not valid_path(item['path']) or not isinstance(item['bytes'],int) or not 0<item['bytes']<=MAX_BYTES or not re.fullmatch('[a-f0-9]{40}',item['gitBlobSha1']):
+                raise ValueError('file metadata')
+            if item['sha256'] is not None and not re.fullmatch('[a-f0-9]{64}',item['sha256']):
+                raise ValueError('sha256')
+    return fs
+def check_bytes(b,f):
+    if len(b)!=f['bytes'] or hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()!=f['gitBlobSha1']:
+        raise ValueError('blob mismatch')
+    sha=hashlib.sha256(b).hexdigest()
+    if f['sha256'] is not None and sha!=f['sha256']:
+        raise ValueError('sha256 mismatch')
+    b.decode('utf-8-sig',errors='strict')
+    return sha
+def download(repository,commit,f):
+    url='https://raw.githubusercontent.com/'+repository+'/'+commit+'/'+urllib.parse.quote(f['path'],safe='/')
+    req=urllib.request.Request(url,headers={'User-Agent':'Scriptura-Nexus-P84-Audit','Accept-Encoding':'identity'})
+    with urllib.request.build_opener(NoRedirect()).open(req,timeout=90) as r:
+        if r.geturl()!=url or r.status!=200:
+            raise ValueError('unexpected response')
+        b=r.read(f['bytes']+1)
+    check_bytes(b,f)
+    return b
+def local(tag): return tag.rsplit('}',1)[-1]
+def xml_stats(s,kind):
+    if re.search(r'<!\s*(?:DOCTYPE|ENTITY)',s,re.I):
+        raise ValueError('unsafe xml')
+    root=ET.fromstring(s)
+    counts=collections.Counter(local(e.tag) for e in root.iter())
+    if kind=='xml-aug':
+        rows=[e for e in root.iter() if local(e.tag)=='w' and 'aug' in e.attrib]
+        if not rows: raise ValueError('missing augmented index')
+        keys=[e.attrib['aug'] for e in rows]
+        return {'root':local(root.tag),'rows':len(rows),'uniqueKeys':len(set(keys)),'duplicateRows':len(rows)-len(set(keys)),'emptyTargets':sum(not (e.text or '').strip() for e in rows)}
+    entries=[e for e in root.iter() if local(e.tag)=='entry']
+    if not entries: raise ValueError('missing entries')
+    if kind=='xml-index':
+        langs=collections.Counter()
+        for part in root.iter():
+            if local(part.tag)=='part':
+                code=part.attrib.get('{http://www.w3.org/XML/1998/namespace}lang','unknown')
+                langs[code if code in ('heb','arc','hbo','he','ar') else 'other']+=sum(local(e.tag)=='entry' for e in part)
+        xrefs=[e for e in root.iter() if local(e.tag)=='xref']
+        return {'root':local(root.tag),'entries':len(entries),'languages':dict(sorted(langs.items())),'xrefStrong':sum('strong' in e.attrib for e in xrefs),'xrefBDB':sum('bdb' in e.attrib for e in xrefs),'xrefTWOT':sum('twot' in e.attrib for e in xrefs),'wordElements':counts['w']}
+    return {'root':local(root.tag),'entries':len(entries),'entriesWithId':sum('id' in e.attrib for e in entries),'wordElements':counts['w']}
+def table_stats(s,kind):
+    lines=s.splitlines()
+    if kind=='step-tsv':
+        ix=next((i for i,line in enumerate(lines) if re.match(r'^\s*eStrong#?\s*\t\s*dStrong',line,re.I) and '\t' in line and re.search(r'\bMeaning\b',line,re.I)),None)
+        if ix is None: raise ValueError('missing STEP header')
+        fields=lines[ix].split('\t')
+        header='\n'.join(lines[:ix]).lower()
+        rows=[line.split('\t') for line in lines[ix+1:] if re.match(r'^[HG]\d{1,5}',line)]
+        if not rows: raise ValueError('no STEP data rows')
+        return {'headerColumns':len(fields),'dataRows':len(rows),'rowWidths':dict(sorted(collections.Counter(len(r) for r in rows).items())),'headerSignals':{'onlineBible':'online bible' in header,'permission':'permission' in header,'abbottSmith':'abbott' in header,'liddell':'liddell' in header,'ccBy':'cc by' in header or 'cc-by' in header,'gloss':'gloss' in header,'meaning':'meaning' in header}}
+    rows=[line.split('\t') for line in lines if line.strip()]
+    data=[r for r in rows if re.fullmatch(r'G\d{1,5}',r[0].strip())]
+    if not data: raise ValueError('no Dodson data rows')
+    return {'dataRows':len(data),'nonDataRows':len(rows)-len(data),'rowWidths':dict(sorted(collections.Counter(len(r) for r in data).items())),'uniqueStrongKeys':len({r[0] for r in data})}
+def audit(m,fetch=download):
+    fs=validate(m)
+    cache={}
+    def get(f,item):
+        key=(f['repository'],f['commit'],item['path'])
+        if key not in cache: cache[key]=fetch(f['repository'],f['commit'],item)
+        b=cache[key]
+        return b,check_bytes(b,item)
+    results=[]
+    for f in fs:
+        b,sha=get(f,f)
+        evidence=[]
+        for e in f['licenseEvidence']:
+            _,h=get(f,e)
+            evidence.append({'path':e['path'],'bytes':e['bytes'],'sha256':h})
+        s=b.decode('utf-8-sig')
+        stats=xml_stats(s,f['format']) if f['format'].startswith('xml-') else table_stats(s,f['format'])
+        results.append({'id':f['id'],'bytes':len(b),'sha256':sha,'licenseEvidence':evidence,'statistics':stats,'admitted':False})
+    return {'mode':'P8.4.1-audit-only','candidates':len(results),'uniqueEvidenceFiles':len({(f['repository'],e['path']) for f in fs for e in f['licenseEvidence']}),'results':results,'admitted':0,'published':0}
+def main():
+    stage='manifest'
+    try:
+        m=json.loads(MANIFEST.read_text(encoding='utf-8'))
+        stage='registry'
+        public=json.loads((ROOT/'src/data/linguistica/registro.json').read_text(encoding='utf-8'))
+        if public.get('schemaVersion')!=1 or any(public.get(k)!=[] for k in ('editions','units','tokens','lemmas','identifiers','analyses','morphCodes')): raise ValueError('public registry changed')
+        stage='audit'
+        report=audit(m)
+        print(json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2))
+    except Exception:
+        print('P8.4.1 audit failed at '+stage+'; source content omitted',file=sys.stderr)
+        return 1
+    return 0
+if __name__=='__main__': sys.exit(main())
