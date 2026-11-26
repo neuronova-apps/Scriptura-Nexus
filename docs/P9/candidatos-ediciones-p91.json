@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "scope": "P9.1.1-edition-audit-only",
+  "baseline": "546b1f34638e5a73abea56cc60be714d9fff87da",
+  "publication": false,
+  "admission": false,
+  "priorPhase": {
+    "pr": 54,
+    "deployRun": 45888104367,
+    "technicalContinuation": "Solicitud expresa de continuar con P9.1; no autoriza corpus ni excepciones de publicación.",
+    "coverageException": "alcance_parcial_para_continuidad_tecnica"
+  },
+  "candidates": [
+    {
+      "id": "ED-C01",
+      "sourceId": "F05",
+      "name": "Reina-Valera 1909",
+      "language": "spa",
+      "type": "traduccion",
+      "provider": "eBible.org",
+      "edition": "spaRV1909",
+      "version": "1909; fecha de fuente declarada 2015-08-10, snapshot binario pendiente",
+      "license": "Public Domain declarado por distribuidor",
+      "licenseUrl": "https://ebible.org/spaRV1909/copyright.htm",
+      "detailsUrl": "https://ebible.org/find/details.php?id=spaRV1909",
+      "file": {
+        "url": "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+        "format": "USFM ZIP",
+        "sha256": null,
+        "bytes": null
+      },
+      "expectedBookCodes": [
+        "GEN",
+        "EXO",
+        "LEV",
+        "NUM",
+        "DEU",
+        "JOS",
+        "JDG",
+        "RUT",
+        "1SA",
+        "2SA",
+        "1KI",
+        "2KI",
+        "1CH",
+        "2CH",
+        "EZR",
+        "NEH",
+        "EST",
+        "JOB",
+        "PSA",
+        "PRO",
+        "ECC",
+        "SNG",
+        "ISA",
+        "JER",
+        "LAM",
+        "EZK",
+        "DAN",
+        "HOS",
+        "JOL",
+        "AMO",
+        "OBA",
+        "JON",
+        "MIC",
+        "NAM",
+        "HAB",
+        "ZEP",
+        "HAG",
+        "ZEC",
+        "MAL",
+        "MAT",
+        "MRK",
+        "LUK",
+        "JHN",
+        "ACT",
+        "ROM",
+        "1CO",
+        "2CO",
+        "GAL",
+        "EPH",
+        "PHP",
+        "COL",
+        "1TH",
+        "2TH",
+        "1TI",
+        "2TI",
+        "TIT",
+        "PHM",
+        "HEB",
+        "JAS",
+        "1PE",
+        "2PE",
+        "1JN",
+        "2JN",
+        "3JN",
+        "JUD",
+        "REV"
+      ],
+      "review": "pendiente_huella_y_revision",
+      "allowedComponents": [],
+      "publication": false
+    },
+    {
+      "id": "ED-C02",
+      "sourceId": "F03",
+      "name": "SBL Greek New Testament",
+      "language": "grc",
+      "type": "edicion_critica",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "version": "revisión Git fija; etiqueta de versión comercial no inferida",
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; edición Michael W. Holmes; indicar cambios.",
+      "licenseEvidence": {
+        "path": "LICENSE",
+        "bytes": 18650,
+        "gitBlobSha1": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb",
+        "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+      },
+      "readme": {
+        "path": "README.md",
+        "bytes": 760,
+        "gitBlobSha1": "26f338de6a1cc51b08a46fc9db5128830c408761"
+      },
+      "files": [
+        {
+          "book": "Matt",
+          "order": 1,
+          "path": "data/sblgnt/xml/Matt.xml",
+          "bytes": 909675,
+          "gitBlobSha1": "088ee8cd84251001c2a883e464fcdff78bfbedc8",
+          "sha256": null
+        },
+        {
+          "book": "Mark",
+          "order": 2,
+          "path": "data/sblgnt/xml/Mark.xml",
+          "bytes": 572329,
+          "gitBlobSha1": "3b4246c0035cf8ab1ee02f3b29ac126785104c2b",
+          "sha256": null
+        },
+        {
+          "book": "Luke",
+          "order": 3,
+          "path": "data/sblgnt/xml/Luke.xml",
+          "bytes": 970739,
+          "gitBlobSha1": "89b03e63aeb75b5b58e64ae9319d3487e7a8838d",
+          "sha256": null
+        },
+        {
+          "book": "John",
+          "order": 4,
+          "path": "data/sblgnt/xml/John.xml",
+          "bytes": 762321,
+          "gitBlobSha1": "11e232c7ab1b4955b6a982e9c2e7087ac7962083",
+          "sha256": null
+        },
+        {
+          "book": "Acts",
+          "order": 5,
+          "path": "data/sblgnt/xml/Acts.xml",
+          "bytes": 921255,
+          "gitBlobSha1": "168d2faff82b0047805703dfe1892e5655c211c8",
+          "sha256": null
+        },
+        {
+          "book": "Rom",
+          "order": 6,
+          "path": "data/sblgnt/xml/Rom.xml",
+          "bytes": 347059,
+          "gitBlobSha1": "4ed8b74438ddf46787b06a8f6e9738e0d3e63a61",
+          "sha256": null
+        },
+        {
+          "book": "1Cor",
+          "order": 7,
+          "path": "data/sblgnt/xml/1Cor.xml",
+          "bytes": 342330,
+          "gitBlobSha1": "2a0c1a309626f498d6ce76626385d9c2dbf83acd",
+          "sha256": null
+        },
+        {
+          "book": "2Cor",
+          "order": 8,
+          "path": "data/sblgnt/xml/2Cor.xml",
+          "bytes": 222992,
+          "gitBlobSha1": "dc190c5371260c5a92be2af65385f8c84bef1e92",
+          "sha256": null
+        },
+        {
+          "book": "Gal",
+          "order": 9,
+          "path": "data/sblgnt/xml/Gal.xml",
+          "bytes": 111663,
+          "gitBlobSha1": "ef1d329c5771be079ec92d42e1043e2d66d03cfe",
+          "sha256": null
+        },
+        {
+          "book": "Eph",
+          "order": 10,
+          "path": "data/sblgnt/xml/Eph.xml",
+          "bytes": 120457,
+          "gitBlobSha1": "8818f2079ec8139fe930ed506b0b5fb94e80c723",
+          "sha256": null
+        },
+        {
+          "book": "Phil",
+          "order": 11,
+          "path": "data/sblgnt/xml/Phil.xml",
+          "bytes": 80931,
+          "gitBlobSha1": "b40b431df84867230984db2c694b08e457617442",
+          "sha256": null
+        },
+        {
+          "book": "Col",
+          "order": 12,
+          "path": "data/sblgnt/xml/Col.xml",
+          "bytes": 79114,
+          "gitBlobSha1": "c77f562d49291d07faa291cd361126535571b7e6",
+          "sha256": null
+        },
+        {
+          "book": "1Thess",
+          "order": 13,
+          "path": "data/sblgnt/xml/1Thess.xml",
+          "bytes": 73887,
+          "gitBlobSha1": "70427d693af775c88788a446245f5eb977b70c77",
+          "sha256": null
+        },
+        {
+          "book": "2Thess",
+          "order": 14,
+          "path": "data/sblgnt/xml/2Thess.xml",
+          "bytes": 40902,
+          "gitBlobSha1": "566699e2378988a305c5dda4e1e57bd3bb07d4a4",
+          "sha256": null
+        },
+        {
+          "book": "1Tim",
+          "order": 15,
+          "path": "data/sblgnt/xml/1Tim.xml",
+          "bytes": 81717,
+          "gitBlobSha1": "545fb4302fba34238a5e556ac1cd75a01b774fc8",
+          "sha256": null
+        },
+        {
+          "book": "2Tim",
+          "order": 16,
+          "path": "data/sblgnt/xml/2Tim.xml",
+          "bytes": 62532,
+          "gitBlobSha1": "4832ddbb5f3715d691d96849c37f5f191fd20a39",
+          "sha256": null
+        },
+        {
+          "book": "Titus",
+          "order": 17,
+          "path": "data/sblgnt/xml/Titus.xml",
+          "bytes": 33932,
+          "gitBlobSha1": "b85039ae5fe9bc6e77293493fb473ca4a6aaa7e2",
+          "sha256": null
+        },
+        {
+          "book": "Phlm",
+          "order": 18,
+          "path": "data/sblgnt/xml/Phlm.xml",
+          "bytes": 16865,
+          "gitBlobSha1": "ed43eed05e9488ef69dd2e69600d7d358d3910a4",
+          "sha256": null
+        },
+        {
+          "book": "Heb",
+          "order": 19,
+          "path": "data/sblgnt/xml/Heb.xml",
+          "bytes": 247580,
+          "gitBlobSha1": "9c05ad5c9dc99a5090581a23b241c666ced10154",
+          "sha256": null
+        },
+        {
+          "book": "Jas",
+          "order": 20,
+          "path": "data/sblgnt/xml/Jas.xml",
+          "bytes": 87475,
+          "gitBlobSha1": "c13f7154f37163cc2a5c8f93de5ff8b29df64d10",
+          "sha256": null
+        },
+        {
+          "book": "1Pet",
+          "order": 21,
+          "path": "data/sblgnt/xml/1Pet.xml",
+          "bytes": 85461,
+          "gitBlobSha1": "c97dee2ade8c537569a1929989e74863605514b0",
+          "sha256": null
+        },
+        {
+          "book": "2Pet",
+          "order": 22,
+          "path": "data/sblgnt/xml/2Pet.xml",
+          "bytes": 55525,
+          "gitBlobSha1": "412fa72bb55158b85bf2b2771b8eedede86d67ae",
+          "sha256": null
+        },
+        {
+          "book": "1John",
+          "order": 23,
+          "path": "data/sblgnt/xml/1John.xml",
+          "bytes": 102101,
+          "gitBlobSha1": "d664c314bdf41bcdb7cff9b31ab5799d425ab416",
+          "sha256": null
+        },
+        {
+          "book": "2John",
+          "order": 24,
+          "path": "data/sblgnt/xml/2John.xml",
+          "bytes": 12074,
+          "gitBlobSha1": "b50b1739d8954812524660790dc367dcd8a6c3b1",
+          "sha256": null
+        },
+        {
+          "book": "3John",
+          "order": 25,
+          "path": "data/sblgnt/xml/3John.xml",
+          "bytes": 11161,
+          "gitBlobSha1": "308cc92e958f729caae8d6e54492d51d0b63baca",
+          "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f"
+        },
+        {
+          "book": "Jude",
+          "order": 26,
+          "path": "data/sblgnt/xml/Jude.xml",
+          "bytes": 23202,
+          "gitBlobSha1": "205234a46d81fea141dd263359c1c8a7d3fa4577",
+          "sha256": null
+        },
+        {
+          "book": "Rev",
+          "order": 27,
+          "path": "data/sblgnt/xml/Rev.xml",
+          "bytes": 474728,
+          "gitBlobSha1": "db52226b1e2cdb4955cda42bf9d10b1739d37abf",
+          "sha256": null
+        }
+      ],
+      "review": "pendiente_huellas_y_revision",
+      "allowedComponents": [],
+      "publication": false
+    }
+  ],
+  "additional": [
+    {
+      "sourceId": "F19",
+      "name": "WLC vía OSHB",
+      "status": "evaluacion_posterior",
+      "priorScope": [
+        "LING-011",
+        "LING-012"
+      ],
+      "notes": "Admisión P8 limitada a Génesis/Daniel. No extender a lector, anotaciones o nuevos libros automáticamente."
+    },
+    {
+      "sourceId": "F16",
+      "status": "fuente_especifica_pendiente"
+    },
+    {
+      "sourceId": "F17",
+      "status": "fuente_especifica_pendiente"
+    },
+    {
+      "sourceId": "F18",
+      "status": "fuente_especifica_pendiente"
+    },
+    {
+      "sourceId": "F22",
+      "status": "fuente_especifica_pendiente"
+    }
+  ],
+  "restricted": [
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F20",
+    "F21",
+    "F24",
+    "F25"
+  ],
+  "policy": {
+    "alignment": "no_inferida",
+    "canon": "distinguir_inventario_y_canon",
+    "versification": "referencia_original_sin_correspondencia",
+    "persistSource": false
+  }
+}
