@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {documentaryEntries,documentSearchText,matchesDocumentFilter,documentTypes} from '../src/lib/bibliography-exploration.ts';
+const registry=JSON.parse(readFileSync('src/data/referencias/biblioteca.json','utf8'));
+const entries=documentaryEntries(registry);
+const select=(query='',tradition='',kind='',lang='')=>entries.filter(e=>matchesDocumentFilter(documentSearchText([e.work.title,e.edition.id,e.edition.doi??'',...e.authors.map(a=>a.name)]),e.traditionIds,e.work.kind,e.edition.language,query,tradition,kind,lang));
+test('P7.3: seis ediciones y autores resueltos sin duplicar obras',()=>{assert.equal(entries.length,6);assert.equal(new Set(entries.map(e=>e.edition.id)).size,6);assert.ok(entries.every(e=>e.authors.length&&e.resources.length));});
+test('P7.3: búsqueda por título, autor, ID, DOI y acentos',()=>{assert.equal(select('dei verbum')[0].edition.id,'BIB-000003');assert.equal(select('clemente')[0].edition.id,'BIB-000005');assert.equal(select('BIB-000004')[0].edition.id,'BIB-000004');assert.equal(select('10.1017/S0028688523000176').length,1);assert.equal(documentSearchText(['edición']),'edicion');});
+test('P7.3: filtros combinados y tradición sin atribución',()=>{assert.equal(select('','T03','documento_oficial','es').length,1);assert.equal(select('','T05').length,0);assert.equal(select('','sin_atribucion','texto_historico','en').length,1);assert.equal(select('','T03','','en').length,0);});
+test('P7.3: resultados vacíos y restablecimiento',()=>{assert.equal(select('inexistente').length,0);assert.equal(select().length,6);assert.equal(Object.keys(documentTypes).length,6);});
+test('P7.3: registros no verificados o rechazados no se proyectan',()=>{for(const mutate of [r=>r.editions[0].provenance.verification='pendiente',r=>r.authors[0].provenance.verification='pendiente',r=>r.resources[0].admission='rechazado',r=>r.resources[0].kind='archivo']){const r=structuredClone(registry);mutate(r);assert.equal(documentaryEntries(r).length,5);}});
+test('P7.3: se conserva distinción entre idioma de obra y edición',()=>{const e=entries.find(e=>e.edition.id==='BIB-000003');assert.equal(e.work.language,'la');assert.equal(e.edition.language,'es');assert.equal(select('','','','es').length,1);});

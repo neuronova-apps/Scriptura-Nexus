@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Card from '../../../components/Card.astro';
+import {bibliographyRegistry} from '../../../lib/bibliography';
+import {documentaryEntries,roleLabels} from '../../../lib/bibliography-exploration';
+import {traditions} from '../../../lib/taxonomy';
+import {basePath} from '../../../lib/site';
+import '../../../styles/modules.css';
+import '../../../styles/library.css';
+export function getStaticPaths(){const entries=documentaryEntries(bibliographyRegistry());return [...new Map(entries.flatMap(e=>e.authors).map(a=>[a.id,a])).values()].map(author=>({params:{id:author.id},props:{author,entries:entries.filter(e=>e.authors.some(a=>a.id===author.id))}}));}
+const {author,entries}=Astro.props;
+const base=basePath(import.meta.env.BASE_URL);
+const names=new Map(traditions.map(t=>[t.id,t.name]));
+---
+<BaseLayout title={author.name+' | Biblioteca | Scriptura Nexus'} description="Identidad documental, atribución y obras registradas.">
+<div class="module-landing"><nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'biblioteca/'}>Biblioteca teológica</a></li><li aria-current="page">{author.id}</li></ol></nav>
+<Card variant="editorial"><p class="module-phase">{author.id} · {author.kind==='persona'?'Persona':'Institución'}</p><h1>{author.name}</h1><p>Ficha de identificación bibliográfica, no biografía exhaustiva ni evaluación doctrinal.</p></Card>
+<Card><h2>Atribución documentada</h2>{author.traditions.length?<ul>{author.traditions.map(t=><li>{names.get(t.traditionId)??t.traditionId} · {t.basis.locator}{t.basis.url&&<> · <a href={t.basis.url} rel="noopener noreferrer">Consultar procedencia</a></>}</li>)}</ul>:<p>Sin atribución confesional moderna registrada.</p>}<p>Procedencia: {author.provenance.locator} · {author.provenance.consultedAt}.</p>{author.provenance.url&&<p><a href={author.provenance.url} rel="noopener noreferrer">Consultar fuente de identificación</a></p>}</Card>
+<Card><h2>Obras registradas</h2><ul>{entries.map(e=><li><a href={base+'biblioteca/documentos/'+e.edition.id+'/'}>{e.work.title}</a> · {roleLabels[e.authors.find(a=>a.id===author.id)!.role]}</li>)}</ul></Card>
+<p><a href={base+'biblioteca/'}>Volver al catálogo documental</a></p></div></BaseLayout>

@@ -21,7 +21,7 @@ export const moduleDetails = {
       "Documentos institucionales",
       "Referencias, glosario y atribuciones"
     ],
-    "empty": "La biblioteca se incorporará en P7. Todavía no hay fichas bibliográficas publicadas."
+    "empty": "Catálogo documental inicial disponible para consulta externa. La admisión de contenidos corresponde a P7.4."
   },
   "historia": {
     "planned": [
@@ -29,7 +29,7 @@ export const moduleDetails = {
       "Cronologías y documentos",
       "Historia del cristianismo"
     ],
-    "empty": "Los recursos históricos se incorporarán en P7. Todavía no hay cronologías publicadas."
+    "empty": "Referencias históricas iniciales disponibles; cronologías interpretativas y estudios históricos aún pendientes."
   },
   "linguistica": {
     "planned": [

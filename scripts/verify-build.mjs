@@ -70,6 +70,10 @@ for (const path of modulePaths) {
   } else if (path === 'estudios') {
     assert.match(html, /Catálogo de investigaciones/);
     assert.match(html, /Ejes temáticos/);
+  } else if (path === 'biblioteca') {
+    assert.match(html, /Catálogo documental/);
+  } else if (path === 'historia') {
+    assert.match(html, /Testimonios históricos/);
   } else {
     assert.match(html, /Contenido en preparación/);
     assert.match(html, /Recursos previstos/);
@@ -410,3 +414,20 @@ assert.equal(bibliographyData.evidence.length,0);
 assert.equal(bibliographyData.licenses.length,0);
 assert.equal(publicationRegistry.snapshots.length,0);
 console.log('P7.2: seis cadenas documentales verificadas estructuralmente; sin archivos, permisos ni publicación real.');
+
+// P7.3: real static documentary navigation and safe metadata projection.
+const libraryHtml=readFileSync('dist/biblioteca/index.html','utf8');
+const historyHtml=readFileSync('dist/historia/index.html','utf8');
+assert.equal((libraryHtml.match(/data-document-id="/g)||[]).length,6);
+for(const id of ['library-query','library-tradition','library-type','library-language','library-reset','library-count'])assert.ok(libraryHtml.includes('id="'+id+'"'));
+for(const e of bibliographyData.editions){
+ const relative='biblioteca/documentos/'+e.id+'/';const html=readFileSync('dist/'+relative+'index.html','utf8');
+ assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/'+relative+'"'));assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1);
+ assert.ok(html.includes('href="'+e.url.replaceAll('&','&amp;')+'"'));assert.match(html,/Referencia bibliográfica/);assert.match(html,/No se aloja el texto completo/);
+}
+for(const a of bibliographyData.authors){const relative='biblioteca/autores/'+a.id+'/';assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/'+relative+'"'));const html=readFileSync('dist/'+relative+'index.html','utf8');assert.match(html,/Atribución documentada/);assert.match(html,/Obras registradas/);}
+assert.ok(historyHtml.includes('/Scriptura-Nexus/biblioteca/documentos/BIB-000005/'));
+assert.ok(glossary.includes('href="/Scriptura-Nexus/biblioteca/"'));
+assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/fundamentos/glosario/"'));
+for(const html of [libraryHtml,historyHtml])assert.doesNotMatch(html,/PRUEBA SINTÉTICA|example\.invalid/);
+console.log('P7.3: 6 fichas documentales, 6 de autor, catálogo, historia y glosario enlazados.');

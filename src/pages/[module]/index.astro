@@ -3,7 +3,7 @@ import ModuleLanding from '../../components/modules/ModuleLanding.astro';
 import { homeModules } from '../../lib/home';
 import { moduleDetails } from '../../lib/module-details';
 export function getStaticPaths() {
-  return homeModules(import.meta.env.BASE_URL).filter(item => !['fundamentos/', 'estudios/'].includes(item.path)).map(item => {
+  return homeModules(import.meta.env.BASE_URL).filter(item => !['fundamentos/', 'estudios/', 'biblioteca/', 'historia/'].includes(item.path)).map(item => {
     const slug = item.path.replace(/\/$/, '') as keyof typeof moduleDetails;
     return { params: { module: slug }, props: { label: item.label, description: item.description, phase: item.phase, ...moduleDetails[slug] } };
   });

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import {bibliographyRegistry} from '../../lib/bibliography';
+import {documentaryEntries,documentTypes} from '../../lib/bibliography-exploration';
+import {basePath} from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/library.css';
+const base=basePath(import.meta.env.BASE_URL);
+const entries=documentaryEntries(bibliographyRegistry());
+const historical=entries.filter(e=>e.work.kind==='texto_historico');
+const related=entries.filter(e=>e.work.kind==='documento_oficial'||e.work.kind==='estudio_academico');
+---
+<BaseLayout title="Historia cristiana | Scriptura Nexus" description="Referencias históricas y documentos para futuras investigaciones."><div class="module-landing">
+<nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li aria-current="page">Historia cristiana</li></ol></nav>
+<Card variant="editorial"><p class="module-phase">Referencias históricas · P7.3</p><h1>Historia cristiana</h1><p>Selección documental inicial. Las fechas registradas corresponden a cada obra y su precisión declarada; no constituyen todavía una cronología histórica completa ni conclusiones sobre continuidad eclesiástica.</p></Card>
+<section aria-labelledby="testimonios-titulo"><h2 id="testimonios-titulo">Testimonios históricos</h2><div class="library-grid">{historical.map(e=><Card><h3><a href={base+'biblioteca/documentos/'+e.edition.id+'/'}>{e.work.title}</a></h3><p>{e.work.dateLabel??'Fecha no indicada'}</p><p>{e.work.authority}</p></Card>)}</div></section>
+<section aria-labelledby="historia-relacionada"><h2 id="historia-relacionada">Documentos para contextualización posterior</h2><div class="library-grid">{related.map(e=><Card><h3><a href={base+'biblioteca/documentos/'+e.edition.id+'/'}>{e.work.title}</a></h3><p>{documentTypes[e.work.kind]} · {e.work.dateLabel??'Fecha no indicada'}</p><p>{e.work.authority}</p></Card>)}</div></section>
+<nav aria-label="Recursos relacionados" class="library-links"><a href={base+'biblioteca/'}>Biblioteca teológica</a><a href={base+'fundamentos/glosario/'}>Glosario metodológico</a></nav>
+</div></BaseLayout>
