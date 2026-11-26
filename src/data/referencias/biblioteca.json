@@ -1,10 +1,552 @@
 {
   "schemaVersion": 1,
-  "authors": [],
-  "works": [],
-  "editions": [],
-  "sources": [],
-  "resources": [],
+  "authors": [
+    {
+      "id": "AUT-000001",
+      "name": "Assemblies of God (USA)",
+      "kind": "institucion",
+      "traditions": [
+        {
+          "traditionId": "T01",
+          "basis": {
+            "locator": "Preámbulo y apartados 1 y 10",
+            "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "provenance": {
+        "locator": "Preámbulo y apartados 1 y 10",
+        "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "AUT-000002",
+      "name": "Westminster Assembly",
+      "kind": "institucion",
+      "traditions": [
+        {
+          "traditionId": "T02",
+          "basis": {
+            "locator": "Capítulo I, Of the Holy Scripture",
+            "url": "https://opc.org/wcf.html",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "provenance": {
+        "locator": "Capítulo I, Of the Holy Scripture",
+        "url": "https://opc.org/wcf.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "AUT-000003",
+      "name": "Concilio Vaticano II",
+      "kind": "institucion",
+      "traditions": [
+        {
+          "traditionId": "T03",
+          "basis": {
+            "locator": "Capítulos II y III, numerales 7–13",
+            "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "provenance": {
+        "locator": "Capítulos II y III, numerales 7–13",
+        "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "AUT-000004",
+      "name": "Francis Watson",
+      "kind": "persona",
+      "traditions": [
+        {
+          "traditionId": "A01",
+          "basis": {
+            "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+            "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "provenance": {
+        "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "AUT-000005",
+      "name": "Clemente de Roma (atribución tradicional)",
+      "kind": "persona",
+      "traditions": [],
+      "provenance": {
+        "locator": "Capítulos 42–44 y nota editorial About this page",
+        "url": "https://www.newadvent.org/fathers/1010.htm",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "AUT-000006",
+      "name": "Orthodox Church in America",
+      "kind": "institucion",
+      "traditions": [
+        {
+          "traditionId": "T04",
+          "basis": {
+            "locator": "Pregunta y respuesta Bible",
+            "url": "https://www.oca.org/questions/scripture/bible",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "provenance": {
+        "locator": "Pregunta y respuesta Bible",
+        "url": "https://www.oca.org/questions/scripture/bible",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
+  "works": [
+    {
+      "id": "OBR-000001",
+      "title": "Statement of Fundamental Truths",
+      "contributors": [
+        {
+          "authorId": "AUT-000001",
+          "role": "autor_institucional"
+        }
+      ],
+      "kind": "documento_oficial",
+      "authority": "Declaración institucional de esta denominación; no representa a todo el pentecostalismo.",
+      "language": "en",
+      "dateLabel": "1916 (adopción original)",
+      "provenance": {
+        "locator": "Preámbulo y apartados 1 y 10",
+        "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "OBR-000002",
+      "title": "Westminster Confession of Faith",
+      "contributors": [
+        {
+          "authorId": "AUT-000002",
+          "role": "autor_institucional"
+        }
+      ],
+      "kind": "documento_oficial",
+      "authority": "Confesión reformada histórica; se consulta la versión ofrecida por la Orthodox Presbyterian Church, sin extenderla a todo el protestantismo.",
+      "language": "en",
+      "dateLabel": "Siglo XVII",
+      "provenance": {
+        "locator": "Capítulo I, Of the Holy Scripture",
+        "url": "https://opc.org/wcf.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "OBR-000003",
+      "title": "Dei Verbum",
+      "contributors": [
+        {
+          "authorId": "AUT-000003",
+          "role": "autor_institucional"
+        }
+      ],
+      "kind": "documento_oficial",
+      "authority": "Constitución dogmática conciliar católica sobre la revelación divina.",
+      "language": "la",
+      "dateLabel": "1965-11-18",
+      "provenance": {
+        "locator": "Capítulos II y III, numerales 7–13",
+        "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "OBR-000004",
+      "title": "Critical Reflections on the Role of the Canon in New Testament Scholarship",
+      "contributors": [
+        {
+          "authorId": "AUT-000004",
+          "role": "autor"
+        }
+      ],
+      "kind": "estudio_academico",
+      "authority": "Artículo académico firmado; no equivale a consenso de la disciplina ni posición confesional.",
+      "language": "en",
+      "dateLabel": "2024",
+      "provenance": {
+        "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "OBR-000005",
+      "title": "First Epistle to the Corinthians (1 Clement)",
+      "contributors": [
+        {
+          "authorId": "AUT-000005",
+          "role": "atribucion_discutida"
+        }
+      ],
+      "kind": "texto_historico",
+      "authority": "Testimonio cristiano antiguo; atribución tradicional, no identificación automática con una confesión moderna.",
+      "language": "grc",
+      "dateLabel": "Finales del siglo I (datación aproximada)",
+      "provenance": {
+        "locator": "Capítulos 42–44 y nota editorial About this page",
+        "url": "https://www.newadvent.org/fathers/1010.htm",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "OBR-000006",
+      "title": "Bible (Questions & Answers)",
+      "contributors": [
+        {
+          "authorId": "AUT-000006",
+          "role": "autor_institucional"
+        }
+      ],
+      "kind": "otro",
+      "authority": "Respuesta catequética publicada por la OCA; no se atribuye rango conciliar ni autoría personal no indicada.",
+      "language": "en",
+      "dateLabel": "Fecha no indicada",
+      "provenance": {
+        "locator": "Pregunta y respuesta Bible",
+        "url": "https://www.oca.org/questions/scripture/bible",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
+  "editions": [
+    {
+      "id": "BIB-000001",
+      "workId": "OBR-000001",
+      "edition": "Versión web institucional consultada",
+      "yearLabel": "Fecha de revisión web no indicada",
+      "publisher": "Assemblies of God (USA)",
+      "language": "en",
+      "sourceId": "F28",
+      "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+      "provenance": {
+        "locator": "Preámbulo y apartados 1 y 10",
+        "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000002",
+      "workId": "OBR-000002",
+      "edition": "Versión web ofrecida por la OPC",
+      "yearLabel": "Fecha de edición web no indicada",
+      "publisher": "Orthodox Presbyterian Church",
+      "language": "en",
+      "sourceId": "F29",
+      "url": "https://opc.org/wcf.html",
+      "provenance": {
+        "locator": "Capítulo I, Of the Holy Scripture",
+        "url": "https://opc.org/wcf.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000003",
+      "workId": "OBR-000003",
+      "edition": "Versión española del archivo conciliar",
+      "yearLabel": "1965 (documento original)",
+      "publisher": "Santa Sede",
+      "language": "es",
+      "sourceId": "F30",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+      "provenance": {
+        "locator": "Capítulos II y III, numerales 7–13",
+        "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000004",
+      "workId": "OBR-000004",
+      "edition": "New Testament Studies 70(1), pp. 111–124",
+      "yearLabel": "2024",
+      "publisher": "Cambridge University Press",
+      "language": "en",
+      "sourceId": "F31",
+      "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+      "doi": "10.1017/S0028688523000176",
+      "provenance": {
+        "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000005",
+      "workId": "OBR-000005",
+      "edition": "Traducción inglesa de John Keith, Ante-Nicene Fathers, vol. 9; edición digital revisada por New Advent",
+      "yearLabel": "1896 (edición impresa de referencia)",
+      "publisher": "Christian Literature Publishing Co.; versión digital New Advent",
+      "language": "en",
+      "sourceId": "F32",
+      "url": "https://www.newadvent.org/fathers/1010.htm",
+      "provenance": {
+        "locator": "Capítulos 42–44 y nota editorial About this page",
+        "url": "https://www.newadvent.org/fathers/1010.htm",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000006",
+      "workId": "OBR-000006",
+      "edition": "Página institucional Questions & Answers",
+      "yearLabel": "Fecha no indicada",
+      "publisher": "Orthodox Church in America",
+      "language": "en",
+      "sourceId": "F33",
+      "url": "https://www.oca.org/questions/scripture/bible",
+      "provenance": {
+        "locator": "Pregunta y respuesta Bible",
+        "url": "https://www.oca.org/questions/scripture/bible",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "F28",
+      "name": "Consulta documental: Statement of Fundamental Truths",
+      "class": "B",
+      "provider": "Assemblies of God (USA)",
+      "conditions": "Referencia y consulta externa; reproducción no autorizada por el proyecto.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+      "provenance": {
+        "locator": "Preámbulo y apartados 1 y 10",
+        "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "F29",
+      "name": "Consulta documental: Westminster Confession of Faith",
+      "class": "B",
+      "provider": "Orthodox Presbyterian Church",
+      "conditions": "Referencia y consulta externa; reproducción no autorizada por el proyecto.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://opc.org/wcf.html",
+      "provenance": {
+        "locator": "Capítulo I, Of the Holy Scripture",
+        "url": "https://opc.org/wcf.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "F30",
+      "name": "Consulta documental: Dei Verbum",
+      "class": "B",
+      "provider": "Santa Sede",
+      "conditions": "Referencia y consulta externa; reproducción no autorizada por el proyecto.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+      "provenance": {
+        "locator": "Capítulos II y III, numerales 7–13",
+        "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "F31",
+      "name": "Consulta documental: Critical Reflections on the Role of the Canon in New Testament Scholarship",
+      "class": "A",
+      "provider": "Cambridge University Press",
+      "conditions": "La página declara CC BY 4.0; admisión específica pendiente P7.4.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+      "provenance": {
+        "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "F32",
+      "name": "Consulta documental: First Epistle to the Corinthians (1 Clement)",
+      "class": "B",
+      "provider": "Christian Literature Publishing Co.; versión digital New Advent",
+      "conditions": "Referencia y consulta externa; reproducción no autorizada por el proyecto.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://www.newadvent.org/fathers/1010.htm",
+      "provenance": {
+        "locator": "Capítulos 42–44 y nota editorial About this page",
+        "url": "https://www.newadvent.org/fathers/1010.htm",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "F33",
+      "name": "Consulta documental: Bible (Questions & Answers)",
+      "class": "B",
+      "provider": "Orthodox Church in America",
+      "conditions": "Referencia y consulta externa; reproducción no autorizada por el proyecto.",
+      "phases": [
+        "P7"
+      ],
+      "url": "https://www.oca.org/questions/scripture/bible",
+      "provenance": {
+        "locator": "Pregunta y respuesta Bible",
+        "url": "https://www.oca.org/questions/scripture/bible",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": "REC-000001",
+      "sourceId": "F28",
+      "editionId": "BIB-000001",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Preámbulo y apartados 1 y 10",
+        "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "REC-000002",
+      "sourceId": "F29",
+      "editionId": "BIB-000002",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://opc.org/wcf.html",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Capítulo I, Of the Holy Scripture",
+        "url": "https://opc.org/wcf.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "REC-000003",
+      "sourceId": "F30",
+      "editionId": "BIB-000003",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Capítulos II y III, numerales 7–13",
+        "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "REC-000004",
+      "sourceId": "F31",
+      "editionId": "BIB-000004",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "REC-000005",
+      "sourceId": "F32",
+      "editionId": "BIB-000005",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://www.newadvent.org/fathers/1010.htm",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Capítulos 42–44 y nota editorial About this page",
+        "url": "https://www.newadvent.org/fathers/1010.htm",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "REC-000006",
+      "sourceId": "F33",
+      "editionId": "BIB-000006",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "originUrl": "https://www.oca.org/questions/scripture/bible",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [],
+      "provenance": {
+        "locator": "Pregunta y respuesta Bible",
+        "url": "https://www.oca.org/questions/scripture/bible",
+        "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    }
+  ],
   "licenses": [],
   "evidence": []
 }

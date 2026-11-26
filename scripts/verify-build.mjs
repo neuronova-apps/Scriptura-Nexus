@@ -404,6 +404,9 @@ const {validateBibliography}=await import('../src/lib/bibliography-contracts.ts'
 const bibliographyData=JSON.parse(readFileSync('src/data/referencias/biblioteca.json','utf8'));
 const bibliographyTraditions=JSON.parse(readFileSync('src/data/taxonomia/tradiciones.json','utf8')).items.map(t=>t.id);
 assert.deepEqual(validateBibliography(bibliographyData,bibliographyTraditions),[]);
-assert.ok(Object.entries(bibliographyData).filter(([key])=>key!=='schemaVersion').every(([,items])=>Array.isArray(items)&&items.length===0));
+assert.equal(bibliographyData.works.length,6);
+assert.ok(bibliographyData.resources.every(r=>r.kind==='consulta_externa'&&r.admission==='en_revision'&&!r.filePath&&!r.checksum));
+assert.equal(bibliographyData.evidence.length,0);
+assert.equal(bibliographyData.licenses.length,0);
 assert.equal(publicationRegistry.snapshots.length,0);
-console.log('P7.1: siete colecciones bibliográficas vacías y válidas; sin admisión ni publicación real.');
+console.log('P7.2: seis cadenas documentales verificadas estructuralmente; sin archivos, permisos ni publicación real.');
