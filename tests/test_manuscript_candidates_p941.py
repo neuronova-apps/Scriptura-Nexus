@@ -52,6 +52,12 @@ class TestManuscriptCandidates(unittest.TestCase):
         with self.assertRaises(ValueError):
             audit.validate(data)
 
+    def test_wrong_official_source(self):
+        data = copy.deepcopy(self.data)
+        data["candidates"][0]["sourceUrl"] = "https://example.org/catalogue"
+        with self.assertRaises(ValueError):
+            audit.validate(data)
+
     def test_unselected_edition_cannot_have_fake_source(self):
         data = copy.deepcopy(self.data)
         data["candidates"][5]["sourceUrl"] = "https://example.invalid"
