@@ -1,0 +1,26 @@
+name: P9.4.1 Auditoría de fuentes de manuscritos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P9/12-plan-manuscritos-variantes.md'
+      - 'docs/P9/13-auditoria-fuentes-manuscritos.md'
+      - 'docs/P9/candidatos-manuscritos-p941.json'
+      - 'scripts/audit-manuscript-candidates-p941.py'
+      - 'tests/test_manuscript_candidates_p941.py'
+      - '.github/workflows/manuscript-audit-p941.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validar inventario y barreras de reutilización
+        run: python3 -m unittest discover -s tests -p test_manuscript_candidates_p941.py
+      - name: Auditar registro de candidatos
+        run: python3 scripts/audit-manuscript-candidates-p941.py

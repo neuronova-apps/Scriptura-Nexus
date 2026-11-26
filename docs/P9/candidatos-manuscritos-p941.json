@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "phase": "P9.4.1-source-audit",
+  "reviewedOn": "2026-11-26",
+  "baseCommit": "d729ea0c447ae7d1016888ecd51c5e0ec34b8878",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "candidates": [
+    {
+      "id": "MS-C01",
+      "sourceIds": [
+        "F23"
+      ],
+      "kind": "manuscript_repository",
+      "name": "New Testament Virtual Manuscript Room (INTF)",
+      "scope": "Catálogo y herramientas de investigación de manuscritos griegos del Nuevo Testamento.",
+      "sourceUrl": "https://ntvmr.uni-muenster.de/en",
+      "rightsUrl": "https://ntvmr.uni-muenster.de/license-agreement",
+      "rightsStatus": "verified_restrictions",
+      "accessStatus": "public_consultation",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [
+        "external_link",
+        "original_bibliographic_reference"
+      ],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "embed_images",
+        "republish_images",
+        "republish_transcriptions",
+        "bulk_metadata_export"
+      ],
+      "rightsNote": "El acuerdo limita el uso externo de imágenes sin permiso del instituto custodio. La licencia CC BY indicada para contribuciones de usuarios no se extiende automáticamente a imágenes ni a todo el catálogo.",
+      "status": "external_link_only"
+    },
+    {
+      "id": "MS-C02",
+      "sourceIds": [
+        "F23"
+      ],
+      "kind": "manuscript_repository",
+      "name": "Center for the Study of New Testament Manuscripts (CSNTM)",
+      "scope": "Catálogo de consulta e imágenes de manuscritos del Nuevo Testamento.",
+      "sourceUrl": "https://www.csntm.org/",
+      "rightsUrl": "https://www.csntm.org/terms-of-use-copyright/",
+      "rightsStatus": "verified_restrictions",
+      "accessStatus": "public_research_viewing",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [
+        "external_link",
+        "original_bibliographic_reference"
+      ],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "embed_images",
+        "republish_images",
+        "republish_transcriptions",
+        "bulk_metadata_export"
+      ],
+      "rightsNote": "Las imágenes pueden pertenecer a instituciones custodias y CSNTM actúa como custodio digital; el uso externo requiere permisos específicos de ambos titulares. La consulta web se limita a investigación no comercial.",
+      "status": "external_link_only"
+    },
+    {
+      "id": "MS-C03",
+      "sourceIds": [
+        "F23"
+      ],
+      "kind": "manuscript_project",
+      "name": "Codex Sinaiticus Project",
+      "scope": "Proyecto colaborativo de imágenes y recursos digitales del Codex Sinaiticus.",
+      "sourceUrl": "https://codexsinaiticus.org/en/",
+      "rightsUrl": "https://codexsinaiticus.org/en/copyright.aspx",
+      "rightsStatus": "verified_restrictions",
+      "accessStatus": "public_educational_viewing",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [
+        "external_link",
+        "original_bibliographic_reference"
+      ],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "embed_images",
+        "republish_images",
+        "republish_transcriptions",
+        "bulk_metadata_export"
+      ],
+      "rightsNote": "El objeto antiguo puede ser de dominio público en muchas jurisdicciones, pero la copia digital y ciertos metadatos pertenecen a las instituciones colaboradoras. El uso indicado es personal y educativo no comercial; otros usos requieren permiso escrito.",
+      "status": "external_link_only"
+    },
+    {
+      "id": "MS-C04",
+      "sourceIds": [
+        "F23"
+      ],
+      "kind": "manuscript_repository",
+      "name": "Biblioteca Apostólica Vaticana, Biblioteca Digital",
+      "scope": "Catálogo y consulta de manuscritos digitalizados de la Biblioteca Apostólica Vaticana.",
+      "sourceUrl": "https://digi.vatlib.it/",
+      "rightsUrl": "https://www.vaticanlibrary.va/en/information-for-readers/photographic-reproductions.html",
+      "rightsStatus": "verified_restrictions",
+      "accessStatus": "mixed_watermarked_viewing_and_order",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [
+        "external_link",
+        "original_bibliographic_reference"
+      ],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "embed_images",
+        "republish_images",
+        "republish_transcriptions",
+        "bulk_metadata_export"
+      ],
+      "rightsNote": "Algunos manuscritos pueden consultarse en línea con marca de agua. Las reproducciones y los derechos de publicación se tramitan por solicitud y pueden tener tarifas; el sitio reserva los derechos sobre textos e imágenes.",
+      "status": "external_link_only"
+    },
+    {
+      "id": "MS-C05",
+      "sourceIds": [
+        "F23"
+      ],
+      "kind": "manuscript_repository",
+      "name": "Leon Levy Dead Sea Scrolls Digital Library, Israel Antiquities Authority",
+      "scope": "Archivo digital de los Rollos del mar Muerto.",
+      "sourceUrl": "https://www.deadseascrolls.org.il/",
+      "rightsUrl": "https://www.deadseascrolls.org.il/terms",
+      "rightsStatus": "verified_restrictions",
+      "accessStatus": "public_consultation",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [
+        "external_link",
+        "original_bibliographic_reference"
+      ],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "embed_images",
+        "republish_images",
+        "republish_transcriptions",
+        "bulk_metadata_export"
+      ],
+      "rightsNote": "El sitio, textos e imágenes son de la Israel Antiquities Authority. La reproducción, exhibición, modificación o distribución requiere autorización escrita previa, salvo una copia individual para uso privado.",
+      "status": "external_link_only"
+    },
+    {
+      "id": "ED-C01",
+      "sourceIds": [
+        "F20"
+      ],
+      "kind": "critical_edition_candidate",
+      "name": "Biblia Hebraica Stuttgartensia (BHS) y Biblia Hebraica Quinta (BHQ)",
+      "scope": "Ediciones críticas y aparatos del texto hebreo.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_apparatus"
+      ],
+      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato.",
+      "status": "not_selected"
+    },
+    {
+      "id": "ED-C02",
+      "sourceIds": [
+        "F21"
+      ],
+      "kind": "critical_edition_candidate",
+      "name": "Novum Testamentum Graece (NA28) y Greek New Testament (UBS5)",
+      "scope": "Ediciones críticas y aparatos del texto griego.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_apparatus"
+      ],
+      "rightsNote": "P0.5 registra derechos no acreditados. Falta identificar edición, soporte, licencia y condiciones del aparato.",
+      "status": "not_selected"
+    },
+    {
+      "id": "ED-C03",
+      "sourceIds": [
+        "F16"
+      ],
+      "kind": "historical_translation_candidate",
+      "name": "Reina 1569 y Valera 1602",
+      "scope": "Ediciones históricas en español y sus facsímiles o transcripciones digitales.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_images"
+      ],
+      "rightsNote": "Falta seleccionar ejemplar, proveedor, edición digital y derechos de la digitalización; la antigüedad del impreso no resuelve los derechos de la copia.",
+      "status": "not_selected"
+    },
+    {
+      "id": "ED-C04",
+      "sourceIds": [
+        "F17"
+      ],
+      "kind": "textual_edition_candidate",
+      "name": "Textus Receptus: Erasmo, Estienne, Beza, Elzevir y Scrivener",
+      "scope": "Ediciones históricas distintas del texto griego.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_apparatus"
+      ],
+      "rightsNote": "No constituye una edición única. Se debe seleccionar una edición y transcripción digital concretas; no se asume identidad entre sus recensiones.",
+      "status": "not_selected"
+    },
+    {
+      "id": "ED-C05",
+      "sourceIds": [
+        "F18"
+      ],
+      "kind": "textual_edition_candidate",
+      "name": "Texto bizantino y texto mayoritario",
+      "scope": "Ediciones y transcripciones de tradición bizantina.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_apparatus"
+      ],
+      "rightsNote": "Falta identificar edición y fuente digital; no se equipara automáticamente con el Textus Receptus.",
+      "status": "not_selected"
+    },
+    {
+      "id": "ED-C06",
+      "sourceIds": [
+        "F22"
+      ],
+      "kind": "version_candidate",
+      "name": "Septuaginta, Vulgata, Tárgumes y Pentateuco samaritano",
+      "scope": "Versiones y tradiciones textuales antiguas.",
+      "sourceUrl": null,
+      "rightsUrl": null,
+      "rightsStatus": "not_verified_exact_edition",
+      "accessStatus": "not_selected",
+      "reuse": {
+        "images": false,
+        "transcriptions": false,
+        "metadata": false,
+        "apparatus": false
+      },
+      "allowedActions": [],
+      "blockedActions": [
+        "download",
+        "scrape",
+        "republish_text",
+        "republish_apparatus"
+      ],
+      "rightsNote": "Cada tradición requiere edición, transcripción, proveedor y licencia específicos; no se agrupan como una sola fuente.",
+      "status": "not_selected"
+    }
+  ],
+  "separationRules": {
+    "rv1909": "traduccion_no_testigo",
+    "sblgnt": "edicion_textual_no_testigo",
+    "oshbWlc": "sin_ampliacion_de_admision_P9",
+    "na28Ubs5BhsBhq": "aparatos_no_admitidos",
+    "alignment": "no_inferir_por_coincidencia_de_referencia",
+    "publicRelease": "bloqueado_hasta_P11_4"
+  }
+}
