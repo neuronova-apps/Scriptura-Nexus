@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 import { basePath } from '../lib/site';
 ---
 <BaseLayout title="Página no encontrada | Scriptura Nexus" description="Página no encontrada.">
-  <h1>Página no encontrada</h1>
-  <p><a href={basePath(import.meta.env.BASE_URL)}>Volver al inicio</a></p>
+  <Card variant="editorial">
+    <h1>Página no encontrada</h1>
+    <p>La dirección solicitada no existe o ha cambiado. Puedes regresar al inicio o utilizar el menú principal.</p>
+    <Button href={basePath(import.meta.env.BASE_URL)}>Volver al inicio</Button>
+  </Card>
 </BaseLayout>

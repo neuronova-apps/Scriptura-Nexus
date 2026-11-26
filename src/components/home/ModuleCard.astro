@@ -8,6 +8,7 @@ const { label, description, href, phase } = Astro.props;
   <h3>{label}</h3>
   <p>{description}</p>
   <div class="home-module-status">
-    {href ? <Button href={href} variant="secondary">Explorar {label}</Button> : <span>Próximamente · {phase}</span>}
+    <p class="module-phase">Contenido en preparación · {phase}</p>
+    {href ? <Button href={href} variant="secondary">Explorar {label}</Button> : <span>Próximamente</span>}
   </div>
 </Card>

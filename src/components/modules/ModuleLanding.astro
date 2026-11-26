@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../Card.astro';
+import Callout from '../Callout.astro';
+import Button from '../Button.astro';
+import { basePath } from '../../lib/site';
+import '../../styles/modules.css';
+interface Props { label: string; description: string; phase: string; planned: string[]; empty: string; }
+const { label, description, phase, planned, empty } = Astro.props;
+const home = basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title={label + ' | Scriptura Nexus'} description={description}>
+  <div class="module-landing">
+    <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={home}>Inicio</a></li><li aria-current="page">{label}</li></ol></nav>
+    <Card variant="editorial">
+      <p class="module-phase">Contenido en preparación · {phase}</p>
+      <h1>{label}</h1>
+      <p>{description}</p>
+      <Callout tone="info" title="Módulo en desarrollo">{empty}</Callout>
+    </Card>
+    <section aria-labelledby="planned-title">
+      <h2 id="planned-title">Recursos previstos</h2>
+      <Card><ul class="module-planned">{planned.map(item => <li>{item}</li>)}</ul></Card>
+    </section>
+    <Button href={home} variant="secondary">Volver al inicio</Button>
+  </div>
+</BaseLayout>
