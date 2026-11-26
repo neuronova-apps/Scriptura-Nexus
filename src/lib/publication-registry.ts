@@ -7,6 +7,6 @@ import {admittedBibliographicSources} from './permissions';
 const registry:unknown=registryData;
 const bibliography=bibliographyRegistry();
 // P7.4: independently reviewed permissions determine admission; no default authorization.
-const context:PublicationContext={studyIds:studies.map(s=>s.id),bibliographyIds:bibliography.editions.filter(e=>e.provenance.verification==='verificada').map(e=>e.id),resourceIds:bibliography.resources.filter(r=>r.provenance.verification==='verificada').map(r=>r.id),authorIds:bibliography.authors.filter(a=>a.provenance.verification==='verificada').map(a=>a.id),disciplineIds:disciplines.map(d=>d.id),traditionIds:traditions.map(t=>t.id),admittedSources:admittedBibliographicSources()};
+const context:PublicationContext={studyIds:studies.map(s=>s.id),bibliographyIds:bibliography.editions.filter(e=>e.provenance.verification==='verificada').map(e=>e.id),resourceIds:bibliography.resources.filter(r=>r.provenance.verification==='verificada').map(r=>r.id),authorIds:bibliography.authors.filter(a=>a.provenance.verification==='verificada').map(a=>a.id),disciplineIds:disciplines.map(d=>d.id),traditionIds:traditions.map(t=>t.id),resourceEditionIds:Object.fromEntries(bibliography.resources.flatMap(r=>r.editionId?[[r.id,r.editionId]]:[])),admittedSources:admittedBibliographicSources()};
 validateRegistry(registry,context);
 export const getApprovedSnapshot=(id:string)=>approvedSnapshot(registry,id,context);

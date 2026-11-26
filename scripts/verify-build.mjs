@@ -437,3 +437,14 @@ const permissionData=JSON.parse(readFileSync('src/data/referencias/permisos.json
 assert.deepEqual(validatePermissions(permissionData,bibliographyData),[]);assert.deepEqual(publicationAdmissions(bibliographyData,permissionData),[]);
 const permissionHtml=readFileSync('dist/biblioteca/permisos/index.html','utf8');assert.match(permissionHtml,/CC BY 4\.0/);assert.ok(libraryHtml.includes('href="/Scriptura-Nexus/biblioteca/permisos/"'));assert.equal((permissionHtml.match(/Decisión editorial: pendiente/g)||[]).length,6);
 console.log('P7.4: seis decisiones, una licencia documentada, cero admisiones editoriales reales.');
+
+// P7.5: audit documentary cross-links and public artifact restrictions.
+for(const e of bibliographyData.editions){
+ const html=readFileSync('dist/biblioteca/documentos/'+e.id+'/index.html','utf8');
+ assert.ok(html.includes('href="/Scriptura-Nexus/biblioteca/permisos/"'));
+ const work=bibliographyData.works.find(w=>w.id===e.workId);
+ for(const c of work.contributors){const author=readFileSync('dist/biblioteca/autores/'+c.authorId+'/index.html','utf8');assert.ok(html.includes('href="/Scriptura-Nexus/biblioteca/autores/'+c.authorId+'/"'));assert.ok(author.includes('href="/Scriptura-Nexus/biblioteca/documentos/'+e.id+'/"'));}
+ assert.ok(permissionHtml.includes('href="/Scriptura-Nexus/biblioteca/documentos/'+e.id+'/"'));
+}
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile())assert.doesNotMatch(file.name,/\.(?:pdf|epub|mobi|docx?|zip|7z|rar)$/i,'archivo documental no admitido: '+file.name);
+console.log('P7.5: trazabilidad recíproca, permisos, ausencia de archivos documentales y cero publicaciones reales conformes.');
