@@ -26,3 +26,7 @@ Seis pruebas de Node con el manifiesto real y variantes negativas: cobertura y a
 ## Dependencia siguiente
 
 P9.2.2 deberá utilizar las unidades efímeras de la proyección original para verificar etiquetas literales, rangos y sufijos, conservar referencias vacías y distinguir ausencias. No inferir etiquetas con el recuento de capítulos; no mapear referencias entre ediciones. Revisar fuentes de canon y versificación por separado, sin atribuir aprobación inexistente.
+
+## Corrección de CI #160 (PR #58)
+
+La ejecución 45896280190 detectó 4 fallos en P9.2.1 (337/341 pruebas aprobadas): el validador ENT22 rechazó alias repetidos en MRK, LUK, JHN, ACT, TIT y JUD. La proyección P9.1.3 añadía tanto el nombre de referencia como el identificador del archivo, coincidentes en esos seis casos. Se corrige el generador con deduplicación exacta y estable, se actualizan únicamente los seis alias redundantes del manifiesto y se exige unicidad en la validación Python. No se cambian identificadores de libro, recuentos, huellas de archivo o proyección, textos ni licencias. Se conserva el validador TypeScript estricto y se añaden pruebas de regresión; las ejecuciones nuevas deben confirmar la reproducción completa del manifiesto y la regresión general.
