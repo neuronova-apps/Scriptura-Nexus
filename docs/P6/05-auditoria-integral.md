@@ -27,3 +27,6 @@ Se amplía el contrato con cuatro sentidos de conclusión, reservas obligatorias
 
 ## P6.5.5.2. Corrección puntual de CI
 PR #23, ejecución 45812552679 (#71): astro check aprobado; 167 pruebas aprobadas y una ejecución prematura fallida (ENOENT dist/estudios/SN-001/index.html). Node --test detectó scripts/test-approved-render.mjs por su nombre antes de construir dist. Se renombra a scripts/verify-approved-render.mjs sin modificar su contenido ni sus aserciones, y se actualiza la invocación explícita posterior a build, test:build e historial. Se conservan todas las pruebas y controles. Nueva CI pendiente; no integrar hasta validación completa e informe P6.5.6.
+
+## P6.5.6. Informe
+CI #72 (45813398834) satisfactoria: 167/167, 72 páginas, 76 archivos, historial y render aislado conformes. Véase 06-informe-cierre.md para dictamen, alcance y pendientes. P6.5.7 requiere nueva validación del commit documental; P6.5.8 integración y despliegue pendientes.
