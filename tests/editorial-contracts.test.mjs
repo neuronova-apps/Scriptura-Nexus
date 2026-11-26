@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { makeSections, validateEditorial, canTransition, publicationEnabled, criticalControls } from '../src/lib/editorial-contracts.ts';
+const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const context={studyIds:catalog.map(x=>x.id),evidenceIds:['EVD-900001']};
+// Synthetic records exist only in tests, never as real studies or published assets.
+const fixture=()=>({schemaVersion:1,studyId:'SN-001',version:'0.2.0',createdAt:'2026-11-26',updatedAt:'2026-11-26',objective:'PRUEBA SINTÉTICA',scope:'PRUEBA SINTÉTICA',sections:makeSections('SN-001'),claims:[],conclusions:[],reviews:[]});
+const invalid=(mutate)=>{const x=fixture();mutate(x);assert.ok(validateEditorial(x,context).length>0);};
+test('contrato mínimo y 20 secciones',()=>assert.deepEqual(validateEditorial(fixture(),context),[]));
+test('secciones exactas de P0.4',()=>{const rows=readFileSync('docs/P0/04-metodologia.md','utf8').split('\n').filter(l=>/^\| (0[1-9]|1\d|20) \|/.test(l)).map(l=>l.split('|')[2].trim());assert.deepEqual(makeSections('SN-001').map(x=>x.title),rows);});
+test('rechaza esquema, ID y fechas inválidas',()=>{invalid(x=>x.schemaVersion=2);invalid(x=>x.studyId='SN-999');invalid(x=>x.updatedAt='2026-02-30');invalid(x=>x.version='v1');});
+test('rechaza secciones ausentes, duplicadas y alteradas',()=>{invalid(x=>x.sections.pop());invalid(x=>x.sections[1]=x.sections[0]);invalid(x=>x.sections[0].title='Otro');});
+test('exige justificación de omisiones y contenido analizado',()=>{invalid(x=>x.sections[0].applicability='no_aplicable');invalid(x=>x.sections[0].applicability='analizada');const x=fixture();x.sections[2].applicability='no_aplicable';x.sections[2].justification='PRUEBA SINTÉTICA';assert.deepEqual(validateEditorial(x,context),[]);});
+const claim=()=>({id:'AF-900001',studyId:'SN-001',sectionId:'SN-001/S10',proposition:'PRUEBA SINTÉTICA',type:'interpretacion_teologica',grade:'plausible',gradeJustification:'PRUEBA SINTÉTICA',supportingEvidenceIds:['EVD-900001'],opposingEvidenceIds:[],reasoning:'PRUEBA SINTÉTICA'});
+test('afirmación estructural válida sin publicación',()=>{const x=fixture();x.claims.push(claim());assert.deepEqual(validateEditorial(x,context),[]);});
+test('rechaza afirmaciones huérfanas, duplicadas y evidencia inexistente',()=>{invalid(x=>x.claims.push({...claim(),sectionId:'SN-002/S10'}));invalid(x=>x.claims.push(claim(),claim()));invalid(x=>x.claims.push({...claim(),supportingEvidenceIds:['EVD-999']}));});
+test('rechaza grado fuerte sin respaldo y sin justificación',()=>{invalid(x=>x.claims.push({...claim(),grade:'explicito',supportingEvidenceIds:[]}));invalid(x=>x.claims.push({...claim(),gradeJustification:''}));});
+test('conclusiones requieren afirmaciones vinculadas',()=>{const c={id:'CON-900001',studyId:'SN-001',claimIds:['AF-900001'],synthesis:'PRUEBA SINTÉTICA',grade:'plausible',gradeJustification:'PRUEBA SINTÉTICA',reservations:[]};invalid(x=>x.conclusions.push(c));const x=fixture();x.claims.push(claim());x.conclusions.push(c);assert.deepEqual(validateEditorial(x,context),[]);});
+const review=()=>({id:'REV-900001',studyId:'SN-001',version:'0.2.0',date:'2026-11-26',reviewerRole:'PRUEBA SINTÉTICA',result:'aprobada',controls:criticalControls.map(id=>({id,result:'conforme'}))});
+test('revisión estructural válida, no habilita publicación',()=>{const x=fixture();x.reviews.push(review());assert.deepEqual(validateEditorial(x,context),[]);assert.equal(publicationEnabled(),false);});
+test('rechaza revisión de otra versión y aprobación sin controles críticos',()=>{invalid(x=>x.reviews.push({...review(),version:'1.0.0'}));invalid(x=>x.reviews.push({...review(),controls:[]}));invalid(x=>x.reviews.push({...review(),controls:[...review().controls,{id:'otro',result:'pendiente',justification:'PRUEBA'}]}));});
+test('transiciones del flujo editorial y prohibición de salto',()=>{assert.ok(canTransition('planificado','en_investigacion'));assert.ok(canTransition('en_revision','borrador'));assert.ok(canTransition('en_revision','actualizado'));assert.equal(canTransition('planificado','publicado'),false);assert.equal(canTransition('borrador','publicado'),false);});
+test('rechaza duplicación de metadatos autoritativos y campos privados',()=>{invalid(x=>x.title='duplicado');invalid(x=>x.privateNotes='privado');});
+test('datos reales siguen planificados y sin versiones publicadas',()=>{assert.equal(catalog.length,42);assert.ok(catalog.every(x=>x.status==='planificado'&&x.publishedVersion===null));});
