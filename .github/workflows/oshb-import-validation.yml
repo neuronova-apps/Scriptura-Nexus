@@ -8,6 +8,8 @@ on:
       - 'scripts/lib/oshb-occurrences.mjs'
       - 'scripts/lib/oshb-lexical.mjs'
       - 'scripts/lib/oshb-morphology.mjs'
+      - 'scripts/lib/oshb-integrity.mjs'
+      - 'tests/p8-oshb-integrity.test.mjs'
       - 'tests/p8-oshb-morphology.test.mjs'
       - 'tests/p8-oshb-lexical.test.mjs'
       - 'tests/p8-oshb-occurrences.test.mjs'
@@ -50,3 +52,7 @@ jobs:
         run: node --test tests/p8-oshb-morphology.test.mjs
       - name: Morfología real y auditoría TEHMC
         run: node scripts/import-oshb.mjs --morphology
+      - name: Integridad y Unicode sintéticos
+        run: node --test tests/p8-oshb-integrity.test.mjs
+      - name: Auditoría de cobertura e integridad real
+        run: node scripts/import-oshb.mjs --integrity
