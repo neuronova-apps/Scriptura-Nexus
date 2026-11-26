@@ -33,3 +33,20 @@ for (const [name, html] of [['inicio', home], ['404', missing], ['guía', guide]
 }
 assert.ok(guide.indexOf('<h1') < guide.indexOf('<h2'), 'Jerarquía inicial de la guía');
 console.log('Estructura semántica y acceso alternativo: conformes.');
+
+for (const [name, html] of [['inicio', home], ['404', missing], ['guía', guide]]) {
+  assert.match(html, /<nav[^>]*aria-label="Navegación principal"/);
+  assert.match(html, /<nav[^>]*aria-label="Navegación del pie de página"/);
+  assert.match(html, /Próximamente/);
+  assert.match(html, /href="\/Scriptura-Nexus\/design-system\/"/);
+  for (const match of html.matchAll(/href="([^"]+)"/g)) {
+    const url = match[1];
+    if (!url.startsWith('/')) continue;
+    assert.ok(url.startsWith('/Scriptura-Nexus/'), name + ': base inválida ' + url);
+    const relative = url.slice('/Scriptura-Nexus/'.length);
+    assert.ok(existsSync('dist/' + relative + (relative === '' || relative.endsWith('/') ? 'index.html' : '')), name + ': destino inexistente ' + url);
+  }
+}
+assert.match(home, /aria-current="page"/);
+assert.doesNotMatch(guide, /aria-current="page"/);
+console.log('Navegación compartida y destinos existentes: conformes.');

@@ -1,0 +1,21 @@
+---
+import { navigationFor } from '../../lib/navigation';
+interface Props { base: string; pathname: string; }
+const { base, pathname } = Astro.props;
+const items = navigationFor(base, pathname);
+---
+<nav class="site-navigation" aria-label="Navegación principal">
+  <div class="site-navigation-inner">
+    <ul class="site-navigation-list">
+      {items.map(item => (
+        <li>
+          {item.href ? (
+            <a class="site-nav-link" href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
+          ) : (
+            <span class="site-nav-pending">{item.label}<small class="site-nav-status">Próximamente</small></span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

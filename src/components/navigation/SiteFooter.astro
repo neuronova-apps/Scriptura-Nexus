@@ -1,0 +1,19 @@
+---
+import { basePath } from '../../lib/site';
+interface Props { base: string; }
+const { base } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="site-footer-inner site-footer-grid">
+    <div class="site-footer-brand">
+      <p class="site-footer-name">Scriptura Nexus</p>
+      <p>Estudio bíblico histórico, exegético y teológico comparado.</p>
+      <p class="site-footer-motto">Comprender las Escrituras desde sus fundamentos.</p>
+    </div>
+    <nav aria-label="Navegación del pie de página" class="site-footer-links">
+      <a href={basePath(base)}>Inicio</a>
+      <a href={basePath(base, 'design-system/')}>Guía de interfaz</a>
+    </nav>
+    <div class="site-footer-credit">Proyecto de NeuroNova Apps</div>
+  </div>
+</footer>
