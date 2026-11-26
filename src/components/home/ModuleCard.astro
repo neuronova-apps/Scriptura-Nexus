@@ -1,0 +1,13 @@
+---
+import Card from '../Card.astro';
+import Button from '../Button.astro';
+interface Props { label: string; description: string; href: string | null; phase: string; }
+const { label, description, href, phase } = Astro.props;
+---
+<Card variant="default" class="home-module">
+  <h3>{label}</h3>
+  <p>{description}</p>
+  <div class="home-module-status">
+    {href ? <Button href={href} variant="secondary">Explorar {label}</Button> : <span>Próximamente · {phase}</span>}
+  </div>
+</Card>

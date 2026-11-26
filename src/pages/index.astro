@@ -3,14 +3,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Badge from '../components/Badge.astro';
 import Callout from '../components/Callout.astro';
 import Card from '../components/Card.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ModuleCard from '../components/home/ModuleCard.astro';
+import { homeModules } from '../lib/home';
+import '../styles/home.css';
+const modules = homeModules(import.meta.env.BASE_URL);
 ---
 <BaseLayout title="Scriptura Nexus | Estudio bíblico y teológico" description="Estudio bíblico histórico, exegético y teológico comparado.">
-  <section aria-labelledby="hero-title">
-    <Card variant="editorial" class="hero">
-      <Badge variant="neutral" class="hero-kicker">Investigación bíblica y teológica</Badge>
-      <h1 id="hero-title">Scriptura Nexus</h1>
-      <p class="hero-description">Estudio bíblico histórico, exegético y teológico comparado.</p>
-      <Callout tone="info">Infraestructura inicial en desarrollo. Los módulos de investigación se incorporarán progresivamente.</Callout>
-    </Card>
-  </section>
+  <div class="home-portal">
+    <section aria-labelledby="hero-title">
+      <Card variant="editorial" class="hero home-hero">
+        <Badge variant="neutral" class="hero-kicker">Investigación bíblica y teológica</Badge>
+        <h1 id="hero-title">Scriptura Nexus</h1>
+        <p class="home-motto">Comprender las Escrituras desde sus fundamentos.</p>
+        <p class="hero-description">Estudio bíblico histórico, exegético y teológico comparado.</p>
+        <p class="home-intro">Un espacio para investigar, consultar y contrastar las Escrituras a partir de su contexto histórico, sus lenguas originales y las distintas interpretaciones teológicas, con fuentes verificables.</p>
+        <a class="sn-button sn-button--primary" href="#modulos">Explorar módulos</a>
+        <Callout tone="info">Portal en desarrollo. Los módulos y las investigaciones se incorporarán progresivamente.</Callout>
+      </Card>
+    </section>
+    <section aria-labelledby="modulos">
+      <SectionHeading id="modulos" eyebrow="Áreas de consulta" title="Explorar Scriptura Nexus" description="Siete áreas de acceso que reúnen los recursos previstos en la arquitectura del proyecto." />
+      <div class="home-modules">
+        {modules.map(module => <ModuleCard label={module.label} description={module.description} href={module.href} phase={module.phase} />)}
+      </div>
+    </section>
+    <section aria-labelledby="busqueda">
+      <SectionHeading id="busqueda" title="Búsqueda general" description="Se incorporará progresivamente conforme estén disponibles los índices y recursos autorizados." />
+      <Card variant="outlined">
+        <p class="home-search-note">Próximamente: consulta por temas, referencias bíblicas, autores y términos. El buscador aún no está habilitado.</p>
+      </Card>
+    </section>
+    <section aria-labelledby="enfoque">
+      <SectionHeading id="enfoque" eyebrow="Nuestro enfoque" title="Investigar, consultar y contrastar" />
+      <div class="home-principles">
+        <Card><h3>Fundamento documental</h3><p>Identificar fuentes, ediciones, referencias y límites de la evidencia.</p></Card>
+        <Card><h3>Perspectivas teológicas</h3><p>Atención preferente a la perspectiva pentecostal, en diálogo con otras protestantes, católicas y fuentes complementarias pertinentes.</p></Card>
+        <Card><h3>Investigación progresiva</h3><p>Desarrollar cada tema por separado y publicar únicamente estudios revisados y aprobados.</p></Card>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
