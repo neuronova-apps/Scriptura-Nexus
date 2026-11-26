@@ -24,3 +24,6 @@ Consulta metodológica: P0.4 ya exige no anticipar conclusiones y graduar el res
 
 ## P6.5.5.1. Fortalecimiento metodológico autorizado
 Se amplía el contrato con cuatro sentidos de conclusión, reservas obligatorias para interpretativas/indeterminadas, umbral cualitativo para categóricas y alcance/justificación canónica de cada argumento. Se exigen controles críticos imparcialidad y contexto_canonico. Se actualizan metodología, modelo, render y fixtures. No se resuelve ninguna cuestión confesional ni se declara un canon verdadero. No hay publicaciones reales que migrar. El control estructural no reemplaza la revisión humana. P6.5.5.2: PR consolidado y CI pendiente.
+
+## P6.5.5.2. Corrección puntual de CI
+PR #23, ejecución 45812552679 (#71): astro check aprobado; 167 pruebas aprobadas y una ejecución prematura fallida (ENOENT dist/estudios/SN-001/index.html). Node --test detectó scripts/test-approved-render.mjs por su nombre antes de construir dist. Se renombra a scripts/verify-approved-render.mjs sin modificar su contenido ni sus aserciones, y se actualiza la invocación explícita posterior a build, test:build e historial. Se conservan todas las pruebas y controles. Nueva CI pendiente; no integrar hasta validación completa e informe P6.5.6.
