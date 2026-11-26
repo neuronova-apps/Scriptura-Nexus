@@ -1,0 +1,27 @@
+name: P8.4.2 Admisión léxica controlada
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P8/admision-lexica-p84.json'
+      - 'docs/P8/candidatos-lexicos-p84.json'
+      - 'scripts/review-lexicon-admission-p84.py'
+      - 'scripts/audit-lexicon-p84.py'
+      - 'tests/test_lexicon_p84_admission.py'
+      - '.github/workflows/lexicon-admission.yml'
+      - 'src/data/linguistica/registro.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Pruebas de barrera de admisión
+        run: python3 -m unittest discover -s tests -p test_lexicon_p84_admission.py
+      - name: Verificar archivos y relaciones exactas sin persistencia
+        run: python3 scripts/review-lexicon-admission-p84.py
