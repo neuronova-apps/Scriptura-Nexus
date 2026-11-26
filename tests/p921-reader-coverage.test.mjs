@@ -62,3 +62,11 @@ test('does not mutate the historical projection report',()=>{
  const before=JSON.stringify(report);buildReaderCoverage(report);
  assert.equal(JSON.stringify(report),before);
 });
+
+test('real ENT22 aliases are unique and preserve exact source labels',()=>{
+ for(const b of report.books) assert.equal(new Set(b.aliases).size,b.aliases.length,b.id);
+ assert.deepEqual(report.books.find(b=>b.id==='LIB-MRK').aliases,['MRK','Mark']);
+ assert.deepEqual(report.books.find(b=>b.id==='LIB-MAT').aliases,['MAT','Matthew','Matt']);
+ const bad=structuredClone(report);bad.books[0].aliases.push(bad.books[0].aliases[0]);
+ assert.throws(()=>buildReaderCoverage(bad),/ENT22/);
+});
