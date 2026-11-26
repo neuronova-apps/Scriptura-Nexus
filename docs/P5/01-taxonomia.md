@@ -12,3 +12,6 @@ Los métodos reproducen P0.4 y se verifica su coincidencia con la presentación 
 
 ## Validación
 VAL-01–03: estructura, IDs únicos, secuencias, referencias, recuentos y clasificación independiente; pruebas negativas incluidas. La suite existente ejecuta las nuevas pruebas mediante npm test. CI pendiente de comprobación. Archivos previos protegidos sin modificación.
+
+## Incidencia CI y corrección
+La ejecución 45756452969 falló únicamente en la comparación documental de A01: la etiqueta JSON «Investigación académica» comienza con mayúscula, mientras que P0.3 usa «investigación académica» dentro de una oración. Se corrige la prueba para normalizar Unicode y capitalización, y comprobar cada ID T01–T05 en su propia línea y A01 en su declaración específica, incluyendo su condición de marco transversal no confesional. No se modifican los datos JSON ni P0.3. Se requiere nueva ejecución completa de CI antes de integrar.

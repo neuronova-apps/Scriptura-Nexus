@@ -19,8 +19,21 @@ test('los métodos reproducen íntegramente P0.4 y las perspectivas publicadas',
 });
 test('tradiciones y marco académico conservan IDs y nombres de P0.3',()=>{
   const source=readFileSync('docs/P0/03-ejes.md','utf8');
-  for(const x of fresh().traditions.items) assert.ok(source.includes(x.name),x.id);
-  assert.equal(fresh().traditions.items.filter(x=>x.type==='academico').length,1);
+  const traditions=fresh().traditions.items;
+  const section=source.split('## 6. Tradiciones y marcos de interpretación')[1].split('## 7.')[0];
+  const normalize=value=>value.normalize('NFC').toLocaleLowerCase('es').trim();
+  for(const x of traditions.filter(x=>x.type==='confesional')) {
+    const line=section.split('\n').find(line=>line.startsWith('- '+x.id+' '));
+    assert.ok(line,x.id+' sin registro documental');
+    assert.ok(normalize(line).startsWith(normalize('- '+x.id+' '+x.name)),x.id+' nombre no coincide');
+  }
+  const academic=traditions.filter(x=>x.type==='academico');
+  assert.equal(academic.length,1);
+  assert.equal(academic[0].id,'A01');
+  const declaration=section.split('\n').find(line=>line.includes('(A01)'));
+  assert.ok(declaration,'A01 sin declaración documental');
+  assert.ok(normalize(declaration).includes(normalize(academic[0].name)), 'A01 nombre no coincide');
+  assert.match(declaration,/marco transversal, no una confesión/i);
 });
 test('las referencias documentales existen',()=>{
   for(const record of Object.values(fresh())) for(const path of record.sourceRefs) assert.ok(existsSync(path),path);
