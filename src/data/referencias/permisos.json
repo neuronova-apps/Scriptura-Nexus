@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "resourceId": "REC-000001",
+      "editionId": "BIB-000001",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000002",
+      "editionId": "BIB-000002",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000003",
+      "editionId": "BIB-000003",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000004",
+      "editionId": "BIB-000004",
+      "licenseId": "LIC-000001",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Declaración CC BY 4.0 del artículo; verificar componentes, atribución y aprobación del responsable antes de admitir.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000005",
+      "editionId": "BIB-000005",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000006",
+      "editionId": "BIB-000006",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    }
+  ]
+}

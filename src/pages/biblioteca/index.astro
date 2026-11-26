@@ -16,7 +16,7 @@ const languages=[...new Set(entries.map(e=>e.edition.language))].sort();
 <div class="module-landing">
 <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li aria-current="page">Biblioteca teológica</li></ol></nav>
 <Card variant="editorial"><p class="module-phase">Biblioteca documental · P7.3</p><h1>Biblioteca teológica</h1><p>Consulta {entries.length} ediciones documentales iniciales. La inclusión de una referencia no significa adhesión a su doctrina ni autorización para reproducir su contenido.</p><p>Catálogo inicial ampliable; la representación de tradiciones no es exhaustiva.</p></Card>
-<nav aria-label="Recursos documentales relacionados" class="library-links"><a href={base+'historia/'}>Historia cristiana</a><a href={base+'fundamentos/glosario/'}>Glosario metodológico</a><a href={base+'fundamentos/fuentes/'}>Fuentes y evidencias</a><a href={base+'fundamentos/licencias/'}>Licencias y atribuciones</a></nav>
+<nav aria-label="Recursos documentales relacionados" class="library-links"><a href={base+'historia/'}>Historia cristiana</a><a href={base+'fundamentos/glosario/'}>Glosario metodológico</a><a href={base+'fundamentos/fuentes/'}>Fuentes y evidencias</a><a href={base+'biblioteca/permisos/'}>Registro de licencias y permisos</a><a href={base+'fundamentos/licencias/'}>Guía de licencias y atribuciones</a></nav>
 <section aria-labelledby="documentos-titulo"><h2 id="documentos-titulo">Catálogo documental</h2>
 <div class="library-filters" data-library-filters hidden>
 <label for="library-query">Buscar por título, autor, ID, DOI o tema documental<input id="library-query" type="search" autocomplete="off" /></label>
