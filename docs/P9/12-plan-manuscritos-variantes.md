@@ -41,3 +41,15 @@ P9.4.1 no admite corpus, imágenes, transcripciones, metadatos de terceros ni ap
 ## Criterio de cierre de P9.4.1
 
 Inventario versionado, evidencia oficial de condiciones de acceso/reutilización, estados explícitos, pruebas negativas que impidan una admisión accidental, ausencia de datos protegidos y workflow reproducible. La revisión de un sitio no constituye autorización ni dictamen jurídico independiente.
+
+
+## Estado de ejecución al 26 de noviembre de 2026
+
+| Subfase | Estado | Evidencia y límite |
+|---|---|---|
+| P9.4.1 | Completada | PR #66 integrado en main mediante f64d295; Pages #184 con build y deploy satisfactorios. Inventario de 11 candidatos; cero testigos admitidos y cero corpus importados. |
+| P9.4.2 | Implementación preparada en rama | Contratos TypeScript, registro metadata-only, pruebas sintéticas y workflow específico. Cierre sujeto a CI, revisión del diff, integración y Pages. |
+| P9.4.3 | Pendiente | No crear fichas ni lecturas reales hasta verificar objeto, fuente, derechos y evidencia. |
+| P9.4.4 | Pendiente | La interfaz depende de registros aptos y de la validación funcional y accesible. |
+
+La implementación P9.4.2 no modifica la decisión de P9.4.1: los repositorios institucionales siguen como enlaces externos y las ediciones/aparatos no seleccionados continúan fuera de admisión.

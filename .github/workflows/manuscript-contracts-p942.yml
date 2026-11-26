@@ -1,0 +1,35 @@
+name: P9.4.2 Contratos de manuscritos y variantes
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/lib/manuscript-contracts.ts'
+      - 'tests/p942-manuscript-contracts.test.mjs'
+      - 'docs/P9/12-plan-manuscritos-variantes.md'
+      - 'docs/P9/14-contratos-manuscritos-variantes.md'
+      - 'docs/P9/registro-manuscritos-p942.json'
+      - 'docs/P9/13-auditoria-fuentes-manuscritos.md'
+      - 'docs/P9/candidatos-manuscritos-p941.json'
+      - 'scripts/audit-manuscript-candidates-p941.py'
+      - 'tests/test_manuscript_candidates_p941.py'
+      - '.github/workflows/manuscript-contracts-p942.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manuscript-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contratos, regresión y build
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Mantener auditoría y barreras P9.4.1
+        run: |
+          python3 -m unittest discover -s tests -p test_manuscript_candidates_p941.py
+          python3 scripts/audit-manuscript-candidates-p941.py
