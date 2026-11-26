@@ -1,0 +1,9 @@
+# P8.3.4. Interfaz del analizador de términos bíblicos
+
+Base 8514b34030e4af86aa7c42c23e57d269674720af, PR #40 integrado tras CI #110 y motor #2 exitosos. El diseño usa la identidad y preferencias existentes (4 apariencias y 3 escalas). Ruta /linguistica/analizador/, enlazada desde el módulo. Selección de edición, libro, capítulo, versículo y ocurrencia por posición; información de forma original, lengua, lema, códigos, rasgos y procedencia. Estados de ausencia separados, sin sugerir sentidos ni Strong inexistentes. Las palabras se presentan con bdi, lang y dir por ocurrencia; RTL para hebreo y arameo, LTR para griego, controles nativos y botones con aria-pressed, etiquetas, foco visible, avisos aria-live, reflujo móvil y mensaje sin JS.
+
+## Barrera de publicación
+Se implementa la interfaz funcional y su controlador reutilizable, pero la página pública recibe un motor vacío de forma deliberada. No se descargan ni incorporan corpus, fuentes o manifiestos internos al navegador; controles deshabilitados y estado visible. No se publica un ejemplo sintético ni se habilita una consulta real sin autorización posterior. El flujo se prueba con fixtures exclusivamente de pruebas, no distribuidos. No modificar los registros ni corpus ni los 42 estudios. El motor real P8.3.3 sigue validado internamente.
+
+## Validación
+Seis pruebas nuevas de sesión (tres lenguas, selección exacta, ausencia y reinicio sin selección obsoleta) y verificación de HTML generado, enlaces, un H1, IDs, etiquetas, referencias ARIA, estados deshabilitados y ausencia de fixtures/corpus. Pruebas automáticas no equivalen a revisión manual en navegador, lector de pantalla, teclado, zoom y los cuatro temas. P8.3.5 realizará validación integral aislada, incluyendo flujo interactivo con datos reales en entorno no público; publicación sigue bloqueada hasta decisión expresa. CI e integración pendientes.

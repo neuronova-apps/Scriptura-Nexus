@@ -457,3 +457,25 @@ assert.deepEqual(validateLinguisticRegistry(linguisticRegistry,readAdmissions())
 for(const [key,value] of Object.entries(linguisticRegistry))if(key!=='schemaVersion')assert.deepEqual(value,[]);
 assert.ok(!existsSync('dist/data/linguistica/'));
 console.log('P8.2.1: contratos lingüísticos válidos, registro vacío y sin publicación de corpus.');
+
+// P8.3.4: public interface, no linguistic corpus publication.
+const analyzerHtml=readFileSync('dist/linguistica/analizador/index.html','utf8');
+const linguisticsHtml=readFileSync('dist/linguistica/index.html','utf8');
+assert.ok(linguisticsHtml.includes('href="/Scriptura-Nexus/linguistica/analizador/"'));
+assert.ok(analyzerHtml.includes('href="/Scriptura-Nexus/linguistica/"'));
+assert.equal((analyzerHtml.match(/<h1(?:\s|>)/g)||[]).length,1);
+assert.match(analyzerHtml,/No hay ediciones lingüísticas publicadas/);
+assert.match(analyzerHtml,/<fieldset[^>]*id="ta-fields"[^>]*disabled/);
+assert.match(analyzerHtml,/<select[^>]*id="ta-occurrence"[^>]*disabled/);
+assert.match(analyzerHtml,/<noscript>/);
+for(const id of ['ta-edition','ta-book','ta-chapter','ta-verse','ta-occurrence'])assert.ok(analyzerHtml.includes('for="'+id+'"')&&analyzerHtml.includes('id="'+id+'"'));
+const analyzerIds=[...analyzerHtml.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(new Set(analyzerIds).size,analyzerIds.length);
+for(const m of analyzerHtml.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g))for(const id of m[1].split(/\s+/))assert.ok(analyzerIds.includes(id),'ARIA sin destino');
+for(const id of ['ta-status','ta-result-status'])assert.match(analyzerHtml,new RegExp('id="'+id+'"[^>]*role="status"[^>]*aria-live="polite"'));
+assert.doesNotMatch(analyzerHtml,/LING-01[0-4]|TOK-demo|TXT-demo/);
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile()&&/\.(?:html?|json|js|mjs|xml|txt|map)$/i.test(file.name)){
+ const content=readFileSync(file.parentPath+'/'+file.name,'utf8');
+ assert.doesNotMatch(content,/TOK-demo[123]|TXT-demo[123]|LING-demo|candidatos-griegos-p83\.json|85-3Jn-morphgnt\.txt|wlc\/Gen\.xml|wlc\/Dan\.xml/,'Material no publicable: '+file.name);
+}
+console.log('P8.3.4: interfaz enlazada, estado vacío, controles deshabilitados, etiquetas ARIA y ausencia de corpus/fixtures.');
