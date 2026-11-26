@@ -211,11 +211,16 @@ test('P9.4.2: el aparato exige edición crítica, procedencia y solo referencia 
   assert.ok(validateApparatusReference(value, context).length);
 });
 
-test('P9.4.2: una variante necesita dos lecturas y evidencia interna o externa', () => {
+test('P9.4.2: una variante necesita dos lecturas, evidencia y edición documentada', () => {
   reject(value => { value.variants[0].readingIds = [readingA]; });
   reject(value => {
     value.variants[0].internalEvidenceIds = [];
     value.variants[0].externalEvidenceIds = [];
+  });
+  reject(value => { value.editions[0].reviewStatus = 'pending'; });
+  reject(value => {
+    value.variants[0].internalEvidenceIds = ['EVD-SYNTH-001'];
+    value.variants[0].externalEvidenceIds = ['EVD-SYNTH-001'];
   });
 });
 
