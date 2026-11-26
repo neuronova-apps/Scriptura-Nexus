@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import {basePath} from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/bible-comparator.css';
+const base=basePath(import.meta.env.BASE_URL);
+const sides=[{id:'origin',label:'Edición de origen'},{id:'target',label:'Edición de destino'}];
+---
+<BaseLayout title="Comparador bíblico | Scriptura Nexus" description="Lecturas paralelas y correspondencias documentadas por edición. Publicación pendiente.">
+ <div class="module-landing sn-bible-comparator">
+  <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'biblia/'}>Biblia</a></li><li aria-current="page">Comparador bíblico</li></ol></nav>
+  <Card variant="editorial">
+   <p class="module-phase">Biblia · P9.3.3</p><h1>Comparador bíblico</h1>
+   <p>Consulta dos ediciones por sus referencias originales. Una coincidencia de etiqueta no demuestra correspondencia textual.</p>
+   <Callout tone="info" title="Disponibilidad">No hay ediciones autorizadas para comparación pública. El corpus y las correspondencias documentales requieren revisión y autorización.</Callout>
+  </Card>
+  <nav aria-label="Herramientas bíblicas"><ul class="bc-links"><li><a href={base+'biblia/'}>Biblia</a></li><li><a href={base+'biblia/lector/'}>Lector bíblico</a></li></ul></nav>
+  <nav aria-label="Secciones del comparador"><ul class="bc-links"><li><a href="#bc-selection-title">Selección</a></li><li><a href="#bc-result-title">Lectura paralela</a></li><li><a href="#bc-evidence-title">Correspondencia y evidencia</a></li></ul></nav>
+  <section class="sn-card sn-card--default" aria-labelledby="bc-selection-title">
+   <h2 id="bc-selection-title" tabindex="-1">1. Seleccionar ediciones y referencias</h2>
+   <p id="bc-help">Selecciona dos ediciones distintas. La referencia de destino puede quedar sin selección para buscar una correspondencia documentada; no se completará por coincidencia de numeración.</p>
+   <form id="bc-form" aria-describedby="bc-help"><fieldset id="bc-fields" disabled><legend>Consulta de ediciones</legend>
+    <div class="bc-columns">
+     {sides.map(side=><fieldset class="bc-side"><legend>{side.label}</legend>
+      <label for={'bc-'+side.id+'-edition'}>Edición<select id={'bc-'+side.id+'-edition'} required><option value="">Sin ediciones disponibles</option></select></label>
+      <label for={'bc-'+side.id+'-book'}>Libro<select id={'bc-'+side.id+'-book'} required={side.id==='origin'} disabled><option value="">Selecciona una edición</option></select></label>
+      <label for={'bc-'+side.id+'-chapter'}>Capítulo<select id={'bc-'+side.id+'-chapter'} required={side.id==='origin'} disabled><option value="">Selecciona un libro</option></select></label>
+      <label for={'bc-'+side.id+'-verse'}>Versículo o rango<select id={'bc-'+side.id+'-verse'} required={side.id==='origin'} disabled><option value="">Selecciona un capítulo</option></select></label>
+     </fieldset>)}
+    </div>
+    <button id="bc-consult" type="submit" class="sn-button sn-button--primary" disabled>Consultar comparación</button>
+   </fieldset></form>
+   <noscript><p>La consulta interactiva requiere JavaScript. El estado de disponibilidad permanece accesible.</p></noscript>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="bc-result-title">
+   <h2 id="bc-result-title" tabindex="-1">2. Lectura paralela</h2>
+   <p id="bc-status" role="status" aria-live="polite">No hay ediciones disponibles para comparación pública.</p>
+   <p id="bc-diagnostic"></p>
+   <div class="bc-columns">
+    <section class="bc-panel" aria-labelledby="bc-origin-title"><h3 id="bc-origin-title">Texto de origen</h3><div id="bc-origin-result"><p>Pendiente de autorización.</p></div></section>
+    <section class="bc-panel" aria-labelledby="bc-target-title"><h3 id="bc-target-title">Texto de destino</h3><div id="bc-target-result"><p>Pendiente de autorización.</p></div></section>
+   </div>
+   <p>Las lecturas independientes no equivalen a una traducción alineada. Un marcador vacío no demuestra una omisión textual deliberada.</p>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="bc-evidence-title">
+   <h2 id="bc-evidence-title" tabindex="-1">3. Correspondencia y evidencia</h2>
+   <div id="bc-evidence"><p>No hay correspondencias disponibles para consulta pública.</p></div>
+   <p>La comparación conserva procedencia, licencia y atribución de cada unidad. No se deduce equivalencia semántica, doctrinal ni de tokens.</p>
+   <p><a href={base+'fundamentos/licencias/'}>Criterios de licencias y uso de fuentes</a></p>
+  </section>
+  <p><a href={base+'biblia/'}>Volver al módulo Biblia</a></p>
+ </div>
+</BaseLayout>
+<script>
+ import {createComparatorView,emptyComparatorRelease} from '../../lib/comparator-view';
+ import {mountComparator} from '../../scripts/comparator-ui';
+ // No internal projection or evidence registry is imported. P11.4 is the release gate.
+ mountComparator(document,createComparatorView(emptyComparatorRelease()));
+</script>
