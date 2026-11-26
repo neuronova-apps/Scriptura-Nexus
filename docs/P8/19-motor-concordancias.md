@@ -7,3 +7,7 @@ createConcordance(registry, admissions, supplements) valida y copia; coverage() 
 
 ## Validación
 10 pruebas sintéticas; validación real con importadores verificados y referencia independiente por token, deduplicación, 9 grupos de consultas (3 lenguas × 3 modos), muestreo determinista de claves frecuentes y raras, paginación completa y filtro por libro. Se verifican cobertura total y resultados exactos; no se afirma que todas las consultas posibles hayan sido ejecutadas. Solo métricas y SHA-256 de resultados en logs, no corpus, persistencia ni publicación. Los índices por clave y frecuencias exhaustivas corresponden a P8.4.5, no esta subfase. P8.4.6 interfaz y P8.4.7 cierre. Los 8 Strong y 1.157 atributos aug pendientes, 333 morfológicos OSHB, seis casos griegos y fuentes diferidas se preservan. No modificar registro público ni admisiones ni estudios. CI pendiente.
+
+## Validación inicial y corrección
+
+Motor #1 (45867387776) satisfactorio: 10/10 pruebas, 90 consultas y 90 filtros por libro, 3.540 resultados cotejados, 26.156 ocurrencias con lema admitido y 594 sin él. Infraestructura #129 (45867387897) falló en TypeScript TS2322: estado léxico inferido como string. Se añade comprobación explícita de los tres estados permitidos, que estrecha el tipo y rechaza estados desconocidos. Sin alterar recuentos, cobertura, pruebas, publicación ni admisiones. Revalidación requerida.

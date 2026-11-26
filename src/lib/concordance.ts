@@ -37,7 +37,9 @@ export function createConcordance(registry:LinguisticRegistry,admissions:readonl
    if(!analysis)throw new Error('Anotación no validada');
    add(d.lemma.id,analysis.origin,null,d.analysisId);
   }
-  rows.push({tokenId:t.id,editionId:u.editionId,bookId:u.bookId,chapter:u.chapter,verse:u.verse,unitId:u.id,unitOrder:u.order,position:t.position,form:t.form,language:t.language,direction:t.direction,origin:t.origin,lemmas:[...evidence.values()],lexicalState:a.lexical.state});
+  const lexicalState=a.lexical.state;
+  if(lexicalState!=='codigo_proveedor'&&lexicalState!=='vinculado'&&lexicalState!=='ausente')throw new Error('Estado léxico no validado');
+  rows.push({tokenId:t.id,editionId:u.editionId,bookId:u.bookId,chapter:u.chapter,verse:u.verse,unitId:u.id,unitOrder:u.order,position:t.position,form:t.form,language:t.language,direction:t.direction,origin:t.origin,lemmas:[...evidence.values()],lexicalState});
  }
  rows.sort((a,b)=>cmp(a.editionId,b.editionId)||a.unitOrder-b.unitOrder||a.position-b.position||cmp(a.tokenId,b.tokenId));
  const search=(q:ConcordanceQuery)=>{
