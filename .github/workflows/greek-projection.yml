@@ -1,0 +1,35 @@
+name: P8.3.2 Proyección griega admitida
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/project-greek-p83.py'
+      - 'scripts/import-greek-p83.mjs'
+      - 'scripts/lib/greek-projection.mjs'
+      - 'scripts/review-greek-p83.py'
+      - 'scripts/audit-greek-p83.py'
+      - 'docs/P8/admision-griega.json'
+      - 'docs/P8/propuesta-admision-griega.json'
+      - 'docs/P8/candidatos-griegos-p83.json'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'src/data/linguistica/registro.json'
+      - 'tests/p8-greek-projection.test.mjs'
+      - '.github/workflows/greek-projection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Pruebas del modelo y la barrera de publicación
+        run: node --test tests/p8-greek-projection.test.mjs
+      - name: Doble proyección real griega y contratos ENT19 23-27
+        run: node scripts/import-greek-p83.mjs
