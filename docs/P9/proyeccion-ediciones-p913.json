@@ -1,0 +1,3958 @@
+{
+  "admissionManifestSha256": "b42c991837c159a48de8b11a3c15ed0dee9d48b6ba5b82e502ec0569810871ea",
+  "baselineMain": "13776e1d81692ab0336929ca282c9bfaf420ee37",
+  "books": [
+    {
+      "aliases": [
+        "GEN"
+      ],
+      "code": "GEN",
+      "id": "LIB-GEN",
+      "names": {
+        "es": "Génesis"
+      }
+    },
+    {
+      "aliases": [
+        "EXO"
+      ],
+      "code": "EXO",
+      "id": "LIB-EXO",
+      "names": {
+        "es": "Éxodo"
+      }
+    },
+    {
+      "aliases": [
+        "LEV"
+      ],
+      "code": "LEV",
+      "id": "LIB-LEV",
+      "names": {
+        "es": "Levítico"
+      }
+    },
+    {
+      "aliases": [
+        "NUM"
+      ],
+      "code": "NUM",
+      "id": "LIB-NUM",
+      "names": {
+        "es": "Números"
+      }
+    },
+    {
+      "aliases": [
+        "DEU"
+      ],
+      "code": "DEU",
+      "id": "LIB-DEU",
+      "names": {
+        "es": "Deuteronomio"
+      }
+    },
+    {
+      "aliases": [
+        "JOS"
+      ],
+      "code": "JOS",
+      "id": "LIB-JOS",
+      "names": {
+        "es": "Josué"
+      }
+    },
+    {
+      "aliases": [
+        "JDG"
+      ],
+      "code": "JDG",
+      "id": "LIB-JDG",
+      "names": {
+        "es": "Jueces"
+      }
+    },
+    {
+      "aliases": [
+        "RUT"
+      ],
+      "code": "RUT",
+      "id": "LIB-RUT",
+      "names": {
+        "es": "Rut"
+      }
+    },
+    {
+      "aliases": [
+        "1SA"
+      ],
+      "code": "1SA",
+      "id": "LIB-1SA",
+      "names": {
+        "es": "1 Samuel"
+      }
+    },
+    {
+      "aliases": [
+        "2SA"
+      ],
+      "code": "2SA",
+      "id": "LIB-2SA",
+      "names": {
+        "es": "2 Samuel"
+      }
+    },
+    {
+      "aliases": [
+        "1KI"
+      ],
+      "code": "1KI",
+      "id": "LIB-1KI",
+      "names": {
+        "es": "1 Reyes"
+      }
+    },
+    {
+      "aliases": [
+        "2KI"
+      ],
+      "code": "2KI",
+      "id": "LIB-2KI",
+      "names": {
+        "es": "2 Reyes"
+      }
+    },
+    {
+      "aliases": [
+        "1CH"
+      ],
+      "code": "1CH",
+      "id": "LIB-1CH",
+      "names": {
+        "es": "1 Crónicas"
+      }
+    },
+    {
+      "aliases": [
+        "2CH"
+      ],
+      "code": "2CH",
+      "id": "LIB-2CH",
+      "names": {
+        "es": "2 Crónicas"
+      }
+    },
+    {
+      "aliases": [
+        "EZR"
+      ],
+      "code": "EZR",
+      "id": "LIB-EZR",
+      "names": {
+        "es": "Esdras"
+      }
+    },
+    {
+      "aliases": [
+        "NEH"
+      ],
+      "code": "NEH",
+      "id": "LIB-NEH",
+      "names": {
+        "es": "Nehemías"
+      }
+    },
+    {
+      "aliases": [
+        "EST"
+      ],
+      "code": "EST",
+      "id": "LIB-EST",
+      "names": {
+        "es": "Ester"
+      }
+    },
+    {
+      "aliases": [
+        "JOB"
+      ],
+      "code": "JOB",
+      "id": "LIB-JOB",
+      "names": {
+        "es": "Job"
+      }
+    },
+    {
+      "aliases": [
+        "PSA"
+      ],
+      "code": "PSA",
+      "id": "LIB-PSA",
+      "names": {
+        "es": "Salmos"
+      }
+    },
+    {
+      "aliases": [
+        "PRO"
+      ],
+      "code": "PRO",
+      "id": "LIB-PRO",
+      "names": {
+        "es": "Proverbios"
+      }
+    },
+    {
+      "aliases": [
+        "ECC"
+      ],
+      "code": "ECC",
+      "id": "LIB-ECC",
+      "names": {
+        "es": "Eclesiastés"
+      }
+    },
+    {
+      "aliases": [
+        "SNG"
+      ],
+      "code": "SNG",
+      "id": "LIB-SNG",
+      "names": {
+        "es": "Cantar de los Cantares"
+      }
+    },
+    {
+      "aliases": [
+        "ISA"
+      ],
+      "code": "ISA",
+      "id": "LIB-ISA",
+      "names": {
+        "es": "Isaías"
+      }
+    },
+    {
+      "aliases": [
+        "JER"
+      ],
+      "code": "JER",
+      "id": "LIB-JER",
+      "names": {
+        "es": "Jeremías"
+      }
+    },
+    {
+      "aliases": [
+        "LAM"
+      ],
+      "code": "LAM",
+      "id": "LIB-LAM",
+      "names": {
+        "es": "Lamentaciones"
+      }
+    },
+    {
+      "aliases": [
+        "EZK"
+      ],
+      "code": "EZK",
+      "id": "LIB-EZK",
+      "names": {
+        "es": "Ezequiel"
+      }
+    },
+    {
+      "aliases": [
+        "DAN"
+      ],
+      "code": "DAN",
+      "id": "LIB-DAN",
+      "names": {
+        "es": "Daniel"
+      }
+    },
+    {
+      "aliases": [
+        "HOS"
+      ],
+      "code": "HOS",
+      "id": "LIB-HOS",
+      "names": {
+        "es": "Oseas"
+      }
+    },
+    {
+      "aliases": [
+        "JOL"
+      ],
+      "code": "JOL",
+      "id": "LIB-JOL",
+      "names": {
+        "es": "Joel"
+      }
+    },
+    {
+      "aliases": [
+        "AMO"
+      ],
+      "code": "AMO",
+      "id": "LIB-AMO",
+      "names": {
+        "es": "Amós"
+      }
+    },
+    {
+      "aliases": [
+        "OBA"
+      ],
+      "code": "OBA",
+      "id": "LIB-OBA",
+      "names": {
+        "es": "Abdías"
+      }
+    },
+    {
+      "aliases": [
+        "JON"
+      ],
+      "code": "JON",
+      "id": "LIB-JON",
+      "names": {
+        "es": "Jonás"
+      }
+    },
+    {
+      "aliases": [
+        "MIC"
+      ],
+      "code": "MIC",
+      "id": "LIB-MIC",
+      "names": {
+        "es": "Miqueas"
+      }
+    },
+    {
+      "aliases": [
+        "NAM"
+      ],
+      "code": "NAM",
+      "id": "LIB-NAM",
+      "names": {
+        "es": "Nahúm"
+      }
+    },
+    {
+      "aliases": [
+        "HAB"
+      ],
+      "code": "HAB",
+      "id": "LIB-HAB",
+      "names": {
+        "es": "Habacuc"
+      }
+    },
+    {
+      "aliases": [
+        "ZEP"
+      ],
+      "code": "ZEP",
+      "id": "LIB-ZEP",
+      "names": {
+        "es": "Sofonías"
+      }
+    },
+    {
+      "aliases": [
+        "HAG"
+      ],
+      "code": "HAG",
+      "id": "LIB-HAG",
+      "names": {
+        "es": "Hageo"
+      }
+    },
+    {
+      "aliases": [
+        "ZEC"
+      ],
+      "code": "ZEC",
+      "id": "LIB-ZEC",
+      "names": {
+        "es": "Zacarías"
+      }
+    },
+    {
+      "aliases": [
+        "MAL"
+      ],
+      "code": "MAL",
+      "id": "LIB-MAL",
+      "names": {
+        "es": "Malaquías"
+      }
+    },
+    {
+      "aliases": [
+        "MAT",
+        "Matthew",
+        "Matt"
+      ],
+      "code": "MAT",
+      "id": "LIB-MAT",
+      "names": {
+        "es": "Mateo"
+      }
+    },
+    {
+      "aliases": [
+        "MRK",
+        "Mark",
+        "Mark"
+      ],
+      "code": "MRK",
+      "id": "LIB-MRK",
+      "names": {
+        "es": "Marcos"
+      }
+    },
+    {
+      "aliases": [
+        "LUK",
+        "Luke",
+        "Luke"
+      ],
+      "code": "LUK",
+      "id": "LIB-LUK",
+      "names": {
+        "es": "Lucas"
+      }
+    },
+    {
+      "aliases": [
+        "JHN",
+        "John",
+        "John"
+      ],
+      "code": "JHN",
+      "id": "LIB-JHN",
+      "names": {
+        "es": "Juan"
+      }
+    },
+    {
+      "aliases": [
+        "ACT",
+        "Acts",
+        "Acts"
+      ],
+      "code": "ACT",
+      "id": "LIB-ACT",
+      "names": {
+        "es": "Hechos"
+      }
+    },
+    {
+      "aliases": [
+        "ROM",
+        "Romans",
+        "Rom"
+      ],
+      "code": "ROM",
+      "id": "LIB-ROM",
+      "names": {
+        "es": "Romanos"
+      }
+    },
+    {
+      "aliases": [
+        "1CO",
+        "1 Corinthians",
+        "1Cor"
+      ],
+      "code": "1CO",
+      "id": "LIB-1CO",
+      "names": {
+        "es": "1 Corintios"
+      }
+    },
+    {
+      "aliases": [
+        "2CO",
+        "2 Corinthians",
+        "2Cor"
+      ],
+      "code": "2CO",
+      "id": "LIB-2CO",
+      "names": {
+        "es": "2 Corintios"
+      }
+    },
+    {
+      "aliases": [
+        "GAL",
+        "Galatians",
+        "Gal"
+      ],
+      "code": "GAL",
+      "id": "LIB-GAL",
+      "names": {
+        "es": "Gálatas"
+      }
+    },
+    {
+      "aliases": [
+        "EPH",
+        "Ephesians",
+        "Eph"
+      ],
+      "code": "EPH",
+      "id": "LIB-EPH",
+      "names": {
+        "es": "Efesios"
+      }
+    },
+    {
+      "aliases": [
+        "PHP",
+        "Philippians",
+        "Phil"
+      ],
+      "code": "PHP",
+      "id": "LIB-PHP",
+      "names": {
+        "es": "Filipenses"
+      }
+    },
+    {
+      "aliases": [
+        "COL",
+        "Colossians",
+        "Col"
+      ],
+      "code": "COL",
+      "id": "LIB-COL",
+      "names": {
+        "es": "Colosenses"
+      }
+    },
+    {
+      "aliases": [
+        "1TH",
+        "1 Thessalonians",
+        "1Thess"
+      ],
+      "code": "1TH",
+      "id": "LIB-1TH",
+      "names": {
+        "es": "1 Tesalonicenses"
+      }
+    },
+    {
+      "aliases": [
+        "2TH",
+        "2 Thessalonians",
+        "2Thess"
+      ],
+      "code": "2TH",
+      "id": "LIB-2TH",
+      "names": {
+        "es": "2 Tesalonicenses"
+      }
+    },
+    {
+      "aliases": [
+        "1TI",
+        "1 Timothy",
+        "1Tim"
+      ],
+      "code": "1TI",
+      "id": "LIB-1TI",
+      "names": {
+        "es": "1 Timoteo"
+      }
+    },
+    {
+      "aliases": [
+        "2TI",
+        "2 Timothy",
+        "2Tim"
+      ],
+      "code": "2TI",
+      "id": "LIB-2TI",
+      "names": {
+        "es": "2 Timoteo"
+      }
+    },
+    {
+      "aliases": [
+        "TIT",
+        "Titus",
+        "Titus"
+      ],
+      "code": "TIT",
+      "id": "LIB-TIT",
+      "names": {
+        "es": "Tito"
+      }
+    },
+    {
+      "aliases": [
+        "PHM",
+        "Philemon",
+        "Phlm"
+      ],
+      "code": "PHM",
+      "id": "LIB-PHM",
+      "names": {
+        "es": "Filemón"
+      }
+    },
+    {
+      "aliases": [
+        "HEB",
+        "Hebrews",
+        "Heb"
+      ],
+      "code": "HEB",
+      "id": "LIB-HEB",
+      "names": {
+        "es": "Hebreos"
+      }
+    },
+    {
+      "aliases": [
+        "JAS",
+        "James",
+        "Jas"
+      ],
+      "code": "JAS",
+      "id": "LIB-JAS",
+      "names": {
+        "es": "Santiago"
+      }
+    },
+    {
+      "aliases": [
+        "1PE",
+        "1 Peter",
+        "1Pet"
+      ],
+      "code": "1PE",
+      "id": "LIB-1PE",
+      "names": {
+        "es": "1 Pedro"
+      }
+    },
+    {
+      "aliases": [
+        "2PE",
+        "2 Peter",
+        "2Pet"
+      ],
+      "code": "2PE",
+      "id": "LIB-2PE",
+      "names": {
+        "es": "2 Pedro"
+      }
+    },
+    {
+      "aliases": [
+        "1JN",
+        "1 John",
+        "1John"
+      ],
+      "code": "1JN",
+      "id": "LIB-1JN",
+      "names": {
+        "es": "1 Juan"
+      }
+    },
+    {
+      "aliases": [
+        "2JN",
+        "2 John",
+        "2John"
+      ],
+      "code": "2JN",
+      "id": "LIB-2JN",
+      "names": {
+        "es": "2 Juan"
+      }
+    },
+    {
+      "aliases": [
+        "3JN",
+        "3 John",
+        "3John"
+      ],
+      "code": "3JN",
+      "id": "LIB-3JN",
+      "names": {
+        "es": "3 Juan"
+      }
+    },
+    {
+      "aliases": [
+        "JUD",
+        "Jude",
+        "Jude"
+      ],
+      "code": "JUD",
+      "id": "LIB-JUD",
+      "names": {
+        "es": "Judas"
+      }
+    },
+    {
+      "aliases": [
+        "REV",
+        "Revelation",
+        "Rev"
+      ],
+      "code": "REV",
+      "id": "LIB-REV",
+      "names": {
+        "es": "Apocalipsis"
+      }
+    }
+  ],
+  "controls": {
+    "alignmentsCreated": 0,
+    "canonAssignments": 0,
+    "corpusTextPersisted": false,
+    "publicRegistryChanged": false,
+    "publicationAuthorized": false,
+    "sourceTextEmitted": false,
+    "versificationAssignments": 0
+  },
+  "corpusManifests": [
+    {
+      "dataVersion": "p9.1.3-projection-v1",
+      "editionId": "TXT-RV1909",
+      "fragments": [
+        {
+          "bookId": "LIB-GEN",
+          "chapters": 50,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-GEN",
+          "projectionSha256": "8c5c77f4e68478660ccaf09e37b21cedcdc419e6790ba7e85888d3c770d2a0bf",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-GEN",
+          "sourceFileSha256": "11a2f4b8e0973aa8ae1b94173cec647ae671f882562c5bff6e962f490cf6a9ca",
+          "unitCount": 1533,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-EXO",
+          "chapters": 40,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-EXO",
+          "projectionSha256": "ef736a10c3cb8d9280be1c9832e139589ec8866156dd18624f8294446082ce41",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-EXO",
+          "sourceFileSha256": "12b0a7ecd52759e4b4838a6cba8db4509360f905d1fad72ac8f5f66dd76e3bf4",
+          "unitCount": 1213,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-LEV",
+          "chapters": 27,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-LEV",
+          "projectionSha256": "9e0bcb72bd1fbd0cd31dc52ec0b7af95990878985f8fa34fb07d8bdbb07cb4d4",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-LEV",
+          "sourceFileSha256": "9457b52e6efd3cd41ebb21b9bb8f43f89b449c4d9a0d4636e72d07e87eacbd8d",
+          "unitCount": 859,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-NUM",
+          "chapters": 36,
+          "emptyUnitCount": 2,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "NUM.12.16",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "NUM.29.40",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "NUM.12.16",
+            "NUM.29.40"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-NUM",
+          "projectionSha256": "a19a98ca31371e76a411a13f558ccfb501b1f94599a75c40be06a1c195a90423",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-NUM",
+          "sourceFileSha256": "804bb03a74ababcf21a430ceb3e8d95706fd2031b595b313b5aa61f56b6a665e",
+          "unitCount": 1288,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-DEU",
+          "chapters": 34,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-DEU",
+          "projectionSha256": "3f225a7703e44610a9bb35bcab78c5c19bb7b3376ab5d6541f78757331a83136",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-DEU",
+          "sourceFileSha256": "5f731cebf3f7f53689e0ab9dc3cd8e0b1c863c78d20f2d88b9238db670ecabf0",
+          "unitCount": 959,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JOS",
+          "chapters": 24,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JOS",
+          "projectionSha256": "581ce68d5d58c83db965789674c43bffbc89f979477cd659a32b499be7c1dda0",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JOS",
+          "sourceFileSha256": "80dd3ddd6334c2d2c78004545981ea653461480b0d4b6185ec2d6d28335f7e46",
+          "unitCount": 658,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JDG",
+          "chapters": 21,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JDG",
+          "projectionSha256": "c877d44d0b2dc770e1fb4e69f128ea8ea35317a30bc01f78bdf9a1d652ea767f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JDG",
+          "sourceFileSha256": "9a392d3cddb0139d035bba5a5c58868c979e56bc506d0dc4746cc3bac1d553c8",
+          "unitCount": 618,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-RUT",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-RUT",
+          "projectionSha256": "54e60aa35e8a56425bc1a5d40a1f5990b46f89fd119783cd370a81d513f1648b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-RUT",
+          "sourceFileSha256": "39264ba33e2258f3dcc38eb7a46add7c52a7b5c92554fa6731386fa7feb10099",
+          "unitCount": 85,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1SA",
+          "chapters": 31,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "1SA.23.29",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "1SA.23.29"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1SA",
+          "projectionSha256": "deec0111c12d0076894a531884d5084866da659fe990e63ba1347530bfb61be1",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1SA",
+          "sourceFileSha256": "e1aa2aee9d160521ae174c9496bbe3d19f6f596549a7cfa037a2037988c25c47",
+          "unitCount": 810,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2SA",
+          "chapters": 24,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "2SA.20.26",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "2SA.20.26"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2SA",
+          "projectionSha256": "b46c818d9c9651757612a5988d95e6afebc98fbb91423225eb9d3eb8ab8a523b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2SA",
+          "sourceFileSha256": "6274b7f8e4399d807b6b1e76e2fb9ceb0e17a5500593be2468519db2a368669d",
+          "unitCount": 695,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1KI",
+          "chapters": 22,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1KI",
+          "projectionSha256": "3248fbbe2d299fabdb84c75adf9f47e27f22535d4f19c1246ac97b161eb87c9e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1KI",
+          "sourceFileSha256": "701740c2602e4a135a42f960ab4c4b93d5d92b03a093c41123c6a67a13b393a5",
+          "unitCount": 816,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2KI",
+          "chapters": 25,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2KI",
+          "projectionSha256": "246e5dd973a1c9f5cd7046785e10dbc37ad847fc422eb2969d344c6180558e44",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2KI",
+          "sourceFileSha256": "b80cc966d206ba865df7e41a5390bc09271ca31f29e8206f63d342b43c3f0782",
+          "unitCount": 719,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1CH",
+          "chapters": 29,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1CH",
+          "projectionSha256": "18194d26d368eea255c08d595ac2d72c556386240c967b0f1fa2cf771fc86135",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1CH",
+          "sourceFileSha256": "58ae38c861e8e6efc7571fd3517a5b18139126dcc6825f3b1b5ba7c3b9e18b49",
+          "unitCount": 942,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2CH",
+          "chapters": 36,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "2CH.33.25",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "2CH.33.25"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2CH",
+          "projectionSha256": "2cfb571e528bc5285d02ee2d97a1f5bfc174aa8a309ed6f0df1110ed34a7ccf2",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2CH",
+          "sourceFileSha256": "18ddca906cc417b3271dcb5804b78ab0c2540091f07d0fd3cadc11e7d658c30d",
+          "unitCount": 822,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-EZR",
+          "chapters": 10,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-EZR",
+          "projectionSha256": "cbbebef09f35f2a8e1ae41e831d4db04e242f6cdac0206a03b2324841405df4b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-EZR",
+          "sourceFileSha256": "90fb2046af31ea257ac1e54fe3578bc7b8ba0c6c8c10ca8fd6106a9a59b9a688",
+          "unitCount": 280,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-NEH",
+          "chapters": 13,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-NEH",
+          "projectionSha256": "d29e0b4d6f3f14783ac90a405433a2e06d10b05df4f6e8c0d198bff0979a4d27",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-NEH",
+          "sourceFileSha256": "71adfdfee4ee584db1e1994d2c0331a6cd457adf1891387c34daa44a573b4190",
+          "unitCount": 406,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-EST",
+          "chapters": 10,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-EST",
+          "projectionSha256": "67bb76b41ca32aefff92b5352d4f790a657777f91ed0cd4ceb977027e509c7eb",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-EST",
+          "sourceFileSha256": "97498f124361253c53bb84ed1f38c83af40f6d3c78cc65c1f838d4b1c96e979d",
+          "unitCount": 167,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JOB",
+          "chapters": 42,
+          "emptyUnitCount": 9,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "JOB.35.16",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.38.39",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.38.40",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.38.41",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.40.20",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.40.21",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.40.22",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.40.23",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            },
+            {
+              "locator": "JOB.40.24",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "JOB.35.16",
+            "JOB.38.39",
+            "JOB.38.40",
+            "JOB.38.41",
+            "JOB.40.20",
+            "JOB.40.21",
+            "JOB.40.22",
+            "JOB.40.23",
+            "JOB.40.24"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JOB",
+          "projectionSha256": "32f348e358bdaf937942f3df01dc6405b389086ad999d232b6a84cc7c80bd53e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JOB",
+          "sourceFileSha256": "fda4e0fa4e0b448650e6d85a70c980c289e91ff0ca401b9640a3d9ba16accacb",
+          "unitCount": 1070,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-PSA",
+          "chapters": 150,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-PSA",
+          "projectionSha256": "7860f23525f7ae6171f8a43f406650149d05e81a3339d610b5d22bf588aa180d",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-PSA",
+          "sourceFileSha256": "812bf94244c61e984b873ff696229f5f8c8ac349a784b20be44360deba8a7334",
+          "unitCount": 2461,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-PRO",
+          "chapters": 31,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-PRO",
+          "projectionSha256": "bab7fb21906491853b07d70813c0c98304275a0b67f1d0e97c72ad1b31d129f0",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-PRO",
+          "sourceFileSha256": "83afd5015b5e1d11220779722334ca2361e80ee5d3a53eabd5bdde28f4f311e9",
+          "unitCount": 915,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ECC",
+          "chapters": 12,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ECC",
+          "projectionSha256": "d3e66389c6403bf88680c825d2c78e7ca589c53de5648e0a7fa5b5832c198efa",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ECC",
+          "sourceFileSha256": "d8662c066c657195869b238f99c929738fd64ed164962cc8b45429224f014ed1",
+          "unitCount": 222,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-SNG",
+          "chapters": 8,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-SNG",
+          "projectionSha256": "34b94770f1d3079d4e830d9c055434402d34b64ce09b32c37f4a23f3c82e6ecc",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-SNG",
+          "sourceFileSha256": "ce4914f5e22be1416dee06eed0d6b29aa0ff6351833170bb2afe87636b7297be",
+          "unitCount": 117,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ISA",
+          "chapters": 66,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ISA",
+          "projectionSha256": "a66ff11dbd2337c78e16d0c9d6927e4e4b9069f91a0cba82a67b47ad7a31c993",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ISA",
+          "sourceFileSha256": "af04af2cf69d46deac3e9d082b8526a46d7b65403a3b23eda169407d999fb5c9",
+          "unitCount": 1292,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JER",
+          "chapters": 52,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JER",
+          "projectionSha256": "485bc0676f404e99592599b3fec778337519c52bec8f62688d282fe2cecbee17",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JER",
+          "sourceFileSha256": "9dd018db85dd379268da351767ac58b6dbddedd15296bac319d7e9d6afb95ee4",
+          "unitCount": 1364,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-LAM",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-LAM",
+          "projectionSha256": "a597a869c9cc55c16702be4cb1a3bcfcedd4fcbc3d9ea723856bb6c788ee5db7",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-LAM",
+          "sourceFileSha256": "aa64bc3ab07ebf783457dd2ca14e1c965fc75731dfb6b46aed990704ba5d9416",
+          "unitCount": 154,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-EZK",
+          "chapters": 48,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-EZK",
+          "projectionSha256": "d7a6ccb0043334a2fa2cd1ef11dc848a37b9b109d6ce202c8a6e797c5b119203",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-EZK",
+          "sourceFileSha256": "668688539f5782df95a03977d6a47450cc3a11be66596a35b53653994470010c",
+          "unitCount": 1273,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-DAN",
+          "chapters": 12,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-DAN",
+          "projectionSha256": "ed959a69231e8bdb8959995a3980671406b624572bba5e771b68ab27a99d160a",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-DAN",
+          "sourceFileSha256": "5c8c0504c7c43fcede990d2acabf7691fc6988ff3486e1f138b8782fadb38076",
+          "unitCount": 357,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-HOS",
+          "chapters": 14,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "HOS.11.12",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "HOS.11.12"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-HOS",
+          "projectionSha256": "b38c9964ed55c36903c3146ebb39cff4375c987485ccae24105df353785a66d9",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-HOS",
+          "sourceFileSha256": "256cf2f7c80d631f0a8746e9e9bc2ba09c5d6b0961302b6ed847f6691ce783ff",
+          "unitCount": 197,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JOL",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JOL",
+          "projectionSha256": "c8d7ab0f42ab940dea5b95e636ce1d164e30eb29913eddcaf805ff524972399a",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JOL",
+          "sourceFileSha256": "649480750bc2b08d03b641b00eabbfe41813eed26367a6eb1923214d6842b21d",
+          "unitCount": 73,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-AMO",
+          "chapters": 9,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-AMO",
+          "projectionSha256": "99505fca787366aa83a24f1a7f30834f34661134ad820bd39d900322bbe1c62c",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-AMO",
+          "sourceFileSha256": "c0c5a2c07be68a0bb7b0de3ea269deb168c0200ed863561bebb8ce893dc56776",
+          "unitCount": 146,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-OBA",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-OBA",
+          "projectionSha256": "41026ff1823b26f3a30f89bbfadcd8dd532449db9fdf64b8a066d25eb3f82873",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-OBA",
+          "sourceFileSha256": "8c086118f5fc426bb2e5e244c5c6a99fccf300156c9fdb2782146ebcbc040f53",
+          "unitCount": 21,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JON",
+          "chapters": 4,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "JON.1.17",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "JON.1.17"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JON",
+          "projectionSha256": "5154118b8a9badf27442b1c3bdfc8cbdbbd1310e9e8cf7517d449c5512678f8c",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JON",
+          "sourceFileSha256": "9cde47f8ce78d612181b799b10de699060afb2536ed99a4d2e91bffbcd9b127e",
+          "unitCount": 48,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-MIC",
+          "chapters": 7,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-MIC",
+          "projectionSha256": "3653d10a0892e3aebc351ecca090a3caffddcd58b9a9e3fc40c67bffa6a4369f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-MIC",
+          "sourceFileSha256": "2941c6ac4093758d4031cab925ddb72bee3d53820ff95f5c3c2313f0b8f864a9",
+          "unitCount": 105,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-NAM",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-NAM",
+          "projectionSha256": "7bde04c7f49462de979ac685ec8062df742117510333803b9348ab615718770a",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-NAM",
+          "sourceFileSha256": "4eafd968bd8fbc3eb82bb71ee62d168752c76d138e97ed24717a12279263435f",
+          "unitCount": 47,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-HAB",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-HAB",
+          "projectionSha256": "524060b3e3d4e4cf78a68af9822c7666d62db1fb3e6629c6359f5a739d9d859f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-HAB",
+          "sourceFileSha256": "62b0afd1721c8b8d4e9a36d19ed1e141cf99db4eb39926fe5299fd7e4bf73ec6",
+          "unitCount": 56,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ZEP",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ZEP",
+          "projectionSha256": "a90ab787c27888c6f0f54b9d130a157c2709c02827014708d58417b1b2cb6477",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ZEP",
+          "sourceFileSha256": "d19acf69419fcc06aec598d8838fb2d3aa3f8716bdd578a80357ab5a350e83ba",
+          "unitCount": 53,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-HAG",
+          "chapters": 2,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-HAG",
+          "projectionSha256": "8501d3ea295ac7739effec7ba7afde59c363eca72871b8c7330006eb93636dd2",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-HAG",
+          "sourceFileSha256": "e8b14530ee12990b88a35524755680ffef97d6c77b9d7709d774aa2f68a1898d",
+          "unitCount": 38,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ZEC",
+          "chapters": 14,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ZEC",
+          "projectionSha256": "68a61486080c5c46668a56c6f91a842a3d30fb627e32be8661d5e14699b17b9f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ZEC",
+          "sourceFileSha256": "ada9e08665505560ef41f96f3259a10f7d69a20da091e56f8dcd3265f6660c2e",
+          "unitCount": 211,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-MAL",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-MAL",
+          "projectionSha256": "6ec78938e88ba5f2901b110faffa874b401c072d79a20c939e4f7f8628d020e8",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-MAL",
+          "sourceFileSha256": "1bf5c4c753c11944a4d3fb8e59067b852be9dd10b8afa9d20af784805838c7ec",
+          "unitCount": 55,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-MAT",
+          "chapters": 28,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-MAT",
+          "projectionSha256": "8f88928b07328311851786b00ea0b52c26bc5e6e882f9330a8c4716f55299c4b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-MAT",
+          "sourceFileSha256": "0f41e8ab8e5a8090b369570109389bb4606a01d9d6aa78c6ee3232ef0f37dc06",
+          "unitCount": 1071,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-MRK",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-MRK",
+          "projectionSha256": "be5978a5964196c053d07826bc35ab35bc01df3ad207577867f7427d49011785",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-MRK",
+          "sourceFileSha256": "2bab57371f0f9a2cc748cbb8d65273e715c4d4ee52b27e74c89f8cad7f5d23ad",
+          "unitCount": 678,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-LUK",
+          "chapters": 24,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-LUK",
+          "projectionSha256": "ad48ff7d977d5df5a2db2a1d5164b6b6e6589a99be7fbe6f8cb68f97c59e60a7",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-LUK",
+          "sourceFileSha256": "901f45c5770f6835447284dd1c22f7a4b732bdb25d4e372e5b83bf39a9aee8ce",
+          "unitCount": 1151,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JHN",
+          "chapters": 21,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JHN",
+          "projectionSha256": "d57081ea1c7e4abb5f1101154eb1e03ec7e8d7f3b9264d4c1294e7fd6c931c16",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JHN",
+          "sourceFileSha256": "0f1fe8da64822dba2dc56f750a338cc45a90b0f11ec59fe802a670da954cda66",
+          "unitCount": 879,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ACT",
+          "chapters": 28,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "ACT.19.41",
+              "markerNames": [],
+              "rawCharacters": 3,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "ACT.19.41"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ACT",
+          "projectionSha256": "434be8633ae6e4a31fe70491f8f87d54eb4932e1207172d97ded5eda36a78a58",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ACT",
+          "sourceFileSha256": "9ae979539168d694c84183f5627fd312332a267a5d9d3b6d0228ae4b26a963f8",
+          "unitCount": 1007,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-ROM",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-ROM",
+          "projectionSha256": "4cc2a38662d3abfca1a8e1921a57a8a658b0d19fa2b1b324fe35eee72e883748",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-ROM",
+          "sourceFileSha256": "785dfd315e4bdf6bf65885a60a7d786ee23441f31b2eac73c9b30394445013e5",
+          "unitCount": 433,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1CO",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1CO",
+          "projectionSha256": "062948a8f89085fbb13496a4a1b1fd764ceb529a6cd5b3b5d7129af8ac97a476",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1CO",
+          "sourceFileSha256": "556729a9b74b203ff44f3112985db92b1c01d15937f2a239ef9aa063da8bd414",
+          "unitCount": 437,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2CO",
+          "chapters": 13,
+          "emptyUnitCount": 1,
+          "emptyUnitDiagnostics": [
+            {
+              "locator": "2CO.13.14",
+              "markerNames": [],
+              "rawCharacters": 2,
+              "rawWhitespaceOnly": true
+            }
+          ],
+          "emptyUnitLocators": [
+            "2CO.13.14"
+          ],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2CO",
+          "projectionSha256": "21d696b4a754b7369a1886c3cda82801974a5fdde376197f64eec7c9dd889f9e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2CO",
+          "sourceFileSha256": "e91e7d56329e5463c4ed5977d13ad8dff3e4814bfdbd103e1252e101a9b97607",
+          "unitCount": 257,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-GAL",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-GAL",
+          "projectionSha256": "9103157533ca08f67861e67cfcb0801feebc5f0a2a4e6193917fda7091c55c18",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-GAL",
+          "sourceFileSha256": "9f6d7b16218572b73b44334191aa664a1576a4b6ff0859c806a0772cbf6fdba8",
+          "unitCount": 149,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-EPH",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-EPH",
+          "projectionSha256": "9939b7f1d4ceda0e3e7844e249ebb81ed63122fff518f3fa28fd5a59cb91128b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-EPH",
+          "sourceFileSha256": "f6d6396ea5936dd840e88ef58a4b9422d744bc1201ae91eb5103c090a3f2e883",
+          "unitCount": 155,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-PHP",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-PHP",
+          "projectionSha256": "683e93c0b1023958249469f02a213c96f71e3e7f8148a8f9e76bc5976b676f12",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-PHP",
+          "sourceFileSha256": "0b0640cd1a64a12af5cea3d6bb11329f36af2501e3db2fa9e9451c94c06987cf",
+          "unitCount": 104,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-COL",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-COL",
+          "projectionSha256": "1285a58e015036f8c80e3b0816b4e9a198f2b6ec247bd3e69980dc620bde475b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-COL",
+          "sourceFileSha256": "b0ad42b06ebadb32f3dfbbcb7062db5a08bd22a6dc90b425d75308c5f70acb30",
+          "unitCount": 95,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1TH",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1TH",
+          "projectionSha256": "4677e947287004a85c8b1ded03d688d3dba40ce0325137ddd73487314bf409b5",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1TH",
+          "sourceFileSha256": "ed1751725ca246fd31ec21693e98a6fde22daef42e6ed9303fc706462deff245",
+          "unitCount": 89,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2TH",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2TH",
+          "projectionSha256": "7edf24680c42ee58c0c505cf8f473fcd744e40635b2086bab6301fe2adfd0b9e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2TH",
+          "sourceFileSha256": "6a8a5d8b0127291fde51ea5171d2e1a3db5f078e66d3927b1973c3399af80c4d",
+          "unitCount": 47,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1TI",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1TI",
+          "projectionSha256": "021ea37c38bca411efa7e886bc9686648bfa1356cfab79c221a4dbe260604552",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1TI",
+          "sourceFileSha256": "5da3e7c89922d133f5c37bddee71046cabc03f0e2109a252c20eb5b11db8f5ad",
+          "unitCount": 113,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2TI",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2TI",
+          "projectionSha256": "5d02a9d72657848f6fa3430047d9a48029621af088cbd651f7a4598eede8281e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2TI",
+          "sourceFileSha256": "5574f40f88ab6d0a09aa01bdcaff361fa6cee568bb3f3108e2606df2fc714939",
+          "unitCount": 83,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-TIT",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-TIT",
+          "projectionSha256": "17a5c3b0483635277e982868b110d44c8e9669f6807563f7785175083a994395",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-TIT",
+          "sourceFileSha256": "4d5747a8521eb600ea9abd1b0959dacdc81b5532e8ec53be538ce6f1f8def6fd",
+          "unitCount": 46,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-PHM",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-PHM",
+          "projectionSha256": "2c068bb12043d5c8bb1b556ef023eb58df44cce39f6c9ee5d21d3bac3790b7f6",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-PHM",
+          "sourceFileSha256": "c1e9c1fb980b40758e6d5847290c528c8ad43ea9cca8f6774b6241025fc66c23",
+          "unitCount": 25,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-HEB",
+          "chapters": 13,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-HEB",
+          "projectionSha256": "f863ec9b128d23cbcfcb4c378185d77e3f45705897eab63bd46a26b044346e00",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-HEB",
+          "sourceFileSha256": "0267401e3483336c30b9ea8d6b39f535e3e2bdecfca5b76b4ede6f8ab07ccfbc",
+          "unitCount": 303,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JAS",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JAS",
+          "projectionSha256": "735c706c7796a8961071e47ed9cc6f6d4709f1ea46937251838235e19614ca6b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JAS",
+          "sourceFileSha256": "2b92594e1789bdea76b7d13b679da0f95498bc5585ea1d85b42d27862569b70c",
+          "unitCount": 108,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1PE",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1PE",
+          "projectionSha256": "5c7b19f42d7eda6da46c96f051c2e99594e32ad8dbb591cb5af4bd718628ed29",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1PE",
+          "sourceFileSha256": "00258750c458e03bbce20f10605e2ff74b67c552be1e6480ad06bb8249ed0e6b",
+          "unitCount": 105,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2PE",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2PE",
+          "projectionSha256": "77074cd887a19615e358cbc7194589f6c0a4bebadd18f3fbf660c5a2b05ff0fc",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2PE",
+          "sourceFileSha256": "ac051605da09f41dfd0ce24c2dd7a2bcc960d7d6b3460b505711ed7d337611a4",
+          "unitCount": 61,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-1JN",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-1JN",
+          "projectionSha256": "99dc8952b6c65369a3afcc5490d48b8520320fd3a7c73bfaf5632e66ea0221fd",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-1JN",
+          "sourceFileSha256": "42c868d59669e72f4107010cfc61d3c0d90cd34e9b51aa0affce056e8318e452",
+          "unitCount": 105,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-2JN",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-2JN",
+          "projectionSha256": "02a9b696fb9249c5c8093717fa4be2acb1f2fe16b5a4141bd71f597eca53b1b4",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-2JN",
+          "sourceFileSha256": "bff8073088d098ae4f515c813e5ed35d582c22bf792810035107b457677396d9",
+          "unitCount": 13,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-3JN",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-3JN",
+          "projectionSha256": "b1b1289d7789ff5f2b07360b3e25d49db03cfd044e6198ae5e5bb98ae4199499",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-3JN",
+          "sourceFileSha256": "eff0ec5439b14cd29fb3ccf61df79594be17ef5066d0f5031c5157db0ddfcb4b",
+          "unitCount": 14,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-JUD",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-JUD",
+          "projectionSha256": "00d25093b8045bfc5a0cea9cb84c967ad41d3731d9a7f5c781398ad4f79d2e48",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-JUD",
+          "sourceFileSha256": "9eda2d84ec5ebc801b9400a0472f41fcfefc7dab432a35caf98b0e54705097f3",
+          "unitCount": 25,
+          "wordElements": null
+        },
+        {
+          "bookId": "LIB-REV",
+          "chapters": 22,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C01-REV",
+          "projectionSha256": "129179b71c0dd6429213c0c739431dafbee7c3f51213dcb40f340d94db730824",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C01-REV",
+          "sourceFileSha256": "12d879e04466c48ec352ad53483a5bbfe3b609d818f05bc81c9d7e680d7bfbd2",
+          "unitCount": 404,
+          "wordElements": null
+        }
+      ],
+      "id": "COR-RV1909-P913",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "emptyUnitCount": 18,
+        "projectionSha256": "c075269e559c152a23fbd9ec5f28a995e60c3b3ec7c7255f228372776762b989",
+        "sourceFileCount": 66,
+        "unitCount": 31102
+      },
+      "license": {
+        "attribution": "Reina y Valera, según ficha de eBible.org; distribución spaRV1909.",
+        "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+        "publicationApproved": false,
+        "type": "Public Domain declarado por distribuidor"
+      },
+      "persistence": "metadata_only",
+      "publicationEnabled": false,
+      "resources": [
+        {
+          "bytes": 577639,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-GEN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "02-GENspaRV1909.usfm",
+          "sha256": "11a2f4b8e0973aa8ae1b94173cec647ae671f882562c5bff6e962f490cf6a9ca",
+          "sourceFileId": "ED-C01:GEN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 461570,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-EXO",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "03-EXOspaRV1909.usfm",
+          "sha256": "12b0a7ecd52759e4b4838a6cba8db4509360f905d1fad72ac8f5f66dd76e3bf4",
+          "sourceFileId": "ED-C01:EXO",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 333805,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-LEV",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "04-LEVspaRV1909.usfm",
+          "sha256": "9457b52e6efd3cd41ebb21b9bb8f43f89b449c4d9a0d4636e72d07e87eacbd8d",
+          "sourceFileId": "ED-C01:LEV",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 469602,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-NUM",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "05-NUMspaRV1909.usfm",
+          "sha256": "804bb03a74ababcf21a430ceb3e8d95706fd2031b595b313b5aa61f56b6a665e",
+          "sourceFileId": "ED-C01:NUM",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 396910,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-DEU",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "06-DEUspaRV1909.usfm",
+          "sha256": "5f731cebf3f7f53689e0ab9dc3cd8e0b1c863c78d20f2d88b9238db670ecabf0",
+          "sourceFileId": "ED-C01:DEU",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 276925,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JOS",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "07-JOSspaRV1909.usfm",
+          "sha256": "80dd3ddd6334c2d2c78004545981ea653461480b0d4b6185ec2d6d28335f7e46",
+          "sourceFileId": "ED-C01:JOS",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 271847,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JDG",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "08-JDGspaRV1909.usfm",
+          "sha256": "9a392d3cddb0139d035bba5a5c58868c979e56bc506d0dc4746cc3bac1d553c8",
+          "sourceFileId": "ED-C01:JDG",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 36052,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-RUT",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "09-RUTspaRV1909.usfm",
+          "sha256": "39264ba33e2258f3dcc38eb7a46add7c52a7b5c92554fa6731386fa7feb10099",
+          "sourceFileId": "ED-C01:RUT",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 364086,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1SA",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "10-1SAspaRV1909.usfm",
+          "sha256": "e1aa2aee9d160521ae174c9496bbe3d19f6f596549a7cfa037a2037988c25c47",
+          "sourceFileId": "ED-C01:1SA",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 301771,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2SA",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "11-2SAspaRV1909.usfm",
+          "sha256": "6274b7f8e4399d807b6b1e76e2fb9ceb0e17a5500593be2468519db2a368669d",
+          "sourceFileId": "ED-C01:2SA",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 366138,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1KI",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "12-1KIspaRV1909.usfm",
+          "sha256": "701740c2602e4a135a42f960ab4c4b93d5d92b03a093c41123c6a67a13b393a5",
+          "sourceFileId": "ED-C01:1KI",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 341682,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2KI",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "13-2KIspaRV1909.usfm",
+          "sha256": "b80cc966d206ba865df7e41a5390bc09271ca31f29e8206f63d342b43c3f0782",
+          "sourceFileId": "ED-C01:2KI",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 314824,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1CH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "14-1CHspaRV1909.usfm",
+          "sha256": "58ae38c861e8e6efc7571fd3517a5b18139126dcc6825f3b1b5ba7c3b9e18b49",
+          "sourceFileId": "ED-C01:1CH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 388012,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2CH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "15-2CHspaRV1909.usfm",
+          "sha256": "18ddca906cc417b3271dcb5804b78ab0c2540091f07d0fd3cadc11e7d658c30d",
+          "sourceFileId": "ED-C01:2CH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 111855,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-EZR",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "16-EZRspaRV1909.usfm",
+          "sha256": "90fb2046af31ea257ac1e54fe3578bc7b8ba0c6c8c10ca8fd6106a9a59b9a688",
+          "sourceFileId": "ED-C01:EZR",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 159969,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-NEH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "17-NEHspaRV1909.usfm",
+          "sha256": "71adfdfee4ee584db1e1994d2c0331a6cd457adf1891387c34daa44a573b4190",
+          "sourceFileId": "ED-C01:NEH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 85262,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-EST",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "18-ESTspaRV1909.usfm",
+          "sha256": "97498f124361253c53bb84ed1f38c83af40f6d3c78cc65c1f838d4b1c96e979d",
+          "sourceFileId": "ED-C01:EST",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 255098,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JOB",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "19-JOBspaRV1909.usfm",
+          "sha256": "fda4e0fa4e0b448650e6d85a70c980c289e91ff0ca401b9640a3d9ba16accacb",
+          "sourceFileId": "ED-C01:JOB",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 620492,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-PSA",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "20-PSAspaRV1909.usfm",
+          "sha256": "812bf94244c61e984b873ff696229f5f8c8ac349a784b20be44360deba8a7334",
+          "sourceFileId": "ED-C01:PSA",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 217275,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-PRO",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "21-PROspaRV1909.usfm",
+          "sha256": "83afd5015b5e1d11220779722334ca2361e80ee5d3a53eabd5bdde28f4f311e9",
+          "sourceFileId": "ED-C01:PRO",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 85076,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ECC",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "22-ECCspaRV1909.usfm",
+          "sha256": "d8662c066c657195869b238f99c929738fd64ed164962cc8b45429224f014ed1",
+          "sourceFileId": "ED-C01:ECC",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 38341,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-SNG",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "23-SNGspaRV1909.usfm",
+          "sha256": "ce4914f5e22be1416dee06eed0d6b29aa0ff6351833170bb2afe87636b7297be",
+          "sourceFileId": "ED-C01:SNG",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 515193,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ISA",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "24-ISAspaRV1909.usfm",
+          "sha256": "af04af2cf69d46deac3e9d082b8526a46d7b65403a3b23eda169407d999fb5c9",
+          "sourceFileId": "ED-C01:ISA",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 624279,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JER",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "25-JERspaRV1909.usfm",
+          "sha256": "9dd018db85dd379268da351767ac58b6dbddedd15296bac319d7e9d6afb95ee4",
+          "sourceFileId": "ED-C01:JER",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 48152,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-LAM",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "26-LAMspaRV1909.usfm",
+          "sha256": "aa64bc3ab07ebf783457dd2ca14e1c965fc75731dfb6b46aed990704ba5d9416",
+          "sourceFileId": "ED-C01:LAM",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 549812,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-EZK",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "27-EZKspaRV1909.usfm",
+          "sha256": "668688539f5782df95a03977d6a47450cc3a11be66596a35b53653994470010c",
+          "sourceFileId": "ED-C01:EZK",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 170567,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-DAN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "28-DANspaRV1909.usfm",
+          "sha256": "5c8c0504c7c43fcede990d2acabf7691fc6988ff3486e1f138b8782fadb38076",
+          "sourceFileId": "ED-C01:DAN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 71931,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-HOS",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "29-HOSspaRV1909.usfm",
+          "sha256": "256cf2f7c80d631f0a8746e9e9bc2ba09c5d6b0961302b6ed847f6691ce783ff",
+          "sourceFileId": "ED-C01:HOS",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 28875,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JOL",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "30-JOLspaRV1909.usfm",
+          "sha256": "649480750bc2b08d03b641b00eabbfe41813eed26367a6eb1923214d6842b21d",
+          "sourceFileId": "ED-C01:JOL",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 59339,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-AMO",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "31-AMOspaRV1909.usfm",
+          "sha256": "c0c5a2c07be68a0bb7b0de3ea269deb168c0200ed863561bebb8ce893dc56776",
+          "sourceFileId": "ED-C01:AMO",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 8939,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-OBA",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "32-OBAspaRV1909.usfm",
+          "sha256": "8c086118f5fc426bb2e5e244c5c6a99fccf300156c9fdb2782146ebcbc040f53",
+          "sourceFileId": "ED-C01:OBA",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 19331,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JON",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "33-JONspaRV1909.usfm",
+          "sha256": "9cde47f8ce78d612181b799b10de699060afb2536ed99a4d2e91bffbcd9b127e",
+          "sourceFileId": "ED-C01:JON",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 41758,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-MIC",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "34-MICspaRV1909.usfm",
+          "sha256": "2941c6ac4093758d4031cab925ddb72bee3d53820ff95f5c3c2313f0b8f864a9",
+          "sourceFileId": "ED-C01:MIC",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 17554,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-NAM",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "35-NAMspaRV1909.usfm",
+          "sha256": "4eafd968bd8fbc3eb82bb71ee62d168752c76d138e97ed24717a12279263435f",
+          "sourceFileId": "ED-C01:NAM",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 20503,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-HAB",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "36-HABspaRV1909.usfm",
+          "sha256": "62b0afd1721c8b8d4e9a36d19ed1e141cf99db4eb39926fe5299fd7e4bf73ec6",
+          "sourceFileId": "ED-C01:HAB",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 22898,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ZEP",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "37-ZEPspaRV1909.usfm",
+          "sha256": "d19acf69419fcc06aec598d8838fb2d3aa3f8716bdd578a80357ab5a350e83ba",
+          "sourceFileId": "ED-C01:ZEP",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 17057,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-HAG",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "38-HAGspaRV1909.usfm",
+          "sha256": "e8b14530ee12990b88a35524755680ffef97d6c77b9d7709d774aa2f68a1898d",
+          "sourceFileId": "ED-C01:HAG",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 90032,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ZEC",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "39-ZECspaRV1909.usfm",
+          "sha256": "ada9e08665505560ef41f96f3259a10f7d69a20da091e56f8dcd3265f6660c2e",
+          "sourceFileId": "ED-C01:ZEC",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 26013,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-MAL",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "40-MALspaRV1909.usfm",
+          "sha256": "1bf5c4c753c11944a4d3fb8e59067b852be9dd10b8afa9d20af784805838c7ec",
+          "sourceFileId": "ED-C01:MAL",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 488408,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-MAT",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "70-MATspaRV1909.usfm",
+          "sha256": "0f41e8ab8e5a8090b369570109389bb4606a01d9d6aa78c6ee3232ef0f37dc06",
+          "sourceFileId": "ED-C01:MAT",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 300353,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-MRK",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "71-MRKspaRV1909.usfm",
+          "sha256": "2bab57371f0f9a2cc748cbb8d65273e715c4d4ee52b27e74c89f8cad7f5d23ad",
+          "sourceFileId": "ED-C01:MRK",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 508635,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-LUK",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "72-LUKspaRV1909.usfm",
+          "sha256": "901f45c5770f6835447284dd1c22f7a4b732bdb25d4e372e5b83bf39a9aee8ce",
+          "sourceFileId": "ED-C01:LUK",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 401142,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JHN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "73-JHNspaRV1909.usfm",
+          "sha256": "0f1fe8da64822dba2dc56f750a338cc45a90b0f11ec59fe802a670da954cda66",
+          "sourceFileId": "ED-C01:JHN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 483154,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ACT",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "74-ACTspaRV1909.usfm",
+          "sha256": "9ae979539168d694c84183f5627fd312332a267a5d9d3b6d0228ae4b26a963f8",
+          "sourceFileId": "ED-C01:ACT",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 191142,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-ROM",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "75-ROMspaRV1909.usfm",
+          "sha256": "785dfd315e4bdf6bf65885a60a7d786ee23441f31b2eac73c9b30394445013e5",
+          "sourceFileId": "ED-C01:ROM",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 185531,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1CO",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "76-1COspaRV1909.usfm",
+          "sha256": "556729a9b74b203ff44f3112985db92b1c01d15937f2a239ef9aa063da8bd414",
+          "sourceFileId": "ED-C01:1CO",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 120836,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2CO",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "77-2COspaRV1909.usfm",
+          "sha256": "e91e7d56329e5463c4ed5977d13ad8dff3e4814bfdbd103e1252e101a9b97607",
+          "sourceFileId": "ED-C01:2CO",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 62401,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-GAL",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "78-GALspaRV1909.usfm",
+          "sha256": "9f6d7b16218572b73b44334191aa664a1576a4b6ff0859c806a0772cbf6fdba8",
+          "sourceFileId": "ED-C01:GAL",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 63841,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-EPH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "79-EPHspaRV1909.usfm",
+          "sha256": "f6d6396ea5936dd840e88ef58a4b9422d744bc1201ae91eb5103c090a3f2e883",
+          "sourceFileId": "ED-C01:EPH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 44012,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-PHP",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "80-PHPspaRV1909.usfm",
+          "sha256": "0b0640cd1a64a12af5cea3d6bb11329f36af2501e3db2fa9e9451c94c06987cf",
+          "sourceFileId": "ED-C01:PHP",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 42619,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-COL",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "81-COLspaRV1909.usfm",
+          "sha256": "b0ad42b06ebadb32f3dfbbcb7062db5a08bd22a6dc90b425d75308c5f70acb30",
+          "sourceFileId": "ED-C01:COL",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 39375,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1TH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "82-1THspaRV1909.usfm",
+          "sha256": "ed1751725ca246fd31ec21693e98a6fde22daef42e6ed9303fc706462deff245",
+          "sourceFileId": "ED-C01:1TH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 21816,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2TH",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "83-2THspaRV1909.usfm",
+          "sha256": "6a8a5d8b0127291fde51ea5171d2e1a3db5f078e66d3927b1973c3399af80c4d",
+          "sourceFileId": "ED-C01:2TH",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 46213,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1TI",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "84-1TIspaRV1909.usfm",
+          "sha256": "5da3e7c89922d133f5c37bddee71046cabc03f0e2109a252c20eb5b11db8f5ad",
+          "sourceFileId": "ED-C01:1TI",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 34761,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2TI",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "85-2TIspaRV1909.usfm",
+          "sha256": "5574f40f88ab6d0a09aa01bdcaff361fa6cee568bb3f3108e2606df2fc714939",
+          "sourceFileId": "ED-C01:2TI",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 19097,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-TIT",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "86-TITspaRV1909.usfm",
+          "sha256": "4d5747a8521eb600ea9abd1b0959dacdc81b5532e8ec53be538ce6f1f8def6fd",
+          "sourceFileId": "ED-C01:TIT",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 8916,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-PHM",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "87-PHMspaRV1909.usfm",
+          "sha256": "c1e9c1fb980b40758e6d5847290c528c8ad43ea9cca8f6774b6241025fc66c23",
+          "sourceFileId": "ED-C01:PHM",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 135918,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-HEB",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "88-HEBspaRV1909.usfm",
+          "sha256": "0267401e3483336c30b9ea8d6b39f535e3e2bdecfca5b76b4ede6f8ab07ccfbc",
+          "sourceFileId": "ED-C01:HEB",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 47711,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JAS",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "89-JASspaRV1909.usfm",
+          "sha256": "2b92594e1789bdea76b7d13b679da0f95498bc5585ea1d85b42d27862569b70c",
+          "sourceFileId": "ED-C01:JAS",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 48702,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1PE",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "90-1PEspaRV1909.usfm",
+          "sha256": "00258750c458e03bbce20f10605e2ff74b67c552be1e6480ad06bb8249ed0e6b",
+          "sourceFileId": "ED-C01:1PE",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 30959,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2PE",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "91-2PEspaRV1909.usfm",
+          "sha256": "ac051605da09f41dfd0ce24c2dd7a2bcc960d7d6b3460b505711ed7d337611a4",
+          "sourceFileId": "ED-C01:2PE",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 55417,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-1JN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "92-1JNspaRV1909.usfm",
+          "sha256": "42c868d59669e72f4107010cfc61d3c0d90cd34e9b51aa0affce056e8318e452",
+          "sourceFileId": "ED-C01:1JN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 6591,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-2JN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "93-2JNspaRV1909.usfm",
+          "sha256": "bff8073088d098ae4f515c813e5ed35d582c22bf792810035107b457677396d9",
+          "sourceFileId": "ED-C01:2JN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 6037,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-3JN",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "94-3JNspaRV1909.usfm",
+          "sha256": "eff0ec5439b14cd29fb3ccf61df79594be17ef5066d0f5031c5157db0ddfcb4b",
+          "sourceFileId": "ED-C01:3JN",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 12540,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-JUD",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "95-JUDspaRV1909.usfm",
+          "sha256": "9eda2d84ec5ebc801b9400a0472f41fcfefc7dab432a35caf98b0e54705097f3",
+          "sourceFileId": "ED-C01:JUD",
+          "sourceId": "F05"
+        },
+        {
+          "bytes": 251511,
+          "component": "texto_fuente",
+          "id": "REC-ED-C01-REV",
+          "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+          "path": "96-REVspaRV1909.usfm",
+          "sha256": "12d879e04466c48ec352ad53483a5bbfe3b609d818f05bc81c9d7e680d7bfbd2",
+          "sourceFileId": "ED-C01:REV",
+          "sourceId": "F05"
+        }
+      ]
+    },
+    {
+      "dataVersion": "p9.1.3-projection-v1",
+      "editionId": "TXT-SBLGNT-V1-2",
+      "fragments": [
+        {
+          "bookId": "LIB-MAT",
+          "chapters": 28,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-MAT",
+          "projectionSha256": "132acdc213f09d9b054f315c29d5fac63e86c662a5a3bc6a24ec44293c6d4f43",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-MAT",
+          "sourceFileSha256": "98030ff7ddec7d1b89811c912b64e52a6c6a5806048e619abc708fe19a416424",
+          "unitCount": 1068,
+          "wordElements": 18329
+        },
+        {
+          "bookId": "LIB-MRK",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-MRK",
+          "projectionSha256": "595d77aea894e834c2ae97d924f2b0a5f5b6777795a01ee1e400a5bbf6085baf",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-MRK",
+          "sourceFileSha256": "5901ccefcd7d9aedfaf228b1f99c3a13f37b4509c1b38d16123a860247a59d76",
+          "unitCount": 673,
+          "wordElements": 11286
+        },
+        {
+          "bookId": "LIB-LUK",
+          "chapters": 24,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-LUK",
+          "projectionSha256": "9180ec4e2161dbb838c404a8d7e6d569e75d65eb410ca95b06980bfa7d1f2d7f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-LUK",
+          "sourceFileSha256": "960c0f7743f6ee68b7ee341991b76e14e83143eac4ba1f2df179327ec4bae8d5",
+          "unitCount": 1149,
+          "wordElements": 19446
+        },
+        {
+          "bookId": "LIB-JHN",
+          "chapters": 21,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-JHN",
+          "projectionSha256": "c982beba72091bb77037948aab8dc22b91aee5841508fe48430dd3111b5b9da8",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-JHN",
+          "sourceFileSha256": "11fa4ec61127f109f4582845737963dc66a532e33dca7d489875b9dd91da00e2",
+          "unitCount": 878,
+          "wordElements": 15625
+        },
+        {
+          "bookId": "LIB-ACT",
+          "chapters": 28,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-ACT",
+          "projectionSha256": "e78e0001fc5c2c100a867e5adc95330642a15b92cd857b64cd2e134e2b949f8c",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-ACT",
+          "sourceFileSha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+          "unitCount": 1002,
+          "wordElements": 18412
+        },
+        {
+          "bookId": "LIB-ROM",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-ROM",
+          "projectionSha256": "8dd57f4f326532457d95097b939b3cd34005eb9baadaa90b7ea0ead30ef05f44",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-ROM",
+          "sourceFileSha256": "99f8cced61efe841d146bd1e0c67333d7a4cca78a55e14da8c9390166e0a6209",
+          "unitCount": 430,
+          "wordElements": 7055
+        },
+        {
+          "bookId": "LIB-1CO",
+          "chapters": 16,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-1CO",
+          "projectionSha256": "2b60952f78592d18c6d43dbab8d5fc6736cf56445167d5d7d659045fab3801ee",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-1CO",
+          "sourceFileSha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+          "unitCount": 437,
+          "wordElements": 6812
+        },
+        {
+          "bookId": "LIB-2CO",
+          "chapters": 13,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-2CO",
+          "projectionSha256": "0613567d0824407a24aeffe21e587941d6f6144b5cc523150344a039e1d1a4ec",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-2CO",
+          "sourceFileSha256": "897a92f3f010f796b8549e643c0ae96957827020a890808a689c6ba389085a43",
+          "unitCount": 256,
+          "wordElements": 4473
+        },
+        {
+          "bookId": "LIB-GAL",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-GAL",
+          "projectionSha256": "8c2a8b76bbcb05c256cc108f221c9cc16ffbcbf132f12b5d6b206a4ffa5f6af2",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-GAL",
+          "sourceFileSha256": "02188ec87b20a983424693971f2710b7b77c53ae0a7d6c4bd95a7fc293f2f17a",
+          "unitCount": 149,
+          "wordElements": 2226
+        },
+        {
+          "bookId": "LIB-EPH",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-EPH",
+          "projectionSha256": "49c115cf9c05ae6335b27f6f0741b1d2c1640f74628397e9884698c9a0ed33c1",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-EPH",
+          "sourceFileSha256": "9edf592842f0a94d35790ad999ed51049a19510178bd2b858c3f29849d44df45",
+          "unitCount": 155,
+          "wordElements": 2416
+        },
+        {
+          "bookId": "LIB-PHP",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-PHP",
+          "projectionSha256": "4f42f944b8c878b4eb58b569f37693770a741dab82347ff714fa70b96f2b9791",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-PHP",
+          "sourceFileSha256": "2f8933cdf0f8f459a6e192ad99c8aa07cb06e94d400875f88e64290bf489ed54",
+          "unitCount": 104,
+          "wordElements": 1626
+        },
+        {
+          "bookId": "LIB-COL",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-COL",
+          "projectionSha256": "362369a564a58317017a36164195f6379f20ff86e3c92fbc456dcf7cd6c57548",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-COL",
+          "sourceFileSha256": "87079753db107d3034b8af8a91ccb0495da393389a02df4588cff3a4de4cd837",
+          "unitCount": 95,
+          "wordElements": 1580
+        },
+        {
+          "bookId": "LIB-1TH",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-1TH",
+          "projectionSha256": "57ed1c085b6d39eeeb8720bf2aebb17882d96f4762c859fb37ea1b8687c60a11",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-1TH",
+          "sourceFileSha256": "22a5dcf8e0cc80d06fcb8fcd01aef72860058cfab4b7b42cfa94dd229e2c7065",
+          "unitCount": 89,
+          "wordElements": 1473
+        },
+        {
+          "bookId": "LIB-2TH",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-2TH",
+          "projectionSha256": "a4885c876d73d260c0772d7c709aa3e006e9776fe2647576047392503f41f476",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-2TH",
+          "sourceFileSha256": "3b7fbae3d238039f11bb599e1b99139a2d2a8626f293ccefc601d1a50a03d433",
+          "unitCount": 47,
+          "wordElements": 820
+        },
+        {
+          "bookId": "LIB-1TI",
+          "chapters": 6,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-1TI",
+          "projectionSha256": "640d192250998d06f5a383742bdf1fef85df0f46c1e3c50fb6a3e66d07f18079",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-1TI",
+          "sourceFileSha256": "7078cf18cf4325e4fb093785da774b48cc8306fd24dd2aa00041335c1bc88efc",
+          "unitCount": 113,
+          "wordElements": 1591
+        },
+        {
+          "bookId": "LIB-2TI",
+          "chapters": 4,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-2TI",
+          "projectionSha256": "ce2c624c0e74117fce19532f2fee0dc2e00e5e24b1f43e40737f8574bb11f3c9",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-2TI",
+          "sourceFileSha256": "6d3add4060e870089d71e4621bcec5cc12759ebb4689fe6864368ae56c76b6fc",
+          "unitCount": 83,
+          "wordElements": 1235
+        },
+        {
+          "bookId": "LIB-TIT",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-TIT",
+          "projectionSha256": "15da90c6c75dc3684a70828f2e75c35c54fc03ebdf936bbe6d819e349e442a9e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-TIT",
+          "sourceFileSha256": "4c66c26c8ce316056d0423018d3497501e1a9ef033a1fc1ebd5829ba2d177fd9",
+          "unitCount": 46,
+          "wordElements": 659
+        },
+        {
+          "bookId": "LIB-PHM",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-PHM",
+          "projectionSha256": "c3eac1e9fbe91151f8ab81680659982ed5c7a5e0d6f9ffd9866450003e93aee1",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-PHM",
+          "sourceFileSha256": "5e055c7dbe6b8326b559f6d7d135a39e6da0b499271f1eec6eae87fd93590ef3",
+          "unitCount": 25,
+          "wordElements": 334
+        },
+        {
+          "bookId": "LIB-HEB",
+          "chapters": 13,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-HEB",
+          "projectionSha256": "737b8ecaf67f7a8ebbad3a6f86d851c8306bd291f81f833e4cdf7942f1a3290f",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-HEB",
+          "sourceFileSha256": "50ee82c41b032b4b786ca7790eb3ce412865bd80e823d9cfdc22a812a1d6a865",
+          "unitCount": 303,
+          "wordElements": 4935
+        },
+        {
+          "bookId": "LIB-JAS",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-JAS",
+          "projectionSha256": "ada064222471f40706378c60e6e2fdceb3f1d9ae6ccbba74e83d18f312e2bc24",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-JAS",
+          "sourceFileSha256": "5cb6fdeefb734ef842e102938f0f10791415276ae09cbd33215a359e1025f7e5",
+          "unitCount": 108,
+          "wordElements": 1739
+        },
+        {
+          "bookId": "LIB-1PE",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-1PE",
+          "projectionSha256": "44a8f844c8fd97c1fd5e8f78a9bd7996e611caeb8a98581c0176acc9246c36fd",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-1PE",
+          "sourceFileSha256": "82693ac93851f9f415fa126508f6e893dfb4b2f8131ee953c822a342eb78d5fa",
+          "unitCount": 105,
+          "wordElements": 1678
+        },
+        {
+          "bookId": "LIB-2PE",
+          "chapters": 3,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-2PE",
+          "projectionSha256": "ef9eddaab96536e286c167b6ae680e66a95232dfe8036ee7ce226732276bd331",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-2PE",
+          "sourceFileSha256": "59612036f3847ddd1e6f5435b62458a9c1aa7eff4c6fc6107659e980346275b2",
+          "unitCount": 61,
+          "wordElements": 1098
+        },
+        {
+          "bookId": "LIB-1JN",
+          "chapters": 5,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-1JN",
+          "projectionSha256": "ebc3dfedd99c316acecb810e32ca8697141fbf13c6234ee519e286951c2f5da6",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-1JN",
+          "sourceFileSha256": "3786d543f13a83d0e5f3cc1fd645c3b9e240a4c14fd412e0b2fa304d27d4a66b",
+          "unitCount": 105,
+          "wordElements": 2137
+        },
+        {
+          "bookId": "LIB-2JN",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-2JN",
+          "projectionSha256": "3c0186d958ec8e80bb54a03b28f75a4963396c0a885b85e6c8f5fa4634e5633e",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-2JN",
+          "sourceFileSha256": "132d3e497afb40247097175b9de4a8791de14366a0c5a923ed59f05a7c0d9586",
+          "unitCount": 13,
+          "wordElements": 245
+        },
+        {
+          "bookId": "LIB-3JN",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-3JN",
+          "projectionSha256": "8bed263a7ba6c8f52e2694053082c1c8464445426e209ca8df88812fc8c34a8b",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-3JN",
+          "sourceFileSha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+          "unitCount": 15,
+          "wordElements": 219
+        },
+        {
+          "bookId": "LIB-JUD",
+          "chapters": 1,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-JUD",
+          "projectionSha256": "be4d57734bd4d9105294752d2ef387dba063af474ecf69e90a34bfe3de4464ce",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-JUD",
+          "sourceFileSha256": "b83680c0d23b032273ec0e0c858f3c24ba684114b78ebddb2475dd78aac7165b",
+          "unitCount": 25,
+          "wordElements": 459
+        },
+        {
+          "bookId": "LIB-REV",
+          "chapters": 22,
+          "emptyUnitCount": 0,
+          "emptyUnitDiagnostics": [],
+          "emptyUnitLocators": [],
+          "excludedStructures": {
+            "crossReferences": 0,
+            "figures": 0,
+            "footnotes": 0,
+            "sidebars": 0
+          },
+          "id": "FRAG-ED-C02-REV",
+          "projectionSha256": "0e58ebf69ee471c53379cc606962c3512d2e720f50e916dc963c9919a6af6143",
+          "rangeMarkers": 0,
+          "resourceId": "REC-ED-C02-REV",
+          "sourceFileSha256": "f6ba340dfd9010436aac55a17246ed45ef24c6b8e4510dc4bcb62c0a9ac4bc83",
+          "unitCount": 405,
+          "wordElements": 9833
+        }
+      ],
+      "id": "COR-SBLGNT-V1-2-P913",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "emptyUnitCount": 0,
+        "projectionSha256": "8edebfff7dbb4ee6cb0c42ef7461fb883702c2924d8dec133d62af967c9aaa89",
+        "sourceFileCount": 27,
+        "unitCount": 7939
+      },
+      "license": {
+        "attribution": "The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.",
+        "licenseRef": "LIC-CC-BY-4.0",
+        "publicationApproved": false,
+        "type": "CC BY 4.0"
+      },
+      "persistence": "metadata_only",
+      "publicationEnabled": false,
+      "resources": [
+        {
+          "bytes": 909675,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-MAT",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Matt.xml",
+          "sha256": "98030ff7ddec7d1b89811c912b64e52a6c6a5806048e619abc708fe19a416424",
+          "sourceFileId": "ED-C02:Matt",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 572329,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-MRK",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Mark.xml",
+          "sha256": "5901ccefcd7d9aedfaf228b1f99c3a13f37b4509c1b38d16123a860247a59d76",
+          "sourceFileId": "ED-C02:Mark",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 970739,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-LUK",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Luke.xml",
+          "sha256": "960c0f7743f6ee68b7ee341991b76e14e83143eac4ba1f2df179327ec4bae8d5",
+          "sourceFileId": "ED-C02:Luke",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 762321,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-JHN",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/John.xml",
+          "sha256": "11fa4ec61127f109f4582845737963dc66a532e33dca7d489875b9dd91da00e2",
+          "sourceFileId": "ED-C02:John",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 921255,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-ACT",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Acts.xml",
+          "sha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+          "sourceFileId": "ED-C02:Acts",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 347059,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-ROM",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Rom.xml",
+          "sha256": "99f8cced61efe841d146bd1e0c67333d7a4cca78a55e14da8c9390166e0a6209",
+          "sourceFileId": "ED-C02:Rom",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 342330,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-1CO",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/1Cor.xml",
+          "sha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+          "sourceFileId": "ED-C02:1Cor",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 222992,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-2CO",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/2Cor.xml",
+          "sha256": "897a92f3f010f796b8549e643c0ae96957827020a890808a689c6ba389085a43",
+          "sourceFileId": "ED-C02:2Cor",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 111663,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-GAL",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Gal.xml",
+          "sha256": "02188ec87b20a983424693971f2710b7b77c53ae0a7d6c4bd95a7fc293f2f17a",
+          "sourceFileId": "ED-C02:Gal",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 120457,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-EPH",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Eph.xml",
+          "sha256": "9edf592842f0a94d35790ad999ed51049a19510178bd2b858c3f29849d44df45",
+          "sourceFileId": "ED-C02:Eph",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 80931,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-PHP",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Phil.xml",
+          "sha256": "2f8933cdf0f8f459a6e192ad99c8aa07cb06e94d400875f88e64290bf489ed54",
+          "sourceFileId": "ED-C02:Phil",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 79114,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-COL",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Col.xml",
+          "sha256": "87079753db107d3034b8af8a91ccb0495da393389a02df4588cff3a4de4cd837",
+          "sourceFileId": "ED-C02:Col",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 73887,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-1TH",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/1Thess.xml",
+          "sha256": "22a5dcf8e0cc80d06fcb8fcd01aef72860058cfab4b7b42cfa94dd229e2c7065",
+          "sourceFileId": "ED-C02:1Thess",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 40902,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-2TH",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/2Thess.xml",
+          "sha256": "3b7fbae3d238039f11bb599e1b99139a2d2a8626f293ccefc601d1a50a03d433",
+          "sourceFileId": "ED-C02:2Thess",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 81717,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-1TI",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/1Tim.xml",
+          "sha256": "7078cf18cf4325e4fb093785da774b48cc8306fd24dd2aa00041335c1bc88efc",
+          "sourceFileId": "ED-C02:1Tim",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 62532,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-2TI",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/2Tim.xml",
+          "sha256": "6d3add4060e870089d71e4621bcec5cc12759ebb4689fe6864368ae56c76b6fc",
+          "sourceFileId": "ED-C02:2Tim",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 33932,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-TIT",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Titus.xml",
+          "sha256": "4c66c26c8ce316056d0423018d3497501e1a9ef033a1fc1ebd5829ba2d177fd9",
+          "sourceFileId": "ED-C02:Titus",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 16865,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-PHM",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Phlm.xml",
+          "sha256": "5e055c7dbe6b8326b559f6d7d135a39e6da0b499271f1eec6eae87fd93590ef3",
+          "sourceFileId": "ED-C02:Phlm",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 247580,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-HEB",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Heb.xml",
+          "sha256": "50ee82c41b032b4b786ca7790eb3ce412865bd80e823d9cfdc22a812a1d6a865",
+          "sourceFileId": "ED-C02:Heb",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 87475,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-JAS",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Jas.xml",
+          "sha256": "5cb6fdeefb734ef842e102938f0f10791415276ae09cbd33215a359e1025f7e5",
+          "sourceFileId": "ED-C02:Jas",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 85461,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-1PE",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/1Pet.xml",
+          "sha256": "82693ac93851f9f415fa126508f6e893dfb4b2f8131ee953c822a342eb78d5fa",
+          "sourceFileId": "ED-C02:1Pet",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 55525,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-2PE",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/2Pet.xml",
+          "sha256": "59612036f3847ddd1e6f5435b62458a9c1aa7eff4c6fc6107659e980346275b2",
+          "sourceFileId": "ED-C02:2Pet",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 102101,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-1JN",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/1John.xml",
+          "sha256": "3786d543f13a83d0e5f3cc1fd645c3b9e240a4c14fd412e0b2fa304d27d4a66b",
+          "sourceFileId": "ED-C02:1John",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 12074,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-2JN",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/2John.xml",
+          "sha256": "132d3e497afb40247097175b9de4a8791de14366a0c5a923ed59f05a7c0d9586",
+          "sourceFileId": "ED-C02:2John",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 11161,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-3JN",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/3John.xml",
+          "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+          "sourceFileId": "ED-C02:3John",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 23202,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-JUD",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Jude.xml",
+          "sha256": "b83680c0d23b032273ec0e0c858f3c24ba684114b78ebddb2475dd78aac7165b",
+          "sourceFileId": "ED-C02:Jude",
+          "sourceId": "F03"
+        },
+        {
+          "bytes": 474728,
+          "component": "texto_fuente",
+          "id": "REC-ED-C02-REV",
+          "licenseRef": "LIC-CC-BY-4.0",
+          "path": "data/sblgnt/xml/Rev.xml",
+          "sha256": "f6ba340dfd9010436aac55a17246ed45ef24c6b8e4510dc4bcb62c0a9ac4bc83",
+          "sourceFileId": "ED-C02:Rev",
+          "sourceId": "F03"
+        }
+      ]
+    }
+  ],
+  "editions": [
+    {
+      "attribution": "Reina y Valera, según ficha de eBible.org; distribución spaRV1909.",
+      "canonId": null,
+      "coverageBookIds": [
+        "LIB-GEN",
+        "LIB-EXO",
+        "LIB-LEV",
+        "LIB-NUM",
+        "LIB-DEU",
+        "LIB-JOS",
+        "LIB-JDG",
+        "LIB-RUT",
+        "LIB-1SA",
+        "LIB-2SA",
+        "LIB-1KI",
+        "LIB-2KI",
+        "LIB-1CH",
+        "LIB-2CH",
+        "LIB-EZR",
+        "LIB-NEH",
+        "LIB-EST",
+        "LIB-JOB",
+        "LIB-PSA",
+        "LIB-PRO",
+        "LIB-ECC",
+        "LIB-SNG",
+        "LIB-ISA",
+        "LIB-JER",
+        "LIB-LAM",
+        "LIB-EZK",
+        "LIB-DAN",
+        "LIB-HOS",
+        "LIB-JOL",
+        "LIB-AMO",
+        "LIB-OBA",
+        "LIB-JON",
+        "LIB-MIC",
+        "LIB-NAM",
+        "LIB-HAB",
+        "LIB-ZEP",
+        "LIB-HAG",
+        "LIB-ZEC",
+        "LIB-MAL",
+        "LIB-MAT",
+        "LIB-MRK",
+        "LIB-LUK",
+        "LIB-JHN",
+        "LIB-ACT",
+        "LIB-ROM",
+        "LIB-1CO",
+        "LIB-2CO",
+        "LIB-GAL",
+        "LIB-EPH",
+        "LIB-PHP",
+        "LIB-COL",
+        "LIB-1TH",
+        "LIB-2TH",
+        "LIB-1TI",
+        "LIB-2TI",
+        "LIB-TIT",
+        "LIB-PHM",
+        "LIB-HEB",
+        "LIB-JAS",
+        "LIB-1PE",
+        "LIB-2PE",
+        "LIB-1JN",
+        "LIB-2JN",
+        "LIB-3JN",
+        "LIB-JUD",
+        "LIB-REV"
+      ],
+      "id": "TXT-RV1909",
+      "kind": "traduccion",
+      "language": "spa",
+      "licenseRef": "LIC-ED-C01-PUBLIC-DOMAIN-DECLARED",
+      "name": "Reina-Valera 1909",
+      "provider": "eBible.org",
+      "referencePolicy": "source_native_unmapped",
+      "resourceIds": [
+        "REC-ED-C01-GEN",
+        "REC-ED-C01-EXO",
+        "REC-ED-C01-LEV",
+        "REC-ED-C01-NUM",
+        "REC-ED-C01-DEU",
+        "REC-ED-C01-JOS",
+        "REC-ED-C01-JDG",
+        "REC-ED-C01-RUT",
+        "REC-ED-C01-1SA",
+        "REC-ED-C01-2SA",
+        "REC-ED-C01-1KI",
+        "REC-ED-C01-2KI",
+        "REC-ED-C01-1CH",
+        "REC-ED-C01-2CH",
+        "REC-ED-C01-EZR",
+        "REC-ED-C01-NEH",
+        "REC-ED-C01-EST",
+        "REC-ED-C01-JOB",
+        "REC-ED-C01-PSA",
+        "REC-ED-C01-PRO",
+        "REC-ED-C01-ECC",
+        "REC-ED-C01-SNG",
+        "REC-ED-C01-ISA",
+        "REC-ED-C01-JER",
+        "REC-ED-C01-LAM",
+        "REC-ED-C01-EZK",
+        "REC-ED-C01-DAN",
+        "REC-ED-C01-HOS",
+        "REC-ED-C01-JOL",
+        "REC-ED-C01-AMO",
+        "REC-ED-C01-OBA",
+        "REC-ED-C01-JON",
+        "REC-ED-C01-MIC",
+        "REC-ED-C01-NAM",
+        "REC-ED-C01-HAB",
+        "REC-ED-C01-ZEP",
+        "REC-ED-C01-HAG",
+        "REC-ED-C01-ZEC",
+        "REC-ED-C01-MAL",
+        "REC-ED-C01-MAT",
+        "REC-ED-C01-MRK",
+        "REC-ED-C01-LUK",
+        "REC-ED-C01-JHN",
+        "REC-ED-C01-ACT",
+        "REC-ED-C01-ROM",
+        "REC-ED-C01-1CO",
+        "REC-ED-C01-2CO",
+        "REC-ED-C01-GAL",
+        "REC-ED-C01-EPH",
+        "REC-ED-C01-PHP",
+        "REC-ED-C01-COL",
+        "REC-ED-C01-1TH",
+        "REC-ED-C01-2TH",
+        "REC-ED-C01-1TI",
+        "REC-ED-C01-2TI",
+        "REC-ED-C01-TIT",
+        "REC-ED-C01-PHM",
+        "REC-ED-C01-HEB",
+        "REC-ED-C01-JAS",
+        "REC-ED-C01-1PE",
+        "REC-ED-C01-2PE",
+        "REC-ED-C01-1JN",
+        "REC-ED-C01-2JN",
+        "REC-ED-C01-3JN",
+        "REC-ED-C01-JUD",
+        "REC-ED-C01-REV"
+      ],
+      "sourceId": "F05",
+      "sourceRevision": {
+        "archiveSha256": "56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5"
+      },
+      "versificationId": null,
+      "version": "spaRV1909"
+    },
+    {
+      "attribution": "The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.",
+      "canonId": null,
+      "coverageBookIds": [
+        "LIB-MAT",
+        "LIB-MRK",
+        "LIB-LUK",
+        "LIB-JHN",
+        "LIB-ACT",
+        "LIB-ROM",
+        "LIB-1CO",
+        "LIB-2CO",
+        "LIB-GAL",
+        "LIB-EPH",
+        "LIB-PHP",
+        "LIB-COL",
+        "LIB-1TH",
+        "LIB-2TH",
+        "LIB-1TI",
+        "LIB-2TI",
+        "LIB-TIT",
+        "LIB-PHM",
+        "LIB-HEB",
+        "LIB-JAS",
+        "LIB-1PE",
+        "LIB-2PE",
+        "LIB-1JN",
+        "LIB-2JN",
+        "LIB-3JN",
+        "LIB-JUD",
+        "LIB-REV"
+      ],
+      "id": "TXT-SBLGNT-V1-2",
+      "kind": "edicion_critica",
+      "language": "grc",
+      "licenseRef": "LIC-CC-BY-4.0",
+      "name": "SBL Greek New Testament",
+      "provider": "Faithlife/SBLGNT",
+      "referencePolicy": "source_native_unmapped",
+      "resourceIds": [
+        "REC-ED-C02-MAT",
+        "REC-ED-C02-MRK",
+        "REC-ED-C02-LUK",
+        "REC-ED-C02-JHN",
+        "REC-ED-C02-ACT",
+        "REC-ED-C02-ROM",
+        "REC-ED-C02-1CO",
+        "REC-ED-C02-2CO",
+        "REC-ED-C02-GAL",
+        "REC-ED-C02-EPH",
+        "REC-ED-C02-PHP",
+        "REC-ED-C02-COL",
+        "REC-ED-C02-1TH",
+        "REC-ED-C02-2TH",
+        "REC-ED-C02-1TI",
+        "REC-ED-C02-2TI",
+        "REC-ED-C02-TIT",
+        "REC-ED-C02-PHM",
+        "REC-ED-C02-HEB",
+        "REC-ED-C02-JAS",
+        "REC-ED-C02-1PE",
+        "REC-ED-C02-2PE",
+        "REC-ED-C02-1JN",
+        "REC-ED-C02-2JN",
+        "REC-ED-C02-3JN",
+        "REC-ED-C02-JUD",
+        "REC-ED-C02-REV"
+      ],
+      "sourceId": "F03",
+      "sourceRevision": {
+        "commit": "736fdc76158950c3d04b949b7e013ca14305145a"
+      },
+      "versificationId": null,
+      "version": "v1.2"
+    }
+  ],
+  "entityCounts": {
+    "ENT19": 2,
+    "ENT20": 0,
+    "ENT21": 0,
+    "ENT22": 66,
+    "ENT23": 39041,
+    "ENT37": 2
+  },
+  "mode": "in_memory_validation_only",
+  "phase": "P9.1.3",
+  "schemaVersion": 1,
+  "textPolicies": {
+    "rv1909": "USFM main-text v1: remove footnotes/cross-references/headings and formatting markers; preserve visible text, punctuation and Unicode; collapse whitespace; retain raw source-segment hash and source-file hash.",
+    "sblgnt": "SBLGNT XML v1: project w elements with prefix/suffix in source order; preserve source chapter/verse labels and punctuation; use a single separator between adjacent words; do not infer missing markers."
+  }
+}
