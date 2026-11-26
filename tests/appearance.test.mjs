@@ -15,19 +15,19 @@ import { contrastRatio } from '../src/lib/contrast.ts';
 const css = readFileSync('src/styles/design-tokens.css', 'utf8');
 
 function readThemeTokens(selector) {
-  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const block = css.match(new RegExp(`${escaped}\\s*\\{([^}]+)\\}`));
-  assert.ok(block, `No se encontró el bloque ${selector}`);
+  const escaped = selector.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  const block = css.match(new RegExp(escaped + '\\s*\\{([^}]+)\\}'));
+  assert.ok(block, 'No se encontró el bloque ' + selector);
   return Object.fromEntries(
-    [...block[1].matchAll(/(--[a-z0-9-]+):\\s*([^;]+);/gi)].map((match) => [match[1], match[2].trim()]),
+    [...block[1].matchAll(/(--[a-z0-9-]+):\s*([^;]+);/gi)].map((match) => [match[1], match[2].trim()]),
   );
 }
 
 function resolveToken(tokens, name, depth = 0) {
-  assert.ok(depth < 5, `Referencia circular en ${name}`);
+  assert.ok(depth < 5, 'Referencia circular en ' + name);
   const value = tokens[name];
-  assert.ok(value, `Falta el token ${name}`);
-  const reference = value.match(/^var\\((--[a-z0-9-]+)\\)$/i);
+  assert.ok(value, 'Falta el token ' + name);
+  const reference = value.match(/^var\((--[a-z0-9-]+)\)$/i);
   return reference ? resolveToken(tokens, reference[1], depth + 1) : value;
 }
 
@@ -93,7 +93,7 @@ test('los cuatro modos mantienen contraste AA en textos, enlaces y controles', (
       const bg = resolveToken(tokens, background);
       assert.ok(
         contrastRatio(fg, bg) >= 4.5,
-        `${label}: contraste insuficiente de ${foreground} sobre ${background} (${fg} sobre ${bg})`,
+        label + ': contraste insuficiente de ' + foreground + ' sobre ' + background + ' (' + fg + ' sobre ' + bg + ')',
       );
     }
   }
