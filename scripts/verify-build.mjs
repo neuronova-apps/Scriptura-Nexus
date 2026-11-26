@@ -338,3 +338,16 @@ for(const study of catalogData){
  }
 }
 console.log('P6.3: relaciones taxonómicas en 42 fichas; sin evidencias o posturas sintéticas.');
+
+const publicationRegistry=JSON.parse(readFileSync('src/data/publicaciones/registro.json','utf8'));
+assert.equal(publicationRegistry.schemaVersion,1);
+assert.equal(publicationRegistry.snapshots.length,0);
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ assert.match(html,/Sin versión aprobada/);
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.4|study-approved-body|id="argumentos-titulo"/);
+}
+assert.ok(!existsSync('dist/editorial-private'));
+assert.ok(!existsSync('dist/drafts'));
+assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA|EVD-900001/);
+console.log('P6.4: registro inicial vacío, 42 fichas sin versión aprobada, sin borradores en rutas ni índice.');
