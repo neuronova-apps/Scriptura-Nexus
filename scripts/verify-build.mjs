@@ -82,3 +82,27 @@ for (const path of modulePaths) {
   }
 }
 console.log('Siete rutas iniciales, estados vacíos y navegación: conformes.');
+
+const fundamentals = readFileSync('dist/fundamentos/index.html', 'utf8');
+const methodologyGuides = ['exegesis','hermeneutica','fuentes','licencias'];
+for (const path of methodologyGuides) {
+  const url = '/Scriptura-Nexus/fundamentos/' + path + '/';
+  const html = readFileSync('dist/fundamentos/' + path + '/index.html', 'utf8');
+  const title = {exegesis:'Exégesis bíblica',hermeneutica:'Hermenéutica bíblica',fuentes:'Fuentes y trazabilidad de evidencias',licencias:'Licencias y atribuciones'}[path];
+  assert.ok(fundamentals.includes('href="' + url + '"'), 'Acceso desde fundamentos: ' + path);
+  assert.ok(html.includes(title), 'Título de guía: ' + path);
+  assert.match(html, /Guía metodológica/);
+  assert.match(html, /aria-label="Otras guías metodológicas"/);
+  assert.match(html, /aria-label="Ruta de navegación"/);
+  assert.match(html, /data-appearance-panel/);
+  assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
+  assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
+  for (const match of html.matchAll(/href="([^"]+)"/g)) {
+    const href = match[1];
+    if (!href.startsWith('/')) continue;
+    assert.ok(href.startsWith('/Scriptura-Nexus/'), 'Base de Pages incorrecta: ' + href);
+    const relative = href.slice('/Scriptura-Nexus/'.length);
+    assert.ok(existsSync('dist/' + relative + (relative === '' || relative.endsWith('/') ? 'index.html' : '')), 'Destino inexistente: ' + href);
+  }
+}
+console.log('Cuatro guías P4.2, enlaces de acceso, navegación y destinos: conformes.');

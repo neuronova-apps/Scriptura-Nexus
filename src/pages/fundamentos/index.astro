@@ -7,6 +7,12 @@ import { basePath } from '../../lib/site';
 import { perspectives, studySections, evidenceGrades, editorialStages } from '../../lib/methodology';
 import '../../styles/modules.css';
 import '../../styles/methodology.css';
+const guides = [
+  { path: 'exegesis/', title: 'Exégesis bíblica', description: 'Analizar qué comunica el pasaje en su contexto textual, histórico, literario y lingüístico.' },
+  { path: 'hermeneutica/', title: 'Hermenéutica bíblica', description: 'Declarar principios interpretativos y justificar la aplicación contemporánea.' },
+  { path: 'fuentes/', title: 'Fuentes y trazabilidad', description: 'Evaluar, verificar y documentar las evidencias y referencias.' },
+  { path: 'licencias/', title: 'Licencias y atribuciones', description: 'Comprobar derechos y permisos antes de publicar materiales.' },
+];
 const home = basePath(import.meta.env.BASE_URL);
 ---
 <BaseLayout title="Fundamentos metodológicos | Scriptura Nexus" description="Metodología, perspectivas de análisis y criterios de investigación bíblica de Scriptura Nexus.">
@@ -18,6 +24,10 @@ const home = basePath(import.meta.env.BASE_URL);
       <p>Investigar las Escrituras mediante preguntas delimitadas, evidencia verificable y contraste de interpretaciones. Distinguir lo que afirma el texto, las inferencias exegéticas, las doctrinas institucionales y su aplicación contemporánea.</p>
       <Callout tone="info" title="Investigación abierta a la evidencia">La perspectiva pentecostal recibe atención preferente, sin determinar de antemano la conclusión. Se consideran otras perspectivas protestantes, católicas y, cuando corresponda, ortodoxas, judías y académicas.</Callout>
     </Card>
+    <section aria-labelledby="guias">
+      <SectionHeading id="guias" title="Guías metodológicas" description="Recursos de consulta para aplicar la metodología en cada investigación." />
+      <div class="method-guide-grid">{guides.map(item => <Card><h3>{item.title}</h3><p>{item.description}</p><a class="sn-button sn-button--secondary" href={basePath(import.meta.env.BASE_URL, 'fundamentos/' + item.path)}>Consultar guía</a></Card>)}</div>
+    </section>
     <section aria-labelledby="metodos">
       <SectionHeading id="metodos" title="18 perspectivas de análisis" description="Se seleccionan según la pregunta y las fuentes disponibles. Las omisiones requieren justificación." />
       <div class="method-grid">{perspectives.map(item => <Card padding="sm"><h3>{item.id} · {item.name}</h3><p>{item.question}</p></Card>)}</div>

@@ -1,0 +1,16 @@
+.method-guide-nav ul { display:flex; flex-wrap:wrap; gap:var(--sn-space-2) var(--sn-space-4); list-style:none; padding:0; margin:0; }
+.method-guide-nav a { display:inline-flex; min-height:2.75rem; align-items:center; }
+.method-guide-actions { display:flex; flex-wrap:wrap; gap:var(--sn-space-3); }
+.method-guide-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:var(--sn-space-4); }
+.method-guide-grid h3 { margin-top:0; color:var(--sn-navy); font-family:var(--sn-font-display); font-size:var(--sn-text-lg); }
+.method-guide-grid p { min-height:3.5em; }
+.method-guide-grid .sn-button { margin-top:var(--sn-space-2); }
+.method-steps { padding-inline-start:1.5rem; margin:0; }
+.method-steps li + li { margin-block-start:var(--sn-space-3); }
+.method-steps li { padding-inline-start:.25rem; }
+.methodology-guide section > .sn-card { margin-block-start:var(--sn-space-3); }
+.methodology-guide p:last-child { margin-bottom:0; }
+@media (max-width:600px) {
+  .method-guide-nav ul { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr)); }
+  .method-guide-grid p { min-height:0; }
+}
