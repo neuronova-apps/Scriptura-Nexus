@@ -365,3 +365,16 @@ for(const study of catalogData){
 assert.equal(auditedPositions,840);
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.2/);
 console.log('P6.5.2: 840 posiciones HTML, títulos, anclas de retorno y aislamiento de fixtures conformes.');
+
+// P6.5.3: no synthetic editorial relations in production pages or search.
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.5\.3|id="rel-(?:AF|EVD|POS|CON)-/);
+ const expected=new Set([study.primaryAxisId,...study.relatedAxisIds]);
+ const related=catalogData.filter(t=>t.id!==study.id&&[t.primaryAxisId,...t.relatedAxisIds].some(id=>expected.has(id))).map(t=>t.id).sort();
+ const section=html.split('aria-labelledby="relaciones-titulo"')[1].split('</section>')[0];
+ const actual=[...section.matchAll(/href="\/Scriptura-Nexus\/estudios\/(SN-\d{3})\/"/g)].map(m=>m[1]).sort();
+ assert.deepEqual(actual,related,study.id+' vínculos taxonómicos exactos');
+}
+assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.3|POS-90000/);
+console.log('P6.5.3: relaciones exactas de 42 fichas y exclusión de trazas sintéticas.');
