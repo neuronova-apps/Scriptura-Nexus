@@ -291,7 +291,7 @@ export function validateTextualEditionRecord(
   requireValue(errors, value.bibliographyEditionId === null ||
     (text(value.bibliographyEditionId) && context.bibliographyEditionIds.includes(value.bibliographyEditionId)),
     'edición: referencia bibliográfica desconocida');
-  const roles = ['critical_text', 'documentary_transcription', 'historical_textual_edition', 'translation'];
+  const roles = ['critical_text', 'historical_textual_edition', 'translation'];
   requireValue(errors, roles.includes(String(value.editionRole)), 'edición: función editorial inválida');
   if (edition) {
     requireValue(errors, value.editionRole === 'translation'
@@ -488,7 +488,7 @@ function validateAssessment(
 export function validateTextualVariant(
   value: unknown,
   context: ManuscriptValidationContext,
-  editionRecordIds: readonly string[],
+  editionRecords: readonly TextualEditionRecord[],
   readingIds: readonly string[]
 ): string[] {
   const errors: string[] = [];
@@ -504,8 +504,10 @@ export function validateTextualVariant(
   if (record(value.locus) && record(value.apparatus)) {
     requireValue(errors, value.locus.textualEditionId === value.apparatus.textualEditionId,
       'variante: locus y aparato pertenecen a ediciones distintas');
-    requireValue(errors, editionRecordIds.includes(String(value.locus.textualEditionId)),
-      'variante: edición sin ficha ENT19 documentada');
+    const editionRecord = editionRecords.find(item => item.textualEditionId === value.locus.textualEditionId);
+    requireValue(errors, Boolean(editionRecord && editionRecord.reviewStatus === 'documented' &&
+      editionRecord.editionRole !== 'translation'),
+      'variante: requiere ficha ENT19 documentada y no traducida');
   }
   const readings = validateRefs(value.readingIds, readingIds, 'variante lecturas', errors, 2);
   const internal = validateRefs(value.internalEvidenceIds, context.verifiedEvidenceIds,
@@ -514,6 +516,8 @@ export function validateTextualVariant(
     'variante evidencia externa', errors);
   requireValue(errors, internal.length + external.length > 0,
     'variante: sin evidencia interna ni externa');
+  requireValue(errors, internal.every(id => !external.includes(id)),
+    'variante: evidencia clasificada simultáneamente como interna y externa');
   errors.push(...validateAssessment(value.assessment, [...internal, ...external]));
   return errors;
 }
@@ -538,6 +542,8 @@ export function validateTranslationProfile(
     (text(value.bibliographyEditionId) && context.bibliographyEditionIds.includes(value.bibliographyEditionId)),
     'traducción: edición bibliográfica desconocida');
   if (editionRecord) {
+    requireValue(errors, editionRecord.reviewStatus === 'documented',
+      'traducción: ficha de edición sin documentación suficiente');
     requireValue(errors, editionRecord.bibliographyEditionId === value.bibliographyEditionId,
       'traducción: referencia bibliográfica distinta de la ficha de edición');
   }
@@ -610,7 +616,7 @@ export function validateManuscriptRegistry(
 
   for (const item of editions) errors.push(...validateTextualEditionRecord(item, context));
   for (const item of witnesses) errors.push(...validateManuscriptWitness(item, context));
-  for (const item of variants) errors.push(...validateTextualVariant(item, context, editionIds as string[], readingIds as string[]));
+  for (const item of variants) errors.push(...validateTextualVariant(item, context, editions, readingIds as string[]));
   for (const item of readings) errors.push(...validateVariantReading(item, context, witnessIds as string[], variantIds as string[]));
   for (const item of translations) errors.push(...validateTranslationProfile(item, context, editions));
 
