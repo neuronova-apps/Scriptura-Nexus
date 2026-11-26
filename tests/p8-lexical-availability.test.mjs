@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createLexicalQuery} from '../src/lib/lexical-query.ts';
+const commit='a'.repeat(40),sha256='b'.repeat(64);
+const origin=(component,selector)=>({fileId:'LING-016',commit,sha256,component,selector,locator:'/fixture'});
+const entryId='LENTRY-'+'1'.repeat(64);
+const source=()=>({schemaVersion:1,scope:'internal-only',entries:[{id:entryId,system:'index',providerKey:'fixture',language:'hbo',origin:origin('identificadores_lexicos','entry')}],forms:[{id:'LFORM-'+'2'.repeat(64),entryId,form:'א',language:'hbo',origin:origin('anotaciones_lema','form')}],definitions:[],links:[]});
+const admissions=[{id:'LING-016',commit,sha256,allowedComponents:['identificadores_lexicos','anotaciones_lema'],selectors:['entry','form']}];
+test('cached availability is isolated from caller mutations',()=>{const model=source(),q=createLexicalQuery(model,admissions);q.available().push('strong');model.forms[0].language='grc';assert.deepEqual(q.available(),['index']);assert.equal(q.search({mode:'identifier',system:'strong',value:'H1'}).status,'recurso_no_disponible');assert.equal(q.search({mode:'form',language:'grc',value:'α'}).status,'lengua_no_disponible');assert.equal(q.search({mode:'form',language:'hbo',value:'א'}).total,1);});
+test('cached language availability does not infer forms from entry language',()=>{const model=source();model.forms=[];const q=createLexicalQuery(model,admissions);assert.equal(q.search({mode:'form',language:'hbo',value:'א'}).total,null);assert.equal(q.search({mode:'identifier',system:'index',value:'fixture'}).total,1);});

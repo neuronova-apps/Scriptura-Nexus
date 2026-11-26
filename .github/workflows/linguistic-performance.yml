@@ -1,0 +1,48 @@
+name: P8.5.2 Rendimiento lingüístico y presupuestos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/benchmark-linguistic-p85.mjs'
+      - 'scripts/benchmark-public-p85.mjs'
+      - 'src/lib/lexical-query.ts'
+      - 'src/lib/concordance.ts'
+      - 'src/lib/term-analyzer.ts'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'src/pages/**'
+      - 'src/layouts/**'
+      - 'src/styles/**'
+      - 'src/scripts/**'
+      - 'tests/p8-lexical-availability.test.mjs'
+      - '.github/workflows/linguistic-performance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  performance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Compilación y pruebas de regresión
+        run: npm ci && npm run check && node --test tests/p8-lexical-query.test.mjs tests/p8-lexical-availability.test.mjs && npm run build && npm run test:build
+      - name: Comparación privada con línea base fijada
+        shell: bash
+        run: |
+          set -euo pipefail
+          baseline="$RUNNER_TEMP/p852-lexical-baseline.ts"
+          git show 145290def901b3c1567828279715c426259a7b3c:src/lib/lexical-query.ts > "$baseline"
+          trap 'rm -f "$baseline"' EXIT
+          P852_BASELINE_MODULE="file://$baseline" node --expose-gc scripts/benchmark-linguistic-p85.mjs
+      - name: Chromium aislado para medición pública
+        run: |
+          mkdir -p "$RUNNER_TEMP/p852-browser"
+          npm install --prefix "$RUNNER_TEMP/p852-browser" --no-save --package-lock=false playwright@1.56.1
+          "$RUNNER_TEMP/p852-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P852_DEPS="$RUNNER_TEMP/p852-browser" node scripts/benchmark-public-p85.mjs

@@ -1,0 +1,14 @@
+# P8.5.2. Evaluación y optimización del rendimiento
+
+Base main 145290def901b3c1567828279715c426259a7b3c. P8.5.1 PR #50 integrado tras siete ejecuciones satisfactorias. P0.6 establece objetivos de 150 KiB JS inicial comprimido, 500 KiB transferencia inicial de portada, 250 KiB fragmento JSON por consulta, LCP 2,5 s, CLS 0,1, INP 200 ms. Se mantienen sin modificación. No se amplía la cobertura ni se publica el modelo.
+
+## Optimización acotada
+El adaptador léxico recalculaba disponibilidad de sistemas mediante escaneo de entradas y disponibilidad de lengua mediante búsqueda lineal de formas. Construir ambas colecciones una vez en la instancia validada; available devuelve copia. No cambia búsqueda, identidad, filtros ni procedencia. Dos pruebas nuevas de aislamiento y ausencia; conservar ocho existentes. Comparación real con archivo base de git show, 30 lotes alternados de 120 consultas, después de calentamiento, igualdad exacta de respuestas en seis casos y detalles. No inferir mejora de otros motores de este cambio.
+
+## Medición privada
+Importación autorizada en memoria de 26.750 ocurrencias y 30.740 entradas, huella léxica verificada. Medir construcción de cada motor y snapshots de heap/RSS con GC solicitado (no pico ni medición de dispositivo). 60 muestras por modalidad: análisis, selección, concordancias, frecuencias, búsqueda/detalle léxico. Casos deterministas de tres lenguas, tres modos, claves frecuentes, páginas y filtros; tamaño gzip nivel 6 de respuestas JSON muestreadas con límite hasta 100, no afirmar máximo universal. No se imprime contenido, no endpoint, no corpus persistido. Comparación local del código previo en archivo temporal sin datos.
+
+## Medición pública
+Chromium con servidor local de salida dist, gzip nivel 6, cache no-store, 3 ejecuciones independientes por ancho 360/1280 y por ruta portada/analizador/léxicos: 18 mediciones. Sin red externa, sin ralentización artificial. TransferSize incluye encabezados según Resource Timing; JS externo comprimido más gzip separado de inline, HTML contiene inline y transferencia no lo duplica. LCP y CLS de laboratorio inicial; interacción de apertura de preferencias, cambio y reset mediante Event Timing con umbral 16 ms, se informa máximo observado y número de IDs, no INP de campo. Si no hay muestras, null, no cero. Tamaño dist y objetivos reportados; no modificar umbrales para conseguir verde, ni afirmar cumplimiento por CI verde. Si una métrica supera objetivo, documentar corrección o excepción pendiente de aceptación antes de cierre. Pruebas manuales y rendimiento con dispositivos reales pendientes. Los datos públicos permanecen vacíos y por eso las mediciones de carga no extrapolan a un corpus publicado. No certificar experiencia de campo. P8.5.3 sigue después de validar e integrar.
+
+CI pendiente.

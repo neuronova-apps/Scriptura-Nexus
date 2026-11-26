@@ -42,12 +42,14 @@ export function createLexicalQuery(model:LexicalModel,admissions:readonly Admiss
   if(l.kind==='aug-index')check(l.targetSystem==='index');
   if(src)add(links,src.id,l);else if(target)add(links,target.id,l);
  }
- const available=()=>[...new Set(data.entries.map(e=>e.system))].sort();
+ const availableSystems=[...new Set(data.entries.map(e=>e.system))].sort();
+ const availableLanguages=new Set(data.forms.map(f=>f.language));
+ const available=()=>availableSystems.slice();
  const detail=(entryId:string)=>{const entry=byId.get(entryId);return entry?copy({entry,forms:forms.get(entryId)??[],definitions:defs.get(entryId)??[],links:links.get(entryId)??[]}):null;};
  const search=(q:LexicalQuery)=>{
   const offset=q.offset??0,limit=q.limit??20;
   if(!text(q.value)||q.value.length>1024||!Number.isSafeInteger(offset)||offset<0||!Number.isSafeInteger(limit)||limit<1||limit>100||!(q.mode==='form'&&['hbo','arc','grc'].includes(q.language)||q.mode==='identifier'&&Object.hasOwn(files,q.system)))throw new Error('Consulta léxica inválida');
-  const absent=!data.entries.length?'sin_recursos':q.mode==='identifier'&&!available().includes(q.system)?'recurso_no_disponible':q.mode==='form'&&!data.forms.some(f=>f.language===q.language)?'lengua_no_disponible':null;
+  const absent=!data.entries.length?'sin_recursos':q.mode==='identifier'&&!availableSystems.includes(q.system)?'recurso_no_disponible':q.mode==='form'&&!availableLanguages.has(q.language)?'lengua_no_disponible':null;
   if(absent)return {status:absent,total:null,offset,limit,nextOffset:null,entries:[] as Entry[]};
   const key=q.mode==='identifier'?byKey.get(JSON.stringify([q.system,q.value])):undefined;
   const ids=q.mode==='form'?[...(byForm.get(JSON.stringify([q.language,q.value]))??[])]:key?[key]:[];
