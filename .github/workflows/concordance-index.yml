@@ -1,0 +1,34 @@
+name: P8.4.5 Índices y frecuencias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/lib/concordance.ts'
+      - 'src/lib/term-analyzer.ts'
+      - 'src/lib/linguistic-contracts.ts'
+      - 'scripts/validate-concordance-index-p84.mjs'
+      - 'scripts/lib/term-analyzer-validation-data.mjs'
+      - 'scripts/lib/oshb-*.mjs'
+      - 'scripts/lib/greek-projection.mjs'
+      - 'docs/P8/*.json'
+      - 'src/data/linguistica/registro.json'
+      - 'tests/p8-concordance-index.test.mjs'
+      - '.github/workflows/concordance-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  index:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Pruebas del índice
+        run: node --test tests/p8-concordance-index.test.mjs
+      - name: Cotejo exhaustivo de frecuencias y referencias
+        run: node scripts/validate-concordance-index-p84.mjs
