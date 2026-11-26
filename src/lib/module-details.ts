@@ -37,7 +37,7 @@ export const moduleDetails = {
       "Lemas, Strong y morfología",
       "Léxicos y concordancias"
     ],
-    "empty": "Las herramientas se incorporarán en P8 después de validar fuentes y licencias. Todavía no hay datos lingüísticos disponibles."
+    "empty": "El motor y la interfaz del analizador se preparan en P8. Todavía no hay corpus lingüístico autorizado para consulta pública."
   },
   "biblia": {
     "planned": [
