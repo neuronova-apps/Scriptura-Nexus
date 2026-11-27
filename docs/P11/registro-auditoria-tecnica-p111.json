@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.1",
+  "baselineMain": "cbfde01a4afae775237f81524c2e5c693911dd27",
+  "closureBlob": "39fb4a7da8d3282b02dbc9742b2b9010c5bb8f27",
+  "previousIntegration": {
+    "pr": 82,
+    "workflowRun": 45943624594,
+    "job": 140323242062,
+    "deployRun": 45944002355,
+    "deploy": "pending_confirmation"
+  },
+  "scope": "auditoria_tecnica_prepublicacion",
+  "publicationAuthorized": false,
+  "releaseScopeApproved": false,
+  "corpusImportAuthorized": false,
+  "previousOpenFindings": 5,
+  "previousOpenNeeds": 20,
+  "checks": [
+    "clean_install",
+    "typecheck",
+    "unit_tests",
+    "static_build",
+    "build_contracts",
+    "all_static_internal_links",
+    "isolated_editorial_render",
+    "publication_history",
+    "browser_e2e"
+  ],
+  "browserSuites": [
+    {
+      "id": "catalog",
+      "path": "scripts/validate-catalog-browser-p1015.mjs",
+      "env": "P1015_DEPS"
+    },
+    {
+      "id": "reader",
+      "path": "scripts/validate-reader-browser-p924.mjs",
+      "env": "P924_DEPS"
+    },
+    {
+      "id": "comparator",
+      "path": "scripts/validate-comparator-browser-p934.mjs",
+      "env": "P934_DEPS"
+    },
+    {
+      "id": "term_analyzer",
+      "path": "scripts/validate-term-analyzer-browser.mjs",
+      "env": "P835_DEPS"
+    },
+    {
+      "id": "lexicon_concordance",
+      "path": "scripts/validate-lexicon-concordance-browser.mjs",
+      "env": "P847_DEPS"
+    },
+    {
+      "id": "manuscripts",
+      "path": "scripts/validate-manuscript-browser-p944.mjs",
+      "env": "P944_DEPS"
+    }
+  ],
+  "manualAccessibility": "P11.3_pendiente",
+  "documentaryAudit": "P11.2_pendiente",
+  "next": "P11.2_tras_CI_integracion_y_despliegue",
+  "progress": {
+    "completed": 57,
+    "total": 62,
+    "afterVerifiedClosure": 58
+  }
+}

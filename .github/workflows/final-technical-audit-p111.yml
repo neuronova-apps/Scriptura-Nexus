@@ -1,0 +1,91 @@
+name: P11.1 Auditoría técnica final
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  technical:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Instalación limpia y auditoría de artefacto
+        run: |
+          git ls-files --error-unmatch package-lock.json
+          npm ci
+          node scripts/validate-p111.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          python3 -m unittest discover -s tests -p 'test_static_links_p111.py'
+          python3 scripts/audit-static-links-p111.py
+          node scripts/verify-manuscript-pilot-build.mjs
+          node scripts/verify-approved-render.mjs
+      - name: Historial editorial
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
+        run: node scripts/verify-publication-history.mjs "$BASE_SHA"
+  browser-e2e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    needs: technical
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suite: catalog
+            script: scripts/validate-catalog-browser-p1015.mjs
+            env_name: P1015_DEPS
+          - suite: reader
+            script: scripts/validate-reader-browser-p924.mjs
+            env_name: P924_DEPS
+          - suite: comparator
+            script: scripts/validate-comparator-browser-p934.mjs
+            env_name: P934_DEPS
+          - suite: term-analyzer
+            script: scripts/validate-term-analyzer-browser.mjs
+            env_name: P835_DEPS
+          - suite: lexicon-concordance
+            script: scripts/validate-lexicon-concordance-browser.mjs
+            env_name: P847_DEPS
+          - suite: manuscripts
+            script: scripts/validate-manuscript-browser-p944.mjs
+            env_name: P944_DEPS
+    name: E2E ${{ matrix.suite }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Build limpio
+        run: npm ci && npm run build
+      - name: Chromium y axe aislados
+        env:
+          SUITE_SCRIPT: ${{ matrix.script }}
+          DEPS_NAME: ${{ matrix.env_name }}
+        run: |
+          deps="$RUNNER_TEMP/p111-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          env "$DEPS_NAME=$deps" node "$SUITE_SCRIPT"
