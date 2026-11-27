@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 import StudyTemplate from '../../components/studies/StudyTemplate.astro';
+import StudyPlanning from '../../components/studies/StudyPlanning.astro';
 import StudyRelations from '../../components/studies/StudyRelations.astro';
 import Callout from '../../components/Callout.astro';
 import { studies } from '../../lib/catalog';
@@ -27,6 +28,7 @@ const traditionNames=Object.fromEntries(traditions.map(t=>[t.id,t.name]));
 <section aria-labelledby="publicacion-titulo" class="sn-card sn-card--outlined"><h2 id="publicacion-titulo">Publicación editorial</h2>{snapshot ? <p>Versión aprobada: {snapshot.version} · {snapshot.publishedAt}.</p> : <p>Sin versión aprobada. Esta ficha permanece planificada.</p>}</section>
 <StudyTemplate studyId={study.id} snapshot={snapshot}/>
 {snapshot && <EditorialRelations record={snapshot.record} relations={snapshot.relations} studyTitles={studyTitles} traditionNames={traditionNames}/>}
+<StudyPlanning studyId={study.id}/>
 <StudyRelations study={study} catalog={studies} published={Boolean(snapshot)}/>
 <p><a href={base + 'fundamentos/'}>Consultar metodología de investigación</a></p>
 <a class="sn-button sn-button--secondary" href={base + 'estudios/'}>Volver al catálogo</a>
