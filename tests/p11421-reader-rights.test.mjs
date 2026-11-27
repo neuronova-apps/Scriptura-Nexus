@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP11421,validateP11421} from '../scripts/validate-reader-rights-p11421.mjs';
+const reject=fn=>{const d=loadP11421();fn(d);assert.throws(()=>validateP11421(d));};
+test('P11.4.2.1: reconcile two exact editions and rights',()=>assert.deepEqual(validateP11421(loadP11421()),{phase:'P11.4.2.1',editions:2,bookFiles:93,units:39041,emptyMarkers:18,releaseDecisionsPending:2,territorialReviewPending:1,publicationAuthorized:false,corpusImportAuthorized:false,completed:61,total:69}));
+test('no different source revision or fabricated permissions',()=>{reject(d=>d.record.editions[0].revision.archiveSha256='changed');reject(d=>d.record.editions[1].publicReleaseDecision='aprobada');reject(d=>d.record.editions[0].authorizationRef='inventada');});
+test('territorial review and attribution cannot disappear',()=>{reject(d=>d.record.editions[0].territorialReview='aprobada');reject(d=>d.record.editions[1].attribution='');reject(d=>d.record.editions[1].rightsSources.pop());});
+test('preserve transformation policy and original metadata',()=>{reject(d=>d.record.editions[0].transformations='sin cambios');reject(d=>d.record.editions[0].emptyMarkers=0);reject(d=>d.admissions=Buffer.from('{}'));});
+test('no release or inferred alignment',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.alignmentAuthorized=true);reject(d=>d.alignment.alignments.push({}));reject(d=>d.publication.snapshots.push({}));reject(d=>d.linguistic.tokens.push({}));});
+test('fixed progress and next isolated projection',()=>{reject(d=>d.record.progress.completed=62);reject(d=>d.record.next='publicar');});

@@ -1,0 +1,36 @@
+name: P11.4.2.1 Revisión de permisos del lector
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/reader-rights-p11421.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reader-rights:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Conciliar derechos, fuentes fijadas y barreras de publicación
+        run: |
+          npm ci
+          node --test tests/p11421-reader-rights.test.mjs
+          node scripts/validate-reader-rights-p11421.mjs
+          python3 scripts/validate-editions-p912.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
