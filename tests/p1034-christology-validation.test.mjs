@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1034,validateP1034,auditContracts} from '../scripts/validate-christology-p1034.mjs';
+const reject=fn=>{const d=loadP1034();fn(d);assert.throws(()=>validateP1034(d));};
+test('P10.3.4: three references and three provisional relations',()=>assert.deepEqual(validateP1034(loadP1034()),{phase:'P10.3.4',pilot:'SN-021',cases:3,contextUnits:20,greekAnchors:2,candidateRelations:3,sections:20,requiredSections:14,openNeeds:4,publicationAuthorized:false,academicAnalysisCompleted:false}));
+test('P10.3.4: historical source and reference integrity',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.cases[1].focus='47');reject(d=>d.record.cases[0].sourceUrl='https://example.org');});
+test('P10.3.4: candidate relations remain unverified',()=>{reject(d=>d.record.candidateRelations[0].status='verificada');reject(d=>d.record.automaticDoctrinalInference=true);});
+test('P10.3.4: documentary attribution and exclusion',()=>{reject(d=>d.record.documentarySource.authority='Otra');reject(d=>d.record.excludedSource.id='P1022-R11');reject(d=>d.record.openNeeds.pop());});
+test('P10.3.4: no unauthorized publication or academic closure',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.academicAnalysisCompleted=true);reject(d=>d.publication.snapshots.push({}));});
+test('P10.3.4: actual editorial contracts',()=>assert.deepEqual(auditContracts(),{validEmptyTemplate:true,unsupportedStrongClaimBlocked:true,unattributedPositionBlocked:true}));
