@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadArtifactPlan,validateArtifactPlan} from '../scripts/validate-reader-artifact-plan-p11425.mjs';
+import {compareScope,overlayDigests,readerHtml,dataRoot} from '../scripts/lib/reader-artifact-scope.mjs';
+test('artifact plan preserves preparation approval and disabled release',()=>{assert.equal(validateArtifactPlan(loadArtifactPlan()).deploymentEnabled,false);const d=loadArtifactPlan();d.record.deploymentEnabled=true;assert.throws(()=>validateArtifactPlan(d));});
+test('exact scope permits reader replacement only and the named additions',()=>{const before=new Map([[readerHtml,'old'],['index.html','keep']]),expected=new Map([[readerHtml,'new'],[dataRoot+'catalog.json.gz','catalog']]),after=new Map([[readerHtml,'new'],['index.html','keep'],[dataRoot+'catalog.json.gz','catalog']]);assert.deepEqual(compareScope(before,after,expected),{baselineFiles:2,unchangedFiles:1,addedFiles:1,replacedFiles:1});for(const [p,v] of [['index.html','changed'],['extra.txt','unexpected'],[dataRoot+'catalog.json.gz','corrupt']]){const bad=new Map(after);bad.set(p,v);assert.throws(()=>compareScope(before,bad,expected));}const bad=new Map(after);bad.delete('index.html');assert.throws(()=>compareScope(before,bad,expected));});
+test('reject overlays escaping the reader',()=>{for(const p of ['/Scriptura-Nexus/index.html','/Scriptura-Nexus/biblia/lector/../bad','/Scriptura-Nexus/biblia/lector/unauthorized.html'])assert.throws(()=>overlayDigests(new Map([[p,{body:Buffer.from('x')}]])));});
