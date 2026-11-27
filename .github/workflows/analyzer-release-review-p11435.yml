@@ -1,0 +1,36 @@
+name: P11.4.3.5 Revisión previa del analizador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/analyzer-release-review-p11435.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyzer-release-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inventario y regresiones
+        run: |
+          npm ci
+          node --test tests/p11435-analyzer-release-review.test.mjs
+      - name: Licencias y candidato aislado
+        run: node scripts/validate-analyzer-release-review-p11435.mjs --real
