@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1036,validateP1036,reconcileExisting} from '../scripts/validate-integrated-p1036.mjs';
+const reject=fn=>{const d=loadP1036();fn(d);assert.throws(()=>validateP1036(d));};
+test('P10.3.6: reconcile five pilots without double counting',()=>{const s=validateP1036(loadP1036());assert.deepEqual([s.pilots,s.cases,s.rvUnits,s.greekAnchors,s.specificTests,s.openNeeds],[5,17,101,11,30,20]);});
+test('P10.3.6: previous records and CI references remain fixed',()=>{reject(d=>d.pilots[0]=Buffer.from('{}'));reject(d=>d.record.pilots[4].ci='failure');reject(d=>d.record.pilots[4].deploy='success');});
+test('P10.3.6: limitations and academic status remain open',()=>{reject(d=>d.record.carryForward.pop());reject(d=>d.record.results.pending=0);reject(d=>d.record.academicAnalysisCompleted=true);});
+test('P10.3.6: no invented alignment or direct inspection',()=>{reject(d=>d.record.results.directInspections=1);reject(d=>d.alignment.alignments.push({}));});
+test('P10.3.6: public registries remain empty',()=>{reject(d=>d.publication.snapshots.push({}));reject(d=>d.linguistic.tokens.push({}));reject(d=>d.record.publicationAuthorized=true);});
+test('P10.3.6: run existing pilot validators and editorial contracts',()=>assert.deepEqual(reconcileExisting(),{validatorsReconciled:5,editorialContractAudits:2}));
