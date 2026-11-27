@@ -1,0 +1,43 @@
+name: P10.1.5 Cierre de catálogo y delimitación
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/catalog-closure-p1015.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  catalog-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Integridad del catálogo, perfiles, pilotos y barreras de publicación
+        run: |
+          npm ci
+          npm run check
+          node scripts/validate-p101.mjs
+          node scripts/validate-p1013.mjs
+          node scripts/validate-p1014.mjs
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
+      - name: Pruebas reales del catálogo en Chromium y axe
+        run: |
+          mkdir -p "$RUNNER_TEMP/p1015-browser"
+          npm install --prefix "$RUNNER_TEMP/p1015-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p1015-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P1015_DEPS="$RUNNER_TEMP/p1015-browser" node scripts/validate-catalog-browser-p1015.mjs
