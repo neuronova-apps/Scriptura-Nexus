@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateAnalyzerPlan} from '../scripts/validate-analyzer-plan-p11434.mjs';
+import {createFragmentAnalyzer,assembleChapter} from '../scripts/lib/analyzer-fragments-p11434.mjs';
+const f={id:'LING-fixture',commit:'a'.repeat(40),sha256:'b'.repeat(64),allowedComponents:['texto_griego']},o={fileId:f.id,commit:f.commit,sha256:f.sha256,component:'texto_griego',locator:'fixture'};
+const spec=path=>({path,jsonBytes:1,gzipBytes:1,sha256:'c'.repeat(64),gzipSha256:'d'.repeat(64)});
+const edition={id:'TXT-fixture',name:'Fixture',languages:['grc'],version:'test',versificationRef:'test',canonRef:null,coverageBookIds:['LIB-fixture'],fileIds:[f.id]};
+const i={schemaVersion:1,editionId:edition.id,bookId:'LIB-fixture',chapter:'1'},q={editionId:i.editionId,bookId:i.bookId,chapter:i.chapter,verse:'1'};
+const d={editionId:i.editionId,bookId:i.bookId,chapter:i.chapter,units:1,occurrences:1,text:spec('chapters/TXT-fixture/LIB-fixture/1/text.json.gz'),annotations:spec('chapters/TXT-fixture/LIB-fixture/1/annotations.json.gz')};
+const catalog=()=>({schemaVersion:1,mode:'isolated_validation',publicationAuthorized:false,editions:[edition],admissions:[f],chapters:[structuredClone(d)]});
+const text={...i,units:[{id:'UNIT-fixture',...q,order:0,text:'α',origin:o}],tokens:[{id:'TOK-fixture',unitId:'UNIT-fixture',position:0,form:'α',language:'grc',direction:'ltr',origin:o,analysisIds:[]}],typography:[]};
+const ann={...i,lemmas:[],analyses:[],links:[],supplements:[]};
+test('validated private plan retains gates',()=>{const r=validateAnalyzerPlan();assert.equal(r.scope.occurrences,78218);assert.equal(r.publicationAuthorized,false);});
+test('lazy chapter pair, one cached engine, native absence',async()=>{let calls=0;const a=createFragmentAnalyzer(catalog(),async s=>{calls++;return structuredClone(s.path.endsWith('/text.json.gz')?text:ann);});assert.equal(calls,0);assert.equal(a.initial.coverage().length,1);assert.equal((await a.prepare(q)).select(q).status,'disponible');assert.equal(calls,2);await a.prepare(q);assert.equal(calls,2);assert.equal((await a.prepare({...q,chapter:'2'})).select({...q,chapter:'2'}).status,'unidad_no_disponible');assert.equal(calls,2);});
+test('reject substituted layer, extra analysis links and release flags',()=>{assert.throws(()=>assembleChapter(catalog(),d,text,{...ann,chapter:'2'}));assert.throws(()=>assembleChapter(catalog(),d,text,{...ann,links:[{tokenId:'TOK-other',analysisIds:['MOR-other']}]}));const c=catalog();c.publicationAuthorized=true;assert.throws(()=>createFragmentAnalyzer(c,async()=>{}));});
+test('failed layer does not cache or reveal a result',async()=>{let fail=true,calls=0;const a=createFragmentAnalyzer(catalog(),async s=>{calls++;if(fail&&s.path.endsWith('/annotations.json.gz'))throw Error('integrity');return structuredClone(s.path.endsWith('/text.json.gz')?text:ann);});await assert.rejects(a.prepare(q));fail=false;assert.equal((await a.prepare(q)).select(q).status,'disponible');assert.equal(calls,4);});
