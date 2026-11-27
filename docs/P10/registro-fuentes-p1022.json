@@ -237,92 +237,110 @@
         {
           "id": "M01",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si existe variante relevante antes de incluir crítica textual."
         },
         {
           "id": "M02",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar expresiones hebreas de Lv 19:28."
         },
         {
           "id": "M03",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si la transmisión histórica de términos afecta la pregunta."
         },
         {
           "id": "M04",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar sentidos de marcas corporales en contexto."
         },
         {
           "id": "M05",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir la relación sintáctica entre prohibiciones."
         },
         {
           "id": "M06",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Situar la ley y sus destinatarios."
         },
         {
           "id": "M07",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar prácticas de marcas y luto."
         },
         {
           "id": "M08",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si evidencia material verificable aporta a la pregunta."
         },
         {
           "id": "M09",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Leer el capítulo y su estructura."
         },
         {
           "id": "M10",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar interpretaciones del pasaje."
         },
         {
           "id": "M11",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Explicitar criterios de aplicación contemporánea."
         },
         {
           "id": "M12",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comparar Dt 14:1 sin asumir equivalencia."
         },
         {
           "id": "M13",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar relaciones canónicas pertinentes."
         },
         {
           "id": "M14",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar pertinencia y disponibilidad de recepción patrística."
         },
         {
           "id": "M15",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar continuidad entre pactos."
         },
         {
           "id": "M16",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Atribuir interpretaciones confesionales."
         },
         {
           "id": "M17",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir juicio ético y contexto."
         },
         {
           "id": "M18",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar aplicación no coercitiva."
         }
       ],
       "evidenceIds": [],
@@ -421,92 +439,110 @@
         {
           "id": "M01",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si existe variante relevante antes de incluir crítica textual."
         },
         {
           "id": "M02",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar vocabulario de diezmo y ofrenda."
         },
         {
           "id": "M03",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si la transmisión histórica de términos afecta la pregunta."
         },
         {
           "id": "M04",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir sentidos por contexto."
         },
         {
           "id": "M05",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si la sintaxis modifica la interpretación."
         },
         {
           "id": "M06",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar destinatarios y época."
         },
         {
           "id": "M07",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Estudiar instituciones económicas de Israel."
         },
         {
           "id": "M08",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si evidencia material verificable aporta a la pregunta."
         },
         {
           "id": "M09",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir narración, ley, profecía y exhortación."
         },
         {
           "id": "M10",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Interpretar los cinco pasajes delimitados."
         },
         {
           "id": "M11",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Explicitar continuidad y discontinuidad."
         },
         {
           "id": "M12",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comparar referencias sin equiparar funciones."
         },
         {
           "id": "M13",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Relacionar pasajes y pactos."
         },
         {
           "id": "M14",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar pertinencia y disponibilidad de recepción patrística."
         },
         {
           "id": "M15",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar criterios doctrinales."
         },
         {
           "id": "M16",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Documentar posiciones institucionales."
         },
         {
           "id": "M17",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Examinar obligatoriedad y generosidad."
         },
         {
           "id": "M18",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Delimitar aplicación sin instrucciones financieras."
         }
       ],
       "evidenceIds": [],
@@ -597,92 +633,110 @@
         {
           "id": "M01",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si existe variante relevante antes de incluir crítica textual."
         },
         {
           "id": "M02",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar formas griegas en Hechos y Corintios."
         },
         {
           "id": "M03",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si la transmisión histórica de términos afecta la pregunta."
         },
         {
           "id": "M04",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir sentidos de los términos por contexto."
         },
         {
           "id": "M05",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Analizar las cláusulas pertinentes."
         },
         {
           "id": "M06",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Situar comunidades y relatos."
         },
         {
           "id": "M07",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar contexto de reunión comunitaria."
         },
         {
           "id": "M08",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si evidencia material verificable aporta a la pregunta."
         },
         {
           "id": "M09",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir relato y argumentación."
         },
         {
           "id": "M10",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar interpretaciones sobre funciones."
         },
         {
           "id": "M11",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Declarar presupuestos sobre vigencia."
         },
         {
           "id": "M12",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comparar Hechos y 1 Corintios."
         },
         {
           "id": "M13",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar relación canónica sin armonización automática."
         },
         {
           "id": "M14",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Buscar recepción histórica antigua."
         },
         {
           "id": "M15",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar pneumatología."
         },
         {
           "id": "M16",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comparar posiciones institucionales atribuidas."
         },
         {
           "id": "M17",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si surge una cuestión ética delimitada."
         },
         {
           "id": "M18",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Delimitar aplicación pastoral sin diagnosticar experiencias."
         }
       ],
       "evidenceIds": [],
@@ -761,92 +815,110 @@
         {
           "id": "M01",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comprobar variantes pertinentes de los pasajes."
         },
         {
           "id": "M02",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar hebreo y expresiones semíticas transmitidas en griego."
         },
         {
           "id": "M03",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Documentar transmisión de las expresiones."
         },
         {
           "id": "M04",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar significado contextual."
         },
         {
           "id": "M05",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Analizar estructura de las expresiones."
         },
         {
           "id": "M06",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Situar los relatos de pasión."
         },
         {
           "id": "M07",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar relevancia de fuentes culturales."
         },
         {
           "id": "M08",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si evidencia material verificable aporta a la pregunta."
         },
         {
           "id": "M09",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Examinar estructura narrativa y salmo."
         },
         {
           "id": "M10",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar interpretaciones exegéticas."
         },
         {
           "id": "M11",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Explicitar criterios para relacionar textos."
         },
         {
           "id": "M12",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Examinar relación con Sal 22."
         },
         {
           "id": "M13",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Delimitar síntesis canónica."
         },
         {
           "id": "M14",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Buscar recepción patrística."
         },
         {
           "id": "M15",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Contrastar interpretaciones cristológicas y trinitarias."
         },
         {
           "id": "M16",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Atribuir posiciones a documentos y autores."
         },
         {
           "id": "M17",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si surge una cuestión ética delimitada."
         },
         {
           "id": "M18",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si se necesita aplicación pastoral dentro del alcance."
         }
       ],
       "evidenceIds": [],
@@ -904,92 +976,110 @@
         {
           "id": "M01",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Comparar variantes con evidencia explícita."
         },
         {
           "id": "M02",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Identificar formas griegas cuando sean pertinentes."
         },
         {
           "id": "M03",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir historia textual y editorial."
         },
         {
           "id": "M04",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar impacto semántico documentable."
         },
         {
           "id": "M05",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Distinguir variantes sintácticas."
         },
         {
           "id": "M06",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Situar ediciones y testigos."
         },
         {
           "id": "M07",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar relevancia de fuentes culturales."
         },
         {
           "id": "M08",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si evidencia material verificable aporta a la pregunta."
         },
         {
           "id": "M09",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Examinar contexto literario de casos."
         },
         {
           "id": "M10",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar efectos interpretativos acotados."
         },
         {
           "id": "M11",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Explicitar supuestos y límites."
         },
         {
           "id": "M12",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Evaluar intertextualidad si una variante lo exige."
         },
         {
           "id": "M13",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si es necesaria una síntesis canónica."
         },
         {
           "id": "M14",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Examinar testimonio patrístico solo con referencias verificadas."
         },
         {
           "id": "M15",
           "status": "pendiente_de_evidencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "pertinencia_provisional_justificada",
+          "reason": "Delimitar efectos teológicos sin anticiparlos."
         },
         {
           "id": "M16",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si diferencias confesionales son relevantes al alcance."
         },
         {
           "id": "M17",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si surge una cuestión ética delimitada."
         },
         {
           "id": "M18",
           "status": "pendiente_de_pertinencia",
-          "decision": "pendiente_de_evaluacion_individual"
+          "decision": "evaluacion_condicionada",
+          "reason": "Evaluar si se necesita aplicación pastoral dentro del alcance."
         }
       ],
       "evidenceIds": [],
