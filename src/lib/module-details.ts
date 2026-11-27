@@ -53,6 +53,6 @@ export const moduleDetails = {
       "Variantes y tradiciones textuales",
       "Crítica textual y referencias"
     ],
-    "empty": "Los recursos se incorporarán en P9 tras verificar procedencia y permisos. Todavía no hay testimonios publicados."
+    "empty": "La interfaz del catálogo de manuscritos y variantes está preparada. Todavía no hay fichas ni testimonios autorizados para consulta pública."
   }
 };
