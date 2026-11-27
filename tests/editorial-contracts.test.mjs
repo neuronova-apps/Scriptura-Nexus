@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import { makeSections, validateEditorial, canTransition, publicationEnabled, criticalControls } from '../src/lib/editorial-contracts.ts';
-const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const catalog=loadOperationalCatalog();
 const context={studyIds:catalog.map(x=>x.id),evidenceIds:['EVD-900001']};
 // Synthetic records exist only in tests, never as real studies or published assets.
 const fixture=()=>({schemaVersion:1,studyId:'SN-001',version:'0.2.0',createdAt:'2026-11-26',updatedAt:'2026-11-26',objective:'PRUEBA SINTÉTICA',scope:'PRUEBA SINTÉTICA',sections:makeSections('SN-001'),claims:[],conclusions:[],reviews:[]});
