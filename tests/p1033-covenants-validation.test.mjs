@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1033,validateP1033,auditContracts} from '../scripts/validate-covenants-p1033.mjs';
+const reject=fn=>{const d=loadP1033();fn(d);assert.throws(()=>validateP1033(d));};
+test('P10.3.3: five references, context windows and pending evidence',()=>assert.deepEqual(validateP1033(loadP1033()),{phase:'P10.3.3',pilot:'SN-015',cases:5,contextUnits:26,greekAnchors:2,sections:20,requiredSections:9,openNeeds:4,publicationAuthorized:false,academicAnalysisCompleted:false}));
+test('P10.3.3: historical fingerprints and source references',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.cases[0].focus='21');reject(d=>d.record.cases[1].sourceUrl='https://example.org');});
+test('P10.3.3: genre and context do not decide normative application',()=>{reject(d=>d.record.cases[0].genreCandidate='disposicion_legal');reject(d=>d.record.cases[0].normativeApplication='obligatoria');reject(d=>d.record.automaticCovenantInference=true);});
+test('P10.3.3: evidence gaps and complementary link remain explicit',()=>{reject(d=>d.record.openNeeds.pop());reject(d=>d.record.relatedStudy='SN-008');reject(d=>d.record.requiredSections.pop());});
+test('P10.3.3: no premature publication or conclusion',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.academicAnalysisCompleted=true);reject(d=>d.publication.snapshots.push({}));});
+test('P10.3.3: actual editorial and relation contracts',()=>assert.deepEqual(auditContracts(),{validEmptyTemplate:true,unsupportedStrongClaimBlocked:true,missingComparisonJustificationBlocked:true}));
