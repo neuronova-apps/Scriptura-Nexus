@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1022,validateP1022} from '../scripts/validate-p1022.mjs';
+const reject=fn=>{const d=loadP1022();fn(d);assert.throws(()=>validateP1022(d));};
+test('P10.2.2: inventario y brechas íntegros',()=>assert.deepEqual(validateP1022(loadP1022()),{phase:'P10.2.2',sources:15,pilots:5,references:15,chapterPages:17,needsPending:20,methodsProvisional:67,methodsConditional:23,evidence:0,publicationAuthorized:false}));
+test('P10.2.2: conserva registro histórico y cinco pilotos',()=>{reject(d=>d.previousBytes=Buffer.from('{}'));reject(d=>d.record.pilots.pop());});
+test('P10.2.2: no amplía admisiones ni permisos',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.corpusImportAuthorized=true);reject(d=>d.record.sources[11].verification='documentada_y_admision_previa');});
+test('P10.2.2: no confunde capítulo localizado con análisis del versículo',()=>{reject(d=>d.record.pilots[0].references[0].exactVerseAndContextVerified=true);reject(d=>d.record.pilots[0].references[0].chapterUrls=['https://example.org']);});
+test('P10.2.2: necesidades con fuentes válidas y brechas explícitas',()=>{reject(d=>d.record.pilots[0].needs[0].sourceIds=['inventado']);reject(d=>d.record.pilots[0].needs[0].gap='');});
+test('P10.2.2: pertinencia provisional no acredita método ni evidencia',()=>{reject(d=>d.record.pilots[0].methods[0].decision='verificada');reject(d=>d.record.pilots[0].evidenceIds.push('EVD-ficticia'));reject(d=>d.record.pilots[0].conclusions.push('Conclusión'));});
