@@ -11,6 +11,15 @@ def meta(units):
 class FragmentTests(unittest.TestCase):
     def test_plan(self):
         self.assertEqual(len(m.check_plan()['editions']),2)
+    def test_git_blob_normalizes_windows_line_endings(self):
+        canonical=b'{"first":"line"}\n{"second":"line"}\n'
+        windows=canonical.replace(b'\n',b'\r\n')
+        self.assertEqual(m.git_blob(canonical),m.git_blob(windows))
+    def test_git_blob_matches_pinned_provenance_on_any_platform(self):
+        rights=(ROOT/'docs/P11/registro-permisos-lector-p11421.json').read_bytes()
+        projection=(ROOT/'docs/P9/proyeccion-ediciones-p913.json').read_bytes()
+        self.assertEqual(m.git_blob(rights),'3c6d1d783a2b95fce49c5f3d5cd5c112c0e5c67b')
+        self.assertEqual(m.git_blob(projection),'ff6ef60588416089b26afcc6160df74956b496df')
     def test_unicode_ranges_empty_and_deterministic(self):
         rows=[unit('1','1-2',0,'λόγος'),unit('1','3a',1,''),unit('1','4',2,'á')]
         d,r,g=m.make_fragment('TXT-TEST','LIB-TEST','1',rows)

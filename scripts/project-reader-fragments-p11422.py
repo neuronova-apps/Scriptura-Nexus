@@ -11,7 +11,9 @@ EXPECTED={'editions':2,'bookFiles':93,'chapters':1449,'units':39041,'emptyMarker
 def require(condition,message):
     if not condition: raise ValueError(message)
 def git_blob(data):
-    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+    # Match Git's text clean-filter behavior when core.autocrlf=true on Windows.
+    canonical=data.replace(b'\r\n',b'\n')
+    return hashlib.sha1(b'blob '+str(len(canonical)).encode()+b'\0'+canonical).hexdigest()
 def check_plan():
     r=json.loads((ROOT/'docs/P11/registro-proyeccion-lector-p11422.json').read_bytes())
     rights=(ROOT/'docs/P11/registro-permisos-lector-p11421.json').read_bytes()
