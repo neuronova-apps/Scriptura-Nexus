@@ -1,5 +1,5 @@
 import {createConcordance,type ConcordanceQuery,type FrequencyQuery} from './concordance.ts';
-import {createLexicalQuery,type LexicalQuery} from './lexical-query.ts';
+import type {LexicalQuery} from './lexical-query.ts';
 import {assembleChapter,decodeAnnotationLayer} from './analyzer-fragment-runtime.ts';
 import {bucketFor,decodeCoordinate,createPrivateLookup,type PrivateGroupQuery} from './lexical-fragment-runtime.ts';
 import {openPrivateFragmentSource} from './private-fragment-loader.ts';
