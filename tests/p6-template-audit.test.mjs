@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {loadOperationalCatalog} from '../scripts/validate-p1013.mjs';
 import {makeSections} from '../src/lib/editorial-contracts.ts';
 import {plannedTemplate,sectionView} from '../src/lib/study-template.ts';
 import {appendSnapshot,approvedSnapshot,validateSnapshot} from '../src/lib/publication.ts';
