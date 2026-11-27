@@ -1,16 +1,18 @@
 ---
 import { basePath } from '../../lib/site';
 import { getAxis } from '../../lib/taxonomy';
+import { profilesForStudy } from '../../lib/catalog-profiles';
 import { statusLabels } from '../../lib/catalog-exploration';
 import type { studies } from '../../lib/catalog';
 interface Props { items: typeof studies; }
 const { items } = Astro.props;
 ---
 <ul class="catalog-list">
-{items.map(study => <li class="sn-card sn-card--default" data-study-id={study.id} data-axis={study.primaryAxisId} data-status={study.status}>
+{items.map(study => <li class="sn-card sn-card--default" data-study-id={study.id} data-axis={study.primaryAxisId} data-status={study.status} data-profiles={profilesForStudy(study.id).map(p=>p.id).join(" ")}>
   <p class="module-phase">{study.id} · {statusLabels[study.status]}</p>
   <h3><a href={basePath(import.meta.env.BASE_URL, 'estudios/' + study.id + '/')}>{study.title}</a></h3>
   <p>{study.question}</p>
+  <p>Perfiles: {profilesForStudy(study.id).map(p=>p.name).join('; ') || 'Pendiente de delimitación'}</p>
   <p>Eje principal: <a href={basePath(import.meta.env.BASE_URL, 'ejes/' + study.primaryAxisId + '/')}>{getAxis(study.primaryAxisId)?.name}</a></p>
 </li>)}
 </ul>
