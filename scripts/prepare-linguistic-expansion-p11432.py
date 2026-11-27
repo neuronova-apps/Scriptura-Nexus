@@ -18,8 +18,8 @@ def validate(r):
     return plan
 def hebrew_projection(data,book,expected):
     require(book in ('Lev','Deut'),'Hebrew scope')
-    projection=osis._parse_primary(data,book)
-    primary=[];unknown=0;lemma=0;morph=0
+    projection=osis._parse_primary(data,book,allow_large_segments=True)
+    primary=[];unknown=0;lemma=0;morph=0;large_refs=collections.Counter()
     for ch in projection['chapters']:
         for v in ch['verses']:
             for e in v['events']:
@@ -28,9 +28,23 @@ def hebrew_projection(data,book,expected):
                 raw=e['morphRaw'] or ''
                 language='hbo' if raw.startswith('H') else 'arc' if raw.startswith('A') else None
                 unknown+=language is None;lemma+=e['lemmaRaw'] is not None;morph+=e['morphRaw'] is not None
-                primary.append({'ref':loc,'form':e['form'],'lemmaRaw':e['lemmaRaw'],'morphRaw':e['morphRaw'],'language':language})
+                row={'ref':loc,'form':e['form'],'lemmaRaw':e['lemmaRaw'],'morphRaw':e['morphRaw'],'language':language}
+                if 'letterSegments' in e:
+                    row['letterSegments']=e['letterSegments']
+                    large_refs[loc]+=len(e['letterSegments'])
+                primary.append(row)
+    expected_large={'Lev':{'Lev.11.42':1},'Deut':{'Deut.6.4':2}}[book]
+    require(dict(large_refs)==expected_large,'OSIS large letter inventory')
+    # Independent source-to-projection comparison, in the native verse and word order.
+    from xml.etree import ElementTree as ET
+    root=ET.fromstring(data)
+    source=[]
+    for v in root.iter(osis.q('verse')):
+        for w in v.findall(osis.q('w')):
+            source.append((v.get('osisID'),''.join(w.itertext()),w.get('lemma'),w.get('morph')))
+    require(source==[(x['ref'],x['form'],x['lemmaRaw'],x['morphRaw']) for x in primary],'OSIS exact source words')
     require(len(projection['chapters'])==expected['chapters'] and sum(len(c['verses']) for c in projection['chapters'])==expected['verseElements'] and len(primary)==expected['directWords'],'OSIS coverage')
-    return {'primaryWords':len(primary),'unknownLanguage':unknown,'lemmaAttributes':lemma,'morphAttributes':morph,'sha256':a.p91.sha(canonical(primary)),'alternativesIncluded':False}
+    return {'primaryWords':len(primary),'unknownLanguage':unknown,'lemmaAttributes':lemma,'morphAttributes':morph,'sha256':a.p91.sha(canonical(primary)),'alternativesIncluded':False,'largeLetterSegments':sum(large_refs.values()),'largeLetterReferences':dict(large_refs)}
 def greek_layers(official,body,book_code):
     forms=a.morph(body,book_code)
     annotations=collections.defaultdict(list)
@@ -68,5 +82,5 @@ def prepare(r,fetch=a.p91.fetch):
 if __name__=='__main__':
     try:print(json.dumps(prepare(json.loads(MANIFEST.read_bytes())),ensure_ascii=False,sort_keys=True))
     except Exception as e:
-        safe={'proposal scope','audit provenance','Hebrew scope','OSIS coverage','Greek annotation keys','Greek coverage','candidate totals'}
+        safe={'proposal scope','audit provenance','Hebrew scope','OSIS coverage','OSIS large letter inventory','OSIS exact source words','Greek annotation keys','Greek coverage','candidate totals'}
         print('P11.4.3.2 preparation failed ('+(str(e) if str(e) in safe else type(e).__name__)+')',file=sys.stderr);sys.exit(1)
