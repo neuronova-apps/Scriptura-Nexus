@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createTermAnalyzer} from '../src/lib/term-analyzer.ts';
+import {loadP1031,validateP1031,checkAbsent,checkPublic} from '../scripts/validate-hebrew-p1031.mjs';
+const reject=fn=>{const d=loadP1031();fn(d);assert.throws(()=>validateP1031(d));};
+test('P10.3.1: coverage, two pilot cases and provenance',()=>assert.deepEqual(validateP1031(loadP1031()),{phase:'P10.3.1',pilot:'SN-001',admittedBooks:2,uncoveredPilotCases:2,candidateFiles:2,academicAnalysisCompleted:false,publicationAuthorized:false}));
+test('P10.3.1: preserve closure and historical review',()=>{reject(d=>d.previousBytes=Buffer.from('{}'));reject(d=>d.record.previousClosure.deploy='pending');});
+test('P10.3.1: do not admit candidates by metadata',()=>{reject(d=>d.record.candidateMetadata.files[1].admitted=true);reject(d=>d.record.edition.coveredBooks.push('LIB-Deut'));});
+test('P10.3.1: no inferred completion or publication',()=>{reject(d=>d.record.academicAnalysisCompleted=true);reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.newAdmissionAuthorized=true);});
+test('P10.3.1: absent results contain no occurrence or unit',()=>{const c=loadP1031().record.pilotCases[0];assert.throws(()=>checkAbsent({select:()=>({status:c.expectedStatus,occurrences:[{}]})},'e',c));assert.throws(()=>checkAbsent({select:()=>({status:c.expectedStatus,occurrences:[],unitId:'false'})},'e',c));});
+test('P10.3.1: public registry stays empty',()=>{const d=loadP1031();checkPublic(createTermAnalyzer(d.publicRegistry,[]),d.record);reject(x=>x.publicRegistry.units.push({}));});
