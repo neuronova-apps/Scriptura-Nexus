@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import { plannedTemplate, sectionView, sectionGuidance, sectionStateLabels } from '../src/lib/study-template.ts';
 import { makeSections } from '../src/lib/editorial-contracts.ts';
-const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const catalog=loadOperationalCatalog();
 const section=()=>makeSections('SN-001')[0];
 test('P6.2 reproduce procedimiento y entregable de P0.4',()=>{const rows=readFileSync('docs/P0/04-metodologia.md','utf8').split('\n').filter(l=>/^\| (0[1-9]|1\d|20) \|/.test(l)).map(l=>l.split('|').slice(1,-1).map(s=>s.trim()));assert.deepEqual(sectionGuidance,rows.map(([n,,procedure,deliverable])=>({order:Number(n),procedure,deliverable})));});
-test('42 plantillas de 20 posiciones pendientes, sin cuerpos ni conclusiones',()=>{for(const study of catalog){const view=plannedTemplate(study.id);assert.equal(view.length,20);assert.equal(new Set(view.map(s=>s.anchor)).size,20);assert.deepEqual(view.map(s=>s.id),makeSections(study.id).map(s=>s.id));assert.ok(view.every(s=>s.state==='pendiente'&&s.body===undefined));}});
+test('80 plantillas de 20 posiciones pendientes, sin cuerpos ni conclusiones',()=>{for(const study of catalog){const view=plannedTemplate(study.id);assert.equal(view.length,20);assert.equal(new Set(view.map(s=>s.anchor)).size,20);assert.deepEqual(view.map(s=>s.id),makeSections(study.id).map(s=>s.id));assert.ok(view.every(s=>s.state==='pendiente'&&s.body===undefined));}});
 test('estados visibles coinciden con el contrato',()=>{assert.equal(Object.keys(sectionStateLabels).length,5);assert.equal(sectionView({...section(),applicability:'aplicable'}).label,'Aplicable');});
 test('omisión justificada visible y omisión vacía rechazada',()=>{assert.equal(sectionView({...section(),applicability:'no_aplicable',justification:'PRUEBA SINTÉTICA'}).explanation,'PRUEBA SINTÉTICA');assert.throws(()=>sectionView({...section(),applicability:'no_aplicable'}));});
 test('contenido analizado y revisado solo mediante resolución explícita',()=>{for(const applicability of ['analizada','revisada']){const s={...section(),applicability,contentRef:'synthetic-only'};assert.throws(()=>sectionView(s));assert.equal(sectionView(s,ref=>ref==='synthetic-only'?'PRUEBA SINTÉTICA':undefined).body,'PRUEBA SINTÉTICA');assert.throws(()=>sectionView({...s,contentRef:undefined}));}});
