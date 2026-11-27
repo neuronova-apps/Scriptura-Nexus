@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.7.3",
+  "baselineMain": "7ae0b3d4ed4993d65c0fdc65271150dbc1b9787a",
+  "previousEvidence": {
+    "pr": 126,
+    "head": "d44e5c40d88022c971e1c0fa9b4c75061cbb8006",
+    "merge": "7ae0b3d4ed4993d65c0fdc65271150dbc1b9787a",
+    "checksSuccess": 57,
+    "checksSkipped": 1,
+    "run": 46056147499,
+    "job": 140699003078,
+    "pagesRun": 46056802345,
+    "observed": {
+      "phase": "P11.4.7.2",
+      "candidate": "success",
+      "modules": 5,
+      "sharedReaderChapters": 1449,
+      "analyzerLayers": 336,
+      "lexicalFragments": 11442,
+      "manuscriptEvidence": 8,
+      "publicationAuthorized": false,
+      "corpusPersisted": false,
+      "upload": false,
+      "queries": 7,
+      "linkTransitions": 6,
+      "appearanceChecks": 6,
+      "publicBlocked": 5,
+      "externalRequests": 0,
+      "unexpectedRequests": 0,
+      "pageErrors": 0,
+      "readerChapterRequests": 3,
+      "analyzerLayerRequests": 2,
+      "lexicalFragmentRequests": 15,
+      "manuscriptRequests": 1,
+      "distUnchanged": true,
+      "manualReview": false,
+      "publicModulesEnabled": 0,
+      "combinedPrivateBrowserReview": true
+    }
+  },
+  "status": "manual_review_pending",
+  "reviewMethod": {
+    "mode": "headed_chromium_interception",
+    "networkListener": false,
+    "externalNavigationBlocked": true,
+    "temporaryBrowserContext": true,
+    "desktopOnly": true,
+    "realMobileSupported": false,
+    "ciSmokeIsNotManualEvidence": true
+  },
+  "readerPriorEvidence": {
+    "reportedL01L04": "conforme",
+    "independentlyVerified": false,
+    "L05": "no_evaluable",
+    "deferralAccepted": true,
+    "appliesOnlyToReader": true
+  },
+  "matrix": [
+    {
+      "id": "reader.keyboard",
+      "module": "reader",
+      "type": "keyboard",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "reader.screenReader",
+      "module": "reader",
+      "type": "screenReader",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "reader.visual",
+      "module": "reader",
+      "type": "visual",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "reader.realMobile",
+      "module": "reader",
+      "type": "realMobile",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "reader.rights",
+      "module": "reader",
+      "type": "rights",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "reader.privacy",
+      "module": "reader",
+      "type": "privacy",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "reader.ownerApproval",
+      "module": "reader",
+      "type": "ownerApproval",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.keyboard",
+      "module": "analyzer",
+      "type": "keyboard",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.screenReader",
+      "module": "analyzer",
+      "type": "screenReader",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.visual",
+      "module": "analyzer",
+      "type": "visual",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.realMobile",
+      "module": "analyzer",
+      "type": "realMobile",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.rights",
+      "module": "analyzer",
+      "type": "rights",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.privacy",
+      "module": "analyzer",
+      "type": "privacy",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "analyzer.ownerApproval",
+      "module": "analyzer",
+      "type": "ownerApproval",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "lexical.keyboard",
+      "module": "lexical",
+      "type": "keyboard",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "lexical.screenReader",
+      "module": "lexical",
+      "type": "screenReader",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "lexical.visual",
+      "module": "lexical",
+      "type": "visual",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "lexical.realMobile",
+      "module": "lexical",
+      "type": "realMobile",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "lexical.rights",
+      "module": "lexical",
+      "type": "rights",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "lexical.privacy",
+      "module": "lexical",
+      "type": "privacy",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "lexical.ownerApproval",
+      "module": "lexical",
+      "type": "ownerApproval",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "comparator.keyboard",
+      "module": "comparator",
+      "type": "keyboard",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "comparator.screenReader",
+      "module": "comparator",
+      "type": "screenReader",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "comparator.visual",
+      "module": "comparator",
+      "type": "visual",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "comparator.realMobile",
+      "module": "comparator",
+      "type": "realMobile",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "comparator.rights",
+      "module": "comparator",
+      "type": "rights",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "comparator.privacy",
+      "module": "comparator",
+      "type": "privacy",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "comparator.ownerApproval",
+      "module": "comparator",
+      "type": "ownerApproval",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.keyboard",
+      "module": "manuscripts",
+      "type": "keyboard",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.screenReader",
+      "module": "manuscripts",
+      "type": "screenReader",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.visual",
+      "module": "manuscripts",
+      "type": "visual",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.realMobile",
+      "module": "manuscripts",
+      "type": "realMobile",
+      "result": "pending",
+      "critical": false,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.rights",
+      "module": "manuscripts",
+      "type": "rights",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.privacy",
+      "module": "manuscripts",
+      "type": "privacy",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    },
+    {
+      "id": "manuscripts.ownerApproval",
+      "module": "manuscripts",
+      "type": "ownerApproval",
+      "result": "pending",
+      "critical": true,
+      "evidence": null
+    }
+  ],
+  "crossModule": [
+    {
+      "id": "cross.navigation",
+      "result": "pending",
+      "evidence": null
+    },
+    {
+      "id": "cross.appearance",
+      "result": "pending",
+      "evidence": null
+    },
+    {
+      "id": "cross.originalLanguages",
+      "result": "pending",
+      "evidence": null
+    }
+  ],
+  "reviewEnvironment": null,
+  "manualReviewCompleted": false,
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "publicModulesEnabled": 0,
+  "releaseActionPerformed": false,
+  "corpusPersisted": false,
+  "upload": false,
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66
+  },
+  "next": "P11.4.7.4"
+}
