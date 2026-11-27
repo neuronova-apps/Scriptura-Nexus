@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.3.5.3.verificacion_artefacto_privado",
+  "baselineMain": "919280bbf45e7f6f35cab3328a2c127591972152",
+  "previousIntegration": {
+    "pr": 104,
+    "head": "f2ae9c92c00a27a3c2b7ec96a81fb70bda35a45e",
+    "merge": "919280bbf45e7f6f35cab3328a2c127591972152",
+    "workflows": 36,
+    "successfulChecks": 44,
+    "run": 46027092966,
+    "pagesRun": 46027828448,
+    "pagesAtPreparation": "success",
+    "jobs": [
+      {
+        "os": "ubuntu-24.04",
+        "job": 140601176098,
+        "manifestSha256": "30009de5a56c8c991d19d9cf7c756db11e2e7586ae15753286408eaa83f12f56",
+        "catalogGzipBytes": 33182,
+        "totalGzipBytes": 16355402
+      },
+      {
+        "os": "windows-2025",
+        "job": 140601176482,
+        "manifestSha256": "577f23635e1cecc0bcd5e3891e4dda8d5e101ec73beb622bce63cfc5bd651f16",
+        "catalogGzipBytes": 33155,
+        "totalGzipBytes": 16355375
+      }
+    ]
+  },
+  "scope": {
+    "books": 7,
+    "chapters": 168,
+    "chapterLayers": 336,
+    "units": 5162,
+    "occurrences": 78218,
+    "catalogFiles": 1,
+    "modules": 8,
+    "replacedHtml": 1,
+    "addedFiles": 345,
+    "overlayFiles": 346
+  },
+  "artifact": {
+    "mode": "temporary_private_staging",
+    "cleanupRequired": true,
+    "unchangedBaselineRequired": true,
+    "upload": false,
+    "publicationAuthorized": false
+  },
+  "manual": {
+    "keyboard": "pendiente",
+    "screenReader": "pendiente",
+    "realMobile": "pendiente",
+    "rightsNotice": "pendiente",
+    "privacy": "pendiente",
+    "deferralAuthorized": false
+  },
+  "territorialReview": "pendiente_confirmacion_WLC",
+  "fieldPerformance": "no_medido",
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.3.5.3_revision_manual_y_decision"
+}
