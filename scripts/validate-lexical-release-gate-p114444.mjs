@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {evaluateLexicalReleaseGate} from './lib/lexical-release-gate-p114444.mjs';
+const read=path=>JSON.parse(readFileSync(path,'utf8'));
+const candidate=read('docs/P11/registro-candidato-lexico-p114442.json');
+const integrity=read('docs/P11/registro-candidato-lexico-p114443.json');
+const release=read('docs/P11/registro-liberacion-lexicos-p114444.json');
+const result=evaluateLexicalReleaseGate({candidate,integrity,release});
+assert.equal(result.status,release.status);
+assert.deepEqual(result.blockers,release.expectedBlockers);
+assert.equal(result.canPublish,false);
+assert.equal(result.publicationAuthorized,false);
+console.log(JSON.stringify({phase:'P11.4.4.4.4',...result,admittedHistoricalFiles:integrity.scope.admittedHistoricalFiles,excludedDodson:true,manualReviewRequired:true,releaseActionPerformed:false},null,2));
