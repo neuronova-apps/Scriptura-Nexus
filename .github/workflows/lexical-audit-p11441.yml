@@ -1,0 +1,40 @@
+name: P11.4.4.1 Auditoría de léxicos y concordancias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/lexical-audit-p11441.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lexical-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pruebas de alcance y auditoría real
+        run: |
+          python -m unittest discover -s tests -p test_lexical_p11441.py
+          python scripts/audit-lexical-p11441.py
+      - name: Reconstrucción histórica del modelo léxico admitido
+        run: python scripts/project-lexical-model-p84.py
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - name: Barrera pública
+        run: |
+          npm ci
+          npm run build
+          npm run test:build
