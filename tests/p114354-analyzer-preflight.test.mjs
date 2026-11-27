@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateAnalyzerPreflight} from '../scripts/validate-analyzer-preflight-p114354.mjs';
+test('preflight separates observed recovery, documentary evidence and pending decision',()=>{const r=validateAnalyzerPreflight();assert.equal(r.recovery.recoveredFiles,139);assert.equal(r.recovery.removedCandidateFiles,345);assert.equal(r.decision.publicationAuthorized,false);});
+test('preflight rejects unauthorized publication or deferral and invented legal or manual confirmation',()=>{for(const change of [r=>r.decision.publicationAuthorized=true,r=>r.decision.manualDeferralAuthorized=true,r=>r.documentaryReview.wlc.territorialConfirmed=true,r=>r.decision.screenReader='conforme',r=>r.decision.realMobile='conforme',r=>r.documentaryReview.hosting.anonymousGuaranteed=true,r=>r.recovery.actualRollback=true,r=>r.scope.books.push('Exod')]){const r=validateAnalyzerPreflight();change(r);assert.throws(()=>validateAnalyzerPreflight(r));}});
