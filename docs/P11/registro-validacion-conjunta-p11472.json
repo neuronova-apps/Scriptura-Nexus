@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.7.2",
+  "baselineMain": "1ac2f735d65bed5bb3fc2df68c582b5c984aa015",
+  "previousEvidence": {
+    "pr": 125,
+    "checksSuccess": 56,
+    "checksSkipped": 1,
+    "run": 46055389424,
+    "job": 140696511030,
+    "preparedModules": 5,
+    "publicModulesEnabled": 0
+  },
+  "mode": "combined_private_browser_interception",
+  "planned": {
+    "modules": 5,
+    "queries": 7,
+    "linkTransitions": 6,
+    "appearanceChecks": 6,
+    "publicBlocked": 5,
+    "sharedReaderChapters": 1449,
+    "analyzerLayers": 336,
+    "lexicalFragments": 11442,
+    "manuscriptEvidence": 8,
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "distUnchanged": true
+  },
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "corpusPersisted": false,
+  "upload": false,
+  "manualReview": false,
+  "publicModulesEnabled": 0,
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66
+  },
+  "next": "P11.4.7.3"
+}
