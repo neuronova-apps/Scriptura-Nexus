@@ -1,0 +1,39 @@
+name: P11.4.1 Selección de recursos y ruta funcional
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'docs/P9/**'
+      - 'docs/P10/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/functional-selection-p1141.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  resource-selection:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Conciliar selección y auditar fuentes textuales admitidas
+        run: |
+          npm ci
+          node --test tests/p1141-resource-selection.test.mjs
+          node scripts/validate-resource-selection-p1141.mjs
+          python3 scripts/validate-editions-p912.py
+          python3 scripts/audit-real-textual-closure-p95.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
