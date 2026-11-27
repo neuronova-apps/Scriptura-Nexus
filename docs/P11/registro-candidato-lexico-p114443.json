@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.4.3.integridad_privacidad_recuperacion",
+  "baselineMain": "5840b743eea4c96e60cd72614dd2748acfeb9e53",
+  "previousIntegration": {
+    "pr": 112,
+    "head": "6cb753454d89243ac605381fbc621f7ab9487dfa",
+    "merge": "5840b743eea4c96e60cd72614dd2748acfeb9e53",
+    "pagesRun": 46038677397,
+    "pagesConclusion": "success",
+    "checksSuccess": 47,
+    "checksSkipped": 1
+  },
+  "browserValidation": {
+    "run": 46037878226,
+    "job": 140637804104,
+    "publicEmpty": true,
+    "noJavaScript": true,
+    "fragmentedMount": true,
+    "lexicalCases": 8,
+    "concordanceCases": 15,
+    "frequencyCases": 9,
+    "pagination": true,
+    "keyboard": true,
+    "staleSelection": true,
+    "appearanceLayouts": 24,
+    "axeScans": 4,
+    "fragments": 11442,
+    "fragmentsFetched": 96,
+    "fragmentBytesFetched": 3208565,
+    "totalGzipBytes": 34329281,
+    "maxGzipBytes": 223643,
+    "catalogGzipBytes": 98716,
+    "distUnchanged": true,
+    "corpusPersisted": false,
+    "corpusPublished": false
+  },
+  "performanceValidation": {
+    "run": 46037878368,
+    "job": 140637804747,
+    "homeMaxJsGzipBytes": 1209,
+    "homeMaxTransferBytes": 9374,
+    "allMaxJsGzipBytes": 11088,
+    "lcpMs": 56,
+    "cls": 0,
+    "maxObservedInteractionMs": 32,
+    "fieldINP": "not_measured"
+  },
+  "scope": {
+    "occurrences": 78218,
+    "lexicalEntries": 30740,
+    "forms": 10221,
+    "definitions": 35496,
+    "concordanceGroups": 36,
+    "queryGroups": 41,
+    "summaryBuckets": 16,
+    "chapterLayers": 336,
+    "admittedHistoricalFiles": [
+      "LING-015",
+      "LING-016",
+      "LING-017",
+      "LING-018"
+    ],
+    "dodsonAdmission": "pending_approval"
+  },
+  "gates": {
+    "publicationAuthorized": false,
+    "corpusPersisted": false,
+    "corpusPublished": false,
+    "manualScreenReader": "pending",
+    "manualDeviceReview": "pending"
+  },
+  "progress": {
+    "completed": 62,
+    "total": 69
+  },
+  "next": "P11.4.4.4.4_preparacion_revision_final_y_liberacion_controlada"
+}
