@@ -1,0 +1,41 @@
+name: P11.4.4.4.1 Fragmentos privados de léxicos y concordancias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/lexical-fragments-p114441.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-fragments:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - name: Pruebas de transporte y barrera pública
+        run: |
+          npm ci
+          node --test tests/p114441-lexical-fragments.test.mjs
+          npm run build
+          npm run test:build
+      - name: Fragmentación y verificación exhaustiva privada
+        run: node --max-old-space-size=4096 scripts/validate-lexical-fragments-p114441.mjs
+      - name: Barrera pública posterior
+        run: npm run test:build
