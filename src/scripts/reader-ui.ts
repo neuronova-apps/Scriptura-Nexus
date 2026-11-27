@@ -1,5 +1,6 @@
-import {readerStatus,type ReaderView,type ReaderRef} from '../lib/reader-view';
-export function mountReader(doc:Document,view:ReaderView){
+import {readerStatus,type ReaderView,type ReaderRef,type ReaderResult} from '../lib/reader-view';
+type ReaderViewLike=Omit<ReaderView,'locate'>&{locate(ref:ReaderRef):ReaderResult|Promise<ReaderResult>};
+export function mountReader(doc:Document,view:ReaderViewLike){
  const form=doc.querySelector<HTMLFormElement>('#br-form'),fields=doc.querySelector<HTMLFieldSetElement>('#br-fields'),
  edition=doc.querySelector<HTMLSelectElement>('#br-edition'),book=doc.querySelector<HTMLSelectElement>('#br-book'),
  chapter=doc.querySelector<HTMLSelectElement>('#br-chapter'),verse=doc.querySelector<HTMLSelectElement>('#br-verse'),
@@ -14,9 +15,9 @@ export function mountReader(doc:Document,view:ReaderView){
   s.replaceChildren(option('',placeholder),...items.map(i=>option(i.id,i.name)));s.disabled=!items.length;
  };
  const labels=(items:string[])=>items.map(v=>({id:v,name:v}));
- let before:ReaderRef|null=null,after:ReaderRef|null=null;
+ let before:ReaderRef|null=null,after:ReaderRef|null=null,revision=0;
  const clear=()=>{
-  before=null;after=null;prev.disabled=true;next.disabled=true;detail.hidden=true;
+  revision++;  before=null;after=null;prev.disabled=true;next.disabled=true;detail.hidden=true;
   passage.textContent='Selecciona y consulta una referencia.';passage.removeAttribute('lang');
   source.replaceChildren();status.textContent='Selecciona una referencia de la edición.';
   consult.disabled=![edition,book,chapter,verse].every(s=>!!s.value);
@@ -24,8 +25,8 @@ export function mountReader(doc:Document,view:ReaderView){
  const updateVerses=()=>{fill(verse,'Selecciona un versículo',labels(view.verses(edition.value,book.value,chapter.value)));clear();};
  const updateChapters=()=>{fill(chapter,'Selecciona un capítulo',labels(view.chapters(edition.value,book.value)));updateVerses();};
  const updateBooks=()=>{fill(book,'Selecciona un libro',view.books(edition.value));updateChapters();};
- const read=(ref:ReaderRef,focus:boolean)=>{
-  clear();const result=view.locate(ref);status.textContent=readerStatus[result.status];
+ const render=(result:ReaderResult,focus:boolean)=>{
+  status.textContent=readerStatus[result.status];
   if(!('unit' in result)){passage.textContent=readerStatus[result.status];return;}
   const u=result.unit,e=result.edition;
   passage.lang=e.language==='spa'?'es':'grc';passage.dir='ltr';
@@ -38,6 +39,11 @@ export function mountReader(doc:Document,view:ReaderView){
   source.append(dl);detail.hidden=false;
   before=result.previous;after=result.next;prev.disabled=!before;next.disabled=!after;
   if(focus)heading.focus();
+ };
+ const read=(ref:ReaderRef,focus:boolean)=>{
+  clear();const ticket=revision;
+  const fail=()=>{if(ticket!==revision)return;status.textContent='No se pudo verificar el fragmento. Intenta nuevamente.';passage.textContent=status.textContent;consult.disabled=false;};
+  try{const result=view.locate(ref);if(result instanceof Promise){status.textContent='Consultando referencia…';consult.disabled=true;void result.then(value=>{if(ticket===revision){consult.disabled=false;render(value,focus);}},fail).catch(fail);}else render(result,focus);}catch{fail();}
  };
  const go=(ref:ReaderRef|null)=>{if(!ref)return;edition.value=ref.editionId;updateBooks();book.value=ref.bookId;updateChapters();chapter.value=ref.chapter;updateVerses();verse.value=ref.verse;read(ref,true);};
  // No public data: preserve the accessible static state and keep every control disabled.
