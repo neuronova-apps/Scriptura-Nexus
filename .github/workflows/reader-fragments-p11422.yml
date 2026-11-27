@@ -36,3 +36,21 @@ jobs:
           npm run build
           npm run test:build
           node scripts/verify-manuscript-pilot-build.mjs
+
+  reader-windows-alternative:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+      - name: Contrato de Windows y fuente alternativa fijada
+        shell: pwsh
+        run: |
+          python -m unittest discover -s tests -p 'test_reader_fragments_p11422.py'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -c "import runpy; m=runpy.run_path('scripts/serve-reader-isolated-p11423.py'); catalog,data=m['build'](use_rv_alternative=True); assert len(data)==1449; print('Windows: 1449 verified fragments; publication disabled')"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -1,0 +1,9 @@
+# P11.4.2.5. Incidencia local de Windows y fuente alternativa
+
+Registro de resultados comunicados por el responsable el 27 de noviembre de 2026. No equivale a validación independiente ni a autorización editorial.
+
+- Fuente histórica: https://ebible.org/Scriptures/spaRV1909_usfm.zip, 2384901 bytes, SHA-256 56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5. Error local de certificado vencido; no se determina qué certificado de la cadena falló.
+- Fuente alternativa de revisión: https://ebible.us/Scriptures/spaRV1909_usfm.zip, 2384899 bytes, SHA-256 b8c5f45ef19a6d26faa0844dedbb2c8aceefd8698f5ed1e070878f41715b1869. HTTPS verificado. La auditoría reportada confirmó las 66 huellas individuales y los tamaños y marcadores de los libros (1189 capítulos, 31102 marcadores), además del inventario auxiliar por nombres y tamaños. No se afirma identidad de bytes de los auxiliares.
+- Solo se selecciona explícitamente en la revisión aislada mediante `node scripts/preview-reader-p11425.mjs --rv-alternative`. No se altera el archivo histórico, su huella, los permisos ni la proyección histórica; se conserva la referencia a la fuente fijada y se identifica la URL efectivamente utilizada. La alternativa debe volver a pasar tamaño, SHA-256, inventario completo y proyección en cada ejecución. No se permite otra URL, redirección o desactivación TLS. La revisión original sigue disponible sin el argumento.
+- La lectura de metadatos LF se normaliza sin alterar los bytes de las fuentes. Gzip conserva el flujo DEFLATE y fija el byte OS en 3 para contrastar el índice histórico; el índice completo y los controles por fragmento permanecen obligatorios. Si el motor de compresión genera otros bytes se debe detener y diagnosticar, no cambiar la huella histórica.
+- No se persiste ni publica corpus. No se autoriza el uso público de ninguna edición. L01–L05 y revisión territorial y de privacidad continúan pendientes. Progreso 61/69.

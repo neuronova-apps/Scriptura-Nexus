@@ -1,10 +1,10 @@
 """Loopback-only reader integration harness. Source text stays in process memory."""
-import gzip, importlib.util, json, pathlib, sys, urllib.parse
+import gzip, importlib.util, json, pathlib, ssl, sys, urllib.parse, urllib.error
 from http.server import HTTPServer, BaseHTTPRequestHandler
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('p11422_integration',ROOT/'scripts/project-reader-fragments-p11422.py')
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-def build():
+def build(*, use_rv_alternative=False):
     expected=m.check_plan();fragments={(x['editionId'],f['bookId']):f for x in expected['corpusManifests'] for f in x['fragments']}
     names={x['id']:x['names']['es'] for x in expected['books']}
     rights=json.loads((ROOT/'docs/P11/registro-permisos-lector-p11421.json').read_bytes())
@@ -22,12 +22,13 @@ def build():
             m.require(verified==d,'fragment mismatch')
             key=(edition,book,d['chapter']);m.require(key not in data,'duplicate')
             data[key]=(raw,gz);index.append(d);bookmap[(edition,book)]['chapters'].append(d)
-    actual=m.p.build(on_fragment=consume)
+    actual=m.p.build(on_fragment=consume,use_rv_alternative=use_rv_alternative)
     m.require(actual==expected and len(data)==1449 and sum(x['unitCount'] for x in index)==39041,'projection')
     m.require(m.p.sha(m.p.canonical(index))=='fc883fb3b99c47ba17fca2b1def24b2b80fe0c52263eef86e8c875709334568c','index continuity')
+    if use_rv_alternative:editions[0]['source']=m.p.RV_ALTERNATIVE_URL
     return m.p.canonical({'schemaVersion':1,'mode':'isolated_validation','publicationAuthorized':False,'editions':editions}),data
-def serve():
-    catalog,data=build()
+def serve(*, use_rv_alternative=False):
+    catalog,data=build(use_rv_alternative=use_rv_alternative)
     catalog_gzip=gzip.compress(catalog,compresslevel=6,mtime=0)
     m.require(len(catalog_gzip)<=m.MAX_GZIP,'catalog gzip budget')
     class Handler(BaseHTTPRequestHandler):
@@ -49,6 +50,15 @@ def serve():
     with HTTPServer(('127.0.0.1',0),Handler) as server:
         print(json.dumps({'port':server.server_port,'fragments':len(data),'catalogJsonBytes':len(catalog),'catalogGzipBytes':len(catalog_gzip),'publicationAuthorized':False}),flush=True)
         server.serve_forever()
+def safe_error(exc):
+    if isinstance(exc,urllib.error.URLError):
+        return 'TLS_CERTIFICATE' if isinstance(exc.reason,ssl.SSLCertVerificationError) else 'SOURCE_CONNECTION'
+    if isinstance(exc,ValueError) and str(exc) in {'rights provenance','projection provenance','RV archive fingerprint','RV source inventory','projection','index continuity','catalog gzip budget','source projection mismatch','git identity','sha256 identity','fragment mismatch','redirect'}:
+        return str(exc)
+    return type(exc).__name__
 if __name__=='__main__':
-    try:serve()
-    except Exception as e:print('P11.4.2.3 private harness failed ('+type(e).__name__+')',file=sys.stderr);sys.exit(1)
+    try:
+        m.require(sys.argv[1:] in ([],['--rv-alternative']),'invalid argument')
+        serve(use_rv_alternative=sys.argv[1:]==['--rv-alternative'])
+    except Exception as e:
+        print('P11.4.2.3 private harness failed ('+safe_error(e)+')',file=sys.stderr);sys.exit(1)
