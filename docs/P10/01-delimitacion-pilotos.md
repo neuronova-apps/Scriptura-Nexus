@@ -68,7 +68,7 @@ Si una pregunta aborda un problema distinto y no cabe razonablemente dentro de u
 
 El registro [propuestas-ampliacion-p101.json](propuestas-ampliacion-p101.json) conserva las 48 preguntas de la conversación y la pregunta adicional sobre responsabilidades parentales (49 en total), con redacción editorial neutral, origen y destino. Diez corresponden directamente a preguntas del responsable (1–9 y 49); las demás son propuestas del asistente para revisión, incluidas las cinco observaciones sobre alcance histórico, científico y religioso comparado. No se asume aprobación individual de todas las sugerencias.
 
-Se proponen 38 estudios independientes, identificados provisionalmente como P10-Qnn, y ampliaciones de cinco estudios existentes: SN-007, SN-020, SN-023, SN-031 y SN-034. Varias preguntas complementarias quedan agrupadas: catolicidad e identidad de la Iglesia (3/10), dogmas marianos (8/22), Escritura y tradición (15/16), santidad y santificación (20/32), Satanás y Lucifer (33/34), honra y deberes parentales (31/49). No se asignan SN-043 y siguientes ni se modifica la línea base de 42 temas.
+Se proponen 38 estudios independientes, identificados provisionalmente como P10-Qnn, y ampliaciones de cinco estudios existentes: SN-007, SN-020, SN-023, SN-031 y SN-034. Varias preguntas complementarias quedan agrupadas: catolicidad e identidad de la Iglesia (3/10), dogmas marianos (8/22), Escritura y tradición (15/16), santidad y santificación (20/32), Satanás y Lucifer (33/34), honra y deberes parentales (31/49). La propuesta histórica conserva los identificadores P10-Qnn; P10.1.3 registra su correspondencia autorizada con SN-043–SN-080 sin modificar la línea base de 42 temas.
 
 Los perfiles metodológicos propuestos son bíblico-exegético, teológico-doctrinal, histórico-eclesiástico, textual-lingüístico, ético-práctico, interdisciplinario y religioso comparado. Son etiquetas transversales múltiples, distintas de los 14 ejes, las 18 perspectivas M01–M18 y las tradiciones de P0.3. La clasificación no decide qué postura es correcta.
 
@@ -78,7 +78,7 @@ Se registran 30 relaciones cruzadas propuestas, cada una con tipo y justificaci�
 
 ### 4.4 Incorporación al catálogo operativo
 
-El catálogo original está protegido por validaciones de P5 que fijan 42 registros, IDs y recuentos por eje. Por ello P10.1 registra una ampliación documental separada. Después de revisar la propuesta, se deberá aprobar la incorporación efectiva, asignar IDs SN sucesivos, preservar el catálogo histórico y adaptar los validadores, búsqueda, rutas, recuentos y referencias cruzadas mediante un cambio controlado. No se presenta la propuesta como 38 investigaciones nuevas ya visibles o concluidas.
+El catálogo original está protegido por validaciones de P5 que fijan 42 registros, IDs y recuentos por eje. El responsable aprobó las 38 investigaciones y autorizó P10.1.3. La ampliación se implementa en una capa operativa separada que preserva el catálogo histórico y asigna SN-043–SN-080. Las cinco ampliaciones conservan sus IDs, títulos y ejes. Véase [02-ampliacion-catalogo.md](02-ampliacion-catalogo.md). Los perfiles y referencias cruzadas específicos se conectarán en P10.1.4. Los nuevos registros son metadatos planificados, no investigaciones concluidas.
 
 ## 5. Criterios metodológicos comunes
 
@@ -109,12 +109,12 @@ Los borradores de investigación y los materiales de trabajo permanecerán fuera
 
 | Subfase | Función | Condición de entrada |
 |---|---|---|
-| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | En revisión; fichas y ampliación propuestas, aprobación final pendiente |
+| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | En revisión; ampliación autorizada e implementada, CI, perfiles/relaciones y cierre pendientes |
 | P10.2 | Probar el flujo metodológico con casos seleccionados y fuentes disponibles | Delimitación aprobada |
 | P10.3 | Validar las herramientas con casos de hebreo, griego, pactos, cristología y crítica textual | Flujo metodológico aplicado y evidencias disponibles |
 | P10.4 | Registrar fallos, ajustes, decisiones y cierre | Resultados de P10.2 y P10.3 revisados |
 
-Las subfases mantienen el orden de P0.8. P10.2 no exigirá terminar los 42 estudios ni publicar los pilotos.
+Las subfases mantienen el orden de P0.8. P10.2 no exigirá terminar los 80 estudios planificados ni publicar los pilotos.
 
 ## 8. Criterios de aceptación de P10.1
 
@@ -130,6 +130,6 @@ P10.1 podrá cerrarse cuando:
 
 ## 9. Estado de ejecución
 
-P10.1 iniciada como documento de delimitación en la rama `feature/p10.1-pilot-delimitation`. Se verificaron los cinco registros directamente en el catálogo. No se modificó `estudios.json`, la interfaz, el corpus ni los permisos de publicación.
+P10.1 iniciada como documento de delimitación en la rama `feature/p10.1-pilot-delimitation`. Se verificaron los cinco registros directamente en el catálogo. El archivo histórico `estudios.json`, el corpus y los permisos de publicación permanecen intactos. P10.1.3 amplía la proyección operativa del catálogo.
 
-Estado: cinco delimitaciones preparadas, 49 preguntas consolidadas, 38 estudios nuevos propuestos, cinco ampliaciones y 30 referencias cruzadas. Se añaden un validador reproducible y siete pruebas positivas/negativas. Pendiente de CI de esta revisión y aprobación expresa del alcance; P10.2 permanece sin iniciar. No se han verificado todavía fuentes nuevas ni redactado conclusiones.
+Estado: P10.1.1 y P10.1.2 validadas; aprobación expresa de las 38 investigaciones recibida. P10.1.3 implementada en la rama del PR #71, pendiente de CI. P10.1.4 (perfiles y relaciones específicas) y P10.1.5 (validación y cierre) pendientes; P10.2 sin iniciar. No se han verificado todavía fuentes nuevas ni redactado conclusiones.
