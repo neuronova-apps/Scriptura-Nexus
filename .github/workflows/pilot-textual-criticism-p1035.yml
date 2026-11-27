@@ -1,0 +1,38 @@
+name: P10.3.5 Validación de crítica textual
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'docs/P9/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-textual-criticism-p1035.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-textual-criticism:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validar muestra documental y barreras de comparación
+        run: |
+          npm ci
+          node --test tests/p1035-textual-criticism-validation.test.mjs
+          node scripts/validate-textual-criticism-p1035.mjs
+          python3 scripts/audit-textual-criticism-p1035.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.3.5",
+  "baselineMain": "4d9c908bf597494ab63aca0dd709213136f58478",
+  "previousBlob": "3fcf12479a6678eae20d5b7dd138f977a0c00d42",
+  "applicationBlob": "9e1a654fc3fd27a80be1fea127e0dd4cf71e5b14",
+  "sourceBlob": "bd180877a71a2c59adee9d92fd4111e9d9985e79",
+  "sampleBlob": "3c283e6bd9f0d4aab2ba939e0667753fae1b8053",
+  "previousIntegration": {
+    "pr": 79,
+    "workflowRun": 45940243485,
+    "deployRun": 45941508512,
+    "deploy": "pending_confirmation"
+  },
+  "pilot": "SN-040",
+  "scope": "validacion_documental_y_barreras_de_comparacion",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "academicAnalysisCompleted": false,
+  "case": {
+    "reference": "Jn 1:18",
+    "bookId": "LIB-JHN",
+    "chapter": "1",
+    "focus": "18",
+    "contextStart": "14",
+    "contextEnd": "18",
+    "sourceId": "P1022-R01",
+    "sourceUrl": "https://ebible.org/spaRV1909/JHN01.htm",
+    "status": "candidato_no_referencia_original"
+  },
+  "sample": {
+    "editionId": "TXT-SBLGNT-V1-2",
+    "variantId": "VAR-P943-JHN-1-18",
+    "resources": 7,
+    "evidence": 8,
+    "witnessIds": [
+      "MAN-GA-P66",
+      "MAN-GA-02"
+    ],
+    "readingIds": [
+      "LEC-P943-JHN-1-18-A",
+      "LEC-P943-JHN-1-18-B"
+    ],
+    "secondaryAttestations": 2,
+    "directInspections": 0,
+    "assessment": "not_assessed",
+    "apparatusProvidesWitnesses": false,
+    "folioVerified": false,
+    "handVerified": false
+  },
+  "trCandidate": {
+    "sourceId": "P1022-R12",
+    "title": "Scrivener New Testament, 1894",
+    "url": "https://arc.dbs.org/data/scripture/GRCS94/",
+    "status": "no_admitida",
+    "fileSelected": false,
+    "sha256": null,
+    "permission": "pendiente"
+  },
+  "comparisonControls": {
+    "unavailableTargetTestId": "TXT-P1035-TR-NOT-ADMITTED",
+    "expectedTRStatus": "edition_unavailable",
+    "expectedRV1909SBLGNTStatus": "not_aligned",
+    "verifiedAlignments": 0,
+    "originalReadingDetermined": false
+  },
+  "openNeeds": [
+    "Identidad, revisión y permisos de ediciones concretas",
+    "Aparatos y fuentes documentales autorizadas o referencias externas",
+    "Localizadores y naturaleza de testimonio directo o secundario",
+    "Criterios explícitos de crítica textual y límites"
+  ],
+  "next": "P10.3.6_tras_CI_integracion_y_despliegue"
+}
