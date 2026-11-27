@@ -1,0 +1,47 @@
+name: P11.4.3.4 Validación del analizador fragmentado
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/analyzer-fragment-validation-p11434.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyzer-fragments:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compilación y barreras públicas
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+      - name: Navegador aislado
+        run: |
+          deps="$RUNNER_TEMP/p11434-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$deps/node_modules/.bin/playwright" install chromium
+          if ! node -e "const {chromium}=require('$deps/node_modules/playwright'); (async()=>{const b=await chromium.launch();await b.close()})().catch(()=>process.exit(1))"; then
+            "$deps/node_modules/.bin/playwright" install-deps chromium
+          fi
+          P11434_DEPS="$deps" node scripts/validate-analyzer-browser-p11434.mjs

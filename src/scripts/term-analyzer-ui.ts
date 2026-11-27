@@ -1,18 +1,19 @@
 import {createAnalyzerSession,languageNames,statusLabels} from '../lib/term-analyzer-view';
-import type {Analyzer} from '../lib/term-analyzer-view';
+import type {Analyzer,Reference} from '../lib/term-analyzer-view';
 import type {Origin,Language} from '../lib/linguistic-contracts';
 const books:Record<string,string>={'LIB-Gen':'Génesis','LIB-Lev':'Levítico','LIB-Deut':'Deuteronomio','LIB-Dan':'Daniel','LIB-Acts':'Hechos','LIB-1Cor':'1 Corintios','LIB-3John':'3 Juan'};
-export function mountAnalyzer(doc:Document,engine:Analyzer){
+export function mountAnalyzer(doc:Document,engine:Analyzer,prepare?: (reference:Reference)=>Promise<Analyzer>){
  const form=doc.querySelector<HTMLFormElement>('#ta-form'),fields=doc.querySelector<HTMLFieldSetElement>('#ta-fields'),edition=doc.querySelector<HTMLSelectElement>('#ta-edition'),book=doc.querySelector<HTMLSelectElement>('#ta-book'),chapter=doc.querySelector<HTMLInputElement>('#ta-chapter'),verse=doc.querySelector<HTMLInputElement>('#ta-verse'),word=doc.querySelector<HTMLSelectElement>('#ta-occurrence'),words=doc.querySelector<HTMLElement>('#ta-words'),status=doc.querySelector<HTMLElement>('#ta-status'),resultStatus=doc.querySelector<HTMLElement>('#ta-result-status'),result=doc.querySelector<HTMLElement>('#ta-result');
  if(!form||!fields||!edition||!book||!chapter||!verse||!word||!words||!status||!resultStatus||!result)return;
- const session=createAnalyzerSession(engine),coverage=session.coverage();
+ let session=createAnalyzerSession(engine),revision=0;
+ const coverage=session.coverage();
  const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const node=doc.createElement(tag);if(text!==undefined)node.textContent=text;return node;};
  const option=(value:string,label:string)=>{const o=el('option',label);o.value=value;return o;};
  const original=(form:string,language:Language)=>{const b=el('bdi',form);b.lang=language;b.dir=language==='grc'?'ltr':'rtl';b.className='ta-original';return b;};
  const origin=(o:Origin)=>el('p','Fuente: '+o.fileId+' · '+o.component+' · '+o.locator+' · revisión '+o.commit+' · SHA-256 '+o.sha256);
  const clearResult=()=>{result.replaceChildren();result.hidden=true;resultStatus.textContent='Selecciona una ocurrencia de la referencia consultada.';};
  const clearWords=()=>{word.replaceChildren(option('','Sin ocurrencias disponibles'));word.disabled=true;words.replaceChildren();words.hidden=true;clearResult();};
- const reset=()=>{session.reset();clearWords();status.textContent='Selecciona y consulta una referencia.';};
+ const reset=()=>{revision++;session.reset();clearWords();status.textContent='Selecciona y consulta una referencia.';};
  const selectBook=()=>{reset();const e=coverage.find(c=>c.editionId===edition.value);book.replaceChildren(option('','Selecciona un libro'),...(e?.bookIds??[]).map(id=>option(id,books[id]??id)));chapter.value='';verse.value='';};
  const show=(id:string)=>{
   clearResult();
@@ -38,9 +39,15 @@ export function mountAnalyzer(doc:Document,engine:Analyzer){
  fields.disabled=false;selectBook();
  edition.addEventListener('change',selectBook);
  for(const c of [book,chapter,verse])c.addEventListener('input',reset);
- form.addEventListener('submit',event=>{
-  event.preventDefault();clearWords();
-  const selection=session.consult({editionId:edition.value,bookId:book.value,chapter:chapter.value.trim(),verse:verse.value.trim()});
+ form.addEventListener('submit',async event=>{
+  event.preventDefault();const request=++revision;session.reset();clearWords();
+  const reference={editionId:edition.value,bookId:book.value,chapter:chapter.value.trim(),verse:verse.value.trim()};
+  if(prepare){
+   status.textContent='Verificando capítulo…';
+   try{const next=await prepare(reference);if(request!==revision)return;session=createAnalyzerSession(next);}
+   catch{if(request===revision)status.textContent='No se pudo verificar el capítulo. Intenta nuevamente.';return;}
+  }
+  const selection=session.consult(reference);
   status.textContent=statusLabels[selection.status];
   if(selection.status!=='disponible'||!selection.occurrences.length)return;
   status.textContent=selection.occurrences.length+' ocurrencias disponibles.';
