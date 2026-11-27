@@ -1,0 +1,39 @@
+name: P11.4.4.4.3 Integridad, privacidad y recuperación de fragmentos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'scripts/**'
+      - 'src/lib/**'
+      - 'src/scripts/lexicon-concordance-ui.ts'
+      - 'tests/**'
+      - '.github/workflows/lexical-fragment-integrity-p114443.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Instalación y verificación de tipos
+        run: npm ci && npm run check
+      - name: Pruebas de integridad, privacidad y regresión
+        run: npm test
+      - name: Compilación y barrera de publicación
+        run: npm run build && npm run test:build
+      - name: Auditoría integral del candidato privado en memoria
+        run: node --max-old-space-size=4096 scripts/validate-private-fragment-integrity-p114443.mjs
