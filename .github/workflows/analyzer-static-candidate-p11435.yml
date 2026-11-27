@@ -36,6 +36,7 @@ jobs:
       - name: Compilación y barrera pública
         run: |
           npm ci
+          node --test tests/p101-delimitation.test.mjs
           npm run build
           npm run test:build
       - name: Prueba de servidor privado y candidato real

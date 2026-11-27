@@ -20,7 +20,10 @@ export function loadP101(){
 }
 export function validateP101({catalogBytes,catalog,proposals:p,pilots:d}){
  assert.deepEqual(catalog,JSON.parse(catalogBytes));
- const hash=createHash('sha1').update(Buffer.from('blob '+catalogBytes.length+'\0')).update(catalogBytes).digest('hex');
+ // Git stores the pinned historical JSON with LF; Windows may present CRLF.
+ // Normalize only CRLF for the blob check, not JSON formatting or content.
+ const gitBytes=Buffer.from(catalogBytes.toString('utf8').replace(/\r\n/g,'\n'),'utf8');
+ const hash=createHash('sha1').update(Buffer.from('blob '+gitBytes.length+'\0')).update(gitBytes).digest('hex');
  assert.equal(hash,'012e624be0fceb093befd7ad321566d586be3fd6');
  assert.equal(p.schemaVersion,1);assert.equal(p.phase,'P10.1');
  assert.equal(p.status,'propuesta_para_revision');

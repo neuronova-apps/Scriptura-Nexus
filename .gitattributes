@@ -1,3 +1,6 @@
 # Historical JSON byte fingerprints use LF, including on Windows.
 docs/P9/*.json text eol=lf
 docs/P11/*.json text eol=lf
+
+# P10.1 historical catalog Git blob is pinned independently of checkout OS.
+src/data/catalogo/estudios.json text eol=lf

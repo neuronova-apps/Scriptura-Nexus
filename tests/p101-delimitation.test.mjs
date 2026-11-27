@@ -9,3 +9,16 @@ test('P10.1: distingue investigación histórica, científica y religiosa compar
 test('P10.1: relaciones justificadas sin duplicados, autoenlaces ni huérfanos',()=>{reject(x=>x.proposals.links[0].b=x.proposals.links[0].a);reject(x=>x.proposals.links[0].b='SN-999');reject(x=>x.proposals.links[0].reason='');reject(x=>{x.proposals.links[1]={...x.proposals.links[0],a:x.proposals.links[0].b,b:x.proposals.links[0].a};});});
 test('P10.1: honra y deber parental, referencias recíprocas y perdón',()=>{reject(x=>x.proposals.specialScopes.find(s=>s.id==='P10-Q49').initialReferences=['Ex 20:12']);reject(x=>x.proposals.links=x.proposals.links.filter(l=>!(l.a==='P10-Q49'&&l.b==='P10-Q05')));});
 test('P10.1: pilotos sin evidencia ficticia ni métodos desconocidos',()=>{reject(x=>x.pilots.pilots[0].methods.push('M99'));reject(x=>x.pilots.pilots[0].evidenceIds=['EVD-ficticia']);reject(x=>x.pilots.pilots[0].excluded='');reject(x=>x.pilots.pilots.pop());});
+
+test('P10.1: LF and Windows CRLF preserve the same pinned historical blob',()=>{
+ const input=loadP101(),lf=input.catalogBytes.toString('utf8').replace(/\r\n/g,'\n');
+ const normalized=Buffer.from(lf,'utf8'),windows=Buffer.from(lf.replace(/\n/g,'\r\n'),'utf8');
+ assert.notDeepEqual(normalized,windows);
+ assert.deepEqual(validateP101({...input,catalogBytes:windows}),validateP101({...input,catalogBytes:normalized}));
+});
+test('P10.1: changed bytes still fail even when JSON is semantically equal',()=>{
+ const input=loadP101();
+ const modified=Buffer.concat([input.catalogBytes,Buffer.from(' ')]);
+ assert.deepEqual(JSON.parse(modified),input.catalog);
+ assert.throws(()=>validateP101({...input,catalogBytes:modified}));
+});
