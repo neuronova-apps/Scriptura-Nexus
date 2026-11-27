@@ -1,0 +1,18 @@
+# P11.4.5.5. Preparación de revisión final y liberación controlada del comparador
+
+PR #118 integrado en c99c9de1946de70ca393b4e0e9f2c5b8ed5a36fb; 49 comprobaciones satisfactorias, una omitida. Run 46048200850/job 140672638206: un catálogo y tres capítulos rechazados por corrupción/truncamiento/red, cuatro recuperaciones, una respuesta obsoleta descartada, 24 combinaciones de reflujo y cuatro auditorías axe satisfactorias. Cero solicitudes externas, solicitudes inesperadas o errores de navegador. Estimaciones gzip del cuerpo inicial 180.694 bytes (límite 512.000) y JS 11.425 bytes (límite 153.600); no son mediciones de campo. Dist intacto. Se conserva la evidencia de PR #117: dos ediciones, 93 libros, 1.449 capítulos y 39.041 unidades, seis escenarios funcionales. Pages del PR #118: run 46048901241; su resultado se verifica separadamente.
+
+## Estado de liberación
+
+Se añade evaluador de consistencia, sin ejecutar publicación. Candidato privado RV1909/SBLGNT v1.2, referencias nativas independientes, ENT30 vacío y cero correspondencias automáticas. Scrivener 1894 (P1022-R12) y Dodson XML siguen excluidos; cualquier admisión requiere proceso separado. No se infiere equivalencia por etiquetas. El comparador público sigue deshabilitado y no se modifica src, dist, permisos, otros módulos ni compuerta léxica. Estado blocked_pending_manual_review. Incluso si se completan todos los controles el evaluador solo informa ready_for_separate_release_action y mantiene canPublish false.
+
+## Revisión manual pendiente
+
+1. NVDA con Chrome o Firefox: títulos, navegación, selectores de ambos lados, lectura paralela, idioma, mensajes de estado, foco y consulta sin ratón. TalkBack con Chrome Android en dispositivo real: mismas comprobaciones, cambio de orientación, lectura de metadatos y navegación de regreso.
+2. Revisar zoom 200 %, ampliación, alto contraste, ancho estrecho, legibilidad del griego y texto español; repetir errores y reintentos sin resultado obsoleto. Las pruebas de Chromium/axe no certifican conformidad manual.
+3. Confirmar alcance de derechos de ambas ediciones, atribución, licencia y transformaciones (RV1909 declaración de dominio público con reserva territorial; SBLGNT CC BY 4.0). Revisar aviso de privacidad, incluyendo posibles registros de IP y rutas de capítulos por el alojamiento. No afirmar anonimato. No se realiza nuevo dictamen jurídico.
+4. Registrar decisión explícita del responsable sobre publicar solo este alcance. No sustituir evidencia real por simulada; aplazamientos no críticos requieren decisión expresa y no equivalen a pruebas aprobadas. Si no existe acceso privado seguro en un dispositivo, registrar no evaluable y mantener bloqueo. El harness actual intercepta solicitudes dentro de Chromium; no es una URL pública ni un servicio de revisión manual. Preparar método de prueba local seguro en P11.4.7 sin abrir puertos ni compartir corpus.
+
+## Continuidad del plan
+
+La siguiente línea de trabajo es P11.4.6 (manuscritos y variantes), seguida por P11.4.7 (validación funcional transversal), P11.4.8 (publicación y recuperación autorizadas) y P11.5 (cierre e informe). El avance técnico del comparador no equivale a habilitación efectiva. Se conserva el último registro histórico 63/69 hasta conciliar la métrica y completar las condiciones de cierre; no se incrementa por subdivisiones ni se declara terminación total. La diferencia entre las etapas nominales restantes y la métrica requiere conciliación, incluyendo el lector pendiente de habilitación. Los 80 estudios planificados no son 80 investigaciones concluidas; su desarrollo editorial es independiente de la primera versión funcional, según P11.4. No se modifica el plan maestro ni se asigna autorización implícita.
