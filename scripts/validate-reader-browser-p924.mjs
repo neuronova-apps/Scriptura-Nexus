@@ -112,7 +112,7 @@ try{
  const choose=async(e,b,c,v)=>{await fp.locator('#br-edition').selectOption(e);await fp.locator('#br-book').selectOption(b);await fp.locator('#br-chapter').selectOption(c);await fp.locator('#br-verse').selectOption(v);};
  const read=()=>fp.locator('#br-consult').click();
  await choose('spa','book','1','1a');await read();assert.equal(await fp.locator('#br-passage').textContent(),fixtureMarker+' <b>literal</b>');assert.equal(await fp.locator('#br-passage b').count(),0);assert.equal(await fp.locator('#br-passage').getAttribute('lang'),'es');counts.fixtureChecks++;
- assert.equal(await fp.locator('#br-previous').isDisabled(),true);assert.equal(await fp.evaluate(()=>document.activeElement?.id),'br-passage-title');assert.match(await fp.locator('#br-source').textContent(),/Test license/);counts.fixtureChecks++;
+ assert.equal(await fp.locator('#br-previous').isDisabled(),true);assert.equal(await fp.evaluate(()=>document.activeElement?.id),'br-passage-title');for(const expected of ['Test license','Test attribution','Test source','private:1:1'])assert.ok((await fp.locator('#br-source').innerText()).includes(expected),'Atribución o procedencia no visible');counts.fixtureChecks++;
  await fp.locator('#br-next').click();assert.equal(await fp.locator('#br-verse').inputValue(),'2-3');assert.equal(await fp.locator('#br-passage').textContent(),'range');counts.fixtureChecks++;
  await fp.locator('#br-next').click();assert.match(await fp.locator('#br-status').textContent(),/marcador sin texto/i);counts.fixtureChecks++;
  await fp.locator('#br-next').click();assert.equal(await fp.locator('#br-chapter').inputValue(),'3');assert.equal(await fp.locator('#br-next').isDisabled(),true);counts.fixtureChecks++;
