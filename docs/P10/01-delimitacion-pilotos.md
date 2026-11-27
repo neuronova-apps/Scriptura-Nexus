@@ -27,7 +27,7 @@ Los cinco registros permanecen en estado `planificado`. No se alteran sus identi
 
 ## 3. Delimitación individual pendiente de aprobación
 
-Para cada piloto se completará y aprobará una ficha de alcance con los siguientes campos:
+Se prepararon las cinco fichas de alcance en [delimitacion-pilotos-p101.json](delimitacion-pilotos-p101.json). Son propuestas para revisión, no investigaciones ejecutadas. Contienen:
 
 1. Pregunta principal: conservar el enfoque registrado y formular una pregunta neutral y precisa, sin anticipar una respuesta.
 2. Preguntas complementarias: incorporar las preguntas adicionales que el responsable determine y justificar su relación con la pregunta principal.
@@ -64,17 +64,21 @@ Una subpregunta no se convierte automáticamente en una conclusión ni en una nu
 
 Si una pregunta aborda un problema distinto y no cabe razonablemente dentro de un estudio existente, se registrará como propuesta de ampliación del catálogo. No se asignará un nuevo identificador ni se modificará `estudios.json` hasta que el responsable apruebe su incorporación y se compruebe su relación con la taxonomía. Los identificadores SN-001 a SN-042 permanecen estables.
 
-### 4.3 Registro inicial de preguntas adicionales
+### 4.3 Consolidación de las propuestas recibidas
 
-El responsable ha indicado que desea incorporar preguntas adicionales. Sus enunciados concretos todavía no han sido recibidos; por ello, no se inventan ni se incorporan preguntas supuestas.
+El registro [propuestas-ampliacion-p101.json](propuestas-ampliacion-p101.json) conserva las 48 preguntas de la conversación y la pregunta adicional sobre responsabilidades parentales (49 en total), con redacción editorial neutral, origen y destino. Diez corresponden directamente a preguntas del responsable (1–9 y 49); las demás son propuestas del asistente para revisión, incluidas las cinco observaciones sobre alcance histórico, científico y religioso comparado. No se asume aprobación individual de todas las sugerencias.
 
-| Registro | Pregunta propuesta | Estudio vinculado o nuevo tema | Estado |
-|---|---|---|---|
-| P10.1-QA-01 | Pendiente de recepción del responsable | Por determinar | Pendiente |
-| P10.1-QA-02 | Pendiente de recepción del responsable | Por determinar | Pendiente |
-| P10.1-QA-03 | Pendiente de recepción del responsable | Por determinar | Pendiente |
+Se proponen 38 estudios independientes, identificados provisionalmente como P10-Qnn, y ampliaciones de cinco estudios existentes: SN-007, SN-020, SN-023, SN-031 y SN-034. Varias preguntas complementarias quedan agrupadas: catolicidad e identidad de la Iglesia (3/10), dogmas marianos (8/22), Escritura y tradición (15/16), santidad y santificación (20/32), Satanás y Lucifer (33/34), honra y deberes parentales (31/49). No se asignan SN-043 y siguientes ni se modifica la línea base de 42 temas.
 
-Este registro puede ampliarse sin alterar la secuencia de fases. Las preguntas recibidas se revisarán antes de cerrar la delimitación.
+Los perfiles metodológicos propuestos son bíblico-exegético, teológico-doctrinal, histórico-eclesiástico, textual-lingüístico, ético-práctico, interdisciplinario y religioso comparado. Son etiquetas transversales múltiples, distintas de los 14 ejes, las 18 perspectivas M01–M18 y las tradiciones de P0.3. La clasificación no decide qué postura es correcta.
+
+Las preguntas 11, 13 y 14 requieren historia y documentación eclesiástica; la 41 exige fuentes científicas y filosóficas además de la hermenéutica bíblica; la 42 necesita fuentes propias del judaísmo, cristianismo e islam, y estudios de historia de las religiones. No se intenta responder esos asuntos únicamente con la Biblia ni se crean tradiciones taxonómicas nuevas en esta fase. P10-Q49 integra Ef 6:1–4 y Col 3:20–21 con la honra, disciplina, protección frente al abuso y responsabilidad recíproca; su relación con el perdón (P10-Q05) distingue memoria, reparación, confianza y reconciliación.
+
+Se registran 30 relaciones cruzadas propuestas, cada una con tipo y justificación, sin autoenlaces, duplicados ni destinos inexistentes. Son relaciones de planificación y no demostraciones doctrinales ni publicaciones aprobadas. P6.3 ya permite motivos de relación entre estudios; la eventual conexión con la interfaz requerirá admitir los identificadores y validar los contratos existentes.
+
+### 4.4 Incorporación al catálogo operativo
+
+El catálogo original está protegido por validaciones de P5 que fijan 42 registros, IDs y recuentos por eje. Por ello P10.1 registra una ampliación documental separada. Después de revisar la propuesta, se deberá aprobar la incorporación efectiva, asignar IDs SN sucesivos, preservar el catálogo histórico y adaptar los validadores, búsqueda, rutas, recuentos y referencias cruzadas mediante un cambio controlado. No se presenta la propuesta como 38 investigaciones nuevas ya visibles o concluidas.
 
 ## 5. Criterios metodológicos comunes
 
@@ -105,7 +109,7 @@ Los borradores de investigación y los materiales de trabajo permanecerán fuera
 
 | Subfase | Función | Condición de entrada |
 |---|---|---|
-| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | En ejecución; pendiente de preguntas adicionales y aprobación final |
+| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | En revisión; fichas y ampliación propuestas, aprobación final pendiente |
 | P10.2 | Probar el flujo metodológico con casos seleccionados y fuentes disponibles | Delimitación aprobada |
 | P10.3 | Validar las herramientas con casos de hebreo, griego, pactos, cristología y crítica textual | Flujo metodológico aplicado y evidencias disponibles |
 | P10.4 | Registrar fallos, ajustes, decisiones y cierre | Resultados de P10.2 y P10.3 revisados |
@@ -128,4 +132,4 @@ P10.1 podrá cerrarse cuando:
 
 P10.1 iniciada como documento de delimitación en la rama `feature/p10.1-pilot-delimitation`. Se verificaron los cinco registros directamente en el catálogo. No se modificó `estudios.json`, la interfaz, el corpus ni los permisos de publicación.
 
-Estado: borrador técnico preparado; pendiente de incorporar las preguntas adicionales del responsable y de su aprobación expresa. P10.2 permanece sin iniciar.
+Estado: cinco delimitaciones preparadas, 49 preguntas consolidadas, 38 estudios nuevos propuestos, cinco ampliaciones y 30 referencias cruzadas. Se añaden un validador reproducible y siete pruebas positivas/negativas. Pendiente de CI de esta revisión y aprobación expresa del alcance; P10.2 permanece sin iniciar. No se han verificado todavía fuentes nuevas ni redactado conclusiones.
