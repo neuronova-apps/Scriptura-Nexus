@@ -13,7 +13,7 @@ const prefix='/Scriptura-Nexus/',root=prefix+'linguistica/analizador/',assets=ro
 const mime={'.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.ico':'image/x-icon'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const attribution=[{"label":"OSHB / WLC","text":"Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.","license":"CC BY 4.0 (anotaciones); WLC dominio público declarado","url":"https://github.com/openscriptures/morphhb/tree/6a5db284c715c18b239422e57bb89684e6a19f00","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","change":"Proyección de ocurrencias primarias y códigos; se excluyen notas y variantes; se preservan las formas Unicode."},{"label":"SBLGNT v1.2","text":"Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT","license":"CC BY 4.0","url":"https://github.com/Faithlife/SBLGNT/tree/736fdc76158950c3d04b949b7e013ca14305145a","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","change":"Selección de elementos de palabra oficiales por referencia y posición; no incluye aparato crítico."},{"label":"MorphGNT v6.12","text":"Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200","license":"CC BY-SA 3.0","url":"https://github.com/morphgnt/sblgnt/tree/aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d","licenseUrl":"https://creativecommons.org/licenses/by-sa/3.0/","change":"Se proyectan lemas y códigos morfológicos en una capa separada de anotaciones, bajo la misma licencia; se excluyen las columnas textuales y las divergencias no se vinculan."}];
-let server,browser,stage='plan';
+let server,browser,release=null,stage='plan';
 try{
  const plan=validateAnalyzerPlan();
  const deps=createRequire(resolve(process.env.P11434_DEPS,'package.json')), {chromium}=deps('playwright'),axe=deps.resolve('axe-core/axe.min.js');
@@ -55,7 +55,7 @@ try{
  const origin='http://127.0.0.1:'+server.address().port;
  browser=await chromium.launch({headless:true});
  const c=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',acceptDownloads:false});
- let external=0,unexpected=0,errors=0,chapterLoads=0,corrupt=false,delay=false,release=null;
+ let external=0,unexpected=0,errors=0,chapterLoads=0,corrupt=false,delay=false;
  await c.route('**/*',async route=>{
   const u=new URL(route.request().url());if(u.origin!==origin){external++;return route.abort();}
   if(u.search||route.request().method()!=='GET'){unexpected++;return route.abort();}
@@ -79,7 +79,7 @@ try{
  const choose=async t=>{const b=p.locator('#ta-words button[data-token-id="'+t.id+'"]');await b.focus();await p.keyboard.press('Enter');assert.equal(await b.getAttribute('aria-pressed'),'true');assert.equal(await p.locator('#ta-occurrence').inputValue(),t.id);
   const a=engine.analyze(t.id),shown=p.locator('#ta-result bdi').first();assert.equal(await shown.textContent(),t.form);assert.equal(await shown.getAttribute('lang'),t.language);assert.equal(await shown.getAttribute('dir'),t.direction);
   const labels={documentado:'Documentado',parcial:'Parcial',sin_interpretar:'Código sin interpretar',ausente:'No disponible'};
-  const text=await p.locator('#ta-result').innerText();assert.ok(text.includes(labels[a.morphology.state])&&text.includes(t.origin.fileId)&&text.includes('Significados no disponibles'));
+  const text=await p.locator('#ta-result').innerText();assert.ok(text.includes(labels[a.morphology.state])&&text.includes(a.token.origin.fileId)&&text.includes('Significados no disponibles'));
   if(a.lexical.raw!==null)assert.ok(text.includes(a.lexical.raw));
   for(const m of a.morphology.analyses)assert.ok(text.includes(m.code)&&text.includes(m.origin.fileId));
   return a;
@@ -123,4 +123,4 @@ try{
  await c.close();
  console.log(JSON.stringify({phase:plan.phase,...candidate.summary,pilotReferences:pilots,baselineLanguages:3,layoutChecks,axeScans,corruptionRecovery:true,staleSelection:true,externalRequests:0,queryStorage:false,initialChapterRequests:0,mountMs,firstMs,cachedMs,performanceConditions:'local Chromium, descriptive, no field measurement',manualScreenReader:'pending',realMobileValidated:false,publicationAuthorized:false}));
 }catch(e){console.error('P11.4.3.4 failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+'); source data omitted');process.exitCode=1;}
-finally{if(browser)await browser.close();server?.closeAllConnections();server?.close();}
+finally{if(release)release();if(browser)await browser.close();server?.closeAllConnections();server?.close();}
