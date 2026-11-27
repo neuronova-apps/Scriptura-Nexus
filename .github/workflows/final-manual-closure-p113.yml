@@ -1,0 +1,34 @@
+name: P11.3 Cierre de validación manual
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/final-manual-closure-p113.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manual-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Evidencia reportada, barreras y regresiones
+        run: |
+          npm ci
+          node --test tests/p113-manual-closure.test.mjs
+          node scripts/validate-manual-closure-p113.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
