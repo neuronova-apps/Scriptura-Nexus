@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.4.4.preparacion_revision_final_liberacion_controlada",
+  "status": "blocked_pending_manual_review",
+  "previousEvidence": {
+    "pr112": {
+      "merge": "5840b743eea4c96e60cd72614dd2748acfeb9e53",
+      "pagesRun": 46038677397,
+      "pagesConclusion": "success",
+      "checksSuccess": 47,
+      "checksSkipped": 1
+    },
+    "pr113": {
+      "merge": "9150f9514da57baa30d35e8088781c67cc049217",
+      "pagesRun": 46039924476,
+      "pagesConclusion": "success",
+      "checksSuccess": 45,
+      "checksSkipped": 1,
+      "privateIntegrityRun": 46039366780,
+      "privateIntegrityTests": 599,
+      "privateIntegrityFailures": 0
+    }
+  },
+  "scope": {
+    "admittedHistoricalFiles": [
+      "LING-015",
+      "LING-016",
+      "LING-017",
+      "LING-018"
+    ],
+    "excludedCandidates": [
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07",
+      "LEX-C08"
+    ],
+    "occurrences": 78218,
+    "lexicalEntries": 30740,
+    "forms": 10221,
+    "definitions": 35496,
+    "fragmentFiles": 11442,
+    "queryGroups": 41
+  },
+  "gates": {
+    "manualScreenReader": "pending",
+    "manualDeviceReview": "pending",
+    "ownerPublicationApproval": "pending"
+  },
+  "exclusions": {
+    "dodson": "not_included_pending_separate_approval"
+  },
+  "expectedBlockers": [
+    "manualScreenReader",
+    "manualDeviceReview",
+    "ownerPublicationApproval"
+  ],
+  "publicArtifact": false,
+  "corpusPersisted": false,
+  "corpusPublished": false,
+  "publicationAuthorized": false,
+  "releaseActionPerformed": false,
+  "canPublish": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.5_comparador_biblico",
+  "baselineMain": "9150f9514da57baa30d35e8088781c67cc049217"
+}

@@ -1,0 +1,32 @@
+name: P11.4.4.4.4 Preparación de revisión y liberación controlada
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'scripts/**'
+      - 'src/lib/**'
+      - 'tests/**'
+      - '.github/workflows/lexical-release-gate-p114444.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Instalación y verificación de tipos
+        run: npm ci && npm run check
+      - name: Pruebas de regresión y compuerta de liberación
+        run: npm test
+      - name: Build público y verificación de ausencia del corpus
+        run: npm run build && npm run test:build
+      - name: Evaluación del estado de liberación
+        run: node scripts/validate-lexical-release-gate-p114444.mjs
