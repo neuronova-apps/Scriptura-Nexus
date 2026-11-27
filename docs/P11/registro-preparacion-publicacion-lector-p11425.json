@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.5.preparacion",
+  "baselineMain": "b5f160f963acc756bad51bc1944d7e84e52e5899",
+  "validationBlob": "ed0f0be8c70962b25f4e5f2205147244af882577",
+  "rightsBlob": "3c6d1d783a2b95fce49c5f3d5cd5c112c0e5c67b",
+  "previousIntegration": {
+    "pr": 91,
+    "workflowRun": 45990524056,
+    "job": 140476878256,
+    "successfulWorkflows": 23,
+    "deployRun": 45991869957,
+    "deploy": "pending_confirmation"
+  },
+  "results": {
+    "nodeTests": 529,
+    "editions": 2,
+    "books": 93,
+    "chapters": 1449,
+    "units": 39041,
+    "emptyMarkers": 18,
+    "chapterLoads": 1449,
+    "layoutChecks": 120,
+    "axeScans": 24,
+    "labSamples": 12,
+    "catalogGzipBytes": 160425,
+    "maxMountMs": 52,
+    "maxFirstMs": 69,
+    "maxCachedMs": 39
+  },
+  "manualChecks": [
+    {
+      "id": "L01",
+      "task": "Consulta y navegación por teclado",
+      "status": "pendiente"
+    },
+    {
+      "id": "L02",
+      "task": "Lector de pantalla y anuncio de carga/resultado",
+      "status": "pendiente"
+    },
+    {
+      "id": "L03",
+      "task": "Apariencia, escalas y zoom nativo",
+      "status": "pendiente"
+    },
+    {
+      "id": "L04",
+      "task": "Texto griego, marcador vacío y procedencia",
+      "status": "pendiente"
+    },
+    {
+      "id": "L05",
+      "task": "Dispositivo móvil real con contenido autorizado",
+      "status": "pendiente"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ED-C01",
+      "editionId": "TXT-RV1909",
+      "publication": "pendiente",
+      "territorialReview": "pendiente",
+      "authorizationRef": null
+    },
+    {
+      "id": "ED-C02",
+      "editionId": "TXT-SBLGNT-V1-2",
+      "publication": "pendiente",
+      "territorialReview": "licencia_publica_documentada_no_dictamen_juridico",
+      "authorizationRef": null
+    }
+  ],
+  "preview": {
+    "mode": "loopback_only",
+    "entry": "scripts/preview-reader-p11425.mjs",
+    "publicationAuthorized": false,
+    "corpusPersisted": false
+  },
+  "privacyReview": "pendiente",
+  "fieldINP": "no_medido",
+  "publicReleaseAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "P11.4.2.5_habilitacion_solo_con_decision_por_edicion_y_validacion_manual"
+}
