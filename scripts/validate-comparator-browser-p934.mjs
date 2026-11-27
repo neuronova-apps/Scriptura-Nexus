@@ -129,7 +129,7 @@ try{
  assert.match(await status.textContent(),/Sin correspondencia verificada/);assert.match(await fp.locator('#bc-diagnostic').textContent(),/no constituye una alineación/);
  assert.equal(await target.locator('.bc-reading').count(),0);check();
  assert.equal(await source.locator('.bc-reading').textContent(),fixtureMarker+' <b>literal</b>');assert.equal(await source.locator('b').count(),0);assert.equal(await source.locator('.bc-reading').getAttribute('lang'),'es');check();
- assert.equal(await fp.evaluate(()=>document.activeElement?.id),'bc-result-title');assert.match(await source.textContent(),/Test license/);check();
+ assert.equal(await fp.evaluate(()=>document.activeElement?.id),'bc-result-title');for(const expected of ['Test license','Test attribution','Test source','private:1:1'])assert.ok((await source.innerText()).includes(expected),'Atribución o procedencia no visible');check();
  await control('target','book').selectOption('book');assert.equal(await submit.isDisabled(),true);await control('target','chapter').selectOption('1');assert.equal(await submit.isDisabled(),true);await control('target','verse').selectOption('1');assert.equal(await submit.isDisabled(),false);check();
  await submit.click();assert.match(await status.textContent(),/Sin correspondencia verificada/);assert.equal(await target.locator('.bc-reading').textContent(),'λόγος');assert.equal(await target.locator('.bc-reading').getAttribute('lang'),'grc');check();
  stage='fixture-groups';
