@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadManualClosure,validateManualClosure} from '../scripts/validate-manual-closure-p113.mjs';
+const reject=fn=>{const d=loadManualClosure();fn(d);assert.throws(()=>validateManualClosure(d));};
+test('six reported conformities and historical CI evidence',()=>assert.equal(validateManualClosure(loadManualClosure()).reportedConformities,6));
+test('no invented independent verification or environment',()=>{reject(d=>d.record.manualEvidence.independentVerification=true);reject(d=>d.record.manualEvidence.deviceDetails='inventado');});
+test('no missing or changed reported result',()=>{reject(d=>d.record.manualEvidence.checks.pop());reject(d=>d.record.manualEvidence.checks[0].result='pendiente');});
+test('preserve previous evidence and certification limits',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.wcagCertification=true);reject(d=>d.record.fieldINP='medido');});
+test('publication scope requires separate approval',()=>{reject(d=>d.record.releaseScopeApproved=true);reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.manualPrivacyReview='aprobada');reject(d=>d.publication.snapshots.push({}));});
+test('no corpus or alignments released',()=>{reject(d=>d.record.corpusImportAuthorized=true);reject(d=>d.linguistic.tokens.push({}));reject(d=>d.alignment.alignments.push({}));});
