@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1021,validateP1021} from '../scripts/validate-p1021.mjs';
+const reject=fn=>{const d=loadP1021();fn(d);assert.throws(()=>validateP1021(d));};
+test('P10.2.1: cinco pilotos y matrices completas sin evidencia ni publicación',()=>assert.deepEqual(validateP1021(loadP1021()),{phase:'P10.2.1',pilots:5,methodPositions:90,sectionPositions:100,sourceNeeds:20,references:15,publicationAuthorized:false}));
+test('P10.2.1: aprobación limitada y vinculada a delimitación inmutable',()=>{reject(d=>d.record.approval.response='');reject(d=>d.record.approval.sourceBlob='otro');reject(d=>d.bytes=Buffer.from('{}'));});
+test('P10.2.1: no cambia los cinco pilotos ni admite duplicados',()=>{reject(d=>d.record.pilots.pop());reject(d=>d.record.pilots[1].id='SN-001');});
+test('P10.2.1: no afirma métodos ni fuentes verificados',()=>{reject(d=>d.record.pilots[0].methods[0].status='analizada');reject(d=>d.record.pilots[0].candidateReferences[0].status='verificada');reject(d=>d.record.pilots[0].sourceNeeds.pop());});
+test('P10.2.1: no altera secciones, evidencia ni conclusiones',()=>{reject(d=>d.record.pilots[0].sections.pop());reject(d=>d.record.pilots[0].evidenceIds.push('EVD-ficticia'));reject(d=>d.record.pilots[0].conclusions.push('conclusión'));});
+test('P10.2.1: mantiene los 80 estudios planificados',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.catalog[0].status='publicado');reject(d=>d.catalog.pop());});
