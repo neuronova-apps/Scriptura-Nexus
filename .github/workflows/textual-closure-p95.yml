@@ -1,0 +1,61 @@
+name: P9.5 Cierre integral de herramientas textuales
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P9/**'
+      - 'src/pages/**'
+      - 'src/lib/**'
+      - 'src/scripts/**'
+      - 'src/styles/**'
+      - 'src/data/**'
+      - 'src/components/**'
+      - 'src/layouts/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/textual-closure-p95.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  textual-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: P9.5.1 Conciliar admisiones, licencias, cobertura y registros
+        run: |
+          npm ci
+          npm run check
+          node scripts/audit-textual-closure-p95.mjs
+          npm test
+          for suite in test_editions_p91.py test_editions_p912.py test_textual_projection_p913.py test_reader_navigation_p922.py test_alignment_contracts_p931.py test_comparison_engine_p932.py test_manuscript_candidates_p941.py; do
+            python3 -m unittest discover -s tests -p "$suite"
+          done
+          python3 scripts/validate-editions-p912.py
+          python3 scripts/audit-real-textual-closure-p95.py
+          python3 scripts/audit-manuscript-candidates-p941.py
+      - name: P9.5.2 Build limpio, verificación de artefactos y dependencias de navegador
+        run: |
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
+          mkdir -p "$RUNNER_TEMP/p95-browser"
+          npm install --prefix "$RUNNER_TEMP/p95-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p95-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: P9.5.3 Regresión integrada de las tres interfaces y atribución visible
+        run: |
+          P924_DEPS="$RUNNER_TEMP/p95-browser" node scripts/validate-reader-browser-p924.mjs
+          P934_DEPS="$RUNNER_TEMP/p95-browser" node scripts/validate-comparator-browser-p934.mjs
+          P944_DEPS="$RUNNER_TEMP/p95-browser" node scripts/validate-manuscript-browser-p944.mjs
+      - name: P9.5.4 Navegación cruzada, preferencias y presupuestos comparables
+        run: |
+          P95_DEPS="$RUNNER_TEMP/p95-browser" node scripts/validate-textual-integration-p95.mjs
+          node scripts/verify-manuscript-pilot-build.mjs
