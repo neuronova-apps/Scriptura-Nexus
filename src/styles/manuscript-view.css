@@ -1,6 +1,6 @@
 .sn-manuscript-view section,.sn-manuscript-view fieldset,.mv-panel{min-width:0;overflow-wrap:anywhere}
 .mv-links{display:flex;flex-wrap:wrap;gap:var(--sn-space-3);padding:0;margin:0;list-style:none}
-.mv-links a,.sn-manuscript-view a:focus-visible{min-height:44px}
+.mv-links a{min-height:44px}
 .mv-links a{display:inline-flex;align-items:center}
 .sn-manuscript-view fieldset{border:0;margin:0;padding:0}
 .sn-manuscript-view legend{font-weight:600;margin-block-end:var(--sn-space-3)}
