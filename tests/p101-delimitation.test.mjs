@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP101,validateP101} from '../scripts/validate-p101.mjs';
+const reject=mutate=>{const data=loadP101();mutate(data);assert.throws(()=>validateP101(data));};
+test('P10.1: catálogo protegido, 49 preguntas y cinco pilotos delimitados',()=>{assert.deepEqual(validateP101(loadP101()),{phase:'P10.1',originalCatalog:42,pilots:5,questions:49,proposedStudies:38,existingExtensions:5,profiles:7,proposedCrossLinks:30,publicationAuthorized:false,approval:'pending'});});
+test('P10.1: no altera catálogo ni admite publicación',()=>{reject(x=>x.catalog.items[0].title='otro');reject(x=>x.proposals.catalogChangeAuthorized=true);reject(x=>x.pilots.publicationAuthorized=true);reject(x=>x.pilots.approval='aprobada');});
+test('P10.1: no pierde propuestas ni inventa destinos',()=>{reject(x=>x.proposals.questions.pop());reject(x=>x.proposals.questions[0].target='SN-999');reject(x=>x.proposals.proposedStudies[0].id='SN-043');});
+test('P10.1: distingue investigación histórica, científica y religiosa comparada',()=>{reject(x=>x.proposals.proposedStudies.find(s=>s.id==='P10-Q42').profiles=['biblica_exegetica']);reject(x=>x.proposals.proposedStudies.find(s=>s.id==='P10-Q41').profiles=['biblica_exegetica']);});
+test('P10.1: relaciones justificadas sin duplicados, autoenlaces ni huérfanos',()=>{reject(x=>x.proposals.links[0].b=x.proposals.links[0].a);reject(x=>x.proposals.links[0].b='SN-999');reject(x=>x.proposals.links[0].reason='');reject(x=>{x.proposals.links[1]={...x.proposals.links[0],a:x.proposals.links[0].b,b:x.proposals.links[0].a};});});
+test('P10.1: honra y deber parental, referencias recíprocas y perdón',()=>{reject(x=>x.proposals.specialScopes.find(s=>s.id==='P10-Q49').initialReferences=['Ex 20:12']);reject(x=>x.proposals.links=x.proposals.links.filter(l=>!(l.a==='P10-Q49'&&l.b==='P10-Q05')));});
+test('P10.1: pilotos sin evidencia ficticia ni métodos desconocidos',()=>{reject(x=>x.pilots.pilots[0].methods.push('M99'));reject(x=>x.pilots.pilots[0].evidenceIds=['EVD-ficticia']);reject(x=>x.pilots.pilots[0].excluded='');reject(x=>x.pilots.pilots.pop());});
