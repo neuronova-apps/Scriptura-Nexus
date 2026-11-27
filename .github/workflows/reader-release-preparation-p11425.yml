@@ -27,6 +27,7 @@ jobs:
         run: |
           npm ci
           node scripts/validate-reader-preparation-p11425.mjs
+          node scripts/validate-reader-manual-p11425.mjs
           npm run check
           npm test
           npm run build

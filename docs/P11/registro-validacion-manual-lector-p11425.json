@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.5.validacion_manual",
+  "baselineMain": "efb500160ecab73db5470ea66a842ab9e57d7f54",
+  "reviewDate": "2026-11-27",
+  "preparationBlob": "a7133e0b4d02cbe8e7fccf18c04d059b419fca74",
+  "rightsBlob": "3c6d1d783a2b95fce49c5f3d5cd5c112c0e5c67b",
+  "previousIntegration": {
+    "pr": 94,
+    "head": "a86a7071b0bc449379e937da45c817f4e7b9b2b6",
+    "successfulWorkflows": 30,
+    "windowsRun": 46006889569,
+    "windowsJob": 140532182895,
+    "windowsTests": 12,
+    "verifiedFragments": 1449,
+    "previewRun": 46006889641,
+    "previewJob": 140532183068,
+    "deployRun": 46012009690,
+    "deploy": "success"
+  },
+  "manual": {
+    "evidence": "reporte_del_responsable",
+    "independentlyVerified": false,
+    "environment": {
+      "os": "Windows",
+      "mode": "loopback_only",
+      "rvSource": "alternativa_verificada",
+      "browser": null,
+      "screenReader": null,
+      "deviceModel": null
+    },
+    "checks": [
+      {
+        "id": "L01",
+        "status": "conforme"
+      },
+      {
+        "id": "L02",
+        "status": "conforme"
+      },
+      {
+        "id": "L03",
+        "status": "conforme"
+      },
+      {
+        "id": "L04",
+        "status": "conforme"
+      },
+      {
+        "id": "L05",
+        "status": "no_evaluable",
+        "limitation": "servidor_loopback_no_accesible_desde_telefono_real"
+      }
+    ],
+    "observations": "Sin observaciones",
+    "mobile": {
+      "realDeviceValidated": false,
+      "deferralAccepted": false,
+      "next": "prueba_en_dispositivo_real_dentro_de_alcance_autorizado_o_decision_explicita"
+    }
+  },
+  "decisions": [
+    {
+      "id": "ED-C01",
+      "editionId": "TXT-RV1909",
+      "publication": "pendiente",
+      "territorialReview": "pendiente",
+      "authorizationRef": null
+    },
+    {
+      "id": "ED-C02",
+      "editionId": "TXT-SBLGNT-V1-2",
+      "publication": "pendiente",
+      "territorialReview": "licencia_publica_documentada_no_dictamen_juridico",
+      "authorizationRef": null
+    }
+  ],
+  "privacyReview": "pendiente",
+  "fieldINP": "no_medido",
+  "publicReleaseAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "corpusPersisted": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "decision_explicita_por_edicion_revision_territorial_privacidad_y_resolucion_L05"
+}
