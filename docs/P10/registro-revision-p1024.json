@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.2.4",
+  "baselineMain": "dd0b2b50e950a6fb4a592de37745ba932f6c9f56",
+  "applicationBlob": "9e1a654fc3fd27a80be1fea127e0dd4cf71e5b14",
+  "technicalEvidence": {
+    "pr": 74,
+    "head": "849fc5fad4c8cb4e7ff928e93a3c962b333c7fa7",
+    "runId": 45935174915,
+    "jobId": 140296613979,
+    "conclusion": "success",
+    "specificTests": 6,
+    "successfulWorkflows": 6,
+    "previousDeployments": [
+      45929804383,
+      45931204464
+    ],
+    "deploymentAfterMerge": {
+      "runId": 45935572207,
+      "status": "pending_confirmation"
+    }
+  },
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "academicCompletion": false,
+  "scope": "revision_tecnica_de_flujo_no_validacion_academica",
+  "pilots": [
+    {
+      "id": "SN-001",
+      "cases": 2,
+      "rvUnits": 6,
+      "greekAnchors": 0,
+      "sectionStates": {
+        "preparada_desde_delimitacion": 2,
+        "pendiente": 15,
+        "parcial_requiere_revision": 3
+      },
+      "openNeeds": [
+        {
+          "id": "SN-001-N1",
+          "need": "Ediciones hebreas identificadas y traducciones autorizadas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-001-N2",
+          "need": "Léxicos y gramáticas con localizadores",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-001-N3",
+          "need": "Estudios históricos sobre marcas y luto",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-001-N4",
+          "need": "Fuentes confesionales atribuibles y argumentos sobre pactos",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        }
+      ],
+      "limitation": "Falta análisis hebreo de ocurrencias y gramática, fuentes primarias histórico-culturales y contraste confesional completo.",
+      "decision": "flujo_tecnico_parcial_validado_sin_conclusion"
+    },
+    {
+      "id": "SN-015",
+      "cases": 5,
+      "rvUnits": 26,
+      "greekAnchors": 2,
+      "sectionStates": {
+        "preparada_desde_delimitacion": 2,
+        "pendiente": 15,
+        "parcial_requiere_revision": 3
+      },
+      "openNeeds": [
+        {
+          "id": "SN-015-N1",
+          "need": "Contexto de cada pasaje y su destinatario",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-015-N2",
+          "need": "Fuentes sobre instituciones de Israel y prácticas económicas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-015-N3",
+          "need": "Análisis de términos y textos pertinentes",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-015-N4",
+          "need": "Documentos y autores de tradiciones con posiciones diferentes",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        }
+      ],
+      "limitation": "Faltan estudios de pactos e instituciones económicas, términos originales y documentos confesionales específicos.",
+      "decision": "flujo_tecnico_parcial_validado_sin_conclusion"
+    },
+    {
+      "id": "SN-008",
+      "cases": 6,
+      "rvUnits": 44,
+      "greekAnchors": 6,
+      "sectionStates": {
+        "preparada_desde_delimitacion": 2,
+        "pendiente": 15,
+        "parcial_requiere_revision": 3
+      },
+      "openNeeds": [
+        {
+          "id": "SN-008-N1",
+          "need": "Edición griega identificada y contexto de cláusulas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-008-N2",
+          "need": "Léxicos y gramáticas con revisión de sentidos",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-008-N3",
+          "need": "Documentos pentecostales y otras perspectivas pertinentes",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-008-N4",
+          "need": "Fuentes históricas y exegéticas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        }
+      ],
+      "limitation": "Falta análisis de cláusulas griegas, léxicos y lectura integral de perspectivas sobre vigencia.",
+      "decision": "flujo_tecnico_parcial_validado_sin_conclusion"
+    },
+    {
+      "id": "SN-021",
+      "cases": 3,
+      "rvUnits": 20,
+      "greekAnchors": 2,
+      "sectionStates": {
+        "preparada_desde_delimitacion": 2,
+        "pendiente": 15,
+        "parcial_requiere_revision": 3
+      },
+      "openNeeds": [
+        {
+          "id": "SN-021-N1",
+          "need": "Ediciones hebrea y griega con identificación y permisos",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-021-N2",
+          "need": "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-021-N3",
+          "need": "Estudios del Salmo 22 y relatos de la pasión",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-021-N4",
+          "need": "Fuentes cristológicas e históricas atribuibles",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        }
+      ],
+      "limitation": "Falta fijar edición hebrea, verificar variantes de ambos relatos y estudiar recepción histórica y cristológica.",
+      "decision": "flujo_tecnico_parcial_validado_sin_conclusion"
+    },
+    {
+      "id": "SN-040",
+      "cases": 1,
+      "rvUnits": 5,
+      "greekAnchors": 1,
+      "sectionStates": {
+        "preparada_desde_delimitacion": 2,
+        "pendiente": 14,
+        "parcial_requiere_revision": 3,
+        "parcial_referencia_documental_previa": 1
+      },
+      "openNeeds": [
+        {
+          "id": "SN-040-N1",
+          "need": "Identidad, revisión y permisos de ediciones concretas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-040-N2",
+          "need": "Aparatos y fuentes documentales autorizadas o referencias externas",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-040-N3",
+          "need": "Localizadores y naturaleza de testimonio directo o secundario",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        },
+        {
+          "id": "SN-040-N4",
+          "need": "Criterios explícitos de crítica textual y límites",
+          "state": "abierta",
+          "impact": "bloquea_cierre_academico"
+        }
+      ],
+      "limitation": "Falta seleccionar y auditar una edición digital concreta de Scrivener, verificar aparato y testimonio directo.",
+      "decision": "flujo_tecnico_parcial_validado_sin_conclusion"
+    }
+  ],
+  "findings": [
+    {
+      "id": "P1024-F01",
+      "severity": "alta",
+      "kind": "cobertura",
+      "status": "abierta",
+      "description": "La cobertura lingüística no permite asumir análisis de todas las ocurrencias.",
+      "action": "Comprobar cobertura por ocurrencia y marcar ausencias en P10.3."
+    },
+    {
+      "id": "P1024-F02",
+      "severity": "alta",
+      "kind": "critica_textual",
+      "status": "abierta",
+      "description": "TR sin edición digital admitida; no existe colación directa ni alineación documental.",
+      "action": "Validar bloqueo de comparación y conservar atestaciones secundarias como tales."
+    },
+    {
+      "id": "P1024-F03",
+      "severity": "alta",
+      "kind": "fuentes",
+      "status": "abierta",
+      "description": "Veinte necesidades documentales pendientes; acceso a Logos no confirmado.",
+      "action": "Exigir fuente, edición, localizador, derechos y revisión individual antes de emitir una afirmación."
+    },
+    {
+      "id": "P1024-F04",
+      "severity": "media",
+      "kind": "metodologia",
+      "status": "abierta",
+      "description": "Ventanas acotadas y anclas independientes no equivalen a perícopas definitivas ni traducciones alineadas.",
+      "action": "Mantener la distinción y probar ausencia de inferencia automática."
+    },
+    {
+      "id": "P1024-F05",
+      "severity": "media",
+      "kind": "editorial",
+      "status": "abierta",
+      "description": "Diez posiciones preparadas, dieciséis parciales y setenta y cuatro pendientes; ninguna concluida.",
+      "action": "Mantener estados y exigir revisión académica y autorización P11.4."
+    }
+  ],
+  "next": {
+    "phase": "P10.3",
+    "status": "condicionada_a_CI_integracion_y_despliegue",
+    "criteria": [
+      {
+        "tool": "hebreo",
+        "pilot": "SN-001",
+        "requirement": "Comprobar cobertura y edición exacta para Lv 19:28 y Dt 14:1; distinguir ocurrencia, lema, morfología y sentido; bloquear resultados sin datos admitidos.",
+        "blockedBy": [
+          "Fijación de edición hebrea",
+          "Cobertura de ocurrencias y gramática"
+        ]
+      },
+      {
+        "tool": "griego",
+        "pilot": "SN-008",
+        "requirement": "Localizar las seis anclas en edición identificada; comprobar cobertura morfológica y léxica por ocurrencia; no inferir significado por identificador.",
+        "blockedBy": [
+          "Cobertura morfológica y léxica",
+          "Consulta especializada"
+        ]
+      },
+      {
+        "tool": "pactos",
+        "pilot": "SN-015",
+        "requirement": "Conservar destinatario, género, época, norma o relato y fuentes de cada relación; no convertir coincidencia verbal en continuidad normativa.",
+        "blockedBy": [
+          "Fuentes históricas y confesionales",
+          "Delimitación de contextos"
+        ]
+      },
+      {
+        "tool": "cristologia",
+        "pilot": "SN-021",
+        "requirement": "Verificar localizadores de los tres pasajes, diferenciar cita y alusión y exigir fuente atribuible para cada interpretación; no inferir ruptura intratrinitaria.",
+        "blockedBy": [
+          "Edición hebrea",
+          "Recepción histórica y variantes pertinentes"
+        ]
+      },
+      {
+        "tool": "critica_textual",
+        "pilot": "SN-040",
+        "requirement": "Distinguir edición, testigo, aparato y atestación secundaria; comprobar que la ausencia de TR admitido bloquea una comparación TR-crítica; no asignar lectura original.",
+        "blockedBy": [
+          "Edición TR auditada",
+          "Localizadores y evidencia directa"
+        ]
+      }
+    ],
+    "missingEvidencePolicy": "prueba_negativa_o_pendiente_no_simular_evidencia",
+    "noAutomaticPublication": true
+  }
+}

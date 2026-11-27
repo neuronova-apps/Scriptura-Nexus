@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1024,validateP1024} from '../scripts/validate-p1024.mjs';
+const reject=fn=>{const d=loadP1024();fn(d);assert.throws(()=>validateP1024(d));};
+test('P10.2.4: reconcile audited flow and five readiness criteria',()=>assert.deepEqual(validateP1024(loadP1024()),{phase:'P10.2.4',pilots:5,cases:17,rvUnits:101,greekAnchors:11,openNeeds:20,sections:100,prepared:10,partial:16,pending:74,findings:5,high:3,medium:2,nextCriteria:5,academicCompletion:false,publicationAuthorized:false}));
+test('P10.2.4: preserve application fingerprint and CI record',()=>{reject(d=>d.bytes=Buffer.from('{}'));reject(d=>d.review.technicalEvidence.deploymentAfterMerge.status='success');});
+test('P10.2.4: no invented resolution or section completion',()=>{reject(d=>d.review.pilots[0].openNeeds[0].state='cerrada');reject(d=>d.review.pilots[0].sectionStates.pendiente=0);reject(d=>d.review.pilots[0].rvUnits++);});
+test('P10.2.4: preserve findings and severity',()=>{reject(d=>d.review.findings.pop());reject(d=>d.review.findings[0].severity='baja');reject(d=>d.review.findings[0].status='cerrada');});
+test('P10.2.4: enforce scope and publication gates',()=>{reject(d=>d.review.publicationAuthorized=true);reject(d=>d.review.corpusImportAuthorized=true);reject(d=>d.review.academicCompletion=true);});
+test('P10.2.4: preserve P10.3 criteria and missing evidence policy',()=>{reject(d=>d.review.next.criteria.pop());reject(d=>d.review.next.criteria[0].blockedBy=[]);reject(d=>d.review.next.missingEvidencePolicy='simular');});

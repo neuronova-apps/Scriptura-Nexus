@@ -1,0 +1,36 @@
+name: P10.2.4 Revisión del flujo metodológico
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-review-p1024.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Reconciliar resultados y ejecutar regresiones
+        run: |
+          npm ci
+          node scripts/validate-p1024.mjs
+          python3 -m unittest discover -s tests -p 'test_pilot_application_p1023.py'
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
