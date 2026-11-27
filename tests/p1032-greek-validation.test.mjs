@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1032,validateP1032,checkAbsent} from '../scripts/validate-greek-p1032.mjs';
+const reject=fn=>{const d=loadP1032();fn(d);assert.throws(()=>validateP1032(d));};
+test('P10.3.2: six source-native anchors and two independent coverage levels',()=>assert.deepEqual(validateP1032(loadP1032()),{phase:'P10.3.2',pilot:'SN-008',pilotCases:6,textBooks:2,linguisticBooks:1,candidateFiles:2,academicAnalysisCompleted:false,publicationAuthorized:false}));
+test('P10.3.2: preserve historical fingerprints and deployment',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.previousClosure.deploy='pending');});
+test('P10.3.2: textual admission is not linguistic admission',()=>{reject(d=>d.record.linguisticEdition.coveredBooks.push('LIB-Acts'));reject(d=>d.record.cases[0].analysisExpected='disponible');});
+test('P10.3.2: candidates and lexical resources stay deferred',()=>{reject(d=>d.record.candidateMetadata.files[0].admitted=true);reject(d=>d.lexical.decisions.find(x=>x.candidateId==='LEX-C01').review='aprobado');});
+test('P10.3.2: no invented occurrences',()=>{const c=loadP1032().record.cases[0];assert.throws(()=>checkAbsent({select:()=>({status:'fuera_de_cobertura',occurrences:[{}]})},'e',c));assert.throws(()=>checkAbsent({select:()=>({status:'fuera_de_cobertura',occurrences:[],unitId:'false'})},'e',c));});
+test('P10.3.2: no premature publication or academic completion',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.newAdmissionAuthorized=true);reject(d=>d.record.academicAnalysisCompleted=true);reject(d=>d.publicRegistry.units.push({}));});
