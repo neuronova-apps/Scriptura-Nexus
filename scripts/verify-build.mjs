@@ -207,10 +207,12 @@ for (const [name, file] of fundamentalsPages) {
 }
 console.log('P4.4: seis páginas de fundamentos, landmarks, referencias ARIA, IDs, rutas y anclas: conformes.');
 
-const catalogData = JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const {loadOperationalCatalog}=await import('./validate-p1013.mjs');
+const catalogData = loadOperationalCatalog();
+assert.equal(catalogData.length,80);
 const axesData = JSON.parse(readFileSync('src/data/taxonomia/ejes.json','utf8')).items;
 const catalogHtml = readFileSync('dist/estudios/index.html','utf8');
-assert.equal([...catalogHtml.matchAll(/data-study-id="SN-\d{3}"/g)].length,42);
+assert.equal([...catalogHtml.matchAll(/data-study-id="SN-\d{3}"/g)].length,80);
 assert.match(catalogHtml,/id="catalog-axis"/);
 assert.match(catalogHtml,/id="catalog-status"/);
 assert.match(catalogHtml,/id="catalog-reset"/);
@@ -227,7 +229,7 @@ for (const item of [...axesData,...catalogData]) {
     assert.match(html,/Planificado/);
     for(const id of [item.primaryAxisId,...item.relatedAxisIds]) assert.ok(html.includes('href="/Scriptura-Nexus/ejes/'+id+'/"'));
   } else {
-    if(!item.initialPlannedCount) assert.match(html,/aún no tiene investigaciones principales/);
+    if(!catalogData.some(s=>s.primaryAxisId===item.id)) assert.match(html,/aún no tiene investigaciones principales/);
     for(const s of catalogData.filter(s=>s.primaryAxisId===item.id||s.relatedAxisIds.includes(item.id))) assert.ok(html.includes('href="/Scriptura-Nexus/estudios/'+s.id+'/"'));
   }
   for(const [,href] of html.matchAll(/href="([^"]+)"/g)) {
@@ -239,13 +241,13 @@ for (const item of [...axesData,...catalogData]) {
 }
 assert.ok(!existsSync('dist/estudios/SN-999/index.html'));
 assert.ok(!existsSync('dist/ejes/E99/index.html'));
-console.log('P5.3: 14 ejes, 42 fichas, relaciones, filtros y enlaces estáticos conformes.');
+console.log('P5.3: 14 ejes, 80 fichas, relaciones, filtros y enlaces estáticos conformes.');
 
 const searchPage=readFileSync('dist/buscar/index.html','utf8');
 const searchIndex=JSON.parse(readFileSync('dist/data/catalog-search.json','utf8'));
 assert.equal(searchIndex.schemaVersion,1);
-assert.equal(searchIndex.items.length,42);
-assert.equal(new Set(searchIndex.items.map(x=>x.id)).size,42);
+assert.equal(searchIndex.items.length,80);
+assert.equal(new Set(searchIndex.items.map(x=>x.id)).size,80);
 assert.ok(searchPage.includes('data-index="/Scriptura-Nexus/data/catalog-search.json"'));
 assert.ok(catalogHtml.includes('href="/Scriptura-Nexus/buscar/"'));
 assert.match(searchPage,/id="search-query"/);
@@ -263,12 +265,12 @@ for(const entry of searchIndex.items){
   assert.equal(entry.question,source.question);
   assert.ok(existsSync('dist/estudios/'+entry.id+'/index.html'));
 }
-console.log('P5.4: índice público, 42 fichas, rutas y exclusión de contenido no autorizado: conformes.');
+console.log('P5.4: índice público, 80 fichas, rutas y exclusión de contenido no autorizado: conformes.');
 
  
 // P5.5: exhaustive output audit, without claiming browser accessibility certification.
 const auditRoutes=['estudios/','buscar/',...axesData.map(a=>'ejes/'+a.id+'/'),...catalogData.map(s=>'estudios/'+s.id+'/')];
-assert.equal(auditRoutes.length,58);
+assert.equal(auditRoutes.length,96);
 for(const route of auditRoutes){
   const html=readFileSync('dist/'+route+'index.html','utf8');
   assert.match(html,/<html[^>]*lang="es"/,route);
@@ -314,7 +316,7 @@ assert.match(searchPage,/role="search"/);
 assert.match(searchPage,/id="search-more"/);
 assert.match(searchPage,/aria-live="polite"/);
 assert.match(catalogHtml,/aria-live="polite"/);
-console.log('P5.5: auditoría de 58 páginas, 42 fichas únicas, 70 relaciones, referencias ARIA, enlaces e índice conforme.');
+console.log('P5.5: auditoría de 96 páginas, 80 fichas únicas, relaciones taxonómicas, referencias ARIA, enlaces e índice conforme.');
 
  
 // P6.2: pending public templates, no draft body.
@@ -329,7 +331,7 @@ for(const study of catalogData){
   for(let i=1;i<=20;i++){const anchor='seccion-'+String(i).padStart(2,'0');assert.ok(html.includes('id="'+anchor+'"'));assert.ok(html.includes('href="#'+anchor+'"'));}
   assert.doesNotMatch(html,/PRUEBA SINTÉTICA|synthetic-only/);
 }
-console.log('P6.2: 42 plantillas, 840 secciones pendientes, índice y anclas conformes; sin cuerpos sintéticos.');
+console.log('P6.2: 80 plantillas, 1600 secciones pendientes, índice y anclas conformes; sin cuerpos sintéticos.');
 
 for(const study of catalogData){
  const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
@@ -341,7 +343,7 @@ for(const study of catalogData){
   assert.ok(html.includes('href="/Scriptura-Nexus/estudios/'+other.id+'/"'),study.id+' relación '+other.id);
  }
 }
-console.log('P6.3: relaciones taxonómicas en 42 fichas; sin evidencias o posturas sintéticas.');
+console.log('P6.3: relaciones taxonómicas en 80 fichas; sin evidencias o posturas sintéticas.');
 
 const publicationRegistry=JSON.parse(readFileSync('src/data/publicaciones/registro.json','utf8'));
 assert.equal(publicationRegistry.schemaVersion,1);
@@ -354,7 +356,7 @@ for(const study of catalogData){
 assert.ok(!existsSync('dist/editorial-private'));
 assert.ok(!existsSync('dist/drafts'));
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA|EVD-900001/);
-console.log('P6.4: registro inicial vacío, 42 fichas sin versión aprobada, sin borradores en rutas ni índice.');
+console.log('P6.4: registro inicial vacío, 80 fichas sin versión aprobada, sin borradores en rutas ni índice.');
 
 // P6.5.2: actual production HTML and synthetic-data isolation.
 let auditedPositions=0;
@@ -366,9 +368,9 @@ for(const study of catalogData){
  assert.equal((html.match(/href="#indice-secciones"/g)||[]).length,20);
  assert.doesNotMatch(html,/PRUEBA SINTÉTICA P6\.5\.2/);
 }
-assert.equal(auditedPositions,840);
+assert.equal(auditedPositions,1600);
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.2/);
-console.log('P6.5.2: 840 posiciones HTML, títulos, anclas de retorno y aislamiento de fixtures conformes.');
+console.log('P6.5.2: 1600 posiciones HTML, títulos, anclas de retorno y aislamiento de fixtures conformes.');
 
 // P6.5.3: no synthetic editorial relations in production pages or search.
 for(const study of catalogData){
@@ -381,7 +383,7 @@ for(const study of catalogData){
  assert.deepEqual(actual,related,study.id+' vínculos taxonómicos exactos');
 }
 assert.doesNotMatch(JSON.stringify(searchIndex),/PRUEBA SINTÉTICA P6\.5\.3|POS-90000/);
-console.log('P6.5.3: relaciones exactas de 42 fichas y exclusión de trazas sintéticas.');
+console.log('P6.5.3: relaciones exactas de 80 fichas y exclusión de trazas sintéticas.');
 
 // P6.5.4: scan the entire publishable output, not only study pages.
 const {readdirSync}=await import('node:fs');
