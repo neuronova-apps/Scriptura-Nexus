@@ -7,6 +7,8 @@ import {readFileSync,statSync} from 'node:fs';
 import {resolve,extname} from 'node:path';
 import {createRequire} from 'node:module';
 import ts from 'typescript';
+import {createHash} from 'node:crypto';
+import {readLoopbackGzip} from './lib/reader-loopback-gzip.mjs';
 import {createIsolatedFragmentReader} from '../src/lib/reader-fragment-view.ts';
 const plan=JSON.parse(readFileSync('docs/P11/registro-validacion-lector-p11424.json','utf8'));
 const dep=createRequire(resolve(process.env.P11424_DEPS,'package.json'));
@@ -20,13 +22,13 @@ try{
  req(ready.publicationAuthorized===false&&ready.fragments===1449&&ready.catalogGzipBytes>0&&ready.catalogGzipBytes<=plan.budget.catalogGzipBytes,'catalog budget');
  const origin='http://127.0.0.1:'+ready.port,reader=origin+'/reader/';
  const chapterPath=d=>'/chapter/'+[d.editionId,d.bookId,d.chapter].map(encodeURIComponent).join('/');
- const catalogResponse=await fetch(origin+'/catalog');req(catalogResponse.ok,'catalog response');
- const catalog=await catalogResponse.json();
+ const catalogResponse=await readLoopbackGzip(origin,'/catalog',{maxGzipBytes:plan.budget.catalogGzipBytes,expectedGzipBytes:ready.catalogGzipBytes,expectedJsonBytes:ready.catalogJsonBytes});
+ const catalog=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(catalogResponse.raw));
  let loads=0,units=0,empties=0,books=0,chapters=0;
  const v=createIsolatedFragmentReader(catalog,async d=>{
-  const r=await fetch(origin+chapterPath(d));req(r.ok,'chapter response');loads++;
-  req(r.headers.get('content-encoding')==='gzip'&&Number(r.headers.get('content-length'))===d.gzipBytes,'chapter encoding');
-  return new Uint8Array(await r.arrayBuffer());
+  const r=await readLoopbackGzip(origin,chapterPath(d),{maxGzipBytes:plan.budget.chapterGzipBytes,expectedGzipBytes:d.gzipBytes,expectedJsonBytes:d.jsonBytes});loads++;
+  req(createHash('sha256').update(r.packed).digest('hex')===d.gzipSha256,'compressed fingerprint');
+  return new Uint8Array(r.raw);
  });
  stage='exhaustive-reference-navigation';
  for(const e of catalog.editions)for(const b of e.books){
