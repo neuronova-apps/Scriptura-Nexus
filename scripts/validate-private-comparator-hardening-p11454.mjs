@@ -19,7 +19,7 @@ try{
  const before=snapshot(),{files,summary}=await createPrivateComparatorOverlay();
  assert.deepEqual([summary.chapters,summary.units,summary.verifiedGroups,summary.publicationAuthorized,summary.corpusPersisted,summary.upload],[1449,39041,0,false,false,false]);
  const counts={catalogFailures:0,chapterFailures:0,recoveries:0,staleChecks:0,layoutCases:0,axeScans:0,keyboardChecks:0,externalRequests:0,unexpectedRequests:0,pageErrors:0};
- let collecting=false,initialBodyBytes=0,initialJsBytes=0,chapterRequests=0,failPath='',failMode='';
+ let collecting=false,initialBodyBytes=0,initialJsBytes=0,chapterRequests=0,failPath='',failMode='',injectedFailures=0;
  browser=await chromium.launch({headless:true});
  const c=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',acceptDownloads:false,reducedMotion:'reduce'});
  const p=await c.newPage();p.on('pageerror',()=>counts.pageErrors++);
@@ -43,7 +43,7 @@ try{
    initialBodyBytes+=size;if(file.type.startsWith('text/javascript'))initialJsBytes+=size;
   }
   if(path===failPath){
-   const mode=failMode;failPath='';failMode='';
+   const mode=failMode;failPath='';failMode='';injectedFailures++;
    if(mode==='network')return route.abort('failed');
    if(mode==='truncate')return route.fulfill({status:200,contentType:file.type,body:file.body.subarray(0,-1),headers});
    const changed=Buffer.from(file.body);changed[changed.length-1]^=1;
@@ -62,10 +62,18 @@ try{
   else if(await ctrl(side,'book').isEnabled())await ctrl(side,'book').selectOption('');
  };
  const consult=async(t=independent)=>{await p.locator('#bc-consult').click();await waitStatus(t);};
- const noResults=async()=>{assert.equal(await p.locator('.bc-reading').count(),0);};
+ const noResults=async()=>{assert.equal(await p.locator('.bc-reading').count(),0,'No rendered readings after rejection');};
  stage='catalog corruption';
  failPath=readerAssets+'catalog.json.gz';failMode='corrupt';await go();await waitStatus('No se pudo verificar el candidato.');
- assert.equal(await p.locator('#bc-fields').isDisabled(),true);await noResults();assert.equal(chapterRequests,0);counts.catalogFailures++;
+ stage='catalog corruption: injection and native fieldset boundary';
+ assert.equal(injectedFailures,1,'Corrupt catalog must actually be injected');
+ // Playwright disabled matching is designed for form controls; use the native
+ // fieldset property and independently verify effective child-control state.
+ assert.equal(await p.locator('#bc-fields').evaluate(e=>e instanceof HTMLFieldSetElement&&e.disabled),true,'Catalog failure must retain disabled fieldset');
+ for(const control of ['#bc-origin-edition','#bc-target-edition','#bc-consult']){
+  assert.equal(await p.locator(control).isDisabled(),true,'Catalog failure must disable interactive controls');
+ }
+ await noResults();assert.equal(chapterRequests,0,'Rejected catalog must not load chapters');counts.catalogFailures++;
  stage='cold retry and budgets';
  collecting=true;await go();await ready();await p.waitForLoadState('networkidle');collecting=false;
  assert.equal(chapterRequests,0);assert.ok(initialBodyBytes>0&&initialBodyBytes<=512000,'Initial compressed-equivalent response body budget');
@@ -116,7 +124,7 @@ try{
   const violations=await p.evaluate(async()=>{const r=await window.axe.run('.sn-bible-comparator',{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return r.violations.map(v=>({id:v.id,nodes:v.nodes.length}));});
   if(violations.length){console.error(JSON.stringify({stage,theme,violations}));throw Error('axe');}counts.axeScans++;
  }
- assert.equal(counts.layoutCases,24);assert.equal(counts.axeScans,4);
+ assert.equal(counts.layoutCases,24);assert.equal(counts.axeScans,4);assert.equal(injectedFailures,4,'All four failure injections must be exercised');
  stage='privacy and public boundary';
  const store=await p.evaluate(async()=>({local:Object.keys(localStorage),session:Object.keys(sessionStorage),db:(await indexedDB.databases()).length,cache:(await caches.keys()).length}));
  assert.deepEqual(store,{local:[],session:[],db:0,cache:0});assert.deepEqual(await c.cookies(),[]);
@@ -124,5 +132,5 @@ try{
  await c.close();assert.deepEqual(snapshot(),before);
  assert.ok(!readFileSync(join(base,'biblia/comparador/index.html'),'utf8').includes('private-comparator/init.js'));
  console.log(JSON.stringify({phase:'P11.4.5.4',candidate:'success',...counts,initialBodyGzipEstimateBytes:initialBodyBytes,initialJsGzipEstimateBytes:initialJsBytes,chapterRequests,distUnchanged:true,verifiedGroups:0,manualScreenReader:false,physicalDevice:false,publicationAuthorized:false,corpusPersisted:false,upload:false}));
-}catch(e){console.error('Private comparator hardening failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+')');process.exitCode=1;}
+}catch(e){const location=e instanceof Error?e.stack?.match(/validate-private-comparator-hardening-p11454\.mjs:(\d+):(\d+)/)?.[0]:undefined;console.error('Private comparator hardening failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+')'+(location?' ['+location+']':''));process.exitCode=1;}
 finally{held?.release.resolve();if(browser)await browser.close();}

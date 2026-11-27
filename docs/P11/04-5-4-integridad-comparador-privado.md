@@ -15,3 +15,7 @@ Sin precarga de capítulos. Límites históricos: JS inicial 150 KiB y cuerpo in
 ## Barreras y continuidad
 
 ENT30 continúa vacío, no se infiere correspondencia ni se admite Scrivener 1894 o Dodson XML. Se conservan los controles públicos y registros históricos. El workflow añade cinco pruebas específicas Node, regresión general, compilación pública y validación privada Chromium/axe. Los resultados deben verificarse en CI antes del cierre. No se certifica accesibilidad manual ni se modifica la compuerta de léxicos. Progreso histórico 63/69 hasta cierre de P11.4.5. Siguiente P11.4.5.5, revisión final y liberación controlada sin autorización implícita.
+
+## Incidencia de CI del PR #118
+
+Run 46047344939, job 140669796195: 48 comprobaciones satisfactorias, una omitida y una fallida; el harness informó AssertionError en catalog corruption, sin línea exacta. La hipótesis de trabajo es la comprobación de fieldset mediante isDisabled de Playwright. Se sustituye por la propiedad nativa disabled, se exige adicionalmente que los selectores y botón estén efectivamente deshabilitados, que la corrupción se haya inyectado y que no exista lectura ni solicitud de capítulos. Se verifica el total de cuatro inyecciones y se añade diagnóstico de línea sin imprimir valores ni textos. No se relaja ninguna expectativa de integridad, no se toca el candidato ni se modifica src, dist o permisos. Confirmación pendiente de la nueva ejecución.
