@@ -1,0 +1,41 @@
+name: P11.4.4.3 Índices exhaustivos de concordancias
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/concordance-index-p11443.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exhaustive-index:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - name: Pruebas de índices, alcance y barrera pública
+        run: |
+          npm ci
+          node --test tests/p8-concordance-index.test.mjs tests/p8-concordance.test.mjs tests/p11443-concordance-index.test.mjs
+          npm run build
+          npm run test:build
+      - name: Índices, frecuencias y consultas exhaustivas con fuentes reales
+        run: node scripts/validate-concordance-index-p11443.mjs
+      - name: Barrera pública posterior
+        run: npm run test:build

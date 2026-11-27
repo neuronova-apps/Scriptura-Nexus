@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+export const path='docs/P11/registro-indices-concordancias-p11443.json';
+const json=p=>JSON.parse(readFileSync(p,'utf8'));
+export function validateIndexPlan(r=json(path)){
+ const p=json('docs/P11/registro-propuesta-lexica-p11442.json');
+ assert.deepEqual(r,{"schemaVersion":1,"phase":"P11.4.4.3.indices_exhaustivos_privados","baselineMain":"90226e04ee56206a9bf185df7746a4b069701048","previousIntegration":{"pr":109,"head":"afd5f75672657a16ff8c23b6cf2503af8aa50bf6","merge":"90226e04ee56206a9bf185df7746a4b069701048","workflows":32,"successfulChecks":41,"run":46031238058,"job":140615287135,"pagesRun":46031920767,"pagesAtPreparation":"pending"},"observed":{"sample":{"queries":90,"bookQueries":90,"resultsChecked":15667,"queryGroups":9,"sha256":"13b8ef41e1dd254cfc7dc3025dcbfe10c29699103c264d7e4e4089c947d9fc2c","languageCounts":{"hbo":49174,"arc":3601,"grc":25443},"occurrencesWithAdmittedLemma":76732,"occurrencesWithoutAdmittedLemma":1486},"dodson":{"id":"LEX-C08","sha256":"39c6cb8053ef0adeffac7bbec1d1bc4f96c69424f8e6668f19b4244d3f234639","entries":5410,"forms":5410,"distinctExactForms":5409,"definitions":10820,"distinctNumericSuffixes":5408,"duplicateSuffixRows":2,"labelEqualsOrth":2247,"labelDiffersFromOrth":3163,"csvNumericOverlap":5408,"technicalAdmission":"pendiente_aprobacion","publication":false}},"scope":{"editions":2,"books":["Gen","Lev","Deut","Dan","Acts","1Cor","3John"],"bookOccurrences":{"Gen":20612,"Lev":11950,"Deut":14294,"Dan":5919,"Acts":18412,"1Cor":6812,"3John":219},"chapters":168,"units":5162,"occurrences":78218,"modes":["form","lemma","provider"],"languages":["hbo","arc","grc"],"historicalLexicalFiles":["LING-015","LING-016","LING-017","LING-018"],"excludedCandidates":["LEX-C01","LEX-C02","LEX-C07","LEX-C08"],"greekAdditionalWithheld":198},"validation":{"mode":"all_observed_keys_and_frequency_scopes","editionAndBookScopes":true,"completePagination":true,"metadataAndOrigins":true,"zeroVsUnavailable":true,"sourceOrderPreserved":true,"noInferredLinks":true},"decision":{"newAdmissions":0,"publicationAuthorized":false,"automaticCorpusLinks":false,"semanticEquivalences":false,"corpusPersisted":false},"progress":{"completed":61,"total":69},"next":"P11.4.4.4_candidato_funcional_tras_validacion_y_decision_lexica"});
+ assert.deepEqual(r.scope.books,p.concordance.books);assert.deepEqual(r.scope.bookOccurrences,p.concordance.bookOccurrences);
+ for(const k of ['editions','chapters','units','occurrences','modes','languages'])assert.deepEqual(r.scope[k],p.concordance[k]);
+ assert.deepEqual(r.scope.historicalLexicalFiles,p.proposal.retained);assert.deepEqual(r.scope.excludedCandidates,[...p.proposal.deferred,p.proposal.candidate.id]);
+ assert.equal(r.observed.dodson.sha256,p.proposal.candidate.sha256);assert.deepEqual(p.proposal.candidate.allowedComponents,[]);assert.equal(p.proposal.candidate.publication,false);
+ for(const k of Object.keys(r.decision))assert.equal(r.decision[k],p.decision[k]);
+ assert.equal(r.observed.sample.occurrencesWithAdmittedLemma+r.observed.sample.occurrencesWithoutAdmittedLemma,r.scope.occurrences);
+ assert.deepEqual(json('src/data/linguistica/registro.json'),{schemaVersion:1,editions:[],units:[],tokens:[],lemmas:[],identifiers:[],analyses:[],morphCodes:[]});
+ return r;
+}
