@@ -186,4 +186,4 @@ async function main(){
  assert.deepEqual(snapshot('dist'),before);
  console.log(JSON.stringify({mode:'P11.4.4.4.2-private-fragment-browser',...checks,lexicalEntries:lexical.model.entries.length,definitions:lexical.model.definitions.length,occurrences:data.registry.tokens.length,fragmentFiles:candidate.summary.fragmentFiles,fragmentFilesFetched:fragmentFiles.size,fragmentBytesFetched:fragmentBytes,totalGzipBytes:candidate.summary.totalGzipBytes,maxGzipBytes:candidate.summary.maxGzipBytes,catalogGzipBytes:candidate.summary.catalogGzipBytes,corpusPersisted:false,corpusPublished:false,distUnchanged:true,manualScreenReader:'pending',manualDeviceReview:'pending'},null,2));
 }
-try{await main();}catch{throw new Error('P11.4.4.4.2 falló en '+stage+'; datos del corpus omitidos');}finally{if(browserInstance)await browserInstance.close();server.close();}
+try{await main();}catch{throw new Error('P11.4.4.4.2 falló en '+stage+'; datos del corpus omitidos');}finally{if(browserInstance)await browserInstance.close();if(server.listening)server.close();}

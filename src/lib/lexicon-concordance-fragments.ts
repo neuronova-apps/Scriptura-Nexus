@@ -21,14 +21,14 @@ export async function createLexiconConcordanceFragments(options:{manifestUrl:str
   const found=new Map<string,LexicalSummary>();
   for(const [b,keys] of pending){
    let rows=summaryCache.get(b);
-   if(!rows){const d=catalog.lexicalSummaryBuckets[b];require(d);const p=await source.load(d);require(p.bucket===b&&Array.isArray(p.entries));rows=new Map(p.entries.map((x:LexicalSummary)=>[x.id,x]));summaryCache.set(b,rows);if(summaryCache.size>4)summaryCache.delete(summaryCache.keys().next().value!);}
+   if(!rows){const d=catalog.lexicalSummaryBuckets[b];require(d);const p=await source.load(d);require(p.bucket===b&&Array.isArray(p.entries));rows=new Map<string,LexicalSummary>(p.entries.map((x:LexicalSummary)=>[x.id,x] as [string,LexicalSummary]));summaryCache.set(b,rows);if(summaryCache.size>4)summaryCache.delete(summaryCache.keys().next().value!);}
    for(const id of keys){const x=rows.get(id);require(x);found.set(id,x);}
   }
   return ids.map(id=>found.get(id)!);
  };
  const lemmas=async()=>{
   if(lemmaCache)return lemmaCache;const p=await source.load(catalog.lemmaCatalog);require(p.schemaVersion===1&&Array.isArray(p.lemmas));
-  lemmaCache=new Map(p.lemmas.map((x:any)=>[x.id,x.language]));return lemmaCache;
+  lemmaCache=new Map<string,string>(p.lemmas.map((x:any)=>[x.id,x.language] as [string,string]));return lemmaCache;
  };
  const scopeStatus=(q:{editionId:string;language:string;bookId?:string})=>{
   const e=coverage.find(x=>x.editionId===q.editionId);if(!e)return 'edicion_no_disponible';

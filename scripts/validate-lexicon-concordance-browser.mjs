@@ -24,6 +24,7 @@ const moduleAliases={
  './linguistic-contracts.ts':'./linguistic-contracts.js',
  './term-analyzer.ts':'./term-analyzer.js',
  '../lib/term-analyzer-view':'./term-analyzer-view.js',
+ '../lib/term-analyzer-view.ts':'./term-analyzer-view.js',
  '../lib/linguistic-contracts':'./linguistic-contracts.js'
 };
 const html=readFileSync('dist/linguistica/lexicos-concordancias/index.html','utf8');

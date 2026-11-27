@@ -31,7 +31,7 @@ export function pageWindow(total:number,offset=0,limit=20){
 }
 export function createPrivateLookup(catalog:any,load:(descriptor:any)=>Promise<any>){
  require(catalog?.schemaVersion===1&&catalog.mode==='isolated_lexical_concordance'&&catalog.publicationAuthorized===false&&Array.isArray(catalog.groups)&&catalog.details);
- const groups=new Map<string,any>(catalog.groups.map((g:any)=>[groupKey(g.query),g]));require(groups.size===catalog.groups.length);
+ const groups=new Map<string,any>(catalog.groups.map((g:any)=>[groupKey(g.query),g] as [string,any]));require(groups.size===catalog.groups.length);
  let groupCache:{key:string;value:any}|null=null;
  async function group(q:PrivateGroupQuery){
   const k=groupKey(q),g=groups.get(k);if(!g)return null;
