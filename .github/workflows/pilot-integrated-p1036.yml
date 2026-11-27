@@ -1,0 +1,42 @@
+name: P10.3.6 Integración y validación conjunta
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'docs/P8/**'
+      - 'docs/P9/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-integrated-p1036.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-integrated:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Conciliar registros y ejecutar auditorías reales
+        run: |
+          npm ci
+          node --test tests/p1036-integrated-validation.test.mjs
+          node scripts/validate-integrated-p1036.mjs
+          node scripts/validate-hebrew-p1031.mjs
+          node scripts/validate-greek-p1032.mjs
+          python3 scripts/audit-pilot-application-p1023.py
+          python3 scripts/audit-textual-criticism-p1035.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
