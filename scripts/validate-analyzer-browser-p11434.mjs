@@ -33,6 +33,8 @@ try{
  assert.equal(chapterLoads,0);assert.equal(await p.locator('#ta-candidate-rights h3').count(),3);
  assert.equal(await p.locator('#ta-candidate-rights a[href="https://creativecommons.org/licenses/by-sa/3.0/"]').count(),1);
  assert.equal(await p.locator('.sn-analyzer #ta-candidate-privacy').count(),1);
+ assert.ok((await p.locator('#ta-candidate-privacy').innerText()).includes('las direcciones IP de los visitantes se registran y almacenan con fines de seguridad'));
+ assert.equal(await p.locator('#ta-candidate-privacy a[href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages"]').count(),1);
  const coverage=engine.coverage(),ref=(b,ch,v)=>({editionId:coverage.find(e=>e.bookIds.includes('LIB-'+b)).editionId,bookId:'LIB-'+b,chapter:ch,verse:v});
  const select=async q=>{await p.locator('#ta-edition').selectOption(q.editionId);await p.locator('#ta-book').selectOption(q.bookId);await p.locator('#ta-chapter').fill(q.chapter);await p.locator('#ta-verse').fill(q.verse);};
  const submit=async()=>p.getByRole('button',{name:'Consultar referencia'}).click();

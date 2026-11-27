@@ -33,6 +33,8 @@ jobs:
           npm ci
           node --test tests/p114353-analyzer-decision.test.mjs
           node scripts/validate-analyzer-decision-p114353.mjs
+          node --test tests/p114354-analyzer-preflight.test.mjs
+          node scripts/validate-analyzer-preflight-p114354.mjs
           npm run build
           npm run test:build
       - name: Ensayo de recuperación privada del artefacto real
