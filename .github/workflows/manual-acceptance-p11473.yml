@@ -1,0 +1,41 @@
+name: P11.4.7.3 Protocolo manual y matriz de aceptación
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/manual-acceptance-p11473.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manual-acceptance-plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Matriz pendiente, regresiones y build público
+        run: npm ci && node scripts/validate-manual-acceptance-p11473.mjs && npm run check && npm test && npm run build && npm run test:build
+      - name: Comprobación automatizada del entorno de revisión privada
+        run: |
+          deps="$RUNNER_TEMP/p11473-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P11473_DEPS="$deps" node --max-old-space-size=4096 scripts/preview-integral-manual-p11473.mjs --smoke
+      - name: Barrera pública posterior
+        run: npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
