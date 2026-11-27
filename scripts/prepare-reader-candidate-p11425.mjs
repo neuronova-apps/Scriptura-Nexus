@@ -7,6 +7,7 @@ import {createInterface} from 'node:readline';
 import {createServer} from 'node:http';
 import {readFileSync,statSync} from 'node:fs';
 import {resolve,relative,isAbsolute,extname} from 'node:path';
+import {pathToFileURL} from 'node:url';
 import ts from 'typescript';
 import {readLoopbackGzip} from './lib/reader-loopback-gzip.mjs';
 import {loadAuthorization,validateAuthorization} from './validate-reader-authorization-p11425.mjs';
@@ -78,17 +79,23 @@ async function makeCandidate(backend,ready){
  assert.equal(overlay.size,1457);
  return {overlay,summary:{editions:2,books:93,chapters:ds.length,units:ds.reduce((n,d)=>n+d.unitCount,0),gzipBytes,publicationAuthorized:false,corpusPersisted:false}};
 }
+// A caller can stage the exact validated overlay without opening a candidate HTTP server.
+export async function createCandidate(){
+ validateAuthorization(loadAuthorization());
+ const source=spawn(process.env.PYTHON||'python3',['scripts/serve-reader-isolated-p11423.py','--rv-alternative'],{stdio:['ignore','pipe','ignore']});
+ const sourceLines=createInterface({input:source.stdout});
+ try{
+  const ready=await Promise.race([once(sourceLines,'line').then(([s])=>JSON.parse(s)),once(source,'exit').then(()=>{throw Error('backend exit');}),once(source,'error').then(()=>{throw Error('backend error');})]);
+  return await makeCandidate('http://127.0.0.1:'+ready.port,ready);
+ }finally{sourceLines.close();source.kill();}
+}
 const mime={'.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.ico':'image/x-icon'};
-let child,server,lines,stage='authorization';
-const finish=()=>{server?.closeAllConnections();server?.close();lines?.close();child?.kill();};
+async function runCandidate(){
+let server,stage='authorization';
+const finish=()=>{server?.closeAllConnections();server?.close();};
 process.once('SIGINT',()=>{finish();process.exit(0);});process.once('SIGTERM',()=>{finish();process.exit(0);});
 try{
- validateAuthorization(loadAuthorization());stage='source';
- child=spawn(process.env.PYTHON||'python3',['scripts/serve-reader-isolated-p11423.py','--rv-alternative'],{stdio:['ignore','pipe','ignore']});
- lines=createInterface({input:child.stdout});
- const ready=await Promise.race([once(lines,'line').then(([s])=>JSON.parse(s)),once(child,'exit').then(()=>{throw Error('backend exit');}),once(child,'error').then(()=>{throw Error('backend error');})]);
- stage='all fragments';const {overlay,summary}=await makeCandidate('http://127.0.0.1:'+ready.port,ready);
- lines.close();child.kill();
+ stage='source and fragments';const {overlay,summary}=await createCandidate();
  const base=resolve('dist');
  const send=(res,status,body,type)=>{const bytes=Buffer.isBuffer(body)?body:Buffer.from(body);res.writeHead(status,{'Content-Type':type,'Content-Length':bytes.length,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"});res.end(bytes);};
  stage='serve candidate';
@@ -102,3 +109,5 @@ try{
  await new Promise((ok,fail)=>{server.once('error',fail);server.listen(0,'127.0.0.1',ok);});
  console.log(JSON.stringify({...summary,url:'http://127.0.0.1:'+server.address().port+root}));
 }catch{finish();console.error('Private candidate failed at '+stage+'; no corpus persisted');process.exitCode=1;}
+}
+if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href)await runCandidate();

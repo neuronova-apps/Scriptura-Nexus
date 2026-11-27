@@ -5,11 +5,14 @@ import {createInterface} from 'node:readline';
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
 const {chromium}=createRequire(resolve(process.env.P11425_DEPS,'package.json'))('playwright');
-const child=spawn(process.execPath,['scripts/prepare-reader-candidate-p11425.mjs'],{stdio:['ignore','pipe','ignore']});
+const staged=process.argv.slice(2).join(' ')==='--staged-artifact';
+if(process.argv.length>2&&!staged)throw Error('Unknown validation mode');
+const child=spawn(process.execPath,[staged?'scripts/stage-reader-artifact-p11425.mjs':'scripts/prepare-reader-candidate-p11425.mjs'],{stdio:['ignore','pipe','inherit']});
 const lines=createInterface({input:child.stdout});let browser,stage='startup';
 try{
  const summary=await Promise.race([once(lines,'line').then(([s])=>JSON.parse(s)),once(child,'exit').then(()=>{throw Error('candidate exited');})]);
  assert.deepEqual([summary.editions,summary.books,summary.chapters,summary.units,summary.publicationAuthorized,summary.corpusPersisted],[2,93,1449,39041,false,false]);
+ if(staged){assert.equal(summary.stagedArtifact,true);assert.equal(summary.temporaryFiles,true);assert.equal(summary.upload,false);assert.equal(summary.baselineIntact,true);assert.equal(summary.addedFiles,1456);assert.equal(summary.replacedFiles,1);assert.equal(summary.unchangedFiles,summary.baselineFiles-1);}
  const origin=new URL(summary.url).origin;assert.match(summary.url,/^http:\/\/127\.0\.0\.1:\d+\/Scriptura-Nexus\/biblia\/lector\/$/);
  browser=await chromium.launch({headless:true});
  const c=await browser.newContext({viewport:{width:360,height:900},serviceWorkers:'block',acceptDownloads:false});
@@ -47,11 +50,16 @@ try{
   if(outcome==='empty_marker')assert.equal(await p.locator('#br-passage').textContent(),'Marcador sin texto en la fuente.');
  }
  assert.equal(loads,3);
+ stage='appearance';
+ await p.locator('[data-appearance-panel] summary').click();
+ await p.locator('[data-appearance-theme]').selectOption('contrast-dark');await p.locator('[data-appearance-font-scale]').selectOption('130');
+ assert.equal(await p.locator('html').getAttribute('data-theme'),'contrast-dark');assert.equal(await p.locator('html').getAttribute('data-font-scale'),'130');
+ await p.locator('[data-appearance-panel] summary').click();
  stage='privacy';
  const storage=await p.evaluate(async()=>({local:Object.keys(localStorage).sort(),session:Object.keys(sessionStorage),db:(await indexedDB.databases()).length,cache:(await caches.keys()).length}));
- assert.ok(storage.local.every(x=>x==='scriptura-nexus:appearance:v1'));assert.deepEqual(storage.session,[]);assert.equal(storage.db,0);assert.equal(storage.cache,0);assert.deepEqual(await c.cookies(),[]);
+ assert.deepEqual(storage.local,['scriptura-nexus:appearance:v1']);assert.deepEqual(storage.session,[]);assert.equal(storage.db,0);assert.equal(storage.cache,0);assert.deepEqual(await c.cookies(),[]);
  assert.deepEqual([external,errors,unexpected],[0,0,0]);
  stage='boundary';assert.equal((await c.request.get(origin+'/Scriptura-Nexus/biblia/lector/reader-data/unknown.json.gz')).status(),404);
- await c.close();console.log(JSON.stringify({phase:'P11.4.2.5.candidato_controlado',staticCandidate:'success',editions:2,chaptersVerified:1449,chapterRequests:loads,externalRequests:0,queryStorage:false,privacyBrowserChecks:'success',realMobileValidated:false,publicationAuthorized:false,corpusPersisted:false}));
+ await c.close();console.log(JSON.stringify({phase:staged?'P11.4.2.5.verificacion_artefacto':'P11.4.2.5.candidato_controlado',staticCandidate:'success',...(staged?{stagedArtifact:'success',baselineFiles:summary.baselineFiles,unchangedFiles:summary.unchangedFiles,addedFiles:summary.addedFiles,replacedFiles:summary.replacedFiles,temporaryFiles:true,upload:false}:{}),editions:2,chaptersVerified:1449,chapterRequests:loads,externalRequests:0,queryStorage:false,privacyBrowserChecks:'success',realMobileValidated:false,publicationAuthorized:false,corpusPersisted:false}));
 }catch(e){console.error('Candidate validation failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+')');process.exitCode=1;}
-finally{if(browser)await browser.close();lines.close();child.kill();}
+finally{if(browser)await browser.close();lines.close();const exited=child.exitCode!==null||child.signalCode!==null?Promise.resolve():once(child,'exit');child.kill();await exited;}
