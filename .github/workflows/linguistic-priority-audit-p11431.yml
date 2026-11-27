@@ -41,5 +41,6 @@ jobs:
           npm ci
           npm run check
           npm test
+          node scripts/validate-linguistic-integration-p11433.mjs
           npm run build
           npm run test:build
