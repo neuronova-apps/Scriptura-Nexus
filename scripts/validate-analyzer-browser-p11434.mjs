@@ -17,7 +17,7 @@ let server,browser,release=null,stage='plan';
 try{
  const plan=validateAnalyzerPlan();
  const deps=createRequire(resolve(process.env.P11434_DEPS,'package.json')), {chromium}=deps('playwright'),axe=deps.resolve('axe-core/axe.min.js');
- stage='fragments';const data=await loadExpandedAnalyzerData(),candidate=buildAnalyzerFragments(data),engine=createTermAnalyzer(data.registry,data.admissions,data.supplements);
+ stage='verified sources';const data=await loadExpandedAnalyzerData();stage='fragments';const candidate=buildAnalyzerFragments(data);stage='full engine';const engine=createTermAnalyzer(data.registry,data.admissions,data.supplements);
  const overlay=new Map(),put=(path,body,type)=>{assert.ok(!overlay.has(path));overlay.set(path,{body:Buffer.isBuffer(body)?body:Buffer.from(body),type});};
  for(const [path,b] of candidate.assets)put(assets+path,b,'application/octet-stream');
  const aliases={'./linguistic-contracts.ts':'./linguistic-contracts.js','../lib/term-analyzer-view':'./term-analyzer-view.js','../../src/lib/term-analyzer.ts':'./term-analyzer.js'};
@@ -30,11 +30,11 @@ try{
  put(assets+'init.js',[
  "import {initializeAppearance} from './appearance.js';",
  "import {mountAnalyzer} from './term-analyzer-ui.js';",
- "import {createFragmentAnalyzer} from './analyzer-fragments.js';",
+ "import {createFragmentAnalyzer,decodeAnalyzerAsset} from './analyzer-fragments.js';",
  "import {loadStaticGzip} from './static-gzip.js';",
  "initializeAppearance(document);",
  "const spec="+JSON.stringify(candidate.catalogSpec)+";",
- "const load=async d=>JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(await loadStaticGzip(new URL(d.path,import.meta.url),d,location.origin)));",
+ "const load=async d=>decodeAnalyzerAsset(d.path,JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(await loadStaticGzip(new URL(d.path,import.meta.url),d,location.origin))));",
  "try{const c=await load(spec);const a=createFragmentAnalyzer(c,load);mountAnalyzer(document,a.initial,a.prepare);}catch{document.querySelector('#ta-status').textContent='No se pudo verificar el catálogo.';}"
  ].join('\n'),'text/javascript; charset=utf-8');
  const original=readFileSync('dist/linguistica/analizador/index.html','utf8'),notice='La interfaz está preparada. No hay ediciones lingüísticas publicadas para consulta. La validación interna de datos no equivale a autorización de publicación.',closing=/<\/div>\s*<\/div>\s*<\/main>/;
@@ -122,5 +122,10 @@ try{
  assert.equal((await c.request.get(origin+assets+'unknown.json.gz')).status(),404);
  await c.close();
  console.log(JSON.stringify({phase:plan.phase,...candidate.summary,pilotReferences:pilots,baselineLanguages:3,layoutChecks,axeScans,corruptionRecovery:true,staleSelection:true,externalRequests:0,queryStorage:false,initialChapterRequests:0,mountMs,firstMs,cachedMs,performanceConditions:'local Chromium, descriptive, no field measurement',manualScreenReader:'pending',realMobileValidated:false,publicationAuthorized:false}));
-}catch(e){console.error('P11.4.3.4 failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+'); source data omitted');process.exitCode=1;}
+ }catch(e){
+ // Assertion messages can contain complete text rows. Only extract allowlisted
+ // source-code filenames and numeric line/column coordinates, not the message.
+ const frames=typeof e?.stack==='string'?e.stack.split('\n').flatMap(line=>{const m=/(?:\/|^)((?:build-analyzer-fragments-p11434|analyzer-fragments-p11434|validate-analyzer-browser-p11434|linguistic-expansion-p11433|term-analyzer)\.(?:mjs|ts)):(\d+):(\d+)\)?$/.exec(line.trim());return m?[m[1]+':'+m[2]+':'+m[3]]:[];}).slice(0,5):[];
+ console.error(JSON.stringify({phase:'P11.4.3.4',failedAt:stage,error:e instanceof Error?e.name:'UnknownError',frames,sourceDataOmitted:true}));process.exitCode=1;
+}
 finally{if(release)release();if(browser)await browser.close();server?.closeAllConnections();server?.close();}

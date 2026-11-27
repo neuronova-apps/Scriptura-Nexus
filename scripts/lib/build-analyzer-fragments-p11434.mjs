@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {gzipSync,gunzipSync} from 'node:zlib';
-import {assembleChapter,validateCatalog} from './analyzer-fragments-p11434.mjs';
+import {assembleChapter,validateCatalog,encodeAnnotationLayer,decodeAnalyzerAsset} from './analyzer-fragments-p11434.mjs';
 import {createTermAnalyzer} from '../../src/lib/term-analyzer.ts';
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const key=(e,b,c)=>JSON.stringify([e,b,c]);
@@ -18,8 +18,18 @@ export function buildAnalyzerFragments(data){
  for(const a of r.analyses){const g=tokenGroup.get(a.tokenId);assert.ok(g);g.analyses.push(a);if(a.lemmaId)g.lemmaIds.add(a.lemmaId);}
  for(const s of supplements){const g=tokenGroup.get(s.tokenId);assert.ok(g);g.supplements.push(s);for(const c of s.lexical.components)if(c.lemmaId)g.lemmaIds.add(c.lemmaId);}
  for(const t of typography){const g=tokenGroup.get(t.tokenId);assert.ok(g);g.typography.push(t);}
- const pack=(path,obj)=>{const raw=Buffer.from(JSON.stringify(obj)),packed=gzipSync(raw,{level:6});assert.ok(raw.length<=8388608&&packed.length<=256000&&!assets.has(path));assets.set(path,packed);return {path,jsonBytes:raw.length,gzipBytes:packed.length,sha256:sha(raw),gzipSha256:sha(packed)};};
- const read=d=>{const b=assets.get(d.path);assert.ok(b&&b.length===d.gzipBytes&&sha(b)===d.gzipSha256);const raw=gunzipSync(b,{maxOutputLength:8388608});assert.ok(raw.length===d.jsonBytes&&sha(raw)===d.sha256);return JSON.parse(raw);};
+ const pack=(path,obj)=>{
+  const encoded=path.endsWith('/annotations.json.gz')?encodeAnnotationLayer(obj):obj;
+  const raw=Buffer.from(JSON.stringify(encoded)),packed=gzipSync(raw,{level:6});
+  if(raw.length>8388608||packed.length>256000){
+   // Only fixed book/chapter and size metadata; never emit the layer.
+   const m=/^chapters\/TXT-[A-Za-z0-9_-]+\/(LIB-[A-Za-z0-9_-]+)\/([0-9]+)\/(text|annotations)\.json\.gz$/.exec(path);
+   console.error(JSON.stringify({check:'asset-budget',book:m?.[1]??null,chapter:m?.[2]??null,layer:m?.[3]??'catalog',jsonBytes:raw.length,gzipBytes:packed.length}));
+   throw Error('Asset budget exceeded');
+  }
+  assert.ok(!assets.has(path),'Duplicate asset');assets.set(path,packed);return {path,jsonBytes:raw.length,gzipBytes:packed.length,sha256:sha(raw),gzipSha256:sha(packed)};
+ };
+ const read=d=>{const b=assets.get(d.path);assert.ok(b&&b.length===d.gzipBytes&&sha(b)===d.gzipSha256);const raw=gunzipSync(b,{maxOutputLength:8388608});assert.ok(raw.length===d.jsonBytes&&sha(raw)===d.sha256);return decodeAnalyzerAsset(d.path,JSON.parse(raw));};
  const catalog={schemaVersion:1,mode:'isolated_validation',publicationAuthorized:false,editions:r.editions,admissions,chapters:[]};
  const reconciled=new Map(),coveredLemmas=new Set();
  for(const g of groups.values()){

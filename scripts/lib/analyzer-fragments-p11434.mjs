@@ -6,6 +6,42 @@ const key=(e,b,c)=>JSON.stringify([e,b,c]);
 const keys=(o,fields)=>o&&typeof o==='object'&&Object.keys(o).sort().join('|')===fields.split('|').sort().join('|');
 const hash=x=>typeof x==='string'&&/^[0-9a-f]{64}$/.test(x);
 const spec=x=>keys(x,'path|jsonBytes|gzipBytes|sha256|gzipSha256')&&Number.isSafeInteger(x.jsonBytes)&&x.jsonBytes>0&&x.jsonBytes<=8388608&&Number.isSafeInteger(x.gzipBytes)&&x.gzipBytes>0&&x.gzipBytes<=256000&&hash(x.sha256)&&hash(x.gzipSha256);
+// Lossless transport dictionary for the annotation layer. All string VALUES are
+// indexed, including originally numeric-looking strings; numeric values remain numbers.
+// Object keys are unchanged. Decode is bounded and rejects invalid/unused entries.
+export function encodeAnnotationLayer(layer){
+ const strings=[],index=new Map();
+ const walk=v=>{
+  if(typeof v==='string'){if(!index.has(v)){index.set(v,strings.length);strings.push(v);}return String(index.get(v));}
+  if(Array.isArray(v))return v.map(walk);
+  if(v!==null&&typeof v==='object')return Object.fromEntries(Object.entries(v).map(([k,x])=>[k,walk(x)]));
+  req(v===null||typeof v==='boolean'||Number.isFinite(v));return v;
+ };
+ const value=walk(layer);
+ return {schemaVersion:1,encoding:'string-table-v1',strings,value};
+}
+export function decodeAnnotationLayer(p){
+ req(keys(p,'schemaVersion|encoding|strings|value')&&p.schemaVersion===1&&p.encoding==='string-table-v1'&&Array.isArray(p.strings)&&p.strings.length<=200000);
+ req(p.strings.every(s=>typeof s==='string')&&new Set(p.strings).size===p.strings.length);
+ const used=new Set();let budget=8388608,nodes=0;
+ const consume=n=>{budget-=n;req(budget>=0);};
+ const walk=(v,depth=0)=>{
+  req(depth<=32&&++nodes<=1000000);consume(8);
+  if(typeof v==='string'){
+   req(/^(0|[1-9][0-9]*)$/.test(v)&&v.length<=6);const i=Number(v);
+   req(i<p.strings.length);used.add(i);const value=p.strings[i];
+   // Conservative bound in UTF-16 code units before constructing the output.
+   consume(value.length*2);return value;
+  }
+  if(Array.isArray(v))return v.map(x=>walk(x,depth+1));
+  if(v!==null&&typeof v==='object')return Object.fromEntries(Object.entries(v).map(([k,x])=>{consume(k.length*2);return [k,walk(x,depth+1)];}));
+  req(v===null||typeof v==='boolean'||Number.isFinite(v));return v;
+ };
+ const result=walk(p.value);req(used.size===p.strings.length);return result;
+}
+export function decodeAnalyzerAsset(path,value){
+ return path.endsWith('/annotations.json.gz')?decodeAnnotationLayer(value):value;
+}
 export function validateCatalog(c){
  req(keys(c,'schemaVersion|mode|publicationAuthorized|editions|admissions|chapters')&&c.schemaVersion===1&&c.mode==='isolated_validation'&&c.publicationAuthorized===false);
  req(Array.isArray(c.editions)&&Array.isArray(c.admissions)&&Array.isArray(c.chapters));
