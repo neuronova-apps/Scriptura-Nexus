@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.5.4",
+  "baselineMain": "e9af3df50c6516314260e7ff9be696d1094b4272",
+  "previousEvidence": {
+    "pr": 117,
+    "checksSuccess": 48,
+    "checksSkipped": 1,
+    "run": 46046466916,
+    "job": 140666865345,
+    "chaptersVerified": 1449,
+    "units": 39041,
+    "browserScenarios": 6,
+    "chapterRequests": 5,
+    "externalRequests": 0,
+    "verifiedGroups": 0,
+    "distUnchanged": true
+  },
+  "mode": "private_browser_interception",
+  "planned": {
+    "decoderTests": 5,
+    "layoutCases": 24,
+    "axeScans": 4,
+    "initialJsGzipMax": 153600,
+    "initialBodyGzipEstimateMax": 512000,
+    "chapterGzipMax": 256000,
+    "screenReaderManual": false,
+    "physicalDeviceManual": false
+  },
+  "publicationAuthorized": false,
+  "publicAdapterConnected": false,
+  "corpusPersisted": false,
+  "upload": false,
+  "excluded": [
+    "P1022-R12",
+    "Dodson XML"
+  ],
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.5.5"
+}
