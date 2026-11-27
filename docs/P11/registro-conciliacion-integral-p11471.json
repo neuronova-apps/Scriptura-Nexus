@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.7.1",
+  "baselineMain": "b46a14aa32ab91b133123c677ec1877f45c919ac",
+  "previousEvidence": {
+    "pr": 124,
+    "checksSuccess": 55,
+    "checksSkipped": 1,
+    "run": 46054293849,
+    "job": 140692917491,
+    "merge": "b46a14aa32ab91b133123c677ec1877f45c919ac",
+    "pagesRun": 46055214876
+  },
+  "status": "private_candidates_prepared_publication_blocked",
+  "inputs": {
+    "selection": "docs/P11/registro-seleccion-funcional-p1141.json",
+    "reader": "docs/P11/registro-verificacion-artefacto-lector-p11425.json",
+    "readerManual": "docs/P11/registro-validacion-manual-lector-p11425.json",
+    "readerRights": "docs/P11/registro-revision-derechos-privacidad-p11425.json",
+    "readerAuthorization": "docs/P11/registro-autorizacion-preparacion-lector-p11425.json",
+    "readerPermissions": "docs/P11/registro-permisos-lector-p11421.json",
+    "analyzer": "docs/P11/registro-preflight-analizador-p114354.json",
+    "analyzerArtifact": "docs/P11/registro-verificacion-artefacto-analizador-p114353.json",
+    "lexical": "docs/P11/registro-liberacion-lexicos-p114444.json",
+    "lexicalCandidate": "docs/P11/registro-candidato-lexico-p114442.json",
+    "lexicalIntegrity": "docs/P11/registro-candidato-lexico-p114443.json",
+    "comparator": "docs/P11/registro-liberacion-comparador-p11455.json",
+    "comparatorCandidate": "docs/P11/registro-candidato-comparador-p11453.json",
+    "comparatorIntegrity": "docs/P11/registro-integridad-comparador-p11454.json",
+    "alignments": "docs/P9/alineaciones-p931.json",
+    "manuscripts": "docs/P11/registro-liberacion-manuscritos-p11465.json",
+    "manuscriptAudit": "docs/P11/registro-auditoria-manuscritos-p11461.json",
+    "manuscriptProjection": "docs/P11/registro-proyeccion-manuscritos-p11462.json",
+    "manuscriptCandidate": "docs/P11/registro-candidato-manuscritos-p11463.json",
+    "manuscriptIntegrity": "docs/P11/registro-integridad-manuscritos-p11464.json",
+    "manuscriptHistoric": "docs/P9/registro-manuscritos-p942.json",
+    "accessibility": "docs/P11/registro-cierre-accesibilidad-p113.json",
+    "editorial": "docs/P10/registro-cierre-p104.json"
+  },
+  "modules": [
+    {
+      "id": "reader",
+      "route": "biblia/lector/",
+      "scope": {
+        "editions": 2,
+        "books": 93,
+        "chapters": 1449,
+        "units": 39041
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "effectiveEditionApproval",
+        "territorialReview",
+        "finalPrivacyReview",
+        "realMobileL05"
+      ],
+      "mobileDeferralAccepted": true
+    },
+    {
+      "id": "analyzer",
+      "route": "linguistica/analizador/",
+      "scope": {
+        "books": 7,
+        "chapters": 168,
+        "chapterLayers": 336,
+        "units": 5162,
+        "occurrences": 78218,
+        "withheldGreek": 198
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualKeyboard",
+        "manualScreenReader",
+        "manualDeviceReview",
+        "territorialReviewWLC",
+        "privacyReview",
+        "ownerPublicationApproval"
+      ]
+    },
+    {
+      "id": "lexical",
+      "route": "linguistica/lexicos-concordancias/",
+      "scope": {
+        "historicalFiles": 4,
+        "occurrences": 78218,
+        "entries": 30740,
+        "forms": 10221,
+        "definitions": 35496,
+        "fragments": 11442
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "ownerPublicationApproval"
+      ]
+    },
+    {
+      "id": "comparator",
+      "route": "biblia/comparador/",
+      "scope": {
+        "editions": 2,
+        "books": 93,
+        "chapters": 1449,
+        "units": 39041,
+        "verifiedGroups": 0
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "rightsAndPrivacyReview",
+        "ownerPublicationApproval"
+      ]
+    },
+    {
+      "id": "manuscripts",
+      "route": "manuscritos/consulta/",
+      "scope": {
+        "witnesses": 2,
+        "variants": 1,
+        "readings": 2,
+        "resources": 7,
+        "evidence": 8,
+        "secondaryAttestations": 2,
+        "directInspections": 0,
+        "sourceFilesAdmitted": 0
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "rightsAndLinksReview",
+        "privacyReview",
+        "ownerPublicationApproval"
+      ]
+    }
+  ],
+  "controls": {
+    "publicationAuthorized": false,
+    "corpusImportAuthorized": false,
+    "releaseActionPerformed": false,
+    "publicModulesEnabled": 0,
+    "manualCrossModuleReview": "pending",
+    "combinedPrivateBrowserReview": "pending",
+    "fieldINP": "not_measured",
+    "academicAnalysisCompleted": false,
+    "publishedStudiesAtP104": 0,
+    "openNeedsAtP104": 20,
+    "exclusions": [
+      "P1022-R12",
+      "Dodson XML",
+      "LING-010",
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07",
+      "LEX-C08"
+    ]
+  },
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66,
+    "technicalPreparationIsNotClosure": true,
+    "confirmedOperationalCompletion": "pending_reconciliation",
+    "remainingGeneralPhases": [
+      "P11.4.7",
+      "P11.4.8",
+      "P11.5"
+    ]
+  },
+  "next": "P11.4.7.2"
+}
