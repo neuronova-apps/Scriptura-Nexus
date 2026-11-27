@@ -5,7 +5,7 @@ const require=(ok:unknown):void=>{if(!ok)throw new Error('Fragmento de capítulo
 const object=(v:unknown):v is Record<string,unknown>=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const exact=(v:Record<string,unknown>,fields:string[])=>Object.keys(v).length===fields.length&&fields.every(k=>Object.hasOwn(v,k));
 export function decodeAnnotationLayer(value:unknown):unknown{
- require(object(value)&&exact(value,['schemaVersion','encoding','strings','value'])&&value.schemaVersion===1&&value.encoding==='string-table-v1'&&Array.isArray(value.strings)&&value.strings.length<=200000);
+ if(!object(value)||!exact(value,['schemaVersion','encoding','strings','value'])||value.schemaVersion!==1||value.encoding!=='string-table-v1'||!Array.isArray(value.strings)||value.strings.length>200000)throw new Error('Capa de anotaciones inválida');
  const strings=value.strings as unknown[];require(strings.every(x=>typeof x==='string')&&new Set(strings).size===strings.length);
  const used=new Set<number>();let budget=8388608,nodes=0;
  const consume=(n:number)=>{budget-=n;require(budget>=0);};
