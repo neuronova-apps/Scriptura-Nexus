@@ -1,0 +1,28 @@
+name: P11.4.7.1 Conciliación integral de candidatos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/integral-reconciliation-p11471.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integral-reconciliation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Conciliación documental y barreras de los cinco módulos
+        run: node scripts/validate-integral-reconciliation-p11471.mjs
+      - name: Regresiones y compilación pública
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
