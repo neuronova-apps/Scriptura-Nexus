@@ -102,6 +102,6 @@ export function mountLexiconConcordance(doc:Document,lexicon:Lexicon,engine:Conc
  ed.addEventListener('change',changeEdition);cm.addEventListener('change',()=>{clear();sys.disabled=cm.value!=='provider';});
  for(const c of [lang,book,sys,value]){c.addEventListener('input',clear);c.addEventListener('change',clear);}
  cf.addEventListener('submit',e=>{e.preventDefault();clear();if(!cf.reportValidity()||!value.value.trim()){cs.textContent='Selecciona edición, lengua y clave exacta.';return;}active={kind:'search',q:query(value.value)};render();});
- freq.addEventListener('click',()=>{clear();if(!cf.reportValidity())return;active={kind:'frequency',q:frequency()};render();});
+ freq.addEventListener('click',()=>{clear();if(!ed.value||!lang.value){cs.textContent='Selecciona edición y lengua para consultar frecuencias.';return;}active={kind:'frequency',q:frequency()};render();});
  prev.addEventListener('click',()=>{offset=Math.max(0,offset-20);render();if(prev.disabled)cs.focus();});nextButton.addEventListener('click',()=>{if(next!==null){offset=next;render();if(nextButton.disabled)cs.focus();}});
 }

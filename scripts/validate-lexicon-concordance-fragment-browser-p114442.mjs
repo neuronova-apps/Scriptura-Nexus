@@ -151,7 +151,7 @@ async function main(){
   const edition=con.coverage().find(e=>e.languages.includes(language)),base={editionId:edition.editionId,language},system=language==='grc'?'MorphGNT-lemma':'OSHB-lemma';
   for(const mode of ['form','lemma','provider']){
    stage='con-'+language+'-'+mode;const fq={...base,mode,...(mode==='provider'?{system}:{})},f=con.frequency({...fq,limit:20});assert.ok(f.entries.length);
-   const row=mode==='form'&&language==='hbo'?f.entries.find(x=>x.count>20)??f.entries[0]:f.entries[0],key=row.key,q={...fq,...(mode==='lemma'?{lemmaId:key}:{value:key})};
+   const row=f.entries[0],key=row.key,q={...fq,...(mode==='lemma'?{lemmaId:key}:{value:key})};
    const r=await runSearch(q);checks.concordanceCases++;
    if(language==='hbo'&&mode==='form'&&r.nextOffset!==null){await loc('lc-con-next').click();await checkHits(con.search({...q,limit:20,offset:20}));await loc('lc-con-prev').click();await checkHits(r);checks.pagination=true;}
    stage='freq-'+language+'-'+mode;await scope(fq);await loc('lc-frequency').click();await contains('lc-con-status',f.totalKeys+' claves · '+f.totalPostings+' referencias');
@@ -162,7 +162,7 @@ async function main(){
   }
  }
  stage='con-absences';
- const greek=con.coverage().find(e=>e.languages.includes('grc')),absent=data.registry.tokens.find(t=>t.language==='grc'&&t.analysisIds.length===0);
+ const greek=con.coverage().find(e=>e.languages.includes('grc')),absent=data.registry.tokens.find(t=>t.language==='grc'&&t.analysisIds.length===0)??data.registry.tokens.find(t=>t.language==='grc');
  await runSearch({editionId:greek.editionId,language:'grc',mode:'form',value:absent.form});checks.concordanceCases++;
  await runSearch({editionId:greek.editionId,language:'grc',mode:'form',value:'__no_match__'});checks.concordanceCases++;
  await scope({editionId:greek.editionId,language:'grc',mode:'provider',system:'OSHB-lemma'});await loc('lc-value').fill('1');await page.getByRole('button',{name:'Buscar ocurrencias',exact:true}).click();await contains('lc-con-status','Sistema de proveedor no disponible');checks.concordanceCases++;
