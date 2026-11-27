@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.3.5.2.candidato_estatico_privado",
+  "baselineMain": "76210807c166ba85b5c9ce83b7a63873d2aa7c2a",
+  "previousIntegration": {
+    "pr": 103,
+    "head": "9b601d68d37e44c69187246d3c0247a5b8eb7c55",
+    "merge": "76210807c166ba85b5c9ce83b7a63873d2aa7c2a",
+    "workflows": 27,
+    "successfulChecks": 34,
+    "run": 46025161288,
+    "job": 140594560100,
+    "pagesRun": 46025893085,
+    "pagesAtPreparation": "success"
+  },
+  "observed": {
+    "licensesVerified": 3,
+    "sourceFiles": 10,
+    "chapters": 168,
+    "chapterLayers": 336,
+    "units": 5162,
+    "occurrences": 78218,
+    "maxChapterLayerGzipBytes": 143393
+  },
+  "candidate": {
+    "catalogFiles": 1,
+    "chapterLayers": 336,
+    "modules": 8,
+    "htmlFiles": 1,
+    "totalFiles": 346,
+    "localOnly": true,
+    "corpusPersisted": false,
+    "distModified": false,
+    "upload": false
+  },
+  "preparationAuthorization": "AUT-P11433-20261127-01",
+  "publicationAuthorized": false,
+  "manualScreenReader": "pendiente",
+  "realMobileValidated": false,
+  "territorialReview": "pendiente_confirmacion_WLC",
+  "publicArtifact": "pendiente",
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.3.5.3_validacion_manual_y_artefacto"
+}
