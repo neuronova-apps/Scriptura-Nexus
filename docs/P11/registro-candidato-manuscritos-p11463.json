@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.6.3",
+  "baselineMain": "cb2d19a22172ac5beba269585e064d35c4cb6b22",
+  "previousEvidence": {
+    "pr": 121,
+    "checksSuccess": 52,
+    "checksSkipped": 1,
+    "run": 46051067677,
+    "job": 140682210176
+  },
+  "mode": "isolated_reference_only",
+  "scope": {
+    "witnesses": 2,
+    "variants": 1,
+    "readings": 2,
+    "resources": 7,
+    "evidence": 8,
+    "secondaryAttestations": 2,
+    "directInspections": 0,
+    "sourceFilesAdmitted": 0
+  },
+  "planned": {
+    "browserScenarios": 8,
+    "projectionMaxBytes": 65536,
+    "projectionRequests": 1,
+    "externalRequests": 0,
+    "distUnchanged": true
+  },
+  "rightsReview": "pending_before_release",
+  "manualReview": "pending",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "publicAdapterConnected": false,
+  "sourceContentPersisted": false,
+  "upload": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.6.4"
+}
