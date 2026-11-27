@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.3.cierre",
+  "baselineMain": "c4e06d1ac495e2041e7d84f634b8051a5bf462dd",
+  "previousBlob": "2b96d66d703b49cf95f52f31c8c35d48ce3d0cb3",
+  "technicalEvidence": {
+    "pr": 85,
+    "run": 45946616062,
+    "job": 140332655725,
+    "deployRun": 45947229558,
+    "build": "success",
+    "deploy": "success",
+    "successfulWorkflows": 17,
+    "nodeTests": 496,
+    "routes": 18,
+    "reflow": 306,
+    "axe": 72,
+    "labSamples": 108,
+    "findings": 0
+  },
+  "manualEvidence": {
+    "origin": "declaracion_del_responsable_en_conversacion",
+    "reportedOn": "2026-11-27",
+    "checks": [
+      {
+        "id": "A01",
+        "label": "Navegación por teclado",
+        "result": "conforme"
+      },
+      {
+        "id": "A02",
+        "label": "Lector de pantalla en computadora",
+        "result": "conforme"
+      },
+      {
+        "id": "A03",
+        "label": "TalkBack en Android",
+        "result": "conforme"
+      },
+      {
+        "id": "A04",
+        "label": "Ampliación del navegador",
+        "result": "conforme"
+      },
+      {
+        "id": "A05",
+        "label": "Visualización móvil",
+        "result": "conforme"
+      },
+      {
+        "id": "A06",
+        "label": "Idiomas originales",
+        "result": "conforme"
+      }
+    ],
+    "observations": "Sin observaciones registradas",
+    "deviceDetails": null,
+    "browserDetails": null,
+    "assistiveTechnologyVersions": null,
+    "isolatedEnvironmentDetails": null,
+    "independentVerification": false
+  },
+  "decision": "validacion_manual_reportada_conforme_sin_certificacion",
+  "wcagCertification": false,
+  "fieldINP": "no_medido",
+  "publicFragmentBudget": "no_evaluable_sin_adaptador_aprobado",
+  "academicAnalysisCompleted": false,
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "manualPrivacyReview": "pendiente",
+  "progress": {
+    "completedBeforeClosure": 59,
+    "total": 62,
+    "afterVerifiedClosure": 60
+  },
+  "next": {
+    "phase": "P11.4",
+    "status": "requiere_cierre_CI_integracion_despliegue_y_aprobacion_explicita_de_alcance",
+    "proposalPath": "docs/P11/04-propuesta-alcance-publicacion.md"
+  }
+}
