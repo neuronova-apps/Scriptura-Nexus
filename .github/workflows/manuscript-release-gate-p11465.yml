@@ -1,0 +1,29 @@
+name: P11.4.6.5 Revisión y liberación controlada de manuscritos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/manuscript-release-gate-p11465.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manuscript-release-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Regresiones y barreras públicas
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
+      - name: Evaluar la decisión sin publicar
+        run: node scripts/validate-manuscript-release-gate-p11465.mjs

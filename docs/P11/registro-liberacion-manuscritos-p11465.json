@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.6.5",
+  "baselineMain": "0bdbb6a354ded7564d54b10e07a62f98fc58c6f9",
+  "status": "blocked_pending_manual_review",
+  "previousEvidence": {
+    "pr123": {
+      "head": "a8f8804288627384d7444fc5addda7c03828e6fe",
+      "merge": "0bdbb6a354ded7564d54b10e07a62f98fc58c6f9",
+      "checksSuccess": 54,
+      "checksSkipped": 1,
+      "run": 46053373448,
+      "job": 140689924071
+    },
+    "observed": {
+      "phase": "P11.4.6.4",
+      "candidate": "success",
+      "failureInjections": 5,
+      "recoveries": 5,
+      "layoutCases": 24,
+      "axeScans": 4,
+      "keyboardChecks": 2,
+      "externalRequests": 0,
+      "unexpectedRequests": 0,
+      "pageErrors": 0,
+      "projectionBytes": 5530,
+      "projectionRequests": 11,
+      "initialBodyGzipEstimateBytes": 14296,
+      "initialJsGzipEstimateBytes": 4617,
+      "distUnchanged": true,
+      "manualScreenReader": false,
+      "physicalDevice": false,
+      "publicationAuthorized": false,
+      "corpusImportAuthorized": false,
+      "sourceContentPersisted": false,
+      "upload": false
+    }
+  },
+  "scope": {
+    "witnesses": 2,
+    "variants": 1,
+    "readings": 2,
+    "resources": 7,
+    "evidence": 8,
+    "secondaryAttestations": 2,
+    "directInspections": 0,
+    "sourceFilesAdmitted": 0,
+    "mode": "reference_only_pilot",
+    "edition": "TXT-SBLGNT-V1-2",
+    "locus": "John 1:18",
+    "witnessIds": [
+      "MAN-GA-P66",
+      "MAN-GA-02"
+    ],
+    "variantIds": [
+      "VAR-P943-JHN-1-18"
+    ],
+    "folioVerified": 0,
+    "handVerified": 0,
+    "assessments": 0
+  },
+  "gates": {
+    "manualScreenReader": "pending",
+    "manualDeviceReview": "pending",
+    "rightsAndLinksReview": "pending",
+    "privacyReview": "pending",
+    "ownerPublicationApproval": "pending"
+  },
+  "expectedBlockers": [
+    "manualScreenReader",
+    "manualDeviceReview",
+    "rightsAndLinksReview",
+    "privacyReview",
+    "ownerPublicationApproval"
+  ],
+  "publicArtifact": false,
+  "publicAdapterConnected": false,
+  "sourceContentPersisted": false,
+  "sourceContentPublished": false,
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseActionPerformed": false,
+  "canPublish": false,
+  "upload": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.7"
+}
