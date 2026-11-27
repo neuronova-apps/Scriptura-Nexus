@@ -583,3 +583,29 @@ for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(fil
  const s=readFileSync(file.parentPath+'/'+file.name,'utf8');assert.doesNotMatch(s,/MAN-GA-P66|MAN-GA-02|VAR-P943-|LEC-P943-|REC-P943-|EVD-P943-|muestra-manuscritos-p943|reference_only_pilot|P944-PRIVATE-FIXTURE|MAN-p944-fixture/,'Datos internos en '+file.name);
 }
 console.log('P9.4.4: catálogo enlazado, estado público vacío, controles bloqueados y sin datos privados.');
+
+// P10.1.4: validate planned metadata separately from approved editorial evidence.
+const {loadP1014,validateP1014}=await import('./validate-p1014.mjs');
+const p1014=loadP1014();assert.deepEqual(validateP1014(p1014),{profiles:7,assigned:48,pending:32,relations:30,directedLinks:60,linkedStudies:36,publicationAuthorized:false});
+assert.match(catalogHtml,/for="catalog-profile"/);assert.match(catalogHtml,/id="catalog-profile"/);
+for(const profile of p1014.profiles)assert.ok(catalogHtml.includes('value="'+profile.id+'"'));
+assert.ok(catalogHtml.includes('value="pendiente"'));
+let directedCrossLinks=0,assignedProfiles=0,pendingProfiles=0;
+for(const study of catalogData){
+ const html=readFileSync('dist/estudios/'+study.id+'/index.html','utf8');
+ const expectedProfiles=p1014.assignments.find(x=>x.studyId===study.id)?.profiles??[];
+ const profileSection=html.split('aria-labelledby="perfiles-titulo"')[1].split('</section>')[0];
+ assert.deepEqual([...profileSection.matchAll(/data-profile-id="([^"]+)"/g)].map(m=>m[1]),expectedProfiles,study.id);
+ if(expectedProfiles.length){assignedProfiles++;assert.doesNotMatch(profileSection,/data-profile-pending/);}
+ else{pendingProfiles++;assert.match(profileSection,/data-profile-pending/);}
+ const cross=html.split('aria-labelledby="cruces-titulo"')[1].split('</section>')[0];
+ const expected=p1014.links.filter(l=>l.a===study.id||l.b===study.id).map(l=>({id:l.a===study.id?l.b:l.a,kind:l.kind})).sort((a,b)=>a.id.localeCompare(b.id));
+ const actual=[...cross.matchAll(/data-cross-study="([^"]+)" data-relation-kind="([^"]+)"/g)].map(m=>({id:m[1],kind:m[2]}));
+ assert.deepEqual(actual,expected,study.id);directedCrossLinks+=actual.length;
+ for(const link of expected)assert.ok(cross.includes('href="/Scriptura-Nexus/estudios/'+link.id+'/"'));
+ assert.match(cross,/no son citas, evidencias ni conclusiones doctrinales verificadas/);
+ const card=[...catalogHtml.matchAll(/<li[^>]*data-study-id="([^"]+)"[^>]*>/g)].find(m=>m[1]===study.id)?.[0];
+ assert.ok(card,study.id);assert.equal(card.match(/data-profiles="([^"]*)"/)?.[1]??'',expectedProfiles.join(' '),study.id);
+}
+assert.equal(directedCrossLinks,60);assert.equal(assignedProfiles,48);assert.equal(pendingProfiles,32);
+console.log('P10.1.4: 7 perfiles, 48 fichas clasificadas, 32 pendientes y 60 enlaces recíprocos conformes; sin evidencia ni publicación nueva.');
