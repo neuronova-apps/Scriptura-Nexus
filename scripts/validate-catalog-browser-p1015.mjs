@@ -88,7 +88,7 @@ try{
     await page.setViewportSize({width,height:900});
     await page.evaluate(async({theme,scale})=>{document.documentElement.dataset.theme=theme;document.documentElement.dataset.fontScale=scale;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},{theme,scale});
     const layout=await page.evaluate(()=>{const root=document.querySelector('.module-landing');return {root:{width:root.clientWidth,scroll:root.scrollWidth,rect:root.getBoundingClientRect().toJSON()},document:{width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth},overflow:[...root.querySelectorAll('*')].map(e=>({tag:e.tagName,id:e.id,cls:typeof e.className==='string'?e.className:'',width:e.clientWidth,scroll:e.scrollWidth,rect:e.getBoundingClientRect().toJSON()})).filter(e=>e.rect.right>document.documentElement.clientWidth+1||e.scroll>e.width+1).slice(0,20)};});
-    assert.ok(layout.root.scroll<=layout.root.width+1,path+' '+theme+' '+scale+' '+width+' '+JSON.stringify(layout));counts.layoutChecks++;
+    assert.ok(layout.root.scroll<=layout.root.width+1 && layout.document.scroll<=layout.document.width+1,path+' '+theme+' '+scale+' '+width+' '+JSON.stringify(layout));counts.layoutChecks++;
    }
    await page.setViewportSize({width:320,height:900});await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
    const violations=await page.evaluate(async()=>{const r=await window.axe.run('.module-landing',{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return r.violations.map(v=>({id:v.id,nodes:v.nodes.length}));});
