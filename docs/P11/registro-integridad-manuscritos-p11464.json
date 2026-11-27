@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.6.4",
+  "baselineMain": "8d18f62fae042884011fa4afba8ee05c33c51049",
+  "previousEvidence": {
+    "pr": 122,
+    "checksSuccess": 53,
+    "checksSkipped": 1,
+    "run": 46052557827,
+    "job": 140687199308,
+    "observed": {
+      "phase": "P11.4.6.3",
+      "candidate": "success",
+      "witnesses": 2,
+      "variants": 1,
+      "readings": 2,
+      "resources": 7,
+      "evidence": 8,
+      "secondaryAttestations": 2,
+      "directInspections": 0,
+      "publicationAuthorized": false,
+      "corpusImportAuthorized": false,
+      "sourceFilesAdmitted": 0,
+      "upload": false,
+      "browserScenarios": 8,
+      "projectionRequests": 1,
+      "projectionBytes": 5530,
+      "externalRequests": 0,
+      "pageErrors": 0,
+      "distUnchanged": true,
+      "publicAdapterConnected": false,
+      "manualReview": false
+    }
+  },
+  "mode": "isolated_reference_only",
+  "planned": {
+    "failureInjections": 5,
+    "recoveries": 5,
+    "layoutCases": 24,
+    "axeScans": 4,
+    "keyboardChecks": 2,
+    "projectionMaxBytes": 65536,
+    "initialJsGzipMax": 153600,
+    "initialBodyGzipEstimateMax": 512000,
+    "manualScreenReader": false,
+    "physicalDevice": false
+  },
+  "rightsReview": "pending_before_release",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "publicAdapterConnected": false,
+  "sourceContentPersisted": false,
+  "upload": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.6.5"
+}
