@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.2",
+  "baselineMain": "7e83e45521eca6cfe49532ad0aebe0fa4e294c8a",
+  "previousIntegration": {
+    "pr": 88,
+    "workflowRun": 45950758581,
+    "job": 140345796907,
+    "successfulWorkflows": 20,
+    "deployRun": 45987196868,
+    "deploy": "pending_confirmation"
+  },
+  "rightsBlob": "3c6d1d783a2b95fce49c5f3d5cd5c112c0e5c67b",
+  "projectionBlob": "ff6ef60588416089b26afcc6160df74956b496df",
+  "mode": "in_memory_only",
+  "format": "sn-reader-chapter-v1",
+  "fragmentKey": [
+    "editionId",
+    "bookId",
+    "chapter"
+  ],
+  "encoding": "UTF-8 JSON canonical (sorted keys, compact, unescaped Unicode)",
+  "integrity": "SHA-256 of canonical JSON bytes",
+  "compression": {
+    "algorithm": "gzip",
+    "level": 6,
+    "mtime": 0,
+    "maxBytes": 256000
+  },
+  "expected": {
+    "editions": 2,
+    "bookFiles": 93,
+    "chapters": 1449,
+    "units": 39041,
+    "emptyMarkers": 18
+  },
+  "permissions": {
+    "rv1909TerritorialReview": "pendiente",
+    "rv1909PublicRelease": "pendiente",
+    "sblgntPublicRelease": "pendiente"
+  },
+  "publicReleaseAuthorized": false,
+  "corpusImportAuthorized": false,
+  "alignmentAuthorized": false,
+  "persistCorpus": false,
+  "emitCorpus": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "P11.4.2.3_integracion_aislada_tras_CI_integracion_y_despliegue"
+}
