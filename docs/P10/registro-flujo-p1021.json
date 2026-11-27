@@ -1,0 +1,980 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.2.1",
+  "baseMain": "c22f47de5b087f2fceb7b6ae21f7fc5df53219ca",
+  "approval": {
+    "scope": "delimitaciones_individuales",
+    "date": "2026-11-26",
+    "request": "¿Apruebas las delimitaciones de SN-001, SN-015, SN-008, SN-021 y SN-040, tal como están documentadas, para proceder con P10.2.1?",
+    "response": "entendido, iniciar con lo indicado",
+    "sourceBlob": "97ba28642507d9895b7ceaa29eef76c36681aea3"
+  },
+  "publicationAuthorized": false,
+  "pilots": [
+    {
+      "id": "SN-001",
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia"
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-001/S01",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S02",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S04",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S06",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S20",
+          "status": "pendiente"
+        }
+      ],
+      "sourceNeeds": [
+        {
+          "need": "Ediciones hebreas identificadas y traducciones autorizadas",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Léxicos y gramáticas con localizadores",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Estudios históricos sobre marcas y luto",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Fuentes confesionales atribuibles y argumentos sobre pactos",
+          "status": "pendiente_de_verificacion"
+        }
+      ],
+      "candidateReferences": [
+        {
+          "reference": "Lv 19:28",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Dt 14:1",
+          "status": "orientativa_no_verificada"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-015",
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia"
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-015/S01",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S02",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S04",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S06",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S20",
+          "status": "pendiente"
+        }
+      ],
+      "sourceNeeds": [
+        {
+          "need": "Contexto de cada pasaje y su destinatario",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Fuentes sobre instituciones de Israel y prácticas económicas",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Análisis de términos y textos pertinentes",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Documentos y autores de tradiciones con posiciones diferentes",
+          "status": "pendiente_de_verificacion"
+        }
+      ],
+      "candidateReferences": [
+        {
+          "reference": "Gn 14:20",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Lv 27:30",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Mal 3:8-10",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Mt 23:23",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "2 Co 9:7",
+          "status": "orientativa_no_verificada"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-008",
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia"
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-008/S01",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S02",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S04",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S06",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S20",
+          "status": "pendiente"
+        }
+      ],
+      "sourceNeeds": [
+        {
+          "need": "Edición griega identificada y contexto de cláusulas",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Léxicos y gramáticas con revisión de sentidos",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Documentos pentecostales y otras perspectivas pertinentes",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Fuentes históricas y exegéticas",
+          "status": "pendiente_de_verificacion"
+        }
+      ],
+      "candidateReferences": [
+        {
+          "reference": "Hch 2",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Hch 10",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Hch 19",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "1 Co 12–14",
+          "status": "orientativa_no_verificada"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-021",
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_pertinencia"
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-021/S01",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S02",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S04",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S06",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S20",
+          "status": "pendiente"
+        }
+      ],
+      "sourceNeeds": [
+        {
+          "need": "Ediciones hebrea y griega con identificación y permisos",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Estudios del Salmo 22 y relatos de la pasión",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Fuentes cristológicas e históricas atribuibles",
+          "status": "pendiente_de_verificacion"
+        }
+      ],
+      "candidateReferences": [
+        {
+          "reference": "Sal 22",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Mt 27:46",
+          "status": "orientativa_no_verificada"
+        },
+        {
+          "reference": "Mc 15:34",
+          "status": "orientativa_no_verificada"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-040",
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_pertinencia"
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-040/S01",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S02",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S04",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S06",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S20",
+          "status": "pendiente"
+        }
+      ],
+      "sourceNeeds": [
+        {
+          "need": "Identidad, revisión y permisos de ediciones concretas",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Aparatos y fuentes documentales autorizadas o referencias externas",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Localizadores y naturaleza de testimonio directo o secundario",
+          "status": "pendiente_de_verificacion"
+        },
+        {
+          "need": "Criterios explícitos de crítica textual y límites",
+          "status": "pendiente_de_verificacion"
+        }
+      ],
+      "candidateReferences": [
+        {
+          "reference": "Jn 1:18 (candidato, no referencia original del catálogo)",
+          "status": "orientativa_no_verificada"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    }
+  ]
+}
