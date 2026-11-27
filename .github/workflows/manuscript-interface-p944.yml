@@ -1,0 +1,40 @@
+name: P9.4.4 Interfaz de manuscritos y variantes
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/**'
+      - 'src/lib/manuscript-view.ts'
+      - 'src/lib/module-details.ts'
+      - 'src/scripts/manuscript-ui.ts'
+      - 'src/styles/manuscript-view.css'
+      - 'src/components/modules/**'
+      - 'scripts/verify-build.mjs'
+      - 'scripts/verify-manuscript-pilot-build.mjs'
+      - 'scripts/validate-manuscript-browser-p944.mjs'
+      - 'tests/p944-manuscript-view.test.mjs'
+      - 'tests/fixtures/manuscript-p944.mjs'
+      - 'docs/P9/**'
+      - '.github/workflows/manuscript-interface-p944.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manuscript-interface:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contratos, regresión y artefacto público
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
+      - name: Chromium, axe, navegación y datos sintéticos aislados
+        run: |
+          mkdir -p "$RUNNER_TEMP/p944-browser"
+          npm install --prefix "$RUNNER_TEMP/p944-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p944-browser/node_modules/.bin/playwright" install --with-deps chromium
+          P944_DEPS="$RUNNER_TEMP/p944-browser" node scripts/validate-manuscript-browser-p944.mjs
