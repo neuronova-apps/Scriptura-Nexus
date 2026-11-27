@@ -6,9 +6,9 @@ function validDescriptor(v:unknown):v is FragmentDescriptor{
  if(!v||typeof v!=='object')return false;const x=v as Record<string,unknown>;
  return Object.keys(x).length===5&&Object.keys(x).sort().join('|')==='gzipBytes|gzipSha256|jsonBytes|path|sha256'&&typeof x.path==='string'&&pathPattern.test(x.path)&&Number.isSafeInteger(x.jsonBytes)&&Number(x.jsonBytes)>0&&Number(x.jsonBytes)<=8388608&&Number.isSafeInteger(x.gzipBytes)&&Number(x.gzipBytes)>0&&Number(x.gzipBytes)<=256000&&typeof x.sha256==='string'&&hash.test(x.sha256)&&typeof x.gzipSha256==='string'&&hash.test(x.gzipSha256);
 }
-async function digest(bytes:BufferSource){const out=new Uint8Array(await crypto.subtle.digest('SHA-256',bytes));return [...out].map(x=>x.toString(16).padStart(2,'0')).join('');}
+async function digest(bytes:Uint8Array){const copy=new ArrayBuffer(bytes.byteLength);new Uint8Array(copy).set(bytes);const out=new Uint8Array(await crypto.subtle.digest('SHA-256',copy));return [...out].map(x=>x.toString(16).padStart(2,'0')).join('');}
 async function gunzip(bytes:Uint8Array,max:number){
- const reader=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip')).getReader(),chunks:Uint8Array[]=[];let size=0;
+ const reader=new Blob([bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength) as ArrayBuffer]).stream().pipeThrough(new DecompressionStream('gzip')).getReader(),chunks:Uint8Array[]=[];let size=0;
  try{while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;require(size<=max);chunks.push(value);}}
  finally{reader.releaseLock();}
  const out=new Uint8Array(size);let offset=0;for(const chunk of chunks){out.set(chunk,offset);offset+=chunk.byteLength;}return out;

@@ -54,7 +54,7 @@ const server=createServer((req,res)=>{
   if(path.startsWith(assetPrefix)){
    const rel=decodeURIComponent(path.slice(assetPrefix.length)),bytes=candidate.assets.get(rel);
    if(!bytes){res.statusCode=404;return res.end();}
-   fragmentFiles.add(rel);fragmentBytes+=bytes.length;res.setHeader('Content-Type','application/gzip');return res.end(bytes);
+   if(!fragmentFiles.has(rel)){fragmentFiles.add(rel);fragmentBytes+=bytes.length;}res.setHeader('Content-Type','application/gzip');return res.end(bytes);
   }
   if(!path.startsWith(prefix)){res.statusCode=404;return res.end();}
   const rel=decodeURIComponent(path.slice(prefix.length)),file=resolve(base,rel+(rel.endsWith('/')||!rel?'index.html':''));
@@ -131,7 +131,7 @@ async function main(){
  stage='lex-reference';
  const rel=lexical.model.links.find(x=>x.kind==='index-strong'&&x.state==='documentado'),sourceDetail=lex.detail(rel.sourceEntryId);
  await openLex({mode:'identifier',system:'index',value:sourceDetail.entry.providerKey});await loc('lc-lex-results').getByRole('button').first().click();await checkDetail(sourceDetail);
- await loc('lc-lex-detail').getByRole('button',{name:'Consultar entrada relacionada'}).first().click();await checkDetail(lex.detail(rel.targetEntryId));checks.lexicalCases++;
+ const targetIndex=sourceDetail.links.filter(l=>l.targetEntryId&&l.targetEntryId!==sourceDetail.entry.id).findIndex(l=>l.id===rel.id);assert.ok(targetIndex>=0);await loc('lc-lex-detail').getByRole('button',{name:'Consultar entrada relacionada'}).nth(targetIndex).click();await checkDetail(lex.detail(rel.targetEntryId));checks.lexicalCases++;
  stage='lex-unresolved';
  const unresolved=lexical.model.links.find(x=>x.kind==='index-strong'&&x.state==='sin_resolver'),unresolvedDetail=lex.detail(unresolved.sourceEntryId);
  await openLex({mode:'identifier',system:'index',value:unresolvedDetail.entry.providerKey});await loc('lc-lex-results').getByRole('button').first().click();await checkDetail(unresolvedDetail);checks.lexicalCases++;

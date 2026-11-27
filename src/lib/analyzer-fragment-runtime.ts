@@ -22,7 +22,7 @@ export function decodeAnnotationLayer(value:unknown):unknown{
  const result=walk(value.value);require(used.size===strings.length);return result;
 }
 export function assembleChapter(editions:readonly Edition[],descriptor:{editionId:string;bookId:string;chapter:string;units:number;occurrences:number},textValue:unknown,annotationValue:unknown){
- require(object(textValue)&&object(annotationValue));
+ if(!object(textValue)||!object(annotationValue))throw new Error('Fragmento de capítulo inválido');
  const t=textValue,a=annotationValue;
  require(exact(t,['schemaVersion','editionId','bookId','chapter','units','tokens','typography'])&&exact(a,['schemaVersion','editionId','bookId','chapter','lemmas','analyses','links','supplements']));
  require(t.schemaVersion===1&&a.schemaVersion===1);
@@ -34,7 +34,7 @@ export function assembleChapter(editions:readonly Edition[],descriptor:{editionI
  const tokens=new Map<string,Token>();for(const token of rawTokens){require(typeof token.id==='string'&&!tokens.has(token.id)&&Array.isArray(token.analysisIds)&&token.analysisIds.length===0);tokens.set(token.id,token);}
  const links=new Map<string,string[]>();
  for(const link of a.links as any[]){require(object(link)&&exact(link,['tokenId','analysisIds'])&&tokens.has(link.tokenId)&&!links.has(link.tokenId)&&Array.isArray(link.analysisIds)&&link.analysisIds.length>0);links.set(link.tokenId,link.analysisIds);}
- const edition=editions.find(e=>e.id===descriptor.editionId);require(edition);
+ const edition=editions.find(e=>e.id===descriptor.editionId);if(!edition)throw new Error('Edición de capítulo ausente');
  const registry:LinguisticRegistry={schemaVersion:1,editions:[edition],units,tokens:rawTokens.map(t=>({...t,analysisIds:links.get(t.id)??[]})),lemmas,identifiers:[],analyses,morphCodes:[]};
  require(registry.tokens.every(t=>units.some(u=>u.id===t.unitId)));
  return {registry,supplements:a.supplements as Supplement[],typography:t.typography};

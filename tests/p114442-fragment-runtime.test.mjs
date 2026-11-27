@@ -6,7 +6,7 @@ test('las claves exactas no se normalizan ni se confunden',()=>{
  assert.notEqual(groupKey({kind:'lexical',mode:'form',language:'hbo'}),groupKey({kind:'lexical',mode:'form',language:'arc'}));
  assert.notEqual(groupKey({kind:'concordance',editionId:'TXT-a',language:'hbo',mode:'form'}),groupKey({kind:'concordance',editionId:'TXT-a',language:'hbo',bookId:'LIB-Gen',mode:'form'}));
  assert.deepEqual(exactRow([['אָ',[1]],['א',[2]]],'א'),[2]);assert.equal(exactRow([['אָ',[1]]],'א'),null);
- assert.equal(bucketFor('λόγος'),bucketFor('λόγος'));assert.equal(bucketFor('λόγος'),bucketFor('λογος')||'different');
+ assert.equal(bucketFor('λόγος'),bucketFor('λόγος'));
 });
 test('las coordenadas compactas respetan límites de capítulo y posición',()=>{
  const chapters=[{occurrences:3},{occurrences:7}];assert.deepEqual(decodeCoordinate(coordinate(1,6),chapters),{chapter:1,position:6});

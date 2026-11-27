@@ -51,7 +51,7 @@ export async function createLexiconConcordanceFragments(options:{manifestUrl:str
   const result=new Array<Occurrence>(refs.length),{offset:_offset,limit:_limit,...query}=q;
   for(const [chapterIndex,items] of grouped){
    const loaded=await chapter(chapterIndex),byToken=new Map<string,Occurrence>();let offset=0;
-   while(true){const page=loaded.engine.search({...query,offset,limit:100} as ConcordanceQuery);require(page.status==='disponible');for(const hit of page.occurrences)byToken.set(hit.tokenId,hit);if(page.nextOffset===null)break;offset=page.nextOffset;}
+   while(true){const page=loaded.engine.search({...query,offset,limit:100} as ConcordanceQuery);if(page.status!=='disponible')throw new Error('Ocurrencia no disponible en el fragmento');for(const hit of page.occurrences)byToken.set(hit.tokenId,hit);if(page.nextOffset===null)break;offset=page.nextOffset;}
    for(const item of items){const token=loaded.text.tokens[item.position];require(token);const hit=byToken.get(token.id);require(hit);result[item.index]=hit;}
   }
   require(result.every(Boolean));return result;
