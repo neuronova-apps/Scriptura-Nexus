@@ -1,0 +1,43 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {validateManuscriptPilot} from '../src/lib/manuscript-pilot.ts';
+const read=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8'));
+const audit=read('docs/P11/registro-auditoria-manuscritos-p11461.json');
+const candidates=read(audit.historicalSources.inventory),pilot=read(audit.historicalSources.pilot),historic=read(audit.historicalSources.historicalRegistry);
+test('historical documentary inventory remains reference only',()=>{
+ assert.equal(audit.phase,'P11.4.6.1');
+ assert.equal(candidates.candidates.length,11);
+ assert.deepEqual(candidates.candidates.filter(x=>x.status==='external_link_only').map(x=>x.id),audit.historicalSources.externalOnly);
+ assert.deepEqual(candidates.candidates.filter(x=>x.status==='not_selected').map(x=>x.id),audit.historicalSources.notSelected);
+ assert.ok(candidates.candidates.every(x=>Object.values(x.reuse).every(v=>v===false)));
+ assert.equal(candidates.publicationAuthorized,false);assert.equal(candidates.corpusImportAuthorized,false);
+});
+test('pilot scope and documentary evidence reconcile without new admission',()=>{
+ assert.deepEqual(validateManuscriptPilot(pilot,read('docs/P9/proyeccion-ediciones-p913.json')),[]);
+ const r=pilot.registry,s=audit.scope;
+ assert.equal(pilot.scope,s.mode);assert.equal(pilot.sourceFilesAdmitted,audit.historicalSources.sourceFilesAdmitted);
+ assert.deepEqual(r.editions.map(x=>x.textualEditionId),[s.edition]);
+ assert.deepEqual(r.witnesses.map(x=>x.id),s.witnesses);assert.deepEqual(r.variants.map(x=>x.id),s.variants);
+ assert.equal(r.readings.length,s.readings);assert.equal(pilot.resources.length,s.resources);assert.equal(pilot.evidence.length,s.evidence);
+ assert.ok(pilot.resources.every(x=>x.use==='reference_only'));
+ assert.equal(pilot.evidence.filter(x=>x.kind==='secondary_attestation').length,s.secondaryAttestations);
+ assert.equal(pilot.readingRepresentation.filter(x=>x.directManuscriptInspection).length,s.directInspections);
+ assert.equal(pilot.readingRepresentation.filter(x=>x.folioVerified).length,s.folioVerified);
+ assert.equal(pilot.readingRepresentation.filter(x=>x.handVerified).length,s.handVerified);
+ assert.equal(r.variants.filter(x=>x.assessment.status!=='not_assessed').length,s.assessments);
+ assert.ok(r.variants.every(x=>x.locus.referenceStatus==='source_native_only'&&x.locus.unitId===null&&x.locus.versificationId===null));
+ assert.ok(r.readings.every(x=>x.readingText===null&&x.contentMode==='reference_only'&&x.witnessAttestations.every(a=>a.hand.kind==='unknown')));
+});
+test('public and historical barriers remain unchanged',()=>{
+ for(const k of ['editions','witnesses','variants','readings','translations'])assert.deepEqual(historic[k],[]);
+ for(const k of ['publicationAuthorized','corpusImportAuthorized','textualContentPersisted','apparatusContentPersisted','imagesPersisted','automaticWitnessAttribution','automaticAlignment'])assert.equal(pilot.registry[k],false);
+ for(const k of ['publicationAuthorized','corpusImportAuthorized','publicAdapterConnected','imagesPersisted','transcriptionsPersisted','apparatusPersisted','thirdPartyMetadataImported','automaticAlignment','automaticWitnessAttribution','originalityAssessment'])assert.equal(audit.controls[k],false);
+ const page=readFileSync(new URL('../src/pages/manuscritos/consulta.astro',import.meta.url),'utf8');
+ assert.ok(page.includes('createManuscriptView(emptyManuscriptRelease())'));
+ assert.ok(!page.includes('muestra-manuscritos-p943.json'));
+ const comparator=read('docs/P11/registro-liberacion-comparador-p11455.json'),lexical=read('docs/P11/registro-liberacion-lexicos-p114444.json');
+ assert.equal(comparator.canPublish,false);assert.equal(lexical.canPublish,false);
+ assert.deepEqual(audit.progress,comparator.progress);assert.equal(audit.next,'P11.4.6.2');
+ assert.equal(audit.controls.rightsReview,'pending_before_release');assert.equal(audit.controls.manualAccessibility,'pending');
+});

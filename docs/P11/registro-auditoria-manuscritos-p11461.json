@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.6.1",
+  "baselineMain": "d3ba06f78f0e9728a0737823bc3917391aed23ca",
+  "previousEvidence": {
+    "pr": 119,
+    "checksSuccess": 50,
+    "checksSkipped": 1,
+    "run": 46049050821,
+    "job": 140675510099,
+    "pagesRun": 46049746249,
+    "comparatorStatus": "blocked_pending_manual_review"
+  },
+  "status": "audit_reference_only",
+  "historicalSources": {
+    "inventory": "docs/P9/candidatos-manuscritos-p941.json",
+    "pilot": "docs/P9/muestra-manuscritos-p943.json",
+    "historicalRegistry": "docs/P9/registro-manuscritos-p942.json",
+    "externalOnly": [
+      "MS-C01",
+      "MS-C02",
+      "MS-C03",
+      "MS-C04",
+      "MS-C05"
+    ],
+    "notSelected": [
+      "ED-C01",
+      "ED-C02",
+      "ED-C03",
+      "ED-C04",
+      "ED-C05",
+      "ED-C06"
+    ],
+    "sourceFilesAdmitted": 0
+  },
+  "scope": {
+    "mode": "reference_only_pilot",
+    "edition": "TXT-SBLGNT-V1-2",
+    "witnesses": [
+      "MAN-GA-P66",
+      "MAN-GA-02"
+    ],
+    "variants": [
+      "VAR-P943-JHN-1-18"
+    ],
+    "readings": 2,
+    "resources": 7,
+    "evidence": 8,
+    "secondaryAttestations": 2,
+    "directInspections": 0,
+    "folioVerified": 0,
+    "handVerified": 0,
+    "assessments": 0
+  },
+  "controls": {
+    "publicationAuthorized": false,
+    "corpusImportAuthorized": false,
+    "publicAdapterConnected": false,
+    "imagesPersisted": false,
+    "transcriptionsPersisted": false,
+    "apparatusPersisted": false,
+    "thirdPartyMetadataImported": false,
+    "automaticAlignment": false,
+    "automaticWitnessAttribution": false,
+    "originalityAssessment": false,
+    "rightsReview": "pending_before_release",
+    "manualAccessibility": "pending",
+    "comparatorGateUnchanged": true,
+    "lexicalGateUnchanged": true
+  },
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.6.2"
+}

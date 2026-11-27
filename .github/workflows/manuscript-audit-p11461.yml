@@ -1,0 +1,30 @@
+name: P11.4.6.1 Auditoría de manuscritos y variantes
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'src/lib/manuscript-*.ts'
+      - 'src/pages/manuscritos/**'
+      - 'tests/p11461-manuscript-audit.test.mjs'
+      - 'scripts/verify-manuscript-pilot-build.mjs'
+      - '.github/workflows/manuscript-audit-p11461.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manuscript-scope-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Auditoría y contratos históricos
+        run: node --test tests/p11461-manuscript-audit.test.mjs tests/p942-manuscript-contracts.test.mjs tests/p943-manuscript-pilot.test.mjs tests/p944-manuscript-view.test.mjs
+      - name: Compilación y barreras públicas
+        run: npm ci && npm run check && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
