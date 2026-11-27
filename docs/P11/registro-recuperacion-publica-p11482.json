@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.8.2",
+  "baselineMain": "da95b7f92bace0beaa94c17e610772774e22c0a7",
+  "previousEvidence": {
+    "pr": 129,
+    "head": "028255a5ff289489d212670d2225bf90de8ac2f3",
+    "merge": "da95b7f92bace0beaa94c17e610772774e22c0a7",
+    "checksSuccess": 60,
+    "checksSkipped": 1,
+    "run": 46059470997,
+    "job": 140709941632,
+    "pagesRun": 46060023933,
+    "observed": {
+      "phase": "P11.4.8.1",
+      "status": "public_baseline_verified_release_blocked",
+      "files": 139,
+      "bytes": 3250046,
+      "manifestSha256": "a49c3084c6e01a2b9f7b8c5f91f409301f92caf04cc4ace9edc4beb635648f34",
+      "rebuildIdentical": true,
+      "protectedObjects": 8,
+      "publicModulesEnabled": 0,
+      "manualPending": 38,
+      "publicationAuthorized": false,
+      "corpusImportAuthorized": false,
+      "releaseActionPerformed": false,
+      "upload": false
+    }
+  },
+  "mode": "temporary_public_baseline_rehearsal",
+  "planned": {
+    "incidents": [
+      "modified_file",
+      "missing_file",
+      "unexpected_file"
+    ],
+    "restorations": 3,
+    "tamperedBackupRejected": true,
+    "gitRevertRehearsal": "temporary_local_artifact_repository",
+    "baselineIntact": true,
+    "temporaryCleanup": true
+  },
+  "manualPending": 38,
+  "actualRollback": false,
+  "remoteGitWrites": false,
+  "releaseActionPerformed": false,
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "publicModulesEnabled": 0,
+  "upload": false,
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66
+  },
+  "next": "P11.4.8.3"
+}
