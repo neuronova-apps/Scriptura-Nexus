@@ -1,0 +1,29 @@
+name: P11.4.6.2 Proyección documental privada
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/private-manuscript-projection-p11462.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-manuscript-projection:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Proyección y regresiones documentales
+        run: node --test tests/p11462-private-manuscript-projection.test.mjs tests/p11461-manuscript-audit.test.mjs tests/p942-manuscript-contracts.test.mjs tests/p943-manuscript-pilot.test.mjs tests/p944-manuscript-view.test.mjs
+      - name: Compilación pública y ausencia del piloto
+        run: npm ci && npm run check && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
