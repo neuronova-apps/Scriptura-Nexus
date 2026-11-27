@@ -1,0 +1,41 @@
+name: P11.2 Auditoría documental final
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P10/**'
+      - 'docs/P9/**'
+      - 'docs/P8/**'
+      - 'docs/P7/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/final-documentary-audit-p112.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  documentary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contratos documentales y artefacto público
+        run: |
+          npm ci
+          node --test tests/p112-documentary-audit.test.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/validate-p112.mjs
+          node scripts/verify-manuscript-pilot-build.mjs
