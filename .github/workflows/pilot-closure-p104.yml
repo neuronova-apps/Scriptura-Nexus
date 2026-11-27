@@ -1,0 +1,40 @@
+name: P10.4 Ajustes y cierre técnico de pilotos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'docs/P0/**'
+      - 'docs/P8/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-closure-p104.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validar cierre condicionado y regresiones
+        run: |
+          npm ci
+          node --test tests/p104-pilot-closure.test.mjs
+          node scripts/validate-p104.mjs
+          python3 scripts/audit-pilot-application-p1023.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
