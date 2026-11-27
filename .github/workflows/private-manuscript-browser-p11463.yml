@@ -1,0 +1,34 @@
+name: P11.4.6.3 Integración funcional privada de manuscritos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/private-manuscript-browser-p11463.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-manuscript-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Regresiones y barreras públicas
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
+      - name: Candidato documental privado en Chromium
+        run: |
+          deps="$RUNNER_TEMP/p11463-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P11463_DEPS="$deps" node scripts/validate-private-manuscript-browser-p11463.mjs

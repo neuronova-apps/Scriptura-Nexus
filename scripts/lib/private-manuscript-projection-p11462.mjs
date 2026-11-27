@@ -1,6 +1,7 @@
 // Private reference-only projection. Never imported by public routes.
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {createIsolatedManuscriptView} from './private-manuscript-view-p11463.mjs';
 import {validateManuscriptPilot} from '../../src/lib/manuscript-pilot.ts';
 const pins={
  pilot:['docs/P9/muestra-manuscritos-p943.json','3c283e6bd9f0d4aab2ba939e0667753fae1b8053'],
@@ -55,15 +56,6 @@ export function projectPrivateManuscripts(inputs){
 // changes publicationAuthorized; available means available in the isolated view.
 export function createPrivateManuscriptCandidate(inputs=loadPrivateManuscriptInputs()){
  const projected=projectPrivateManuscripts(inputs);
- const {witnesses,variants,sources,evidence}=projected;
- const query=value=>value.normalize('NFKD').replace(/\p{M}/gu,'').toLocaleLowerCase('es').trim();
- const view={
-  available:true,
-  witnesses:(search='')=>clone(witnesses.filter(w=>query([w.name,w.catalogIdentifier,w.institution,w.dating,w.language,w.shelfmark??''].join(' ')).includes(query(search)))),
-  variants:()=>clone(variants.map(v=>({id:v.id,locus:v.locus,edition:v.edition}))),
-  witness:id=>clone(witnesses.find(w=>w.id===id)??null),
-  variant:id=>clone(variants.find(v=>v.id===id)??null),
-  evidence:id=>{const e=evidence.find(x=>x.id===id);return e?clone({evidence:e,source:sources.find(s=>s.id===e.sourceId)}):null;}
- };
+ const view=createIsolatedManuscriptView(projected);
  return {projection:clone(projected),view};
 }
