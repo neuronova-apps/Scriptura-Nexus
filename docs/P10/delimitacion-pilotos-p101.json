@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.1",
+  "status": "delimitacion_propuesta",
+  "baseMain": "19c182a208bb30a85df4fc551070ecc7fedeceac",
+  "publicationAuthorized": false,
+  "methodology": "docs/P0/04-metodologia.md",
+  "approval": "pendiente_revision_responsable",
+  "pilots": [
+    {
+      "id": "SN-001",
+      "question": "¿Cuál es el alcance de la prohibición de Lv 19:28 y qué criterios permiten evaluar su aplicación a los tatuajes contemporáneos?",
+      "objective": "Analizar la prohibición en su contexto literario, histórico y jurídico y contrastar las interpretaciones de su aplicación actual.",
+      "subquestions": [
+        "¿Qué expresiones hebreas aparecen y cómo se traducen?",
+        "¿Qué relación tienen las marcas corporales con el luto y las prácticas rituales?",
+        "¿Qué criterios de continuidad entre pactos emplean las distintas posturas?"
+      ],
+      "scope": "Lv 19:28 y Dt 14:1 en su contexto; recepción y aplicación contemporánea, sin identificar toda modificación corporal con un mismo rito.",
+      "excluded": "No emitir una prohibición universal, recomendación sanitaria ni juicio sobre personas tatuadas a partir de la delimitación.",
+      "candidateReferences": [
+        "Lv 19:28",
+        "Dt 14:1"
+      ],
+      "methods": [
+        "M02",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M15",
+        "M16",
+        "M17",
+        "M18"
+      ],
+      "evidenceNeeds": [
+        "Ediciones hebreas identificadas y traducciones autorizadas",
+        "Léxicos y gramáticas con localizadores",
+        "Estudios históricos sobre marcas y luto",
+        "Fuentes confesionales atribuibles y argumentos sobre pactos"
+      ],
+      "tools": [
+        "lector",
+        "comparador",
+        "analizador",
+        "lexicos_concordancias"
+      ],
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "etica_practica"
+      ],
+      "related": [
+        "SN-016",
+        "SN-003"
+      ],
+      "referenceStatus": "orientativas_no_verificadas_en_p10_1",
+      "methodStatus": "seleccion_provisional",
+      "unselectedMethodPolicy": "Evaluar pertinencia y justificar no aplicabilidad antes de analizar; ninguna perspectiva se presume completada.",
+      "evidenceIds": [],
+      "expectedProduct": "Ficha de alcance y prueba trazable del flujo de 20 secciones; no constituye investigación concluida."
+    },
+    {
+      "id": "SN-015",
+      "question": "¿Qué alcance tienen las disposiciones y prácticas del diezmo en los distintos pactos bíblicos y cómo se argumenta su aplicación al cristiano actual?",
+      "objective": "Distinguir prácticas patriarcales, disposiciones mosaicas y enseñanzas neotestamentarias sobre generosidad y contrastar sus interpretaciones.",
+      "subquestions": [
+        "¿Qué destinatarios, finalidades y contextos tienen los diezmos descritos?",
+        "¿Cómo se relacionan diezmo, ofrenda y generosidad?",
+        "¿Qué criterios sustentan obligatoriedad, continuidad o aplicación como principio?"
+      ],
+      "scope": "Gn 14:20, Lv 27:30, Mal 3:8-10, Mt 23:23 y 2 Co 9:7; ampliar contexto y referencias solo tras verificación.",
+      "excluded": "No fijar porcentajes obligatorios, instrucciones financieras ni valorar iglesias individuales.",
+      "candidateReferences": [
+        "Gn 14:20",
+        "Lv 27:30",
+        "Mal 3:8-10",
+        "Mt 23:23",
+        "2 Co 9:7"
+      ],
+      "methods": [
+        "M02",
+        "M04",
+        "M06",
+        "M07",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M15",
+        "M16",
+        "M17",
+        "M18"
+      ],
+      "evidenceNeeds": [
+        "Contexto de cada pasaje y su destinatario",
+        "Fuentes sobre instituciones de Israel y prácticas económicas",
+        "Análisis de términos y textos pertinentes",
+        "Documentos y autores de tradiciones con posiciones diferentes"
+      ],
+      "tools": [
+        "lector",
+        "comparador",
+        "analizador",
+        "biblioteca"
+      ],
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "related": [
+        "SN-016",
+        "SN-018"
+      ],
+      "referenceStatus": "orientativas_no_verificadas_en_p10_1",
+      "methodStatus": "seleccion_provisional",
+      "unselectedMethodPolicy": "Evaluar pertinencia y justificar no aplicabilidad antes de analizar; ninguna perspectiva se presume completada.",
+      "evidenceIds": [],
+      "expectedProduct": "Ficha de alcance y prueba trazable del flujo de 20 secciones; no constituye investigación concluida."
+    },
+    {
+      "id": "SN-008",
+      "question": "¿Cómo describen Hechos y 1 Corintios las lenguas, sus funciones y su regulación, y qué interpretaciones existen sobre su naturaleza y vigencia?",
+      "objective": "Contrastar las descripciones narrativas y argumentativas de las lenguas con análisis griego y fuentes confesionales diferenciadas.",
+      "subquestions": [
+        "¿Qué términos y funciones aparecen en cada contexto?",
+        "¿Qué diferencias y conexiones existen entre Hechos y 1 Corintios?",
+        "¿Cómo se fundamentan las posturas sobre evidencia inicial, interpretación, orden y vigencia?"
+      ],
+      "scope": "Hechos 2, 10 y 19; 1 Corintios 12–14. Atención preferente pentecostal sin privilegio probatorio.",
+      "excluded": "No diagnosticar experiencias individuales ni demostrar o refutar dones actuales por una sola ocurrencia léxica.",
+      "candidateReferences": [
+        "Hch 2",
+        "Hch 10",
+        "Hch 19",
+        "1 Co 12–14"
+      ],
+      "methods": [
+        "M02",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16",
+        "M18"
+      ],
+      "evidenceNeeds": [
+        "Edición griega identificada y contexto de cláusulas",
+        "Léxicos y gramáticas con revisión de sentidos",
+        "Documentos pentecostales y otras perspectivas pertinentes",
+        "Fuentes históricas y exegéticas"
+      ],
+      "tools": [
+        "lector",
+        "comparador",
+        "analizador",
+        "lexicos_concordancias"
+      ],
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "related": [
+        "SN-009",
+        "SN-010",
+        "SN-024"
+      ],
+      "referenceStatus": "orientativas_no_verificadas_en_p10_1",
+      "methodStatus": "seleccion_provisional",
+      "unselectedMethodPolicy": "Evaluar pertinencia y justificar no aplicabilidad antes de analizar; ninguna perspectiva se presume completada.",
+      "evidenceIds": [],
+      "expectedProduct": "Ficha de alcance y prueba trazable del flujo de 20 secciones; no constituye investigación concluida."
+    },
+    {
+      "id": "SN-021",
+      "question": "¿Qué comunica el clamor de Jesús en Mt 27:46 y Mc 15:34 en relación con el Salmo 22, su sufrimiento y las interpretaciones cristológicas y trinitarias?",
+      "objective": "Analizar el clamor en su contexto narrativo e intertextual y contrastar sus interpretaciones teológicas sin anticipar una ruptura o ausencia de relación divina.",
+      "subquestions": [
+        "¿Cómo se relacionan las expresiones transmitidas y el Salmo 22?",
+        "¿Qué función cumple el clamor en cada relato de la pasión?",
+        "¿Cómo distinguen las interpretaciones sufrimiento, abandono y unidad divina?"
+      ],
+      "scope": "Sal 22, Mt 27:46 y Mc 15:34 en sus contextos; hebreo y expresiones semíticas transmitidas en griego; recepción cristológica.",
+      "excluded": "No establecer conclusiones acerca de la vida intratrinitaria sin evidencia ni equiparar por defecto las ediciones de ambos pasajes.",
+      "candidateReferences": [
+        "Sal 22",
+        "Mt 27:46",
+        "Mc 15:34"
+      ],
+      "methods": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16"
+      ],
+      "evidenceNeeds": [
+        "Ediciones hebrea y griega con identificación y permisos",
+        "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+        "Estudios del Salmo 22 y relatos de la pasión",
+        "Fuentes cristológicas e históricas atribuibles"
+      ],
+      "tools": [
+        "lector",
+        "comparador",
+        "analizador",
+        "manuscritos",
+        "biblioteca"
+      ],
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "related": [
+        "SN-022",
+        "SN-023",
+        "SN-026"
+      ],
+      "referenceStatus": "orientativas_no_verificadas_en_p10_1",
+      "methodStatus": "seleccion_provisional",
+      "unselectedMethodPolicy": "Evaluar pertinencia y justificar no aplicabilidad antes de analizar; ninguna perspectiva se presume completada.",
+      "evidenceIds": [],
+      "expectedProduct": "Ficha de alcance y prueba trazable del flujo de 20 secciones; no constituye investigación concluida."
+    },
+    {
+      "id": "SN-040",
+      "question": "¿Qué diferencias históricas, editoriales y textuales existen entre ediciones identificadas del Textus Receptus y del texto crítico, y cómo se evalúan sus efectos interpretativos?",
+      "objective": "Distinguir manuscrito, tradición textual, edición y traducción, documentar una comparación acotada de ediciones concretas y evaluar límites y efectos de variantes.",
+      "subquestions": [
+        "¿Qué ediciones concretas representan cada comparación y cómo fueron elaboradas?",
+        "¿Qué evidencia externa e interna es pertinente para una variante?",
+        "¿Qué diferencias son ortográficas, textuales o de traducción y qué impacto puede documentarse?"
+      ],
+      "scope": "Historia editorial y selección posterior de casos controlados. Juan 1:18 puede servir como candidato de referencia por la muestra P9.4.3, sin convertirla en colación directa ni asumir admisión de una edición TR.",
+      "excluded": "No tratar el TR o texto crítico como manuscrito único; no ampliar corpus, copiar aparatos, elegir una lectura original ni inferir alineación sin verificación.",
+      "candidateReferences": [
+        "Jn 1:18 (candidato, no referencia original del catálogo)"
+      ],
+      "methods": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M14",
+        "M15"
+      ],
+      "evidenceNeeds": [
+        "Identidad, revisión y permisos de ediciones concretas",
+        "Aparatos y fuentes documentales autorizadas o referencias externas",
+        "Localizadores y naturaleza de testimonio directo o secundario",
+        "Criterios explícitos de crítica textual y límites"
+      ],
+      "tools": [
+        "comparador",
+        "manuscritos",
+        "lector",
+        "biblioteca"
+      ],
+      "profiles": [
+        "textual_linguistica",
+        "historica_eclesiastica",
+        "biblica_exegetica"
+      ],
+      "related": [
+        "SN-038",
+        "SN-041",
+        "SN-042"
+      ],
+      "referenceStatus": "orientativas_no_verificadas_en_p10_1",
+      "methodStatus": "seleccion_provisional",
+      "unselectedMethodPolicy": "Evaluar pertinencia y justificar no aplicabilidad antes de analizar; ninguna perspectiva se presume completada.",
+      "evidenceIds": [],
+      "expectedProduct": "Ficha de alcance y prueba trazable del flujo de 20 secciones; no constituye investigación concluida."
+    }
+  ]
+}
