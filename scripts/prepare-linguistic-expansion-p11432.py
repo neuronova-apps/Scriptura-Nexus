@@ -16,7 +16,7 @@ def validate(r):
     require(a.p91.blob(raw)==r['auditBlob'],'audit provenance')
     plan=json.loads(raw);a.validate(plan)
     return plan
-def hebrew_projection(data,book,expected):
+def hebrew_projection(data,book,expected,*, on_rows=None):
     require(book in ('Lev','Deut'),'Hebrew scope')
     projection=osis._parse_primary(data,book,allow_large_segments=True)
     primary=[];unknown=0;lemma=0;morph=0;large_refs=collections.Counter()
@@ -44,6 +44,7 @@ def hebrew_projection(data,book,expected):
             source.append((v.get('osisID'),''.join(w.itertext()),w.get('lemma'),w.get('morph')))
     require(source==[(x['ref'],x['form'],x['lemmaRaw'],x['morphRaw']) for x in primary],'OSIS exact source words')
     require(len(projection['chapters'])==expected['chapters'] and sum(len(c['verses']) for c in projection['chapters'])==expected['verseElements'] and len(primary)==expected['directWords'],'OSIS coverage')
+    if on_rows is not None:on_rows(primary)
     return {'primaryWords':len(primary),'unknownLanguage':unknown,'lemmaAttributes':lemma,'morphAttributes':morph,'sha256':a.p91.sha(canonical(primary)),'alternativesIncluded':False,'largeLetterSegments':sum(large_refs.values()),'largeLetterReferences':dict(large_refs)}
 def greek_layers(official,body,book_code):
     forms=a.morph(body,book_code)
@@ -61,7 +62,7 @@ def greek_layers(official,body,book_code):
             text.append({**key,'form':word})
             if match and word==forms[ref][i]:ann.append({**key,**annotations[ref][i]})
     return text,ann
-def prepare(r,fetch=a.p91.fetch):
+def prepare(r,fetch=a.p91.fetch,*, on_book=None):
     plan=validate(r);sources={x['key']:x for x in plan['sources']};expected={x['id']:x for x in r['audit']['files']}
     # Check the license evidence and file identity again; use pinned SHA-256 on every file.
     for src in sources.values():a.fixed(src,src['licenseEvidence'],fetch)
@@ -70,12 +71,13 @@ def prepare(r,fetch=a.p91.fetch):
         evidence=expected[meta['id']]
         body,digest=a.fixed(sources[meta['source']],{**meta,'sha256':evidence['sha256']},fetch)
         if meta['source']=='OSHB':
-            heb.append({'book':meta['book'],**hebrew_projection(body,meta['book'],evidence['metrics'])})
+            heb.append({'book':meta['book'],**hebrew_projection(body,meta['book'],evidence['metrics'],on_rows=None if on_book is None else lambda rows:on_book(meta['book'],{'primary':rows}))})
         elif meta['source']=='SBLGNT':
             _,official[meta['book']]=a.official(body,meta)
         else:
             text,ann=greek_layers(official[meta['book']],body,meta['bookCode'])
             require(len(text)==evidence['metrics']['officialWords'] and len(ann)==evidence['metrics']['eligibleExact'] and len(text)-len(ann)==evidence['metrics']['withheld'],'Greek coverage')
+            if on_book is not None:on_book(meta['book'],{'text':text,'annotations':ann})
             greek.append({'book':meta['book'],'officialWords':len(text),'eligibleAnnotations':len(ann),'withheld':len(text)-len(ann),'textSha256':a.p91.sha(canonical(text)),'annotationSha256':a.p91.sha(canonical(ann)),'separateLayers':True})
     require(sum(x['primaryWords'] for x in heb)+sum(x['officialWords'] for x in greek)==51468 and sum(x['withheld'] for x in greek)==198,'candidate totals')
     return {'phase':r['phase'],'hebrew':heb,'greek':greek,'candidateOccurrences':51468,'newAdmissions':0,'publicationAuthorized':False,'corpusPersisted':False}

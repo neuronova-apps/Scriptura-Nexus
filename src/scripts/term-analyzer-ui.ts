@@ -1,7 +1,7 @@
 import {createAnalyzerSession,languageNames,statusLabels} from '../lib/term-analyzer-view';
 import type {Analyzer} from '../lib/term-analyzer-view';
 import type {Origin,Language} from '../lib/linguistic-contracts';
-const books:Record<string,string>={'LIB-Gen':'Génesis','LIB-Dan':'Daniel','LIB-3John':'3 Juan'};
+const books:Record<string,string>={'LIB-Gen':'Génesis','LIB-Lev':'Levítico','LIB-Deut':'Deuteronomio','LIB-Dan':'Daniel','LIB-Acts':'Hechos','LIB-1Cor':'1 Corintios','LIB-3John':'3 Juan'};
 export function mountAnalyzer(doc:Document,engine:Analyzer){
  const form=doc.querySelector<HTMLFormElement>('#ta-form'),fields=doc.querySelector<HTMLFieldSetElement>('#ta-fields'),edition=doc.querySelector<HTMLSelectElement>('#ta-edition'),book=doc.querySelector<HTMLSelectElement>('#ta-book'),chapter=doc.querySelector<HTMLInputElement>('#ta-chapter'),verse=doc.querySelector<HTMLInputElement>('#ta-verse'),word=doc.querySelector<HTMLSelectElement>('#ta-occurrence'),words=doc.querySelector<HTMLElement>('#ta-words'),status=doc.querySelector<HTMLElement>('#ta-status'),resultStatus=doc.querySelector<HTMLElement>('#ta-result-status'),result=doc.querySelector<HTMLElement>('#ta-result');
  if(!form||!fields||!edition||!book||!chapter||!verse||!word||!words||!status||!resultStatus||!result)return;
