@@ -1,0 +1,30 @@
+name: P11.4.8.3 Verificación previa a publicación
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - 'public/**'
+      - '.github/workflows/**'
+      - 'package*.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - name: Regresiones y compilación ordinaria
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build && node scripts/verify-manuscript-pilot-build.mjs
+      - name: Verificación previa sin autorización de despliegue
+        run: node scripts/validate-release-preflight-p11483.mjs

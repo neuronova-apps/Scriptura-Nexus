@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.8.3",
+  "baselineMain": "4ab4139918ed1bc03e4742127fe05d977f6d3173",
+  "previousEvidence": {
+    "pr": 130,
+    "head": "667c2f6aab48892c1e807d47a8e35d4d70af1764",
+    "merge": "4ab4139918ed1bc03e4742127fe05d977f6d3173",
+    "checksSuccess": 61,
+    "checksSkipped": 1,
+    "run": 46060151154,
+    "job": 140712166295,
+    "pagesRun": 46061075711,
+    "observed": {
+      "phase": "P11.4.8.2",
+      "status": "recovery_rehearsed_release_blocked",
+      "incidents": 3,
+      "restorations": 3,
+      "tamperedBackupRejected": true,
+      "gitRevertRehearsed": true,
+      "files": 139,
+      "bytes": 3250046,
+      "manifestSha256": "a49c3084c6e01a2b9f7b8c5f91f409301f92caf04cc4ace9edc4beb635648f34",
+      "baselineIntact": true,
+      "temporaryCleanup": true,
+      "actualRollback": false,
+      "remoteGitWrites": false,
+      "previousManifestMatches": true,
+      "protectedObjects": 8,
+      "manualPending": 38,
+      "publicModulesEnabled": 0,
+      "publicationAuthorized": false,
+      "corpusImportAuthorized": false,
+      "releaseActionPerformed": false,
+      "upload": false
+    }
+  },
+  "status": "preflight_prepared_release_blocked",
+  "selectedOption": "B",
+  "manualPending": 38,
+  "approvedModules": [],
+  "blockers": [
+    "manual_review_evidence",
+    "rights_and_privacy_decisions",
+    "explicit_scope_approval",
+    "authorized_release_artifact"
+  ],
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseActionPerformed": false,
+  "publicModulesEnabled": 0,
+  "upload": false,
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66
+  },
+  "next": {
+    "phase": "P11.4.8.4",
+    "state": "blocked_pending_evidence_and_approval",
+    "requiresNewDecision": true
+  }
+}
