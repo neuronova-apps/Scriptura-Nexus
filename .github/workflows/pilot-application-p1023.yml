@@ -1,0 +1,38 @@
+name: P10.2.3 Aplicación metodológica inicial
+on:
+  pull_request:
+    branches: [main, feature/p10.2.2-source-verification]
+    paths:
+      - 'docs/P10/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-application-p1023.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-application:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validación de apertura, fuentes y aplicación
+        run: |
+          npm ci
+          node scripts/validate-p1021.mjs
+          node scripts/validate-p1022.mjs
+          python3 -m unittest discover -s tests -p 'test_pilot_application_p1023.py'
+          python3 scripts/audit-pilot-application-p1023.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
