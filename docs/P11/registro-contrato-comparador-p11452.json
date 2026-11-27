@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.5.2",
+  "baselineMain": "a8ce5c1238b4a9a54bf07f68e144925152597112",
+  "previousPR": 115,
+  "previousWorkflowsSuccess": 38,
+  "previousChecksSuccess": 47,
+  "previousChecksSkipped": 1,
+  "mode": "isolated_validation",
+  "editions": [
+    "TXT-RV1909",
+    "TXT-SBLGNT-V1-2"
+  ],
+  "registry": "docs/P9/alineaciones-p931.json",
+  "verifiedGroups": 0,
+  "verifiedEvidence": 0,
+  "independentSelection": true,
+  "diagnosticLabelOnly": true,
+  "automaticTarget": false,
+  "publicationAuthorized": false,
+  "corpusPersisted": false,
+  "publicAdapterConnected": false,
+  "excluded": [
+    "P1022-R12",
+    "Dodson XML"
+  ],
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.5.3"
+}
