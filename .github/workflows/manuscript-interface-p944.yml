@@ -3,9 +3,7 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'src/pages/manuscritos/**'
-      - 'src/pages/biblia/**'
-      - 'src/pages/[[]module[]]/**'
+      - 'src/pages/**'
       - 'src/lib/manuscript-view.ts'
       - 'src/lib/module-details.ts'
       - 'src/scripts/manuscript-ui.ts'
