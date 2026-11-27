@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP113,validateP113} from '../scripts/validate-p113.mjs';
+const reject=fn=>{const d=loadP113();fn(d);assert.throws(()=>validateP113(d));};
+test('P11.3: complete planned matrix',()=>assert.deepEqual(validateP113(loadP113()),{routes:18,reflow:306,axe:72,labSamples:108,manualChecksPending:6,publicationAuthorized:false}));
+test('P11.3: preserve baseline and historical evidence',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.previousIntegration.deploy='success');});
+test('P11.3: no silent reduction of test coverage or budgets',()=>{reject(d=>d.record.routes.pop());reject(d=>d.record.widths.shift());reject(d=>d.record.budget.lcpMs=5000);});
+test('P11.3: manual checks cannot be assumed',()=>{reject(d=>d.record.manualChecks[0].status='aprobada');reject(d=>d.record.wcagCertification=true);});
+test('P11.3: lab does not replace field or corpus measurements',()=>{reject(d=>d.record.fieldINP='aprobado');reject(d=>d.record.publicFragmentBudget='aprobado');});
+test('P11.3: publication remains gated',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.releaseScopeApproved=true);reject(d=>d.record.next='P11.4');});

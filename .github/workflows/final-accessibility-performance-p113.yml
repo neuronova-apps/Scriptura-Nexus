@@ -1,0 +1,50 @@
+name: P11.3 Accesibilidad y rendimiento
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/final-accessibility-performance-p113.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  accessibility-performance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Matriz, regresiones y build
+        run: |
+          npm ci
+          node --test tests/p113-accessibility-performance.test.mjs
+          node scripts/validate-p113.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+      - name: Chromium y axe
+        run: |
+          deps="$RUNNER_TEMP/p113-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P113_DEPS="$deps" node scripts/audit-accessibility-performance-p113.mjs
+      - name: Regresión integrada y mediciones previas
+        run: |
+          deps="$RUNNER_TEMP/p113-browser"
+          P853_DEPS="$deps" node scripts/validate-linguistic-integration-p85.mjs
+          P95_DEPS="$deps" node scripts/validate-textual-integration-p95.mjs
+          P852_DEPS="$deps" node scripts/benchmark-public-p85.mjs
+          node scripts/verify-manuscript-pilot-build.mjs
