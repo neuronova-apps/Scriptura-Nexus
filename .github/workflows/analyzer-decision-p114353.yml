@@ -1,0 +1,41 @@
+name: P11.4.3.5.3 Consolidación y recuperación privada del analizador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/analyzer-decision-p114353.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recovery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evidencia técnica y barreras de decisión
+        run: |
+          npm ci
+          node --test tests/p114353-analyzer-decision.test.mjs
+          node scripts/validate-analyzer-decision-p114353.mjs
+          npm run build
+          npm run test:build
+      - name: Ensayo de recuperación privada del artefacto real
+        run: node scripts/stage-analyzer-artifact-p114353.mjs --recovery
+      - name: Barrera pública posterior
+        run: npm run test:build
