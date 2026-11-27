@@ -1,0 +1,15 @@
+# P11.4.4.2. Propuesta léxica y concordancias ampliadas
+
+PR #108 integrado en 87022b56867622f750146ea8c4cce1f33f44ab3f. 31 workflows y 40 checks satisfactorios; run 46030437142, job 140612562138. Pages 46031024066: success. Modelo histórico de 30740 entradas, 10221 formas y 35496 definiciones, SHA-256 26c8e8897f24c1991180cbbf0c0796afa130a6f6a088b1039cf69f137fe73f62. Se mantienen ocho vínculos Strong y 1157 atributos aug sin resolver. No se altera el modelo admitido.
+
+## Propuesta Dodson XML
+
+LEX-C08: bytes y blob fijos, SHA-256 39c6cb8053ef0adeffac7bbec1d1bc4f96c69424f8e6668f19b4244d3f234639. Auditoría observada: 5410 entradas TEI, 5410 nodos de texto griego Unicode y 10820 elementos def. El CSV histórico tiene 5408 filas, sin formas griegas Unicode. XML no equivale al CSV. Revisión del archivo fijo confirma atributos n compuestos y roles brief/full. El nuevo control comprueba texto plano, estructura, claves únicas completas, formas Unicode, definiciones por rol y diferencias entre etiqueta y orth. Compara sufijos numéricos con el CSV únicamente para diagnóstico agregado, sin crear equivalencias ni asignar Strong. El identificador completo n se conserva; no se infiere GK ni categoría gramatical. No se normaliza ortografía ni se traducen definiciones. Se propone consulta independiente de las entradas griegas.
+
+Proveedor declara dominio público, LICENSE CC0-1.0; conservar crédito Dodson, conversión Ulrik Sandborg-Petersen y XML Biblical Humanities, enlace al commit y cambios. No es dictamen jurídico ni permiso para publicar automáticamente. LEX-C01 y C02 siguen aplazados por derechos mixtos; LEX-C07 por representación. LING-015–018 mantienen sus límites. La admisión técnica del XML (propuesta de componentes y selectores en el registro) requiere aprobación expresa antes de integrar entradas. La autorización del analizador no se extiende al léxico. No se incorpora contenido nuevo en src.
+
+## Concordancias ampliadas
+
+Se reutiliza el motor existente createConcordance y la carga verificada de P11.4.3.3 en memoria. No usa el diccionario como fuente de frecuencias. 78218 ocurrencias principales, 5162 unidades, 168 capítulos y dos ediciones. Se confronta con índice de referencia independiente por forma exacta, lema admitido y código de proveedor exacto; muestras deterministas de frecuencia alta/baja y claves intermedias, paginación completa y filtros por libro. Se comprueba la cobertura de cada uno de los siete libros, los recuentos y ausencia de sistema Strong. Se conservan las 198 divergencias griegas nuevas sin vincular. Los resultados reales de CI quedan pendientes; la validación exhaustiva de frecuencias/índices corresponde a P11.4.4.3. Se prohíben corpus persistido, publicación, enlaces inferidos y equivalencias semánticas. Lector y analizador mantienen decisiones separadas.
+
+Próximo paso: revisar resultados y solicitar decisión de admisión técnica de LEX-C08; si se aplaza, continuar con el modelo histórico y concordancias ampliadas, sin griego léxico. Progreso 61/69.
