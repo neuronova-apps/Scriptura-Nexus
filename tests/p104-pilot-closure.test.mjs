@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP104,validateP104} from '../scripts/validate-p104.mjs';
+const reject=fn=>{const d=loadP104();fn(d);assert.throws(()=>validateP104(d));};
+test('P10.4: reconcile pilot controls and open gaps',()=>assert.deepEqual(validateP104(loadP104()),{phase:'P10.4',pilots:5,previousSpecificTests:36,openFindings:5,high:3,medium:2,openNeeds:20,releaseGatesPending:5,publicationAuthorized:false,completedStagesBeforeClosure:56,totalStages:62,completedStagesAfterClosure:57}));
+test('P10.4: preserve historical evidence',()=>{reject(d=>d.integrated=Buffer.from('{}'));reject(d=>d.record.previousIntegration.deploy='success');});
+test('P10.4: no premature gap closure',()=>{reject(d=>d.record.decisions[0].gap='cerrada');reject(d=>d.record.decisions.pop());reject(d=>d.record.results.openNeeds=0);});
+test('P10.4: publication and release remain gated',()=>{reject(d=>d.record.releaseScopeApproved=true);reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.releaseGates.pop());reject(d=>d.publication.snapshots.push({}));});
+test('P10.4: no new corpus or alignment',()=>{reject(d=>d.record.corpusImportAuthorized=true);reject(d=>d.linguistic.tokens.push({}));reject(d=>d.alignment.alignments.push({}));});
+test('P10.4: fixed master count, no inflated progress',()=>{reject(d=>d.record.progress.completedAfterP10Closure=62);reject(d=>d.record.progress.totalIncludingPlanning=60);});
