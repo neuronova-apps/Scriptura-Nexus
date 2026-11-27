@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1035,validateP1035} from '../scripts/validate-textual-criticism-p1035.mjs';
+import {validateManuscriptPilot} from '../src/lib/manuscript-pilot.ts';
+const reject=fn=>{const d=loadP1035();fn(d);assert.throws(()=>validateP1035(d));};
+test('P10.3.5: documented sample and pending requirements',()=>assert.deepEqual(validateP1035(loadP1035()),{phase:'P10.3.5',pilot:'SN-040',contextUnits:5,greekAnchors:1,variants:1,witnesses:2,readings:2,resources:7,evidence:8,secondaryAttestations:2,directInspections:0,verifiedAlignments:0,openNeeds:4,academicAnalysisCompleted:false,publicationAuthorized:false}));
+test('P10.3.5: preserve historical references',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.case.focus='19');reject(d=>d.record.openNeeds.pop());});
+test('P10.3.5: no direct witness or original reading inferred',()=>{reject(d=>d.record.sample.directInspections=1);reject(d=>d.record.sample.folioVerified=true);reject(d=>d.record.comparisonControls.originalReadingDetermined=true);});
+test('P10.3.5: TR admission and alignment remain blocked',()=>{reject(d=>d.record.trCandidate.status='admitida');reject(d=>d.record.comparisonControls.expectedTRStatus='verified_alignment');reject(d=>d.alignment.alignments.push({}));});
+test('P10.3.5: actual manuscript validator blocks false provenance',()=>{const d=loadP1035();const m=JSON.parse(d.sampleBytes);m.registry.readings[0].witnessAttestations[0].sourceEvidenceId='EVD-P943-APP';assert.ok(validateManuscriptPilot(m,d.projection).length>0);});
+test('P10.3.5: no publication or corpus import',()=>{reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.corpusImportAuthorized=true);reject(d=>d.record.academicAnalysisCompleted=true);reject(d=>d.publication.snapshots.push({}));});
