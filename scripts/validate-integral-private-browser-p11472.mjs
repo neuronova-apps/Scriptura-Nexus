@@ -60,6 +60,7 @@ try{
  }
  await loc('bc-consult').click();await status('bc-status','Sin correspondencia verificada.');assert.match(await loc('bc-evidence').textContent(),/Sin grupo de correspondencia verificado/);assert.equal(await p.locator('#bc-target-result .bc-reading').getAttribute('lang'),'grc');counts.modules++;counts.queries++;
  stage='manuscripts';await via(routes.manuscripts);await ready('manuscripts');await appearance();
+ assert.equal(await p.locator('.sn-manuscript-view > #mv-candidate-rights, .sn-manuscript-view > #mv-candidate-privacy').count(),2);
  assert.ok(await loc('mv-candidate-rights').isVisible());assert.match(await loc('mv-candidate-privacy').textContent(),/no se garantiza anonimato/);
  await loc('mv-witness').selectOption('MAN-GA-P66');assert.match(await loc('mv-witness-detail').textContent(),/P\. Bodmer II/);
  await loc('mv-variant').selectOption('VAR-P943-JHN-1-18');assert.equal(await p.locator('#mv-variant-detail .mv-panel').count(),2);assert.match(await loc('mv-variant-detail').textContent(),/Atestación secundaria/);assert.equal(await p.locator('#private-evidence-list > ul > li').count(),8);counts.modules++;counts.queries+=2;
@@ -68,12 +69,16 @@ try{
  await loc('ta-edition').selectOption(query.analyzerEdition);await loc('ta-book').selectOption('LIB-Lev');await loc('ta-chapter').fill('19');await loc('ta-verse').fill('28');
  await p.getByRole('button',{name:'Consultar referencia'}).click();await status('ta-status','12 ocurrencias disponibles.');assert.equal(await p.locator('#ta-words button').count(),12);await p.locator('#ta-words button').first().click();assert.ok(await loc('ta-result').isVisible());counts.modules++;counts.queries++;
  stage='lexical';await via(prefix+'linguistica/');await via(routes.lexical);await ready('lexical');await appearance();
+ assert.equal(await p.locator('.sn-lexicons > #lc-candidate-rights, .sn-lexicons > #lc-candidate-privacy').count(),2);
  assert.ok(await loc('lc-candidate-rights').isVisible());assert.match(await loc('lc-candidate-rights').textContent(),/CC BY-SA 3.0/);assert.match(await loc('lc-candidate-privacy').textContent(),/no se garantiza anonimato/);
  await loc('lc-lex-mode').selectOption('identifier');await loc('lc-lex-system').selectOption('strong');await loc('lc-lex-value').fill(query.entry);
  await p.getByRole('button',{name:'Buscar entrada',exact:true}).click();await status('lc-lex-status',' entradas.');await loc('lc-lex-results').getByRole('button').first().click();await status('lc-lex-status','Detalle de entrada disponible.');assert.ok(await loc('lc-lex-detail').isVisible());counts.queries++;
  await loc('lc-edition').selectOption(query.concordanceEdition);await loc('lc-lang').selectOption('hbo');await loc('lc-mode').selectOption('form');
  await loc('lc-frequency').click();await status('lc-con-status',' claves · ');await loc('lc-con-results').getByRole('button').first().click();await status('lc-con-status',' ocurrencias.');assert.ok(await loc('lc-con-results').locator('li').count()>0);counts.modules++;counts.queries++;
  stage='shared context privacy';
+ stage='lexical-notice-reflow';await p.setViewportSize({width:320,height:900});
+ assert.equal(await p.evaluate(()=>{const root=document.querySelector('.sn-lexicons');return document.documentElement.scrollWidth<=innerWidth+1&&root.scrollWidth<=root.clientWidth+1&&['lc-candidate-rights','lc-candidate-privacy'].every(id=>{const e=document.getElementById(id);return e.scrollWidth<=e.clientWidth+1;});}),true,'Private lexical notices reflow');
+ await p.setViewportSize({width:1280,height:900});
  const storage=await p.evaluate(async()=>({local:Object.keys(localStorage),session:Object.keys(sessionStorage),db:(await indexedDB.databases()).length,cache:(await caches.keys()).length}));
  assert.deepEqual(storage,{local:['scriptura-nexus:appearance:v1'],session:[],db:0,cache:0});assert.deepEqual(await c.cookies(),[]);
  assert.equal(counts.modules,5);assert.equal(counts.queries,7);assert.equal(counts.linkTransitions,6);assert.equal(counts.appearanceChecks,6);
