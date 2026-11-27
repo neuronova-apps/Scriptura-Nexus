@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.5.3",
+  "baselineMain": "e0af1ff5ce024ca792295a75ad933ec967cd1928",
+  "previousPR": 116,
+  "previousChecksSuccess": 47,
+  "previousChecksSkipped": 1,
+  "mode": "private_browser_interception",
+  "source": "P11.4.2.5 validated reader overlay",
+  "editions": [
+    "TXT-RV1909",
+    "TXT-SBLGNT-V1-2"
+  ],
+  "books": 93,
+  "chapters": 1449,
+  "units": 39041,
+  "verifiedGroups": 0,
+  "publicationAuthorized": false,
+  "publicAdapterConnected": false,
+  "corpusPersisted": false,
+  "upload": false,
+  "manualReview": "pending",
+  "excluded": [
+    "P1022-R12",
+    "Dodson XML"
+  ],
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.5.4"
+}

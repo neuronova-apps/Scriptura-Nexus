@@ -1,0 +1,34 @@
+name: P11.4.5.3 Integración funcional privada del comparador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/private-comparator-browser-p11453.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-comparator-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Regresiones y compilación pública
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Candidato real en Chromium aislado
+        run: |
+          deps="$RUNNER_TEMP/p11453-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P11453_DEPS="$deps" node scripts/validate-private-comparator-browser-p11453.mjs
