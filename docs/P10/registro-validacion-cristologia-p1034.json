@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.3.4",
+  "baselineMain": "474785957f042c053439993bfe40702d0c19c006",
+  "previousBlob": "45870d78b5ebb3967cd2d58810c517df00423f5b",
+  "applicationBlob": "9e1a654fc3fd27a80be1fea127e0dd4cf71e5b14",
+  "sourceBlob": "bd180877a71a2c59adee9d92fd4111e9d9985e79",
+  "previousIntegration": {
+    "pr": 78,
+    "workflowRun": 45939097913,
+    "deployRun": 45940134163,
+    "deploy": "pending_confirmation"
+  },
+  "pilot": "SN-021",
+  "scope": "validacion_tecnica_referencias_intertextualidad_y_atribucion",
+  "publicationAuthorized": false,
+  "academicAnalysisCompleted": false,
+  "automaticDoctrinalInference": false,
+  "cases": [
+    {
+      "reference": "Sal 22",
+      "bookId": "LIB-PSA",
+      "chapter": "22",
+      "focus": "1",
+      "contextStart": "1",
+      "contextEnd": "5",
+      "sourceId": "P1022-R01",
+      "sourceUrl": "https://ebible.org/spaRV1909/PSA022.htm",
+      "greekIndependentCheck": false,
+      "literaryContextCandidate": "salmo_de_lamento",
+      "status": "provisional",
+      "reviewQuestion": "examinar inicio del salmo y contexto de confianza"
+    },
+    {
+      "reference": "Mt 27:46",
+      "bookId": "LIB-MAT",
+      "chapter": "27",
+      "focus": "46",
+      "contextStart": "43",
+      "contextEnd": "50",
+      "sourceId": "P1022-R01",
+      "sourceUrl": "https://ebible.org/spaRV1909/MAT27.htm",
+      "greekIndependentCheck": true,
+      "literaryContextCandidate": "relato_de_pasion_mateo",
+      "status": "provisional",
+      "reviewQuestion": "examinar función del clamor en la narración"
+    },
+    {
+      "reference": "Mc 15:34",
+      "bookId": "LIB-MRK",
+      "chapter": "15",
+      "focus": "34",
+      "contextStart": "33",
+      "contextEnd": "39",
+      "sourceId": "P1022-R01",
+      "sourceUrl": "https://ebible.org/spaRV1909/MRK15.htm",
+      "greekIndependentCheck": true,
+      "literaryContextCandidate": "relato_de_pasion_marcos",
+      "status": "provisional",
+      "reviewQuestion": "examinar forma transmitida y contexto narrativo"
+    }
+  ],
+  "candidateRelations": [
+    {
+      "from": "Mt 27:46",
+      "to": "Sal 22",
+      "kind": "cita_o_evocacion_por_verificar",
+      "status": "pendiente_de_cotejo"
+    },
+    {
+      "from": "Mc 15:34",
+      "to": "Sal 22",
+      "kind": "cita_o_evocacion_por_verificar",
+      "status": "pendiente_de_cotejo"
+    },
+    {
+      "from": "Mt 27:46",
+      "to": "Mc 15:34",
+      "kind": "paralelo_narrativo_por_verificar",
+      "status": "pendiente_de_cotejo"
+    }
+  ],
+  "documentarySource": {
+    "id": "P1022-R11",
+    "locator": "§603",
+    "authority": "Santa Sede",
+    "scope": "referencia_atribuida_sin_generalizar",
+    "permission": "solo_referencia"
+  },
+  "excludedSource": {
+    "id": "P1022-R13",
+    "reason": "La muestra Jn 1:18 no acredita variantes de Mateo o Marcos."
+  },
+  "relatedStudy": "SN-023",
+  "relatedStudyKind": "doctrinal",
+  "openNeeds": [
+    "Ediciones hebrea y griega con identificación y permisos",
+    "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+    "Estudios del Salmo 22 y relatos de la pasión",
+    "Fuentes cristológicas e históricas atribuibles"
+  ],
+  "requiredSections": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    19,
+    20
+  ],
+  "controls": [
+    "Distinguir cita, alusión y paralelo.",
+    "No deducir ruptura intratrinitaria ni negarla por una coincidencia textual.",
+    "No atribuir una postura a una tradición sin autor, localizador y alcance.",
+    "No trasladar variantes de Jn 1:18 a otros pasajes.",
+    "No inferir cobertura hebrea o anotaciones griegas a partir de la disponibilidad de traducción."
+  ],
+  "next": "P10.3.5_tras_CI_integracion_y_despliegue"
+}
