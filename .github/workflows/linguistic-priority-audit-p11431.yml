@@ -1,0 +1,43 @@
+name: P11.4.3.1 Auditoría lingüística prioritaria
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'docs/P10/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/linguistic-priority-audit-p11431.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  priority-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pruebas y auditoría en memoria
+        run: |
+          python -m unittest discover -s tests -p 'test_linguistic_priority_p11431.py'
+          python scripts/audit-linguistic-priority-p11431.py
+      - name: Barreras públicas
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
