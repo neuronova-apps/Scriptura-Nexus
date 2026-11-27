@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.2",
+  "baselineMain": "438451c40a890e8906cc637747ca8eac53146810",
+  "previousBlob": "aa8d96661d243196fcfc80dd0e5b892c9e17594a",
+  "previousIntegration": {
+    "pr": 83,
+    "workflowRun": 45944125508,
+    "deployRun": 45945757579,
+    "deploy": "pending_confirmation",
+    "technicalJob": 140324825494,
+    "successfulJobs": 7,
+    "nodeTests": 484,
+    "staticPages": 128,
+    "localTargets": 8479,
+    "anchors": 3807,
+    "brokenInternalTargets": 0
+  },
+  "scope": "auditoria_documental_de_registros_y_artefacto_sin_nueva_admision",
+  "publicationAuthorized": false,
+  "releaseScopeApproved": false,
+  "corpusImportAuthorized": false,
+  "academicAnalysisCompleted": false,
+  "expected": {
+    "studies": 80,
+    "planned": 80,
+    "sections": 1600,
+    "published": 0,
+    "bibliographicResources": 6,
+    "bibliographicLicenses": 1,
+    "bibliographicAdmissions": 0,
+    "permissionsPending": 6,
+    "pilotSources": 15,
+    "openNeeds": 20,
+    "technicalTextualEditions": 2,
+    "linguisticFileDecisions": 9,
+    "linguisticExpansionCandidates": 3,
+    "documentarySampleResources": 7,
+    "documentarySampleEvidence": 8
+  },
+  "limitations": [
+    "Consulta externa no equivale a permiso de uso editorial.",
+    "No se revalida disponibilidad de enlaces externos ni titularidad jurídica por esta auditoría.",
+    "Los registros internos técnicos no autorizan publicación de corpus.",
+    "La inspección de nombres, extensiones y marcadores no es una certificación universal de privacidad ni de ausencia de secretos; revisión humana pendiente.",
+    "Las veinte necesidades documentales y cinco limitaciones de P10 siguen abiertas."
+  ],
+  "progress": {
+    "completed": 58,
+    "total": 62,
+    "afterVerifiedClosure": 59
+  },
+  "next": "P11.3_tras_CI_integracion_y_despliegue"
+}

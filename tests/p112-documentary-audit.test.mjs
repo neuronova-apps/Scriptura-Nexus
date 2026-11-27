@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP112,validateP112,restrictedPath,inspectPublicFile} from '../scripts/validate-p112.mjs';
+const reject=fn=>{const d=loadP112();fn(d);assert.throws(()=>validateP112(d));};
+test('P11.2: actual registers reconcile',()=>{const r=validateP112(loadP112());assert.deepEqual([r.studies,r.sections,r.bibliographicResources,r.permissionsPending,r.openNeeds],[80,1600,6,6,20]);});
+test('P11.2: external consultation does not permit reproduction',()=>{reject(d=>d.permissions.items[0].uses.reproduccion='permitida');reject(d=>d.permissions.items[3].decision='aprobada');});
+test('P11.2: unpublished studies and empty public registers',()=>{reject(d=>d.catalog[0].status='publicado');reject(d=>d.publication.snapshots.push({}));reject(d=>d.linguistic.tokens.push({}));});
+test('P11.2: no automatic corpus release or alignments',()=>{reject(d=>d.textual.publication.authorized=true);reject(d=>d.release.existing[0].publication=true);reject(d=>d.alignment.alignments.push({}));});
+test('P11.2: documentary needs and provenance preserved',()=>{reject(d=>d.sources.pilots[0].needs.pop());reject(d=>d.sample.readingRepresentation[0].directManuscriptInspection=true);reject(d=>d.previous=Buffer.from('{}'));});
+test('P11.2: filename and marker checks are limited but reject leaks',()=>{for(const p of ['public/book.pdf','dist/data.usfm','.env.local','private-drafts/note.md','public/secret.pem'])assert.equal(restrictedPath(p),true);assert.equal(restrictedPath('docs/P11/registro.json'),false);assert.throws(()=>inspectPublicFile('dist/book.pdf',null));assert.throws(()=>inspectPublicFile('dist/index.html','EVD-P943-leak'));assert.doesNotThrow(()=>inspectPublicFile('dist/index.html','public metadata'));});
