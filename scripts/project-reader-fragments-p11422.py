@@ -44,10 +44,15 @@ def validate_units(edition,book,chapter,units):
         require(isinstance(u['text'],str) and p.sha(u['text'].encode('utf-8'))==u['textSha256'] and re.fullmatch(r'[0-9a-f]{64}',u['sourceSegmentSha256']),'unit hash')
         require(u['id']==p.unit_id(edition,book,chapter,u['verse'],u['sourceLocator']),'unit id')
         seen.add(u['verse']);previous=u['order']
+def historical_gzip(raw):
+    # The pinned P11.4.2.2 index was generated with the Unix Gzip OS header (3).
+    # Preserve the DEFLATE stream and trailer; only the platform metadata is canonicalized.
+    packed=gzip.compress(raw,compresslevel=6,mtime=0)
+    return packed[:9]+b'\x03'+packed[10:]
 def make_fragment(edition,book,chapter,units):
     units=list(units);validate_units(edition,book,chapter,units)
     payload={'schemaVersion':1,'format':FORMAT,'editionId':edition,'bookId':book,'chapter':chapter,'units':units}
-    raw=p.canonical(payload);compressed=gzip.compress(raw,compresslevel=6,mtime=0)
+    raw=p.canonical(payload);compressed=historical_gzip(raw)
     require(len(compressed)<=MAX_GZIP,'fragment exceeds gzip budget')
     descriptor={'editionId':edition,'bookId':book,'chapter':chapter,'verses':[u['verse'] for u in units],
         'unitCount':len(units),'emptyMarkers':sum(not u['text'] for u in units),

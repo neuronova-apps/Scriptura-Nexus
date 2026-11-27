@@ -1,0 +1,3 @@
+# Historical JSON byte fingerprints use LF, including on Windows.
+docs/P9/*.json text eol=lf
+docs/P11/*.json text eol=lf

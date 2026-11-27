@@ -134,16 +134,27 @@ def verify_report(report):
         require(re.fullmatch(r'[0-9a-f]{64}',manifest['integrity']['projectionSha256']),'manifest hash')
         require(all(x['sha256']==f['sourceFileSha256'] and re.fullmatch(r'[0-9a-f]{64}',x['sha256']) for x,f in zip(manifest['resources'],manifest['fragments'])),'resource fingerprints')
     return report
-def build(on_fragment=None):
+RV_ALTERNATIVE_URL='https://ebible.us/Scriptures/spaRV1909_usfm.zip'
+RV_ALTERNATIVE_BYTES=2384899
+RV_ALTERNATIVE_SHA256='b8c5f45ef19a6d26faa0844dedbb2c8aceefd8698f5ed1e070878f41715b1869'
+def read_admission_bytes():
+    # Repository JSON is stored as LF; normalize only Git checkout CRLF, never source archives.
+    return ADMISSION.read_bytes().replace(b'\r\n',b'\n')
+def fetch_rv_archive(meta, *, use_alternative=False):
+    require(type(use_alternative) is bool,'RV alternative selection')
+    url,size,digest=(RV_ALTERNATIVE_URL,RV_ALTERNATIVE_BYTES,RV_ALTERNATIVE_SHA256) if use_alternative else (meta['url'],meta['bytes'],meta['sha256'])
+    archive=P91.fetch(url,16*1024*1024)
+    require(len(archive)==size and sha(archive)==digest,'RV archive fingerprint')
+    audit=P91.audit_zip(archive)
+    require(audit['files']==meta['files'] and audit['ancillary']==meta['ancillaryFiles'] and audit['books']==66 and audit['chapters']==1189 and audit['verseMarkers']==31102,'RV source inventory')
+    return archive
+def build(on_fragment=None, *, use_rv_alternative=False):
     # Optional internal consumer; receives detached units after source validation.
     require(on_fragment is None or callable(on_fragment),'fragment consumer')
-    admission_bytes=ADMISSION.read_bytes();admission=json.loads(admission_bytes);candidates=json.loads(CANDIDATES.read_text(encoding='utf-8'))
+    admission_bytes=read_admission_bytes();admission=json.loads(admission_bytes);candidates=json.loads(CANDIDATES.read_text(encoding='utf-8'))
     P912.validate_manifest(admission,candidates);verify_registry_empty()
     rv,greek=admission['decisions'];editions=[];books={};manifests=[];all_units=0
-    rv_archive=P91.fetch(rv['sourceArchive']['url'],16*1024*1024)
-    require(len(rv_archive)==rv['sourceArchive']['bytes'] and sha(rv_archive)==rv['sourceArchive']['sha256'],'RV archive fingerprint')
-    rv_audit=P91.audit_zip(rv_archive)
-    require(rv_audit['files']==rv['sourceArchive']['files'] and rv_audit['books']==66 and rv_audit['chapters']==1189 and rv_audit['verseMarkers']==31102,'RV source inventory')
+    rv_archive=fetch_rv_archive(rv['sourceArchive'],use_alternative=use_rv_alternative)
     rv_id='TXT-RV1909';rv_license='LIC-ED-C01-PUBLIC-DOMAIN-DECLARED';rv_resources=[];rv_fragments=[];rv_book_ids=[];rv_order=0
     with zipfile.ZipFile(io.BytesIO(rv_archive)) as archive:
         for meta in rv['sourceArchive']['files']:

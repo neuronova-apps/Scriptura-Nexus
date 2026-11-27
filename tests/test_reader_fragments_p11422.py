@@ -1,4 +1,5 @@
-import importlib.util, pathlib, unittest
+import gzip, importlib.util, json, pathlib, unittest
+from unittest.mock import patch
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('p11422',ROOT/'scripts/project-reader-fragments-p11422.py')
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -20,6 +21,31 @@ class FragmentTests(unittest.TestCase):
         projection=(ROOT/'docs/P9/proyeccion-ediciones-p913.json').read_bytes()
         self.assertEqual(m.git_blob(rights),'3c6d1d783a2b95fce49c5f3d5cd5c112c0e5c67b')
         self.assertEqual(m.git_blob(projection),'ff6ef60588416089b26afcc6160df74956b496df')
+    def test_admission_hash_independent_of_checkout_line_endings(self):
+        original=m.p.read_admission_bytes()
+        self.assertEqual(m.p.sha(original),'b42c991837c159a48de8b11a3c15ed0dee9d48b6ba5b82e502ec0569810871ea')
+        with patch.object(pathlib.Path,'read_bytes',return_value=original.replace(b'\n',b'\r\n')):
+            self.assertEqual(m.p.read_admission_bytes(),original)
+    def test_historical_gzip_header_and_roundtrip(self):
+        raw=b'synthetic fixture'
+        self.assertEqual(m.historical_gzip(raw)[9],3)
+        self.assertEqual(gzip.decompress(m.historical_gzip(raw)),raw)
+        packed=gzip.compress(raw,compresslevel=6,mtime=0)
+        with patch.object(m.gzip,'compress',return_value=packed[:9]+b'\x0a'+packed[10:]):
+            self.assertEqual(m.historical_gzip(raw),packed[:9]+b'\x03'+packed[10:])
+    def test_alternative_requires_pinned_archive_and_complete_inventory(self):
+        meta=json.loads(m.p.read_admission_bytes())['decisions'][0]['sourceArchive']
+        data=b'fixture'
+        inventory={'files':meta['files'],'ancillary':meta['ancillaryFiles'],'books':66,'chapters':1189,'verseMarkers':31102}
+        with patch.object(m.p,'RV_ALTERNATIVE_BYTES',len(data)),patch.object(m.p,'RV_ALTERNATIVE_SHA256',m.p.sha(data)),patch.object(m.p.P91,'fetch',return_value=data) as fetch,patch.object(m.p.P91,'audit_zip',return_value=inventory) as audit:
+            self.assertEqual(m.p.fetch_rv_archive(meta,use_alternative=True),data)
+            fetch.assert_called_once_with(m.p.RV_ALTERNATIVE_URL,16*1024*1024)
+            audit.return_value={**inventory,'files':inventory['files'][:-1]}
+            with self.assertRaisesRegex(ValueError,'RV source inventory'):m.p.fetch_rv_archive(meta,use_alternative=True)
+            audit.return_value=inventory
+            with self.assertRaisesRegex(ValueError,'RV archive fingerprint'):m.p.fetch_rv_archive(meta)
+            fetch.return_value=b'bad'
+            with self.assertRaisesRegex(ValueError,'RV archive fingerprint'):m.p.fetch_rv_archive(meta,use_alternative=True)
     def test_unicode_ranges_empty_and_deterministic(self):
         rows=[unit('1','1-2',0,'λόγος'),unit('1','3a',1,''),unit('1','4',2,'á')]
         d,r,g=m.make_fragment('TXT-TEST','LIB-TEST','1',rows)
