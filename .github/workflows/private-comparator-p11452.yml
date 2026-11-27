@@ -1,0 +1,33 @@
+name: P11.4.5.2 Contrato privado del comparador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/alineaciones-p931.json'
+      - 'scripts/lib/private-comparator-p11452.mjs'
+      - 'src/lib/reader-fragment-view.ts'
+      - 'src/lib/comparator-view.ts'
+      - 'src/pages/biblia/comparador.astro'
+      - 'tests/p11452-private-comparator.test.mjs'
+      - '.github/workflows/private-comparator-p11452.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-comparator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Contrato privado y regresiones
+        run: node --test tests/p11452-private-comparator.test.mjs tests/p11451-comparator-audit.test.mjs tests/p933-comparator-view.test.mjs tests/p11423-reader-fragment-view.test.mjs
+      - name: Contratos ENT30
+        run: python3 -m unittest discover -s tests -p 'test_alignment_contracts_p931.py'
+      - name: Compilación pública y barreras
+        run: npm ci && npm run check && npm run build && npm run test:build
