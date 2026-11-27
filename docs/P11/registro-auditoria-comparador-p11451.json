@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.5.1",
+  "baselineMain": "ce58f0f8949986b6f380479cf4c0a8358102ac73",
+  "status": "audit_private_preparation",
+  "previousPR": 114,
+  "baselinePagesRun": 46041096882,
+  "scope": {
+    "editions": [
+      {
+        "id": "TXT-RV1909",
+        "candidate": "ED-C01",
+        "books": 66,
+        "language": "spa",
+        "rights": "public_domain_declared_conditional_territorial_review",
+        "readerPreparationApproved": true,
+        "comparatorPublicationAuthorized": false
+      },
+      {
+        "id": "TXT-SBLGNT-V1-2",
+        "candidate": "ED-C02",
+        "books": 27,
+        "language": "grc",
+        "rights": "CC-BY-4.0",
+        "readerPreparationApproved": true,
+        "comparatorPublicationAuthorized": false
+      }
+    ],
+    "excluded": [
+      {
+        "id": "P1022-R12",
+        "name": "Scrivener 1894",
+        "status": "pending_specific_file_rights_integrity_admission"
+      }
+    ],
+    "historicalCoverage": {
+      "units": 39041,
+      "chapters": 1449,
+      "sharedBooks": 27,
+      "literalMatches": 7937,
+      "rvUnmatchedInSharedBooks": 20,
+      "sblUnmatchedInSharedBooks": 2,
+      "rvOutsideSblBookCoverage": 23145,
+      "emptyMarkers": 18,
+      "verifiedAlignments": 0
+    }
+  },
+  "controls": {
+    "publicComparatorEmpty": true,
+    "independentNativeReferences": true,
+    "automaticAlignment": false,
+    "alignmentEvidenceRequired": true,
+    "publicCorpus": false,
+    "publicationAuthorized": false,
+    "lexicalGateUnchanged": true,
+    "dodsonExcluded": true,
+    "manualReviewPending": true
+  },
+  "requirements": [
+    "private_async_fragment_adapter",
+    "same_origin_bounded_integrity_checked_fragments",
+    "explicit_independent_selection_without_alignment",
+    "documented_ENT30_evidence_only",
+    "preserve_native_labels_and_provenance",
+    "verify_rights_before_new_admission",
+    "browser_and_manual_accessibility",
+    "public_build_absence_and_separate_release_gate"
+  ],
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.5.2"
+}

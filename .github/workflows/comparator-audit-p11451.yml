@@ -1,0 +1,34 @@
+name: P11.4.5.1 Auditoría del comparador bíblico
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/04-5-1-auditoria-comparador.md'
+      - 'docs/P11/registro-auditoria-comparador-p11451.json'
+      - 'tests/p11451-comparator-audit.test.mjs'
+      - 'docs/P9/alineaciones-p931.json'
+      - 'docs/P11/registro-autorizacion-preparacion-lector-p11425.json'
+      - 'docs/P11/registro-liberacion-lexicos-p114444.json'
+      - 'src/pages/biblia/comparador.astro'
+      - 'src/lib/comparator-view.ts'
+      - '.github/workflows/comparator-audit-p11451.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparator-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Auditoría de alcance y barreras
+        run: node --test tests/p11451-comparator-audit.test.mjs
+      - name: Regresión histórica del modelo de comparación
+        run: node --test tests/p933-comparator-view.test.mjs
+      - name: Contratos de alineación
+        run: python3 -m unittest discover -s tests -p 'test_alignment_contracts_p931.py'
