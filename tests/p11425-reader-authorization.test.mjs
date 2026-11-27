@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {gzipSync} from 'node:zlib';
+import {loadAuthorization,validateAuthorization} from '../scripts/validate-reader-authorization-p11425.mjs';
+import {decodeStaticGzip,loadStaticGzip} from '../scripts/lib/reader-static-gzip.mjs';
+const reject=f=>{const d=loadAuthorization();f(d);assert.throws(()=>validateAuthorization(d));};
+test('explicit scope approval is not final publication',()=>assert.deepEqual(validateAuthorization(loadAuthorization()),{phase:'P11.4.2.5.candidato_controlado',preparationApproved:2,mobileDeferralAccepted:true,realMobileValidated:false,publicationAuthorized:false}));
+test('reject premature release, false mobile verification or expanded scope',()=>{reject(d=>d.record.publicReleaseAuthorized=true);reject(d=>d.record.mobile.realDeviceValidated=true);reject(d=>d.record.scope.excludeApparatus=false);reject(d=>d.record.candidate.upload=true);reject(d=>d.record.progress.completed=62);});
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const raw=Buffer.from('{"synthetic":true}'),packed=gzipSync(raw),desc={gzipBytes:packed.length,jsonBytes:raw.length,gzipSha256:sha(packed),sha256:sha(raw)};
+test('static gzip exact byte integrity and bounded decoding',async()=>{assert.deepEqual(Buffer.from(await decodeStaticGzip(packed,desc)),raw);await assert.rejects(decodeStaticGzip(packed,{...desc,sha256:'0'.repeat(64)}));await assert.rejects(decodeStaticGzip(packed,{...desc,jsonBytes:1}));await assert.rejects(decodeStaticGzip(packed,{...desc,gzipSha256:'0'.repeat(64)}));});
+test('only same origin GET, no query, no redirects or transparent encoding',async()=>{let calls=0;const origin='https://example.test',fetcher=async(url,opts)=>{calls++;assert.equal(opts.credentials,'omit');assert.equal(opts.redirect,'error');return new Response(packed);};assert.deepEqual(Buffer.from(await loadStaticGzip(origin+'/asset.gz',desc,origin,fetcher)),raw);await assert.rejects(loadStaticGzip('https://external.test/asset.gz',desc,origin,fetcher));await assert.rejects(loadStaticGzip(origin+'/asset.gz?q=1',desc,origin,fetcher));assert.equal(calls,1);await assert.rejects(loadStaticGzip(origin+'/asset.gz',desc,origin,async()=>new Response(packed,{headers:{'Content-Encoding':'gzip'}})));});

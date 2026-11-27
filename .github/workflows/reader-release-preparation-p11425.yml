@@ -29,6 +29,7 @@ jobs:
           node scripts/validate-reader-preparation-p11425.mjs
           node scripts/validate-reader-manual-p11425.mjs
           node scripts/validate-reader-rights-review-p11425.mjs
+          node scripts/validate-reader-authorization-p11425.mjs
           npm run check
           npm test
           npm run build
@@ -44,3 +45,4 @@ jobs:
             "$deps/node_modules/.bin/playwright" install --with-deps chromium
           fi
           P11425_DEPS="$deps" node scripts/validate-reader-preview-p11425.mjs
+          P11425_DEPS="$deps" node scripts/validate-reader-candidate-p11425.mjs
