@@ -109,7 +109,7 @@ Los borradores de investigación y los materiales de trabajo permanecerán fuera
 
 | Subfase | Función | Condición de entrada |
 |---|---|---|
-| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | En revisión; ampliación autorizada e implementada, CI, perfiles/relaciones y cierre pendientes |
+| P10.1 | Delimitar los cinco pilotos, sus preguntas y necesidades de evidencia | Ampliación y perfiles validados; cierre P10.1.5 en validación |
 | P10.2 | Probar el flujo metodológico con casos seleccionados y fuentes disponibles | Delimitación aprobada |
 | P10.3 | Validar las herramientas con casos de hebreo, griego, pactos, cristología y crítica textual | Flujo metodológico aplicado y evidencias disponibles |
 | P10.4 | Registrar fallos, ajustes, decisiones y cierre | Resultados de P10.2 y P10.3 revisados |
@@ -132,4 +132,4 @@ P10.1 podrá cerrarse cuando:
 
 P10.1 iniciada como documento de delimitación en la rama `feature/p10.1-pilot-delimitation`. Se verificaron los cinco registros directamente en el catálogo. El archivo histórico `estudios.json`, el corpus y los permisos de publicación permanecen intactos. P10.1.3 amplía la proyección operativa del catálogo.
 
-Estado: P10.1.1 y P10.1.2 validadas; aprobación expresa de las 38 investigaciones recibida. P10.1.3 validada en el PR #71 (e7072818; siete workflows satisfactorios). P10.1.4 implementada: siete perfiles, 48 estudios con perfiles orientativos y 32 pendientes, 30 relaciones específicas con 60 enlaces recíprocos. Pendiente CI de P10.1.4 y cierre P10.1.5; P10.2 sin iniciar. Véase [03-perfiles-relaciones.md](03-perfiles-relaciones.md). No se han verificado todavía fuentes nuevas ni redactado conclusiones.
+Estado: P10.1.1 y P10.1.2 validadas; aprobación expresa de las 38 investigaciones recibida. P10.1.3 validada en el PR #71 (e7072818; siete workflows satisfactorios). P10.1.4 implementada: siete perfiles, 48 estudios con perfiles orientativos y 32 pendientes, 30 relaciones específicas con 60 enlaces recíprocos. P10.1.4 validada en 7c7e89f (siete workflows satisfactorios). P10.1.5 incorpora pruebas de cierre de catálogo en navegador y auditoría integral; pendiente CI, integración y despliegue. P10.2 sin iniciar. Véase [03-perfiles-relaciones.md](03-perfiles-relaciones.md). No se han verificado todavía fuentes nuevas ni redactado conclusiones.
