@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.8.1",
+  "baselineMain": "ae5bd672c00c96ff6863b8e9cc5b576fdece799f",
+  "previousEvidence": {
+    "pr": 128,
+    "head": "633256cb1a904f953476739aa1df285f1d59d3a8",
+    "merge": "ae5bd672c00c96ff6863b8e9cc5b576fdece799f",
+    "checksSuccess": 59,
+    "checksSkipped": 1,
+    "run": 46057632537,
+    "job": 140703888973,
+    "pagesRun": 46058346045,
+    "status": "technical_validation_complete_release_blocked"
+  },
+  "protectedGitObjects": {
+    "src": "107e13a5f78d4b33d6b226ff327eec3b983cfaed",
+    "public": "c7adae638ad1d9b8956c5f6b450dd5fec92b5544",
+    "package.json": "59e581a24c95254a2dffe4250b87b410620e5459",
+    "package-lock.json": "0f44f77449bb9c3cbb4a566543ec1749df115481",
+    ".nvmrc": "a45fd52cc5891570d6299fab38643103c3955474",
+    "astro.config.mjs": "8a61db93c1284050acd1429bf8814c72ff5c7afb",
+    "tsconfig.json": "adbbd073ae8420ac00aa4e26739046c199fa54d6",
+    ".github/workflows/pages.yml": "7af72cb63f536be909533f112e5c70aad18c7589"
+  },
+  "artifact": {
+    "mode": "existing_public_baseline_only",
+    "inventoryAlgorithm": "sha256",
+    "rebuildComparison": "planned_same_runner",
+    "privateOverlayIncluded": false,
+    "manualPending": 38,
+    "publicModulesEnabled": 0,
+    "releaseActionPerformed": false,
+    "publicationAuthorized": false,
+    "corpusImportAuthorized": false,
+    "upload": false
+  },
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66
+  },
+  "next": "P11.4.8.2"
+}
