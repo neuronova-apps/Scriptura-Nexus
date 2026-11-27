@@ -20,11 +20,31 @@ try{
  await p.waitForFunction(()=>!document.querySelector('#br-fields')?.disabled);
  assert.equal(loads,0);assert.equal(await p.locator('#candidate-rights h3').count(),2);assert.equal(await p.locator('#candidate-rights a[href="https://creativecommons.org/licenses/by/4.0/"]').count(),1);
  assert.ok(await p.locator('#candidate-privacy').isVisible());
+ stage='layout containment';
+ assert.equal(await p.locator('main#contenido > .site-main-inner').count(),1);
+ assert.equal(await p.locator('main#contenido > *').count(),1);
+ assert.equal(await p.locator('.sn-bible-reader #candidate-rights').count(),1);
+ assert.equal(await p.locator('.sn-bible-reader #candidate-privacy').count(),1);
+ assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ assert.ok(await p.locator('#br-consult').evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=44&&r.height>=44&&r.left>=0&&r.right<=innerWidth+1;}));
  stage='reading';
  for(const [ed,book,ch,verse,lang,status] of [['TXT-RV1909','LIB-GEN','1','1','es','Referencia disponible.'],['TXT-SBLGNT-V1-2','LIB-3JN','1','1','grc','Referencia disponible.'],['TXT-RV1909','LIB-NUM','12','16','es','La fuente contiene este marcador sin texto.']]){
-  for(const [id,value] of [['edition',ed],['book',book],['chapter',ch],['verse',verse]])await p.locator('#br-'+id).selectOption(value);
-  await p.locator('#br-consult').click();await p.waitForFunction(s=>document.querySelector('#br-status')?.textContent===s,status);
-  assert.equal(await p.locator('#br-passage').getAttribute('lang'),lang);
+  const label=ed+'/'+book+'/'+ch+'/'+verse;
+  for(const [id,value] of [['edition',ed],['book',book],['chapter',ch],['verse',verse]]){
+   stage='selection '+label+' '+id;
+   const field=p.locator('#br-'+id);await field.selectOption(value,{timeout:10000});assert.equal(await field.inputValue(),value);
+  }
+  stage='submit '+label;assert.equal(await p.locator('#br-consult').isEnabled(),true);
+  await p.locator('#br-consult').click({timeout:10000});
+  stage='result '+label;
+  // Fail immediately on a recognized verification error, rather than waiting for a success that cannot arrive.
+  const terminal=await p.waitForFunction(()=>{const s=document.querySelector('#br-status')?.textContent;return s==='Referencia disponible.'?'available':s==='La fuente contiene este marcador sin texto.'?'empty_marker':s==='No se pudo verificar el fragmento. Intenta nuevamente.'?'verification_error':false;},null,{timeout:15000});
+  const outcome=await terminal.jsonValue();await terminal.dispose();
+  console.log(JSON.stringify({check:'candidate reference',id:label,outcome,chapterRequests:loads}));
+  assert.equal(outcome,status==='Referencia disponible.'?'available':'empty_marker');
+  stage='language '+label;assert.equal(await p.locator('#br-passage').getAttribute('lang'),lang);
+  assert.equal(await p.locator('#br-detail').isVisible(),true);
+  if(outcome==='empty_marker')assert.equal(await p.locator('#br-passage').textContent(),'Marcador sin texto en la fuente.');
  }
  assert.equal(loads,3);
  stage='privacy';
@@ -33,5 +53,5 @@ try{
  assert.deepEqual([external,errors,unexpected],[0,0,0]);
  stage='boundary';assert.equal((await c.request.get(origin+'/Scriptura-Nexus/biblia/lector/reader-data/unknown.json.gz')).status(),404);
  await c.close();console.log(JSON.stringify({phase:'P11.4.2.5.candidato_controlado',staticCandidate:'success',editions:2,chaptersVerified:1449,chapterRequests:loads,externalRequests:0,queryStorage:false,privacyBrowserChecks:'success',realMobileValidated:false,publicationAuthorized:false,corpusPersisted:false}));
-}catch{console.error('Candidate validation failed at '+stage);process.exitCode=1;}
+}catch(e){console.error('Candidate validation failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+')');process.exitCode=1;}
 finally{if(browser)await browser.close();lines.close();child.kill();}

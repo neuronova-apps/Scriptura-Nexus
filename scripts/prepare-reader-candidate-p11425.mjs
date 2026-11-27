@@ -69,8 +69,11 @@ async function makeCandidate(backend,ready){
  }).join('');
  const supplement='<section class="sn-card sn-card--default" id="candidate-rights"><h2>Fuentes, licencias y transformaciones</h2>'+sections+'</section><section class="sn-card sn-card--default" id="candidate-privacy"><h2>Privacidad de la consulta</h2><p>No se requiere cuenta y la aplicación no guarda historial de lectura ni envía analítica de consultas. Los capítulos se solicitan al mismo sitio. Se guardan únicamente las preferencias visuales en el navegador. En el futuro alojamiento público, GitHub Pages registra direcciones IP por seguridad; las solicitudes de recursos pueden quedar en los registros del proveedor.</p><p><a rel="noreferrer" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Declaración de privacidad de GitHub</a></p></section>';
  const original=readFileSync('dist/biblia/lector/index.html','utf8'),notice='No hay ediciones autorizadas para consulta pública. La validación técnica de las fuentes no equivale a autorización de publicación.';
- assert.ok(original.includes(notice)&&original.includes('</body>')&&original.includes('</main>'));
- const html=original.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace('</head>','<meta name="referrer" content="no-referrer"></head>').replace(notice,'Candidato de publicación: revisión privada, no disponible en el sitio público.').replace('Los controles se habilitarán cuando exista una edición autorizada.','Los controles se habilitan al verificar el catálogo del candidato.').replace('</main>',supplement+'</main>').replace('</body>','<script type="module" src="'+assets+'init.js"></script></body>');
+ // BaseLayout's main is a flex container with one .site-main-inner child.
+ // Keep the supplementary sections inside the reader, not as siblings of that child.
+ const closing=/<\/div>\s*<\/div>\s*<\/main>/;
+ assert.ok(original.includes(notice)&&original.includes('</body>')&&closing.test(original));
+ const html=original.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace('</head>','<meta name="referrer" content="no-referrer"></head>').replace(notice,'Candidato de publicación: revisión privada, no disponible en el sitio público.').replace('Los controles se habilitarán cuando exista una edición autorizada.','Los controles se habilitan al verificar el catálogo del candidato.').replace(closing,match=>supplement+match).replace('</body>','<script type="module" src="'+assets+'init.js"></script></body>');
  add(root,html,'text/html; charset=utf-8');
  assert.equal(overlay.size,1457);
  return {overlay,summary:{editions:2,books:93,chapters:ds.length,units:ds.reduce((n,d)=>n+d.unitCount,0),gzipBytes,publicationAuthorized:false,corpusPersisted:false}};
