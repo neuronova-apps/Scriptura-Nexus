@@ -8,6 +8,8 @@ import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 import {createStaticCandidate,root,prefix,assets} from './prepare-analyzer-candidate-p11435.mjs';
 import {snapshot,overlayRelative,overlayDigests,compareAnalyzerScope,verifyStagedAnalyzer,analyzerHtml} from './lib/analyzer-artifact-scope-p114353.mjs';
+import {rehearseAnalyzerRecovery} from './lib/analyzer-recovery-p114353.mjs';
+import {validateDecisionPreparation} from './validate-analyzer-decision-p114353.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.gz':'application/octet-stream','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.ico':'image/x-icon'};
 let temp,server,browser,stage='baseline',result,failed=false;
@@ -58,19 +60,22 @@ async function smoke(origin,candidate){
  return {browserSmoke:true,otherRoutes:3,pilotReferences:3,chapterRequests:chapters,externalRequests:external,queryStorage:false};
 }
 try{
- const mode=process.argv.slice(2);assert.ok(mode.length===1&&['--verify','--browser'].includes(mode[0]));
+ const mode=process.argv.slice(2);assert.ok(mode.length===1&&['--verify','--browser','--recovery'].includes(mode[0]));
+ const decision=validateDecisionPreparation();
  const baseline=resolve('dist'),before=snapshot(baseline);
  stage='candidate';const {candidate,overlay,summary}=await createStaticCandidate();
  stage='temporary copy';temp=mkdtempSync(join(tmpdir(),'sn-analyzer-stage-'));const dir=join(temp,'site');cpSync(baseline,dir,{recursive:true,errorOnExist:true,force:false});
  const expected=overlayDigests(overlay);
  for(const [url,f] of overlay){const p=overlayRelative(url),target=join(dir,p);mkdirSync(dirname(target),{recursive:true});writeFileSync(target,f.body,{flag:p===analyzerHtml?'w':'wx'});}
  stage='artifact scope';const after=snapshot(dir),scope=compareAnalyzerScope(before,after,expected);assert.equal(scope.addedFiles,345);
- stage='disk verification';const verified=verifyStagedAnalyzer(dir,candidate,overlay);assert.equal(verified.manifestSha256,summary.manifestSha256);
+ stage='disk verification';const verified=verifyStagedAnalyzer(dir,candidate,overlay);assert.equal(verified.manifestSha256,summary.manifestSha256);assert.equal(verified.contentManifestSha256,decision.observed.contentManifestSha256);
  stage='baseline protection';assert.deepEqual(snapshot(baseline),before);
  let browserEvidence={browserSmoke:false};
  if(mode[0]==='--browser'){stage='staged browser';const origin=await serve(dir,after);browserEvidence=await smoke(origin,candidate);assert.equal((await fetch(origin+assets+'unknown.json.gz')).status,404);assert.equal((await fetch(origin+root+'?q=test')).status,404);}
  stage='final scope';assert.deepEqual(snapshot(dir),after);assert.deepEqual(snapshot(baseline),before);
- result={phase:'P11.4.3.5.3',...scope,...verified,...browserEvidence,baselineIntact:true,temporaryFiles:true,upload:false,publicArtifact:false,manualScreenReader:'pending',realMobileValidated:false};
+ let recoveryEvidence={recoveryRehearsed:false};
+ if(mode[0]==='--recovery'){stage='private recovery rehearsal';recoveryEvidence=rehearseAnalyzerRecovery({temp,dir,baseline,before,expected});}
+ result={phase:'P11.4.3.5.3',...scope,...verified,...browserEvidence,...recoveryEvidence,baselineIntact:true,temporaryFiles:true,upload:false,publicArtifact:false,manualScreenReader:'pending',realMobileValidated:false};
 }catch(e){failed=true;console.error('Private artifact verification failed at '+stage+' ('+(e instanceof Error?e.name:'UnknownError')+'); source data omitted');}
 finally{if(browser)await browser.close().catch(()=>{});cleanup();if(temp&&existsSync(temp)){failed=true;console.error('Temporary cleanup failed');}}
 if(failed)process.exitCode=1;else console.log(JSON.stringify({...result,temporaryCleaned:true,corpusPersisted:false}));
