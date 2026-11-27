@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.5.5",
+  "baselineMain": "c99c9de1946de70ca393b4e0e9f2c5b8ed5a36fb",
+  "status": "blocked_pending_manual_review",
+  "previousEvidence": {
+    "pr118": {
+      "head": "931fef41d8b2e2a0dfba854cb7d9628ac747c9c1",
+      "merge": "c99c9de1946de70ca393b4e0e9f2c5b8ed5a36fb",
+      "checksSuccess": 49,
+      "checksSkipped": 1,
+      "run": 46048200850,
+      "job": 140672638206,
+      "pagesRun": 46048901241
+    },
+    "observed": {
+      "phase": "P11.4.5.4",
+      "candidate": "success",
+      "catalogFailures": 1,
+      "chapterFailures": 3,
+      "recoveries": 4,
+      "staleChecks": 1,
+      "layoutCases": 24,
+      "axeScans": 4,
+      "keyboardChecks": 1,
+      "externalRequests": 0,
+      "unexpectedRequests": 0,
+      "pageErrors": 0,
+      "initialBodyGzipEstimateBytes": 180694,
+      "initialJsGzipEstimateBytes": 11425,
+      "chapterRequests": 11,
+      "distUnchanged": true,
+      "verifiedGroups": 0,
+      "manualScreenReader": false,
+      "physicalDevice": false,
+      "publicationAuthorized": false,
+      "corpusPersisted": false,
+      "upload": false
+    }
+  },
+  "scope": {
+    "editions": [
+      "TXT-RV1909",
+      "TXT-SBLGNT-V1-2"
+    ],
+    "books": 93,
+    "chapters": 1449,
+    "units": 39041,
+    "verifiedGroups": 0,
+    "excluded": [
+      "P1022-R12",
+      "Dodson XML"
+    ]
+  },
+  "gates": {
+    "manualScreenReader": "pending",
+    "manualDeviceReview": "pending",
+    "rightsAndPrivacyReview": "pending",
+    "ownerPublicationApproval": "pending"
+  },
+  "expectedBlockers": [
+    "manualScreenReader",
+    "manualDeviceReview",
+    "rightsAndPrivacyReview",
+    "ownerPublicationApproval"
+  ],
+  "publicArtifact": false,
+  "publicAdapterConnected": false,
+  "corpusPersisted": false,
+  "corpusPublished": false,
+  "publicationAuthorized": false,
+  "releaseActionPerformed": false,
+  "canPublish": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.6"
+}

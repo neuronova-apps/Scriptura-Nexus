@@ -1,0 +1,29 @@
+name: P11.4.5.5 Revisión y liberación controlada del comparador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/comparator-release-gate-p11455.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparator-release-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Evidencia, regresiones y barrera pública
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Evaluar decisión sin publicar
+        run: node scripts/validate-comparator-release-gate-p11455.mjs
