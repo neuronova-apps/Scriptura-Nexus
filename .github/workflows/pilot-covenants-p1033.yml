@@ -1,0 +1,37 @@
+name: P10.3.3 Validación del estudio de pactos
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-covenants-p1033.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-covenants:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validar contextos, contratos y referencias
+        run: |
+          npm ci
+          node --test tests/p1033-covenants-validation.test.mjs
+          node scripts/validate-covenants-p1033.mjs
+          python3 scripts/audit-covenant-context-p1033.py
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
