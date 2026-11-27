@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP1141,validateP1141} from '../scripts/validate-resource-selection-p1141.mjs';
+const reject=fn=>{const d=loadP1141();fn(d);assert.throws(()=>validateP1141(d));};
+test('option B and reconciled candidates',()=>assert.deepEqual(validateP1141(loadP1141()),{phase:'P11.4.1',option:'B',readerCandidates:2,readerBookFiles:93,linguisticExisting:9,linguisticExpansionCandidates:6,pilotPriority:4,greekLexiconCandidates:2,documentarySampleResources:7,openFindings:5,publicationAuthorized:false,expandedTotal:69,completedAfterClosure:61}));
+test('approval of route is not resource release',()=>{reject(d=>d.record.approval.individualResourcePublicationApproved=true);reject(d=>d.record.publicationAuthorized=true);reject(d=>d.record.releaseScopeApproved=true);});
+test('historical records remain fixed',()=>{reject(d=>d.closure=Buffer.from('{}'));reject(d=>d.sources[0]=Buffer.from('{}'));});
+test('no invented expansion or alignment',()=>{reject(d=>d.record.selection.linguisticExpansion[0].status='admitido');reject(d=>d.record.selection.comparator.trStatus='admitido');reject(d=>d.record.selection.comparator.verifiedAlignments=7937);});
+test('preserve documentary limits and empty public registries',()=>{reject(d=>d.record.selection.manuscripts.directInspections=1);reject(d=>d.publication.snapshots.push({}));reject(d=>d.linguistic.tokens.push({}));reject(d=>d.alignment.alignments.push({}));});
+test('fixed expanded route and permissions gate',()=>{reject(d=>d.record.route.pop());reject(d=>d.record.progress.expandedTotal=62);reject(d=>d.record.next='P11.4.2');});
