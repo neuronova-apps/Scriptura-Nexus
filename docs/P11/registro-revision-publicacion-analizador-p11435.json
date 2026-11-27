@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.3.5.revision_previa",
+  "baselineMain": "54cd2006f1c1b084ae5e255fb2b7e77190779f9c",
+  "preparationAuthorization": "AUT-P11433-20261127-01",
+  "previousIntegration": {
+    "pr": 102,
+    "head": "b771f9d6ea7ad226166f991942724f3e77d1e72d",
+    "merge": "54cd2006f1c1b084ae5e255fb2b7e77190779f9c",
+    "workflows": 29,
+    "successfulChecks": 36,
+    "skippedDeployOnPr": 1,
+    "run": 46024175119,
+    "job": 140591161012,
+    "pagesRun": 46024896115,
+    "pages": "success"
+  },
+  "observed": {
+    "chapters": 168,
+    "chapterLayers": 336,
+    "units": 5162,
+    "occurrences": 78218,
+    "catalogGzipBytes": 33182,
+    "totalGzipBytes": 16355402,
+    "maxChapterLayerGzipBytes": 143393,
+    "pilotReferences": 8,
+    "baselineLanguages": 3,
+    "layoutChecks": 72,
+    "axeScans": 12,
+    "corruptionRecovery": true,
+    "staleSelection": true,
+    "externalRequests": 0,
+    "queryStorage": false,
+    "initialChapterRequests": 0,
+    "mountMs": 112,
+    "firstMs": 97,
+    "cachedMs": 44,
+    "performanceConditions": "local Chromium, descriptive, no field measurement"
+  },
+  "sourceFiles": [
+    {
+      "id": "LING-011",
+      "book": "Gen",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Gen.xml",
+      "bytes": 1859929,
+      "sha256": "e5ab737c323d3879733e03882ecf17b7d917115133f87f9cd97895ac98f2b1a4",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-012",
+      "book": "Dan",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Dan.xml",
+      "bytes": 569236,
+      "sha256": "e63592e843bfe907758853affb352f049296cce1df95e747d65a48b29ab486a4",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-013",
+      "book": "3John",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/3John.xml",
+      "bytes": 11161,
+      "sha256": "389c6751dc8e5de45c9173fdd3b499aa8574d425345055723ff2a46b2d8d173f",
+      "components": [
+        "texto_griego"
+      ],
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-014",
+      "book": "3John",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "85-3Jn-morphgnt.txt",
+      "bytes": 14477,
+      "sha256": "a75df82d9007bb673e7d27bcb86681e011befc24cbaef1c658965803d7ae490a",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-019",
+      "book": "Lev",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Lev.xml",
+      "bytes": 1085069,
+      "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-020",
+      "book": "Deut",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Deut.xml",
+      "bytes": 1315401,
+      "sha256": "aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-021",
+      "book": "Acts",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/Acts.xml",
+      "bytes": 921255,
+      "sha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+      "components": [
+        "texto_griego"
+      ],
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-022",
+      "book": "Acts",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "65-Ac-morphgnt.txt",
+      "bytes": 1228900,
+      "sha256": "04349afeba263d667698b37d39465d746530434b455fb6ac2941ec5c59fb85ca",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-023",
+      "book": "1Cor",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "path": "data/sblgnt/xml/1Cor.xml",
+      "bytes": 342330,
+      "sha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+      "components": [
+        "texto_griego"
+      ],
+      "license": "CC BY 4.0",
+      "attribution": "Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT",
+      "publication": "pendiente_autorizacion"
+    },
+    {
+      "id": "LING-024",
+      "book": "1Cor",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "path": "67-1Co-morphgnt.txt",
+      "bytes": 435113,
+      "sha256": "5233a5b099e2499baed34ec2d6f53ae44545d532a7e2fb12acafcf39ff6fdbf3",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "CC BY-SA 3.0",
+      "attribution": "Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200",
+      "publication": "pendiente_autorizacion"
+    }
+  ],
+  "licenseEvidence": [
+    {
+      "key": "OSHB",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "licenseEvidence": {
+        "path": "LICENSE.md",
+        "bytes": 1476,
+        "gitBlobSha1": "906e051438bf66ef6f2f7f36110504cba2b6867f",
+        "sha256": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878"
+      },
+      "conditions": "WLC declarado dominio público; anotaciones CC BY 4.0; preservar atribución y capas."
+    },
+    {
+      "key": "SBLGNT",
+      "repository": "Faithlife/SBLGNT",
+      "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+      "licenseEvidence": {
+        "path": "LICENSE",
+        "bytes": 18650,
+        "gitBlobSha1": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb",
+        "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+      },
+      "conditions": "CC BY 4.0; texto oficial, atribución y cambios."
+    },
+    {
+      "key": "MorphGNT",
+      "repository": "morphgnt/sblgnt",
+      "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+      "licenseEvidence": {
+        "path": "README.md",
+        "bytes": 1630,
+        "gitBlobSha1": "a3256051467a61ddb5099254dd9abaf5d03e5e80",
+        "sha256": "043bb6c0d654e85fa8a8db19e177ee035623e23b7ff1556e5431ad95184d5830"
+      },
+      "conditions": "CC BY-SA 3.0 para anotaciones; atribución y compartir igual; excluir columnas textuales de la proyección."
+    }
+  ],
+  "excluded": [
+    "LING-010",
+    "LING-015",
+    "LING-016",
+    "LING-017",
+    "LING-018"
+  ],
+  "withheldNewGreek": 198,
+  "releaseGates": {
+    "publicationAuthorized": false,
+    "territorialReview": "pendiente_confirmacion_WLC",
+    "manualScreenReader": "pendiente",
+    "realMobile": "pendiente",
+    "hostingPrivacy": "pendiente_revision_final",
+    "publicArtifact": "pendiente",
+    "rollback": "pendiente",
+    "fieldPerformance": "no_medido"
+  },
+  "publicRegistryEmpty": true,
+  "corpusPersisted": false,
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.3.5_preparacion_candidato_y_revision_manual"
+}
