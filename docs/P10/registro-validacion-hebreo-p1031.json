@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.3.1",
+  "baselineMain": "e75d656368685554cfd9a73aa8ed416a6bdc2f94",
+  "previousReviewBlob": "46c949dbccf623a110a98b1f2ad8c32a733b89a1",
+  "previousClosure": {
+    "pr": 75,
+    "workflowRun": 45935665574,
+    "deployRun": 45936031296,
+    "build": "success",
+    "deploy": "success"
+  },
+  "pilot": "SN-001",
+  "scope": "validacion_tecnica_de_cobertura_y_barreras",
+  "publicationAuthorized": false,
+  "newAdmissionAuthorized": false,
+  "academicAnalysisCompleted": false,
+  "edition": {
+    "name": "OSHB v.2.2 / WLC",
+    "version": "2.2",
+    "versification": "Bible.MT",
+    "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+    "coveredBooks": [
+      "LIB-Gen",
+      "LIB-Dan"
+    ],
+    "admittedFiles": [
+      "LING-011",
+      "LING-012"
+    ]
+  },
+  "pilotCases": [
+    {
+      "reference": "Lv 19:28",
+      "bookId": "LIB-Lev",
+      "chapter": "19",
+      "verse": "28",
+      "expectedStatus": "fuera_de_cobertura",
+      "analysis": "pendiente",
+      "candidateId": "EXP-C02"
+    },
+    {
+      "reference": "Dt 14:1",
+      "bookId": "LIB-Deut",
+      "chapter": "14",
+      "verse": "1",
+      "expectedStatus": "fuera_de_cobertura",
+      "analysis": "pendiente",
+      "candidateId": null
+    }
+  ],
+  "positiveControls": [
+    {
+      "bookId": "LIB-Gen",
+      "chapter": "1",
+      "verse": "1",
+      "fileId": "LING-011"
+    },
+    {
+      "bookId": "LIB-Dan",
+      "chapter": "1",
+      "verse": "1",
+      "fileId": "LING-012"
+    }
+  ],
+  "candidateMetadata": {
+    "repository": "openscriptures/morphhb",
+    "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+    "licenseBlob": "906e051438bf66ef6f2f7f36110504cba2b6867f",
+    "verification": "metadata_git_tree_only",
+    "files": [
+      {
+        "path": "wlc/Lev.xml",
+        "gitBlobSha1": "6025e0713ccfc79de0c90cb92ed0e8c0062d2614",
+        "bytes": 1085069,
+        "sha256": null,
+        "admitted": false
+      },
+      {
+        "path": "wlc/Deut.xml",
+        "gitBlobSha1": "5317431fd1d1fb5848d7f9f1d22d0753152f9991",
+        "bytes": 1315401,
+        "sha256": null,
+        "admitted": false
+      }
+    ]
+  },
+  "limits": [
+    "No se ha descargado ni admitido el contenido de los archivos candidatos en esta etapa.",
+    "La ocurrencia, lema, morfología y significado de los pasajes piloto quedan pendientes.",
+    "Una prueba de ausencia satisfactoria valida la barrera del motor, no el análisis hebreo del piloto.",
+    "La ampliación exige auditoría, decisión explícita por archivo y pruebas de compatibilidad del importador."
+  ],
+  "next": "P10.3.2_tras_CI_integracion_y_despliegue"
+}
