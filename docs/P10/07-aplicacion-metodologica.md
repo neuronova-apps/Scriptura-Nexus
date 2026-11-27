@@ -21,3 +21,7 @@ Se preparan identificación y planteamiento (10 posiciones), se registra avance 
 La prueba real reutiliza la proyección fijada y el lector/comparador P9 en memoria: comprueba unidades no vacías de las ventanas RV1909 y 11 anclas independientes SBLGNT del NT. No establece correspondencias entre ediciones, no compara semántica ni publica corpus. No imprime texto. Se añaden seis pruebas unitarias y regresiones Node/Astro. Las verificaciones de código y datos no equivalen a validación exegética o académica.
 
 P10.2.3 queda como aplicación inicial acotada, pendiente de CI, revisión de fuentes y controles de integración. No iniciar P10.2.4 hasta revisar sus resultados y límites. P11.4 conserva la barrera de publicación.
+
+## Actualización de controles de integración
+
+PR #72: build y deploy satisfactorios en run 45929804383. PR #73: integrado en `8085016f3edc4ecc3c657c371cbfbb205b134733`, build y deploy satisfactorios en run 45931204464. PR #74: workflow 45930701470 satisfactorio en la rama dependiente; seis pruebas unitarias aprobadas, 17 casos, 101 unidades de contexto RV1909, 11 anclas independientes SBLGNT, cero alineaciones creadas y sin texto persistido. Se cambia la base a main y se marca listo para revisión. La comparación con main contiene exclusivamente los cinco archivos P10.2.3, sin eliminaciones. Se requiere CI sobre la nueva base antes de integración; esta actualización registra la resolución de dependencias sin alterar el registro histórico de aplicación ni declarar validez académica o publicación.
