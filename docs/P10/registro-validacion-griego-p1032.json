@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.3.2",
+  "baselineMain": "41d0fac651b7a89d355e2f990606e57d558a8660",
+  "previousBlob": "a48d2971e19e04b2c68d11fb818afa15f8b4e3ce",
+  "applicationBlob": "9e1a654fc3fd27a80be1fea127e0dd4cf71e5b14",
+  "previousClosure": {
+    "pr": 76,
+    "workflowRun": 45936328551,
+    "deployRun": 45937908539,
+    "build": "success",
+    "deploy": "success"
+  },
+  "pilot": "SN-008",
+  "scope": "validacion_tecnica_texto_y_cobertura_linguistica_independientes",
+  "publicationAuthorized": false,
+  "newAdmissionAuthorized": false,
+  "academicAnalysisCompleted": false,
+  "textEdition": {
+    "id": "TXT-SBLGNT-V1-2",
+    "version": "1.2",
+    "commit": "736fdc76158950c3d04b949b7e013ca14305145a",
+    "files": [
+      "data/sblgnt/xml/Acts.xml",
+      "data/sblgnt/xml/1Cor.xml"
+    ]
+  },
+  "linguisticEdition": {
+    "name": "SBLGNT",
+    "version": "1.2",
+    "versification": "SBLGNT-3John",
+    "coveredBooks": [
+      "LIB-3John"
+    ],
+    "admittedFiles": [
+      "LING-013",
+      "LING-014"
+    ]
+  },
+  "cases": [
+    {
+      "reference": "Hch 2:4",
+      "textualBookId": "LIB-ACT",
+      "linguisticBookId": "LIB-Acts",
+      "chapter": "2",
+      "verse": "4",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    },
+    {
+      "reference": "Hch 10:46",
+      "textualBookId": "LIB-ACT",
+      "linguisticBookId": "LIB-Acts",
+      "chapter": "10",
+      "verse": "46",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    },
+    {
+      "reference": "Hch 19:6",
+      "textualBookId": "LIB-ACT",
+      "linguisticBookId": "LIB-Acts",
+      "chapter": "19",
+      "verse": "6",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    },
+    {
+      "reference": "1 Co 12:10",
+      "textualBookId": "LIB-1CO",
+      "linguisticBookId": "LIB-1Cor",
+      "chapter": "12",
+      "verse": "10",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    },
+    {
+      "reference": "1 Co 13:8",
+      "textualBookId": "LIB-1CO",
+      "linguisticBookId": "LIB-1Cor",
+      "chapter": "13",
+      "verse": "8",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    },
+    {
+      "reference": "1 Co 14:2",
+      "textualBookId": "LIB-1CO",
+      "linguisticBookId": "LIB-1Cor",
+      "chapter": "14",
+      "verse": "2",
+      "textExpected": "verified_fragment",
+      "analysisExpected": "fuera_de_cobertura"
+    }
+  ],
+  "positiveControl": {
+    "bookId": "LIB-3John",
+    "chapter": "1",
+    "verse": "1"
+  },
+  "candidateMetadata": {
+    "repository": "morphgnt/sblgnt",
+    "commit": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d",
+    "verification": "metadata_git_tree_only",
+    "files": [
+      {
+        "path": "65-Ac-morphgnt.txt",
+        "gitBlobSha1": "3aed8e1a1dd9d77b4c448a0893bd4ddee6eb6842",
+        "bytes": 1228900,
+        "sha256": null,
+        "admitted": false
+      },
+      {
+        "path": "67-1Co-morphgnt.txt",
+        "gitBlobSha1": "28dec6618da3a378f454b6c72776286855857920",
+        "bytes": 435113,
+        "sha256": null,
+        "admitted": false
+      }
+    ]
+  },
+  "lexicalCandidatesDeferred": [
+    "LEX-C01",
+    "LEX-C07"
+  ],
+  "limits": [
+    "La disponibilidad de texto no acredita anotaciones por ocurrencia.",
+    "Los seis casos quedan pendientes de lema, morfología, identificadores y sentido.",
+    "Metadatos MorphGNT no acreditan integridad del contenido, admisión ni compatibilidad.",
+    "El control positivo de 3 Juan no sustituye el análisis lingüístico de SN-008."
+  ],
+  "next": "P10.3.3_tras_CI_integracion_y_despliegue"
+}
