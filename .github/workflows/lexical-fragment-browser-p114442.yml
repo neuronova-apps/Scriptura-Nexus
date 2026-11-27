@@ -1,0 +1,47 @@
+name: P11.4.4.4.2 Validación funcional fragmentada y accesible
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'src/lib/**'
+      - 'src/scripts/lexicon-concordance-ui.ts'
+      - 'src/pages/linguistica/lexicos-concordancias.astro'
+      - 'src/styles/lexicon-concordance.css'
+      - 'tests/p114442-fragment-runtime.test.mjs'
+      - 'docs/P11/**'
+      - '.github/workflows/lexical-fragment-browser-p114442.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Compilación y barrera pública
+        run: npm ci && npm run build && npm run test:build
+      - name: Pruebas de reconstrucción y transporte
+        run: node --test tests/p114442-fragment-runtime.test.mjs tests/p114441-lexical-fragments.test.mjs
+      - name: Dependencias aisladas del navegador
+        run: |
+          mkdir -p "$RUNNER_TEMP/p114442-browser"
+          npm install --prefix "$RUNNER_TEMP/p114442-browser" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$RUNNER_TEMP/p114442-browser/node_modules/.bin/playwright" install --with-deps chromium
+          echo "P114442_DEPS=$RUNNER_TEMP/p114442-browser" >> "$GITHUB_ENV"
+      - name: Consultas reales sobre fragmentos privados en Chromium
+        run: node --max-old-space-size=4096 scripts/validate-lexicon-concordance-fragment-browser-p114442.mjs
+      - name: Verificación pública posterior
+        run: npm run test:build

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.4.2.interfaz_fragmentada_privada",
+  "baselineMain": "c07573a6d50c7963a477303f33b95ff98f1fabd1",
+  "previousIntegration": {
+    "pr": 111,
+    "head": "e73e2f9df6e397f512b5a8a25f84cd7bf207dc61",
+    "merge": "c540a40382fb39c292655a01d385d1798b3aa353",
+    "workflows": 34,
+    "successfulChecks": 34,
+    "run": 46033118308,
+    "job": 140621665994,
+    "pagesRun": 46033851181,
+    "pagesConclusion": "success"
+  },
+  "observed": {
+    "editions": 2,
+    "books": 7,
+    "chapters": 168,
+    "chapterLayers": 336,
+    "units": 5162,
+    "occurrences": 78218,
+    "concordanceGroups": 36,
+    "verifiedQueries": 96493,
+    "postingsChecked": 463364,
+    "lexicalEntries": 30740,
+    "lexicalForms": 10221,
+    "lexicalDefinitions": 35496,
+    "lexicalLinks": 29930
+  },
+  "design": {
+    "initialCatalogOnly": true,
+    "lexicalSummaryBuckets": 16,
+    "lemmaCatalog": true,
+    "queryKeysInUrls": false,
+    "sameOriginOnly": true,
+    "cache": "memory-bounded",
+    "fetchCache": "no-store",
+    "sha256CompressedAndExpanded": true,
+    "maxGzipBytes": 256000,
+    "maxJsonBytes": 8388608,
+    "chapterCache": 2,
+    "staleRequestProtection": true
+  },
+  "gates": {
+    "publicArtifact": false,
+    "corpusPersisted": false,
+    "corpusPublished": false,
+    "dodsonAdmission": "pending_approval",
+    "manualScreenReader": "pending",
+    "manualDeviceReview": "pending",
+    "publicationAuthorized": false
+  },
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.4.4.3_validacion_integral_accesibilidad_y_privacidad"
+}
