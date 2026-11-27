@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.1.auditoria_lexica",
+  "baselineMain": "20b10235a0e7a19799dfff78715816260e4c4399",
+  "previousIntegration": {
+    "pr": 107,
+    "head": "06836e1f0f426d888c6fab7619ee32bfefb783f4",
+    "merge": "20b10235a0e7a19799dfff78715816260e4c4399",
+    "workflows": 30,
+    "successfulChecks": 39,
+    "run": 46029671494,
+    "pagesRun": 46030269685,
+    "pagesAtPreparation": "success"
+  },
+  "analyzer": {
+    "technicalPreparation": "completada",
+    "publicationAuthorized": false,
+    "manualReview": "pendiente",
+    "separateDecision": true,
+    "chapters": 168,
+    "occurrences": 78218
+  },
+  "scope": {
+    "existingLexicalFiles": [
+      {
+        "candidateId": "LEX-C01",
+        "id": null,
+        "repository": "STEPBible/STEPBible-Data",
+        "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+        "path": "Lexicons/TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt",
+        "bytes": 4736983,
+        "gitBlobSha1": "d61029c1f7aaaa629d272aa4bc2ba14678ede0de",
+        "sha256": "734a5b64a1152f67604bf09d32f15c0ba537151961752fcf168087b41b4d93ea",
+        "license": "CC BY 4.0 general; fuentes múltiples",
+        "licenseEvidence": [
+          {
+            "path": "README.md",
+            "bytes": 14495,
+            "gitBlobSha1": "708f06253e0cbb64dcbc1bd1842715bf37ddb102",
+            "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+          }
+        ],
+        "allowedComponents": [],
+        "selectors": [],
+        "conditions": [
+          "Definiciones de varias fuentes y condiciones específicas pendientes de revisión por componente."
+        ],
+        "review": "aplazado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C02",
+        "id": null,
+        "repository": "STEPBible/STEPBible-Data",
+        "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+        "path": "Lexicons/TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt",
+        "bytes": 3288115,
+        "gitBlobSha1": "df4dabb25973ed2df6fbdae0345b8cb446711e2f",
+        "sha256": "848eef2ac16753a43694897dbb9e8f266725e7cc9da4809f367ee5b990f05dbb",
+        "license": "CC BY 4.0 general; Meaning de Online Bible sujeto a permiso",
+        "licenseEvidence": [
+          {
+            "path": "README.md",
+            "bytes": 14495,
+            "gitBlobSha1": "708f06253e0cbb64dcbc1bd1842715bf37ddb102",
+            "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+          }
+        ],
+        "allowedComponents": [],
+        "selectors": [],
+        "conditions": [
+          "Meaning de Online Bible requiere permiso; revisión de restantes componentes pendiente."
+        ],
+        "review": "aplazado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C03",
+        "id": "LING-015",
+        "repository": "openscriptures/HebrewLexicon",
+        "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "path": "AugIndex.xml",
+        "bytes": 213975,
+        "gitBlobSha1": "7fdfaa8b9cf83e41c72cb58ac84494f74bd6296c",
+        "sha256": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+        "license": "CC BY 4.0",
+        "licenseEvidence": [
+          {
+            "path": "readme.md",
+            "bytes": 2503,
+            "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+            "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+          }
+        ],
+        "allowedComponents": [
+          "identificadores_lexicos"
+        ],
+        "selectors": [
+          "index/w/@aug",
+          "index/w/text()"
+        ],
+        "conditions": [
+          "Conservar código aumentado exacto y destino ID del índice; no eliminar espacios, homógrafos ni extensiones.",
+          "No establecer equivalencia con Strong estándar ni vincular automáticamente a otra revisión OSHB."
+        ],
+        "review": "aprobado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C04",
+        "id": "LING-016",
+        "repository": "openscriptures/HebrewLexicon",
+        "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "path": "LexicalIndex.xml",
+        "bytes": 1782592,
+        "gitBlobSha1": "d11eb2078532f3119c70822bd27a91b484d4727b",
+        "sha256": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+        "license": "CC BY 4.0",
+        "licenseEvidence": [
+          {
+            "path": "readme.md",
+            "bytes": 2503,
+            "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+            "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+          }
+        ],
+        "allowedComponents": [
+          "anotaciones_lema",
+          "identificadores_lexicos"
+        ],
+        "selectors": [
+          "index/part/@xml:lang",
+          "index/part/entry/@id",
+          "index/part/entry/w/text()",
+          "index/part/entry/xref/@aug",
+          "index/part/entry/xref/@strong",
+          "index/part/entry/xref/@bdb"
+        ],
+        "conditions": [
+          "Forma de entrada y lengua declarada; preservar valores originales; los vínculos son afirmaciones del proveedor, no sinonimia.",
+          "Excluir TWOT, etym, def, pos, xlit, texto mixto y cualquier campo no enumerado."
+        ],
+        "review": "aprobado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C05",
+        "id": "LING-017",
+        "repository": "openscriptures/HebrewLexicon",
+        "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "path": "HebrewStrong.xml",
+        "bytes": 2749042,
+        "gitBlobSha1": "6ea1abdaf8c095a634097014dea43428ea5f358f",
+        "sha256": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+        "license": "CC BY 4.0",
+        "licenseEvidence": [
+          {
+            "path": "readme.md",
+            "bytes": 2503,
+            "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+            "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+          }
+        ],
+        "allowedComponents": [
+          "identificadores_lexicos",
+          "sentidos_lexicos"
+        ],
+        "selectors": [
+          "lexicon/entry/@id",
+          "lexicon/entry/meaning/def/text()"
+        ],
+        "conditions": [
+          "Definiciones explícitas de Strong solo cuando el elemento def sea hijo directo de meaning y contenga exclusivamente texto; no extraer texto mixto, referencias, notas, source ni usage.",
+          "Preservar ubicación y contexto de entrada; no presentar una glosa como sentido contextual de una ocurrencia."
+        ],
+        "review": "aprobado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C06",
+        "id": "LING-018",
+        "repository": "openscriptures/HebrewLexicon",
+        "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "path": "BrownDriverBriggs.xml",
+        "bytes": 2911253,
+        "gitBlobSha1": "21bb98cab34334cd500553addc38aca6792f7bce",
+        "sha256": "2b52658a4323d91674cda4090ab8b3ebddfff640f4f18143c28300e80b2c38f8",
+        "license": "CC BY 4.0",
+        "licenseEvidence": [
+          {
+            "path": "readme.md",
+            "bytes": 2503,
+            "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+            "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+          }
+        ],
+        "allowedComponents": [
+          "identificadores_lexicos",
+          "sentidos_lexicos"
+        ],
+        "selectors": [
+          "lexicon/part/@xml:lang",
+          "lexicon/part/section/entry/@id",
+          "lexicon/part/section/entry/def/text()",
+          "lexicon/part/section/entry/sense//def/text()"
+        ],
+        "conditions": [
+          "Definiciones explícitas de BDB solo en elementos def exclusivamente textuales; preservar ruta exacta del sentido, no aplanar sentidos anidados.",
+          "Excluir elementos externos, notas, referencias bíblicas, foreign, y texto mixto; no publicar BDB abreviado de Online Bible."
+        ],
+        "review": "aprobado",
+        "publication": false
+      },
+      {
+        "candidateId": "LEX-C07",
+        "id": null,
+        "repository": "biblicalhumanities/Dodson-Greek-Lexicon",
+        "commit": "74f70358d4acfaf2f980bf2feb58ab7115cbbcbc",
+        "path": "dodson.csv",
+        "bytes": 539071,
+        "gitBlobSha1": "7a729b69688f3bf88ea54b7f79405359dbaa6b82",
+        "sha256": "46951bf82c40ed35caa8557db190a828b744e305e9619d9451ea5690a90d7101",
+        "license": "Dominio público declarado por autor; LICENSE CC0-1.0",
+        "licenseEvidence": [
+          {
+            "path": "LICENSE",
+            "bytes": 6554,
+            "gitBlobSha1": "3bbbc1ee92562e6a2eebfc6a366f4309d06c7d54",
+            "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4"
+          },
+          {
+            "path": "README.md",
+            "bytes": 557,
+            "gitBlobSha1": "7b6a42b80a098065b2c825ddae52cf13094d46c3",
+            "sha256": "eada5184215fba69ddd420438e55690fb4ca0c14fdaa1f04a3f6c555b045e839"
+          },
+          {
+            "path": "README-ulrikp.txt",
+            "bytes": 3665,
+            "gitBlobSha1": "d7f5f2c3b8b9826d1b769df1dbb7c9e66ae64671",
+            "sha256": "2eea57fcefa555081d2834cdef44af5a1d000d90eb9ba0d58f4e1fe99c305d2c"
+          }
+        ],
+        "allowedComponents": [],
+        "selectors": [],
+        "conditions": [
+          "CSV de cinco columnas con Beta Code: validar conversión o auditar representación Unicode distinta; no inferir correspondencia MorphGNT/Strong."
+        ],
+        "review": "aplazado",
+        "publication": false
+      }
+    ],
+    "newCandidate": {
+      "id": "LEX-C08",
+      "repository": "biblicalhumanities/Dodson-Greek-Lexicon",
+      "commit": "74f70358d4acfaf2f980bf2feb58ab7115cbbcbc",
+      "path": "dodson.xml",
+      "bytes": 1315372,
+      "gitBlobSha1": "93bdd519bb68db9a4f2969d50d31ee42b2372e06",
+      "sha256": null,
+      "licenseEvidence": [
+        {
+          "path": "LICENSE",
+          "bytes": 6554,
+          "gitBlobSha1": "3bbbc1ee92562e6a2eebfc6a366f4309d06c7d54",
+          "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4"
+        },
+        {
+          "path": "README.md",
+          "bytes": 557,
+          "gitBlobSha1": "7b6a42b80a098065b2c825ddae52cf13094d46c3",
+          "sha256": "eada5184215fba69ddd420438e55690fb4ca0c14fdaa1f04a3f6c555b045e839"
+        },
+        {
+          "path": "README-ulrikp.txt",
+          "bytes": 3665,
+          "gitBlobSha1": "d7f5f2c3b8b9826d1b769df1dbb7c9e66ae64671",
+          "sha256": "2eea57fcefa555081d2834cdef44af5a1d000d90eb9ba0d58f4e1fe99c305d2c"
+        }
+      ],
+      "allowedComponents": [],
+      "review": "auditoria_sin_admision",
+      "publication": false
+    },
+    "historicalModel": {
+      "entries": 30740,
+      "forms": 10221,
+      "definitions": 35496,
+      "occurrences": 26750
+    },
+    "targetConcordance": {
+      "books": 7,
+      "chapters": 168,
+      "units": 5162,
+      "occurrences": 78218,
+      "publication": false,
+      "implementation": "pendiente"
+    }
+  },
+  "decision": {
+    "newAdmissions": 0,
+    "publicationAuthorized": false,
+    "automaticCorpusLinks": false,
+    "semanticEquivalences": false,
+    "translateDefinitions": false,
+    "corpusPersisted": false
+  },
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.4.2_propuesta_lexica_y_concordancias_ampliadas"
+}
