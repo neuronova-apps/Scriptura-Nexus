@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.3",
+  "baselineMain": "8645d545c8d938043c7f6a91323bfd7ccb1f19c6",
+  "previousBlob": "4a6f5ed2d016c47876cca140cb0886bd926c2b3d",
+  "previousIntegration": {
+    "pr": 84,
+    "workflowRun": 45945893092,
+    "job": 140330381489,
+    "deployRun": 45946440112,
+    "deploy": "pending_confirmation",
+    "nodeTests": 490,
+    "trackedPathsChecked": 462,
+    "artifactFiles": 139,
+    "restrictedPaths": 0,
+    "nonpublicMarkers": 0
+  },
+  "scope": "auditoria_automatizada_y_protocolo_manual_pendiente",
+  "publicationAuthorized": false,
+  "releaseScopeApproved": false,
+  "corpusImportAuthorized": false,
+  "wcagCertification": false,
+  "routes": [
+    "",
+    "fundamentos/",
+    "fundamentos/glosario/",
+    "estudios/",
+    "estudios/SN-001/",
+    "buscar/",
+    "biblioteca/",
+    "biblioteca/permisos/",
+    "historia/",
+    "linguistica/",
+    "linguistica/analizador/",
+    "linguistica/lexicos-concordancias/",
+    "biblia/",
+    "biblia/lector/",
+    "biblia/comparador/",
+    "manuscritos/",
+    "manuscritos/consulta/",
+    "design-system/"
+  ],
+  "widths": [
+    320,
+    375,
+    768,
+    1024,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "contrast-light",
+    "contrast-dark"
+  ],
+  "scales": [
+    "100",
+    "115",
+    "130"
+  ],
+  "budget": {
+    "initialJsGzipBytes": 153600,
+    "homeTransferBytes": 512000,
+    "fragmentGzipBytes": 256000,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "inpMs": 200
+  },
+  "manualChecks": [
+    {
+      "id": "A01",
+      "task": "Teclado real y orden de foco",
+      "status": "pendiente"
+    },
+    {
+      "id": "A02",
+      "task": "Lector de pantalla de escritorio (NVDA o VoiceOver)",
+      "status": "pendiente"
+    },
+    {
+      "id": "A03",
+      "task": "Lector de pantalla móvil (TalkBack o VoiceOver)",
+      "status": "pendiente"
+    },
+    {
+      "id": "A04",
+      "task": "Zoom nativo 200 % y 400 %",
+      "status": "pendiente"
+    },
+    {
+      "id": "A05",
+      "task": "Dispositivo móvil real y orientación",
+      "status": "pendiente"
+    },
+    {
+      "id": "A06",
+      "task": "Lectura de hebreo, arameo y griego con datos de control autorizados",
+      "status": "pendiente"
+    }
+  ],
+  "fieldINP": "no_medido",
+  "publicFragmentBudget": "no_evaluable_sin_adaptador_aprobado",
+  "progress": {
+    "completed": 59,
+    "total": 62,
+    "afterVerifiedClosure": 60
+  },
+  "next": "P11.4_solo_tras_CI_integracion_despliegue_y_revision_manual"
+}
