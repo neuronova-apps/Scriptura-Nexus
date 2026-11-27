@@ -20,3 +20,7 @@ P10.1.5 se encuentra implementada y pendiente de resultados. La autorización de
 ## Hallazgo y corrección de reflujo
 
 La primera ejecución del navegador confirmó filtros, búsquedas, paginación y navegación, pero detectó desbordamiento horizontal a 320 px: el contenedor `.module-landing` medía 296 px mientras sus elementos de cuadrícula implícita alcanzaban 349 px. La causa era el mínimo intrínseco de la pista automática de CSS Grid. Se corrigió `src/styles/modules.css` con una pista `minmax(0, 1fr)` y `min-width: 0` en los hijos directos. La prueba ahora comprueba tanto el ancho desplazable del módulo como el del documento en las tres rutas, cuatro temas, tres escalas y tres anchos. La corrección requiere CI nuevo; no se reduce el criterio de reflujo ni se oculta el desbordamiento.
+
+## Segundo hallazgo: controles de filtro del catálogo
+
+La siguiente ejecución de Chromium confirmó que el desbordamiento persistía dentro de `section#catalog`, específicamente en `.catalog-filters`, sus etiquetas y `select#catalog-axis` (349 px frente a 296 px disponibles en el viewport de 320 px). La causa era el tamaño intrínseco mínimo de los controles dentro de las etiquetas con `display:grid`. Se corrigió `src/styles/catalog.css`: las etiquetas usan `grid-template-columns:minmax(0,1fr)` y los selectores `box-sizing:border-box`, `width:100%` y `min-width:0`. La validación conserva los 108 escenarios de reflujo y los 36 análisis axe; el criterio sigue siendo ausencia de desbordamiento horizontal, no ocultarlo.
