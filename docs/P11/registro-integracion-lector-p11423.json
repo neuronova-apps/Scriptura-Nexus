@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.3",
+  "baselineMain": "f0b4b167c5bef2691768049c59ce91f67874ccaf",
+  "previousBlob": "136f47797686d0ef2b18441ec65152f91127d810",
+  "previousIntegration": {
+    "pr": 89,
+    "workflowRun": 45987384440,
+    "job": 140466370851,
+    "successfulWorkflows": 21,
+    "deployRun": 45988015148,
+    "deploy": "pending_confirmation"
+  },
+  "projection": {
+    "editions": 2,
+    "books": 93,
+    "chapters": 1449,
+    "units": 39041,
+    "emptyMarkers": 18,
+    "maxGzipBytes": 29701,
+    "totalGzipBytes": 8265301,
+    "indexSha256": "fc883fb3b99c47ba17fca2b1def24b2b80fe0c52263eef86e8c875709334568c"
+  },
+  "mode": "integracion_real_aislada_loopback",
+  "plannedBrowserChecks": 9,
+  "publicReleaseAuthorized": false,
+  "corpusImportAuthorized": false,
+  "persistCorpus": false,
+  "sourceTextLogged": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "P11.4.2.4_tras_CI_integracion_y_despliegue"
+}
