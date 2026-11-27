@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.4",
+  "baselineMain": "13b65df8eb231f5895edbc13508dcbfbeb63269a",
+  "previousBlob": "c75185e42181f4061f4b55cdd31d1433c4700051",
+  "previousIntegration": {
+    "pr": 90,
+    "workflowRun": 45988344532,
+    "job": 140469555958,
+    "successfulWorkflows": 24,
+    "deployRun": 45989154894,
+    "deploy": "pending_confirmation",
+    "nodeTests": 520,
+    "isolatedChecks": 9,
+    "chapterRequests": 7
+  },
+  "scope": "validacion_integral_real_aislada",
+  "expected": {
+    "editions": 2,
+    "bookFiles": 93,
+    "chapters": 1449,
+    "units": 39041,
+    "emptyMarkers": 18,
+    "layoutChecks": 120,
+    "axeScans": 24,
+    "labSamples": 12
+  },
+  "budget": {
+    "chapterGzipBytes": 256000,
+    "catalogGzipBytes": 256000
+  },
+  "widths": [
+    320,
+    375,
+    768,
+    1024,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "contrast-light",
+    "contrast-dark"
+  ],
+  "scales": [
+    "100",
+    "115",
+    "130"
+  ],
+  "manualLoadedReader": "pendiente",
+  "fieldINP": "no_medido",
+  "releasePermissions": "pendientes",
+  "publicReleaseAuthorized": false,
+  "corpusImportAuthorized": false,
+  "persistCorpus": false,
+  "sourceTextLogged": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "P11.4.2.5_tras_CI_integracion_despliegue_y_aprobacion_especifica"
+}
