@@ -1,0 +1,34 @@
+name: P11.4.5.4 Integridad y accesibilidad del comparador privado
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/private-comparator-hardening-p11454.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-comparator-hardening:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Integridad, regresiones y barreras públicas
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Candidato real, recuperación, privacidad, reflujo y axe
+        run: |
+          deps="$RUNNER_TEMP/p11454-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P11454_DEPS="$deps" node scripts/validate-private-comparator-hardening-p11454.mjs
