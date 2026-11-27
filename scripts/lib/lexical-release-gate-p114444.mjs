@@ -5,6 +5,8 @@ const required=['manualScreenReader','manualDeviceReview','ownerPublicationAppro
 export function evaluateLexicalReleaseGate({candidate,integrity,release}){
  if(!candidate||!integrity||!release)fail();
  if(candidate.phase!=='P11.4.4.4.2.interfaz_fragmentada_privada'||integrity.phase!=='P11.4.4.4.3.integridad_privacidad_recuperacion')fail();
+ if(candidate.previousIntegration?.pr!==111||integrity.previousIntegration?.pr!==112)fail();
+ if(integrity.previousIntegration?.merge!==release.previousEvidence?.pr112?.merge||release.previousEvidence?.pr113?.merge!==release.baselineMain||release.previousEvidence?.pr113?.pagesConclusion!=='success')fail();
  if(candidate.gates?.publicationAuthorized!==false||integrity.gates?.publicationAuthorized!==false||release.publicationAuthorized!==false)fail();
  if(candidate.gates?.corpusPersisted!==false||candidate.gates?.corpusPublished!==false||integrity.gates?.corpusPersisted!==false||integrity.gates?.corpusPublished!==false)fail();
  if(release.corpusPersisted!==false||release.corpusPublished!==false||release.publicArtifact!==false)fail();
@@ -15,7 +17,8 @@ export function evaluateLexicalReleaseGate({candidate,integrity,release}){
  if(release.exclusions?.dodson!=='not_included_pending_separate_approval')fail();
  if(integrity.browserValidation?.publicEmpty!==true||integrity.browserValidation?.noJavaScript!==true||integrity.browserValidation?.distUnchanged!==true)fail();
  if(integrity.browserValidation?.corpusPublished!==false||integrity.browserValidation?.corpusPersisted!==false)fail();
- if(integrity.design?.queryKeysInUrls!==false&&candidate.design?.queryKeysInUrls!==false)fail();
+ if(candidate.gates?.publicArtifact!==false||candidate.design?.queryKeysInUrls!==false||candidate.design?.sameOriginOnly!==true||candidate.design?.fetchCache!=='no-store')fail();
+ if(integrity.browserValidation?.fragments!==release.scope?.fragmentFiles||integrity.scope?.occurrences!==release.scope?.occurrences||integrity.scope?.lexicalEntries!==release.scope?.lexicalEntries||!same(integrity.scope?.admittedHistoricalFiles,release.scope?.admittedHistoricalFiles))fail();
  const blockers=[];
  for(const key of required){
   const value=release.gates?.[key];
