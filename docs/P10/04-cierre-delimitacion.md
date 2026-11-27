@@ -16,3 +16,7 @@ Base de trabajo: PR #71, 7c7e89f05c8acb3212ed547fb2ebfc5312bf4fa8, siete workflo
 ## Pendientes y condición de salida
 
 P10.1.5 se encuentra implementada y pendiente de resultados. La autorización de ejecutar el cierre no equivale a aprobar métodos, fuentes ni resultados individuales de los cinco pilotos. La revisión definitiva de pertinencia, fuentes y evidencias seguirá en P10.2; se conservará la aprobación expresa del alcance como condición de entrada de esa etapa. Los 32 perfiles pendientes no se infieren automáticamente. Los adaptadores de corpus, derechos, pruebas manuales y autorización P11.4 siguen pendientes. P10.2 no se inicia en este PR.
+
+## Hallazgo y corrección de reflujo
+
+La primera ejecución del navegador confirmó filtros, búsquedas, paginación y navegación, pero detectó desbordamiento horizontal a 320 px: el contenedor `.module-landing` medía 296 px mientras sus elementos de cuadrícula implícita alcanzaban 349 px. La causa era el mínimo intrínseco de la pista automática de CSS Grid. Se corrigió `src/styles/modules.css` con una pista `minmax(0, 1fr)` y `min-width: 0` en los hijos directos. La prueba ahora comprueba tanto el ancho desplazable del módulo como el del documento en las tres rutas, cuatro temas, tres escalas y tres anchos. La corrección requiere CI nuevo; no se reduce el criterio de reflujo ni se oculta el desbordamiento.
