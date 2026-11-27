@@ -29,8 +29,8 @@ export function privateUiSource(source){
  s=replaceOnce(s,"readerStatus[x.literalProbe]","(x.literalProbe==='label_present'?'Etiqueta presente en el catálogo; el texto de destino no se ha verificado mediante este diagnóstico.':readerStatus[x.literalProbe])");
  return transpile(s).replace('../lib/comparator-view','./comparator-view.js').replace('../lib/reader-view','./reader-view.js');
 }
-export async function createPrivateComparatorOverlay(){
- const {overlay:reader,summary}=await createCandidate();
+export async function createPrivateComparatorOverlay(readerCandidate){
+ const {overlay:reader,summary}=readerCandidate??await createCandidate();
  assert.deepEqual([summary.editions,summary.books,summary.chapters,summary.units,summary.publicationAuthorized,summary.corpusPersisted],[2,93,1449,39041,false,false]);
  const files=new Map(),add=(path,body,type)=>{assert.ok(!files.has(path));files.set(path,{body:Buffer.isBuffer(body)?body:Buffer.from(body),type});};
  for(const [path,file] of reader)if(path===readerAssets+'catalog.json.gz'||path.startsWith(readerAssets+'chapters/'))files.set(path,file);
