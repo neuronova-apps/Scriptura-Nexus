@@ -1,0 +1,668 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.1.4",
+  "scope": "planificacion",
+  "publicationAuthorized": false,
+  "profiles": [
+    {
+      "id": "biblica_exegetica",
+      "name": "Bíblico-exegético",
+      "description": "Texto, edición, género y contexto; referencias bíblicas no equivalen por sí solas a prueba."
+    },
+    {
+      "id": "teologica_doctrinal",
+      "name": "Teológico-doctrinal",
+      "description": "Escrituras, formulaciones históricas, documentos confesionales y argumentos atribuidos."
+    },
+    {
+      "id": "historica_eclesiastica",
+      "name": "Histórico-eclesiástico",
+      "description": "Fuentes primarias datadas, historiografía especializada y contexto institucional; la Biblia no basta para reconstruir eventos posteriores."
+    },
+    {
+      "id": "textual_linguistica",
+      "name": "Textual-lingüístico",
+      "description": "Ediciones identificadas, gramáticas, léxicos, testimonios y aparatos autorizados."
+    },
+    {
+      "id": "etica_practica",
+      "name": "Ético-práctico",
+      "description": "Texto, contexto, principios, consecuencias y aplicación no coercitiva."
+    },
+    {
+      "id": "interdisciplinaria",
+      "name": "Interdisciplinario",
+      "description": "Fuentes de las disciplinas pertinentes; separar datos empíricos, filosofía, exégesis y teología."
+    },
+    {
+      "id": "religiosa_comparada",
+      "name": "Religioso comparado",
+      "description": "Textos y especialistas de cada religión, historia y marcos interpretativos propios; no reducir una religión a otra."
+    }
+  ],
+  "relationTypes": [
+    {
+      "id": "complementaria",
+      "name": "Complementaria"
+    },
+    {
+      "id": "doctrinal",
+      "name": "Doctrinal"
+    },
+    {
+      "id": "historica",
+      "name": "Histórica"
+    },
+    {
+      "id": "textual",
+      "name": "Textual"
+    },
+    {
+      "id": "comparativa",
+      "name": "Comparativa"
+    },
+    {
+      "id": "conceptual",
+      "name": "Conceptual"
+    },
+    {
+      "id": "practica",
+      "name": "Práctica"
+    },
+    {
+      "id": "interdisciplinaria",
+      "name": "Interdisciplinaria"
+    }
+  ],
+  "assignments": [
+    {
+      "studyId": "SN-001",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "etica_practica"
+      ],
+      "origin": "piloto"
+    },
+    {
+      "studyId": "SN-007",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "etica_practica"
+      ],
+      "origin": "revision"
+    },
+    {
+      "studyId": "SN-008",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "origin": "piloto"
+    },
+    {
+      "studyId": "SN-015",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "origin": "piloto"
+    },
+    {
+      "studyId": "SN-020",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "revision"
+    },
+    {
+      "studyId": "SN-021",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "origin": "piloto"
+    },
+    {
+      "studyId": "SN-023",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "revision"
+    },
+    {
+      "studyId": "SN-031",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "revision"
+    },
+    {
+      "studyId": "SN-034",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "origin": "revision"
+    },
+    {
+      "studyId": "SN-040",
+      "profiles": [
+        "textual_linguistica",
+        "historica_eclesiastica",
+        "biblica_exegetica"
+      ],
+      "origin": "piloto"
+    },
+    {
+      "studyId": "SN-043",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-044",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica",
+        "interdisciplinaria"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-045",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-046",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-047",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-048",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-049",
+      "profiles": [
+        "biblica_exegetica",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-050",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-051",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-052",
+      "profiles": [
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-053",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-054",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-055",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-056",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-057",
+      "profiles": [
+        "biblica_exegetica",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-058",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-059",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-060",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-061",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-062",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-063",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-064",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-065",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-066",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-067",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-068",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-069",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "interdisciplinaria"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-070",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-071",
+      "profiles": [
+        "teologica_doctrinal",
+        "interdisciplinaria"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-072",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-073",
+      "profiles": [
+        "interdisciplinaria",
+        "biblica_exegetica"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-074",
+      "profiles": [
+        "religiosa_comparada",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-075",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-076",
+      "profiles": [
+        "interdisciplinaria",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-077",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-078",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-079",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "origin": "ampliacion"
+    },
+    {
+      "studyId": "SN-080",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica",
+        "interdisciplinaria"
+      ],
+      "origin": "ampliacion"
+    }
+  ],
+  "links": [
+    {
+      "a": "SN-031",
+      "b": "SN-046",
+      "kind": "conceptual",
+      "reason": "Distinguir imagen, veneración y adoración; no equiparar prácticas automáticamente."
+    },
+    {
+      "a": "SN-020",
+      "b": "SN-079",
+      "kind": "doctrinal",
+      "reason": "Relacionar bautismo infantil, profesión de fe y salvación sin inferir destino individual."
+    },
+    {
+      "a": "SN-020",
+      "b": "SN-047",
+      "kind": "comparativa",
+      "reason": "Contrastar concepciones sacramentales sin equiparar ritos."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-041",
+      "kind": "textual",
+      "reason": "Evaluar la variante de 1 Jn 5:7-8 sin reducir la doctrina a un único pasaje."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-022",
+      "kind": "doctrinal",
+      "reason": "Persona de Cristo y formulación trinitaria."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-024",
+      "kind": "doctrinal",
+      "reason": "Personalidad y divinidad del Espíritu Santo."
+    },
+    {
+      "a": "SN-021",
+      "b": "SN-023",
+      "kind": "doctrinal",
+      "reason": "Relacionar desamparo, cristología y Trinidad."
+    },
+    {
+      "a": "SN-001",
+      "b": "SN-016",
+      "kind": "complementaria",
+      "reason": "Interpretar prohibiciones y continuidad entre pactos."
+    },
+    {
+      "a": "SN-015",
+      "b": "SN-016",
+      "kind": "complementaria",
+      "reason": "Distinguir normas de los pactos y aplicación contemporánea."
+    },
+    {
+      "a": "SN-008",
+      "b": "SN-010",
+      "kind": "doctrinal",
+      "reason": "Lenguas y bautismo del Espíritu Santo."
+    },
+    {
+      "a": "SN-040",
+      "b": "SN-041",
+      "kind": "textual",
+      "reason": "Ediciones y variantes documentadas."
+    },
+    {
+      "a": "SN-043",
+      "b": "SN-048",
+      "kind": "historica",
+      "reason": "Continuidades, rupturas e identidad institucional."
+    },
+    {
+      "a": "SN-043",
+      "b": "SN-050",
+      "kind": "historica",
+      "reason": "Iglesias de Oriente y Occidente."
+    },
+    {
+      "a": "SN-043",
+      "b": "SN-051",
+      "kind": "conceptual",
+      "reason": "Distinguir identidad cristiana, confesión y pertenencia institucional."
+    },
+    {
+      "a": "SN-043",
+      "b": "SN-049",
+      "kind": "historica",
+      "reason": "Criterios de continuidad apostólica y autoridad."
+    },
+    {
+      "a": "SN-048",
+      "b": "SN-052",
+      "kind": "historica",
+      "reason": "Debates sobre autoridad y Reforma."
+    },
+    {
+      "a": "SN-050",
+      "b": "SN-049",
+      "kind": "historica",
+      "reason": "Autoridad y divergencias eclesiales."
+    },
+    {
+      "a": "SN-045",
+      "b": "SN-046",
+      "kind": "conceptual",
+      "reason": "Mediación de Cristo e intercesión mariana."
+    },
+    {
+      "a": "SN-045",
+      "b": "SN-055",
+      "kind": "comparativa",
+      "reason": "Intercesión e iniciativas de oración por fallecidos: distinguir destinatarios."
+    },
+    {
+      "a": "SN-054",
+      "b": "SN-055",
+      "kind": "doctrinal",
+      "reason": "Posturas sobre estado después de la muerte y oración."
+    },
+    {
+      "a": "SN-054",
+      "b": "SN-033",
+      "kind": "doctrinal",
+      "reason": "Estado intermedio y purificación según fuentes de cada tradición."
+    },
+    {
+      "a": "SN-080",
+      "b": "SN-044",
+      "kind": "complementaria",
+      "reason": "Perdón, memoria, reconciliación y límites frente al daño parental."
+    },
+    {
+      "a": "SN-080",
+      "b": "SN-027",
+      "kind": "practica",
+      "reason": "Autoridad y límites; no confundir roles familiares y eclesiales."
+    },
+    {
+      "a": "SN-080",
+      "b": "SN-064",
+      "kind": "conceptual",
+      "reason": "Corrección y discernimiento frente a autoritarismo."
+    },
+    {
+      "a": "SN-080",
+      "b": "SN-071",
+      "kind": "interdisciplinaria",
+      "reason": "Sufrimiento, protección y aplicación responsable; no sustituye evaluación profesional."
+    },
+    {
+      "a": "SN-044",
+      "b": "SN-064",
+      "kind": "practica",
+      "reason": "Perdonar no resuelve automáticamente cómo corregir o reparar."
+    },
+    {
+      "a": "SN-073",
+      "b": "SN-076",
+      "kind": "interdisciplinaria",
+      "reason": "Métodos científicos, filosóficos y teológicos diferenciados."
+    },
+    {
+      "a": "SN-074",
+      "b": "SN-025",
+      "kind": "conceptual",
+      "reason": "Nombres y concepciones de Dios con fuentes propias de cada religión."
+    },
+    {
+      "a": "SN-074",
+      "b": "SN-051",
+      "kind": "comparativa",
+      "reason": "Distinguir religiones de denominaciones cristianas."
+    },
+    {
+      "a": "SN-079",
+      "b": "SN-018",
+      "kind": "doctrinal",
+      "reason": "Salvación, gracia y fe; evitar conclusiones sin evidencia."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {loadOperationalCatalog} from '../scripts/validate-p1013.mjs';
 import {makeSections} from '../src/lib/editorial-contracts.ts';
 import {plannedTemplate,sectionView} from '../src/lib/study-template.ts';
 import {appendSnapshot,approvedSnapshot,validateSnapshot} from '../src/lib/publication.ts';
@@ -34,7 +34,7 @@ test('P6.5.2: orden, ID, título y cuerpos incorrectos bloqueados',()=>{
   const s=fixture();change(s);assert.ok(validateSnapshot(seal(s),ctx).length);
  }
 });
-test('P6.5.2: 840 posiciones originales no reciben contenido sintético',()=>{
- const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
- const views=catalog.flatMap(s=>plannedTemplate(s.id));assert.equal(views.length,840);assert.equal(new Set(views.map(v=>v.id)).size,840);assert.ok(views.every(v=>v.state==='pendiente'&&v.body===undefined));assert.doesNotMatch(JSON.stringify(views),/PRUEBA SINTÉTICA P6\.5\.2/);
+test('P6.5.2: 1600 posiciones del catálogo operativo no reciben contenido sintético',()=>{
+ const catalog=loadOperationalCatalog();
+ const views=catalog.flatMap(s=>plannedTemplate(s.id));assert.equal(views.length,1600);assert.equal(new Set(views.map(v=>v.id)).size,1600);assert.ok(views.every(v=>v.state==='pendiente'&&v.body===undefined));assert.doesNotMatch(JSON.stringify(views),/PRUEBA SINTÉTICA P6\.5\.2/);
 });

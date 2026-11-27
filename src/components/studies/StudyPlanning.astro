@@ -1,0 +1,18 @@
+---
+import { profilesForStudy, plannedRelations } from '../../lib/catalog-profiles';
+import { studies } from '../../lib/catalog';
+interface Props { studyId: string }
+const {studyId}=Astro.props;
+const profiles=profilesForStudy(studyId);
+const links=plannedRelations(studyId,studies,import.meta.env.BASE_URL);
+---
+<section class="sn-card sn-card--outlined study-relations" aria-labelledby="perfiles-titulo">
+<h2 id="perfiles-titulo">Perfiles metodológicos</h2>
+<p>Orientaciones de planificación; no sustituyen la selección de métodos, fuentes, disciplinas o perspectivas ni acreditan una investigación realizada.</p>
+{profiles.length ? <ul>{profiles.map(p=><li data-profile-id={p.id}><strong>{p.name}</strong><p>{p.description}</p></li>)}</ul> : <p data-profile-pending>Perfil metodológico pendiente de delimitación.</p>}
+</section>
+<section class="sn-card sn-card--outlined study-relations" aria-labelledby="cruces-titulo">
+<h2 id="cruces-titulo">Referencias cruzadas específicas</h2>
+<p>Vínculos planificados para orientar la consulta complementaria; no son citas, evidencias ni conclusiones doctrinales verificadas.</p>
+{links.length ? <ul>{links.map(link=><li data-cross-study={link.id} data-relation-kind={link.kind}><p><a href={link.href}>{link.id} · {link.title}</a></p><p><strong>{link.label}:</strong> {link.reason}</p></li>)}</ul> : <p>No hay referencias cruzadas específicas registradas por ahora.</p>}
+</section>

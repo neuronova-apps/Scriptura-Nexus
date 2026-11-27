@@ -1,0 +1,1060 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.1",
+  "status": "propuesta_para_revision",
+  "catalogBaseline": {
+    "count": 42,
+    "blob": "012e624be0fceb093befd7ad321566d586be3fd6"
+  },
+  "catalogChangeAuthorized": false,
+  "publicationAuthorized": false,
+  "profiles": {
+    "biblica_exegetica": "Texto, edición, género y contexto; referencias bíblicas no equivalen por sí solas a prueba.",
+    "teologica_doctrinal": "Escrituras, formulaciones históricas, documentos confesionales y argumentos atribuidos.",
+    "historica_eclesiastica": "Fuentes primarias datadas, historiografía especializada y contexto institucional; la Biblia no basta para reconstruir eventos posteriores.",
+    "textual_linguistica": "Ediciones identificadas, gramáticas, léxicos, testimonios y aparatos autorizados.",
+    "etica_practica": "Texto, contexto, principios, consecuencias y aplicación no coercitiva.",
+    "interdisciplinaria": "Fuentes de las disciplinas pertinentes; separar datos empíricos, filosofía, exégesis y teología.",
+    "religiosa_comparada": "Textos y especialistas de cada religión, historia y marcos interpretativos propios; no reducir una religión a otra."
+  },
+  "questions": [
+    {
+      "number": 1,
+      "target": "SN-031",
+      "question": "¿Prohíbe Dios toda imagen? ¿Cómo se relacionan la serpiente de bronce, los querubines y la idolatría?",
+      "origin": "usuario"
+    },
+    {
+      "number": 2,
+      "target": "SN-020",
+      "question": "¿Es válido el bautismo de bebés o se requiere profesión consciente de fe?",
+      "origin": "usuario"
+    },
+    {
+      "number": 3,
+      "target": "P10-Q03",
+      "question": "¿Cuál es la verdadera Iglesia de Cristo? ¿Cómo se relacionan Iglesia primitiva, catolicidad, Iglesia romana, ortodoxia y protestantismo?",
+      "origin": "usuario"
+    },
+    {
+      "number": 4,
+      "target": "SN-007",
+      "question": "¿Prohíbe la Biblia el alcohol o la embriaguez? ¿Qué significaban las bebidas fermentadas?",
+      "origin": "usuario"
+    },
+    {
+      "number": 5,
+      "target": "P10-Q05",
+      "question": "¿Perdonar implica olvidar, reconciliarse, recuperar la confianza o dejar de reprochar la ofensa?",
+      "origin": "usuario"
+    },
+    {
+      "number": 6,
+      "target": "SN-023",
+      "question": "¿La Trinidad está formulada en la Biblia o su formulación doctrinal se desarrolló después?",
+      "origin": "usuario"
+    },
+    {
+      "number": 7,
+      "target": "P10-Q07",
+      "question": "¿Qué diferencias existen entre mediación, intercesión e invocación de los santos?",
+      "origin": "usuario"
+    },
+    {
+      "number": 8,
+      "target": "P10-Q08",
+      "question": "¿Qué lugar ocupa María? ¿Qué fundamentos y límites tienen sus títulos, dogmas, veneración e intercesión?",
+      "origin": "usuario"
+    },
+    {
+      "number": 9,
+      "target": "P10-Q09",
+      "question": "¿Qué ocurre con el pan y vino en la Cena del Señor? ¿Qué fundamentos tienen transubstanciación, unión sacramental, presencia espiritual y memorial?",
+      "origin": "usuario"
+    },
+    {
+      "number": 10,
+      "target": "P10-Q03",
+      "question": "¿Cuándo surge el uso de católica y cómo se desarrolla la Iglesia católica?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 11,
+      "target": "P10-Q11",
+      "question": "¿Cuál es el origen histórico del protestantismo y su relación con la Iglesia católica?",
+      "origin": "propuesta_revisada"
+    },
+    {
+      "number": 12,
+      "target": "P10-Q12",
+      "question": "¿Fue Pedro el primer papa? ¿Qué fundamentos tienen sucesión apostólica y autoridad papal?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 13,
+      "target": "P10-Q13",
+      "question": "¿Por qué se dividieron las iglesias de Oriente y Occidente?",
+      "origin": "propuesta_revisada"
+    },
+    {
+      "number": 14,
+      "target": "P10-Q14",
+      "question": "¿Qué diferencias históricas, terminológicas y doctrinales existen entre cristiano, católico, protestante, evangélico y pentecostal?",
+      "origin": "propuesta_revisada"
+    },
+    {
+      "number": 15,
+      "target": "P10-Q15",
+      "question": "¿Qué autoridad tienen tradición apostólica, concilios y Padres de la Iglesia frente a las Escrituras?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 16,
+      "target": "P10-Q15",
+      "question": "¿Qué fundamentos tiene sola Scriptura?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 17,
+      "target": "P10-Q17",
+      "question": "¿Es necesaria la confesión de pecados ante un sacerdote o directamente ante Dios?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 18,
+      "target": "P10-Q18",
+      "question": "¿Existe el purgatorio y qué fundamentos bíblicos e históricos tiene?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 19,
+      "target": "P10-Q19",
+      "question": "¿Es bíblico orar por los fallecidos?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 20,
+      "target": "P10-Q20",
+      "question": "¿Qué significa santidad y quién puede ser considerado santo?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 21,
+      "target": "P10-Q21",
+      "question": "¿Es bíblicamente obligatorio el celibato de los ministros?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 22,
+      "target": "P10-Q08",
+      "question": "¿Qué fundamentos tienen virginidad perpetua, Inmaculada Concepción y Asunción de María?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 23,
+      "target": "P10-Q23",
+      "question": "¿Qué fundamentos bíblicos e históricos tienen Navidad y Semana Santa?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 24,
+      "target": "P10-Q24",
+      "question": "¿Es necesario ayunar y cuál es su finalidad?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 25,
+      "target": "P10-Q25",
+      "question": "¿Qué es el pecado original y se hereda la culpa de Adán o sus consecuencias?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 26,
+      "target": "P10-Q26",
+      "question": "¿Existe una diferencia entre pecados mortales y veniales?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 27,
+      "target": "P10-Q27",
+      "question": "¿Qué diferencia hay entre cometer pecado y vivir deliberadamente en él?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 28,
+      "target": "P10-Q28",
+      "question": "¿Cómo se relacionan libre albedrío y predestinación?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 29,
+      "target": "P10-Q29",
+      "question": "¿Qué diferencia existe entre juzgar, discernir y corregir al prójimo?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 30,
+      "target": "P10-Q30",
+      "question": "¿Es pecado participar en bailes, fiestas y actividades consideradas mundanas?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 31,
+      "target": "P10-Q49",
+      "question": "¿Qué significa honrar a los padres ante violencia, abuso o conductas perjudiciales?",
+      "origin": "propuesta_ampliada_usuario"
+    },
+    {
+      "number": 32,
+      "target": "P10-Q20",
+      "question": "¿Qué significa la santificación y cómo se desarrolla?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 33,
+      "target": "P10-Q33",
+      "question": "¿Quién es Satanás y cuál es su origen según las Escrituras?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 34,
+      "target": "P10-Q33",
+      "question": "¿Lucifer y Satanás son necesariamente el mismo ser?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 35,
+      "target": "P10-Q35",
+      "question": "¿Quiénes son ángeles, arcángeles, querubines y serafines?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 36,
+      "target": "P10-Q36",
+      "question": "¿Quiénes eran los hijos de Dios y los nefilim de Génesis 6?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 37,
+      "target": "P10-Q37",
+      "question": "¿Puede un cristiano ser poseído por un demonio?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 38,
+      "target": "P10-Q38",
+      "question": "¿Qué fundamento tienen las maldiciones generacionales y las prácticas de liberación?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 39,
+      "target": "P10-Q39",
+      "question": "¿Por qué Dios permite el sufrimiento y el mal?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 40,
+      "target": "P10-Q40",
+      "question": "¿Existen contradicciones bíblicas o diferencias derivadas de interpretación y transmisión?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 41,
+      "target": "P10-Q41",
+      "question": "¿Qué relación existe entre creación bíblica y explicaciones científicas del origen del universo y la vida?",
+      "origin": "propuesta_revisada"
+    },
+    {
+      "number": 42,
+      "target": "P10-Q42",
+      "question": "¿Qué continuidades históricas y diferencias sobre Dios existen entre judaísmo, cristianismo e islam? ¿En qué sentidos puede hablarse del mismo Dios?",
+      "origin": "propuesta_revisada"
+    },
+    {
+      "number": 43,
+      "target": "P10-Q43",
+      "question": "¿Qué evidencia histórica y documental existe sobre vida, muerte y resurrección de Jesús?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 44,
+      "target": "P10-Q44",
+      "question": "¿Cómo se relacionan fe, razón y evidencia histórica?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 45,
+      "target": "SN-034",
+      "question": "¿El castigo eterno implica sufrimiento consciente perpetuo o destrucción definitiva?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 46,
+      "target": "P10-Q46",
+      "question": "¿Qué es el milenio de Apocalipsis y cómo se interpreta?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 47,
+      "target": "P10-Q47",
+      "question": "¿Quién es el anticristo y qué fundamentos tienen las interpretaciones de su identidad?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 48,
+      "target": "P10-Q48",
+      "question": "¿Qué sucede con niños que fallecen sin bautismo o profesión consciente de fe?",
+      "origin": "propuesta"
+    },
+    {
+      "number": 49,
+      "target": "P10-Q49",
+      "question": "¿Qué significa que los padres no provoquen a ira a sus hijos y cómo se relaciona con honrar a los padres?",
+      "origin": "usuario"
+    }
+  ],
+  "proposedStudies": [
+    {
+      "id": "P10-Q03",
+      "title": "Identidad y continuidad de la Iglesia",
+      "primaryAxisId": "E08",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q05",
+      "title": "Perdón, memoria, reconciliación y confianza",
+      "primaryAxisId": "E09",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica",
+        "interdisciplinaria"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q07",
+      "title": "Mediación, intercesión e invocación",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q08",
+      "title": "María: identidad, títulos y dogmas",
+      "primaryAxisId": "E04",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q09",
+      "title": "Cena del Señor y presencia de Cristo",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q11",
+      "title": "Origen del protestantismo",
+      "primaryAxisId": "E13",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q12",
+      "title": "Pedro, papado y sucesión apostólica",
+      "primaryAxisId": "E08",
+      "profiles": [
+        "biblica_exegetica",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q13",
+      "title": "Divisiones entre Oriente y Occidente",
+      "primaryAxisId": "E13",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q14",
+      "title": "Identidades y denominaciones cristianas",
+      "primaryAxisId": "E13",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q15",
+      "title": "Escritura, tradición y autoridad",
+      "primaryAxisId": "E01",
+      "profiles": [
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q17",
+      "title": "Confesión de pecados",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q18",
+      "title": "Purgatorio",
+      "primaryAxisId": "E11",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q19",
+      "title": "Oración por los fallecidos",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q20",
+      "title": "Santidad y santificación",
+      "primaryAxisId": "E07",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q21",
+      "title": "Celibato ministerial",
+      "primaryAxisId": "E08",
+      "profiles": [
+        "biblica_exegetica",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q23",
+      "title": "Navidad y Semana Santa",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q24",
+      "title": "Ayuno",
+      "primaryAxisId": "E10",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q25",
+      "title": "Pecado original",
+      "primaryAxisId": "E06",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q26",
+      "title": "Clasificación de pecados",
+      "primaryAxisId": "E06",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q27",
+      "title": "Pecado y vida cristiana",
+      "primaryAxisId": "E06",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q28",
+      "title": "Libre albedrío y predestinación",
+      "primaryAxisId": "E07",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q29",
+      "title": "Juicio, discernimiento y corrección",
+      "primaryAxisId": "E09",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q30",
+      "title": "Bailes, fiestas y conducta",
+      "primaryAxisId": "E09",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q33",
+      "title": "Satanás y el término Lucifer",
+      "primaryAxisId": "E12",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q35",
+      "title": "Ángeles y seres celestiales",
+      "primaryAxisId": "E12",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q36",
+      "title": "Hijos de Dios y nefilim",
+      "primaryAxisId": "E12",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q37",
+      "title": "Posesión y discernimiento espiritual",
+      "primaryAxisId": "E12",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "interdisciplinaria"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q38",
+      "title": "Maldiciones generacionales y liberación",
+      "primaryAxisId": "E12",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "etica_practica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q39",
+      "title": "Dios, sufrimiento y mal",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "teologica_doctrinal",
+        "interdisciplinaria"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q40",
+      "title": "Dificultades y aparentes contradicciones bíblicas",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q41",
+      "title": "Creación, ciencia y filosofía",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "interdisciplinaria",
+        "biblica_exegetica"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q42",
+      "title": "Religiones abrahámicas: historia y concepciones de Dios",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "religiosa_comparada",
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q43",
+      "title": "Jesús: evidencia histórica y afirmación de resurrección",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "historica_eclesiastica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q44",
+      "title": "Fe, razón y evidencia",
+      "primaryAxisId": "E14",
+      "profiles": [
+        "interdisciplinaria",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q46",
+      "title": "Milenio",
+      "primaryAxisId": "E11",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q47",
+      "title": "Anticristo",
+      "primaryAxisId": "E11",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q48",
+      "title": "Niñez, bautismo y salvación",
+      "primaryAxisId": "E11",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    },
+    {
+      "id": "P10-Q49",
+      "title": "Responsabilidades recíprocas entre padres e hijos",
+      "primaryAxisId": "E09",
+      "profiles": [
+        "biblica_exegetica",
+        "etica_practica",
+        "interdisciplinaria"
+      ],
+      "status": "propuesta",
+      "sourceSelection": "pendiente"
+    }
+  ],
+  "extensions": [
+    {
+      "studyId": "SN-031",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "initialReferences": [
+        "Ex 20:4-5",
+        "Ex 25:18-22",
+        "Nm 21:8-9",
+        "2 R 18:4"
+      ],
+      "focus": "Distinguir fabricación, representación, veneración y culto; evaluar serpiente de bronce y su destrucción."
+    },
+    {
+      "studyId": "SN-020",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "initialReferences": [
+        "Mt 28:19",
+        "Hch 2:38-39",
+        "Hch 16:15,33",
+        "Ro 6:3-4",
+        "Col 2:11-12"
+      ],
+      "focus": "Bautismo de bebés y de quienes profesan fe; no asumir presencia ni ausencia de bebés en relatos de hogares."
+    },
+    {
+      "studyId": "SN-007",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "etica_practica"
+      ],
+      "initialReferences": [
+        "Jn 2:1-11",
+        "Ef 5:18",
+        "1 Ti 5:23",
+        "Pr 20:1",
+        "Ro 14"
+      ],
+      "focus": "Consumo, embriaguez, léxico, contexto, conciencia y daño; distinguir teología y salud."
+    },
+    {
+      "studyId": "SN-023",
+      "profiles": [
+        "biblica_exegetica",
+        "teologica_doctrinal",
+        "historica_eclesiastica"
+      ],
+      "initialReferences": [
+        "Mt 28:19",
+        "Jn 1:1",
+        "2 Co 13:14",
+        "1 Jn 5:7-8"
+      ],
+      "focus": "Diferenciar evidencia bíblica y desarrollo terminológico e histórico; crítica textual cuando corresponda."
+    },
+    {
+      "studyId": "SN-034",
+      "profiles": [
+        "biblica_exegetica",
+        "textual_linguistica",
+        "teologica_doctrinal"
+      ],
+      "initialReferences": [
+        "Mt 25:46",
+        "Ap 20"
+      ],
+      "focus": "Comparar interpretaciones de castigo consciente y destrucción; no decidir por anticipado."
+    }
+  ],
+  "specialScopes": [
+    {
+      "id": "P10-Q11",
+      "scope": "Historia del protestantismo y sus contextos políticos, sociales, institucionales y doctrinales; documentos de la Reforma y estudios históricos.",
+      "limit": "No deducir cronología posterior de versículos."
+    },
+    {
+      "id": "P10-Q13",
+      "scope": "Distinguir divisiones cristológicas antiguas, separación Oriente-Occidente y procesos de largo plazo; historiografía, documentos conciliares y eclesiales.",
+      "limit": "No reducir toda separación a 1054 ni confundir iglesias orientales no calcedonianas con ortodoxia bizantina."
+    },
+    {
+      "id": "P10-Q14",
+      "scope": "Usos históricos y contemporáneos de términos, autodenominaciones y diferencias confesionales; fuentes institucionales y estudios históricos.",
+      "limit": "No presentar categorías que se solapan como excluyentes."
+    },
+    {
+      "id": "P10-Q41",
+      "scope": "Cosmología, biología evolutiva, geología, filosofía de la ciencia y géneros de los relatos de creación; literatura especializada y fuentes bíblicas identificadas.",
+      "limit": "No usar el texto bíblico como sustituto de investigación empírica ni la ciencia como arbitraje automático de afirmaciones metafísicas."
+    },
+    {
+      "id": "P10-Q42",
+      "scope": "Historia de religiones abrahámicas, tradiciones judías, cristianas e islámicas; Tanaj, Biblia, Corán, fuentes interpretativas y estudios comparados. Distinguir genealogía histórica, referente de adoración, atributos, revelación, Trinidad, profecía y salvación.",
+      "limit": "No extender automáticamente la taxonomía confesional cristiana al islam; no resolver la identidad de Dios por coincidencia de nombres ni tratar tradiciones como uniformes."
+    },
+    {
+      "id": "P10-Q49",
+      "scope": "Responsabilidades recíprocas, honra, obediencia, límites, disciplina, provocación a ira, desaliento, cuidado y protección frente a violencia. Psicología del desarrollo y ética como apoyo diferenciado de la exégesis.",
+      "initialReferences": [
+        "Ex 20:12",
+        "Dt 5:16",
+        "Ef 6:1-4",
+        "Col 3:20-21",
+        "Pr 22:6",
+        "Heb 12:5-11"
+      ],
+      "subquestions": [
+        "¿Honrar implica obedecer incondicionalmente?",
+        "¿Qué significa no provocar a ira ni desalentar?",
+        "¿Cómo distinguir disciplina de maltrato?",
+        "¿Cómo establecer límites y buscar protección sin convertir el perdón en obligación de reconciliación?",
+        "¿Qué responsabilidades tienen los padres en el desarrollo emocional y espiritual?"
+      ],
+      "limit": "El mandato de honrar no se usará para justificar abuso ni exigir permanecer en una situación insegura. No sustituye orientación profesional."
+    },
+    {
+      "id": "P10-Q05",
+      "scope": "Perdón, memoria, renuncia a represalias, arrepentimiento, reparación, reconciliación y confianza.",
+      "limit": "No confundir perdón con olvidar, exponer a daño o restaurar automáticamente la confianza."
+    }
+  ],
+  "links": [
+    {
+      "a": "SN-031",
+      "b": "P10-Q08",
+      "kind": "conceptual",
+      "reason": "Distinguir imagen, veneración y adoración; no equiparar prácticas automáticamente."
+    },
+    {
+      "a": "SN-020",
+      "b": "P10-Q48",
+      "kind": "doctrinal",
+      "reason": "Relacionar bautismo infantil, profesión de fe y salvación sin inferir destino individual."
+    },
+    {
+      "a": "SN-020",
+      "b": "P10-Q09",
+      "kind": "comparativa",
+      "reason": "Contrastar concepciones sacramentales sin equiparar ritos."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-041",
+      "kind": "textual",
+      "reason": "Evaluar la variante de 1 Jn 5:7-8 sin reducir la doctrina a un único pasaje."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-022",
+      "kind": "doctrinal",
+      "reason": "Persona de Cristo y formulación trinitaria."
+    },
+    {
+      "a": "SN-023",
+      "b": "SN-024",
+      "kind": "doctrinal",
+      "reason": "Personalidad y divinidad del Espíritu Santo."
+    },
+    {
+      "a": "SN-021",
+      "b": "SN-023",
+      "kind": "doctrinal",
+      "reason": "Relacionar desamparo, cristología y Trinidad."
+    },
+    {
+      "a": "SN-001",
+      "b": "SN-016",
+      "kind": "complementaria",
+      "reason": "Interpretar prohibiciones y continuidad entre pactos."
+    },
+    {
+      "a": "SN-015",
+      "b": "SN-016",
+      "kind": "complementaria",
+      "reason": "Distinguir normas de los pactos y aplicación contemporánea."
+    },
+    {
+      "a": "SN-008",
+      "b": "SN-010",
+      "kind": "doctrinal",
+      "reason": "Lenguas y bautismo del Espíritu Santo."
+    },
+    {
+      "a": "SN-040",
+      "b": "SN-041",
+      "kind": "textual",
+      "reason": "Ediciones y variantes documentadas."
+    },
+    {
+      "a": "P10-Q03",
+      "b": "P10-Q11",
+      "kind": "historica",
+      "reason": "Continuidades, rupturas e identidad institucional."
+    },
+    {
+      "a": "P10-Q03",
+      "b": "P10-Q13",
+      "kind": "historica",
+      "reason": "Iglesias de Oriente y Occidente."
+    },
+    {
+      "a": "P10-Q03",
+      "b": "P10-Q14",
+      "kind": "conceptual",
+      "reason": "Distinguir identidad cristiana, confesión y pertenencia institucional."
+    },
+    {
+      "a": "P10-Q03",
+      "b": "P10-Q12",
+      "kind": "historica",
+      "reason": "Criterios de continuidad apostólica y autoridad."
+    },
+    {
+      "a": "P10-Q11",
+      "b": "P10-Q15",
+      "kind": "historica",
+      "reason": "Debates sobre autoridad y Reforma."
+    },
+    {
+      "a": "P10-Q13",
+      "b": "P10-Q12",
+      "kind": "historica",
+      "reason": "Autoridad y divergencias eclesiales."
+    },
+    {
+      "a": "P10-Q07",
+      "b": "P10-Q08",
+      "kind": "conceptual",
+      "reason": "Mediación de Cristo e intercesión mariana."
+    },
+    {
+      "a": "P10-Q07",
+      "b": "P10-Q19",
+      "kind": "comparativa",
+      "reason": "Intercesión e iniciativas de oración por fallecidos: distinguir destinatarios."
+    },
+    {
+      "a": "P10-Q18",
+      "b": "P10-Q19",
+      "kind": "doctrinal",
+      "reason": "Posturas sobre estado después de la muerte y oración."
+    },
+    {
+      "a": "P10-Q18",
+      "b": "SN-033",
+      "kind": "doctrinal",
+      "reason": "Estado intermedio y purificación según fuentes de cada tradición."
+    },
+    {
+      "a": "P10-Q49",
+      "b": "P10-Q05",
+      "kind": "complementaria",
+      "reason": "Perdón, memoria, reconciliación y límites frente al daño parental."
+    },
+    {
+      "a": "P10-Q49",
+      "b": "SN-027",
+      "kind": "practica",
+      "reason": "Autoridad y límites; no confundir roles familiares y eclesiales."
+    },
+    {
+      "a": "P10-Q49",
+      "b": "P10-Q29",
+      "kind": "conceptual",
+      "reason": "Corrección y discernimiento frente a autoritarismo."
+    },
+    {
+      "a": "P10-Q49",
+      "b": "P10-Q39",
+      "kind": "interdisciplinaria",
+      "reason": "Sufrimiento, protección y aplicación responsable; no sustituye evaluación profesional."
+    },
+    {
+      "a": "P10-Q05",
+      "b": "P10-Q29",
+      "kind": "practica",
+      "reason": "Perdonar no resuelve automáticamente cómo corregir o reparar."
+    },
+    {
+      "a": "P10-Q41",
+      "b": "P10-Q44",
+      "kind": "interdisciplinaria",
+      "reason": "Métodos científicos, filosóficos y teológicos diferenciados."
+    },
+    {
+      "a": "P10-Q42",
+      "b": "SN-025",
+      "kind": "conceptual",
+      "reason": "Nombres y concepciones de Dios con fuentes propias de cada religión."
+    },
+    {
+      "a": "P10-Q42",
+      "b": "P10-Q14",
+      "kind": "comparativa",
+      "reason": "Distinguir religiones de denominaciones cristianas."
+    },
+    {
+      "a": "P10-Q48",
+      "b": "SN-018",
+      "kind": "doctrinal",
+      "reason": "Salvación, gracia y fe; evitar conclusiones sin evidencia."
+    }
+  ]
+}

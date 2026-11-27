@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import { makeSections, validateEditorial, canTransition, publicationEnabled, criticalControls } from '../src/lib/editorial-contracts.ts';
-const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const catalog=loadOperationalCatalog();
 const context={studyIds:catalog.map(x=>x.id),evidenceIds:['EVD-900001']};
 // Synthetic records exist only in tests, never as real studies or published assets.
 const fixture=()=>({schemaVersion:1,studyId:'SN-001',version:'0.2.0',createdAt:'2026-11-26',updatedAt:'2026-11-26',objective:'PRUEBA SINTÉTICA',scope:'PRUEBA SINTÉTICA',sections:makeSections('SN-001'),claims:[],conclusions:[],reviews:[]});
@@ -22,4 +23,4 @@ test('revisión estructural válida, no habilita publicación',()=>{const x=fixt
 test('rechaza revisión de otra versión y aprobación sin controles críticos',()=>{invalid(x=>x.reviews.push({...review(),version:'1.0.0'}));invalid(x=>x.reviews.push({...review(),controls:[]}));invalid(x=>x.reviews.push({...review(),controls:[...review().controls,{id:'otro',result:'pendiente',justification:'PRUEBA'}]}));});
 test('transiciones del flujo editorial y prohibición de salto',()=>{assert.ok(canTransition('planificado','en_investigacion'));assert.ok(canTransition('en_revision','borrador'));assert.ok(canTransition('en_revision','actualizado'));assert.equal(canTransition('planificado','publicado'),false);assert.equal(canTransition('borrador','publicado'),false);});
 test('rechaza duplicación de metadatos autoritativos y campos privados',()=>{invalid(x=>x.title='duplicado');invalid(x=>x.privateNotes='privado');});
-test('datos reales siguen planificados y sin versiones publicadas',()=>{assert.equal(catalog.length,42);assert.ok(catalog.every(x=>x.status==='planificado'&&x.publishedVersion===null));});
+test('datos reales siguen planificados y sin versiones publicadas',()=>{assert.equal(catalog.length,80);assert.ok(catalog.every(x=>x.status==='planificado'&&x.publishedVersion===null));});

@@ -1,4 +1,5 @@
-.module-landing { display: grid; gap: var(--sn-space-6); min-width: 0; }
+.module-landing { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sn-space-6); min-width: 0; }
+.module-landing > * { min-width: 0; }
 .module-breadcrumb { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
 .module-breadcrumb li + li::before { content: "/"; margin-inline-end: .5rem; }
 .module-breadcrumb [aria-current] { color: var(--sn-muted); }

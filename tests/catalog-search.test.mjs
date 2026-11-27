@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import { createSearchIndex, searchCatalog, normalizeSearch, PAGE_SIZE } from '../src/lib/catalog-search.ts';
-const studies=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const studies=loadOperationalCatalog();
 const axes=JSON.parse(readFileSync('src/data/taxonomia/ejes.json','utf8')).items;
 const index=createSearchIndex(studies,axes);
-test('P5.4 índice reproducible, 42 registros únicos',()=>{assert.equal(index.length,42);assert.equal(new Set(index.map(x=>x.id)).size,42);assert.deepEqual(index,createSearchIndex([...studies].reverse(),axes));});
+test('P5.4 índice reproducible, 80 registros únicos',()=>{assert.equal(index.length,80);assert.equal(new Set(index.map(x=>x.id)).size,80);assert.deepEqual(index,createSearchIndex([...studies].reverse(),axes));});
 test('identificador exacto y formato flexible',()=>{for(const q of ['SN-001','sn001','sn 001']) assert.deepEqual(searchCatalog(index,q).map(x=>x.id),['SN-001']);});
 test('título y tildes',()=>{assert.equal(searchCatalog(index,'TATUARSE ES PECADO')[0].id,'SN-001');assert.deepEqual(searchCatalog(index,'salvación'),searchCatalog(index,'salvacion'));});
 test('consulta de varios términos y ranking de título',()=>{assert.equal(searchCatalog(index,'textus receptus')[0].id,'SN-040');assert.equal(searchCatalog(index,'diezmo')[0].id,'SN-015');});

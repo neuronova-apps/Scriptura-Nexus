@@ -1,3 +1,4 @@
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -5,7 +6,7 @@ import {validateRelations,catalogRelations,relationAnchor} from '../src/lib/edit
 import {appendSnapshot,approvedSnapshot,validateSnapshot} from '../src/lib/publication.ts';
 import {fixture,seal,approve,ctx} from './fixtures/p6-template.mjs';
 const marker='PRUEBA SINTÉTICA P6.5.3';
-const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+const catalog=loadOperationalCatalog();
 const context={...ctx,studyIds:catalog.map(s=>s.id),bibliographyIds:[...ctx.bibliographyIds,'BIB-900002'],resourceIds:['REC-900003'],authorIds:['AUT-900001','AUT-900002'],disciplineIds:['DIS-900001'],traditionIds:['T01','T02','T03','T04','T05','A01'],admittedSources:[...ctx.admittedSources,...['BIB-900002','REC-900003'].map(id=>({id,admission:'admitido',scope:'publicacion',licenseRef:'LIC-900002',attribution:marker,authorizationRef:marker}))]};
 function complete(){
  const s=fixture();

@@ -1,3 +1,4 @@
+import { loadOperationalCatalog } from '../scripts/validate-p1013.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -60,10 +61,10 @@ test('P6.5.4: cadena rechaza duplicados, retrocesos, saltos y entradas corruptas
 });
 test('P6.5.4: registro real vacío y ningún estudio recibe versión aprobada',()=>{
  const registry=JSON.parse(readFileSync('src/data/publicaciones/registro.json','utf8'));
- const catalog=JSON.parse(readFileSync('src/data/catalogo/estudios.json','utf8')).items;
+ const catalog=loadOperationalCatalog();
  const realContext={...ctx,studyIds:catalog.map(s=>s.id),bibliographyIds:[],admittedSources:[]};
  assert.deepEqual(registry,empty());validateRegistry(registry,realContext);
- assert.equal(catalog.length,42);
+ assert.equal(catalog.length,80);
  for(const study of catalog){assert.equal(study.publishedVersion,null);assert.equal(approvedSnapshot(registry,study.id,realContext),undefined);}
  assert.ok(validateSnapshot(fixture(),realContext).length);
 });
