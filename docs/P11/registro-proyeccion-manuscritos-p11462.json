@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.6.2",
+  "baselineMain": "3eae36751e06276ec5ab1aad4fd4c29cc9449876",
+  "previousEvidence": {
+    "pr": 120,
+    "checksSuccess": 51,
+    "checksSkipped": 1,
+    "run": 46049879568,
+    "job": 140678281141
+  },
+  "mode": "isolated_reference_only",
+  "pinnedInputs": {
+    "pilot": {
+      "path": "docs/P9/muestra-manuscritos-p943.json",
+      "gitBlobSha": "3c283e6bd9f0d4aab2ba939e0667753fae1b8053"
+    },
+    "projection": {
+      "path": "docs/P9/proyeccion-ediciones-p913.json",
+      "gitBlobSha": "ff6ef60588416089b26afcc6160df74956b496df"
+    },
+    "inventory": {
+      "path": "docs/P9/candidatos-manuscritos-p941.json",
+      "gitBlobSha": "8e60a5b3ad1bafe0199a954594c4e2c98521ab50"
+    }
+  },
+  "scope": {
+    "witnesses": 2,
+    "variants": 1,
+    "readings": 2,
+    "resources": 7,
+    "evidence": 8,
+    "secondaryAttestations": 2,
+    "directInspections": 0,
+    "sourceFilesAdmitted": 0
+  },
+  "rights": {
+    "decision": "reference_only_historical_scope",
+    "currentExternalReview": "pending_before_release",
+    "resourceUse": "reference_only",
+    "newAdmissions": false
+  },
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "publicAdapterConnected": false,
+  "sourceContentPersisted": false,
+  "externalDownloads": false,
+  "upload": false,
+  "progress": {
+    "completed": 63,
+    "total": 69
+  },
+  "next": "P11.4.6.3"
+}
