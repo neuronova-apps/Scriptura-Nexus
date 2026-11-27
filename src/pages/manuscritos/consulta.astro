@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import Callout from '../../components/Callout.astro';
+import {basePath} from '../../lib/site';
+import '../../styles/modules.css';
+import '../../styles/manuscript-view.css';
+const base=basePath(import.meta.env.BASE_URL);
+---
+<BaseLayout title="Catálogo de manuscritos y variantes | Scriptura Nexus" description="Fichas documentales, referencias editoriales y testimonios con procedencia y permisos.">
+ <div class="module-landing sn-manuscript-view">
+  <nav aria-label="Ruta de navegación"><ol class="module-breadcrumb"><li><a href={base}>Inicio</a></li><li><a href={base+'manuscritos/'}>Manuscritos</a></li><li aria-current="page">Catálogo de manuscritos y variantes</li></ol></nav>
+  <Card variant="editorial">
+   <p class="module-phase">Manuscritos · P9.4.4</p><h1>Catálogo de manuscritos y variantes</h1>
+   <p>Consulta de testigos, fichas documentales y referencias de lecturas con su evidencia y procedencia.</p>
+   <Callout tone="info" title="Disponibilidad">No hay fichas ni variantes autorizadas para consulta pública. La validación documental interna no equivale a autorización de publicación.</Callout>
+  </Card>
+  <nav aria-label="Herramientas textuales"><ul class="mv-links"><li><a href={base+'manuscritos/'}>Manuscritos</a></li><li><a href={base+'biblia/lector/'}>Lector bíblico</a></li><li><a href={base+'biblia/comparador/'}>Comparador bíblico</a></li></ul></nav>
+  <nav aria-label="Secciones del catálogo"><ul class="mv-links"><li><a href="#mv-catalog-title">Catálogo y fichas</a></li><li><a href="#mv-variant-title">Variantes y testimonios</a></li><li><a href="#mv-sources-title">Fuentes y criterios</a></li></ul></nav>
+  <section class="sn-card sn-card--default" aria-labelledby="mv-catalog-title">
+   <h2 id="mv-catalog-title" tabindex="-1">1. Catálogo y fichas de testigos</h2>
+   <p id="mv-help">Busca por identificación, datación, idioma o custodia. Los controles se habilitarán cuando haya registros autorizados.</p>
+   <fieldset id="mv-fields" disabled aria-describedby="mv-help"><legend>Buscar y seleccionar un testigo</legend>
+    <label for="mv-search">Buscar manuscrito<input type="search" id="mv-search" disabled placeholder="Nombre o identificación"/></label>
+    <label for="mv-witness">Testigo<select id="mv-witness" disabled><option value="">Sin testigos disponibles</option></select></label>
+   </fieldset>
+   <p id="mv-status" role="status" aria-live="polite">No hay testigos disponibles para consulta pública.</p>
+   <div id="mv-witness-detail"><p>Las fichas mostrarán identidad, datación, lengua, custodia y procedencia.</p></div>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="mv-variant-title">
+   <h2 id="mv-variant-title" tabindex="-1">2. Variantes y testimonios</h2>
+   <label for="mv-variant">Variante o localizador<select id="mv-variant" disabled><option value="">Sin variantes disponibles</option></select></label>
+   <p id="mv-variant-status" role="status" aria-live="polite">No hay variantes disponibles para consulta pública.</p>
+   <div id="mv-variant-detail"><p>Se mostrarán referencias editoriales, testimonios documentados y el estado de valoración, sin inferir originalidad.</p></div>
+   <p>Una edición crítica no es un testigo físico. Una atestación secundaria no equivale a examen directo de un manuscrito. La falta de datos no prueba la ausencia de una lectura.</p>
+  </section>
+  <section class="sn-card sn-card--default" aria-labelledby="mv-sources-title">
+   <h2 id="mv-sources-title" tabindex="-1">3. Fuentes y criterios</h2>
+   <p>Las fichas distinguirán catálogo, aparato editorial, testimonio secundario y examen directo documentado. Cada evidencia incluirá un localizador y enlace de consulta, atribución y condiciones de uso. No se reproducen imágenes, transcripciones ni aparatos sin autorización.</p>
+   <p><a href={base+'fundamentos/fuentes/'}>Fuentes y trazabilidad de evidencias</a> · <a href={base+'fundamentos/licencias/'}>Licencias y atribuciones</a></p>
+   <noscript><p>La búsqueda interactiva requiere JavaScript. Los criterios y el estado de disponibilidad permanecen accesibles.</p></noscript>
+  </section>
+  <p><a href={base+'manuscritos/'}>Volver al módulo Manuscritos</a></p>
+ </div>
+</BaseLayout>
+<script>
+ import {createManuscriptView,emptyManuscriptRelease} from '../../lib/manuscript-view';
+ import {mountManuscripts} from '../../scripts/manuscript-ui';
+ // P11.4: do not import the internal pilot or an unapproved projection.
+ mountManuscripts(document,createManuscriptView(emptyManuscriptRelease()));
+</script>
