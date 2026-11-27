@@ -1,0 +1,38 @@
+name: P10.2.1 Apertura del flujo metodológico
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P10/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/pilot-methodology-p1021.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-methodology:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validar apertura y regresiones
+        run: |
+          npm ci
+          node scripts/validate-p101.mjs
+          node scripts/validate-p1013.mjs
+          node scripts/validate-p1014.mjs
+          node scripts/validate-p1021.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
