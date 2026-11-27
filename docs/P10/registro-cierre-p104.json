@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.4",
+  "baselineMain": "32b882d75a29e2eed913dbd088402ffd1feecb30",
+  "integratedBlob": "13a4ba018730b6573f619381996a42146109c51b",
+  "reviewBlob": "46c949dbccf623a110a98b1f2ad8c32a733b89a1",
+  "previousIntegration": {
+    "pr": 81,
+    "workflowRun": 45942003133,
+    "job": 140318183970,
+    "deployRun": 45943523853,
+    "deploy": "pending_confirmation"
+  },
+  "scope": "cierre_tecnico_condicionado_y_plan_de_resolucion",
+  "academicAnalysisCompleted": false,
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "results": {
+    "pilots": 5,
+    "specificTests": 36,
+    "validatorsReconciled": 5,
+    "cases": 17,
+    "rvUnits": 101,
+    "greekAnchors": 11,
+    "blockedLinguisticCases": 8,
+    "openNeeds": 20,
+    "prepared": 10,
+    "partial": 16,
+    "pending": 74,
+    "publishedStudies": 0
+  },
+  "decisions": [
+    {
+      "id": "P1024-F01",
+      "priority": "alta",
+      "technicalControl": "verificado",
+      "gap": "abierta",
+      "resolution": "Auditar y autorizar Levítico, Deuteronomio, Hechos y 1 Corintios por archivo; ampliar importadores con regresiones y revisar cobertura por ocurrencia y léxicos.",
+      "gate": "autorizacion_especifica_y_auditoria",
+      "target": "antes_de_habilitar_cobertura_ampliada"
+    },
+    {
+      "id": "P1024-F02",
+      "priority": "alta",
+      "technicalControl": "verificado",
+      "gap": "abierta",
+      "resolution": "Seleccionar archivo concreto TR, auditar licencia y versión; documentar aparato, atestaciones y alineaciones antes de comparar.",
+      "gate": "autorizacion_especifica_y_evidencia",
+      "target": "antes_de_habilitar_comparacion_TR"
+    },
+    {
+      "id": "P1024-F03",
+      "priority": "alta",
+      "technicalControl": "verificado",
+      "gap": "abierta",
+      "resolution": "Conservar las veinte necesidades y verificar edición, derechos, localizadores y atribución; obtener acceso autorizado a recursos especializados si se requieren.",
+      "gate": "revision_documental",
+      "target": "P11.2_y_linea_editorial"
+    },
+    {
+      "id": "P1024-F04",
+      "priority": "media",
+      "technicalControl": "verificado",
+      "gap": "abierta",
+      "resolution": "Mantener ventanas y anclas independientes; documentar cotejo y justificación de cualquier nueva relación.",
+      "gate": "evidencia_documental",
+      "target": "antes_de_publicar_relaciones"
+    },
+    {
+      "id": "P1024-F05",
+      "priority": "media",
+      "technicalControl": "verificado",
+      "gap": "abierta",
+      "resolution": "Preservar estados y separar revisión académica de disponibilidad técnica; exigir autorización de publicación.",
+      "gate": "revision_editorial_y_P11.4",
+      "target": "linea_editorial"
+    }
+  ],
+  "releaseGates": [
+    {
+      "id": "P11.1",
+      "state": "pendiente",
+      "requirement": "Build limpio, enlaces, unitarias, integración y E2E; resolver defectos críticos."
+    },
+    {
+      "id": "P11.2",
+      "state": "pendiente",
+      "requirement": "Auditar catálogo, licencias, evidencias, privacidad y alcance público; conservar fuentes no admitidas excluidas."
+    },
+    {
+      "id": "P11.3",
+      "state": "pendiente",
+      "requirement": "Pruebas manuales de teclado, lectores de pantalla, zoom y dispositivos; métricas y correcciones."
+    },
+    {
+      "id": "P11.4",
+      "state": "pendiente",
+      "requirement": "Aprobación explícita de alcance de versión, publicación, smoke test y reversión. No presentar cobertura parcial como completa."
+    },
+    {
+      "id": "P11.5",
+      "state": "pendiente",
+      "requirement": "Informe final y aceptación del responsable; ruta de mantenimiento y desarrollo editorial."
+    }
+  ],
+  "next": {
+    "phase": "P11.1",
+    "status": "condicionada_a_CI_integracion_y_despliegue",
+    "noAutomaticPublication": true
+  },
+  "progress": {
+    "planningStages": 9,
+    "masterStages": 53,
+    "completedBeforeP10": 53,
+    "completedP10BeforeClosure": 3,
+    "completedAfterP10Closure": 57,
+    "totalIncludingPlanning": 62,
+    "metric": "conteo_no_ponderado_de_etapas_originales"
+  }
+}
