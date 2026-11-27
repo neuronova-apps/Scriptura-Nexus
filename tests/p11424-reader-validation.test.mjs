@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loadP11424,validateP11424} from '../scripts/validate-reader-plan-p11424.mjs';
+const reject=fn=>{const d=loadP11424();fn(d);assert.throws(()=>validateP11424(d));};
+test('complete reference and accessibility validation matrix',()=>{const r=validateP11424(loadP11424());assert.equal(r.units,39041);assert.equal(r.layoutChecks,120);assert.equal(r.axeScans,24);assert.equal(r.labSamples,12);});
+test('preserve historical evidence',()=>{reject(d=>d.previous=Buffer.from('{}'));reject(d=>d.record.previousIntegration.nodeTests=0);});
+test('no reduced coverage or increased transfer budget',()=>{reject(d=>d.record.expected.units=1);reject(d=>d.record.widths.shift());reject(d=>d.record.budget.chapterGzipBytes=512000);});
+test('no fabricated field or manual results',()=>{reject(d=>d.record.manualLoadedReader='conforme');reject(d=>d.record.fieldINP='medido');});
+test('keep real content out of public page',()=>{reject(d=>d.record.publicReleaseAuthorized=true);reject(d=>d.record.releasePermissions='aprobados');reject(d=>d.page+='createIsolatedFragmentReader');});
+test('preserve progress and authorization gate',()=>{reject(d=>d.record.progress.completed=62);reject(d=>d.record.next='publicar');reject(d=>d.record.persistCorpus=true);});
