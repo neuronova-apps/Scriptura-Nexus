@@ -85,7 +85,7 @@ try{
  await variant.focus();assert.equal(await variant.evaluate(e=>e===document.activeElement),true);
  await p.keyboard.press('ArrowDown');await p.keyboard.press('Enter');
  assert.equal(await variant.inputValue(),'VAR-P943-JHN-1-18');assert.equal(await vd.locator('.mv-panel').count(),2);counts.keyboardChecks++;
- stage='populated-layout-and-axe';await p.addScriptTag({url:origin+axePath});
+ stage='populated-layout-and-axe';assert.equal(await p.locator('.sn-manuscript-view > #mv-candidate-rights, .sn-manuscript-view > #mv-candidate-privacy').count(),2);await p.addScriptTag({url:origin+axePath});
  for(const theme of ['light','dark','contrast-light','contrast-dark']){
   for(const scale of ['100','115','130']){
    for(const width of [320,1280]){
