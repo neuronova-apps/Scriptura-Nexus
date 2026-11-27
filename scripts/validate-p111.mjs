@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {readFileSync,existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const r=JSON.parse(readFileSync('docs/P11/registro-auditoria-tecnica-p111.json','utf8'));
+const b=readFileSync('docs/P10/registro-cierre-p104.json');
+const sha=createHash('sha1').update(Buffer.from('blob '+b.length+'\0')).update(b).digest('hex');
+assert.equal(sha,'39fb4a7da8d3282b02dbc9742b2b9010c5bb8f27');assert.equal(r.closureBlob,sha);
+assert.equal(r.schemaVersion,1);assert.equal(r.phase,'P11.1');assert.equal(r.baselineMain,'cbfde01a4afae775237f81524c2e5c693911dd27');
+assert.deepEqual(r.previousIntegration,{pr:82,workflowRun:45943624594,job:140323242062,deployRun:45944002355,deploy:'pending_confirmation'});
+for(const k of ['publicationAuthorized','releaseScopeApproved','corpusImportAuthorized'])assert.equal(r[k],false);
+assert.equal(r.previousOpenFindings,5);assert.equal(r.previousOpenNeeds,20);
+assert.deepEqual(r.checks,['clean_install','typecheck','unit_tests','static_build','build_contracts','all_static_internal_links','isolated_editorial_render','publication_history','browser_e2e']);
+assert.deepEqual(r.browserSuites.map(x=>[x.id,x.path,x.env]),[['catalog','scripts/validate-catalog-browser-p1015.mjs','P1015_DEPS'],['reader','scripts/validate-reader-browser-p924.mjs','P924_DEPS'],['comparator','scripts/validate-comparator-browser-p934.mjs','P934_DEPS'],['term_analyzer','scripts/validate-term-analyzer-browser.mjs','P835_DEPS'],['lexicon_concordance','scripts/validate-lexicon-concordance-browser.mjs','P847_DEPS'],['manuscripts','scripts/validate-manuscript-browser-p944.mjs','P944_DEPS']]);
+assert.ok(r.browserSuites.every(x=>existsSync(x.path)&&readFileSync(x.path,'utf8').includes('process.env.'+x.env)));
+assert.equal(r.manualAccessibility,'P11.3_pendiente');assert.equal(r.documentaryAudit,'P11.2_pendiente');
+assert.deepEqual(r.progress,{completed:57,total:62,afterVerifiedClosure:58});
+assert.equal(r.next,'P11.2_tras_CI_integracion_y_despliegue');
+console.log(JSON.stringify({phase:r.phase,plannedChecks:r.checks.length,browserSuites:r.browserSuites.length,openFindings:5,openNeeds:20,publicationAuthorized:false}));
