@@ -1,0 +1,17 @@
+import importlib.util,json,pathlib,unittest
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+spec=importlib.util.spec_from_file_location('prep',ROOT/'scripts/prepare-linguistic-expansion-p11432.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+class Expansion(unittest.TestCase):
+    def test_scope(self):
+        r=json.loads(m.MANIFEST.read_bytes());m.validate(r)
+        r['newAdmissionAuthorized']=True
+        with self.assertRaises(ValueError):m.validate(r)
+    def test_original_import_gate(self):
+        with self.assertRaisesRegex(ValueError,'P8.2.2'):m.osis.parse(b'', 'Lev')
+    def test_separate_layers_and_no_inferred_match(self):
+        data='050101 N- ----NSM- α α α α\n050101 N- ----NSM- β β β β\n050102 N- ----NSM- γ γ γ γ\n'.encode()
+        text,ann=m.greek_layers({('1','1'):['α','δ'],('1','2'):['γ','δ']},data,'05')
+        self.assertEqual(len(text),4);self.assertEqual(len(ann),1)
+        self.assertEqual(set(ann[0]),{'chapter','verse','position','pos','parsing','lemma'})
+        self.assertEqual(ann[0]['position'],1)
+if __name__=='__main__':unittest.main()

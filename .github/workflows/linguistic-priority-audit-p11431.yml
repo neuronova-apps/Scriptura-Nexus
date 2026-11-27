@@ -34,6 +34,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_linguistic_priority_p11431.py'
           python scripts/audit-linguistic-priority-p11431.py
+          python -m unittest discover -s tests -p 'test_linguistic_expansion_p11432.py'
+          python scripts/prepare-linguistic-expansion-p11432.py
       - name: Barreras públicas
         run: |
           npm ci

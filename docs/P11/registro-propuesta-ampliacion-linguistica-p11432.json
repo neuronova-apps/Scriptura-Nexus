@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.3.2.preparacion",
+  "baselineMain": "99ff0283fbbbf5bb52787e8ac33184e32b68480f",
+  "auditBlob": "c85ec9d9b6847dfbc5987cabb64528eac6651dbd",
+  "previousIntegration": {
+    "pr": 99,
+    "workflows": 25,
+    "run": 46018749734,
+    "job": 140572572345,
+    "merge": "99ff0283fbbbf5bb52787e8ac33184e32b68480f",
+    "readerArtifactPR": 98,
+    "readerArtifactMerge": "b19edc852dc510fea9c1e2bd13156202322c6e63",
+    "pagesRun": 46019506753,
+    "pagesAtPreparation": "success"
+  },
+  "audit": {
+    "corpusPersisted": false,
+    "files": [
+      {
+        "admitted": false,
+        "book": "Lev",
+        "bytes": 1085069,
+        "id": "P1143-H01",
+        "metrics": {
+          "chapters": 27,
+          "directWords": 11950,
+          "noteElements": 52,
+          "rawWordElements": 11955,
+          "rawWordsWithLemmaAttribute": 11955,
+          "rawWordsWithMorphAttribute": 11955,
+          "rightsVerified": true,
+          "verseElements": 859
+        },
+        "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+        "source": "OSHB"
+      },
+      {
+        "admitted": false,
+        "book": "Deut",
+        "bytes": 1315401,
+        "id": "P1143-H02",
+        "metrics": {
+          "chapters": 34,
+          "directWords": 14294,
+          "noteElements": 274,
+          "rawWordElements": 14320,
+          "rawWordsWithLemmaAttribute": 14320,
+          "rawWordsWithMorphAttribute": 14320,
+          "rightsVerified": true,
+          "verseElements": 959
+        },
+        "sha256": "aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+        "source": "OSHB"
+      },
+      {
+        "admitted": false,
+        "book": "Acts",
+        "bytes": 921255,
+        "id": "P1143-G01",
+        "metrics": {
+          "chapters": 28,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 1088,
+          "providerBookId": "Ac",
+          "referenceBookLabel": "Acts",
+          "suffixElements": 18412,
+          "verseMarkers": 1002,
+          "wordElements": 18412
+        },
+        "sha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+        "source": "SBLGNT"
+      },
+      {
+        "admitted": false,
+        "book": "Acts",
+        "bytes": 1228900,
+        "id": "P1143-G02",
+        "metrics": {
+          "candidateOnlyVerses": 0,
+          "differentLengthOrMissingVerses": 0,
+          "eligibleExact": 18272,
+          "morphWords": 18412,
+          "officialWords": 18412,
+          "withheld": 140
+        },
+        "sha256": "04349afeba263d667698b37d39465d746530434b455fb6ac2941ec5c59fb85ca",
+        "source": "MorphGNT"
+      },
+      {
+        "admitted": false,
+        "book": "1Cor",
+        "bytes": 342330,
+        "id": "P1143-G03",
+        "metrics": {
+          "chapters": 16,
+          "emptyVerseMarkers": 0,
+          "prefixElements": 336,
+          "providerBookId": "1Co",
+          "referenceBookLabel": "1 Corinthians",
+          "suffixElements": 6812,
+          "verseMarkers": 437,
+          "wordElements": 6812
+        },
+        "sha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+        "source": "SBLGNT"
+      },
+      {
+        "admitted": false,
+        "book": "1Cor",
+        "bytes": 435113,
+        "id": "P1143-G04",
+        "metrics": {
+          "candidateOnlyVerses": 0,
+          "differentLengthOrMissingVerses": 0,
+          "eligibleExact": 6754,
+          "morphWords": 6812,
+          "officialWords": 6812,
+          "withheld": 58
+        },
+        "sha256": "5233a5b099e2499baed34ec2d6f53ae44545d532a7e2fb12acafcf39ff6fdbf3",
+        "source": "MorphGNT"
+      }
+    ],
+    "licenses": [
+      {
+        "sha256": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878",
+        "source": "OSHB",
+        "verified": true
+      },
+      {
+        "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+        "source": "SBLGNT",
+        "verified": true
+      },
+      {
+        "sha256": "043bb6c0d654e85fa8a8db19e177ee035623e23b7ff1556e5431ad95184d5830",
+        "source": "MorphGNT",
+        "verified": true
+      }
+    ],
+    "newAdmissions": 0,
+    "phase": "P11.4.3.1",
+    "pilotReferences": [
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "directWords": 12,
+          "withLemmaAttribute": 12,
+          "withMorphAttribute": 12
+        },
+        "book": "Lev",
+        "chapter": "19",
+        "study": "SN-001",
+        "verse": "28"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "directWords": 12,
+          "withLemmaAttribute": 12,
+          "withMorphAttribute": 12
+        },
+        "book": "Deut",
+        "chapter": "14",
+        "study": "SN-001",
+        "verse": "1"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 16,
+          "equalLength": true,
+          "morphWords": 16,
+          "officialWords": 16,
+          "withheld": 0
+        },
+        "book": "Acts",
+        "chapter": "2",
+        "study": "SN-008",
+        "verse": "4"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 12,
+          "equalLength": true,
+          "morphWords": 12,
+          "officialWords": 12,
+          "withheld": 0
+        },
+        "book": "Acts",
+        "chapter": "10",
+        "study": "SN-008",
+        "verse": "46"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 17,
+          "equalLength": true,
+          "morphWords": 18,
+          "officialWords": 18,
+          "withheld": 1
+        },
+        "book": "Acts",
+        "chapter": "19",
+        "study": "SN-008",
+        "verse": "6"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 14,
+          "equalLength": true,
+          "morphWords": 14,
+          "officialWords": 14,
+          "withheld": 0
+        },
+        "book": "1Cor",
+        "chapter": "12",
+        "study": "SN-008",
+        "verse": "10"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 14,
+          "equalLength": true,
+          "morphWords": 14,
+          "officialWords": 14,
+          "withheld": 0
+        },
+        "book": "1Cor",
+        "chapter": "13",
+        "study": "SN-008",
+        "verse": "8"
+      },
+      {
+        "analysisCompleted": false,
+        "audit": {
+          "eligibleExact": 16,
+          "equalLength": true,
+          "morphWords": 16,
+          "officialWords": 16,
+          "withheld": 0
+        },
+        "book": "1Cor",
+        "chapter": "14",
+        "study": "SN-008",
+        "verse": "2"
+      }
+    ],
+    "publicationAuthorized": false
+  },
+  "proposedFiles": [
+    {
+      "id": "P1143-H01",
+      "book": "Lev",
+      "source": "OSHB",
+      "path": "wlc/Lev.xml",
+      "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    },
+    {
+      "id": "P1143-H02",
+      "book": "Deut",
+      "source": "OSHB",
+      "path": "wlc/Deut.xml",
+      "sha256": "aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+      "components": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    },
+    {
+      "id": "P1143-G01",
+      "book": "Acts",
+      "source": "SBLGNT",
+      "path": "data/sblgnt/xml/Acts.xml",
+      "sha256": "5040d5a8570ce8f391209f228707c560e83fccc439f364d0a8baf89666025ea3",
+      "components": [
+        "texto_griego"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    },
+    {
+      "id": "P1143-G02",
+      "book": "Acts",
+      "source": "MorphGNT",
+      "path": "65-Ac-morphgnt.txt",
+      "sha256": "04349afeba263d667698b37d39465d746530434b455fb6ac2941ec5c59fb85ca",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    },
+    {
+      "id": "P1143-G03",
+      "book": "1Cor",
+      "source": "SBLGNT",
+      "path": "data/sblgnt/xml/1Cor.xml",
+      "sha256": "5a12d44dd6a9c7c236da21dc85a1d60915c54c988c59ba456f27bf528da1812b",
+      "components": [
+        "texto_griego"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    },
+    {
+      "id": "P1143-G04",
+      "book": "1Cor",
+      "source": "MorphGNT",
+      "path": "67-1Co-morphgnt.txt",
+      "sha256": "5233a5b099e2499baed34ec2d6f53ae44545d532a7e2fb12acafcf39ff6fdbf3",
+      "components": [
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "decision": "pendiente_aprobacion_especifica",
+      "publication": false
+    }
+  ],
+  "scope": {
+    "primaryOnly": true,
+    "excludeAlternatives": true,
+    "keepRawProviderCodes": true,
+    "greekExactPositionForm": true,
+    "separateGreekAnnotations": true,
+    "greekWithheld": 198,
+    "maximumCandidateOccurrences": 51468,
+    "potentialTotalOccurrences": 78218,
+    "existingBooks": 3,
+    "priorityBooks": 4
+  },
+  "newAdmissionAuthorized": false,
+  "publicationAuthorized": false,
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "aprobacion_por_componente_e_integracion_analizador"
+}

@@ -16,6 +16,12 @@ def reject(*_):
 def parse(data, book):
     if book not in ("Gen", "Dan"):
         raise ValueError("Libro no autorizado en P8.2.2")
+    return _parse_primary(data, book)
+
+def _parse_primary(data, book):
+    # Low-level structural parsing; callers must enforce source fingerprints and scope.
+    if book not in ("Gen", "Dan", "Lev", "Deut"):
+        raise ValueError("Libro fuera del alcance estructural")
     if len(data) > 4 * 1024 * 1024:
         raise ValueError("Límite XML superado")
     decoded = data.decode("utf-8", errors="strict")
