@@ -16,14 +16,14 @@ async function gunzip(bytes:Uint8Array,max:number){
 export async function openPrivateFragmentSource(manifestUrl:string,assetBase:string,fetcher:typeof fetch=fetch){
  const base=new URL(assetBase,document.baseURI);if(!base.pathname.endsWith('/'))base.pathname+='/';
  const manifestURL=new URL(manifestUrl,document.baseURI);require(base.origin===manifestURL.origin);
- const response=await fetcher(manifestURL,{cache:'no-store',credentials:'same-origin',redirect:'error'});require(response.ok&&new URL(response.url||manifestURL.href).origin===base.origin);
+ const response=await fetcher(manifestURL,{cache:'no-store',credentials:'omit',mode:'same-origin',redirect:'error'});require(response.ok&&new URL(response.url||manifestURL.href).origin===base.origin);
  const manifest=await response.json();require(manifest&&manifest.schemaVersion===1&&manifest.mode==='isolated_lexical_concordance'&&manifest.publicationAuthorized===false&&validDescriptor(manifest.catalog)&&manifest.catalog.path==='catalog.json.gz');
  const cache=new Map<string,Promise<unknown>>();
  const load=async(spec:FragmentDescriptor):Promise<any>=>{
   require(validDescriptor(spec));const key=spec.path+'|'+spec.gzipSha256;const old=cache.get(key);if(old)return old;
   const pending=(async()=>{
    const url=new URL(spec.path,base);require(url.origin===base.origin&&url.pathname.startsWith(base.pathname));
-   const r=await fetcher(url,{cache:'no-store',credentials:'same-origin',redirect:'error'});require(r.ok&&new URL(r.url||url.href).origin===base.origin);
+   const r=await fetcher(url,{cache:'no-store',credentials:'omit',mode:'same-origin',redirect:'error'});require(r.ok&&new URL(r.url||url.href).origin===base.origin);
    const compressed=new Uint8Array(await r.arrayBuffer());require(compressed.byteLength===spec.gzipBytes&&await digest(compressed)===spec.gzipSha256);
    const raw=await gunzip(compressed,8388608);require(raw.byteLength===spec.jsonBytes&&await digest(raw)===spec.sha256);
    return JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(raw));
