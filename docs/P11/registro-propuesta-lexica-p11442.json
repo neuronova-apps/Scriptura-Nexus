@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.2.propuesta_lexica_y_concordancias",
+  "baselineMain": "87022b56867622f750146ea8c4cce1f33f44ab3f",
+  "previousIntegration": {
+    "pr": 108,
+    "head": "206c7dc7e2cde3ec65fdd25d4590ca3c236595b6",
+    "merge": "87022b56867622f750146ea8c4cce1f33f44ab3f",
+    "workflows": 31,
+    "successfulChecks": 40,
+    "run": 46030437142,
+    "job": 140612562138,
+    "pagesRun": 46031024066,
+    "pagesAtPreparation": "success"
+  },
+  "observed": {
+    "historicalCandidates": 7,
+    "licenseEvidenceFiles": 5,
+    "internalAdmitted": 4,
+    "entries": 30740,
+    "forms": 10221,
+    "definitions": 35496,
+    "modelSha256": "26c8e8897f24c1991180cbbf0c0796afa130a6f6a088b1039cf69f137fe73f62",
+    "unresolvedStrong": 8,
+    "unresolvedAug": 1157,
+    "dodsonCsvRows": 5408,
+    "dodsonCsvUnicodeRows": 0,
+    "dodsonXmlEntries": 5410,
+    "dodsonXmlDefinitions": 10820,
+    "dodsonXmlUnicodeNodes": 5410
+  },
+  "proposal": {
+    "retained": [
+      "LING-015",
+      "LING-016",
+      "LING-017",
+      "LING-018"
+    ],
+    "deferred": [
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07"
+    ],
+    "candidate": {
+      "id": "LEX-C08",
+      "repository": "biblicalhumanities/Dodson-Greek-Lexicon",
+      "commit": "74f70358d4acfaf2f980bf2feb58ab7115cbbcbc",
+      "path": "dodson.xml",
+      "bytes": 1315372,
+      "gitBlobSha1": "93bdd519bb68db9a4f2969d50d31ee42b2372e06",
+      "sha256": "39c6cb8053ef0adeffac7bbec1d1bc4f96c69424f8e6668f19b4244d3f234639",
+      "licenseEvidence": [
+        {
+          "path": "LICENSE",
+          "bytes": 6554,
+          "gitBlobSha1": "3bbbc1ee92562e6a2eebfc6a366f4309d06c7d54",
+          "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4"
+        },
+        {
+          "path": "README.md",
+          "bytes": 557,
+          "gitBlobSha1": "7b6a42b80a098065b2c825ddae52cf13094d46c3",
+          "sha256": "eada5184215fba69ddd420438e55690fb4ca0c14fdaa1f04a3f6c555b045e839"
+        },
+        {
+          "path": "README-ulrikp.txt",
+          "bytes": 3665,
+          "gitBlobSha1": "d7f5f2c3b8b9826d1b769df1dbb7c9e66ae64671",
+          "sha256": "2eea57fcefa555081d2834cdef44af5a1d000d90eb9ba0d58f4e1fe99c305d2c"
+        }
+      ],
+      "allowedComponents": [],
+      "review": "propuesta_admision_tecnica_pendiente",
+      "publication": false,
+      "proposedComponents": [
+        "identificadores_lexicos",
+        "anotaciones_lema",
+        "sentidos_lexicos"
+      ],
+      "proposedSelectors": [
+        "TEI/entry/@n",
+        "TEI/entry/orth/text()",
+        "TEI/entry/def[@role='brief']/text()",
+        "TEI/entry/def[@role='full']/text()"
+      ],
+      "declaredLicense": "CC0-1.0; dominio público declarado por proveedor",
+      "attribution": "John Jeffrey Dodson (2010); conversión de Ulrik Sandborg-Petersen y XML del proyecto Biblical Humanities, commit 74f70358d4acfaf2f980bf2feb58ab7115cbbcbc; https://github.com/biblicalhumanities/Dodson-Greek-Lexicon; https://creativecommons.org/publicdomain/zero/1.0/; declarar proyección.",
+      "conditions": [
+        "Conservar n completo, ortografía Unicode y roles exactos de definiciones inglesas",
+        "No derivar identificador Strong ni GK de sufijos o coincidencias de forma",
+        "No fusionar CSV y XML ni asignar sentidos contextuales, morfología o categoría léxica",
+        "Admisión técnica explícita y decisión pública separada"
+      ]
+    }
+  },
+  "concordance": {
+    "editions": 2,
+    "books": [
+      "Gen",
+      "Lev",
+      "Deut",
+      "Dan",
+      "Acts",
+      "1Cor",
+      "3John"
+    ],
+    "chapters": 168,
+    "units": 5162,
+    "occurrences": 78218,
+    "bookOccurrences": {
+      "Gen": 20612,
+      "Lev": 11950,
+      "Deut": 14294,
+      "Dan": 5919,
+      "Acts": 18412,
+      "1Cor": 6812,
+      "3John": 219
+    },
+    "modes": [
+      "form",
+      "lemma",
+      "provider"
+    ],
+    "languages": [
+      "hbo",
+      "arc",
+      "grc"
+    ],
+    "implementation": "validacion_muestral_privada",
+    "indexExhaustive": "pendiente",
+    "publication": false
+  },
+  "decision": {
+    "newAdmissions": 0,
+    "publicationAuthorized": false,
+    "automaticCorpusLinks": false,
+    "semanticEquivalences": false,
+    "translateDefinitions": false,
+    "corpusPersisted": false
+  },
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.4.3_integracion_indices_tras_decision_lexica"
+}
