@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.1",
+  "baselineMain": "4f2f48d6d1a3cbb543b285ae0bf08f406b448bb5",
+  "approval": {
+    "option": "B",
+    "origin": "declaracion_del_responsable_en_conversacion",
+    "date": "2026-11-27",
+    "scope": "ampliacion_funcional_previa_a_publicacion",
+    "individualResourcePublicationApproved": false
+  },
+  "previousClosure": {
+    "pr": 86,
+    "deployRun": 45949291089,
+    "build": "success",
+    "deploy": "success",
+    "closureBlob": "66a5ba47d2b05bab1f58168613c22afc33aa6388",
+    "proposalBlob": "71140c96f69195b0bcea507d8d3d793fc311f69a"
+  },
+  "sourceRecords": [
+    {
+      "path": "docs/P9/admisiones-ediciones-p912.json",
+      "blob": "ed258f7067315a91814fb8f222af696ed9d0d303"
+    },
+    {
+      "path": "docs/P8/revision-publicacion-p85.json",
+      "blob": "30c2c3d5719eefd08ae059bfbe37ce1958b961cc"
+    },
+    {
+      "path": "docs/P10/registro-validacion-hebreo-p1031.json",
+      "blob": "a48d2971e19e04b2c68d11fb818afa15f8b4e3ce"
+    },
+    {
+      "path": "docs/P10/registro-validacion-griego-p1032.json",
+      "blob": "e529ff7ec45a1901ab30e64244724c30ba8c94ff"
+    },
+    {
+      "path": "docs/P10/registro-validacion-critica-textual-p1035.json",
+      "blob": "ba49b4c725e7f4fd5c44af53cdc684cb052b1ce2"
+    },
+    {
+      "path": "docs/P9/muestra-manuscritos-p943.json",
+      "blob": "3c283e6bd9f0d4aab2ba939e0667753fae1b8053"
+    },
+    {
+      "path": "docs/P9/proyeccion-ediciones-p913.json",
+      "blob": "ff6ef60588416089b26afcc6160df74956b496df"
+    },
+    {
+      "path": "docs/P10/registro-cierre-p104.json",
+      "blob": "39fb4a7da8d3282b02dbc9742b2b9010c5bb8f27"
+    }
+  ],
+  "selection": {
+    "reader": [
+      {
+        "id": "ED-C01",
+        "edition": "TXT-RV1909",
+        "books": 66,
+        "priority": "inicial",
+        "status": "seleccionado_para_revision_de_publicacion",
+        "condition": "declaracion_proveedor_y_revision_territorial_pendiente"
+      },
+      {
+        "id": "ED-C02",
+        "edition": "TXT-SBLGNT-V1-2",
+        "books": 27,
+        "priority": "inicial",
+        "status": "seleccionado_para_revision_de_publicacion",
+        "condition": "CC_BY_4_0_atribucion_y_cambios"
+      }
+    ],
+    "linguisticExisting": [
+      {
+        "id": "LING-010",
+        "priority": "condicional",
+        "reason": "TEHMC no incorporada; verificar cabecera y componentes"
+      },
+      {
+        "id": "LING-011",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-012",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-013",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-014",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-015",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-016",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-017",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      },
+      {
+        "id": "LING-018",
+        "priority": "inicial",
+        "reason": "capa ya auditada; revision individual de publicacion"
+      }
+    ],
+    "linguisticExpansion": [
+      {
+        "book": "Lev",
+        "path": "wlc/Lev.xml",
+        "candidateId": "EXP-C02",
+        "priority": "piloto",
+        "status": "no_admitido"
+      },
+      {
+        "book": "Deut",
+        "path": "wlc/Deut.xml",
+        "candidateId": null,
+        "priority": "piloto",
+        "status": "no_admitido"
+      },
+      {
+        "book": "Acts",
+        "path": "65-Ac-morphgnt.txt",
+        "candidateId": null,
+        "priority": "piloto",
+        "status": "no_admitido"
+      },
+      {
+        "book": "1Cor",
+        "path": "67-1Co-morphgnt.txt",
+        "candidateId": null,
+        "priority": "piloto",
+        "status": "no_admitido"
+      },
+      {
+        "book": "Exod",
+        "path": "wlc/Exod.xml",
+        "candidateId": "EXP-C01",
+        "priority": "posterior",
+        "status": "no_admitido"
+      },
+      {
+        "book": "Ezra",
+        "path": "wlc/Ezra.xml",
+        "candidateId": "EXP-C03",
+        "priority": "posterior",
+        "status": "no_admitido"
+      }
+    ],
+    "greekLexiconCandidates": [
+      "LEX-C01",
+      "LEX-C07"
+    ],
+    "comparator": {
+      "initialEditions": [
+        "TXT-RV1909",
+        "TXT-SBLGNT-V1-2"
+      ],
+      "trCandidate": "P1022-R12",
+      "trStatus": "no_admitido",
+      "verifiedAlignments": 0,
+      "independentConsultationOnlyUntilAlignment": true
+    },
+    "manuscripts": {
+      "sample": "P9.4.3",
+      "resources": 7,
+      "evidence": 8,
+      "secondaryAttestations": 2,
+      "directInspections": 0,
+      "status": "seleccionado_para_revision_documental_no_publicado"
+    }
+  },
+  "gates": [
+    "identidad_version_y_huellas",
+    "licencias_por_archivo_y_componente",
+    "aprobacion_explicita_de_publicacion_por_recurso",
+    "atribucion_visible_y_transformaciones",
+    "adaptadores_y_fragmentos_con_cobertura_declarada",
+    "regresiones_de_contratos_y_pruebas_historicas",
+    "revision_privacidad_y_accesibilidad_con_datos",
+    "verificacion_artefacto_y_recuperacion"
+  ],
+  "route": [
+    {
+      "id": "P11.4.1",
+      "scope": "seleccion_y_revision_de_recursos",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.2",
+      "scope": "lector_biblico",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.3",
+      "scope": "herramientas_linguisticas",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.4",
+      "scope": "lexicos_y_concordancias",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.5",
+      "scope": "comparador_biblico",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.6",
+      "scope": "manuscritos_y_variantes",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.7",
+      "scope": "validacion_funcional_integral",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.4.8",
+      "scope": "publicacion_y_recuperacion",
+      "status": "pendiente"
+    },
+    {
+      "id": "P11.5",
+      "scope": "cierre_y_mantenimiento",
+      "status": "pendiente"
+    }
+  ],
+  "progress": {
+    "originalCompleted": 60,
+    "originalTotal": 62,
+    "expandedCompleted": 60,
+    "expandedTotal": 69,
+    "afterVerifiedClosure": 61
+  },
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "academicAnalysisCompleted": false,
+  "next": "P11.4.2_tras_CI_integracion_despliegue_y_revision_de_permisos_ediciones"
+}
