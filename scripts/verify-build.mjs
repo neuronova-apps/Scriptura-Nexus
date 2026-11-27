@@ -560,3 +560,24 @@ for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(fil
  assert.doesNotMatch(s,/comparator-fixture-only|TXT-comparator-fixture|P933 PRIVATE FIXTURE|ALI-comparator-test|EVD-comparator-test|alineaciones-p931\.json|comparison-engine-p932\.py/,'Datos internos del comparador en '+file.name);
 }
 console.log('P9.3.3: comparador enlazado, controles bloqueados, etiquetas y ARIA conformes; sin corpus ni registros internos.');
+
+// P9.4.4: manuscript UI, static gate and no private references in any Pages output.
+const manuscriptHtml=readFileSync('dist/manuscritos/consulta/index.html','utf8');
+const manuscriptHub=readFileSync('dist/manuscritos/index.html','utf8');
+for(const html of [manuscriptHub,readerHtml,comparatorHtml])assert.ok(html.includes('href="/Scriptura-Nexus/manuscritos/consulta/"'));
+for(const path of ['manuscritos/','biblia/lector/','biblia/comparador/','fundamentos/fuentes/','fundamentos/licencias/'])assert.ok(manuscriptHtml.includes('href="/Scriptura-Nexus/'+path+'"'));
+assert.equal((manuscriptHtml.match(/<h1(?:\s|>)/g)||[]).length,1);
+assert.match(manuscriptHtml,/No hay fichas ni variantes autorizadas para consulta pública/);
+assert.match(manuscriptHtml,/<fieldset[^>]*id="mv-fields"[^>]*disabled/);
+for(const id of ['mv-search','mv-witness','mv-variant']){
+ assert.ok(manuscriptHtml.includes('for="'+id+'"'));assert.match(manuscriptHtml,new RegExp('id="'+id+'"[^>]*disabled'));
+}
+const mvIds=[...manuscriptHtml.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(mvIds).size,mvIds.length);
+for(const m of manuscriptHtml.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g))for(const id of m[1].split(/\s+/))assert.ok(mvIds.includes(id));
+for(const id of ['mv-catalog-title','mv-variant-title','mv-sources-title']){assert.ok(manuscriptHtml.includes('href="#'+id+'"'));assert.match(manuscriptHtml,new RegExp('<h2[^>]*id="'+id+'"[^>]*tabindex="-1"'));}
+for(const id of ['mv-status','mv-variant-status'])assert.match(manuscriptHtml,new RegExp('id="'+id+'"[^>]*role="status"[^>]*aria-live="polite"'));
+assert.match(manuscriptHtml,/<noscript>/);
+for(const file of readdirSync('dist',{recursive:true,withFileTypes:true}))if(file.isFile()&&/\.(?:html?|json|js|mjs|xml|txt|map|css|svg)$/i.test(file.name)){
+ const s=readFileSync(file.parentPath+'/'+file.name,'utf8');assert.doesNotMatch(s,/MAN-GA-P66|MAN-GA-02|VAR-P943-|LEC-P943-|REC-P943-|EVD-P943-|muestra-manuscritos-p943|reference_only_pilot|P944-PRIVATE-FIXTURE|MAN-p944-fixture/,'Datos internos en '+file.name);
+}
+console.log('P9.4.4: catálogo enlazado, estado público vacío, controles bloqueados y sin datos privados.');
