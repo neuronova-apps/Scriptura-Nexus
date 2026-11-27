@@ -99,7 +99,7 @@ export async function loadExpandedAnalyzerData(){
  const r=loadAdmission();validateAdmission(r);
  const baseline=await loadVerifiedAnalyzerData();
  let payload;
- try{const raw=execFileSync(process.env.PYTHON||'python3',['scripts/load-linguistic-expansion-p11433.py'],{env:{...process.env,SN_P11433_PRIVATE_PIPE:'1',PYTHONDONTWRITEBYTECODE:'1'},encoding:'utf8',maxBuffer:32*1024*1024,timeout:180000,stdio:['ignore','pipe','pipe']});payload=JSON.parse(raw);}
+ try{const raw=execFileSync(process.env.PYTHON||(process.platform==='win32'?'python':'python3'),['-X','utf8','scripts/load-linguistic-expansion-p11433.py'],{env:{...process.env,SN_P11433_PRIVATE_PIPE:'1',PYTHONDONTWRITEBYTECODE:'1'},encoding:'utf8',maxBuffer:32*1024*1024,timeout:180000,stdio:['ignore','pipe','pipe']});payload=JSON.parse(raw);}
  catch{throw Error('Private projection failed');}
  return mergeExpansion(baseline,payload,r);
 }

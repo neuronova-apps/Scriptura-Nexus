@@ -1,58 +1,19 @@
 // P11.4.3.4 private candidate browser test; no corpus files or uploaded artifacts.
 import assert from 'node:assert/strict';
-import {createServer} from 'node:http';
-import {readFileSync,statSync} from 'node:fs';
-import {resolve,relative,isAbsolute,extname} from 'node:path';
+import {resolve} from 'node:path';
 import {createRequire} from 'node:module';
-import ts from 'typescript';
 import {loadExpandedAnalyzerData} from './lib/linguistic-expansion-p11433.mjs';
 import {buildAnalyzerFragments} from './lib/build-analyzer-fragments-p11434.mjs';
 import {validateAnalyzerPlan} from './validate-analyzer-plan-p11434.mjs';
 import {createTermAnalyzer} from '../src/lib/term-analyzer.ts';
-const prefix='/Scriptura-Nexus/',root=prefix+'linguistica/analizador/',assets=root+'candidate-data/';
-const mime={'.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.ico':'image/x-icon'};
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const attribution=[{"label":"OSHB / WLC","text":"Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.","license":"CC BY 4.0 (anotaciones); WLC dominio público declarado","url":"https://github.com/openscriptures/morphhb/tree/6a5db284c715c18b239422e57bb89684e6a19f00","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","change":"Proyección de ocurrencias primarias y códigos; se excluyen notas y variantes; se preservan las formas Unicode."},{"label":"SBLGNT v1.2","text":"Copyright 2010 Society of Biblical Literature and Logos Bible Software; SBLGNT v1.2. https://github.com/Faithlife/SBLGNT","license":"CC BY 4.0","url":"https://github.com/Faithlife/SBLGNT/tree/736fdc76158950c3d04b949b7e013ca14305145a","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","change":"Selección de elementos de palabra oficiales por referencia y posición; no incluye aparato crítico."},{"label":"MorphGNT v6.12","text":"Tauber, J. K., ed. (2017). MorphGNT: SBLGNT Edition, v6.12. https://github.com/morphgnt/sblgnt; DOI 10.5281/zenodo.376200","license":"CC BY-SA 3.0","url":"https://github.com/morphgnt/sblgnt/tree/aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d","licenseUrl":"https://creativecommons.org/licenses/by-sa/3.0/","change":"Se proyectan lemas y códigos morfológicos en una capa separada de anotaciones, bajo la misma licencia; se excluyen las columnas textuales y las divergencias no se vinculan."}];
+import {root,assets,createAnalyzerOverlay,startAnalyzerPreview} from './prepare-analyzer-candidate-p11435.mjs';
 let server,browser,release=null,stage='plan';
 try{
  const plan=validateAnalyzerPlan();
  const deps=createRequire(resolve(process.env.P11434_DEPS,'package.json')), {chromium}=deps('playwright'),axe=deps.resolve('axe-core/axe.min.js');
  stage='verified sources';const data=await loadExpandedAnalyzerData();stage='fragments';const candidate=buildAnalyzerFragments(data);stage='full engine';const engine=createTermAnalyzer(data.registry,data.admissions,data.supplements);
- const overlay=new Map(),put=(path,body,type)=>{assert.ok(!overlay.has(path));overlay.set(path,{body:Buffer.isBuffer(body)?body:Buffer.from(body),type});};
- for(const [path,b] of candidate.assets)put(assets+path,b,'application/octet-stream');
- const aliases={'./linguistic-contracts.ts':'./linguistic-contracts.js','../lib/term-analyzer-view':'./term-analyzer-view.js','../../src/lib/term-analyzer.ts':'./term-analyzer.js'};
- for(const [name,path] of [['term-analyzer.js','src/lib/term-analyzer.ts'],['linguistic-contracts.js','src/lib/linguistic-contracts.ts'],['term-analyzer-view.js','src/lib/term-analyzer-view.ts'],['term-analyzer-ui.js','src/scripts/term-analyzer-ui.ts'],['appearance.js','src/lib/appearance.ts'],['analyzer-fragments.js','scripts/lib/analyzer-fragments-p11434.mjs']]){
-  let js=path.endsWith('.ts')?ts.transpileModule(readFileSync(path,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText:readFileSync(path,'utf8');
-  for(const [from,to] of Object.entries(aliases))js=js.replaceAll("'"+from+"'","'"+to+"'").replaceAll('"'+from+'"','"'+to+'"');
-  put(assets+name,js,'text/javascript; charset=utf-8');
- }
- put(assets+'static-gzip.js',readFileSync('scripts/lib/reader-static-gzip.mjs'),'text/javascript; charset=utf-8');
- put(assets+'init.js',[
- "import {initializeAppearance} from './appearance.js';",
- "import {mountAnalyzer} from './term-analyzer-ui.js';",
- "import {createFragmentAnalyzer,decodeAnalyzerAsset} from './analyzer-fragments.js';",
- "import {loadStaticGzip} from './static-gzip.js';",
- "initializeAppearance(document);",
- "const spec="+JSON.stringify(candidate.catalogSpec)+";",
- "const load=async d=>decodeAnalyzerAsset(d.path,JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(await loadStaticGzip(new URL(d.path,import.meta.url),d,location.origin))));",
- "try{const c=await load(spec);const a=createFragmentAnalyzer(c,load);mountAnalyzer(document,a.initial,a.prepare);}catch{document.querySelector('#ta-status').textContent='No se pudo verificar el catálogo.';}"
- ].join('\n'),'text/javascript; charset=utf-8');
- const original=readFileSync('dist/linguistica/analizador/index.html','utf8'),notice='La interfaz está preparada. No hay ediciones lingüísticas publicadas para consulta. La validación interna de datos no equivale a autorización de publicación.',closing=/<\/div>\s*<\/div>\s*<\/main>/;
- assert.ok(original.includes(notice)&&closing.test(original));
- const extra='<section class="sn-card sn-card--default" id="ta-candidate-rights"><h2>Fuentes, licencias y cambios</h2>'+attribution.map(x=>'<h3>'+esc(x.label)+'</h3><p>'+esc(x.text)+'</p><p>'+esc(x.license)+'</p><p>'+esc(x.change)+'</p><p><a rel="noreferrer" href="'+esc(x.url)+'">Fuente fijada de '+esc(x.label)+'</a> · <a rel="noreferrer" href="'+esc(x.licenseUrl)+'">Licencia de '+esc(x.label)+'</a></p>').join('')+'</section><section class="sn-card sn-card--default" id="ta-candidate-privacy"><h2>Privacidad</h2><p>Sin cuenta, historial de consulta ni analítica de referencias. Las peticiones de capítulos son del mismo origen. Solo se guardan las preferencias visuales. El alojamiento público puede registrar solicitudes y direcciones IP; esta prueba local no evalúa al proveedor.</p><p><a rel="noreferrer" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Privacidad del alojamiento</a></p></section>';
- const html=original.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace('</head>','<meta name="referrer" content="no-referrer"></head>').replace(notice,'Candidato privado de consulta de siete libros. No constituye publicación.').replace('La selección se habilitará únicamente cuando existan ediciones publicadas.','La selección se habilita tras verificar el catálogo privado.').replace(closing,m=>extra+m).replace('</body>','<script type="module" src="'+assets+'init.js"></script></body>');
- put(root,html,'text/html; charset=utf-8');
- const base=resolve('dist');
- const send=(res,status,body,type)=>{const b=Buffer.isBuffer(body)?body:Buffer.from(body);res.writeHead(status,{'Content-Type':type,'Content-Length':b.length,'Cache-Control':'no-store','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff'});res.end(b);};
- server=createServer((req,res)=>{try{
-  if(req.method!=='GET'||req.headers.host!=='127.0.0.1:'+server.address().port||['cross-site','same-site'].includes(req.headers['sec-fetch-site'])||(req.headers.origin&&req.headers.origin!=='http://'+req.headers.host))return send(res,403,'Acceso local únicamente','text/plain');
-  const u=new URL(req.url,'http://'+req.headers.host),path=u.pathname;if(u.search)return send(res,404,'Ruta no disponible','text/plain');
-  if(overlay.has(path)){const x=overlay.get(path);return send(res,200,x.body,x.type);}
-  if(path.startsWith(prefix)&&!path.startsWith(assets)){const file=resolve(base,decodeURIComponent(path.slice(prefix.length))),rel=relative(base,file);if(rel&&!rel.startsWith('..')&&!isAbsolute(rel)&&mime[extname(file)]&&statSync(file,{throwIfNoEntry:false})?.isFile())return send(res,200,readFileSync(file),mime[extname(file)]);}
-  return send(res,404,'Ruta no disponible','text/plain');
- }catch{if(!res.headersSent)send(res,500,'Recurso no disponible','text/plain');else res.destroy();}});
- await new Promise((ok,fail)=>{server.once('error',fail);server.listen(0,'127.0.0.1',ok);});
- const origin='http://127.0.0.1:'+server.address().port;
+ const overlay=createAnalyzerOverlay(candidate);
+ const preview=await startAnalyzerPreview(overlay);server=preview.server;const origin=preview.origin;
  browser=await chromium.launch({headless:true});
  const c=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',acceptDownloads:false});
  let external=0,unexpected=0,errors=0,chapterLoads=0,corrupt=false,delay=false;

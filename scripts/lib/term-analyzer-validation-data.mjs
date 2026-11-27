@@ -25,7 +25,7 @@ export async function loadVerifiedAnalyzerData(){
  const p=[];
  for(const id of oshbFileIds){const f=heb.files.find(x=>x.id===id);assert.ok(f&&f.review==='aprobado');p.push(importOshb(heb,id,await download(f)));}
  const occurrence=identifyOshb(p,heb),lexical=organizeLexical(occurrence,heb),morph=organizeMorphology(occurrence,lexical,heb);
- const raw=execFileSync('python3',['scripts/project-greek-p83.py'],{encoding:'utf8',maxBuffer:2*1024*1024,timeout:180000,stdio:['ignore','pipe','pipe']});
+ const raw=execFileSync(process.env.PYTHON||(process.platform==='win32'?'python':'python3'),['-X','utf8','scripts/project-greek-p83.py'],{encoding:'utf8',maxBuffer:2*1024*1024,timeout:180000,stdio:['ignore','pipe','pipe']});
  const greek=projectGreek(JSON.parse(raw).rows,grk);
  const registry={schemaVersion:1};
  for(const k of ['editions','units','tokens','lemmas','identifiers','analyses','morphCodes'])registry[k]=[...morph.registry[k],...greek.registry[k]];

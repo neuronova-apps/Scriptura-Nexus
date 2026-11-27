@@ -1,0 +1,47 @@
+name: P11.4.3.5.2 Candidato estático privado del analizador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P8/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/analyzer-static-candidate-p11435.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-candidate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compilación y barrera pública
+        run: |
+          npm ci
+          node --test tests/p101-delimitation.test.mjs
+          npm run build
+          npm run test:build
+      - name: Prueba de servidor privado y candidato real
+        run: |
+          node --test tests/p11435-static-analyzer.test.mjs
+          node scripts/prepare-analyzer-candidate-p11435.mjs --verify
+      - name: Barrera pública posterior
+        run: npm run test:build

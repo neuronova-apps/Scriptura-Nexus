@@ -11,7 +11,7 @@ export const oshbFileIds=Object.freeze(Object.keys(books));
 // Low-level parser for synthetic tests; production must use importOshb.
 export function parseOshbXml(bytes,book){
  if(!Buffer.isBuffer(bytes)||bytes.length>4*1024*1024)throw new Error('Bytes XML inválidos');
- const result=spawnSync('python3',['-I',parser,book],{input:bytes,encoding:'utf8',timeout:30000,maxBuffer:48*1024*1024});
+ const result=spawnSync(process.env.PYTHON||(process.platform==='win32'?'python':'python3'),['-I','-X','utf8',parser,book],{input:bytes,encoding:'utf8',timeout:30000,maxBuffer:48*1024*1024});
  if(result.error||result.status!==0)throw new Error('XML OSIS rechazado o intérprete no disponible');
  return JSON.parse(result.stdout);
 }
