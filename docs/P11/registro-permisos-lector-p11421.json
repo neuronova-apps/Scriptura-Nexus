@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.2.1",
+  "baselineMain": "67789ae1fc374592cb599fb540e8da0482767c0b",
+  "previousIntegration": {
+    "pr": 87,
+    "workflowRun": 45949709479,
+    "job": 140342478333,
+    "successfulWorkflows": 19,
+    "deployRun": 45950611947,
+    "deploy": "pending_confirmation"
+  },
+  "selectionBlob": "43d971ae286a979c3d58a0c2f475cd219e112024",
+  "admissionsBlob": "ed258f7067315a91814fb8f222af696ed9d0d303",
+  "projectionBlob": "ff6ef60588416089b26afcc6160df74956b496df",
+  "reviewDate": "2026-11-27",
+  "scope": "revision_de_permisos_y_preparacion_de_adaptador_sin_redistribucion",
+  "editions": [
+    {
+      "id": "ED-C01",
+      "editionId": "TXT-RV1909",
+      "version": "spaRV1909",
+      "books": 66,
+      "units": 31102,
+      "emptyMarkers": 18,
+      "source": "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+      "revision": {
+        "archiveSha256": "56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5"
+      },
+      "license": "Public Domain declarado por eBible.org",
+      "rightsSources": [
+        "https://ebible.org/spaRV1909/copyright.htm",
+        "https://ebible.org/find/details.php?id=spaRV1909"
+      ],
+      "territorialReview": "pendiente",
+      "technicalPreparation": "permitida_en_memoria_segun_P9",
+      "publicReleaseDecision": "pendiente",
+      "authorizationRef": null,
+      "attribution": "Reina y Valera, según ficha de eBible.org; distribución spaRV1909.",
+      "transformations": "USFM main-text v1: remove footnotes/cross-references/headings and formatting markers; preserve visible text, punctuation and Unicode; collapse whitespace; retain raw source-segment hash and source-file hash."
+    },
+    {
+      "id": "ED-C02",
+      "editionId": "TXT-SBLGNT-V1-2",
+      "version": "v1.2",
+      "books": 27,
+      "units": 7939,
+      "emptyMarkers": 0,
+      "source": "https://github.com/Faithlife/SBLGNT/tree/736fdc76158950c3d04b949b7e013ca14305145a",
+      "revision": {
+        "commit": "736fdc76158950c3d04b949b7e013ca14305145a"
+      },
+      "license": "CC BY 4.0",
+      "rightsSources": [
+        "https://www.sblgnt.com/license/",
+        "https://github.com/Faithlife/SBLGNT/blob/736fdc76158950c3d04b949b7e013ca14305145a/LICENSE",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "territorialReview": "licencia_publica_documentada_no_dictamen_juridico",
+      "technicalPreparation": "permitida_en_memoria_segun_P9",
+      "publicReleaseDecision": "pendiente",
+      "authorizationRef": null,
+      "attribution": "The SBL Greek New Testament (SBLGNT), edited by Michael W. Holmes. Copyright 2010 Society of Biblical Literature and Logos Bible Software. Licensed under CC BY 4.0.",
+      "transformations": "SBLGNT XML v1: project w elements with prefix/suffix in source order; preserve source chapter/verse labels and punctuation; use a single separator between adjacent words; do not infer missing markers."
+    }
+  ],
+  "requirements": [
+    "fuentes_fijadas_y_huellas_verificadas",
+    "alcance_texto_principal_y_etiquetas_nativas",
+    "atribucion_licencia_enlace_y_transformaciones_visibles",
+    "decision_explicita_por_edicion",
+    "revision_territorial_RV1909_antes_de_publicar",
+    "fragmentos_gzip_hasta_250_KiB_y_validacion_de_integridad",
+    "ninguna_alineacion_inferida",
+    "pruebas_y_revision_privacidad_antes_de_habilitar"
+  ],
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "releaseScopeApproved": false,
+  "alignmentAuthorized": false,
+  "progress": {
+    "completed": 61,
+    "total": 69,
+    "afterReaderClosure": 62
+  },
+  "next": "P11.4.2.2_proyeccion_aislada_tras_CI_integracion_y_despliegue"
+}
