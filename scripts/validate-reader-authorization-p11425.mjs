@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {pathToFileURL} from 'node:url';
+import {loadRightsReview,validateRightsReview} from './validate-reader-rights-review-p11425.mjs';
+const sha=b=>createHash('sha1').update(Buffer.from('blob '+b.length+'\0')).update(b).digest('hex');
+export function loadAuthorization(){return {record:JSON.parse(readFileSync('docs/P11/registro-autorizacion-preparacion-lector-p11425.json','utf8')),review:loadRightsReview(),reviewBytes:readFileSync('docs/P11/registro-revision-derechos-privacidad-p11425.json')};}
+export function validateAuthorization({record:r,review,reviewBytes}){
+ validateRightsReview(review);assert.equal(sha(reviewBytes),'d0b0b8715afb607248dd01f90c41ed4e7e1aafe7');assert.deepEqual(JSON.parse(reviewBytes),review.record);
+ assert.deepEqual(r,{"schemaVersion":1,"phase":"P11.4.2.5.candidato_controlado","reviewHead":"1163482d6531197dcd5d9511e958a9a8b280b927","reviewBlob":"d0b0b8715afb607248dd01f90c41ed4e7e1aafe7","decisionDate":"2026-11-27","authorizationRef":"AUT-P11425-20261127-01","evidence":"declaracion_explicita_del_responsable_en_conversacion","statement":"Apruebo la preparación para publicación de Reina-Valera 1909 y SBLGNT v1.2, con el alcance y las reservas documentadas. Acepto aplazar L05 hasta disponer de la versión autorizada. Verificar PR #96 y continuar con la habilitación controlada.","editions":[{"id":"ED-C01","editionId":"TXT-RV1909","books":66,"preparation":"aprobada","reservation":"favorable_condicionada_no_dictamen_global"},{"id":"ED-C02","editionId":"TXT-SBLGNT-V1-2","books":27,"preparation":"aprobada","reservation":"CC BY 4.0 con atribucion y cambios declarados"}],"scope":{"mainTextOnly":true,"sourceNativeReferences":true,"excludeAncillary":true,"excludeApparatus":true,"alignmentAuthorized":false},"mobile":{"status":"no_evaluable","deferralAccepted":true,"realDeviceValidated":false,"next":"validacion_en_dispositivo_real_en_version_autorizada"},"releaseScopeApproved":true,"publicReleaseAuthorized":false,"corpusImportAuthorized":false,"corpusPersisted":false,"privacyFinal":"pendiente_validacion_candidato_y_artefacto_final","candidate":{"mode":"loopback_only","storage":"memory_only","upload":false,"editions":2,"books":93,"chapters":1449,"units":39041,"emptyMarkers":18,"chapterGzipMax":256000,"catalogGzipMax":256000},"progress":{"completed":61,"total":69,"afterReaderClosure":62},"next":"verificar_candidato_estatico_privado_y_migrar_barreras_antes_de_despliegue"});
+ assert.equal(r.reviewBlob,sha(reviewBytes));assert.deepEqual(r.progress,review.record.progress);
+ return {phase:r.phase,preparationApproved:2,mobileDeferralAccepted:true,realMobileValidated:false,publicationAuthorized:false};
+}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)console.log(JSON.stringify(validateAuthorization(loadAuthorization())));
