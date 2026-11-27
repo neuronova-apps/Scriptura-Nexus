@@ -21,8 +21,8 @@ export function decodeCoordinate(value:number,chapters:readonly {occurrences:num
  require(chapters[chapter]&&position<chapters[chapter].occurrences);return {chapter,position};
 }
 export function exactRow(rows:unknown,key:string):unknown[]|null{
- require(Array.isArray(rows));let hit:unknown[]|null=null;
- for(const row of rows){require(Array.isArray(row)&&row.length===2&&typeof row[0]==='string'&&Array.isArray(row[1]));if(row[0]===key){require(hit===null);hit=row[1];}}
+ if(!Array.isArray(rows))throw new Error('Índice privado inválido');let hit:unknown[]|null=null;
+ for(const value of rows){if(!Array.isArray(value)||value.length!==2||typeof value[0]!=='string'||!Array.isArray(value[1]))throw new Error('Fila de índice inválida');const row=value as unknown[];if(row[0]===key){if(hit!==null)throw new Error('Clave duplicada');hit=row[1] as unknown[];}}
  return hit;
 }
 export function pageWindow(total:number,offset=0,limit=20){

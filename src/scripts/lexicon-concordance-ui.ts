@@ -88,7 +88,7 @@ export function mountLexiconConcordance(doc:Document,lexicon:Lexicon,engine:Conc
    }else{
     cs.textContent=r.total+' ocurrencias.'+(r.total?' Página desde '+(offset+1)+'.':' Sin coincidencias exactas.');
     const list=el('ol');list.start=offset+1;
-    for(const t of r.occurrences){const li=el('li');const p=el('p');p.append(original(t.form,t.language),doc.createTextNode(' · '+(books[t.bookId]??t.bookId)+' '+t.chapter+':'+t.verse+' · posición '+(t.position+1)));li.append(p,el('p',languageNames[t.language]+' · '+(statusLabels[t.lexicalState]??t.lexicalState)),source(t.origin));for(const l of t.lemmas){li.append(el('p','Lema: '+l.lemmaId+' · '+l.system+' · '+l.providerKey),source(l.annotationOrigin));}if(!t.lemmas.length)li.append(el('p','Lema no disponible.'));list.append(li);}cr.append(list);
+    for(const t of r.occurrences){const li=el('li');const p=el('p'),languageLabel=languageNames[t.language as Language]??String(t.language),stateLabel=statusLabels[t.lexicalState as keyof typeof statusLabels]??String(t.lexicalState);p.append(original(t.form,t.language),doc.createTextNode(' · '+(books[t.bookId]??t.bookId)+' '+t.chapter+':'+t.verse+' · posición '+(t.position+1)));li.append(p,el('p',languageLabel+' · '+stateLabel),source(t.origin));for(const l of t.lemmas){li.append(el('p','Lema: '+l.lemmaId+' · '+l.system+' · '+l.providerKey),source(l.annotationOrigin));}if(!t.lemmas.length)li.append(el('p','Lema no disponible.'));list.append(li);}cr.append(list);
    }
    cr.hidden=false;cp.hidden=false;prev.disabled=offset===0;nextButton.disabled=next===null;
   };

@@ -1,4 +1,4 @@
-import type {AdmittedFile,Edition,LinguisticRegistry,Unit,Token,Lemma,MorphAnalysis} from './linguistic-contracts.ts';
+import type {Edition,LinguisticRegistry,Unit,Token,Lemma,MorphAnalysis} from './linguistic-contracts.ts';
 import type {createTermAnalyzer} from './term-analyzer.ts';
 type Supplement=NonNullable<Parameters<typeof createTermAnalyzer>[2]>[number];
 const require=(ok:unknown):void=>{if(!ok)throw new Error('Fragmento de capítulo inválido');};
@@ -26,14 +26,14 @@ export function assembleChapter(editions:readonly Edition[],descriptor:{editionI
  const t=textValue,a=annotationValue;
  require(exact(t,['schemaVersion','editionId','bookId','chapter','units','tokens','typography'])&&exact(a,['schemaVersion','editionId','bookId','chapter','lemmas','analyses','links','supplements']));
  require(t.schemaVersion===1&&a.schemaVersion===1);
- for(const k of ['editionId','bookId','chapter'])require(t[k]===descriptor[k]&&a[k]===descriptor[k]);
+ require(t.editionId===descriptor.editionId&&a.editionId===descriptor.editionId&&t.bookId===descriptor.bookId&&a.bookId===descriptor.bookId&&t.chapter===descriptor.chapter&&a.chapter===descriptor.chapter);
  require(Array.isArray(t.units)&&Array.isArray(t.tokens)&&Array.isArray(t.typography)&&Array.isArray(a.lemmas)&&Array.isArray(a.analyses)&&Array.isArray(a.links)&&Array.isArray(a.supplements));
  const units=t.units as Unit[],rawTokens=t.tokens as Token[],lemmas=a.lemmas as Lemma[],analyses=a.analyses as MorphAnalysis[];
  require(units.length===descriptor.units&&rawTokens.length===descriptor.occurrences);
  require(units.every(u=>u.editionId===descriptor.editionId&&u.bookId===descriptor.bookId&&u.chapter===descriptor.chapter));
  const tokens=new Map<string,Token>();for(const token of rawTokens){require(typeof token.id==='string'&&!tokens.has(token.id)&&Array.isArray(token.analysisIds)&&token.analysisIds.length===0);tokens.set(token.id,token);}
  const links=new Map<string,string[]>();
- for(const link of a.links as any[]){require(object(link)&&exact(link,['tokenId','analysisIds'])&&tokens.has(link.tokenId)&&!links.has(link.tokenId)&&Array.isArray(link.analysisIds)&&link.analysisIds.length>0);links.set(link.tokenId,link.analysisIds);}
+ for(const link of a.links as any[]){if(!object(link)||!exact(link,['tokenId','analysisIds'])||typeof link.tokenId!=='string'||!tokens.has(link.tokenId)||links.has(link.tokenId)||!Array.isArray(link.analysisIds)||link.analysisIds.length===0||!link.analysisIds.every((x:unknown)=>typeof x==='string'))throw new Error('Vínculo de análisis inválido');links.set(link.tokenId,link.analysisIds as string[]);}
  const edition=editions.find(e=>e.id===descriptor.editionId);if(!edition)throw new Error('Edición de capítulo ausente');
  const registry:LinguisticRegistry={schemaVersion:1,editions:[edition],units,tokens:rawTokens.map(t=>({...t,analysisIds:links.get(t.id)??[]})),lemmas,identifiers:[],analyses,morphCodes:[]};
  require(registry.tokens.every(t=>units.some(u=>u.id===t.unitId)));

@@ -5,7 +5,6 @@ import {bucketFor,decodeCoordinate,createPrivateLookup,type PrivateGroupQuery} f
 import {openPrivateFragmentSource} from './private-fragment-loader.ts';
 const require=(ok:unknown):void=>{if(!ok)throw new Error('La consulta privada no pudo completarse.');};
 const SUMMARY_BUCKETS=16;
-type LexicalEngine=ReturnType<typeof createLexicalQuery>;
 type ConcordanceEngine=ReturnType<typeof createConcordance>;
 type Occurrence=ReturnType<ConcordanceEngine['search']>['occurrences'][number];
 type Coverage=ReturnType<ConcordanceEngine['coverage']>[number];
@@ -22,7 +21,7 @@ export async function createLexiconConcordanceFragments(options:{manifestUrl:str
   for(const [b,keys] of pending){
    let rows=summaryCache.get(b);
    if(!rows){const d=catalog.lexicalSummaryBuckets[b];require(d);const p=await source.load(d);require(p.bucket===b&&Array.isArray(p.entries));rows=new Map<string,LexicalSummary>(p.entries.map((x:LexicalSummary)=>[x.id,x] as [string,LexicalSummary]));summaryCache.set(b,rows);if(summaryCache.size>4)summaryCache.delete(summaryCache.keys().next().value!);}
-   for(const id of keys){const x=rows.get(id);require(x);found.set(id,x);}
+   for(const id of keys){const x=rows.get(id);if(!x)throw new Error('Resumen léxico ausente');found.set(id,x);}
   }
   return ids.map(id=>found.get(id)!);
  };
@@ -52,7 +51,7 @@ export async function createLexiconConcordanceFragments(options:{manifestUrl:str
   for(const [chapterIndex,items] of grouped){
    const loaded=await chapter(chapterIndex),byToken=new Map<string,Occurrence>();let offset=0;
    while(true){const page=loaded.engine.search({...query,offset,limit:100} as ConcordanceQuery);if(page.status!=='disponible')throw new Error('Ocurrencia no disponible en el fragmento');for(const hit of page.occurrences)byToken.set(hit.tokenId,hit);if(page.nextOffset===null)break;offset=page.nextOffset;}
-   for(const item of items){const token=loaded.text.tokens[item.position];require(token);const hit=byToken.get(token.id);require(hit);result[item.index]=hit;}
+   for(const item of items){const token=loaded.text.tokens[item.position];require(token);const hit=byToken.get(token.id);if(!hit)throw new Error('Ocurrencia reconstruida ausente');result[item.index]=hit;}
   }
   require(result.every(Boolean));return result;
  };
