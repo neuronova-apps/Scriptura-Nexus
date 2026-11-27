@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.1.3",
+  "approval": {
+    "date": "2026-11-26",
+    "scope": "38 estudios nuevos y cinco ampliaciones planificadas",
+    "publicationAuthorized": false
+  },
+  "sourceRefs": [
+    "docs/P10/propuestas-ampliacion-p101.json"
+  ],
+  "mapping": [
+    {
+      "proposalId": "P10-Q03",
+      "studyId": "SN-043"
+    },
+    {
+      "proposalId": "P10-Q05",
+      "studyId": "SN-044"
+    },
+    {
+      "proposalId": "P10-Q07",
+      "studyId": "SN-045"
+    },
+    {
+      "proposalId": "P10-Q08",
+      "studyId": "SN-046"
+    },
+    {
+      "proposalId": "P10-Q09",
+      "studyId": "SN-047"
+    },
+    {
+      "proposalId": "P10-Q11",
+      "studyId": "SN-048"
+    },
+    {
+      "proposalId": "P10-Q12",
+      "studyId": "SN-049"
+    },
+    {
+      "proposalId": "P10-Q13",
+      "studyId": "SN-050"
+    },
+    {
+      "proposalId": "P10-Q14",
+      "studyId": "SN-051"
+    },
+    {
+      "proposalId": "P10-Q15",
+      "studyId": "SN-052"
+    },
+    {
+      "proposalId": "P10-Q17",
+      "studyId": "SN-053"
+    },
+    {
+      "proposalId": "P10-Q18",
+      "studyId": "SN-054"
+    },
+    {
+      "proposalId": "P10-Q19",
+      "studyId": "SN-055"
+    },
+    {
+      "proposalId": "P10-Q20",
+      "studyId": "SN-056"
+    },
+    {
+      "proposalId": "P10-Q21",
+      "studyId": "SN-057"
+    },
+    {
+      "proposalId": "P10-Q23",
+      "studyId": "SN-058"
+    },
+    {
+      "proposalId": "P10-Q24",
+      "studyId": "SN-059"
+    },
+    {
+      "proposalId": "P10-Q25",
+      "studyId": "SN-060"
+    },
+    {
+      "proposalId": "P10-Q26",
+      "studyId": "SN-061"
+    },
+    {
+      "proposalId": "P10-Q27",
+      "studyId": "SN-062"
+    },
+    {
+      "proposalId": "P10-Q28",
+      "studyId": "SN-063"
+    },
+    {
+      "proposalId": "P10-Q29",
+      "studyId": "SN-064"
+    },
+    {
+      "proposalId": "P10-Q30",
+      "studyId": "SN-065"
+    },
+    {
+      "proposalId": "P10-Q33",
+      "studyId": "SN-066"
+    },
+    {
+      "proposalId": "P10-Q35",
+      "studyId": "SN-067"
+    },
+    {
+      "proposalId": "P10-Q36",
+      "studyId": "SN-068"
+    },
+    {
+      "proposalId": "P10-Q37",
+      "studyId": "SN-069"
+    },
+    {
+      "proposalId": "P10-Q38",
+      "studyId": "SN-070"
+    },
+    {
+      "proposalId": "P10-Q39",
+      "studyId": "SN-071"
+    },
+    {
+      "proposalId": "P10-Q40",
+      "studyId": "SN-072"
+    },
+    {
+      "proposalId": "P10-Q41",
+      "studyId": "SN-073"
+    },
+    {
+      "proposalId": "P10-Q42",
+      "studyId": "SN-074"
+    },
+    {
+      "proposalId": "P10-Q43",
+      "studyId": "SN-075"
+    },
+    {
+      "proposalId": "P10-Q44",
+      "studyId": "SN-076"
+    },
+    {
+      "proposalId": "P10-Q46",
+      "studyId": "SN-077"
+    },
+    {
+      "proposalId": "P10-Q47",
+      "studyId": "SN-078"
+    },
+    {
+      "proposalId": "P10-Q48",
+      "studyId": "SN-079"
+    },
+    {
+      "proposalId": "P10-Q49",
+      "studyId": "SN-080"
+    }
+  ],
+  "items": [
+    {
+      "schemaVersion": 1,
+      "id": "SN-043",
+      "title": "Identidad y continuidad de la Iglesia",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [],
+      "question": "¿Cuál es la verdadera Iglesia de Cristo? ¿Cómo se relacionan Iglesia primitiva, catolicidad, Iglesia romana, ortodoxia y protestantismo? ¿Cuándo surge el uso de católica y cómo se desarrolla la Iglesia católica?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-044",
+      "title": "Perdón, memoria, reconciliación y confianza",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [],
+      "question": "¿Perdonar implica olvidar, reconciliarse, recuperar la confianza o dejar de reprochar la ofensa?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-045",
+      "title": "Mediación, intercesión e invocación",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Qué diferencias existen entre mediación, intercesión e invocación de los santos?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-046",
+      "title": "María: identidad, títulos y dogmas",
+      "primaryAxisId": "E04",
+      "relatedAxisIds": [],
+      "question": "¿Qué lugar ocupa María? ¿Qué fundamentos y límites tienen sus títulos, dogmas, veneración e intercesión? ¿Qué fundamentos tienen virginidad perpetua, Inmaculada Concepción y Asunción de María?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-047",
+      "title": "Cena del Señor y presencia de Cristo",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Qué ocurre con el pan y vino en la Cena del Señor? ¿Qué fundamentos tienen transubstanciación, unión sacramental, presencia espiritual y memorial?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-048",
+      "title": "Origen del protestantismo",
+      "primaryAxisId": "E13",
+      "relatedAxisIds": [],
+      "question": "¿Cuál es el origen histórico del protestantismo y su relación con la Iglesia católica?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-049",
+      "title": "Pedro, papado y sucesión apostólica",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [],
+      "question": "¿Fue Pedro el primer papa? ¿Qué fundamentos tienen sucesión apostólica y autoridad papal?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-050",
+      "title": "Divisiones entre Oriente y Occidente",
+      "primaryAxisId": "E13",
+      "relatedAxisIds": [],
+      "question": "¿Por qué se dividieron las iglesias de Oriente y Occidente?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-051",
+      "title": "Identidades y denominaciones cristianas",
+      "primaryAxisId": "E13",
+      "relatedAxisIds": [],
+      "question": "¿Qué diferencias históricas, terminológicas y doctrinales existen entre cristiano, católico, protestante, evangélico y pentecostal?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-052",
+      "title": "Escritura, tradición y autoridad",
+      "primaryAxisId": "E01",
+      "relatedAxisIds": [],
+      "question": "¿Qué autoridad tienen tradición apostólica, concilios y Padres de la Iglesia frente a las Escrituras? ¿Qué fundamentos tiene sola Scriptura?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-053",
+      "title": "Confesión de pecados",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Es necesaria la confesión de pecados ante un sacerdote o directamente ante Dios?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-054",
+      "title": "Purgatorio",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [],
+      "question": "¿Existe el purgatorio y qué fundamentos bíblicos e históricos tiene?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-055",
+      "title": "Oración por los fallecidos",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Es bíblico orar por los fallecidos?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-056",
+      "title": "Santidad y santificación",
+      "primaryAxisId": "E07",
+      "relatedAxisIds": [],
+      "question": "¿Qué significa santidad y quién puede ser considerado santo? ¿Qué significa la santificación y cómo se desarrolla?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-057",
+      "title": "Celibato ministerial",
+      "primaryAxisId": "E08",
+      "relatedAxisIds": [],
+      "question": "¿Es bíblicamente obligatorio el celibato de los ministros?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-058",
+      "title": "Navidad y Semana Santa",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Qué fundamentos bíblicos e históricos tienen Navidad y Semana Santa?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-059",
+      "title": "Ayuno",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [],
+      "question": "¿Es necesario ayunar y cuál es su finalidad?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-060",
+      "title": "Pecado original",
+      "primaryAxisId": "E06",
+      "relatedAxisIds": [],
+      "question": "¿Qué es el pecado original y se hereda la culpa de Adán o sus consecuencias?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-061",
+      "title": "Clasificación de pecados",
+      "primaryAxisId": "E06",
+      "relatedAxisIds": [],
+      "question": "¿Existe una diferencia entre pecados mortales y veniales?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-062",
+      "title": "Pecado y vida cristiana",
+      "primaryAxisId": "E06",
+      "relatedAxisIds": [],
+      "question": "¿Qué diferencia hay entre cometer pecado y vivir deliberadamente en él?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-063",
+      "title": "Libre albedrío y predestinación",
+      "primaryAxisId": "E07",
+      "relatedAxisIds": [],
+      "question": "¿Cómo se relacionan libre albedrío y predestinación?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-064",
+      "title": "Juicio, discernimiento y corrección",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [],
+      "question": "¿Qué diferencia existe entre juzgar, discernir y corregir al prójimo?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-065",
+      "title": "Bailes, fiestas y conducta",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [],
+      "question": "¿Es pecado participar en bailes, fiestas y actividades consideradas mundanas?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-066",
+      "title": "Satanás y el término Lucifer",
+      "primaryAxisId": "E12",
+      "relatedAxisIds": [],
+      "question": "¿Quién es Satanás y cuál es su origen según las Escrituras? ¿Lucifer y Satanás son necesariamente el mismo ser?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-067",
+      "title": "Ángeles y seres celestiales",
+      "primaryAxisId": "E12",
+      "relatedAxisIds": [],
+      "question": "¿Quiénes son ángeles, arcángeles, querubines y serafines?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-068",
+      "title": "Hijos de Dios y nefilim",
+      "primaryAxisId": "E12",
+      "relatedAxisIds": [],
+      "question": "¿Quiénes eran los hijos de Dios y los nefilim de Génesis 6?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-069",
+      "title": "Posesión y discernimiento espiritual",
+      "primaryAxisId": "E12",
+      "relatedAxisIds": [],
+      "question": "¿Puede un cristiano ser poseído por un demonio?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-070",
+      "title": "Maldiciones generacionales y liberación",
+      "primaryAxisId": "E12",
+      "relatedAxisIds": [],
+      "question": "¿Qué fundamento tienen las maldiciones generacionales y las prácticas de liberación?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-071",
+      "title": "Dios, sufrimiento y mal",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Por qué Dios permite el sufrimiento y el mal?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-072",
+      "title": "Dificultades y aparentes contradicciones bíblicas",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Existen contradicciones bíblicas o diferencias derivadas de interpretación y transmisión?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-073",
+      "title": "Creación, ciencia y filosofía",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Qué relación existe entre creación bíblica y explicaciones científicas del origen del universo y la vida?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-074",
+      "title": "Religiones abrahámicas: historia y concepciones de Dios",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Qué continuidades históricas y diferencias sobre Dios existen entre judaísmo, cristianismo e islam? ¿En qué sentidos puede hablarse del mismo Dios?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-075",
+      "title": "Jesús: evidencia histórica y afirmación de resurrección",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Qué evidencia histórica y documental existe sobre vida, muerte y resurrección de Jesús?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-076",
+      "title": "Fe, razón y evidencia",
+      "primaryAxisId": "E14",
+      "relatedAxisIds": [],
+      "question": "¿Cómo se relacionan fe, razón y evidencia histórica?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-077",
+      "title": "Milenio",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [],
+      "question": "¿Qué es el milenio de Apocalipsis y cómo se interpreta?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-078",
+      "title": "Anticristo",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [],
+      "question": "¿Quién es el anticristo y qué fundamentos tienen las interpretaciones de su identidad?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-079",
+      "title": "Niñez, bautismo y salvación",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [],
+      "question": "¿Qué sucede con niños que fallecen sin bautismo o profesión consciente de fe?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [],
+      "referenceSelectionPending": "Pasajes y documentos pertinentes por seleccionar y verificar según el alcance del estudio.",
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-080",
+      "title": "Responsabilidades recíprocas entre padres e hijos",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [],
+      "question": "¿Qué significa honrar a los padres ante violencia, abuso o conductas perjudiciales? ¿Qué significa que los padres no provoquen a ira a sus hijos y cómo se relaciona con honrar a los padres?",
+      "status": "planificado",
+      "version": "0.1.0",
+      "createdAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Ex 20:12",
+        "Dt 5:16",
+        "Ef 6:1-4",
+        "Col 3:20-21",
+        "Pr 22:6",
+        "Heb 12:5-11"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    }
+  ],
+  "extensions": [
+    {
+      "schemaVersion": 1,
+      "id": "SN-031",
+      "title": "Veneración de imágenes e idolatría",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E03",
+        "E13",
+        "E09"
+      ],
+      "question": "Distinción entre representación, veneración y adoración. ¿Prohíbe Dios toda imagen? ¿Cómo se relacionan la serpiente de bronce, los querubines y la idolatría? Distinguir fabricación, representación, veneración y culto; evaluar serpiente de bronce y su destrucción.",
+      "status": "planificado",
+      "version": "0.2.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Ex 20:4-5",
+        "Ex 25:18-22",
+        "Nm 21:8-9",
+        "2 R 18:4"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md",
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-020",
+      "title": "Bautismo en agua",
+      "primaryAxisId": "E10",
+      "relatedAxisIds": [
+        "E07",
+        "E08"
+      ],
+      "question": "Significado, función y relación con salvación. ¿Es válido el bautismo de bebés o se requiere profesión consciente de fe? Bautismo de bebés y de quienes profesan fe; no asumir presencia ni ausencia de bebés en relatos de hogares.",
+      "status": "planificado",
+      "version": "0.2.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Mt 28:19",
+        "Hch 2:38",
+        "Ro 6:3-4",
+        "Hch 2:38-39",
+        "Hch 16:15,33",
+        "Col 2:11-12"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md",
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-007",
+      "title": "Consumo de bebidas alcohólicas",
+      "primaryAxisId": "E09",
+      "relatedAxisIds": [
+        "E06"
+      ],
+      "question": "Consumo, embriaguez y conciencia. ¿Prohíbe la Biblia el alcohol o la embriaguez? ¿Qué significaban las bebidas fermentadas? Consumo, embriaguez, léxico, contexto, conciencia y daño; distinguir teología y salud.",
+      "status": "planificado",
+      "version": "0.2.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Jn 2:1-11",
+        "Ef 5:18",
+        "1 Ti 5:23",
+        "Pr 20:1",
+        "Ro 14"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md",
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-023",
+      "title": "La Trinidad",
+      "primaryAxisId": "E03",
+      "relatedAxisIds": [
+        "E04",
+        "E05",
+        "E13"
+      ],
+      "question": "Fundamentos y desarrollo doctrinal. ¿La Trinidad está formulada en la Biblia o su formulación doctrinal se desarrolló después? Diferenciar evidencia bíblica y desarrollo terminológico e histórico; crítica textual cuando corresponda.",
+      "status": "planificado",
+      "version": "0.2.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Mt 28:19",
+        "Jn 1:1",
+        "2 Co 13:14",
+        "1 Jn 5:7-8"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md",
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "SN-034",
+      "title": "El infierno",
+      "primaryAxisId": "E11",
+      "relatedAxisIds": [
+        "E07"
+      ],
+      "question": "Seol, Hades, Gehena y juicio. ¿El castigo eterno implica sufrimiento consciente perpetuo o destrucción definitiva? Comparar interpretaciones de castigo consciente y destrucción; no decidir por anticipado.",
+      "status": "planificado",
+      "version": "0.2.0",
+      "createdAt": "2026-11-25",
+      "updatedAt": "2026-11-26",
+      "initialReferences": [
+        "Mt 10:28",
+        "25:46",
+        "Ap 20",
+        "Mt 25:46"
+      ],
+      "disciplineIds": [],
+      "methodSelections": [],
+      "traditionSelections": [],
+      "evidenceIds": [],
+      "publishedVersion": null,
+      "sourceRefs": [
+        "docs/P0/03-ejes.md",
+        "docs/P10/propuestas-ampliacion-p101.json"
+      ]
+    }
+  ]
+}
