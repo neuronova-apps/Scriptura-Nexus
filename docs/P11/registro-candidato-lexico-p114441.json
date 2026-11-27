@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.4.4.1.fragmentacion_privada",
+  "baselineMain": "7c2dafa60731a69795f02f703f2ef0eda567fc52",
+  "previousIntegration": {
+    "pr": 110,
+    "head": "976b7debe46ef8ff465ddb4e287d81b8d063276e",
+    "merge": "7c2dafa60731a69795f02f703f2ef0eda567fc52",
+    "workflows": 33,
+    "successfulChecks": 42,
+    "run": 46032073741,
+    "job": 140618095968,
+    "pagesRun": 46032832136,
+    "pagesAtPreparation": "success"
+  },
+  "observed": {
+    "occurrences": 78218,
+    "units": 5162,
+    "chapters": 168,
+    "books": 7,
+    "editions": 2,
+    "frequencyScopes": 36,
+    "editionKeys": 43679,
+    "bookKeys": 52814,
+    "verifiedQueries": 96493,
+    "postingsChecked": 463364,
+    "formEditionPostings": 78218,
+    "formBookPostings": 78218,
+    "byMode": {
+      "form": {
+        "keys": 67505,
+        "postings": 156436
+      },
+      "lemma": {
+        "keys": 14494,
+        "postings": 153464
+      },
+      "provider": {
+        "keys": 14494,
+        "postings": 153464
+      }
+    },
+    "absenceChecks": 12,
+    "occurrencesWithAdmittedLemma": 76732,
+    "occurrencesWithoutAdmittedLemma": 1486,
+    "sha256": "b01f8099853a52c7d30ac4404d27e39f6e954e5d41a9a3c32bf452fc4d5fd04f"
+  },
+  "lexical": {
+    "entries": 30740,
+    "forms": 10221,
+    "definitions": 35496,
+    "modelSha256": "26c8e8897f24c1991180cbbf0c0796afa130a6f6a088b1039cf69f137fe73f62",
+    "admitted": [
+      "LING-015",
+      "LING-016",
+      "LING-017",
+      "LING-018"
+    ],
+    "excluded": [
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07",
+      "LEX-C08"
+    ],
+    "dodson": "pendiente_aprobacion"
+  },
+  "transport": {
+    "maxGzipBytes": 256000,
+    "maxJsonBytes": 8388608,
+    "queryBuckets": 256,
+    "detailBuckets": 1024,
+    "frequencyPageSize": 100,
+    "coordinateStride": 10000,
+    "chapterLayers": 336,
+    "mode": "private_in_memory",
+    "publicationAuthorized": false,
+    "corpusPersisted": false,
+    "queryKeysInUrls": false,
+    "greekAnnotationSeparated": true
+  },
+  "gates": {
+    "newAdmissions": 0,
+    "publicArtifact": false,
+    "manualAccessibility": "pendiente",
+    "browserCandidate": "pendiente",
+    "publicationAuthorized": false
+  },
+  "progress": {
+    "completed": 61,
+    "total": 69
+  },
+  "next": "P11.4.4.4.2_interfaz_candidato_privado"
+}
