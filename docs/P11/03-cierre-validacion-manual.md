@@ -1,0 +1,7 @@
+# P11.3. Cierre de validación manual
+
+Base main c4e06d1ac495e2041e7d84f634b8051a5bf462dd. PR #85 integrado; 17 workflows satisfactorios. Run 45946616062, job 140332655725: 496 pruebas Node aprobadas, 18 rutas, 306 comprobaciones de reflow, 72 escaneos axe, 108 mediciones de laboratorio y cero fallos de la auditoría. Despliegue 45947229558: build y deploy satisfactorios.
+
+El 27 de noviembre de 2026 el responsable reportó A01, A02, A03, A04, A05 y A06 como conformes, sin observaciones registradas. Se conserva como declaración del responsable, no como reproducción independiente de las pruebas. No se comunicaron dispositivo, navegador, versiones de tecnología de apoyo ni detalles del entorno aislado de A06; no se inventan. Se acepta el resultado reportado para el alcance probado, sin certificar WCAG 2.2 AA integral ni afirmar cobertura de corpus público.
+
+INP de campo no medido; presupuesto de fragmentos públicos no evaluable hasta disponer de adaptador autorizado. Las cinco limitaciones P10, veinte necesidades documentales y revisión humana de privacidad siguen pendientes. No se admiten nuevos archivos ni se alteran los registros históricos. El cierre queda documentado mediante este PR, condicionado a CI, integración y despliegue satisfactorios. Después se contabilizan 60/62 etapas originales (96,8 %). P11.4 requiere una decisión explícita de alcance, según 04-propuesta-alcance-publicacion.md. No se interpreta la conformidad manual como autorización de publicación.
