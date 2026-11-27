@@ -1,0 +1,56 @@
+name: P11.4.3.5.3 Verificación del artefacto privado del analizador
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/analyzer-artifact-p114353.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyzer-artifact:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compilación y barrera pública
+        run: |
+          npm ci
+          node --test tests/p114353-analyzer-artifact.test.mjs
+          npm run build
+          npm run test:build
+      - name: Verificación del artefacto completo en Windows
+        if: runner.os == 'Windows'
+        run: node scripts/stage-analyzer-artifact-p114353.mjs --verify
+      - name: Verificación del artefacto y navegador en Linux
+        if: runner.os == 'Linux'
+        run: |
+          deps="$RUNNER_TEMP/p114353-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1
+          "$deps/node_modules/.bin/playwright" install chromium
+          if ! node -e "const {chromium}=require('$deps/node_modules/playwright'); (async()=>{const b=await chromium.launch();await b.close()})().catch(()=>process.exit(1))"; then
+            "$deps/node_modules/.bin/playwright" install-deps chromium
+          fi
+          P114353_DEPS="$deps" node scripts/stage-analyzer-artifact-p114353.mjs --browser
+      - name: Barrera pública posterior
+        run: npm run test:build

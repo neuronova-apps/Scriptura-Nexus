@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {analyzerHtml,dataRoot,allowedPath,overlayRelative,compareAnalyzerScope} from '../scripts/lib/analyzer-artifact-scope-p114353.mjs';
+const catalog=dataRoot+'catalog.json.gz',other='biblia/lector/index.html';
+const baseline=()=>new Map([[analyzerHtml,'a'],[other,'b']]);
+const expected=()=>new Map([[analyzerHtml,'c'],[catalog,'d']]);
+const staged=()=>new Map([[analyzerHtml,'c'],[other,'b'],[catalog,'d']]);
+test('staging preserves every unrelated byte and admits only analyzer scope',()=>assert.deepEqual(compareAnalyzerScope(baseline(),staged(),expected()),{baselineFiles:2,unchangedFiles:1,addedFiles:1,replacedFiles:1}));
+test('changed reader or absent overlay fails',()=>{let a=staged();a.set(other,'changed');assert.throws(()=>compareAnalyzerScope(baseline(),a,expected()));a=staged();a.delete(catalog);assert.throws(()=>compareAnalyzerScope(baseline(),a,expected()));});
+test('unexpected data and existing private baseline fail',()=>{const a=staged();a.set('extra.json','e');assert.throws(()=>compareAnalyzerScope(baseline(),a,expected()));const b=baseline();b.set(catalog,'old');assert.throws(()=>compareAnalyzerScope(b,staged(),expected()));});
+test('path whitelist excludes traversal, wrong modules and other sections',()=>{assert.ok(allowedPath(dataRoot+'chapters/TXT-X/LIB-Gen/1/text.json.gz'));assert.ok(allowedPath(dataRoot+'init.js'));for(const p of [dataRoot+'../index.html',dataRoot+'arbitrary.js',dataRoot+'chapters/TXT-X/LIB-Gen/01/text.json.gz','biblia/lector/index.html'])assert.equal(allowedPath(p),false);assert.throws(()=>overlayRelative('/Scriptura-Nexus/'+dataRoot+'../index.html'));});
