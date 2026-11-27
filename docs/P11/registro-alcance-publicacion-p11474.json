@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11.4.7.4",
+  "baselineMain": "6e41aa0fab0fd19da5199f59fb7cfb831a3a9687",
+  "previousEvidence": {
+    "pr": 127,
+    "head": "9f4445f8b2929cb7cc9bcc3e55b288fb623b6898",
+    "merge": "6e41aa0fab0fd19da5199f59fb7cfb831a3a9687",
+    "checksSuccess": 58,
+    "checksSkipped": 1,
+    "run": 46056959172,
+    "job": 140701693613,
+    "pagesRun": 46057502162,
+    "plan": {
+      "phase": "P11.4.7.3",
+      "status": "manual_review_pending",
+      "modules": 5,
+      "moduleChecks": 35,
+      "crossModuleChecks": 3,
+      "manualPassed": 0,
+      "publicModulesEnabled": 0,
+      "publicationAuthorized": false
+    },
+    "launcher": {
+      "phase": "P11.4.7.3",
+      "launcherSmoke": "success",
+      "routes": 5,
+      "unknownRouteDenied": true,
+      "externalFetchDenied": true,
+      "distUnchanged": true,
+      "manualReview": false,
+      "publicationAuthorized": false,
+      "upload": false
+    }
+  },
+  "status": "technical_validation_complete_release_blocked",
+  "selectedOption": "B",
+  "modules": [
+    {
+      "id": "reader",
+      "route": "biblia/lector/",
+      "scope": {
+        "editions": 2,
+        "books": 93,
+        "chapters": 1449,
+        "units": 39041
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "effectiveEditionApproval",
+        "territorialReview",
+        "finalPrivacyReview",
+        "realMobileL05"
+      ],
+      "mobileDeferralAccepted": true,
+      "technicalValidation": "passed_private_automated",
+      "manualStatus": "pending",
+      "effectiveApproval": "pending",
+      "publicEnabled": false
+    },
+    {
+      "id": "analyzer",
+      "route": "linguistica/analizador/",
+      "scope": {
+        "books": 7,
+        "chapters": 168,
+        "chapterLayers": 336,
+        "units": 5162,
+        "occurrences": 78218,
+        "withheldGreek": 198
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualKeyboard",
+        "manualScreenReader",
+        "manualDeviceReview",
+        "territorialReviewWLC",
+        "privacyReview",
+        "ownerPublicationApproval"
+      ],
+      "technicalValidation": "passed_private_automated",
+      "manualStatus": "pending",
+      "effectiveApproval": "pending",
+      "publicEnabled": false
+    },
+    {
+      "id": "lexical",
+      "route": "linguistica/lexicos-concordancias/",
+      "scope": {
+        "historicalFiles": 4,
+        "occurrences": 78218,
+        "entries": 30740,
+        "forms": 10221,
+        "definitions": 35496,
+        "fragments": 11442
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "ownerPublicationApproval"
+      ],
+      "technicalValidation": "passed_private_automated",
+      "manualStatus": "pending",
+      "effectiveApproval": "pending",
+      "publicEnabled": false
+    },
+    {
+      "id": "comparator",
+      "route": "biblia/comparador/",
+      "scope": {
+        "editions": 2,
+        "books": 93,
+        "chapters": 1449,
+        "units": 39041,
+        "verifiedGroups": 0
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "rightsAndPrivacyReview",
+        "ownerPublicationApproval"
+      ],
+      "technicalValidation": "passed_private_automated",
+      "manualStatus": "pending",
+      "effectiveApproval": "pending",
+      "publicEnabled": false
+    },
+    {
+      "id": "manuscripts",
+      "route": "manuscritos/consulta/",
+      "scope": {
+        "witnesses": 2,
+        "variants": 1,
+        "readings": 2,
+        "resources": 7,
+        "evidence": 8,
+        "secondaryAttestations": 2,
+        "directInspections": 0,
+        "sourceFilesAdmitted": 0
+      },
+      "status": "private_candidate_prepared",
+      "blockers": [
+        "manualScreenReader",
+        "manualDeviceReview",
+        "rightsAndLinksReview",
+        "privacyReview",
+        "ownerPublicationApproval"
+      ],
+      "technicalValidation": "passed_private_automated",
+      "manualStatus": "pending",
+      "effectiveApproval": "pending",
+      "publicEnabled": false
+    }
+  ],
+  "manual": {
+    "pending": 38,
+    "passed": 0,
+    "failed": 0,
+    "notEvaluable": 0,
+    "readerL05HistoricalDeferral": true,
+    "reviewCompleted": false
+  },
+  "decision": {
+    "state": "pending_owner_and_manual_evidence",
+    "approvedModules": [],
+    "approvedEditions": [],
+    "approvedResourceComponents": [],
+    "approvalRef": null,
+    "acceptedDeferrals": [],
+    "criticalDefectsMayBeWaived": false
+  },
+  "controls": {
+    "publicationAuthorized": false,
+    "corpusImportAuthorized": false,
+    "releaseActionPerformed": false,
+    "publicArtifact": false,
+    "publicModulesEnabled": 0,
+    "corpusPersisted": false,
+    "upload": false,
+    "fieldINP": "not_measured",
+    "academicAnalysisCompleted": false,
+    "exclusions": [
+      "P1022-R12",
+      "Dodson XML",
+      "LING-010",
+      "LEX-C01",
+      "LEX-C02",
+      "LEX-C07",
+      "LEX-C08"
+    ]
+  },
+  "progress": {
+    "historicalCompleted": 63,
+    "total": 69,
+    "technicalPreparationMilestones": 66,
+    "technicalPreparationIsNotClosure": true,
+    "operationalClosure": "blocked_pending_manual_review_and_approval"
+  },
+  "next": {
+    "phase": "P11.4.8",
+    "state": "blocked_for_effective_publication",
+    "allowedPreparationOnly": true
+  }
+}

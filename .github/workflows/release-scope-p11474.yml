@@ -1,0 +1,28 @@
+name: P11.4.7.4 Conciliación final y alcance de publicación
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'src/**'
+      - '.github/workflows/release-scope-p11474.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-scope:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Conciliación y regresiones
+        run: npm ci && node scripts/validate-release-scope-p11474.mjs && npm run check && npm test && npm run build && npm run test:build
+      - name: Barrera documental pública
+        run: node scripts/verify-manuscript-pilot-build.mjs
