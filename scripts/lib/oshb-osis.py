@@ -16,6 +16,14 @@ def reject(*_):
 def parse(data, book):
     if book not in ("Gen", "Dan"):
         raise ValueError("Libro no autorizado en P8.2.2")
+    return _parse_primary(data, book)
+
+def _parse_primary(data, book, *, allow_large_segments=False):
+    # Low-level structural parsing; callers must enforce source fingerprints and scope.
+    if book not in ("Gen", "Dan", "Lev", "Deut"):
+        raise ValueError("Libro fuera del alcance estructural")
+    if allow_large_segments and book not in ("Lev", "Deut"):
+        raise ValueError("Formato ampliado fuera del alcance")
     if len(data) > 4 * 1024 * 1024:
         raise ValueError("Límite XML superado")
     decoded = data.decode("utf-8", errors="strict")
@@ -78,7 +86,23 @@ def parse(data, book):
             alternatives = []
             check_text(verse.text, "versiculo")
             for child in verse:
-                if child.tag in (q("w"), q("seg")) and len(child) == 0:
+                if allow_large_segments and child.tag == q("w") and len(child):
+                    # Only the attested OSHB typographic segment is supported.
+                    # Preserve Unicode codepoints, tails and segment offsets; no normalization.
+                    if any(c.tag != q("seg") or c.attrib != {"type":"x-large"} or len(c) or not c.text for c in child):
+                        unknown(child, "versiculo")
+                        raise ValueError("Estructura interna de palabra no admitida")
+                    form = child.text or ""
+                    spans = []
+                    for c in child:
+                        spans.append({"type":"x-large","start":len(form),"length":len(c.text)})
+                        form += c.text + (c.tail or "")
+                    if not form.strip():
+                        raise ValueError("Forma textual vacía")
+                    events.append({"kind":"word","form":form,"providerId":child.get("id"),
+                        "type":child.get("type"),"lemmaRaw":child.get("lemma"),"morphRaw":child.get("morph"),
+                        "letterSegments":spans})
+                elif child.tag in (q("w"), q("seg")) and len(child) == 0:
                     form = child.text
                     if not form or not form.strip():
                         raise ValueError("Forma textual vacía")
