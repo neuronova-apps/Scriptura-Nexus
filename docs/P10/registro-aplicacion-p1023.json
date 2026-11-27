@@ -1,0 +1,718 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.2.3",
+  "dependency": {
+    "pr": 73,
+    "headSha": "811ea676a4fb31380a18d6648ed37e04939b9452",
+    "sourceBlob": "bd180877a71a2c59adee9d92fd4111e9d9985e79",
+    "mergeRequired": true,
+    "previousDeploymentConfirmationRequired": true
+  },
+  "consultedOn": "2026-11-26",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "scope": "prueba_metodologica_acotada_sin_borradores_publicos",
+  "pilots": [
+    {
+      "id": "SN-001",
+      "cases": [
+        {
+          "bookId": "LIB-LEV",
+          "chapter": "19",
+          "focus": "28",
+          "contextStart": "26",
+          "contextEnd": "29",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/LEV19.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "distinguir alcance de las dos prohibiciones y relación con el luto",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        },
+        {
+          "bookId": "LIB-DEU",
+          "chapter": "14",
+          "focus": "1",
+          "contextStart": "1",
+          "contextEnd": "2",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/DEU14.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "contrastar destinatario y motivo del duelo",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-001/S01",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-001/S02",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-001/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S04",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-001/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S06",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-001/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-001/S20",
+          "status": "parcial_requiere_revision"
+        }
+      ],
+      "openNeeds": [
+        "Ediciones hebreas identificadas y traducciones autorizadas",
+        "Léxicos y gramáticas con localizadores",
+        "Estudios históricos sobre marcas y luto",
+        "Fuentes confesionales atribuibles y argumentos sobre pactos"
+      ],
+      "limits": "Falta análisis hebreo de ocurrencias y gramática, fuentes primarias histórico-culturales y contraste confesional completo.",
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-015",
+      "cases": [
+        {
+          "bookId": "LIB-GEN",
+          "chapter": "14",
+          "focus": "20",
+          "contextStart": "17",
+          "contextEnd": "24",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/GEN14.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "distinguir relato y mandato",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        },
+        {
+          "bookId": "LIB-LEV",
+          "chapter": "27",
+          "focus": "30",
+          "contextStart": "30",
+          "contextEnd": "34",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/LEV27.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "delimitar bienes y destinatarios de la disposición",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        },
+        {
+          "bookId": "LIB-MAL",
+          "chapter": "3",
+          "focus": "8",
+          "contextStart": "7",
+          "contextEnd": "12",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/MAL03.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar destinatarios, templo y finalidad",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        },
+        {
+          "bookId": "LIB-MAT",
+          "chapter": "23",
+          "focus": "23",
+          "contextStart": "23",
+          "contextEnd": "24",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/MAT23.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar interlocutores y prioridades de la ley",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-2CO",
+          "chapter": "9",
+          "focus": "7",
+          "contextStart": "5",
+          "contextEnd": "9",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/2CO09.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "distinguir exhortación a contribuir y contexto de la colecta",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-015/S01",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-015/S02",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-015/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S04",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-015/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S06",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-015/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-015/S20",
+          "status": "parcial_requiere_revision"
+        }
+      ],
+      "openNeeds": [
+        "Contexto de cada pasaje y su destinatario",
+        "Fuentes sobre instituciones de Israel y prácticas económicas",
+        "Análisis de términos y textos pertinentes",
+        "Documentos y autores de tradiciones con posiciones diferentes"
+      ],
+      "limits": "Faltan estudios de pactos e instituciones económicas, términos originales y documentos confesionales específicos.",
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-008",
+      "cases": [
+        {
+          "bookId": "LIB-ACT",
+          "chapter": "2",
+          "focus": "4",
+          "contextStart": "1",
+          "contextEnd": "13",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/ACT02.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar función narrativa y comprensión por oyentes",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-ACT",
+          "chapter": "10",
+          "focus": "46",
+          "contextStart": "44",
+          "contextEnd": "48",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/ACT10.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar recepción del Espíritu y testimonio de los presentes",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-ACT",
+          "chapter": "19",
+          "focus": "6",
+          "contextStart": "1",
+          "contextEnd": "7",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/ACT19.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar secuencia narrativa de los discípulos de Éfeso",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-1CO",
+          "chapter": "12",
+          "focus": "10",
+          "contextStart": "4",
+          "contextEnd": "11",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/1CO12.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar distribución de dones e interpretación",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-1CO",
+          "chapter": "13",
+          "focus": "8",
+          "contextStart": "8",
+          "contextEnd": "13",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/1CO13.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar el argumento temporal sin decidir su cumplimiento",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-1CO",
+          "chapter": "14",
+          "focus": "2",
+          "contextStart": "1",
+          "contextEnd": "5",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/1CO14.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar destinatario, interpretación y edificación",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-008/S01",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-008/S02",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-008/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S04",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-008/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S06",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-008/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-008/S20",
+          "status": "parcial_requiere_revision"
+        }
+      ],
+      "openNeeds": [
+        "Edición griega identificada y contexto de cláusulas",
+        "Léxicos y gramáticas con revisión de sentidos",
+        "Documentos pentecostales y otras perspectivas pertinentes",
+        "Fuentes históricas y exegéticas"
+      ],
+      "limits": "Falta análisis de cláusulas griegas, léxicos y lectura integral de perspectivas sobre vigencia.",
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-021",
+      "cases": [
+        {
+          "bookId": "LIB-PSA",
+          "chapter": "22",
+          "focus": "1",
+          "contextStart": "1",
+          "contextEnd": "5",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/PSA022.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar inicio del salmo y contexto de confianza",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": false
+        },
+        {
+          "bookId": "LIB-MAT",
+          "chapter": "27",
+          "focus": "46",
+          "contextStart": "43",
+          "contextEnd": "50",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/MAT27.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar función del clamor en la narración",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        },
+        {
+          "bookId": "LIB-MRK",
+          "chapter": "15",
+          "focus": "34",
+          "contextStart": "33",
+          "contextEnd": "39",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/MRK15.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "examinar forma transmitida y contexto narrativo",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-021/S01",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-021/S02",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-021/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S04",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-021/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S06",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-021/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S08",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-021/S20",
+          "status": "parcial_requiere_revision"
+        }
+      ],
+      "openNeeds": [
+        "Ediciones hebrea y griega con identificación y permisos",
+        "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+        "Estudios del Salmo 22 y relatos de la pasión",
+        "Fuentes cristológicas e históricas atribuibles"
+      ],
+      "limits": "Falta fijar edición hebrea, verificar variantes de ambos relatos y estudiar recepción histórica y cristológica.",
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-040",
+      "cases": [
+        {
+          "bookId": "LIB-JHN",
+          "chapter": "1",
+          "focus": "18",
+          "contextStart": "14",
+          "contextEnd": "18",
+          "sourceId": "P1022-R01",
+          "sourceUrl": "https://ebible.org/spaRV1909/JHN01.htm",
+          "status": "referencia_y_contexto_web_consultados",
+          "question": "acotar la variante a un caso documentado, no seleccionar lectura original",
+          "technicalAudit": "pendiente_CI",
+          "greekIndependentCheck": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "SN-040/S01",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-040/S02",
+          "status": "preparada_desde_delimitacion"
+        },
+        {
+          "id": "SN-040/S03",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S04",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-040/S05",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S06",
+          "status": "parcial_requiere_revision"
+        },
+        {
+          "id": "SN-040/S07",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S08",
+          "status": "parcial_referencia_documental_previa"
+        },
+        {
+          "id": "SN-040/S09",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S10",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S11",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S12",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S13",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S14",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S15",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S16",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S17",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S18",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S19",
+          "status": "pendiente"
+        },
+        {
+          "id": "SN-040/S20",
+          "status": "parcial_requiere_revision"
+        }
+      ],
+      "openNeeds": [
+        "Identidad, revisión y permisos de ediciones concretas",
+        "Aparatos y fuentes documentales autorizadas o referencias externas",
+        "Localizadores y naturaleza de testimonio directo o secundario",
+        "Criterios explícitos de crítica textual y límites"
+      ],
+      "limits": "Falta seleccionar y auditar una edición digital concreta de Scrivener, verificar aparato y testimonio directo.",
+      "evidenceIds": [],
+      "conclusions": []
+    }
+  ]
+}
