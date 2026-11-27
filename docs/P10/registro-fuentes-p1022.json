@@ -1,0 +1,999 @@
+{
+  "schemaVersion": 1,
+  "phase": "P10.2.2",
+  "baseMain": "60ce481da3553806867fb225bd5143bef2f6584f",
+  "previousRecordBlob": "d68fd95d2862b7f1cbb21abae08e140d71ab4b8b",
+  "consultedOn": "2026-11-26",
+  "publicationAuthorized": false,
+  "corpusImportAuthorized": false,
+  "sourceVerificationScope": "identidad_localizacion_y_condiciones_documentadas_sin_validacion_de_conclusiones",
+  "sources": [
+    {
+      "id": "P1022-R01",
+      "sourceId": "F05",
+      "title": "Reina-Valera 1909, spaRV1909",
+      "authority": "eBible.org",
+      "url": "https://ebible.org/spaRV1909/copyright.htm",
+      "locator": "Identidad, fuente digital 2015-08-10 y declaración de dominio público",
+      "verification": "documentada_y_admision_previa",
+      "rights": "Dominio público declarado por distribuidor; revisión territorial pendiente",
+      "limit": "Admisión previa P9.1.2 solo para proyección técnica en memoria; sin ampliación de permisos"
+    },
+    {
+      "id": "P1022-R02",
+      "sourceId": "F03",
+      "title": "SBLGNT v1.2",
+      "authority": "Society of Biblical Literature y Logos Bible Software; editor Michael W. Holmes",
+      "url": "https://github.com/Faithlife/SBLGNT",
+      "locator": "P9.1.2: commit 736fdc76158950c3d04b949b7e013ca14305145a y LICENSE",
+      "verification": "documentada_y_admision_previa",
+      "rights": "CC BY 4.0 según registro P9.1.2",
+      "limit": "Admisión previa limitada; no colación ni importación nueva"
+    },
+    {
+      "id": "P1022-R03",
+      "sourceId": "F02",
+      "title": "Open Scriptures Hebrew Bible",
+      "authority": "Open Scriptures Hebrew Bible Project",
+      "url": "https://hb.openscriptures.org/index.html",
+      "locator": "Descripción y declaración de licencia por componente",
+      "verification": "identidad_y_condiciones_documentadas",
+      "rights": "Lemas y morfología CC BY 4.0; WLC declarado dominio público por proyecto",
+      "limit": "No se selecciona snapshot de ampliación ni se presupone cobertura de estos pasajes"
+    },
+    {
+      "id": "P1022-R04",
+      "sourceId": "F10",
+      "title": "HALOT y BDAG (3.ª ed.)",
+      "authority": "Editoriales y distribuidor Logos",
+      "url": "https://es.logos.com/product/5228/bdag-halot-bundle",
+      "locator": "Ficha comercial de ambos léxicos",
+      "verification": "identidad_documentada_acceso_pendiente",
+      "rights": "Consulta bajo licencia adquirida; redistribución no acreditada",
+      "limit": "Confirmar disponibilidad, edición y localizadores de entradas; sin consulta del contenido"
+    },
+    {
+      "id": "P1022-R05",
+      "sourceId": "F27",
+      "title": "What Does the Bible Say About Tattoos?",
+      "authority": "Biblical Archaeology Society; síntesis de artículo de Mark W. Chavalas",
+      "url": "https://www.biblicalarchaeology.org/daily/biblical-topics/hebrew-bible/what-does-the-bible-say-about-tattoos/",
+      "locator": "Párrafos sobre Lv 19:28, marcas, luto y propiedad",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; derechos de reproducción no comprobados",
+      "limit": "Síntesis divulgativa; consultar estudio original y fuentes históricas antes de establecer conclusiones"
+    },
+    {
+      "id": "P1022-R06",
+      "sourceId": "F26",
+      "title": "Westminster Confession of Faith",
+      "authority": "Westminster Theological Seminary, edición web",
+      "url": "https://wts.edu/wcf",
+      "locator": "Capítulo XIX, especialmente §3",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; derechos de edición web no comprobados",
+      "limit": "Confesión reformada, no representa a todos los protestantes"
+    },
+    {
+      "id": "P1022-R07",
+      "sourceId": "F26",
+      "title": "Catechism of the Catholic Church: The Precepts of the Church",
+      "authority": "Santa Sede",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_3/ii_the_precepts_of_the_church.html",
+      "locator": "§2043",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; reproducción no autorizada",
+      "limit": "Documento católico sobre sostenimiento; no extrapolar a diezmo universal"
+    },
+    {
+      "id": "P1022-R08",
+      "sourceId": "F26",
+      "title": "Baptism in the Holy Spirit",
+      "authority": "Assemblies of God (USA)",
+      "url": "https://ag.org/en/Beliefs/Position-Papers/Baptism-in-the-Holy-Spirit",
+      "locator": "Apartados sobre Acts, lenguas como evidencia y Continuing Evidences",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; reproducción no autorizada",
+      "limit": "Documento de una institución pentecostal; no atribuir a todas"
+    },
+    {
+      "id": "P1022-R09",
+      "sourceId": "F26",
+      "title": "Report of the Committee on the Baptism and Gifts of the Holy Spirit",
+      "authority": "Orthodox Presbyterian Church",
+      "url": "https://www.opc.org/GA/giftsHS.html",
+      "locator": "Apartado sobre cese de lenguas y profecía",
+      "verification": "referencia_identificada_pendiente_lectura_integral",
+      "rights": "Solo referencia; reproducción no autorizada",
+      "limit": "Informe de comité; revisar recepción y autoridad antes de atribuir posición institucional"
+    },
+    {
+      "id": "P1022-R10",
+      "sourceId": "F26",
+      "title": "Catechism of the Catholic Church: Grace",
+      "authority": "Santa Sede",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/ii_grace.index.html",
+      "locator": "§2003",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; reproducción no autorizada",
+      "limit": "Carismas; no equiparar con doctrina pentecostal de evidencia inicial"
+    },
+    {
+      "id": "P1022-R11",
+      "sourceId": "F26",
+      "title": "Catechism of the Catholic Church: Jesus Died Crucified",
+      "authority": "Santa Sede",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html",
+      "locator": "§603",
+      "verification": "referencia_documental_consultada",
+      "rights": "Solo referencia; reproducción no autorizada",
+      "limit": "Fuente católica atribuida; faltan otras perspectivas y recepción histórica"
+    },
+    {
+      "id": "P1022-R12",
+      "sourceId": "F17",
+      "title": "Scrivener New Testament, 1894",
+      "authority": "Digital Bible Society, ficha de edición",
+      "url": "https://arc.dbs.org/data/scripture/GRCS94/",
+      "locator": "GRCS94, edición 1894; enlaces a ejemplares",
+      "verification": "identidad_documentada_acceso_pendiente",
+      "rights": "Etiqueta OPEN del catálogo; licencia del archivo concreto pendiente",
+      "limit": "No se ha seleccionado ni admitido una transcripción; no inferir identidad con otras ediciones TR"
+    },
+    {
+      "id": "P1022-R13",
+      "sourceId": "F23",
+      "title": "Muestra documental P9.4.3: Jn 1:18",
+      "authority": "Scriptura Nexus, registro de fuentes externas",
+      "url": "https://github.com/neuronova-apps/Scriptura-Nexus/blob/60ce481da3553806867fb225bd5143bef2f6584f/docs/P9/muestra-manuscritos-p943.json",
+      "locator": "Siete recursos, ocho referencias de evidencia; P66 y GA 02",
+      "verification": "documentacion_previa_verificada",
+      "rights": "Referencia solamente; sin reutilización de imágenes ni transcripciones",
+      "limit": "Atestaciones secundarias; sin colación directa ni inferencia de originalidad"
+    },
+    {
+      "id": "P1022-R14",
+      "sourceId": "F25",
+      "title": "How Do I Use Lexicons in Logos?",
+      "authority": "Logos Help Center",
+      "url": "https://support.logos.com/hc/en-us/articles/360055182011-How-Do-I-Use-Lexicons-in-Logos",
+      "locator": "Identificación de BDAG y consulta por referencias",
+      "verification": "referencia_identificada_pendiente_lectura_integral",
+      "rights": "Referencia de ayuda; acceso a biblioteca del usuario no comprobado",
+      "limit": "No acredita compra ni consulta de recursos"
+    },
+    {
+      "id": "P1022-R15",
+      "sourceId": "F27",
+      "title": "Tithe, Encyclopedia of the Bible",
+      "authority": "Bible Gateway, ficha de recurso",
+      "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Tithe",
+      "locator": "Entrada Tithe",
+      "verification": "referencia_identificada_pendiente_lectura_integral",
+      "rights": "Referencia externa; derechos no comprobados",
+      "limit": "Confirmar autoría, edición y fuentes históricas; no usar como única evidencia"
+    }
+  ],
+  "pilots": [
+    {
+      "id": "SN-001",
+      "references": [
+        {
+          "reference": "Lv 19:28",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/LEV19.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Dt 14:1",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/DEU14.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        }
+      ],
+      "needs": [
+        {
+          "need": "Ediciones hebreas identificadas y traducciones autorizadas",
+          "sourceIds": [
+            "P1022-R01",
+            "P1022-R03"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta fijar edición hebrea y verificar cobertura por ocurrencia."
+        },
+        {
+          "need": "Léxicos y gramáticas con localizadores",
+          "sourceIds": [
+            "P1022-R03",
+            "P1022-R04"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta consulta de entradas y gramática concreta."
+        },
+        {
+          "need": "Estudios históricos sobre marcas y luto",
+          "sourceIds": [
+            "P1022-R05"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta estudio original y fuentes primarias históricas."
+        },
+        {
+          "need": "Fuentes confesionales atribuibles y argumentos sobre pactos",
+          "sourceIds": [
+            "P1022-R06"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan posiciones pentecostales y católicas pertinentes."
+        }
+      ],
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-015",
+      "references": [
+        {
+          "reference": "Gn 14:20",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/GEN14.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Lv 27:30",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/LEV27.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Mal 3:8-10",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/MAL03.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Mt 23:23",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/MAT23.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "2 Co 9:7",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/2CO09.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        }
+      ],
+      "needs": [
+        {
+          "need": "Contexto de cada pasaje y su destinatario",
+          "sourceIds": [
+            "P1022-R01",
+            "P1022-R02"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta delimitar perícopas y destinatarios."
+        },
+        {
+          "need": "Fuentes sobre instituciones de Israel y prácticas económicas",
+          "sourceIds": [
+            "P1022-R15"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan estudios académicos sobre economía e instituciones de Israel."
+        },
+        {
+          "need": "Análisis de términos y textos pertinentes",
+          "sourceIds": [
+            "P1022-R01",
+            "P1022-R02",
+            "P1022-R03",
+            "P1022-R04",
+            "P1022-R14"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta comprobar términos, ocurrencias y gramáticas."
+        },
+        {
+          "need": "Documentos y autores de tradiciones con posiciones diferentes",
+          "sourceIds": [
+            "P1022-R06",
+            "P1022-R07"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan fuentes pentecostales y contraste de argumentos específicos sobre diezmo."
+        }
+      ],
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-008",
+      "references": [
+        {
+          "reference": "Hch 2",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/ACT02.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Hch 10",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/ACT10.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Hch 19",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/ACT19.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "1 Co 12–14",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/1CO12.htm",
+            "https://ebible.org/spaRV1909/1CO13.htm",
+            "https://ebible.org/spaRV1909/1CO14.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        }
+      ],
+      "needs": [
+        {
+          "need": "Edición griega identificada y contexto de cláusulas",
+          "sourceIds": [
+            "P1022-R02",
+            "P1022-R01"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta comprobar cláusulas griegas, cobertura y límites."
+        },
+        {
+          "need": "Léxicos y gramáticas con revisión de sentidos",
+          "sourceIds": [
+            "P1022-R04",
+            "P1022-R14"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan entradas BDAG y gramáticas accesibles."
+        },
+        {
+          "need": "Documentos pentecostales y otras perspectivas pertinentes",
+          "sourceIds": [
+            "P1022-R08",
+            "P1022-R09",
+            "P1022-R10"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta lectura integral del informe OPC y revisión de autoridad."
+        },
+        {
+          "need": "Fuentes históricas y exegéticas",
+          "sourceIds": [
+            "P1022-R08",
+            "P1022-R09"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan estudios históricos y exegéticos independientes."
+        }
+      ],
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-021",
+      "references": [
+        {
+          "reference": "Sal 22",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/PSA022.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Mt 27:46",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/MAT27.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        },
+        {
+          "reference": "Mc 15:34",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/MRK15.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        }
+      ],
+      "needs": [
+        {
+          "need": "Ediciones hebrea y griega con identificación y permisos",
+          "sourceIds": [
+            "P1022-R01",
+            "P1022-R02",
+            "P1022-R03"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta fijar snapshot hebreo y cotejar referencias griegas."
+        },
+        {
+          "need": "Fuentes sobre transmisión de expresiones semíticas y variantes si son pertinentes",
+          "sourceIds": [
+            "P1022-R02",
+            "P1022-R13"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta documentación específica de las expresiones semíticas y variantes de Mt/Mc; muestra Jn 1:18 solo orienta el procedimiento."
+        },
+        {
+          "need": "Estudios del Salmo 22 y relatos de la pasión",
+          "sourceIds": [
+            "P1022-R01",
+            "P1022-R02"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan comentarios y estudios especializados de los tres pasajes."
+        },
+        {
+          "need": "Fuentes cristológicas e históricas atribuibles",
+          "sourceIds": [
+            "P1022-R11"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan perspectivas protestantes, pentecostales y recepción histórica."
+        }
+      ],
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    },
+    {
+      "id": "SN-040",
+      "references": [
+        {
+          "reference": "Jn 1:18 (candidato, no referencia original del catálogo)",
+          "sourceId": "P1022-R01",
+          "chapterUrls": [
+            "https://ebible.org/spaRV1909/JHN01.htm"
+          ],
+          "status": "capitulos_localizados",
+          "exactVerseAndContextVerified": false
+        }
+      ],
+      "needs": [
+        {
+          "need": "Identidad, revisión y permisos de ediciones concretas",
+          "sourceIds": [
+            "P1022-R02",
+            "P1022-R12"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta fijar y auditar archivo concreto de Scrivener."
+        },
+        {
+          "need": "Aparatos y fuentes documentales autorizadas o referencias externas",
+          "sourceIds": [
+            "P1022-R13"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Falta acceso a aparato pertinente y límites por edición."
+        },
+        {
+          "need": "Localizadores y naturaleza de testimonio directo o secundario",
+          "sourceIds": [
+            "P1022-R13"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan folio y mano verificados directamente; muestra solo secundaria."
+        },
+        {
+          "need": "Criterios explícitos de crítica textual y límites",
+          "sourceIds": [
+            "P1022-R13"
+          ],
+          "status": "cobertura_parcial_pendiente",
+          "gap": "Faltan obras de metodología crítica con localizador y contraste de criterios."
+        }
+      ],
+      "methods": [
+        {
+          "id": "M01",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M02",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M03",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M04",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M05",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M06",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M07",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M08",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M09",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M10",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M11",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M12",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M13",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M14",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M15",
+          "status": "pendiente_de_evidencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M16",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M17",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        },
+        {
+          "id": "M18",
+          "status": "pendiente_de_pertinencia",
+          "decision": "pendiente_de_evaluacion_individual"
+        }
+      ],
+      "evidenceIds": [],
+      "conclusions": []
+    }
+  ]
+}
