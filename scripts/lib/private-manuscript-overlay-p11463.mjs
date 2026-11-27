@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import ts from 'typescript';
+import {manuscriptNotices} from './private-review-notices-p11484.mjs';
 import {createPrivateManuscriptCandidate} from './private-manuscript-projection-p11462.mjs';
 export const manuscriptPath='/Scriptura-Nexus/manuscritos/consulta/';
 export const manuscriptAssets=manuscriptPath+'private-manuscript/';
@@ -56,6 +57,7 @@ export function createPrivateManuscriptOverlay(){
  assert.equal(html.split(marker).length>=2,true);
  // The directory is inserted immediately before the module-specific noscript.
  html=replaceOnce(html,'<noscript><p>La búsqueda interactiva requiere JavaScript.','<h3>Registro de evidencias de la muestra</h3><div id="private-evidence-list"></div><noscript><p>La búsqueda interactiva requiere JavaScript.');
+ html=replaceOnce(html,'</main>',manuscriptNotices+'</main>');
  add(manuscriptPath,html,'text/html; charset=utf-8');
  assert.equal(read('dist/manuscritos/consulta/index.html'),original);
  return {files,original,spec,summary:{witnesses:2,variants:1,readings:2,resources:7,evidence:8,secondaryAttestations:2,directInspections:0,publicationAuthorized:false,corpusImportAuthorized:false,sourceFilesAdmitted:0,upload:false}};

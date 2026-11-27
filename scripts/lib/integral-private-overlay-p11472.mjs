@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import ts from 'typescript';
+import {lexicalNotices} from './private-review-notices-p11484.mjs';
 import {createCandidate} from '../prepare-reader-candidate-p11425.mjs';
 import {createAnalyzerOverlay,validateStaticOverlay} from '../prepare-analyzer-candidate-p11435.mjs';
 import {validateReleaseReview} from '../validate-analyzer-release-review-p11435.mjs';
@@ -63,7 +64,8 @@ function lexicalOverlay(candidate){
  const original=read('dist/linguistica/lexicos-concordancias/index.html');
  const notice='No hay diccionarios ni corpus autorizados para consulta pública. Los controles se habilitarán cuando exista una publicación aprobada.';
  assert.ok(original.includes(notice)&&original.includes('</body>'));
- const html=original.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(notice,'Candidato privado de léxicos y concordancias. No autorizado para publicación; consultas independientes.').replace('</body>','<script type="module" src="'+lexicalAssets+'modules/init.js"></script></body>');
+ const html=original.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(notice,'Candidato privado de léxicos y concordancias. No autorizado para publicación; consultas independientes.').replace('</main>',lexicalNotices+'</main>').replace('</body>','<script type="module" src="'+lexicalAssets+'modules/init.js"></script></body>');
+ assert.ok(html.includes('id="lc-candidate-rights"')&&html.includes('id="lc-candidate-privacy"'));
  put(routes.lexical,html,'text/html; charset=utf-8');
  return files;
 }
