@@ -19,7 +19,7 @@ Esta subdivisión organiza el trabajo sin alterar la fase P9.4 ni el plan maestr
 | P9.4.3 | Fichas y registros de variantes documentados | Muestra acotada de fichas y testimonios | Solo metadatos, lecturas y aparatos con procedencia y permiso comprobados |
 | P9.4.4 | Interfaz de manuscritos y variantes | Catálogo, fichas, enlaces externos y presentación de lecturas | Sin imágenes, transcripciones o aparatos no autorizados; accesibilidad y navegación verificables |
 
-P9.5 conservará la validación funcional, integridad, rendimiento, atribución y cierre global de herramientas textuales.
+P9.5 queda cerrada técnicamente con PR #70 y Pages #205; el informe reproducible y los pendientes de publicación constan en [17-cierre-integral-herramientas-textuales.md](17-cierre-integral-herramientas-textuales.md).
 
 ## Reglas de identidad y evidencia
 
@@ -43,7 +43,7 @@ P9.4.1 no admite corpus, imágenes, transcripciones, metadatos de terceros ni ap
 Inventario versionado, evidencia oficial de condiciones de acceso/reutilización, estados explícitos, pruebas negativas que impidan una admisión accidental, ausencia de datos protegidos y workflow reproducible. La revisión de un sitio no constituye autorización ni dictamen jurídico independiente.
 
 
-## Estado de ejecución al 26 de noviembre de 2026
+## Estado de ejecución al 27 de noviembre de 2026
 
 | Subfase | Estado | Evidencia y límite |
 |---|---|---|
@@ -51,5 +51,6 @@ Inventario versionado, evidencia oficial de condiciones de acceso/reutilización
 | P9.4.2 | Completada | PR #67 integrado en main mediante 7c6eec0; 19 pruebas específicas, 377 pruebas del proyecto y regresiones P9.2.4/P9.3.1/P9.3.2/P9.3.4/P9.4.1 satisfactorias; Pages #195 con build y deploy exitosos. Registro metadata-only vacío. |
 | P9.4.3 | Completada | PR #68 integrado (96539a6), ocho workflows satisfactorios, 388 pruebas generales y Pages #200 exitoso. Muestra referencial interna, sin admisión de archivos ni publicación. |
 | P9.4.4 | Completada | PR #69 integrado (a8ea6f6), ocho workflows satisfactorios, 398 pruebas generales, 60 combinaciones de reflujo, 12 escaneos axe y Pages #203 exitoso. Release público vacío. |
+| P9.5 | Completada | PR #70 integrado (f70ace3); workflow integral satisfactorio: 406 pruebas Node, 75 Python, 39 041 recorridos y consultas comparativas, 30 comprobaciones funcionales, 180 casos de diseño adaptable, 36 escaneos axe, 22 verificaciones de teclado y 18 mediciones de rendimiento. Pages #205 con build y deploy exitosos. Sin corpus público; quedan pendientes evaluación manual y autorización P11.4. |
 
 La implementación P9.4.2 no modifica la decisión de P9.4.1: los repositorios institucionales siguen como enlaces externos y las ediciones/aparatos no seleccionados continúan fuera de admisión.
