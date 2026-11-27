@@ -1,0 +1,44 @@
+name: P11.4.2.4 Validación integral del lector real
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/reader-validation-p11424.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reader-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Matriz, regresiones y build público
+        run: |
+          npm ci
+          node scripts/validate-reader-plan-p11424.mjs
+          node --test tests/p11424-reader-validation.test.mjs
+          npm run check
+          npm test
+          npm run build
+          npm run test:build
+          node scripts/verify-manuscript-pilot-build.mjs
+      - name: Recorrido completo y auditoría Chromium con datos reales aislados
+        run: |
+          deps="$RUNNER_TEMP/p11424-browser"
+          mkdir -p "$deps"
+          npm install --prefix "$deps" --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          "$deps/node_modules/.bin/playwright" install --with-deps chromium
+          P11424_DEPS="$deps" node scripts/validate-reader-full-p11424.mjs
+          P11423_DEPS="$deps" node scripts/validate-reader-integration-p11423.mjs
+          P924_DEPS="$deps" node scripts/validate-reader-browser-p924.mjs
