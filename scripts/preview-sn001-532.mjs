@@ -42,9 +42,9 @@ try {
  assert.match(html,/Trazabilidad de conclusiones/);
  assert.match(html,/dir="rtl"/);
 
- const moduleLinks=[...html.matchAll(/<a[^>]*data-study-module="([^"]+)"[^>]*href="([^"]+)"/g)];
- assert.equal(new Set(moduleLinks.map(m=>m[1])).size,8);
- for(const [,key,href] of moduleLinks){const url=new URL(href,'https://example.invalid');assert.equal(url.origin,'https://example.invalid');assert.equal(url.search,'');const dest=url.pathname.replace(/^\\/Scriptura-Nexus\\//,'');const target=readFileSync(join(root,'dist',dest,'index.html'),'utf8');assert.ok(target.includes('id="'+url.hash.slice(1)+'"'),key+' destination anchor');}
+ const moduleLinks=[...html.matchAll(/<a\b[^>]*>/g)].map(m=>({key:m[0].match(/\bdata-study-module="([^"]+)"/)?.[1],href:m[0].match(/\bhref="([^"]+)"/)?.[1]})).filter(m=>m.key);
+ assert.equal(new Set(moduleLinks.map(m=>m.key)).size,8);
+ for(const {key,href} of moduleLinks){assert.ok(href,key+' href');const url=new URL(href,'https://example.invalid');assert.equal(url.origin,'https://example.invalid');assert.equal(url.search,'');const prefix='/Scriptura-Nexus/';assert.ok(url.pathname.startsWith(prefix),key+' base');const dest=url.pathname.slice(prefix.length);const target=readFileSync(join(root,'dist',dest,'index.html'),'utf8');assert.ok(target.includes('id="'+url.hash.slice(1)+'"'),key+' destination anchor');}
  assert.match(html,/no ejecuta una búsqueda/);
  const other=readFileSync(join(root,'dist/estudios/SN-002/index.html'),'utf8');
  assert.doesNotMatch(other,/data-review-only="true"/);
