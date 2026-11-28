@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "resourceId": "REC-000001",
+      "editionId": "BIB-000001",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000002",
+      "editionId": "BIB-000002",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000003",
+      "editionId": "BIB-000003",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000004",
+      "editionId": "BIB-000004",
+      "licenseId": "LIC-000001",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Declaración CC BY 4.0 del artículo; verificar componentes, atribución y aprobación del responsable antes de admitir.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000005",
+      "editionId": "BIB-000005",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000006",
+      "editionId": "BIB-000006",
+      "licenseId": null,
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "pendiente",
+        "reproduccion": "pendiente",
+        "adaptacion": "pendiente"
+      },
+      "reviewedAt": "2026-11-26",
+      "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000007",
+      "editionId": "BIB-000007",
+      "licenseId": "LIC-000002",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Declaración de dominio público comprobada en página del proveedor. Cierre territorial y autorización editorial formal pendientes; no se publica corpus.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000008",
+      "editionId": "BIB-000008",
+      "licenseId": "LIC-000003",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-019. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000009",
+      "editionId": "BIB-000009",
+      "licenseId": "LIC-000004",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-020. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000010",
+      "editionId": "BIB-000010",
+      "licenseId": "LIC-000005",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-015. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000011",
+      "editionId": "BIB-000011",
+      "licenseId": "LIC-000006",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-016. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000012",
+      "editionId": "BIB-000012",
+      "licenseId": "LIC-000007",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-017. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000013",
+      "editionId": "BIB-000013",
+      "licenseId": "LIC-000008",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Licencia del proveedor cotejada; componentes limitados LING-018. No se autoriza redistribución general ni se certifican ocurrencias.",
+      "authorizationRef": null,
+      "reviewerRole": null
+    }
+  ]
+}
