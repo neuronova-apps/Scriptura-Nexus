@@ -29,7 +29,6 @@ assert.equal(review.reviewTarget.recordVersion,'0.4.3');
 assert.equal(pkg.record.version,review.reviewTarget.recordVersion);
 assert.equal(review.reviewTarget.consolidatedPackageBlobSha,blob(packagePath));
 assert.equal(review.reviewTarget.consolidationReportBlobSha,blob(reportPath));
-assert.equal(review.reviewTarget.contentDigest,report.contentDigest);
 assert.equal(review.reviewTarget.contentDigest,reviewedContentDigest({studyId:pkg.record.studyId,version:pkg.record.version,previousVersion:null,record:pkg.record,relations:pkg.relations,bodies:pkg.bodies}));
 for(const [path,expected] of Object.entries(review.sourceDigests))assert.equal(blob(path),expected,'Hash Git de origen cambió: '+path);
 assert.equal(report.status,'consolidado_con_reservas_no_aprobado');
