@@ -1,0 +1,37 @@
+name: SN-001 - Cierre de discrepancias lingüísticas 5.5.1
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    if: github.head_ref == 'research/sn-001-cotejo-551' || github.ref_name == 'research/sn-001-cotejo-551'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python scripts/audit-sn001-531.py
+      - run: python scripts/report-sn001-551.py
+      - run: node scripts/validate-sn001-531.mjs
+      - run: npm test
+      - run: npm run build
+      - run: npm run test:build
+      - run: node scripts/preview-sn001-532.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sn001-cotejo-551
+          path: |
+            sn001-cotejo.json
+            sn001-editorial-validacion.json
+            sn001-validation-output/linguistic-551-report.json
+          if-no-files-found: error
