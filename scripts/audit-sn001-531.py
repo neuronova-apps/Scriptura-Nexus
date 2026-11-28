@@ -48,7 +48,17 @@ for t in pre['terms']:
         assert len(verses)==1,ref
         words=[w for w in verses[0] if tag(w)=='w']
         matches=[{'position':i+1,'form':''.join(w.itertext()),'lemmaRaw':w.get('lemma'),'morphRaw':w.get('morph')} for i,w in enumerate(words) if norm(''.join(w.itertext()))==norm(t['form'])]
-        item.update(source=sid,reference=ref,matches=matches,status='matched' if matches else 'unresolved')
+        # Only explicit source segmentation may establish a partial-token match.
+        # No arbitrary prefix stripping, fuzzy matching or Strong inference.
+        segments=[]
+        for i,w in enumerate(words):
+            form=''.join(w.itertext())
+            parts=form.split('/')
+            if len(parts)>1 and all(parts) and norm(parts[-1])==norm(t['form']):
+                segments.append({'position':i+1,'form':form,'matchedSegment':parts[-1],'segmentIndex':len(parts),'lemmaRaw':w.get('lemma'),'morphRaw':w.get('morph')})
+        item.update(source=sid,reference=ref,matches=matches,status='matched' if matches else 'unresolved',segmentedCandidates=segments,segmentationStatus='explicit_final_segment' if not matches and len(segments)==1 else 'not_resolved_by_segmentation' if not matches else 'whole_token_match')
+        if not matches:
+            item['verseTokenDiagnostics']=[{'position':i+1,'form':''.join(w.itertext()),'lemmaRaw':w.get('lemma'),'morphRaw':w.get('morph')} for i,w in enumerate(words)]
     else: item['status']='outside_admitted_hebrew_coverage'
     report['terms'].append(item)
 strong=roots['LING-017']; idx=roots['LING-016']; bdb=roots['LING-018']
