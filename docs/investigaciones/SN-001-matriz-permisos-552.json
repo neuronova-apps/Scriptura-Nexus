@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "studyId": "SN-001",
+  "phase": "5.5.2",
+  "reviewDate": "2026-11-28",
+  "publicationAuthorized": false,
+  "policy": "La identificación de una licencia o la documentación de sus condiciones no constituye por sí sola una aprobación editorial ni una autorización específica de uso. Se conservan las decisiones pendientes del registro de permisos.",
+  "summary": {
+    "resources": 13,
+    "withLicense": 8,
+    "withoutRecordedLicense": 5,
+    "permissionPending": 13,
+    "approved": 0,
+    "externalConsultationOnly": 13
+  },
+  "resources": [
+    {
+      "resourceId": "REC-000001",
+      "sourceId": "F28",
+      "sourceName": "Consulta documental: Statement of Fundamental Truths",
+      "sourceProvider": "Assemblies of God (USA)",
+      "editionId": "BIB-000001",
+      "editionLabel": "Versión web institucional consultada",
+      "originUrl": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Preámbulo y apartados 1 y 10",
+          "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Preámbulo y apartados 1 y 10",
+          "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Preámbulo y apartados 1 y 10",
+          "url": "https://ag.org/en-US/Beliefs/Statement-of-Fundamental-Truths",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "pendiente",
+          "reproduccion": "pendiente",
+          "adaptacion": "pendiente"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000002",
+      "sourceId": "F29",
+      "sourceName": "Consulta documental: Westminster Confession of Faith",
+      "sourceProvider": "Orthodox Presbyterian Church",
+      "editionId": "BIB-000002",
+      "editionLabel": "Versión web ofrecida por la OPC",
+      "originUrl": "https://opc.org/wcf.html",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Capítulo I, Of the Holy Scripture",
+          "url": "https://opc.org/wcf.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Capítulo I, Of the Holy Scripture",
+          "url": "https://opc.org/wcf.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Capítulo I, Of the Holy Scripture",
+          "url": "https://opc.org/wcf.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "pendiente",
+          "reproduccion": "pendiente",
+          "adaptacion": "pendiente"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000003",
+      "sourceId": "F30",
+      "sourceName": "Consulta documental: Dei Verbum",
+      "sourceProvider": "Santa Sede",
+      "editionId": "BIB-000003",
+      "editionLabel": "Versión española del archivo conciliar",
+      "originUrl": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Capítulos II y III, numerales 7–13",
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Capítulos II y III, numerales 7–13",
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Capítulos II y III, numerales 7–13",
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "pendiente",
+          "reproduccion": "pendiente",
+          "adaptacion": "pendiente"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000004",
+      "sourceId": "F31",
+      "sourceName": "Consulta documental: Critical Reflections on the Role of the Canon in New Testament Scholarship",
+      "sourceProvider": "Cambridge University Press",
+      "editionId": "BIB-000004",
+      "editionLabel": "New Testament Studies 70(1), pp. 111–124",
+      "originUrl": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+          "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+          "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Resumen, introducción y conclusión; DOI 10.1017/S0028688523000176",
+          "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000001",
+          "identifier": "CC BY 4.0",
+          "holder": "Francis Watson (autor del artículo; declaración de derechos de la edición por verificar en detalle)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Watson, Francis (2024). Critical Reflections on the Role of the Canon in New Testament Scholarship. New Testament Studies, 70(1), 111–124. https://doi.org/10.1017/S0028688523000176. CC BY 4.0.",
+          "restrictions": "Atribuir, enlazar licencia, indicar modificaciones y comprobar materiales de terceros y otros derechos.",
+          "scope": "Artículo identificado por DOI; no se extiende a otras obras ni componentes de terceros.",
+          "provenance": {
+            "locator": "Declaración de acceso abierto y licencia del artículo, DOI 10.1017/S0028688523000176",
+            "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/critical-reflections-on-the-role-of-the-canon-in-new-testament-scholarship/616876A1F3DF519DCDB687FACFA4AD3D",
+            "consultedAt": "2026-11-26",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Declaración CC BY 4.0 del artículo; verificar componentes, atribución y aprobación del responsable antes de admitir.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000005",
+      "sourceId": "F32",
+      "sourceName": "Consulta documental: First Epistle to the Corinthians (1 Clement)",
+      "sourceProvider": "Christian Literature Publishing Co.; versión digital New Advent",
+      "editionId": "BIB-000005",
+      "editionLabel": "Traducción inglesa de John Keith, Ante-Nicene Fathers, vol. 9; edición digital revisada por New Advent",
+      "originUrl": "https://www.newadvent.org/fathers/1010.htm",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Capítulos 42–44 y nota editorial About this page",
+          "url": "https://www.newadvent.org/fathers/1010.htm",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Capítulos 42–44 y nota editorial About this page",
+          "url": "https://www.newadvent.org/fathers/1010.htm",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Capítulos 42–44 y nota editorial About this page",
+          "url": "https://www.newadvent.org/fathers/1010.htm",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "pendiente",
+          "reproduccion": "pendiente",
+          "adaptacion": "pendiente"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000006",
+      "sourceId": "F33",
+      "sourceName": "Consulta documental: Bible (Questions & Answers)",
+      "sourceProvider": "Orthodox Church in America",
+      "editionId": "BIB-000006",
+      "editionLabel": "Página institucional Questions & Answers",
+      "originUrl": "https://www.oca.org/questions/scripture/bible",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "Versión web consultada 2026-11-26; no se ha fijado copia ni checksum",
+      "provenance": {
+        "resource": {
+          "locator": "Pregunta y respuesta Bible",
+          "url": "https://www.oca.org/questions/scripture/bible",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Pregunta y respuesta Bible",
+          "url": "https://www.oca.org/questions/scripture/bible",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Pregunta y respuesta Bible",
+          "url": "https://www.oca.org/questions/scripture/bible",
+          "consultedAt": "2026-11-26",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "pendiente",
+          "reproduccion": "pendiente",
+          "adaptacion": "pendiente"
+        },
+        "reviewedAt": "2026-11-26",
+        "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000007",
+      "sourceId": "F34",
+      "sourceName": "Distribución eBible.org spaRV1909",
+      "sourceProvider": "eBible.org",
+      "editionId": "BIB-000007",
+      "editionLabel": "spaRV1909; distribución web eBible.org, archivos fuente fechados 2015-08-10",
+      "originUrl": "https://ebible.org/find/details.php?id=spaRV1909",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "spaRV1909, páginas web consultadas 2026-11-28; no se afirma identidad byte a byte con ZIP fijado",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+          "url": "https://ebible.org/spaRV1909/copyright.htm",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+          "url": "https://ebible.org/spaRV1909/copyright.htm",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+          "url": "https://ebible.org/spaRV1909/copyright.htm",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000002",
+          "identifier": "Public Domain (declaración del proveedor)",
+          "holder": "Texto de traducción atribuido a Reina y Valera; declaración de eBible.org",
+          "url": "https://ebible.org/spaRV1909/copyright.htm",
+          "attribution": "Santa Biblia, Reina-Valera 1909, distribución spaRV1909, eBible.org. https://ebible.org/spaRV1909/copyright.htm",
+          "restrictions": "Declaración del distribuidor; no dictamen territorial ni autorización para otras ediciones.",
+          "scope": "Distribución spaRV1909; distinguir consulta web del ZIP fijado P9.1.2.",
+          "provenance": {
+            "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+            "url": "https://ebible.org/spaRV1909/copyright.htm",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Declaración de dominio público comprobada en página del proveedor. Cierre territorial y autorización editorial formal pendientes; no se publica corpus.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000008",
+      "sourceId": "F35",
+      "sourceName": "Open Scriptures Hebrew Bible / WLC — Lev",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000008",
+      "editionLabel": "6a5db284c715c18b239422e57bb89684e6a19f00 / wlc/Lev.xml",
+      "originUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/wlc/Lev.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "6a5db284c715c18b239422e57bb89684e6a19f00; wlc/Lev.xml; SHA-256 histórico 75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-019; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-019; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-019; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000003",
+          "identifier": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+          "restrictions": "WLC declarado dominio público; anotaciones CC BY 4.0; preservar atribución y capas.",
+          "scope": "texto_wlc; anotaciones_lema; anotaciones_morfologia",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-019; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-019. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000009",
+      "sourceId": "F36",
+      "sourceName": "Open Scriptures Hebrew Bible / WLC — Deut",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000009",
+      "editionLabel": "6a5db284c715c18b239422e57bb89684e6a19f00 / wlc/Deut.xml",
+      "originUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/wlc/Deut.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "6a5db284c715c18b239422e57bb89684e6a19f00; wlc/Deut.xml; SHA-256 histórico aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-020; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-020; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-020; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000004",
+          "identifier": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+          "restrictions": "WLC declarado dominio público; anotaciones CC BY 4.0; preservar atribución y capas.",
+          "scope": "texto_wlc; anotaciones_lema; anotaciones_morfologia",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-020; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-020. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000010",
+      "sourceId": "F37",
+      "sourceName": "OSHB Hebrew Lexicon — AugIndex",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000010",
+      "editionLabel": "21c9add13bc727d3a951361778e97e3ff7afd1ce / AugIndex.xml",
+      "originUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/AugIndex.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "21c9add13bc727d3a951361778e97e3ff7afd1ce; AugIndex.xml; SHA-256 histórico e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-015; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-015; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-015; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000005",
+          "identifier": "CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+          "restrictions": "Conservar código aumentado exacto y destino ID del índice; no eliminar espacios, homógrafos ni extensiones. No establecer equivalencia con Strong estándar ni vincular automáticamente a otra revisión OSHB.",
+          "scope": "identificadores_lexicos; selectores: index/w/@aug; index/w/text()",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-015; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-015. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000011",
+      "sourceId": "F38",
+      "sourceName": "OSHB Hebrew Lexicon — LexicalIndex",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000011",
+      "editionLabel": "21c9add13bc727d3a951361778e97e3ff7afd1ce / LexicalIndex.xml",
+      "originUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/LexicalIndex.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "21c9add13bc727d3a951361778e97e3ff7afd1ce; LexicalIndex.xml; SHA-256 histórico 8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-016; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-016; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-016; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000006",
+          "identifier": "CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+          "restrictions": "Forma de entrada y lengua declarada; preservar valores originales; los vínculos son afirmaciones del proveedor, no sinonimia. Excluir TWOT, etym, def, pos, xlit, texto mixto y cualquier campo no enumerado.",
+          "scope": "anotaciones_lema; identificadores_lexicos; selectores: index/part/@xml:lang; index/part/entry/@id; index/part/entry/w/text(); index/part/entry/xref/@aug; index/part/entry/xref/@strong; index/part/entry/xref/@bdb",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-016; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-016. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000012",
+      "sourceId": "F39",
+      "sourceName": "OSHB Hebrew Lexicon — Strong",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000012",
+      "editionLabel": "21c9add13bc727d3a951361778e97e3ff7afd1ce / HebrewStrong.xml",
+      "originUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "21c9add13bc727d3a951361778e97e3ff7afd1ce; HebrewStrong.xml; SHA-256 histórico a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-017; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-017; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-017; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000007",
+          "identifier": "CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+          "restrictions": "Definiciones explícitas de Strong solo cuando el elemento def sea hijo directo de meaning y contenga exclusivamente texto; no extraer texto mixto, referencias, notas, source ni usage. Preservar ubicación y contexto de entrada; no presentar una glosa como sentido contextual de una ocurrencia.",
+          "scope": "identificadores_lexicos; sentidos_lexicos; selectores: lexicon/entry/@id; lexicon/entry/meaning/def/text()",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-017; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-017. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    },
+    {
+      "resourceId": "REC-000013",
+      "sourceId": "F40",
+      "sourceName": "OSHB Hebrew Lexicon — Brown-Driver-Briggs",
+      "sourceProvider": "Open Scriptures Hebrew Bible Project",
+      "editionId": "BIB-000013",
+      "editionLabel": "21c9add13bc727d3a951361778e97e3ff7afd1ce / BrownDriverBriggs.xml",
+      "originUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/BrownDriverBriggs.xml",
+      "resourceKind": "consulta_externa",
+      "resourceAdmission": "en_revision",
+      "versionRef": "21c9add13bc727d3a951361778e97e3ff7afd1ce; BrownDriverBriggs.xml; SHA-256 histórico 2b52658a4323d91674cda4090ab8b3ebddfff640f4f18143c28300e80b2c38f8",
+      "provenance": {
+        "resource": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-018; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "edition": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-018; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        },
+        "source": {
+          "locator": "Identidad y huella registradas en admisión técnica LING-018; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+          "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+          "consultedAt": "2026-11-28",
+          "verification": "verificada"
+        }
+      },
+      "licenseEvidence": [
+        {
+          "licenseId": "LIC-000008",
+          "identifier": "CC BY 4.0",
+          "holder": "Open Scriptures Hebrew Bible Project (edición digital; textos originales según declaración del proveedor)",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+          "restrictions": "Definiciones explícitas de BDB solo en elementos def exclusivamente textuales; preservar ruta exacta del sentido, no aplanar sentidos anidados. Excluir elementos externos, notas, referencias bíblicas, foreign, y texto mixto; no publicar BDB abreviado de Online Bible.",
+          "scope": "identificadores_lexicos; sentidos_lexicos; selectores: lexicon/part/@xml:lang; lexicon/part/section/entry/@id; lexicon/part/section/entry/def/text(); lexicon/part/section/entry/sense//def/text()",
+          "provenance": {
+            "locator": "Identidad y huella registradas en admisión técnica LING-018; licencia del proveedor cotejada en revisión fija; contenido de ocurrencias no cotejado",
+            "url": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+            "consultedAt": "2026-11-28",
+            "verification": "verificada"
+          }
+        }
+      ],
+      "permissionReview": {
+        "decision": "pendiente",
+        "uses": {
+          "consulta": "permitida",
+          "cita": "documentada",
+          "reproduccion": "documentada",
+          "adaptacion": "documentada"
+        },
+        "reviewedAt": "2026-11-28",
+        "basis": "Licencia del proveedor cotejada; componentes limitados LING-018. No se autoriza redistribución general ni se certifican ocurrencias.",
+        "authorizationRef": null,
+        "reviewerRole": null
+      },
+      "publicationDisposition": {
+        "status": "blocked_pending_editorial_authorization",
+        "corpusRedistribution": false,
+        "quotePublicationAuthorized": false,
+        "adaptationAuthorized": false
+      }
+    }
+  ]
+}

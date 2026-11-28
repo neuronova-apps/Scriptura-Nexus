@@ -1,0 +1,39 @@
+name: SN-001 - Permisos y evidencias editoriales 5.5.2
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  permissions-review:
+    if: github.head_ref == 'research/sn-001-permisos-552' || github.ref_name == 'research/sn-001-permisos-552'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Validar matriz de permisos y trazabilidad
+        run: node scripts/validate-sn001-552.mjs
+      - name: Regresión de contratos editoriales
+        run: node scripts/validate-sn001-531.mjs
+      - name: Auditoría de fuentes lingüísticas
+        run: python scripts/audit-sn001-531.py
+      - name: Pruebas generales
+        run: npm test
+      - name: Compilación pública
+        run: npm run build
+      - name: Pruebas de compilación pública
+        run: npm run test:build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sn001-permisos-552-informe
+          path: sn001-validation-output/permissions-552-report.json
+          if-no-files-found: warn
