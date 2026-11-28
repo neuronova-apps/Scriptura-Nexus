@@ -26,6 +26,7 @@ assert.equal(review.phase,'5.5.4');
 assert.equal(review.studyId,'SN-001');
 assert.equal(review.status,'preparado_para_revision_responsable_bloqueado');
 assert.equal(review.reviewTarget.recordVersion,'0.4.3');
+assert.equal(review.reviewTarget.contentDigest,'ac69d5692246d4c9b24b279237f299101b53b46579f5a40dcb745310042baddc','La huella exacta aprobada para revisión cambió; se requiere nueva preparación.');
 assert.equal(pkg.record.version,review.reviewTarget.recordVersion);
 assert.equal(review.reviewTarget.consolidatedPackageBlobSha,blob(packagePath));
 assert.equal(review.reviewTarget.consolidationReportBlobSha,blob(reportPath));
