@@ -1,7 +1,7 @@
 # SN-001. ¿Tatuarse es pecado? — expediente de investigación lingüística y contextual
 
-Versión de trabajo 0.1 · 2026-11-28 · E09; relacionados E06 y E07.
-Estado académico: en investigación. No aprobado para publicación editorial. Responsable: titular del proyecto. Marco: [P0.4](../P0/04-metodologia.md), [P10.3.1](../P10/09-validacion-hebreo.md). Este expediente documental no modifica el catálogo público, el corpus ni los resultados de validación de los motores. El repositorio es público: únicamente se registran referencias, datos lingüísticos puntuales y análisis propios; no se incluyen capturas, citas de obras comerciales ni respuestas de IA de Logos. Los datos proceden del informe de consulta aportado por el responsable, no de acceso independiente a su biblioteca.
+Versión de trabajo 0.2 · 2026-11-28 · E09; relacionados E06 y E07.
+Estado académico: recopilación cerrada por decisión del responsable (2026-11-28); evidencia consolidada para redacción del borrador editorial. No equivale a cierre doctrinal ni a verificación independiente. No aprobado para publicación editorial. Responsable: titular del proyecto. Marco: [P0.4](../P0/04-metodologia.md), [P10.3.1](../P10/09-validacion-hebreo.md). Este expediente documental no modifica el catálogo público, el corpus ni los resultados de validación de los motores. El repositorio es público: únicamente se registran referencias, datos lingüísticos puntuales y análisis propios; no se incluyen capturas, citas de obras comerciales ni respuestas de IA de Logos. Los datos proceden del informe de consulta aportado por el responsable, no de acceso independiente a su biblioteca.
 
 ## S01. Identificación
 SN-001 conserva el título del catálogo. Tema específico: significado, contexto histórico, fundamento religioso y aplicación contemporánea de las inscripciones corporales en Levítico 19:28. Disciplinas: lingüística bíblica, historia, exégesis, hermenéutica, teología y ética. Etiquetas: tatuaje, incisión, santidad, ley mosaica, duelo, marcas corporales. Texto principal Lv 19:28; complementario Dt 14:1. Pregunta y delimitación anteriores del piloto se conservan.
@@ -19,6 +19,9 @@ Preguntas específicas:
 7. ¿Qué principios permiten evaluar continuidad o discontinuidad de la ley?
 8. ¿Qué argumentos sostienen, niegan o matizan su aplicación actual?
 Alternativas abiertas: finalidad funeraria/cultual, identificación o pertenencia, restricción de una técnica o categoría de marcas; no son necesariamente excluyentes ni demostradas.
+
+### Delimitación aprobada para el cierre de recopilación
+El estudio se concentra en el fundamento bíblico, el análisis lingüístico y el contexto literario y religioso documentado en el expediente. Las preguntas históricas y confesionales se conservan como horizonte de ampliación, no como requisitos de exhaustividad. No se abrirán nuevas búsquedas obligatorias ni se atribuirán resultados a fuentes no consultadas. Las verificaciones críticas de exactitud, procedencia y licencia siguen siendo condiciones de admisión editorial, no una reapertura general de la recopilación.
 
 ## S03. Antecedentes
 Se identificaron Gevaryahu (2010), Huehnergard y Liebowitz (2013), Sokal (2022) y Ditchey (2016) como candidatos bibliográficos; su lectura íntegra y verificación editorial están pendientes. Véase S20. Recepción antigua y cronología de prácticas: pendientes. No convertir las hipótesis reseñadas en hechos.
@@ -48,8 +51,8 @@ Los IDs E01–E12 son locales al expediente, no IDs globales de ejes ni evidenci
 
 ## S05. Contexto histórico-cultural
 E02–E07 documentan contextos bíblicos de duelo, aflicción y ritual; no prueban por sí solos el fundamento de la segunda cláusula de Lv 19:28. Jer 41:5 no identifica a los peregrinos como adoradores de Baal. La asociación con ritos idolátricos y la posible fiesta de Sucot proceden de interpretación de comentario, no de afirmación explícita del relato.
-SN-001-A (pendiente): investigar Egipto, Canaán, Mesopotamia, Levante y pueblos vecinos; datación, procedencia, evidencia material, técnicas y función. Examinar identificación de esclavos, prisioneros o grupos, y pertinencia cronológica para Israel. Resultado: informe que separe evidencia arqueológica, interpretación y conjetura.
-SN-001-B (pendiente): clasificar marcas cultuales, funerarias, sociales/tribales, de esclavitud/identificación, protectoras/mágicas, terapéuticas y ornamentales. Verificar existencia y función de cada categoría en contextos pertinentes y distinguir técnica, propósito y clase de marca. Resultado: matriz de función, fuente, lugar, fecha, técnica, certeza y vínculo con Lv 19:28. No presumir que todas existieron en la época del texto.
+SN-001-A (ampliación opcional no ejecutada): investigar Egipto, Canaán, Mesopotamia, Levante y pueblos vecinos; datación, procedencia, evidencia material, técnicas y función. Examinar identificación de esclavos, prisioneros o grupos, y pertinencia cronológica para Israel. Resultado: informe que separe evidencia arqueológica, interpretación y conjetura.
+SN-001-B (ampliación opcional no ejecutada): clasificar marcas cultuales, funerarias, sociales/tribales, de esclavitud/identificación, protectoras/mágicas, terapéuticas y ornamentales. Verificar existencia y función de cada categoría en contextos pertinentes y distinguir técnica, propósito y clase de marca. Resultado: matriz de función, fuente, lugar, fecha, técnica, certeza y vínculo con Lv 19:28. No presumir que todas existieron en la época del texto.
 
 ## S06. Contexto literario
 Lv 19:26-31 contiene disposiciones sobre sangre y adivinación, cabello y barba, cortes y marcas, prostitución, reverencia al santuario y consulta a médiums. La asociación de la prostitución con culto y la caracterización de todo el bloque como diferenciación de costumbres vecinas son lecturas del comentario LBLA consultado (C), no afirmaciones uniformemente explícitas. Contexto de santidad de Lv 19:1-2 pendiente de desarrollo. Proximidad literaria no implica identidad de finalidad.
@@ -84,16 +87,16 @@ I: el texto distingue dos disposiciones y formula la segunda sin una finalidad e
 Familia שרט: Lv 19:28 y Lv 21:5. Familia גדד: Dt 14:1, 1 Re 18:28, Jer 16:6, 41:5 y posible nominal en 48:37. Son comparaciones léxicas y temáticas, no citas explícitas ni sinónimos absolutos. Escenarios: duelo, ritual religioso, aflicción/peregrinación. Ez 9:4, Is 44:5 y Gá 6:17 son complementarios por simbolismo y pertenencia; no pruebas directas de tatuaje. La entrada Sajarse de Lexham remite a Gá 6:7: preservar el dato como reportado y verificar si es errata; Gá 6:17 es una referencia candidata independiente, no sustitución silenciosa. Alcance: canon compartido; asociación histórica cuando se incorporen fuentes externas.
 
 ## S12. Interpretación histórica
-SN-001-C (pendiente): comparar LXX, Onkelos, Peshitta, Mishná Makot 3:6 (numeración por verificar), Talmud, Rashi, Maimónides e Ibn Ezra; padres apostólicos, apologistas, patrística, recepción medieval y Reforma. Examinar continuidad de disposiciones mosaicas y categorías morales/civiles/ceremoniales cuando correspondan, sin anacronismos. Preguntar qué cambió en recepción rabínica y cristiana y qué relación se propone con Nueva Alianza. Registrar cronología, autor, obra, localizador, argumento, autoridad, canon y límites. Resultado: matriz histórico-teológica con coincidencias y desacuerdos.
+SN-001-C (ampliación opcional no ejecutada): comparar LXX, Onkelos, Peshitta, Mishná Makot 3:6 (numeración por verificar), Talmud, Rashi, Maimónides e Ibn Ezra; padres apostólicos, apologistas, patrística, recepción medieval y Reforma. Examinar continuidad de disposiciones mosaicas y categorías morales/civiles/ceremoniales cuando correspondan, sin anacronismos. Preguntar qué cambió en recepción rabínica y cristiana y qué relación se propone con Nueva Alianza. Registrar cronología, autor, obra, localizador, argumento, autoridad, canon y límites. Resultado: matriz histórico-teológica con coincidencias y desacuerdos.
 
 ## S13. Perspectiva pentecostal (T01)
-Pendiente. Examinar fuentes institucionales y autores identificados, santidad corporal, conciencia, continuidad de la ley y diversidad interna. Atención preferente metodológica sin privilegio probatorio. No atribuir postura uniforme.
+No desarrollada dentro del alcance aprobado; ampliación opcional. Examinar fuentes institucionales y autores identificados, santidad corporal, conciencia, continuidad de la ley y diversidad interna. Atención preferente metodológica sin privilegio probatorio. No atribuir postura uniforme.
 
 ## S14. Otras perspectivas protestantes (T02)
-Pendiente. Contrastar perspectivas reformadas, evangélicas y dispensacionalistas, continuidad/discontinuidad de ley mosaica y criterios de santidad corporal. Diferenciar declaraciones oficiales de opiniones personales.
+No desarrolladas dentro del alcance aprobado; ampliación opcional. Contrastar perspectivas reformadas, evangélicas y dispensacionalistas, continuidad/discontinuidad de ley mosaica y criterios de santidad corporal. Diferenciar declaraciones oficiales de opiniones personales.
 
 ## S15. Perspectiva católica (T03)
-Pendiente. Examinar interpretación bíblica y teológica, ley mosaica y Nueva Alianza, principios morales de modificaciones corporales y documentos eclesiásticos pertinentes si existen. Distinguir autoridad magisterial de opinión teológica.
+No desarrollada dentro del alcance aprobado; ampliación opcional. Examinar interpretación bíblica y teológica, ley mosaica y Nueva Alianza, principios morales de modificaciones corporales y documentos eclesiásticos pertinentes si existen. Distinguir autoridad magisterial de opinión teológica.
 
 ## S16. Perspectivas complementarias (T04/T05/A01)
 Judía: recepción antigua y rabínica pendiente según S12. Ortodoxa: pertinencia y fuentes pendientes. Académica: candidatos de S20; hipótesis de tatuaje frente a marcado por quemadura, función de identificación de esclavos y contexto religioso, todas pendientes de lectura y contraste. La academia no es denominación.
@@ -112,9 +115,25 @@ Judía: recepción antigua y rabínica pendiente según S12. Ortodoxa: pertinenc
 Clasificación local: D dato primario; C comentario/diccionario; A argumento académico; I inferencia; H hipótesis; P pendiente. Separada del grado P0.4 (explícito, sólidamente fundamentado, plausible, discutido, indeterminado) y del estado de verificación. Evitar seleccionar solo argumentos favorables, confundir palabra y pasaje, semejanza semántica y misma práctica, origen pagano y prohibición universal, ley mosaica y obligación cristiana automática, ausencia de prohibición en NT y permiso automático. No inferir doctrina solo de glosas o Strong.
 
 ## S18. Aplicación contemporánea
-Pendiente. Evaluar destinatario, norma, principio, pactos, tradición, conciencia, ética y orientación pastoral sin coerción. Distinguir aplicación original y actual. No emitir veredicto de permisibilidad hasta completar A/B/C y revisión hermenéutica. La falta de prueba de una postura no demuestra la contraria.
+Pendiente. Evaluar destinatario, norma, principio, pactos, tradición, conciencia, ética y orientación pastoral sin coerción. Distinguir aplicación original y actual. La revisión hermenéutica utilizará las evidencias disponibles; A/B/C no son prerrequisitos. No emitir veredicto universal si la evidencia no lo sustenta. La falta de prueba de una postura no demuestra la contraria.
 
 ## S19. Conclusiones parciales y matriz de continuidad
+
+### Consolidación del material disponible
+| Bloque | Resultado de la recopilación | Tratamiento editorial |
+|---|---|---|
+| Texto y cláusulas | E01; texto corregido y dos prohibiciones | Base principal, cotejo exacto pendiente |
+| Léxico y morfología | S07; Strong, BDB, datos de Logos | Conservar procedencia y límites de frecuencias y códigos |
+| Paralelos de cortes | E02–E07 | Distinguir duelo, ritual y aflicción; no equiparar con la segunda cláusula |
+| Marcas complementarias | E08; E11/E12 candidatos no analizados | No utilizar como prueba directa de tatuajes |
+| Contexto literario | S06; E09/E10 candidatos | Consolidar lo disponible, sin declarar analizados los candidatos |
+| LXX | S09; expresiones griegas aportadas | Comparación preliminar; verificar edición o limitar/omitir afirmaciones no verificables en publicación |
+| Fuentes secundarias | S20; consultas reportadas y bibliografía candidata | Distinguir consultadas de candidatas; no citar candidatas como evidencia comprobada |
+| Contexto extrabíblico y recepción | A/B/C no ejecutadas | Ampliación opcional; declarar límites |
+| Aplicación contemporánea | No resuelta | Redactar razonamiento proporcional sin imponer respuesta definitiva |
+
+La recopilación se cierra administrativamente con este inventario. E09–E12 y demás referencias candidatas no adquieren por ello estado de evidencia analizada; no se incorporan nuevos pasajes ni fuentes. Las incertidumbres de técnica, finalidad y vigencia se mantienen explícitas.
+
 | Conclusión | Sentido | Respaldo provisional |
 |---|---|---|
 | Dos disposiciones diferenciadas, una explícitamente por muertos | Afirmativa | Sólidamente fundamentado según texto aportado; cotejo pendiente |
@@ -125,9 +144,9 @@ Pendiente. Evaluar destinatario, norma, principio, pactos, tradición, concienci
 | Exclusividad funeraria/idolátrica de la segunda cláusula | Indeterminada | Indeterminado |
 | Alcance sobre todo tatuaje actual | Indeterminada | Indeterminado |
 
-Estado de las 20 secciones: S01–S02 documentadas; S03–S07, S09–S11, S16–S17, S19–S20 parciales; S08, S12–S15 y S18 pendientes. Ninguna sección se declara revisada editorialmente.
-Perspectivas P0.4: M01 textual pendiente; M02 lingüística parcial; M03 filológica parcial; M04 semántica parcial; M05 sintáctica parcial; M06 histórica pendiente; M07 cultural parcial; M08 arqueológica pendiente; M09 literaria parcial; M10 exegética parcial; M11 hermenéutica pendiente de evaluación final; M12 intertextual parcial; M13 canónica pendiente; M14 patrística pendiente; M15 teológica pendiente; M16 denominacional pendiente; M17 ética pendiente; M18 pastoral pendiente. Todas aplicables; parcial equivale a análisis inicial con evidencia todavía pendiente, no revisión cerrada.
-Secuencia: A arqueología e historia → B funciones → C recepción judía y cristiana (T01–T05/A01 según pertinencia) → evaluación hermenéutica → revisión y autorización editorial. No implica publicación ni avance automático. Resultado final deberá identificar significado, prácticas, fundamentos, recepción, argumentos confesionales y criterios actuales, distinguiendo demostrado, probable, discutido e indeterminado.
+Estado de las 20 secciones: S01–S02 documentadas; S03–S07, S09–S11, S16–S17, S19–S20 parciales; S08 y S18 pendientes de tratamiento editorial según alcance; S12–S15 no desarrolladas, ampliación opcional. S16 conserva únicamente candidatos y límites. Ninguna sección se declara revisada editorialmente.
+Perspectivas P0.4: M01 textual pendiente; M02 lingüística parcial; M03 filológica parcial; M04 semántica parcial; M05 sintáctica parcial; M06 histórica pendiente; M07 cultural parcial; M08 arqueológica pendiente; M09 literaria parcial; M10 exegética parcial; M11 hermenéutica pendiente de evaluación final; M12 intertextual parcial; M13 canónica pendiente; M14 patrística pendiente; M15 teológica pendiente; M16 denominacional pendiente; M17 ética pendiente; M18 pastoral pendiente. Las perspectivas siguen siendo pertinentes en principio; las históricas, arqueológicas, patrísticas y denominacionales no desarrolladas quedan fuera de la ampliación obligatoria actual, sin declararlas analizadas ni inexistentes. Parcial equivale a análisis inicial con evidencia todavía pendiente, no revisión cerrada.
+Secuencia aprobada: cierre de recopilación y consolidación (esta versión) → redacción del estudio con síntesis exegética y hermenéutica → revisión y aprobación editorial → integración técnica y publicación autorizada. A/B/C quedan disponibles para futuras ampliaciones independientes. El resultado final distinguirá lo demostrado, plausible, discutido e indeterminado; no exigirá reconstrucciones históricas ni atribuciones confesionales no documentadas. No implica publicación ni avance automático.
 
 ## S20. Referencias, procedencia y control de cambios
 Fuentes consultadas externamente según informe del responsable, con localizadores iniciales; sin acceso independiente de este expediente a la biblioteca comercial:
@@ -142,8 +161,11 @@ Bibliografía candidata (datos tal como fueron aportados, sujetos a comprobació
 2. Huehnergard, J., & Liebowitz, H. (2013). The Biblical Prohibition Against Tattooing. Vetus Testamentum, 63, 59–77.
 3. Sokal, B. M. (2022). Biblical Ban on Tattoos (Lev 19:26-28): Background, Context, Meaning and Perspectives. Łódzkie Studia Teologiczne, 31(1). Paginación pendiente.
 4. Ditchey, M. (2016). Body language: Tattooing and branding in ancient Mesopotamia. Journal of Ancient Near Eastern History, 3(1), 1–24. Autoría, volumen y páginas por comprobar antes de admitir.
-Verificar títulos, DOI/URL, páginas, fecha, edición, licencia, localizadores y argumentos; aplicar APA 7. No inventar metadatos. Evidencias arqueológicas, historia de marcas, recepción judía/cristiana y aplicación actual pendientes.
+Verificar títulos, DOI/URL, páginas, fecha, edición, licencia, localizadores y argumentos; aplicar APA 7. No inventar metadatos. Evidencias arqueológicas, historia de marcas y recepción judía/cristiana quedan como ampliaciones opcionales no ejecutadas. Aplicación actual pendiente de redacción hermenéutica dentro del alcance aprobado.
 
 ### Registro de adenda AV-01–AV-10
-AV-01 texto corregido S04; AV-02 morfología y sintaxis S07; AV-03 lemas y frecuencias S07; AV-04 nuevas referencias S04/S11; AV-05 fuente candidata S20; AV-06 separación de tipos S17/S20; AV-07 controles S17/S18; AV-08 20 secciones y 18 perspectivas S19; AV-09 protección de materiales y bloqueo de publicación; AV-10 continuidad S05/S12–S19.
+AV-01 texto corregido S04; AV-02 morfología y sintaxis S07; AV-03 lemas y frecuencias S07; AV-04 nuevas referencias S04/S11; AV-05 fuente candidata S20; AV-06 separación de tipos S17/S20; AV-07 controles S17/S18; AV-08 20 secciones y 18 perspectivas S19; AV-09 protección de materiales y bloqueo de publicación; AV-10 continuidad S05/S12–S19, actualizada por decisión de cierre de recopilación de esta versión.
 Las capturas originales, textos comerciales y consulta IA deben permanecer en archivo privado del responsable; no se recibieron los archivos originales en esta incorporación y no se afirma haberlos archivado. Datos puntuales y análisis se mantienen separados de transcripciones licenciadas. No se publicará corpus ni estudio en sitio, no se modifica main y no se fusionan PR. La admisión de fuentes, exactitud textual, licencias, imparcialidad, contexto canónico y aprobación del responsable son controles críticos pendientes. Esta versión no es resultado doctrinal definitivo.
+
+### Control de cambios 0.2 — cierre de recopilación
+Decisión del responsable: limitar la investigación a lo bíblico y al contexto ya recopilado; continuar con la secuencia 2 (cierre y consolidación). Se conserva el contenido de 0.1 en el historial Git. Se mantienen 20 secciones, 18 perspectivas, pregunta principal, códigos y referencias. La redacción definitiva, la verificación editorial de fuentes efectivamente usadas y la integración web corresponden a etapas posteriores. Las ampliaciones no ejecutadas no se presentan como resultados. No se autoriza publicación ni cambios en catálogo, módulos, corpus, main o PR #134.
