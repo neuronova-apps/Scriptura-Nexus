@@ -1,0 +1,44 @@
+name: SN-001 - Revisión de versión exacta 5.5.4
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-version-review:
+    if: github.head_ref == 'research/sn-001-revision-554' || github.ref_name == 'research/sn-001-revision-554'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Validar huella y expediente de revisión 5.5.4
+        run: node scripts/validate-sn001-554.mjs
+      - name: Regresión de consolidación editorial 5.5.3
+        run: node scripts/validate-sn001-553.mjs
+      - name: Regresión de permisos y atribuciones 5.5.2
+        run: node scripts/validate-sn001-552.mjs
+      - name: Regresión de contratos editoriales 5.3.1
+        run: node scripts/validate-sn001-531.mjs
+      - name: Auditoría de fuentes lingüísticas
+        run: python scripts/audit-sn001-531.py
+      - name: Pruebas generales
+        run: npm test
+      - name: Compilación pública
+        run: npm run build
+      - name: Pruebas de compilación pública
+        run: npm run test:build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sn001-revision-554-informe
+          path: sn001-validation-output/revision-554-report.json
+          if-no-files-found: warn
