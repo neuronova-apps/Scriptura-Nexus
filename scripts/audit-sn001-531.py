@@ -1,9 +1,12 @@
 import json, hashlib, urllib.request, xml.etree.ElementTree as ET, zipfile, io, re, unicodedata
 from pathlib import Path
+import importlib.util
+spec=importlib.util.spec_from_file_location('p91',Path(__file__).resolve().parent/'audit-editions-p91.py')
+p91=importlib.util.module_from_spec(spec); spec.loader.exec_module(p91)
 D=Path('docs/investigaciones')
 pre=json.loads((D/'SN-001-pre-registro-editorial-531.json').read_text())
 def download(url, sha):
-    with urllib.request.urlopen(url,timeout=90) as r: data=r.read()
+    data=p91.fetch(url,16*1024*1024)
     assert hashlib.sha256(data).hexdigest()==sha, url
     return data
 def tag(e): return e.tag.rsplit('}',1)[-1]
