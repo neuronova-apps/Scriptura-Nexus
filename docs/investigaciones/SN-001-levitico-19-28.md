@@ -1,7 +1,7 @@
 # SN-001. ¿Tatuarse es pecado? — expediente de investigación lingüística y contextual
 
-Versión de trabajo 0.3 — borrador editorial · 2026-11-28 · E09; relacionados E06 y E07.
-Estado académico: recopilación cerrada por decisión del responsable (2026-11-28); evidencia consolidada y redacción editorial completada dentro del alcance aprobado; pendiente de revisión y aprobación. No equivale a cierre doctrinal ni a verificación independiente. No aprobado para publicación editorial. Responsable: titular del proyecto. Marco: [P0.4](../P0/04-metodologia.md), [P10.3.1](../P10/09-validacion-hebreo.md). Este expediente documental no modifica el catálogo público, el corpus ni los resultados de validación de los motores. El repositorio es público: únicamente se registran referencias, datos lingüísticos puntuales y análisis propios; no se incluyen capturas, citas de obras comerciales ni respuestas de IA de Logos. Los datos proceden del informe de consulta aportado por el responsable, no de acceso independiente a su biblioteca.
+Versión de trabajo 0.4 — revisión editorial interna · 2026-11-28 · E09; relacionados E06 y E07.
+Estado académico: recopilación cerrada por decisión del responsable (2026-11-28); evidencia consolidada y redacción editorial completada dentro del alcance aprobado; revisión editorial interna realizada con reservas de admisión; pendiente de aprobación del responsable y resolución de controles críticos de publicación. No equivale a cierre doctrinal ni a verificación independiente. No aprobado para publicación editorial. Responsable: titular del proyecto. Marco: [P0.4](../P0/04-metodologia.md), [P10.3.1](../P10/09-validacion-hebreo.md). Este expediente documental no modifica el catálogo público, el corpus ni los resultados de validación de los motores. El repositorio es público: únicamente se registran referencias, datos lingüísticos puntuales y análisis propios; no se incluyen capturas, citas de obras comerciales ni respuestas de IA de Logos. Los datos proceden del informe de consulta aportado por el responsable, no de acceso independiente a su biblioteca.
 
 ## S01. Identificación
 SN-001 conserva el título del catálogo. Tema específico: significado, contexto histórico, fundamento religioso y aplicación contemporánea de las inscripciones corporales en Levítico 19:28. Disciplinas: lingüística bíblica, historia, exégesis, hermenéutica, teología y ética. Etiquetas: tatuaje, incisión, santidad, ley mosaica, duelo, marcas corporales. Texto principal Lv 19:28; complementario Dt 14:1. Pregunta y delimitación anteriores del piloto se conservan.
@@ -46,7 +46,7 @@ Se descarta la transcripción previa que incluía erróneamente קְרִצָה. 
 | E04 | 1 Re 18:28 | וַיִּתְגֹּדְדוּ H1413; cortes rituales de profetas de Baal; H2719, H7420, H1818, H8210 (derramar; lema exacto por cotejar) | D, análisis inicial |
 | E05 | Jer 16:6 | Sajaduras H1413 y ausencia de duelo y entierro | D, análisis inicial |
 | E06 | Jer 41:5-9 | Ochenta peregrinos de Siquem, Siló y Samaria; barba rapada, vestidos rasgados, cortes H1413 y ofrendas e incienso para la casa del Señor | D, análisis inicial |
-| E07 | Jer 48:37 | Luto de Moab: cabello y barba rapados, cortes en manos y cilicio; H1418, relación morfológica por verificar | D, análisis inicial |
+| E07 | Jer 48:37 | Luto de Moab: cabello y barba rapados, cortes en manos y cilicio; H1417 en el interlineal externo; H1418 reportado en Logos, discrepancia conservada | D, análisis inicial |
 | E08 | Ez 9:4 | תָּו H8420; señal protectora en la frente; no prueba de incisión/tatuaje | D/I, complementaria |
 | E09 | Lv 19:1-2 | Santidad e identidad | P |
 | E10 | Lv 21:1-6 | Contexto funerario-sacerdotal | P |
@@ -88,14 +88,36 @@ Datos de consulta externa aportados por el responsable (Logos, interlineales, St
 | קַעֲקַע (qa'aqa) | H7085 | NC-SA | Sustantivo masculino singular absoluto según informe; marca/impresión corporal, incisión |
 | תִתְּנוּ | H5414 | VaI2MP | Qal imperfecto 2ª masculina plural; repetida en ambas cláusulas |
 | גדד | H1413 | pendiente | Hacerse cortes; formas de Dt 14:1, 1 Re 18:28, Jer 16:6 y 41:5 |
-| Forma nominal Jer 48:37 | H1418 | pendiente | Corte; identificación morfológica por confirmar |
+| גְּדֻדֹת, Jer 48:37 | H1417 (cotejo externo); H1418 (reporte Logos) | código Logos no verificado | Sustantivo plural, cortes; no equiparar automáticamente con H1413 |
 
 AV-02/03: investigar la relación constructa כְּתֹבֶת קַעֲקַע como unidad y el alcance sintáctico de לָנֶפֶשׁ; la repetición de לֹא תִתְּנוּ distingue las cláusulas. La extensión temática a la segunda no se deduce automáticamente. El reporte de Logos distingue dos lemas bajo H8296, con una aparición cada uno; H3793 y H7085 aparecen una sola vez según ese reporte. Las 223 ocurrencias corresponden a la consulta de H3789/כתב, no a H3793; corpus y configuración pendientes. Un número Strong no identifica necesariamente un solo lema. La relación semántica entre cortes, heridas y marcas registrada por Logos no equivale a identidad de prácticas. La técnica concreta y el alcance de la expresión siguen abiertos. La limitación de frecuencia justifica cotejo de traducciones antiguas y documentación extrabíblica. La validación técnica P10.3.1 no certifica estos datos; cotejar con la fuente admitida cuando proceda.
+
+### Cotejo editorial de ocurrencias
+Se distingue forma textual de lema, raíz e identificador. Los siguientes rasgos descriptivos son síntesis propias de cotejo externo, no códigos de Logos ni una nueva capa de corpus.
+
+| Pasaje | Forma pertinente | Lema o familia | Strong | Morfología descriptiva |
+|---|---|---|---|---|
+| Lv 19:28 | שֶׂרֶט | שֶׂרֶט | H8296 | Sustantivo singular absoluto |
+| Lv 19:28 | כְּתֹבֶת | כְּתֹבֶת | H3793 | Sustantivo femenino singular constructo |
+| Lv 19:28 | קַעֲקַע | קַעֲקַע | H7085 | Sustantivo masculino singular absoluto según interlineal consultado |
+| Lv 19:28 | תִתְּנוּ | נתן | H5414 | Qal imperfecto 2ª masculina plural |
+| Lv 21:5 | יִשְׂרְטוּ | שרט | H8295 | Qal imperfecto 3ª masculina plural |
+| Lv 21:5 | שָׂרָטֶת | שרט, forma nominal | H8296 | Sustantivo femenino singular absoluto |
+| Dt 14:1 | תִתְגֹּדְדוּ | גדד | H1413 | Hitpolel imperfecto 2ª masculina plural |
+| 1 Re 18:28 | וַיִּתְגֹּדְדוּ | גדד | H1413 | Hitpolel, forma narrativa 3ª masculina plural |
+| Jer 16:6 | יִתְגֹּדַד | גדד | H1413 | Hitpolel imperfecto 3ª masculina singular |
+| Jer 41:5 | מִתְגֹּדְדִים | גדד | H1413 | Hitpolel participio masculino plural |
+| Jer 48:37 | גְּדֻדֹת | familia nominal גדד | H1417 en interlineal externo | Sustantivo plural; discrepancia con H1418 de Logos |
+| Ez 9:4 | תָּו | תָּו | H8420 (reporte previo) | Código morfológico no cotejado |
+
+Fuentes de cotejo puntual: [Lv 19:28](https://biblehub.com/text/leviticus/19-28.htm), [Lv 21:5](https://biblehub.com/text/leviticus/21-5.htm), [análisis de Lv 21:5](https://bible.4disciples.com/Leviticus/21/5), [H1413 y ocurrencias](https://www.blueletterbible.org/lexicon/h1413/wlc/wlc/), [Jer 48:37](https://www.cnbible.com/text/jeremiah/48-37.htm). No se reproducen tablas de terceros ni se afirma acceso independiente a Logos. Códigos específicos NC-SA, NCFSC y VaI2MP, distinción de lemas y frecuencia de 223 permanecen reportados, no certificados para redistribución. El XML OSHB fijado para Levítico devolvió metadatos pero no contenido legible en esta revisión; no se simula cotejo directo de ese archivo.
 
 ## S08. Crítica textual
 Pendiente. Fijar edición hebrea, griega, aparato y testigos; no se ha realizado colación. La comparación inicial con LXX no demuestra variante del hebreo ni identifica manuscrito. No se registra transcripción diplomática definitiva.
 
 ## S09. Comparación de traducciones
+
+Cotejo editorial adicional: la [edición en línea de la Septuaginta de Deutsche Bibelgesellschaft](https://www.die-bibel.de/bibel/LXX%2CEUE/LEV.19) corrobora las expresiones ἐντομίδας y γράμματα στικτά en Lv 19:28. Se registra como corroboración de lectura, no como colación de manuscritos ni permiso de redistribución. La edición exacta y sus condiciones de reproducción deben comprobarse para cualquier cita extensa. No se incorpora texto continuo griego de ese sitio.
 
 El contraste preliminar entre las expresiones hebreas y griegas favorece una lectura que distingue las incisiones de las inscripciones marcadas. Su valor aquí es orientativo: mientras no se identifique la edición griega, no debe constituir una prueba crítica independiente ni ser decisiva para la conclusión. El argumento principal se sostiene en la distinción de las dos cláusulas hebreas aportadas.
 
@@ -212,11 +234,30 @@ La recopilación se cierra administrativamente con este inventario. E09–E12 y 
 | Exclusividad funeraria/idolátrica de la segunda cláusula | Indeterminada | Indeterminado |
 | Alcance sobre todo tatuaje actual | Indeterminada | Indeterminado |
 
-Estado de las 20 secciones: S01–S02 documentadas; S03–S07, S09–S11, S16–S17, S19–S20 parciales; S08 no desarrollada por ausencia de aparato crítico; S18 redactada con conclusión delimitada; S12–S15 no desarrolladas, ampliación opcional. S16 conserva únicamente candidatos y límites. Ninguna sección se declara revisada editorialmente.
+Estado de las 20 secciones: S01–S02 documentadas; S03–S07, S09–S11, S16–S17, S19–S20 parciales; S08 no desarrollada por ausencia de aparato crítico; S18 redactada con conclusión delimitada; S12–S15 no desarrolladas, ampliación opcional. S16 conserva únicamente candidatos y límites. Se realizó revisión editorial interna de coherencia, alcance y cotejos puntuales; no revisión académica externa ni admisión definitiva de fuentes.
 Perspectivas P0.4: M01 textual pendiente; M02 lingüística parcial; M03 filológica parcial; M04 semántica parcial; M05 sintáctica parcial; M06 histórica pendiente; M07 cultural parcial; M08 arqueológica pendiente; M09 literaria parcial; M10 exegética parcial; M11 hermenéutica analizada dentro del alcance limitado; M12 intertextual parcial; M13 canónica pendiente; M14 patrística pendiente; M15 teológica pendiente; M16 denominacional pendiente; M17 ética analizada de forma limitada; M18 pastoral orientación no coercitiva redactada. Las perspectivas siguen siendo pertinentes en principio; las históricas, arqueológicas, patrísticas y denominacionales no desarrolladas quedan fuera de la ampliación obligatoria actual, sin declararlas analizadas ni inexistentes. Parcial equivale a análisis inicial con evidencia todavía pendiente, no revisión cerrada.
 Secuencia aprobada: cierre de recopilación y consolidación (0.2) → redacción del estudio con síntesis exegética y hermenéutica (0.3, esta versión) → revisión y aprobación editorial → integración técnica y publicación autorizada. A/B/C quedan disponibles para futuras ampliaciones independientes. El resultado final distinguirá lo demostrado, plausible, discutido e indeterminado; no exigirá reconstrucciones históricas ni atribuciones confesionales no documentadas. No implica publicación ni avance automático.
 
 ## S20. Referencias, procedencia y control de cambios
+
+### Dictamen de revisión editorial (secuencia 4)
+| Control | Resultado | Condición |
+|---|---|---|
+| Identificación, pregunta, 20 secciones, 18 perspectivas | Conforme | Mantener IDs y alcance aprobado |
+| Coherencia exegética y hermenéutica | Conforme | Mantener conclusión indeterminada sobre vigencia universal |
+| Imparcialidad y alcance canónico | Conforme dentro del alcance | No atribuir doctrinas a tradiciones no estudiadas; pasajes del canon compartido |
+| Texto y términos principales | Cotejo externo parcial | No afirmar cotejo completo de fuente fijada ni de todas las ocurrencias |
+| Morfología, lemas, frecuencias | Parcial | Identificar edición/sistema o rotular datos reportados y excluir los no admitidos de fichas verificadas |
+| LXX | Lectura puntual corroborada | No publicar transcripción extensa ni afirmar colación crítica |
+| Fuentes comerciales y candidatos académicos | Pendiente de admisión | No reproducir entradas, capturas o textos; candidatos no sostienen conclusión |
+| Licencias de texto y anotaciones | Pendiente crítico | Aplicar decisiones de admisión del proyecto por componente y fuente, atribuciones y permisos; no inferir autorización de P11 |
+| Aprobación del titular | Pendiente | Presentar versión 0.4 para aprobación explícita |
+| Accesibilidad y renderizado | Pendiente de implementación | Comprobar en secuencia 5 antes de habilitar publicación |
+
+Dictamen: redacción coherente y revisión interna realizada; publicación todavía bloqueada por controles críticos pendientes. No se declara aprobado un dato no verificable. Para la versión pública se podrán excluir datos no admitidos sin perderlos del expediente histórico; cualquier cambio material de conclusión requiere nueva revisión.
+
+### Contrato editorial de presentación para secuencia 5
+La ficha SN-001 deberá ofrecer respuesta breve y desarrollo consultable, sin reducir el estudio a la conclusión. Conservar las 20 secciones en el modelo, agrupar visualmente por fundamento, contexto, lingüística, relaciones, traducciones, exégesis, contrastación, aplicación, conclusiones y fuentes. Para cada pasaje analizado E01–E08: referencia, texto solo de versión admitida y autorizada (o enlace si no se permite reproducción), contexto histórico/literario documentado, forma original pertinente, lema/raíz, Strong, morfología cuando esté acreditada, glosa propia, relación con el principal, grado y fuente. Para E09–E12: marcar como candidatos, sin presentarlos como analizados. Fichas de términos deben distinguir datos verificados, reportados y no disponibles; no completar huecos automáticamente. Mostrar las dos cláusulas, familias de cortes, comparación griega limitada y advertencia de que proximidad no equivale a identidad. Vincular desde catálogo, buscador, lector, lingüística, léxicos, biblioteca, historia y comparador únicamente si el módulo admite el vínculo y los datos están autorizados; no crear falsos resultados ni duplicar corpus. Las referencias complementarias y ampliaciones opcionales no se muestran como investigaciones completadas. Usar navegación accesible, Unicode y dirección RTL apropiada en hebreo, etiquetas descriptivas y lectura en móvil. Este contrato no modifica código ni habilita el sitio.
 Fuentes consultadas externamente según informe del responsable, con localizadores iniciales; sin acceso independiente de este expediente a la biblioteca comercial:
 - Biblia de Estudio LBLA, Foundation Publications / The Lockman Foundation, copyright de estudio 2000 según informe: notas a Lv 19:26-31, 21:5, Dt 14:1, Jer 16:6, 41:5 y Ez 9:4. C: contexto funerario, distinción religiosa, duelo, posible Sucot, señal protectora. Paráfrasis analíticas, no citas comerciales. Edición exacta y localizadores por confirmar.
 - Diccionario Bíblico Lexham en español, entrada Sajarse. C: asociación de incisiones con procedimientos ceremoniales y cultuales; referencias Lv 19:28, 21:5, Ez 9:4, Gá 6:7, Dt 14:1, 1 Re 18:28, Jer 16:6, 41:5, 48:37. No desarrolla separadamente la expresión completa; verificar referencias y datos editoriales.
@@ -240,3 +281,6 @@ Decisión del responsable: limitar la investigación a lo bíblico y al contexto
 
 ### Control de cambios 0.3 — redacción editorial
 Se completó la secuencia 3 conforme al alcance aprobado. Se mantienen las 20 secciones y las 18 perspectivas, las evidencias y la adenda; se incorporan síntesis gramatical, exegética, contrastación, aplicación y respuesta final delimitada. No se añaden fuentes ni pasajes nuevos. No se atribuyen posturas confesionales no investigadas. La versión 0.2 permanece en el historial. La secuencia 4 debe comprobar exactitud textual, procedencia y licencias de los datos usados, trazabilidad, imparcialidad, alcance canónico y coherencia; retirar o delimitar los datos no verificables antes de publicar. No se ha efectuado esa revisión ni autorizado la integración web. No se modifica main, catálogo, corpus ni PR #134.
+
+### Control de cambios 0.4 — revisión editorial interna
+Se preserva 0.3 en historial Git. Se cotejaron fuentes públicas puntuales para términos principales, formas de H1413, forma nominal de Jeremías 48:37 y lectura griega; se corrigió la presentación de la discrepancia H1417/H1418 sin borrar la procedencia original. Se estableció el contrato de presentación detallada solicitado por el responsable. No se realizaron nuevas líneas de investigación histórica, ni se certifica la biblioteca Logos, ni se afirma autorización de publicación. La secuencia 4 queda revisada internamente y pendiente de aprobación y controles críticos; la secuencia 5 no puede publicar hasta resolverlos. No se modifica main, corpus, catálogo o PR #134.
