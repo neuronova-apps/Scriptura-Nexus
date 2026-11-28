@@ -95,6 +95,27 @@ try{
  assert.equal(hits.status,'disponible');
  assert.equal(hits.total,firstFrequency.count);
 
+ const lookupIdentifier=(system,value)=>{
+  const found=lexical.search({mode:'identifier',system,value,limit:5});
+  const entry=found.entries[0],detail=entry?lexical.detail(entry.id):null;
+  return {
+   status:found.status,total:found.total,
+   entry:detail?{
+    providerKey:detail.entry.providerKey,
+    definitions:detail.definitions.slice(0,2).map(d=>({language:d.language,excerpt:wordExcerpt(d.text,25),origin:d.origin}))
+   }:null
+  };
+ };
+ const targetedLexicon={
+  strongH7085:lookupIdentifier('strong','H7085'),
+  bdbH7085:lookupIdentifier('bdb','H7085'),
+  strongH5315:lookupIdentifier('strong','H5315'),
+  bdbH5315:lookupIdentifier('bdb','H5315')
+ };
+ const tattooLemma=data.registry.lemmas.find(l=>l.system==='OSHB-lemma'&&l.providerKey==='7085'&&l.language==='hbo');
+ const tattooLemmaHits=tattooLemma?concordance.search({editionId:concordanceCoverage.editionId,language:'hbo',bookId:'LIB-Lev',mode:'lemma',lemmaId:tattooLemma.id,limit:20}):null;
+ const tattooProviderHits=concordance.search({editionId:concordanceCoverage.editionId,language:'hbo',bookId:'LIB-Lev',mode:'provider',system:'OSHB-lemma',value:'7085',limit:20});
+
  stage='comparator query';
  const alignmentRegistry=JSON.parse(readFileSync('docs/P9/alineaciones-p931.json','utf8'));
  const comparator=createPrivateComparator(catalog,loadChapter,alignmentRegistry);
@@ -145,7 +166,8 @@ try{
    status:strongSearch.status,
    total:strongSearch.total,
    entry:{id:strongDetail.entry.id,system:strongDetail.entry.system,providerKey:strongDetail.entry.providerKey,language:strongDetail.entry.language,origin:strongDetail.entry.origin,forms:strongDetail.forms.length,definitions:strongDetail.definitions.slice(0,1).map(d=>({language:d.language,excerpt:wordExcerpt(d.text,20),origin:d.origin})),links:strongDetail.links.length},
-   admissions:lexicalData.admissions.map(a=>({id:a.id,selectors:a.selectors.length,allowedComponents:a.allowedComponents}))
+   admissions:lexicalData.admissions.map(a=>({id:a.id,selectors:a.selectors.length,allowedComponents:a.allowedComponents})),
+   targetedQueries:targetedLexicon
   },
   concordance:{
    editionId:concordanceCoverage.editionId,
@@ -155,7 +177,8 @@ try{
    frequencyKeys:frequencies.totalKeys,
    postings:frequencies.totalPostings,
    topForms:frequencies.entries,
-   firstQuery:{form:firstFrequency.key,total:hits.total,examples:hits.occurrences.map(o=>({bookId:o.bookId,chapter:o.chapter,verse:o.verse,position:o.position,form:o.form,lemmas:o.lemmas.map(l=>({system:l.system,providerKey:l.providerKey}))}))}
+   firstQuery:{form:firstFrequency.key,total:hits.total,examples:hits.occurrences.map(o=>({bookId:o.bookId,chapter:o.chapter,verse:o.verse,position:o.position,form:o.form,lemmas:o.lemmas.map(l=>({system:l.system,providerKey:l.providerKey}))}))},
+   tattooLemmaQuery:{providerKey:'7085',lemmaId:tattooLemma?.id??null,byLemma:tattooLemmaHits?{status:tattooLemmaHits.status,total:tattooLemmaHits.total,examples:tattooLemmaHits.occurrences.map(o=>({chapter:o.chapter,verse:o.verse,position:o.position,form:o.form}))}:null,byProvider:{status:tattooProviderHits.status,total:tattooProviderHits.total,examples:tattooProviderHits.occurrences.map(o=>({chapter:o.chapter,verse:o.verse,position:o.position,form:o.form}))},strongAndOsHbIdsRemainSeparate:true}
   },
   comparator:{
    source:{edition:'RV1909',reference:'Juan 1:1',text:comparison.source.unit.text},
