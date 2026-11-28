@@ -1,0 +1,34 @@
+name: SN-001 - Cierre editorial y validación 5.3.1
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sn001:
+    if: github.head_ref == 'research/sn-001-linguistic-context' || github.ref_name == 'research/sn-001-linguistic-context'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Cotejo de archivos fijados
+        run: python scripts/audit-sn001-531.py
+      - name: Contratos editoriales y permisos
+        if: always()
+        run: node scripts/validate-sn001-531.mjs
+      - name: Resultados de auditoría
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sn001-531-auditoria
+          path: |
+            sn001-cotejo.json
+            sn001-editorial-validacion.json
+          if-no-files-found: warn
