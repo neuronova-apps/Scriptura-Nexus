@@ -20,6 +20,27 @@
       }
     },
     {
+      "label": "Scriptura Nexus: revisión privada de cinco módulos",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "--max-old-space-size=4096",
+        "scripts/preview-integral-codespaces-p11484.mjs"
+      ],
+      "dependsOn": "Scriptura Nexus: compilar proyecto",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "options": {
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        }
+      }
+    },
+    {
       "label": "Scriptura Nexus: verificar proyecto",
       "type": "shell",
       "command": "npm",
@@ -64,6 +85,11 @@
         "reveal": "always",
         "panel": "dedicated",
         "clear": true
+      },
+      "options": {
+        "env": {
+          "ASTRO_TELEMETRY_DISABLED": "1"
+        }
       }
     },
     {

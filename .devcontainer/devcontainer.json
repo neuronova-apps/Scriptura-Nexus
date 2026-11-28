@@ -17,6 +17,10 @@
     "4321": {
       "label": "Scriptura Nexus - vista previa",
       "onAutoForward": "notify"
+    },
+    "43173": {
+      "label": "Scriptura Nexus - revisión privada",
+      "onAutoForward": "ignore"
     }
   },
   "customizations": {
