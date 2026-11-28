@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "studyId": "SN-001",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "status": "borrador_no_publicable",
   "sourceRegistry": {
     "bibliography": "docs/investigaciones/SN-001-biblioteca-candidato.json",
@@ -185,9 +185,9 @@
       "id": "SN-001/S08",
       "order": 8,
       "title": "Crítica textual",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S08",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No se efectuó colación de manuscritos ni revisión de aparato crítico. La comparación con la Septuaginta no equivale a demostrar una variante del hebreo."
     },
     {
       "id": "SN-001/S09",
@@ -231,41 +231,41 @@
       "id": "SN-001/S12",
       "order": 12,
       "title": "Interpretación histórica",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S12",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No desarrollada dentro del alcance aprobado. La recepción rabínica y cristiana constituye una ampliación opcional, no un resultado de este estudio."
     },
     {
       "id": "SN-001/S13",
       "order": 13,
       "title": "Perspectiva pentecostal",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S13",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una doctrina uniforme a las iglesias pentecostales."
     },
     {
       "id": "SN-001/S14",
       "order": 14,
       "title": "Otras perspectivas protestantes",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S14",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura uniforme a las tradiciones protestantes."
     },
     {
       "id": "SN-001/S15",
       "order": 15,
       "title": "Perspectiva católica",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S15",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura oficial católica sin documentación."
     },
     {
       "id": "SN-001/S16",
       "order": 16,
       "title": "Perspectivas complementarias",
-      "applicability": "analizada",
-      "contentRef": "SN-001/S16",
-      "evidenceIds": []
+      "applicability": "no_aplicable",
+      "evidenceIds": [],
+      "justification": "No desarrolladas de manera exhaustiva. La recepción judía, ortodoxa y los estudios académicos candidatos se reservan para ampliaciones opcionales; no sustentan la conclusión actual."
     },
     {
       "id": "SN-001/S17",
@@ -326,15 +326,9 @@
     "SN-001/S05": "Los relatos y disposiciones estudiados sitúan algunos cortes en prácticas de duelo, aflicción y culto. En 1 Reyes 18:28 se trata de un rito de Baal; Jeremías 41:5 describe peregrinos con cortes y ofrendas destinadas a la casa del Señor, sin identificarlos expresamente como adoradores de Baal. Estos datos no establecen la función de todas las marcas. No se realizó estudio arqueológico.",
     "SN-001/S06": "Levítico 19:26-31 reúne disposiciones sobre sangre, adivinación, cabello, cortes, inscripciones, prostitución, santuario y médiums. El marco de identidad religiosa es pertinente, pero la cercanía literaria no demuestra identidad de finalidad. La caracterización cultual de algunas disposiciones procede de interpretación de comentario, no de afirmación explícita uniforme.",
     "SN-001/S07": "En el análisis reportado, שֶׂרֶט (H8296) se relaciona con cortes; כְּתֹבֶת (H3793), con inscripción; קַעֲקַע (H7085), con marca corporal. La construcción כְּתֹבֶת קַעֲקַע debe interpretarse como unidad. La repetición de לֹא תִתְּנוּ distingue ambas prohibiciones. La mención de los muertos pertenece expresamente a la primera. Las fichas conservan datos de morfología, lema, raíz y Strong con estado de procedencia; no se certifican datos no admitidos.",
-    "SN-001/S08": "No se efectuó colación de manuscritos ni revisión de aparato crítico. La comparación con la Septuaginta no equivale a demostrar una variante del hebreo.",
     "SN-001/S09": "La lectura preliminar de la Septuaginta distingue ἐντομίδας de γράμματα στικτά, compatible con incisiones e inscripciones tatuadas. La edición y los permisos deben quedar documentados antes de usar la comparación como evidencia admitida. No se reproducen traducciones comerciales.",
     "SN-001/S10": "La prohibición original es efectiva para Israel. La primera cláusula explicita el vínculo con los muertos; la segunda no repite ese motivo. El contexto religioso apoya una lectura contextual, pero no demuestra que la segunda norma sea exclusivamente idolátrica. Una lectura amplia observa que no se formula excepción por motivo o diseño; tampoco resuelve por sí misma la vigencia cristiana.",
     "SN-001/S11": "Las familias שרט y גדד permiten comparar cortes en Levítico, Deuteronomio, Reyes y Jeremías. Ezequiel 9:4 es un contraste simbólico, no prueba de tatuaje. Los pasajes candidatos no analizados se mantienen diferenciados. No se confunden paralelos temáticos con identidad léxica o técnica.",
-    "SN-001/S12": "No desarrollada dentro del alcance aprobado. La recepción rabínica y cristiana constituye una ampliación opcional, no un resultado de este estudio.",
-    "SN-001/S13": "No desarrollada dentro del alcance aprobado. No se atribuye una doctrina uniforme a las iglesias pentecostales.",
-    "SN-001/S14": "No desarrollada dentro del alcance aprobado. No se atribuye una postura uniforme a las tradiciones protestantes.",
-    "SN-001/S15": "No desarrollada dentro del alcance aprobado. No se atribuye una postura oficial católica sin documentación.",
-    "SN-001/S16": "No desarrolladas de manera exhaustiva. La recepción judía, ortodoxa y los estudios académicos candidatos se reservan para ampliaciones opcionales; no sustentan la conclusión actual.",
     "SN-001/S17": "La interpretación exclusivamente idolátrica tiene contexto religioso a favor, pero no una restricción explícita en la segunda cláusula. La aplicación universal a los tatuajes actuales tiene la formulación negativa de la norma a favor, pero exige justificar equivalencia de prácticas y continuidad normativa. La lectura delimitada reconoce el mandato original y mantiene abierta la vigencia universal contemporánea.",
     "SN-001/S18": "Para evaluar la práctica actual se distingue destinatario original, continuidad de la norma en el marco de la Nueva Alianza y equivalencia de prácticas antiguas y modernas. El expediente no resuelve universalmente esos pasos. La intención, el significado de la marca, la conciencia y la responsabilidad corporal son cuestiones orientativas, no una nueva norma revelada ni autorización general.",
     "SN-001/S19": "Levítico 19:28 prohíbe dos prácticas corporales diferenciadas: cortes por un muerto e inscripción corporal. La segunda expresión admite la interpretación de tatuaje, pero la técnica y finalidad exactas no quedan determinadas. Los paralelos muestran incisiones en duelo y ritual; no prueban que toda inscripción se limitara a esos contextos. La prohibición original en Israel es afirmativa; la aplicación universal a los tatuajes contemporáneos permanece indeterminada. No se concluye que todo tatuaje sea pecado ni que cualquiera esté permitido.",
@@ -425,7 +419,8 @@
     "Secciones no desarrolladas se presentan como límites explícitos del alcance, no como resultados confesionales.",
     "No es Snapshot; no importar al registro público. Falta formalizar cadena OSHB y léxicos, resolver licencia territorial y revisar contenido exacto.",
     "Se reconsultaron las ocho referencias RV1909 y declaración de dominio público. Se verificaron directamente LICENSE.md de OSHB y readme.md de HebrewLexicon; los XML grandes no devolvieron contenido mediante el conector y no se certifica su extracción. Se documentan seis fuentes lingüísticas en biblioteca/permisos sin aprobar permisos. No se incorporan tablas de terceros.",
-    "Corrección PR #136: los registros ampliados se conservan como candidatos aislados; los registros operativos recuperan exactamente la línea base P7/P11. No se pierde información ni se debilitan pruebas históricas."
+    "Corrección PR #136: los registros ampliados se conservan como candidatos aislados; los registros operativos recuperan exactamente la línea base P7/P11. No se pierde información ni se debilitan pruebas históricas.",
+    "5.4: seis secciones fuera del alcance aprobado se registran como omisiones justificadas, no como análisis efectuados. No implica rechazo de las perspectivas ni nueva investigación. PR #136: 7 archivos, 8 referencias, 12 fichas y 5 coincidencias de forma hebrea; validación técnica no equivale a admisión."
   ],
   "publicationAuthorized": false,
   "linguisticSources": [
@@ -580,8 +575,7 @@
     }
   ],
   "remaining": [
-    "Cotejo reproducible de XML fijados y entradas Strong/BDB; conservar discrepancias y límites de cobertura.",
-    "Validación automatizada de biblioteca/permisos y registro editorial con los contratos reales; actualizar pruebas históricas sin debilitar barreras.",
-    "Admisión editorial final por componente, generación y revisión de snapshot exacto; no publicar antes de superar controles."
+    "Resolver discrepancias de ocurrencias y códigos sin inferir equivalencias; conservar cobertura parcial.",
+    "Admisión editorial final por componente, verificación de evidencias específicas y revisión del contenido exacto. No publicar antes de superar controles."
   ]
 }

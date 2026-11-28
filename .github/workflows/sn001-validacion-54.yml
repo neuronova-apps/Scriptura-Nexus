@@ -1,0 +1,53 @@
+name: SN-001 - Validación integral y accesibilidad 5.4
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    if: github.head_ref == 'research/sn-001-validacion-54' || github.ref_name == 'research/sn-001-validacion-54'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Regresiones generales
+        run: npm test
+      - run: python scripts/audit-sn001-531.py
+      - run: node scripts/validate-sn001-531.mjs
+      - name: Informe editorial de bloqueos
+        run: node scripts/report-sn001-54-editorial.mjs
+      - name: Compilación pública sin candidato
+        run: npm run build
+      - name: Validación pública
+        run: npm run test:build
+      - name: Generar revisión aislada
+        run: node scripts/preview-sn001-532.mjs
+      - name: Preparar Chromium y axe-core aislados
+        run: |
+          npm install --prefix "$RUNNER_TEMP/sn001-browser" --no-save playwright@1.56.1 axe-core@4.11.1
+          "$RUNNER_TEMP/sn001-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Validación funcional, visual y accesibilidad automatizada
+        env:
+          SN001_BROWSER_DEPS: ${{ runner.temp }}/sn001-browser
+        run: node scripts/validate-sn001-54-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sn001-validacion-54-informes
+          path: sn001-validation-output
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: sn001-validacion-54-revision
+          path: sn001-review-output
+          if-no-files-found: error
