@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "studyId": "SN-001",
+  "phase": "5.5.3",
+  "status": "consolidado_con_reservas_no_aprobado",
+  "reviewedAt": "2026-11-28",
+  "inputs": {
+    "docs/investigaciones/SN-001-registro-editorial-531.json": {
+      "gitBlobSha": "0993fd5d7b9e8e599dd9bf393130f26fa3e57350",
+      "version": "0.4.3"
+    },
+    "docs/investigaciones/SN-001-pre-registro-editorial-531.json": {
+      "gitBlobSha": "b9d08062a97eda8ff6a94f4306a2ce361042b979",
+      "version": "0.4.0"
+    },
+    "docs/investigaciones/SN-001-candidato-integracion.json": {
+      "gitBlobSha": "ece386025684e725e9e8b28715ceac286028d6b0",
+      "version": "0.4.0"
+    },
+    "docs/investigaciones/SN-001-biblioteca-candidato.json": {
+      "gitBlobSha": "c6e101ef15d0b4278097fb5d0954a68a691486d4",
+      "version": null
+    },
+    "docs/investigaciones/SN-001-permisos-candidato.json": {
+      "gitBlobSha": "1fd0552d835d1c80ac711b2596d7fd9123c0e8f1",
+      "version": null
+    },
+    "docs/investigaciones/SN-001-levitico-19-28.md": {
+      "gitBlobSha": "dac4dccafde2e74a17e5ef340eeb615bd6e78054",
+      "version": null
+    },
+    "docs/investigaciones/SN-001-registro-consolidado-553.json": {
+      "gitBlobSha": "d051321c8356150d3fbc6139d4c0c4ad0eeb9ad6",
+      "version": "0.4.3"
+    }
+  },
+  "coverage": {
+    "manuscriptHeadings": 20,
+    "sections": 20,
+    "analyzedSections": 14,
+    "outOfScopeSections": 6,
+    "evidence": 8,
+    "claims": 5,
+    "conclusions": 3,
+    "passages": 8,
+    "terms": 12,
+    "termsNotAdmitted": 12,
+    "bibliographyAuthors": 13,
+    "bibliographyWorks": 13,
+    "bibliographyEditions": 13,
+    "inventorySources": 13,
+    "resources": 13,
+    "licenses": 8,
+    "permissionDecisions": 13,
+    "permissionDecisionsPending": 13,
+    "publicationAdmissions": 0,
+    "publicSnapshots": 0,
+    "allEvidenceLinkedToRv1909": true,
+    "allAnalyzedBodiesMatchCandidate": true,
+    "allOutOfScopeJustificationsMatchCandidate": true,
+    "manuscriptBlobPointerVerified": true
+  },
+  "sections": [
+    {
+      "id": "SN-001/S01",
+      "order": 1,
+      "title": "Identificación",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 0,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S02",
+      "order": 2,
+      "title": "Planteamiento",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 0,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S03",
+      "order": 3,
+      "title": "Antecedentes",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 0,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S04",
+      "order": 4,
+      "title": "Fundamento bíblico",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 8,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S05",
+      "order": 5,
+      "title": "Contexto histórico-cultural",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 6,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S06",
+      "order": 6,
+      "title": "Contexto literario",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 1,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S07",
+      "order": 7,
+      "title": "Análisis lingüístico",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 8,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S08",
+      "order": 8,
+      "title": "Crítica textual",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No se efectuó colación de manuscritos ni revisión de aparato crítico. La comparación con la Septuaginta no equivale a demostrar una variante del hebreo."
+    },
+    {
+      "id": "SN-001/S09",
+      "order": 9,
+      "title": "Comparación de traducciones",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 1,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S10",
+      "order": 10,
+      "title": "Análisis exegético",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 3,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S11",
+      "order": 11,
+      "title": "Relación intertextual",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 7,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S12",
+      "order": 12,
+      "title": "Interpretación histórica",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No desarrollada dentro del alcance aprobado. La recepción rabínica y cristiana constituye una ampliación opcional, no un resultado de este estudio."
+    },
+    {
+      "id": "SN-001/S13",
+      "order": 13,
+      "title": "Perspectiva pentecostal",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una doctrina uniforme a las iglesias pentecostales."
+    },
+    {
+      "id": "SN-001/S14",
+      "order": 14,
+      "title": "Otras perspectivas protestantes",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura uniforme a las tradiciones protestantes."
+    },
+    {
+      "id": "SN-001/S15",
+      "order": 15,
+      "title": "Perspectiva católica",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura oficial católica sin documentación."
+    },
+    {
+      "id": "SN-001/S16",
+      "order": 16,
+      "title": "Perspectivas complementarias",
+      "state": "fuera_de_alcance_delimitado",
+      "candidateStatus": "no_desarrollada_alcance_limitado",
+      "bodyMatch": null,
+      "justificationMatch": true,
+      "evidenceCount": 0,
+      "justification": "No desarrolladas de manera exhaustiva. La recepción judía, ortodoxa y los estudios académicos candidatos se reservan para ampliaciones opcionales; no sustentan la conclusión actual."
+    },
+    {
+      "id": "SN-001/S17",
+      "order": 17,
+      "title": "Contrastación",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 7,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S18",
+      "order": 18,
+      "title": "Aplicación contemporánea",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 1,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S19",
+      "order": 19,
+      "title": "Conclusiones",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 7,
+      "justification": null
+    },
+    {
+      "id": "SN-001/S20",
+      "order": 20,
+      "title": "Referencias",
+      "state": "analizada",
+      "candidateStatus": "candidato_pendiente_admision",
+      "bodyMatch": true,
+      "justificationMatch": null,
+      "evidenceCount": 0,
+      "justification": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "AF-000001",
+      "studyId": "SN-001",
+      "sectionId": "SN-001/S10",
+      "proposition": "La norma original distingue cortes por muertos e inscripción corporal.",
+      "type": "disposicion_antiguo_pacto",
+      "grade": "solidamente_fundamentado",
+      "gradeJustification": "Dos cláusulas negativas; grado propuesto sujeto a cotejo.",
+      "supportingEvidenceIds": [
+        "EVD-000001"
+      ],
+      "opposingEvidenceIds": [],
+      "reasoning": "Dos cláusulas negativas; grado propuesto sujeto a cotejo."
+    },
+    {
+      "id": "AF-000002",
+      "studyId": "SN-001",
+      "sectionId": "SN-001/S07",
+      "proposition": "La segunda expresión admite la lectura de inscripción tatuada.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "plausible",
+      "gradeJustification": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo.",
+      "supportingEvidenceIds": [
+        "EVD-000001"
+      ],
+      "opposingEvidenceIds": [],
+      "reasoning": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo."
+    },
+    {
+      "id": "AF-000003",
+      "studyId": "SN-001",
+      "sectionId": "SN-001/S05",
+      "proposition": "Algunas incisiones se vinculan con duelo y ritual.",
+      "type": "practica_historico_cultural",
+      "grade": "solidamente_fundamentado",
+      "gradeJustification": "Comparación contextual sin identificar todas las prácticas.",
+      "supportingEvidenceIds": [
+        "EVD-000002",
+        "EVD-000003",
+        "EVD-000004",
+        "EVD-000005",
+        "EVD-000006",
+        "EVD-000007"
+      ],
+      "opposingEvidenceIds": [],
+      "reasoning": "Comparación contextual sin identificar todas las prácticas."
+    },
+    {
+      "id": "AF-000004",
+      "studyId": "SN-001",
+      "sectionId": "SN-001/S17",
+      "proposition": "No se establece una finalidad exclusivamente funeraria o idolátrica de la segunda disposición.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "indeterminado",
+      "gradeJustification": "La finalidad no se repite expresamente y los paralelos son de cortes.",
+      "supportingEvidenceIds": [
+        "EVD-000001",
+        "EVD-000003",
+        "EVD-000004"
+      ],
+      "opposingEvidenceIds": [],
+      "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes."
+    },
+    {
+      "id": "AF-000005",
+      "studyId": "SN-001",
+      "sectionId": "SN-001/S18",
+      "proposition": "La aplicación universal a tatuajes contemporáneos permanece indeterminada.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "indeterminado",
+      "gradeJustification": "Falta justificar equivalencia de prácticas y continuidad normativa.",
+      "supportingEvidenceIds": [
+        "EVD-000001"
+      ],
+      "opposingEvidenceIds": [],
+      "reasoning": "Falta justificar equivalencia de prácticas y continuidad normativa."
+    }
+  ],
+  "conclusions": [
+    {
+      "id": "CON-000001",
+      "studyId": "SN-001",
+      "claimIds": [
+        "AF-000001",
+        "AF-000003"
+      ],
+      "synthesis": "La prohibición original existe y los cortes aparecen en diversos contextos.",
+      "outcome": "afirmativa",
+      "grade": "solidamente_fundamentado",
+      "gradeJustification": "Grado propuesto, pendiente de cotejo de fuentes.",
+      "reservations": [
+        "Grado propuesto, pendiente de cotejo de fuentes."
+      ]
+    },
+    {
+      "id": "CON-000002",
+      "studyId": "SN-001",
+      "claimIds": [
+        "AF-000002"
+      ],
+      "synthesis": "La expresión admite la lectura de tatuaje.",
+      "outcome": "interpretativa",
+      "grade": "plausible",
+      "gradeJustification": "Técnica no determinada.",
+      "reservations": [
+        "Técnica no determinada."
+      ]
+    },
+    {
+      "id": "CON-000003",
+      "studyId": "SN-001",
+      "claimIds": [
+        "AF-000004",
+        "AF-000005"
+      ],
+      "synthesis": "No se determina la finalidad exclusiva ni la vigencia universal actual.",
+      "outcome": "indeterminada",
+      "grade": "indeterminado",
+      "gradeJustification": "Alcance bíblico contextual; no equivale a permiso o condena general.",
+      "reservations": [
+        "Alcance bíblico contextual; no equivale a permiso o condena general."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "REV-553-001",
+      "severity": "bloqueante_publicacion",
+      "area": "trazabilidad_linguistica",
+      "sections": [
+        "SN-001/S07",
+        "SN-001/S10",
+        "SN-001/S17"
+      ],
+      "claims": [
+        "AF-000002",
+        "AF-000004"
+      ],
+      "detail": "Las ocho evidencias editoriales están vinculadas a Reina-Valera 1909. Esa edición no acredita por sí sola lemas, raíces, morfología ni identificadores Strong.",
+      "requiredAction": "Vincular evidencias a fuentes hebreas concretas y cotejadas, con localizador exacto. Mantener los datos lingüísticos como reportados y no admitidos mientras falte ese cotejo."
+    },
+    {
+      "id": "REV-553-002",
+      "severity": "bloqueante_publicacion",
+      "area": "septuaginta",
+      "sections": [
+        "SN-001/S09"
+      ],
+      "claims": [],
+      "detail": "La comparación griega se describe como preliminar, pero no existe una edición ni recurso de Septuaginta registrado en la bibliografía y permisos. La evidencia asignada a S09 remite a Reina-Valera 1909.",
+      "requiredAction": "Registrar edición, recurso, procedencia y permisos de la fuente griega antes de usar la comparación como evidencia admitida; de lo contrario conservarla solo como observación preliminar."
+    },
+    {
+      "id": "REV-553-003",
+      "severity": "bloqueante_publicacion",
+      "area": "datos_linguisticos",
+      "sections": [
+        "SN-001/S07",
+        "SN-001/S11"
+      ],
+      "claims": [
+        "AF-000002"
+      ],
+      "detail": "Los doce términos lingüísticos conservan el estado reportada_no_admitida y los ocho pasajes mantienen sourceAdmission pendiente y verificación requiere_cotejo_documentado.",
+      "requiredAction": "No presentar morfología, Strong, raíces ni ocurrencias como verificadas hasta completar el cotejo exacto y registrar la evidencia de origen."
+    },
+    {
+      "id": "REV-553-004",
+      "severity": "bloqueante_publicacion",
+      "area": "licencias_y_permisos",
+      "sections": [
+        "SN-001/S20"
+      ],
+      "claims": [],
+      "detail": "Las trece decisiones de permisos continúan pendientes. Las condiciones de licencia documentadas no equivalen a aprobación de cita, reproducción, adaptación o redistribución.",
+      "requiredAction": "Mantener bloqueada la publicación de citas, extractos, corpus y adaptaciones hasta que exista una decisión editorial y autorización aplicable."
+    },
+    {
+      "id": "REV-553-005",
+      "severity": "reserva_editorial",
+      "area": "versionado",
+      "sections": [
+        "SN-001/S01",
+        "SN-001/S20"
+      ],
+      "claims": [],
+      "detail": "Los artefactos conservan etiquetas distintas: manuscrito 0.4, candidato de integración 0.4.0 y registro editorial 0.4.3. El candidato apunta al blob actual del manuscrito, pero aún no existe una única versión exacta aprobada.",
+      "requiredAction": "En 5.5.4 fijar explícitamente el artefacto y la versión exacta sometidos a aprobación; no equiparar automáticamente las tres etiquetas."
+    },
+    {
+      "id": "REV-553-006",
+      "severity": "reserva_de_alcance",
+      "area": "secciones_fuera_de_alcance",
+      "sections": [
+        "SN-001/S08",
+        "SN-001/S12",
+        "SN-001/S13",
+        "SN-001/S14",
+        "SN-001/S15",
+        "SN-001/S16"
+      ],
+      "claims": [],
+      "detail": "Seis secciones están justificadas como no desarrolladas dentro del alcance aprobado. No representan resultados negativos ni una revisión exhaustiva de crítica textual, recepción histórica o posturas confesionales.",
+      "requiredAction": "Conservar las delimitaciones y no presentar el estudio como cobertura exhaustiva de esas perspectivas."
+    },
+    {
+      "id": "REV-553-007",
+      "severity": "bloqueante_aprobacion",
+      "area": "revision_exacta",
+      "sections": [
+        "SN-001/S01",
+        "SN-001/S02",
+        "SN-001/S03",
+        "SN-001/S04",
+        "SN-001/S05",
+        "SN-001/S06",
+        "SN-001/S07",
+        "SN-001/S08",
+        "SN-001/S09",
+        "SN-001/S10",
+        "SN-001/S11",
+        "SN-001/S12",
+        "SN-001/S13",
+        "SN-001/S14",
+        "SN-001/S15",
+        "SN-001/S16",
+        "SN-001/S17",
+        "SN-001/S18",
+        "SN-001/S19",
+        "SN-001/S20"
+      ],
+      "claims": [],
+      "detail": "El registro mantiene la revisión pendiente y los controles críticos sin aprobación. No existe aprobación del contenido exacto ni huella revisada aprobada.",
+      "requiredAction": "La aprobación debe realizarse sobre una versión inmutable y una huella exacta; la validación automatizada no sustituye la aprobación académica del responsable."
+    }
+  ],
+  "publicationAuthorized": false,
+  "ownerApprovalRecorded": false,
+  "exactVersionApproved": false
+}
