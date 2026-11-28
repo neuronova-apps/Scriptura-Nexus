@@ -1,0 +1,18 @@
+---
+import {studyModuleRoutes,studyModuleHref,type StudyModuleKey} from '../../lib/study-module-links';
+import {basePath} from '../../lib/site';
+interface Props { modules:StudyModuleKey[]; context:string; returnAnchor:string; }
+const {modules,context,returnAnchor}=Astro.props;
+const base=basePath(import.meta.env.BASE_URL);
+---
+<div class="study-module-links" data-module-context={context}>
+  <p><strong>Consultar herramientas relacionadas</strong></p>
+  <ul>{modules.map(key=><li><a data-study-module={key} href={studyModuleHref(base,key)}>{studyModuleRoutes[key].label}</a> <span>— {studyModuleRoutes[key].availability}</span></li>)}</ul>
+  <p>Referencia para consulta manual: {context}. El enlace abre la herramienta; no ejecuta una búsqueda ni carga datos restringidos.</p>
+  <a href={'#'+returnAnchor}>Volver a esta sección de la ficha</a>
+</div>
+<style>
+.study-module-links{border-inline-start:3px solid currentColor;padding-inline-start:.75rem;margin-block:1rem;overflow-wrap:anywhere}
+.study-module-links ul{padding-inline-start:1.2rem}
+.study-module-links li{margin-block:.4rem}
+</style>
