@@ -122,6 +122,18 @@
         "consultedAt": "2026-11-26",
         "verification": "verificada"
       }
+    },
+    {
+      "id": "AUT-000007",
+      "name": "Reina y Valera (atribución de la distribución)",
+      "kind": "persona",
+      "traditions": [],
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada"
+      }
     }
   ],
   "works": [
@@ -244,6 +256,26 @@
         "consultedAt": "2026-11-26",
         "verification": "verificada"
       }
+    },
+    {
+      "id": "OBR-000007",
+      "title": "Santa Biblia — Reina Valera 1909",
+      "contributors": [
+        {
+          "authorId": "AUT-000007",
+          "role": "traductor"
+        }
+      ],
+      "kind": "texto_historico",
+      "authority": "Traducción bíblica española; no sustituye la edición hebrea original.",
+      "language": "es",
+      "dateLabel": "1909",
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada"
+      }
     }
   ],
   "editions": [
@@ -341,6 +373,22 @@
         "locator": "Pregunta y respuesta Bible",
         "url": "https://www.oca.org/questions/scripture/bible",
         "consultedAt": "2026-11-26",
+        "verification": "verificada"
+      }
+    },
+    {
+      "id": "BIB-000007",
+      "workId": "OBR-000007",
+      "edition": "spaRV1909; distribución web eBible.org, archivos fuente fechados 2015-08-10",
+      "yearLabel": "1909",
+      "publisher": "eBible.org (distribuidor digital)",
+      "language": "es",
+      "sourceId": "F34",
+      "url": "https://ebible.org/find/details.php?id=spaRV1909",
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
         "verification": "verificada"
       }
     }
@@ -447,6 +495,25 @@
         "consultedAt": "2026-11-26",
         "verification": "verificada"
       }
+    },
+    {
+      "id": "F34",
+      "name": "Distribución eBible.org spaRV1909",
+      "class": "A",
+      "provider": "eBible.org",
+      "conditions": "Declaración de dominio público del proveedor; admisión editorial y alcance territorial pendientes de cierre. No se extiende a otras revisiones.",
+      "phases": [
+        "P7",
+        "P9",
+        "investigacion"
+      ],
+      "url": "https://ebible.org/find/details.php?id=spaRV1909",
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada"
+      }
     }
   ],
   "resources": [
@@ -547,6 +614,24 @@
         "consultedAt": "2026-11-26",
         "verification": "verificada"
       }
+    },
+    {
+      "id": "REC-000007",
+      "sourceId": "F34",
+      "editionId": "BIB-000007",
+      "versionRef": "spaRV1909, páginas web consultadas 2026-11-28; no se afirma identidad byte a byte con ZIP fijado",
+      "originUrl": "https://ebible.org/find/details.php?id=spaRV1909",
+      "kind": "consulta_externa",
+      "admission": "en_revision",
+      "licenseIds": [
+        "LIC-000002"
+      ],
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada"
+      }
     }
   ],
   "licenses": [
@@ -564,7 +649,111 @@
         "consultedAt": "2026-11-26",
         "verification": "verificada"
       }
+    },
+    {
+      "id": "LIC-000002",
+      "identifier": "Public Domain (declaración del proveedor)",
+      "holder": "Texto de traducción atribuido a Reina y Valera; declaración de eBible.org",
+      "url": "https://ebible.org/spaRV1909/copyright.htm",
+      "attribution": "Santa Biblia, Reina-Valera 1909, distribución spaRV1909, eBible.org. https://ebible.org/spaRV1909/copyright.htm",
+      "restrictions": "Declaración del distribuidor; no dictamen territorial ni autorización para otras ediciones.",
+      "scope": "Distribución spaRV1909; distinguir consulta web del ZIP fijado P9.1.2.",
+      "provenance": {
+        "locator": "Identidad de distribución spaRV1909, atribución Reina y Valera, declaración Public Domain; páginas de capítulos cotejadas",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada"
+      }
     }
   ],
-  "evidence": []
+  "evidence": [
+    {
+      "id": "EVD-000001",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Levítico 19:28 — https://ebible.org/spaRV1909/LEV19.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000002",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Levítico 21:5 — https://ebible.org/spaRV1909/LEV21.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000003",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Deuteronomio 14:1 — https://ebible.org/spaRV1909/DEU14.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000004",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "1 Reyes 18:28 — https://ebible.org/spaRV1909/1KI18.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000005",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Jeremías 16:6 — https://ebible.org/spaRV1909/JER16.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000006",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Jeremías 41:5-9 — https://ebible.org/spaRV1909/JER41.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000007",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Jeremías 48:37 — https://ebible.org/spaRV1909/JER48.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    },
+    {
+      "id": "EVD-000008",
+      "bibliographyId": "BIB-000007",
+      "resourceId": "REC-000007",
+      "locator": "Ezequiel 9:4 — https://ebible.org/spaRV1909/EZK09.htm",
+      "language": "es",
+      "kind": "observacion",
+      "consultedAt": "2026-11-28",
+      "verification": "verificada",
+      "permission": "pendiente"
+    }
+  ]
 }
