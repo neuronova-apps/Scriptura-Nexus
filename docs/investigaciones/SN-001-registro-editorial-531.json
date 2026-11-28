@@ -4,8 +4,8 @@
   "version": "0.4.2",
   "status": "borrador_no_publicable",
   "sourceRegistry": {
-    "bibliography": "src/data/referencias/biblioteca.json",
-    "permissions": "src/data/referencias/permisos.json"
+    "bibliography": "docs/investigaciones/SN-001-biblioteca-candidato.json",
+    "permissions": "docs/investigaciones/SN-001-permisos-candidato.json"
   },
   "evidence": [
     {
@@ -424,7 +424,8 @@
     "Los grados son propuestas; el análisis lingüístico aún exige evidencias léxicas específicas, especialmente C02.",
     "Secciones no desarrolladas se presentan como límites explícitos del alcance, no como resultados confesionales.",
     "No es Snapshot; no importar al registro público. Falta formalizar cadena OSHB y léxicos, resolver licencia territorial y revisar contenido exacto.",
-    "Se reconsultaron las ocho referencias RV1909 y declaración de dominio público. Se verificaron directamente LICENSE.md de OSHB y readme.md de HebrewLexicon; los XML grandes no devolvieron contenido mediante el conector y no se certifica su extracción. Se documentan seis fuentes lingüísticas en biblioteca/permisos sin aprobar permisos. No se incorporan tablas de terceros."
+    "Se reconsultaron las ocho referencias RV1909 y declaración de dominio público. Se verificaron directamente LICENSE.md de OSHB y readme.md de HebrewLexicon; los XML grandes no devolvieron contenido mediante el conector y no se certifica su extracción. Se documentan seis fuentes lingüísticas en biblioteca/permisos sin aprobar permisos. No se incorporan tablas de terceros.",
+    "Corrección PR #136: los registros ampliados se conservan como candidatos aislados; los registros operativos recuperan exactamente la línea base P7/P11. No se pierde información ni se debilitan pruebas históricas."
   ],
   "publicationAuthorized": false,
   "linguisticSources": [
