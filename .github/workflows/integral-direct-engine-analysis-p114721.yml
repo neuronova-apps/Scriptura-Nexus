@@ -1,0 +1,38 @@
+name: P11.4.7.2.1 Análisis funcional directo de motores
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/inspect-integral-engines-p114721.mjs'
+      - '.github/workflows/integral-direct-engine-analysis-p114721.yml'
+      - 'scripts/prepare-reader-candidate-p11425.mjs'
+      - 'scripts/serve-reader-isolated-p11423.py'
+      - 'scripts/lib/**'
+      - 'src/lib/**'
+      - 'docs/P11/**'
+      - 'docs/P9/**'
+permissions:
+  contents: read
+jobs:
+  direct-engine-analysis:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      PYTHON: python
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias y comprobar proyecto
+        run: npm ci && npm run check && npm test && npm run build && npm run test:build
+      - name: Ejecutar consultas directas sin navegador
+        run: node --max-old-space-size=4096 scripts/inspect-integral-engines-p114721.mjs
+      - name: Confirmar que la compilación pública permanece intacta
+        run: npm run test:build
