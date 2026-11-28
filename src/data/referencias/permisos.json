@@ -96,6 +96,22 @@
       "basis": "Enlace externo de consulta; no se acredita permiso de reproducción específico.",
       "authorizationRef": null,
       "reviewerRole": null
+    },
+    {
+      "resourceId": "REC-000007",
+      "editionId": "BIB-000007",
+      "licenseId": "LIC-000002",
+      "decision": "pendiente",
+      "uses": {
+        "consulta": "permitida",
+        "cita": "documentada",
+        "reproduccion": "documentada",
+        "adaptacion": "documentada"
+      },
+      "reviewedAt": "2026-11-28",
+      "basis": "Declaración de dominio público comprobada en página del proveedor. Cierre territorial y autorización editorial formal pendientes; no se publica corpus.",
+      "authorizationRef": null,
+      "reviewerRole": null
     }
   ]
 }
