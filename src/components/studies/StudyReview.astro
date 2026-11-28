@@ -9,12 +9,13 @@ const gradeLabels:Record<string,string>={solidamente_fundamentado:'Sólidamente 
 ---
 <article class="sn-review" data-review-only="true">
   <header class="sn-card sn-card--outlined">
+    <nav aria-label="Secciones de la ficha"><ul><li><a href="#pasajes-titulo">Pasajes</a></li><li><a href="#linguistica-titulo">Análisis lingüístico</a></li><li><a href="#plantilla-titulo">Investigación</a></li><li><a href="#respaldo-titulo">Conclusiones</a></li><li><a href="#fuentes-titulo">Fuentes</a></li></ul></nav>
     <p>SN-001 · Candidato de revisión · No publicado</p>
     <h1>¿Tatuarse es pecado?</h1>
     <p><strong>Texto principal:</strong> Levítico 19:28</p>
     <h2>Respuesta sintetizada</h2>
     <p>{candidate.bodies['SN-001/S19']}</p>
-    <p>Grados de respaldo propuestos; no constituyen una aprobación editorial.</p>
+    <p>Alcance: 14 secciones analizadas y 6 no desarrolladas por delimitación. Grados de respaldo propuestos; no constituyen una aprobación editorial.</p>
     <p role="note">Consulta de revisión aislada. No autoriza publicación ni reproducción de fuentes restringidas.</p>
   <StudyModuleLinks modules={['manuscripts','library','history']} context="Levítico 19:28; fuentes y contexto complementario" returnAnchor="fuentes-titulo"/>
   </header>
@@ -25,6 +26,7 @@ const gradeLabels:Record<string,string>={solidamente_fundamentado:'Sólidamente 
   <section class="sn-card" aria-labelledby="linguistica-titulo">
     <h2 id="linguistica-titulo">Lemas, Strong y morfología</h2>
     <p>La ficha distingue datos reportados y coincidencias en OSHB. Un código de proveedor no implica equivalencia automática con Strong.</p>
+    <p>Strong y BDB: la localización de una entrada no demuestra por sí misma la correspondencia con una ocurrencia.</p>
     {terms.map((t,i)=>{const checked=audit.terms[i];return <details id={'termino-'+(i+1)}><summary><bdi lang="he" dir="rtl">{t.form}</bdi> · {t.strong??'Identificador discrepante'} · {passages.find(p=>p.localId===t.passageId)?.reference}</summary><dl><dt>Lema reportado</dt><dd><bdi lang="he" dir="rtl">{t.lemma??'No documentado'}</bdi></dd><dt>Raíz reportada</dt><dd><bdi lang="he" dir="rtl">{t.root??'No documentada'}</bdi></dd><dt>Morfología reportada</dt><dd>{t.morphology??'No documentada'}</dd><dt>Glosa de trabajo</dt><dd>{t.gloss}</dd><dt>Estado del cotejo</dt><dd>{checked.status==='matched'?'Coincidencia de forma normalizada en OSHB':checked.status==='unresolved'?'Sin coincidencia exacta normalizada':'Fuera de cobertura hebrea admitida'}</dd></dl>{checked.matches?.map((m:any)=><p><bdi lang="he" dir="rtl">{m.form}</bdi> · Lema OSHB: {m.lemmaRaw??'No disponible'} · Morfología OSHB: {m.morphRaw??'No disponible'}</p>)}{t.strongCandidates&&<ul>{t.strongCandidates.map((c:any)=><li>{c.id}: {c.origin}</li>)}</ul>}<p>Fuente reportada: {t.source}. Permiso editorial pendiente.</p><StudyModuleLinks modules={['analyzer','lexicon','concordance']} context={(passages.find(p=>p.localId===t.passageId)?.reference??'')+' · '+t.form+' · '+(t.strong??'identificador discrepante')} returnAnchor={'termino-'+(i+1)}/></details>})}
   </section>
   <StudyTemplate studyId={candidate.studyId} snapshot={candidate} reviewOnly={true}/>
