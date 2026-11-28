@@ -41,10 +41,15 @@ try {
  assert.match(html,/Morfología reportada/);
  assert.match(html,/Trazabilidad de conclusiones/);
  assert.match(html,/dir="rtl"/);
+
+ const moduleLinks=[...html.matchAll(/<a[^>]*data-study-module="([^"]+)"[^>]*href="([^"]+)"/g)];
+ assert.equal(new Set(moduleLinks.map(m=>m[1])).size,8);
+ for(const [,key,href] of moduleLinks){const url=new URL(href,'https://example.invalid');assert.equal(url.origin,'https://example.invalid');assert.equal(url.search,'');const dest=url.pathname.replace(/^\\/Scriptura-Nexus\\//,'');const target=readFileSync(join(root,'dist',dest,'index.html'),'utf8');assert.ok(target.includes('id="'+url.hash.slice(1)+'"'),key+' destination anchor');}
+ assert.match(html,/no ejecuta una búsqueda/);
  const other=readFileSync(join(root,'dist/estudios/SN-002/index.html'),'utf8');
  assert.doesNotMatch(other,/data-review-only="true"/);
  const publicHtml=readFileSync('dist/estudios/SN-001/index.html','utf8');
- assert.doesNotMatch(publicHtml,/data-review-only="true"|Candidato de revisión no publicado/);
+ assert.doesNotMatch(publicHtml,/data-review-only="true"|Candidato de revisión no publicado|data-study-module=/);
  assert.match(publicHtml,/Sin versión aprobada/);
  // Review bundle is a CI artifact only, not the deployed dist.
  mkdirSync('sn001-review-output',{recursive:true});
