@@ -8,7 +8,10 @@
     "recordPath": "docs/investigaciones/SN-001-registro-consolidado-553.json",
     "contentDigest": "ac69d5692246d4c9b24b279237f299101b53b46579f5a40dcb745310042baddc",
     "digestAlgorithm": "SHA-256",
-    "digestScope": "reviewedContentDigest: record sin reviews + relations + bodies + studyId/version/previousVersion=null"
+    "digestScope": "reviewedContentDigest: record sin reviews + relations + bodies + studyId/version/previousVersion=null",
+    "consolidatedPackageBlobSha": "d051321c8356150d3fbc6139d4c0c4ad0eeb9ad6",
+    "consolidationReportPath": "docs/investigaciones/SN-001-consolidacion-553.json",
+    "consolidationReportBlobSha": "a3208ed07646396a47ee65883ac9110d09a8c34a"
   },
   "sourceVersions": {
     "manuscript": "0.4",
