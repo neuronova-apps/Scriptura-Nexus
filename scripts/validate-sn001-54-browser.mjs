@@ -3,12 +3,13 @@ import {createRequire} from 'node:module';
 import {readFileSync,writeFileSync,statSync,mkdirSync} from 'node:fs';
 import {resolve,relative,isAbsolute,extname} from 'node:path';
 const {chromium}=createRequire(resolve(process.env.SN001_BROWSER_DEPS,'package.json'))('playwright');
-const root=resolve('sn001-review-output/dist'),publicRoot=resolve('dist'),origin='http://127.0.0.1:43154',prefix='/Scriptura-Nexus/';
+const root=resolve('sn001-review-output'),publicRoot=resolve('dist'),origin='http://127.0.0.1:43154',prefix='/Scriptura-Nexus/';
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.ico':'image/x-icon','.json':'application/json; charset=utf-8'};
 const report={phase:'5.4',study:'SN-001',publicationAuthorized:false,queries:[],modules:[],appearance:[],accessibility:[],pageErrors:[],externalRequests:[],missing:[],manualVisualReview:false};
 mkdirSync('sn001-validation-output',{recursive:true});
 let browser;
 try {
+ for(const dir of [root,publicRoot])for(const file of ['buscar/index.html','estudios/SN-001/index.html','data/catalog-search.json'])assert.ok(statSync(resolve(dir,file),{throwIfNoEntry:false})?.isFile(),'Archivo de compilación ausente: '+resolve(dir,file));
  browser=await chromium.launch({headless:true});
  const ctx=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',reducedMotion:'reduce'});
  let activeRoot=root;
@@ -22,7 +23,7 @@ try {
   return route.fulfill({status:200,contentType:type,body:readFileSync(f),headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
  });
  const p=await ctx.newPage();p.on('pageerror',e=>report.pageErrors.push(e.message));
- const go=async path=>assert.equal((await p.goto(origin+prefix+path))?.status(),200);
+ const go=async path=>assert.equal((await p.goto(origin+prefix+path))?.status(),200,'Ruta '+path+' en '+activeRoot);
  const study='estudios/SN-001/';
  await go('buscar/');
  for(const q of ['SN-001','tatuarse','tatuaje','Levítico 19:28','H7085','קַעֲקַע']){
@@ -46,6 +47,7 @@ try {
  assert.equal(links.length,8);
  for(const [key,url] of links){await p.goto(url);const u=new URL(url);assert.ok(await p.locator(u.hash).count());report.modules.push(key);}
  await go(study);
+ await p.addScriptTag({path:resolve(process.env.SN001_BROWSER_DEPS,'node_modules/axe-core/axe.min.js')});
  for(const width of [320,768,1280])for(const theme of ['light','dark','contrast-light','contrast-dark']){
   await p.setViewportSize({width,height:900});
   await p.evaluate(theme=>{document.documentElement.dataset.theme=theme;document.documentElement.dataset.fontScale='130';},theme);
@@ -53,7 +55,6 @@ try {
   await p.locator('#termino-1').evaluate(e=>e.open=true);
   const fits=await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1);
   report.appearance.push({width,theme,fontScale:130,reflow:fits});
-  await p.addScriptTag({path:resolve(process.env.SN001_BROWSER_DEPS,'node_modules/axe-core/axe.min.js')});
   const findings=await p.evaluate(async()=>{const r=await window.axe.run({runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}));});
   report.accessibility.push({width,theme,violations:findings});
   if(width===320||width===1280)await p.screenshot({path:'sn001-validation-output/'+width+'-'+theme+'.png',fullPage:false});
@@ -66,4 +67,4 @@ try {
  assert.ok(report.appearance.every(x=>x.reflow),'Reflow: revisar informe');
  assert.ok(report.accessibility.every(x=>x.violations.length===0),'Accesibilidad: revisar informe');
  report.functionalValidated=true;
-}finally{if(browser)await browser.close();writeFileSync('sn001-validation-output/browser-report.json',JSON.stringify(report,null,2));}
+}catch(error){report.failure=String(error?.stack??error);throw error;}finally{if(browser)await browser.close();writeFileSync('sn001-validation-output/browser-report.json',JSON.stringify(report,null,2));}
