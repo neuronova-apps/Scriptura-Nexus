@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "studyId": "SN-001",
+  "phase": "5.5.4",
+  "status": "preparado_para_revision_responsable_bloqueado",
+  "reviewTarget": {
+    "recordVersion": "0.4.3",
+    "recordPath": "docs/investigaciones/SN-001-registro-consolidado-553.json",
+    "contentDigest": "ac69d5692246d4c9b24b279237f299101b53b46579f5a40dcb745310042baddc",
+    "digestAlgorithm": "SHA-256",
+    "digestScope": "reviewedContentDigest: record sin reviews + relations + bodies + studyId/version/previousVersion=null",
+    "consolidatedPackageBlobSha": "d051321c8356150d3fbc6139d4c0c4ad0eeb9ad6",
+    "consolidationReportPath": "docs/investigaciones/SN-001-consolidacion-553.json",
+    "consolidationReportBlobSha": "a3208ed07646396a47ee65883ac9110d09a8c34a"
+  },
+  "sourceVersions": {
+    "manuscript": "0.4",
+    "integrationCandidate": "0.4.0",
+    "editorialRecord": "0.4.3",
+    "versionDecision": "La revisión se limita al registro consolidado 0.4.3; no homologa ni modifica las etiquetas de los demás artefactos."
+  },
+  "sourceDigests": {
+    "docs/investigaciones/SN-001-registro-editorial-531.json": "0993fd5d7b9e8e599dd9bf393130f26fa3e57350",
+    "docs/investigaciones/SN-001-pre-registro-editorial-531.json": "b9d08062a97eda8ff6a94f4306a2ce361042b979",
+    "docs/investigaciones/SN-001-candidato-integracion.json": "ece386025684e725e9e8b28715ceac286028d6b0",
+    "docs/investigaciones/SN-001-biblioteca-candidato.json": "c6e101ef15d0b4278097fb5d0954a68a691486d4",
+    "docs/investigaciones/SN-001-permisos-candidato.json": "1fd0552d835d1c80ac711b2596d7fd9123c0e8f1",
+    "docs/investigaciones/SN-001-levitico-19-28.md": "dac4dccafde2e74a17e5ef340eeb615bd6e78054"
+  },
+  "scope": {
+    "sectionsTotal": 20,
+    "sectionsAnalyzed": 14,
+    "sectionsOutOfScope": [
+      "SN-001/S08",
+      "SN-001/S12",
+      "SN-001/S13",
+      "SN-001/S14",
+      "SN-001/S15",
+      "SN-001/S16"
+    ],
+    "sectionsNeedingHumanReview": [
+      "SN-001/S01",
+      "SN-001/S02",
+      "SN-001/S03",
+      "SN-001/S04",
+      "SN-001/S05",
+      "SN-001/S06",
+      "SN-001/S07",
+      "SN-001/S09",
+      "SN-001/S10",
+      "SN-001/S11",
+      "SN-001/S17",
+      "SN-001/S18",
+      "SN-001/S19",
+      "SN-001/S20"
+    ],
+    "claims": 5,
+    "conclusions": 3,
+    "evidence": 8,
+    "passages": 8,
+    "linguisticTerms": 12
+  },
+  "evidenceAssessment": {
+    "currentEvidenceCount": 8,
+    "allCurrentEvidenceLinkedTo": "REC-000007 / BIB-000007 / spaRV1909",
+    "allCurrentEvidenceVerification": "verificada",
+    "allCurrentEvidencePermission": "pendiente",
+    "languageClaims": [
+      "AF-000002",
+      "AF-000004"
+    ],
+    "hebrewSourcesRegistered": [
+      "REC-000008",
+      "REC-000009",
+      "REC-000010",
+      "REC-000011",
+      "REC-000012",
+      "REC-000013"
+    ],
+    "hebrewOccurrenceContentVerified": false,
+    "hebrewEvidenceLinkedToCurrentClaims": false,
+    "linguisticTermsTotal": 12,
+    "linguisticTermsNotAdmitted": 12,
+    "passagesPendingSourceAdmission": 8,
+    "greekComparison": {
+      "terms": [
+        "ἐντομίδας",
+        "γράμματα στικτά"
+      ],
+      "status": "preliminar_no_admitida",
+      "septuagintEditionRegistered": false
+    },
+    "summary": "La existencia de recursos WLC y léxicos en la biblioteca acredita su registro y procedencia documental, no el cotejo de las ocurrencias concretas. No se convierte una fuente registrada en evidencia verificada por inferencia."
+  },
+  "permissions": {
+    "resources": 13,
+    "decisionsPending": 13,
+    "decisionsApproved": 0,
+    "publicationAdmissions": 0,
+    "publicSnapshots": 0
+  },
+  "controls": [
+    {
+      "id": "fuentes",
+      "status": "no_conforme",
+      "reason": "Las ocho evidencias actuales están vinculadas a spaRV1909; no sustentan por sí solas las afirmaciones lingüísticas hebreas.",
+      "requiredAction": "Vincular las ocurrencias y afirmaciones lingüísticas a evidencias específicas de WLC y léxicos, con forma exacta, localizador, edición y cotejo documentado."
+    },
+    {
+      "id": "exactitud_textual",
+      "status": "no_conforme",
+      "reason": "Los doce términos continúan reportada_no_admitida; los ocho pasajes requieren cotejo documentado y la comparación griega carece de edición LXX registrada.",
+      "requiredAction": "Cotejar texto, forma, lema, Strong, código morfológico y contexto por ocurrencia; documentar la fuente LXX o mantener la comparación fuera de la evidencia probatoria."
+    },
+    {
+      "id": "licencias",
+      "status": "pendiente",
+      "reason": "Las trece decisiones de permiso permanecen pendientes; las declaraciones de licencia no equivalen a autorización de uso editorial.",
+      "requiredAction": "Decisión explícita por recurso y uso; registrar fundamento, responsable, fecha y referencia de autorización. No inferir permisos."
+    },
+    {
+      "id": "privacidad",
+      "status": "pendiente",
+      "reason": "No existe una revisión humana registrada para esta versión exacta.",
+      "requiredAction": "Comprobar ausencia de datos personales, privados o materiales no autorizados en el contenido y anexos."
+    },
+    {
+      "id": "aprobacion",
+      "status": "pendiente",
+      "reason": "No existe aprobación del responsable ni reviewedDigest registrado en la revisión editorial.",
+      "requiredAction": "El responsable debe identificar su rol, revisar la versión y registrar decisión y huella exacta. La validación automática no sustituye esta decisión."
+    },
+    {
+      "id": "imparcialidad",
+      "status": "pendiente",
+      "reason": "La automatización no certifica neutralidad, tratamiento justo de posturas ni ausencia de sesgo.",
+      "requiredAction": "Revisión humana de la pregunta, atribuciones, argumentos contrarios y límites confesionales."
+    },
+    {
+      "id": "contexto_canonico",
+      "status": "pendiente",
+      "reason": "No existe comprobación humana de canon, edición y alcance comparativo para la versión exacta.",
+      "requiredAction": "Comprobar canon y edición pertinentes; justificar comparaciones y no atribuir autoridad confesional sin fuente."
+    }
+  ],
+  "blockingFindings": [
+    "REV-553-001",
+    "REV-553-002",
+    "REV-553-003",
+    "REV-553-004",
+    "REV-553-007"
+  ],
+  "editorialDisposition": {
+    "reviewResult": "pendiente",
+    "reviewerRole": null,
+    "reviewDate": null,
+    "reviewedDigest": null,
+    "ownerApprovalRecorded": false,
+    "publicationAuthorized": false,
+    "snapshotCreated": false
+  },
+  "guardrails": [
+    "No modificar manuscrito, registro consolidado ni catálogo de fuentes en esta fase.",
+    "No marcar secciones como revisadas sin revisión humana.",
+    "No admitir fuentes ni cambiar decisiones de permisos.",
+    "No cambiar grados de respaldo o conclusiones para superar controles.",
+    "No crear snapshots ni habilitar publicación.",
+    "No registrar la aprobación en nombre del responsable."
+  ]
+}
