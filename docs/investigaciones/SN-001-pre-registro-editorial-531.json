@@ -1,0 +1,967 @@
+{
+  "schemaVersion": 1,
+  "kind": "pre_registro_editorial_no_publicable",
+  "studyId": "SN-001",
+  "version": "0.4.0",
+  "ownerAuthorization": {
+    "date": "2026-11-28",
+    "statements": [
+      "Veirifcado y validado la admision de fuentes, que sigue",
+      "Entendido, inicia con 5.3.1."
+    ],
+    "scope": "formalización y preparación editorial de fuentes revisadas; no sustituye cotejo ni aprobación del snapshot exacto"
+  },
+  "provenance": [
+    {
+      "path": "docs/P9/admisiones-ediciones-p912.json",
+      "blob": "ed258f7067315a91814fb8f222af696ed9d0d303"
+    },
+    {
+      "path": "docs/P8/admision-lexica-p84.json",
+      "blob": "ffb3b4e353382a86c85bfb8d2009908302ee9904"
+    },
+    {
+      "path": "docs/P11/registro-admision-integracion-linguistica-p11433.json",
+      "blob": "bc3e1a163cd5c608312cfe05fb51c14e873b24f9"
+    },
+    {
+      "path": "docs/investigaciones/SN-001-candidato-integracion.json",
+      "blob": "ece386025684e725e9e8b28715ceac286028d6b0"
+    },
+    {
+      "path": "src/lib/methodology.ts",
+      "blob": "47e6bb482095af93f241cbfbb07c4787f93217ea"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ED-C01",
+      "sourceId": "F05",
+      "name": "Reina-Valera 1909",
+      "version": "spaRV1909",
+      "provider": "eBible.org",
+      "license": {
+        "type": "Public Domain",
+        "status": "declaracion_de_dominio_publico_del_distribuidor",
+        "provider": "eBible.org",
+        "url": "https://ebible.org/spaRV1909/copyright.htm",
+        "detailsUrl": "https://ebible.org/find/details.php?id=spaRV1909",
+        "statement": "Public Domain / Dominio Público",
+        "pageSha256": "8fc61fe7d7f14af3586e733a711ca1024d27419f93276ec9f41d403421703687",
+        "territorialLegalOpinion": false,
+        "notes": "La declaración corresponde a la distribución spaRV1909 del proveedor; no se presenta como dictamen jurídico independiente ni como licencia de otras revisiones Reina-Valera."
+      },
+      "archive": {
+        "url": "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+        "sha256": "56937c2be9ad278aed91370d6a15a98fe976f275d0cbaa6e26910291d949c7a5"
+      },
+      "files": [
+        {
+          "book": "LEV",
+          "path": "04-LEVspaRV1909.usfm",
+          "bytes": 333805,
+          "sha256": "9457b52e6efd3cd41ebb21b9bb8f43f89b449c4d9a0d4636e72d07e87eacbd8d",
+          "chapters": 27,
+          "verseMarkers": 859,
+          "rangeMarkers": 0
+        },
+        {
+          "book": "DEU",
+          "path": "06-DEUspaRV1909.usfm",
+          "bytes": 396910,
+          "sha256": "5f731cebf3f7f53689e0ab9dc3cd8e0b1c863c78d20f2d88b9238db670ecabf0",
+          "chapters": 34,
+          "verseMarkers": 959,
+          "rangeMarkers": 0
+        },
+        {
+          "book": "1KI",
+          "path": "12-1KIspaRV1909.usfm",
+          "bytes": 366138,
+          "sha256": "701740c2602e4a135a42f960ab4c4b93d5d92b03a093c41123c6a67a13b393a5",
+          "chapters": 22,
+          "verseMarkers": 816,
+          "rangeMarkers": 0
+        },
+        {
+          "book": "JER",
+          "path": "25-JERspaRV1909.usfm",
+          "bytes": 624279,
+          "sha256": "9dd018db85dd379268da351767ac58b6dbddedd15296bac319d7e9d6afb95ee4",
+          "chapters": 52,
+          "verseMarkers": 1364,
+          "rangeMarkers": 0
+        },
+        {
+          "book": "EZK",
+          "path": "27-EZKspaRV1909.usfm",
+          "bytes": 549812,
+          "sha256": "668688539f5782df95a03977d6a47450cc3a11be66596a35b53653994470010c",
+          "chapters": 48,
+          "verseMarkers": 1273,
+          "rangeMarkers": 0
+        }
+      ],
+      "allowedUse": "preparacion editorial de referencias y cotejo puntual; no publicación automática",
+      "publication": false
+    },
+    {
+      "id": "LING-019",
+      "candidateId": "P1143-H01",
+      "book": "Lev",
+      "source": "OSHB",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Lev.xml",
+      "bytes": 1085069,
+      "gitBlobSha1": "6025e0713ccfc79de0c90cb92ed0e8c0062d2614",
+      "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "conditions": "WLC declarado dominio público; anotaciones CC BY 4.0; preservar atribución y capas.",
+      "technicalAdmission": "aprobada",
+      "publication": false,
+      "allowedUse": "texto, lema y morfología de palabras primarias; no Strong inferido"
+    },
+    {
+      "id": "LING-020",
+      "candidateId": "P1143-H02",
+      "book": "Deut",
+      "source": "OSHB",
+      "repository": "openscriptures/morphhb",
+      "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+      "path": "wlc/Deut.xml",
+      "bytes": 1315401,
+      "gitBlobSha1": "5317431fd1d1fb5848d7f9f1d22d0753152f9991",
+      "sha256": "aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "license": "WLC dominio público según proveedor; anotaciones CC BY 4.0",
+      "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb. WLC: dominio público según proveedor; anotaciones: CC BY 4.0.",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "conditions": "WLC declarado dominio público; anotaciones CC BY 4.0; preservar atribución y capas.",
+      "technicalAdmission": "aprobada",
+      "publication": false,
+      "allowedUse": "texto, lema y morfología de palabras primarias; no Strong inferido"
+    },
+    {
+      "candidateId": "LEX-C03",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "AugIndex.xml",
+      "bytes": 213975,
+      "gitBlobSha1": "7fdfaa8b9cf83e41c72cb58ac84494f74bd6296c",
+      "sha256": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+        }
+      ],
+      "publication": false,
+      "id": "LING-015",
+      "review": "aprobado",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "allowedComponents": [
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/w/@aug",
+        "index/w/text()"
+      ],
+      "conditions": [
+        "Conservar código aumentado exacto y destino ID del índice; no eliminar espacios, homógrafos ni extensiones.",
+        "No establecer equivalencia con Strong estándar ni vincular automáticamente a otra revisión OSHB."
+      ],
+      "approvalRef": "docs/P8/17-admision-lexica.md#ling-015",
+      "allowedUse": "componentes y selectores exactos de admisión técnica"
+    },
+    {
+      "candidateId": "LEX-C04",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "LexicalIndex.xml",
+      "bytes": 1782592,
+      "gitBlobSha1": "d11eb2078532f3119c70822bd27a91b484d4727b",
+      "sha256": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+        }
+      ],
+      "publication": false,
+      "id": "LING-016",
+      "review": "aprobado",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "allowedComponents": [
+        "anotaciones_lema",
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/part/@xml:lang",
+        "index/part/entry/@id",
+        "index/part/entry/w/text()",
+        "index/part/entry/xref/@aug",
+        "index/part/entry/xref/@strong",
+        "index/part/entry/xref/@bdb"
+      ],
+      "conditions": [
+        "Forma de entrada y lengua declarada; preservar valores originales; los vínculos son afirmaciones del proveedor, no sinonimia.",
+        "Excluir TWOT, etym, def, pos, xlit, texto mixto y cualquier campo no enumerado."
+      ],
+      "approvalRef": "docs/P8/17-admision-lexica.md#ling-016",
+      "allowedUse": "componentes y selectores exactos de admisión técnica"
+    },
+    {
+      "candidateId": "LEX-C05",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "HebrewStrong.xml",
+      "bytes": 2749042,
+      "gitBlobSha1": "6ea1abdaf8c095a634097014dea43428ea5f358f",
+      "sha256": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+        }
+      ],
+      "publication": false,
+      "id": "LING-017",
+      "review": "aprobado",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/entry/@id",
+        "lexicon/entry/meaning/def/text()"
+      ],
+      "conditions": [
+        "Definiciones explícitas de Strong solo cuando el elemento def sea hijo directo de meaning y contenga exclusivamente texto; no extraer texto mixto, referencias, notas, source ni usage.",
+        "Preservar ubicación y contexto de entrada; no presentar una glosa como sentido contextual de una ocurrencia."
+      ],
+      "approvalRef": "docs/P8/17-admision-lexica.md#ling-017",
+      "allowedUse": "componentes y selectores exactos de admisión técnica"
+    },
+    {
+      "candidateId": "LEX-C06",
+      "repository": "openscriptures/HebrewLexicon",
+      "commit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "path": "BrownDriverBriggs.xml",
+      "bytes": 2911253,
+      "gitBlobSha1": "21bb98cab34334cd500553addc38aca6792f7bce",
+      "sha256": "2b52658a4323d91674cda4090ab8b3ebddfff640f4f18143c28300e80b2c38f8",
+      "licenseEvidence": [
+        {
+          "path": "readme.md",
+          "bytes": 2503,
+          "gitBlobSha1": "c0c0b4b164a3e123d73b73a263d1c9cabc55977e",
+          "sha256": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+        }
+      ],
+      "publication": false,
+      "id": "LING-018",
+      "review": "aprobado",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project, Hebrew Lexicon, revisión 21c9add13bc727d3a951361778e97e3ff7afd1ce; https://github.com/openscriptures/HebrewLexicon; https://creativecommons.org/licenses/by/4.0/; indicar modificaciones. Textos originales BDB y Strong declarados de dominio público por proveedor.",
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/part/@xml:lang",
+        "lexicon/part/section/entry/@id",
+        "lexicon/part/section/entry/def/text()",
+        "lexicon/part/section/entry/sense//def/text()"
+      ],
+      "conditions": [
+        "Definiciones explícitas de BDB solo en elementos def exclusivamente textuales; preservar ruta exacta del sentido, no aplanar sentidos anidados.",
+        "Excluir elementos externos, notas, referencias bíblicas, foreign, y texto mixto; no publicar BDB abreviado de Online Bible."
+      ],
+      "approvalRef": "docs/P8/17-admision-lexica.md#ling-018",
+      "allowedUse": "componentes y selectores exactos de admisión técnica"
+    }
+  ],
+  "evidence": [
+    {
+      "localId": "E01",
+      "reference": "Levítico 19:28",
+      "context": "Dos prohibiciones, una por muertos y otra relativa a inscripciones corporales.",
+      "sourceCandidates": [
+        "ED-C01",
+        "LING-019"
+      ],
+      "book": "LEV",
+      "chapter": 19,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada."
+    },
+    {
+      "localId": "E02",
+      "reference": "Levítico 21:5",
+      "context": "Restricciones sacerdotales; incisiones corporales.",
+      "sourceCandidates": [
+        "ED-C01",
+        "LING-019"
+      ],
+      "book": "LEV",
+      "chapter": 21,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada."
+    },
+    {
+      "localId": "E03",
+      "reference": "Deuteronomio 14:1",
+      "context": "Identidad filial de Israel; cortes y calvicie por muertos.",
+      "sourceCandidates": [
+        "ED-C01",
+        "LING-020"
+      ],
+      "book": "DEU",
+      "chapter": 14,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada."
+    },
+    {
+      "localId": "E04",
+      "reference": "1 Reyes 18:28",
+      "context": "Cortes de los profetas de Baal en un ritual.",
+      "sourceCandidates": [
+        "ED-C01"
+      ],
+      "book": "1KI",
+      "chapter": 18,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada.",
+      "hebrewCoverage": "fuera de cobertura de Levítico/Deuteronomio admitidos"
+    },
+    {
+      "localId": "E05",
+      "reference": "Jeremías 16:6",
+      "context": "Ausencia de entierro y manifestaciones de duelo.",
+      "sourceCandidates": [
+        "ED-C01"
+      ],
+      "book": "JER",
+      "chapter": 16,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada.",
+      "hebrewCoverage": "fuera de cobertura de Levítico/Deuteronomio admitidos"
+    },
+    {
+      "localId": "E06",
+      "reference": "Jeremías 41:5-9",
+      "context": "Peregrinos con cortes, vestiduras rasgadas y ofrendas; no identificados explícitamente como adoradores de Baal.",
+      "sourceCandidates": [
+        "ED-C01"
+      ],
+      "book": "JER",
+      "chapter": 41,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada.",
+      "hebrewCoverage": "fuera de cobertura de Levítico/Deuteronomio admitidos"
+    },
+    {
+      "localId": "E07",
+      "reference": "Jeremías 48:37",
+      "context": "Aflicción de Moab; cortes en manos. Identificador nominal discrepante.",
+      "sourceCandidates": [
+        "ED-C01"
+      ],
+      "book": "JER",
+      "chapter": 48,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada.",
+      "hebrewCoverage": "fuera de cobertura de Levítico/Deuteronomio admitidos"
+    },
+    {
+      "localId": "E08",
+      "reference": "Ezequiel 9:4",
+      "context": "Señal protectora; no describe tatuaje.",
+      "sourceCandidates": [
+        "ED-C01"
+      ],
+      "book": "EZK",
+      "chapter": 9,
+      "verification": "consultada",
+      "permission": "pendiente",
+      "reason": "Dato del expediente; falta vincular edición bibliográfica formal y cotejar ocurrencia exacta en fuente fijada.",
+      "hebrewCoverage": "fuera de cobertura de Levítico/Deuteronomio admitidos"
+    }
+  ],
+  "sections": [
+    {
+      "id": "SN-001/S01",
+      "order": 1,
+      "title": "Identificación",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [],
+      "body": "SN-001. ¿Tatuarse es pecado? Eje E09; relaciones E06 y E07. Investigación bíblica, lingüística y contextual de Levítico 19:28. Alcance acotado a la documentación recopilada; no es un pronunciamiento doctrinal."
+    },
+    {
+      "id": "SN-001/S02",
+      "order": 2,
+      "title": "Planteamiento",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [],
+      "body": "¿Qué prohíbe específicamente Levítico 19:28 cuando utiliza la expresión כְּתֹבֶת קַעֲקַע y cuál es el fundamento de esa prohibición? ¿Puede aplicarse directamente a cualquier tatuaje contemporáneo o es necesario considerar su contexto histórico, religioso y cultural? El objetivo es distinguir significado, contexto original y aplicación actual."
+    },
+    {
+      "id": "SN-001/S03",
+      "order": 3,
+      "title": "Antecedentes",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [],
+      "body": "El problema interpretativo consiste en determinar qué marca corporal designa la segunda cláusula y si su finalidad puede precisarse. No se realizó una reconstrucción exhaustiva de la historia material ni de la recepción confesional. Los estudios académicos identificados en el expediente son candidatos de ampliación, no fuentes admitidas."
+    },
+    {
+      "id": "SN-001/S04",
+      "order": 4,
+      "title": "Fundamento bíblico",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "body": "Levítico 19:28 es el texto principal. La primera disposición se refiere a incisiones por los muertos; la segunda, a inscripciones corporales. Deuteronomio 14:1 y Levítico 21:5 son paralelos de incisiones. Los restantes pasajes aportan contexto narrativo o simbólico. El texto completo en una edición identificada y autorizada se incorporará únicamente tras la admisión correspondiente. Véanse las fichas de pasajes de este candidato."
+    },
+    {
+      "id": "SN-001/S05",
+      "order": 5,
+      "title": "Contexto histórico-cultural",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07"
+      ],
+      "body": "Los relatos y disposiciones estudiados sitúan algunos cortes en prácticas de duelo, aflicción y culto. En 1 Reyes 18:28 se trata de un rito de Baal; Jeremías 41:5 describe peregrinos con cortes y ofrendas destinadas a la casa del Señor, sin identificarlos expresamente como adoradores de Baal. Estos datos no establecen la función de todas las marcas. No se realizó estudio arqueológico."
+    },
+    {
+      "id": "SN-001/S06",
+      "order": 6,
+      "title": "Contexto literario",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01"
+      ],
+      "body": "Levítico 19:26-31 reúne disposiciones sobre sangre, adivinación, cabello, cortes, inscripciones, prostitución, santuario y médiums. El marco de identidad religiosa es pertinente, pero la cercanía literaria no demuestra identidad de finalidad. La caracterización cultual de algunas disposiciones procede de interpretación de comentario, no de afirmación explícita uniforme."
+    },
+    {
+      "id": "SN-001/S07",
+      "order": 7,
+      "title": "Análisis lingüístico",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "body": "En el análisis reportado, שֶׂרֶט (H8296) se relaciona con cortes; כְּתֹבֶת (H3793), con inscripción; קַעֲקַע (H7085), con marca corporal. La construcción כְּתֹבֶת קַעֲקַע debe interpretarse como unidad. La repetición de לֹא תִתְּנוּ distingue ambas prohibiciones. La mención de los muertos pertenece expresamente a la primera. Las fichas conservan datos de morfología, lema, raíz y Strong con estado de procedencia; no se certifican datos no admitidos."
+    },
+    {
+      "id": "SN-001/S08",
+      "order": 8,
+      "title": "Crítica textual",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No se efectuó colación de manuscritos ni revisión de aparato crítico. La comparación con la Septuaginta no equivale a demostrar una variante del hebreo."
+    },
+    {
+      "id": "SN-001/S09",
+      "order": 9,
+      "title": "Comparación de traducciones",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01"
+      ],
+      "body": "La lectura preliminar de la Septuaginta distingue ἐντομίδας de γράμματα στικτά, compatible con incisiones e inscripciones tatuadas. La edición y los permisos deben quedar documentados antes de usar la comparación como evidencia admitida. No se reproducen traducciones comerciales."
+    },
+    {
+      "id": "SN-001/S10",
+      "order": 10,
+      "title": "Análisis exegético",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01",
+        "E03",
+        "E04"
+      ],
+      "body": "La prohibición original es efectiva para Israel. La primera cláusula explicita el vínculo con los muertos; la segunda no repite ese motivo. El contexto religioso apoya una lectura contextual, pero no demuestra que la segunda norma sea exclusivamente idolátrica. Una lectura amplia observa que no se formula excepción por motivo o diseño; tampoco resuelve por sí misma la vigencia cristiana."
+    },
+    {
+      "id": "SN-001/S11",
+      "order": 11,
+      "title": "Relación intertextual",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "body": "Las familias שרט y גדד permiten comparar cortes en Levítico, Deuteronomio, Reyes y Jeremías. Ezequiel 9:4 es un contraste simbólico, no prueba de tatuaje. Los pasajes candidatos no analizados se mantienen diferenciados. No se confunden paralelos temáticos con identidad léxica o técnica."
+    },
+    {
+      "id": "SN-001/S12",
+      "order": 12,
+      "title": "Interpretación histórica",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No desarrollada dentro del alcance aprobado. La recepción rabínica y cristiana constituye una ampliación opcional, no un resultado de este estudio."
+    },
+    {
+      "id": "SN-001/S13",
+      "order": 13,
+      "title": "Perspectiva pentecostal",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No desarrollada dentro del alcance aprobado. No se atribuye una doctrina uniforme a las iglesias pentecostales."
+    },
+    {
+      "id": "SN-001/S14",
+      "order": 14,
+      "title": "Otras perspectivas protestantes",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No desarrollada dentro del alcance aprobado. No se atribuye una postura uniforme a las tradiciones protestantes."
+    },
+    {
+      "id": "SN-001/S15",
+      "order": 15,
+      "title": "Perspectiva católica",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No desarrollada dentro del alcance aprobado. No se atribuye una postura oficial católica sin documentación."
+    },
+    {
+      "id": "SN-001/S16",
+      "order": 16,
+      "title": "Perspectivas complementarias",
+      "status": "no_desarrollada_alcance_limitado",
+      "evidenceLocalIds": [],
+      "body": "No desarrolladas de manera exhaustiva. La recepción judía, ortodoxa y los estudios académicos candidatos se reservan para ampliaciones opcionales; no sustentan la conclusión actual."
+    },
+    {
+      "id": "SN-001/S17",
+      "order": 17,
+      "title": "Contrastación",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07"
+      ],
+      "body": "La interpretación exclusivamente idolátrica tiene contexto religioso a favor, pero no una restricción explícita en la segunda cláusula. La aplicación universal a los tatuajes actuales tiene la formulación negativa de la norma a favor, pero exige justificar equivalencia de prácticas y continuidad normativa. La lectura delimitada reconoce el mandato original y mantiene abierta la vigencia universal contemporánea."
+    },
+    {
+      "id": "SN-001/S18",
+      "order": 18,
+      "title": "Aplicación contemporánea",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01"
+      ],
+      "body": "Para evaluar la práctica actual se distingue destinatario original, continuidad de la norma en el marco de la Nueva Alianza y equivalencia de prácticas antiguas y modernas. El expediente no resuelve universalmente esos pasos. La intención, el significado de la marca, la conciencia y la responsabilidad corporal son cuestiones orientativas, no una nueva norma revelada ni autorización general."
+    },
+    {
+      "id": "SN-001/S19",
+      "order": 19,
+      "title": "Conclusiones",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07"
+      ],
+      "body": "Levítico 19:28 prohíbe dos prácticas corporales diferenciadas: cortes por un muerto e inscripción corporal. La segunda expresión admite la interpretación de tatuaje, pero la técnica y finalidad exactas no quedan determinadas. Los paralelos muestran incisiones en duelo y ritual; no prueban que toda inscripción se limitara a esos contextos. La prohibición original en Israel es afirmativa; la aplicación universal a los tatuajes contemporáneos permanece indeterminada. No se concluye que todo tatuaje sea pecado ni que cualquiera esté permitido."
+    },
+    {
+      "id": "SN-001/S20",
+      "order": 20,
+      "title": "Referencias",
+      "status": "candidato_pendiente_admision",
+      "evidenceLocalIds": [],
+      "body": "El expediente 0.4 conserva la procedencia reportada de las consultas a Strong, BDB, interlineales y comentarios de Logos, el cotejo preliminar griego y los candidatos académicos. No se reproducen entradas comerciales ni capturas. La admisión de ediciones y permisos de cada evidencia es requisito previo de publicación. Las referencias candidatas no se usan como evidencia comprobada."
+    }
+  ],
+  "claims": [
+    {
+      "localId": "C01",
+      "section": "S10",
+      "proposition": "La norma original distingue cortes por muertos e inscripción corporal.",
+      "type": "disposicion_antiguo_pacto",
+      "grade": "solidamente_fundamentado",
+      "evidence": [
+        "E01"
+      ],
+      "reasoning": "Dos cláusulas negativas; grado propuesto sujeto a cotejo."
+    },
+    {
+      "localId": "C02",
+      "section": "S07",
+      "proposition": "La segunda expresión admite la lectura de inscripción tatuada.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "plausible",
+      "evidence": [
+        "E01"
+      ],
+      "reasoning": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo."
+    },
+    {
+      "localId": "C03",
+      "section": "S05",
+      "proposition": "Algunas incisiones se vinculan con duelo y ritual.",
+      "type": "practica_historico_cultural",
+      "grade": "solidamente_fundamentado",
+      "evidence": [
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07"
+      ],
+      "reasoning": "Comparación contextual sin identificar todas las prácticas."
+    },
+    {
+      "localId": "C04",
+      "section": "S17",
+      "proposition": "No se establece una finalidad exclusivamente funeraria o idolátrica de la segunda disposición.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "indeterminado",
+      "evidence": [
+        "E01",
+        "E03",
+        "E04"
+      ],
+      "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes."
+    },
+    {
+      "localId": "C05",
+      "section": "S18",
+      "proposition": "La aplicación universal a tatuajes contemporáneos permanece indeterminada.",
+      "type": "cuestion_discutida_indeterminada",
+      "grade": "indeterminado",
+      "evidence": [
+        "E01"
+      ],
+      "reasoning": "Falta justificar equivalencia de prácticas y continuidad normativa."
+    }
+  ],
+  "conclusions": [
+    {
+      "localId": "CON01",
+      "claims": [
+        "C01",
+        "C03"
+      ],
+      "outcome": "afirmativa",
+      "grade": "solidamente_fundamentado",
+      "synthesis": "La prohibición original existe y los cortes aparecen en diversos contextos.",
+      "reservation": "Grado propuesto, pendiente de cotejo de fuentes."
+    },
+    {
+      "localId": "CON02",
+      "claims": [
+        "C02"
+      ],
+      "outcome": "interpretativa",
+      "grade": "plausible",
+      "synthesis": "La expresión admite la lectura de tatuaje.",
+      "reservation": "Técnica no determinada."
+    },
+    {
+      "localId": "CON03",
+      "claims": [
+        "C04",
+        "C05"
+      ],
+      "outcome": "indeterminada",
+      "grade": "indeterminado",
+      "synthesis": "No se determina la finalidad exclusiva ni la vigencia universal actual.",
+      "reservation": "Alcance bíblico contextual; no equivale a permiso o condena general."
+    }
+  ],
+  "terms": [
+    {
+      "passageId": "E01",
+      "form": "שֶׂרֶט",
+      "lemma": "שֶׂרֶט",
+      "root": "שרט",
+      "strong": "H8296",
+      "reportedCode": "NC-SA",
+      "morphology": "sustantivo masculino singular absoluto",
+      "gloss": "corte/incisión",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E01",
+      "form": "כְּתֹבֶת",
+      "lemma": "כְּתֹבֶת",
+      "root": "כתב",
+      "strong": "H3793",
+      "reportedCode": "NCFSC",
+      "morphology": "sustantivo femenino singular constructo",
+      "gloss": "inscripción",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E01",
+      "form": "קַעֲקַע",
+      "lemma": "קַעֲקַע",
+      "root": null,
+      "strong": "H7085",
+      "reportedCode": "NC-SA",
+      "morphology": "sustantivo masculino singular absoluto según reporte",
+      "gloss": "marca corporal",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E01",
+      "form": "תִתְּנוּ",
+      "lemma": "נתן",
+      "root": "נתן",
+      "strong": "H5414",
+      "reportedCode": "VaI2MP",
+      "morphology": "Qal imperfecto 2ª plural masculina",
+      "gloss": "dar/poner",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E02",
+      "form": "יִשְׂרְטוּ",
+      "lemma": null,
+      "root": "שרט",
+      "strong": "H8295",
+      "reportedCode": null,
+      "morphology": "Qal imperfecto 3ª plural masculina según expediente",
+      "gloss": "hacer incisión",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E02",
+      "form": "שָׂרָטֶת",
+      "lemma": null,
+      "root": "שרט",
+      "strong": "H8296",
+      "reportedCode": null,
+      "morphology": "sustantivo femenino singular según expediente",
+      "gloss": "incisión",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E03",
+      "form": "תִתְגֹּדְדוּ",
+      "lemma": null,
+      "root": "גדד",
+      "strong": "H1413",
+      "reportedCode": null,
+      "morphology": "Hitpolel imperfecto 2ª plural masculina según expediente",
+      "gloss": "hacerse cortes",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E04",
+      "form": "וַיִּתְגֹּדְדוּ",
+      "lemma": null,
+      "root": "גדד",
+      "strong": "H1413",
+      "reportedCode": null,
+      "morphology": "Hitpolel narrativo según expediente",
+      "gloss": "hacerse cortes",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E05",
+      "form": "יִתְגֹּדַד",
+      "lemma": null,
+      "root": "גדד",
+      "strong": "H1413",
+      "reportedCode": null,
+      "morphology": "Hitpolel imperfecto singular según expediente",
+      "gloss": "hacerse cortes",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E06",
+      "form": "מִתְגֹּדְדִים",
+      "lemma": null,
+      "root": "גדד",
+      "strong": "H1413",
+      "reportedCode": null,
+      "morphology": "Hitpolel participio plural según expediente",
+      "gloss": "hacerse cortes",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    },
+    {
+      "passageId": "E07",
+      "form": "גְּדֻדֹת",
+      "lemma": null,
+      "root": "גדד",
+      "strong": null,
+      "reportedCode": null,
+      "morphology": "sustantivo plural según expediente",
+      "gloss": "cortes",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07",
+      "strongCandidates": [
+        {
+          "id": "H1417",
+          "origin": "interlineal externo reportado"
+        },
+        {
+          "id": "H1418",
+          "origin": "Logos reportado"
+        }
+      ]
+    },
+    {
+      "passageId": "E08",
+      "form": "תָּו",
+      "lemma": "תָּו",
+      "root": null,
+      "strong": "H8420",
+      "reportedCode": null,
+      "morphology": null,
+      "gloss": "señal",
+      "verification": "reportada_no_admitida",
+      "source": "Expediente SN-001 0.4, S07"
+    }
+  ],
+  "additionalReferences": [
+    {
+      "reference": "Levítico 19:1-2",
+      "status": "candidata_no_analizada"
+    },
+    {
+      "reference": "Levítico 21:1-6",
+      "status": "candidata_no_analizada"
+    },
+    {
+      "reference": "Isaías 44:5",
+      "status": "candidata_no_analizada"
+    },
+    {
+      "reference": "Gálatas 6:17",
+      "status": "candidata_no_analizada"
+    }
+  ],
+  "excludedFromAdmission": [
+    "Septuaginta: edición y licencia no fijadas",
+    "LBLA y Lexham: referencia sin reproducción",
+    "Logos: datos reportados, no base redistribuible",
+    "Bibliografía académica candidata: no utilizada como evidencia"
+  ],
+  "review": {
+    "result": "pendiente",
+    "controls": [
+      {
+        "id": "fuentes",
+        "result": "pendiente",
+        "justification": "Requiere cotejo, cadena bibliográfica y revisión del contenido exacto."
+      },
+      {
+        "id": "exactitud_textual",
+        "result": "pendiente",
+        "justification": "Requiere cotejo, cadena bibliográfica y revisión del contenido exacto."
+      },
+      {
+        "id": "licencias",
+        "result": "pendiente",
+        "justification": "Requiere cotejo, cadena bibliográfica y revisión del contenido exacto."
+      },
+      {
+        "id": "aprobacion",
+        "result": "pendiente",
+        "justification": "Requiere cotejo, cadena bibliográfica y revisión del contenido exacto."
+      },
+      {
+        "id": "privacidad",
+        "result": "pendiente",
+        "justification": "Control final del snapshot aún no ejecutado."
+      },
+      {
+        "id": "imparcialidad",
+        "result": "pendiente",
+        "justification": "Control final del snapshot aún no ejecutado."
+      },
+      {
+        "id": "contexto_canonico",
+        "result": "pendiente",
+        "justification": "Control final del snapshot aún no ejecutado."
+      }
+    ]
+  },
+  "publicationAuthorized": false,
+  "remaining": [
+    "Registrar cadena autor/obra/edición/recurso/licencia en biblioteca y permisos con IDs definitivos; preservar pruebas históricas de registro vacío.",
+    "Cotejar pasajes exactos y datos léxicos en archivos fijados, sin inventar coberturas o equivalencias.",
+    "Resolver alcance territorial del dominio público declarado; no asumir permiso de corpus.",
+    "Construir record y relations conforme a contratos reales con IDs globales, sin simular evidencias autorizadas; validar y sellar revisión del snapshot exacto.",
+    "Integrar fichas y módulos; ejecutar pruebas y despliegue solo tras superar controles."
+  ]
+}
