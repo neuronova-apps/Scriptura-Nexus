@@ -23,6 +23,9 @@
       "onAutoForward": "ignore"
     }
   },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

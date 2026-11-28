@@ -72,6 +72,7 @@ async function start() {
     prompt.close();
   }
   assertPrivatePort();
+  console.log('Verificando fuentes y preparando los cinco módulos en memoria.');
   const {files, summary} = await createIntegralPrivateOverlay();
   if (summary.modules !== 5 || summary.publicationAuthorized || summary.corpusPersisted || summary.upload) {
     throw new Error('El candidato no cumple el alcance de revisión privada.');
