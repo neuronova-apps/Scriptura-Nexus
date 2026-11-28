@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 1,
+  "studyId": "SN-001",
+  "phase": "5.5.3",
+  "version": "0.4.3",
+  "status": "consolidado_con_reservas_no_aprobado",
+  "sourceDigests": {
+    "docs/investigaciones/SN-001-registro-editorial-531.json": "0993fd5d7b9e8e599dd9bf393130f26fa3e57350",
+    "docs/investigaciones/SN-001-pre-registro-editorial-531.json": "b9d08062a97eda8ff6a94f4306a2ce361042b979",
+    "docs/investigaciones/SN-001-candidato-integracion.json": "ece386025684e725e9e8b28715ceac286028d6b0",
+    "docs/investigaciones/SN-001-biblioteca-candidato.json": "c6e101ef15d0b4278097fb5d0954a68a691486d4",
+    "docs/investigaciones/SN-001-permisos-candidato.json": "1fd0552d835d1c80ac711b2596d7fd9123c0e8f1",
+    "docs/investigaciones/SN-001-levitico-19-28.md": "dac4dccafde2e74a17e5ef340eeb615bd6e78054"
+  },
+  "sourceManuscriptCommit": "12f812d0bbf553b4dc55d95021675064545638b8",
+  "record": {
+    "schemaVersion": 1,
+    "studyId": "SN-001",
+    "version": "0.4.3",
+    "createdAt": "2026-11-28",
+    "updatedAt": "2026-11-28",
+    "objective": "Determinar el alcance de Levítico 19:28 y distinguir la norma original de su aplicación contemporánea.",
+    "scope": "Investigación bíblica y lingüística acotada a la documentación recopilada; sin reconstrucción arqueológica ni revisión exhaustiva de recepción histórica o confesional.",
+    "sections": [
+      {
+        "id": "SN-001/S01",
+        "order": 1,
+        "title": "Identificación",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S01",
+        "evidenceIds": []
+      },
+      {
+        "id": "SN-001/S02",
+        "order": 2,
+        "title": "Planteamiento",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S02",
+        "evidenceIds": []
+      },
+      {
+        "id": "SN-001/S03",
+        "order": 3,
+        "title": "Antecedentes",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S03",
+        "evidenceIds": []
+      },
+      {
+        "id": "SN-001/S04",
+        "order": 4,
+        "title": "Fundamento bíblico",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S04",
+        "evidenceIds": [
+          "EVD-000001",
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007",
+          "EVD-000008"
+        ]
+      },
+      {
+        "id": "SN-001/S05",
+        "order": 5,
+        "title": "Contexto histórico-cultural",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S05",
+        "evidenceIds": [
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007"
+        ]
+      },
+      {
+        "id": "SN-001/S06",
+        "order": 6,
+        "title": "Contexto literario",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S06",
+        "evidenceIds": [
+          "EVD-000001"
+        ]
+      },
+      {
+        "id": "SN-001/S07",
+        "order": 7,
+        "title": "Análisis lingüístico",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S07",
+        "evidenceIds": [
+          "EVD-000001",
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007",
+          "EVD-000008"
+        ]
+      },
+      {
+        "id": "SN-001/S08",
+        "order": 8,
+        "title": "Crítica textual",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No se efectuó colación de manuscritos ni revisión de aparato crítico. La comparación con la Septuaginta no equivale a demostrar una variante del hebreo."
+      },
+      {
+        "id": "SN-001/S09",
+        "order": 9,
+        "title": "Comparación de traducciones",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S09",
+        "evidenceIds": [
+          "EVD-000001"
+        ]
+      },
+      {
+        "id": "SN-001/S10",
+        "order": 10,
+        "title": "Análisis exegético",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S10",
+        "evidenceIds": [
+          "EVD-000001",
+          "EVD-000003",
+          "EVD-000004"
+        ]
+      },
+      {
+        "id": "SN-001/S11",
+        "order": 11,
+        "title": "Relación intertextual",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S11",
+        "evidenceIds": [
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007",
+          "EVD-000008"
+        ]
+      },
+      {
+        "id": "SN-001/S12",
+        "order": 12,
+        "title": "Interpretación histórica",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No desarrollada dentro del alcance aprobado. La recepción rabínica y cristiana constituye una ampliación opcional, no un resultado de este estudio."
+      },
+      {
+        "id": "SN-001/S13",
+        "order": 13,
+        "title": "Perspectiva pentecostal",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una doctrina uniforme a las iglesias pentecostales."
+      },
+      {
+        "id": "SN-001/S14",
+        "order": 14,
+        "title": "Otras perspectivas protestantes",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura uniforme a las tradiciones protestantes."
+      },
+      {
+        "id": "SN-001/S15",
+        "order": 15,
+        "title": "Perspectiva católica",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No desarrollada dentro del alcance aprobado. No se atribuye una postura oficial católica sin documentación."
+      },
+      {
+        "id": "SN-001/S16",
+        "order": 16,
+        "title": "Perspectivas complementarias",
+        "applicability": "no_aplicable",
+        "evidenceIds": [],
+        "justification": "No desarrolladas de manera exhaustiva. La recepción judía, ortodoxa y los estudios académicos candidatos se reservan para ampliaciones opcionales; no sustentan la conclusión actual."
+      },
+      {
+        "id": "SN-001/S17",
+        "order": 17,
+        "title": "Contrastación",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S17",
+        "evidenceIds": [
+          "EVD-000001",
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007"
+        ]
+      },
+      {
+        "id": "SN-001/S18",
+        "order": 18,
+        "title": "Aplicación contemporánea",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S18",
+        "evidenceIds": [
+          "EVD-000001"
+        ]
+      },
+      {
+        "id": "SN-001/S19",
+        "order": 19,
+        "title": "Conclusiones",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S19",
+        "evidenceIds": [
+          "EVD-000001",
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007"
+        ]
+      },
+      {
+        "id": "SN-001/S20",
+        "order": 20,
+        "title": "Referencias",
+        "applicability": "analizada",
+        "contentRef": "SN-001/S20",
+        "evidenceIds": []
+      }
+    ],
+    "claims": [
+      {
+        "id": "AF-000001",
+        "studyId": "SN-001",
+        "sectionId": "SN-001/S10",
+        "proposition": "La norma original distingue cortes por muertos e inscripción corporal.",
+        "type": "disposicion_antiguo_pacto",
+        "grade": "solidamente_fundamentado",
+        "gradeJustification": "Dos cláusulas negativas; grado propuesto sujeto a cotejo.",
+        "supportingEvidenceIds": [
+          "EVD-000001"
+        ],
+        "opposingEvidenceIds": [],
+        "reasoning": "Dos cláusulas negativas; grado propuesto sujeto a cotejo."
+      },
+      {
+        "id": "AF-000002",
+        "studyId": "SN-001",
+        "sectionId": "SN-001/S07",
+        "proposition": "La segunda expresión admite la lectura de inscripción tatuada.",
+        "type": "cuestion_discutida_indeterminada",
+        "grade": "plausible",
+        "gradeJustification": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo.",
+        "supportingEvidenceIds": [
+          "EVD-000001"
+        ],
+        "opposingEvidenceIds": [],
+        "reasoning": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo."
+      },
+      {
+        "id": "AF-000003",
+        "studyId": "SN-001",
+        "sectionId": "SN-001/S05",
+        "proposition": "Algunas incisiones se vinculan con duelo y ritual.",
+        "type": "practica_historico_cultural",
+        "grade": "solidamente_fundamentado",
+        "gradeJustification": "Comparación contextual sin identificar todas las prácticas.",
+        "supportingEvidenceIds": [
+          "EVD-000002",
+          "EVD-000003",
+          "EVD-000004",
+          "EVD-000005",
+          "EVD-000006",
+          "EVD-000007"
+        ],
+        "opposingEvidenceIds": [],
+        "reasoning": "Comparación contextual sin identificar todas las prácticas."
+      },
+      {
+        "id": "AF-000004",
+        "studyId": "SN-001",
+        "sectionId": "SN-001/S17",
+        "proposition": "No se establece una finalidad exclusivamente funeraria o idolátrica de la segunda disposición.",
+        "type": "cuestion_discutida_indeterminada",
+        "grade": "indeterminado",
+        "gradeJustification": "La finalidad no se repite expresamente y los paralelos son de cortes.",
+        "supportingEvidenceIds": [
+          "EVD-000001",
+          "EVD-000003",
+          "EVD-000004"
+        ],
+        "opposingEvidenceIds": [],
+        "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes."
+      },
+      {
+        "id": "AF-000005",
+        "studyId": "SN-001",
+        "sectionId": "SN-001/S18",
+        "proposition": "La aplicación universal a tatuajes contemporáneos permanece indeterminada.",
+        "type": "cuestion_discutida_indeterminada",
+        "grade": "indeterminado",
+        "gradeJustification": "Falta justificar equivalencia de prácticas y continuidad normativa.",
+        "supportingEvidenceIds": [
+          "EVD-000001"
+        ],
+        "opposingEvidenceIds": [],
+        "reasoning": "Falta justificar equivalencia de prácticas y continuidad normativa."
+      }
+    ],
+    "conclusions": [
+      {
+        "id": "CON-000001",
+        "studyId": "SN-001",
+        "claimIds": [
+          "AF-000001",
+          "AF-000003"
+        ],
+        "synthesis": "La prohibición original existe y los cortes aparecen en diversos contextos.",
+        "outcome": "afirmativa",
+        "grade": "solidamente_fundamentado",
+        "gradeJustification": "Grado propuesto, pendiente de cotejo de fuentes.",
+        "reservations": [
+          "Grado propuesto, pendiente de cotejo de fuentes."
+        ]
+      },
+      {
+        "id": "CON-000002",
+        "studyId": "SN-001",
+        "claimIds": [
+          "AF-000002"
+        ],
+        "synthesis": "La expresión admite la lectura de tatuaje.",
+        "outcome": "interpretativa",
+        "grade": "plausible",
+        "gradeJustification": "Técnica no determinada.",
+        "reservations": [
+          "Técnica no determinada."
+        ]
+      },
+      {
+        "id": "CON-000003",
+        "studyId": "SN-001",
+        "claimIds": [
+          "AF-000004",
+          "AF-000005"
+        ],
+        "synthesis": "No se determina la finalidad exclusiva ni la vigencia universal actual.",
+        "outcome": "indeterminada",
+        "grade": "indeterminado",
+        "gradeJustification": "Alcance bíblico contextual; no equivale a permiso o condena general.",
+        "reservations": [
+          "Alcance bíblico contextual; no equivale a permiso o condena general."
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "id": "REV-000001",
+        "studyId": "SN-001",
+        "version": "0.4.3",
+        "date": "2026-11-28",
+        "reviewerRole": "Revisión técnica de consolidación 5.5.3",
+        "result": "pendiente",
+        "controls": [
+          {
+            "id": "fuentes",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "exactitud_textual",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "licencias",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "privacidad",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "aprobacion",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "imparcialidad",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          },
+          {
+            "id": "contexto_canonico",
+            "result": "pendiente",
+            "justification": "La consolidación y validación automatizada no sustituyen la aprobación del contenido exacto ni la resolución de permisos y evidencias."
+          }
+        ]
+      }
+    ]
+  },
+  "relations": {
+    "schemaVersion": 1,
+    "studyId": "SN-001",
+    "evidence": [
+      {
+        "id": "EVD-000001",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Levítico 19:28 — https://ebible.org/spaRV1909/LEV19.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000002",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Levítico 21:5 — https://ebible.org/spaRV1909/LEV21.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000003",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Deuteronomio 14:1 — https://ebible.org/spaRV1909/DEU14.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000004",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "1 Reyes 18:28 — https://ebible.org/spaRV1909/1KI18.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000005",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Jeremías 16:6 — https://ebible.org/spaRV1909/JER16.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000006",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Jeremías 41:5-9 — https://ebible.org/spaRV1909/JER41.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000007",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Jeremías 48:37 — https://ebible.org/spaRV1909/JER48.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      },
+      {
+        "id": "EVD-000008",
+        "bibliographyId": "BIB-000007",
+        "resourceId": "REC-000007",
+        "locator": "Ezequiel 9:4 — https://ebible.org/spaRV1909/EZK09.htm",
+        "language": "es",
+        "kind": "observacion",
+        "consultedAt": "2026-11-28",
+        "verification": "verificada",
+        "permission": "pendiente"
+      }
+    ],
+    "arguments": [
+      {
+        "claimId": "AF-000001",
+        "evidenceId": "EVD-000001",
+        "role": "respalda",
+        "reasoning": "Dos cláusulas negativas; grado propuesto sujeto a cotejo.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000002",
+        "evidenceId": "EVD-000001",
+        "role": "respalda",
+        "reasoning": "Construcción nominal; técnica exacta y fuentes léxicas pendientes de cotejo.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000002",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000003",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000004",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000005",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000006",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000003",
+        "evidenceId": "EVD-000007",
+        "role": "respalda",
+        "reasoning": "Comparación contextual sin identificar todas las prácticas.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000004",
+        "evidenceId": "EVD-000001",
+        "role": "respalda",
+        "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000004",
+        "evidenceId": "EVD-000003",
+        "role": "respalda",
+        "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000004",
+        "evidenceId": "EVD-000004",
+        "role": "respalda",
+        "reasoning": "La finalidad no se repite expresamente y los paralelos son de cortes.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      },
+      {
+        "claimId": "AF-000005",
+        "evidenceId": "EVD-000001",
+        "role": "respalda",
+        "reasoning": "Falta justificar equivalencia de prácticas y continuidad normativa.",
+        "comparisonScope": "canon_compartido",
+        "comparisonJustification": "Pasajes bíblicos compartidos; no se atribuye autoridad confesional."
+      }
+    ],
+    "positions": [],
+    "relatedStudies": []
+  },
+  "editorialDisposition": {
+    "publicationAuthorized": false,
+    "ownerApprovalRequired": true,
+    "permissionDecisionsApproved": 0,
+    "publicationAdmissions": 0,
+    "knownFindings": [
+      "REV-553-001",
+      "REV-553-002",
+      "REV-553-003",
+      "REV-553-004",
+      "REV-553-005",
+      "REV-553-006",
+      "REV-553-007"
+    ]
+  },
+  "bodies": {
+    "SN-001/S01": "SN-001. ¿Tatuarse es pecado? Eje E09; relaciones E06 y E07. Investigación bíblica, lingüística y contextual de Levítico 19:28. Alcance acotado a la documentación recopilada; no es un pronunciamiento doctrinal.",
+    "SN-001/S02": "¿Qué prohíbe específicamente Levítico 19:28 cuando utiliza la expresión כְּתֹבֶת קַעֲקַע y cuál es el fundamento de esa prohibición? ¿Puede aplicarse directamente a cualquier tatuaje contemporáneo o es necesario considerar su contexto histórico, religioso y cultural? El objetivo es distinguir significado, contexto original y aplicación actual.",
+    "SN-001/S03": "El problema interpretativo consiste en determinar qué marca corporal designa la segunda cláusula y si su finalidad puede precisarse. No se realizó una reconstrucción exhaustiva de la historia material ni de la recepción confesional. Los estudios académicos identificados en el expediente son candidatos de ampliación, no fuentes admitidas.",
+    "SN-001/S04": "Levítico 19:28 es el texto principal. La primera disposición se refiere a incisiones por los muertos; la segunda, a inscripciones corporales. Deuteronomio 14:1 y Levítico 21:5 son paralelos de incisiones. Los restantes pasajes aportan contexto narrativo o simbólico. El texto completo en una edición identificada y autorizada se incorporará únicamente tras la admisión correspondiente. Véanse las fichas de pasajes de este candidato.",
+    "SN-001/S05": "Los relatos y disposiciones estudiados sitúan algunos cortes en prácticas de duelo, aflicción y culto. En 1 Reyes 18:28 se trata de un rito de Baal; Jeremías 41:5 describe peregrinos con cortes y ofrendas destinadas a la casa del Señor, sin identificarlos expresamente como adoradores de Baal. Estos datos no establecen la función de todas las marcas. No se realizó estudio arqueológico.",
+    "SN-001/S06": "Levítico 19:26-31 reúne disposiciones sobre sangre, adivinación, cabello, cortes, inscripciones, prostitución, santuario y médiums. El marco de identidad religiosa es pertinente, pero la cercanía literaria no demuestra identidad de finalidad. La caracterización cultual de algunas disposiciones procede de interpretación de comentario, no de afirmación explícita uniforme.",
+    "SN-001/S07": "En el análisis reportado, שֶׂרֶט (H8296) se relaciona con cortes; כְּתֹבֶת (H3793), con inscripción; קַעֲקַע (H7085), con marca corporal. La construcción כְּתֹבֶת קַעֲקַע debe interpretarse como unidad. La repetición de לֹא תִתְּנוּ distingue ambas prohibiciones. La mención de los muertos pertenece expresamente a la primera. Las fichas conservan datos de morfología, lema, raíz y Strong con estado de procedencia; no se certifican datos no admitidos.",
+    "SN-001/S09": "La lectura preliminar de la Septuaginta distingue ἐντομίδας de γράμματα στικτά, compatible con incisiones e inscripciones tatuadas. La edición y los permisos deben quedar documentados antes de usar la comparación como evidencia admitida. No se reproducen traducciones comerciales.",
+    "SN-001/S10": "La prohibición original es efectiva para Israel. La primera cláusula explicita el vínculo con los muertos; la segunda no repite ese motivo. El contexto religioso apoya una lectura contextual, pero no demuestra que la segunda norma sea exclusivamente idolátrica. Una lectura amplia observa que no se formula excepción por motivo o diseño; tampoco resuelve por sí misma la vigencia cristiana.",
+    "SN-001/S11": "Las familias שרט y גדד permiten comparar cortes en Levítico, Deuteronomio, Reyes y Jeremías. Ezequiel 9:4 es un contraste simbólico, no prueba de tatuaje. Los pasajes candidatos no analizados se mantienen diferenciados. No se confunden paralelos temáticos con identidad léxica o técnica.",
+    "SN-001/S17": "La interpretación exclusivamente idolátrica tiene contexto religioso a favor, pero no una restricción explícita en la segunda cláusula. La aplicación universal a los tatuajes actuales tiene la formulación negativa de la norma a favor, pero exige justificar equivalencia de prácticas y continuidad normativa. La lectura delimitada reconoce el mandato original y mantiene abierta la vigencia universal contemporánea.",
+    "SN-001/S18": "Para evaluar la práctica actual se distingue destinatario original, continuidad de la norma en el marco de la Nueva Alianza y equivalencia de prácticas antiguas y modernas. El expediente no resuelve universalmente esos pasos. La intención, el significado de la marca, la conciencia y la responsabilidad corporal son cuestiones orientativas, no una nueva norma revelada ni autorización general.",
+    "SN-001/S19": "Levítico 19:28 prohíbe dos prácticas corporales diferenciadas: cortes por un muerto e inscripción corporal. La segunda expresión admite la interpretación de tatuaje, pero la técnica y finalidad exactas no quedan determinadas. Los paralelos muestran incisiones en duelo y ritual; no prueban que toda inscripción se limitara a esos contextos. La prohibición original en Israel es afirmativa; la aplicación universal a los tatuajes contemporáneos permanece indeterminada. No se concluye que todo tatuaje sea pecado ni que cualquiera esté permitido.",
+    "SN-001/S20": "El expediente 0.4 conserva la procedencia reportada de las consultas a Strong, BDB, interlineales y comentarios de Logos, el cotejo preliminar griego y los candidatos académicos. No se reproducen entradas comerciales ni capturas. La admisión de ediciones y permisos de cada evidencia es requisito previo de publicación. Las referencias candidatas no se usan como evidencia comprobada."
+  }
+}
