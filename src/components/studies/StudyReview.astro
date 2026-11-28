@@ -1,4 +1,5 @@
 ---
+import StudyModuleLinks from './StudyModuleLinks.astro';
 import StudyTemplate from './StudyTemplate.astro';
 import EditorialRelations from './EditorialRelations.astro';
 import type { Snapshot } from '../../lib/publication';
@@ -15,15 +16,16 @@ const gradeLabels:Record<string,string>={solidamente_fundamentado:'Sólidamente 
     <p>{candidate.bodies['SN-001/S19']}</p>
     <p>Grados de respaldo propuestos; no constituyen una aprobación editorial.</p>
     <p role="note">Consulta de revisión aislada. No autoriza publicación ni reproducción de fuentes restringidas.</p>
+  <StudyModuleLinks modules={['manuscripts','library','history']} context="Levítico 19:28; fuentes y contexto complementario" returnAnchor="fuentes-titulo"/>
   </header>
   <section class="sn-card" aria-labelledby="pasajes-titulo">
     <h2 id="pasajes-titulo">Texto principal y pasajes relacionados</h2>
-    {passages.map(p=><details id={'pasaje-'+p.localId}><summary>{p.reference} {p.localId==='E01'?'(principal)':''}</summary><p>{p.context}</p><p>RV1909: {audit.passages.some((v:any)=>v.localId===p.localId&&v.textLocated)?'Referencia localizada en archivo fijado':'Pendiente'}. Texto no reproducido en esta vista.</p><a href={candidate.relations.evidence[Number(p.localId.slice(1))-1].locator.split(' — ')[1]}>Consultar {p.reference} en RV1909</a></details>)}
+    {passages.map(p=><details id={'pasaje-'+p.localId}><summary>{p.reference} {p.localId==='E01'?'(principal)':''}</summary><p>{p.context}</p><p>RV1909: {audit.passages.some((v:any)=>v.localId===p.localId&&v.textLocated)?'Referencia localizada en archivo fijado':'Pendiente'}. Texto no reproducido en esta vista.</p><a href={candidate.relations.evidence[Number(p.localId.slice(1))-1].locator.split(' — ')[1]}>Consultar {p.reference} en RV1909</a><StudyModuleLinks modules={['reader','comparator']} context={p.reference} returnAnchor={'pasaje-'+p.localId}/></details>)}
   </section>
   <section class="sn-card" aria-labelledby="linguistica-titulo">
     <h2 id="linguistica-titulo">Lemas, Strong y morfología</h2>
     <p>La ficha distingue datos reportados y coincidencias en OSHB. Un código de proveedor no implica equivalencia automática con Strong.</p>
-    {terms.map((t,i)=>{const checked=audit.terms[i];return <details><summary><bdi lang="he" dir="rtl">{t.form}</bdi> · {t.strong??'Identificador discrepante'} · {passages.find(p=>p.localId===t.passageId)?.reference}</summary><dl><dt>Lema reportado</dt><dd><bdi lang="he" dir="rtl">{t.lemma??'No documentado'}</bdi></dd><dt>Raíz reportada</dt><dd><bdi lang="he" dir="rtl">{t.root??'No documentada'}</bdi></dd><dt>Morfología reportada</dt><dd>{t.morphology??'No documentada'}</dd><dt>Glosa de trabajo</dt><dd>{t.gloss}</dd><dt>Estado del cotejo</dt><dd>{checked.status==='matched'?'Coincidencia de forma normalizada en OSHB':checked.status==='unresolved'?'Sin coincidencia exacta normalizada':'Fuera de cobertura hebrea admitida'}</dd></dl>{checked.matches?.map((m:any)=><p><bdi lang="he" dir="rtl">{m.form}</bdi> · Lema OSHB: {m.lemmaRaw??'No disponible'} · Morfología OSHB: {m.morphRaw??'No disponible'}</p>)}{t.strongCandidates&&<ul>{t.strongCandidates.map((c:any)=><li>{c.id}: {c.origin}</li>)}</ul>}<p>Fuente reportada: {t.source}. Permiso editorial pendiente.</p></details>})}
+    {terms.map((t,i)=>{const checked=audit.terms[i];return <details id={'termino-'+(i+1)}><summary><bdi lang="he" dir="rtl">{t.form}</bdi> · {t.strong??'Identificador discrepante'} · {passages.find(p=>p.localId===t.passageId)?.reference}</summary><dl><dt>Lema reportado</dt><dd><bdi lang="he" dir="rtl">{t.lemma??'No documentado'}</bdi></dd><dt>Raíz reportada</dt><dd><bdi lang="he" dir="rtl">{t.root??'No documentada'}</bdi></dd><dt>Morfología reportada</dt><dd>{t.morphology??'No documentada'}</dd><dt>Glosa de trabajo</dt><dd>{t.gloss}</dd><dt>Estado del cotejo</dt><dd>{checked.status==='matched'?'Coincidencia de forma normalizada en OSHB':checked.status==='unresolved'?'Sin coincidencia exacta normalizada':'Fuera de cobertura hebrea admitida'}</dd></dl>{checked.matches?.map((m:any)=><p><bdi lang="he" dir="rtl">{m.form}</bdi> · Lema OSHB: {m.lemmaRaw??'No disponible'} · Morfología OSHB: {m.morphRaw??'No disponible'}</p>)}{t.strongCandidates&&<ul>{t.strongCandidates.map((c:any)=><li>{c.id}: {c.origin}</li>)}</ul>}<p>Fuente reportada: {t.source}. Permiso editorial pendiente.</p><StudyModuleLinks modules={['analyzer','lexicon','concordance']} context={(passages.find(p=>p.localId===t.passageId)?.reference??'')+' · '+t.form+' · '+(t.strong??'identificador discrepante')} returnAnchor={'termino-'+(i+1)}/></details>})}
   </section>
   <StudyTemplate studyId={candidate.studyId} snapshot={candidate} reviewOnly={true}/>
   <section class="sn-card" aria-labelledby="respaldo-titulo"><h2 id="respaldo-titulo">Conclusiones y grados de respaldo propuestos</h2>{candidate.record.conclusions.map(c=><p><strong>{gradeLabels[c.grade]??c.grade}:</strong> {c.synthesis}</p>)}</section>
