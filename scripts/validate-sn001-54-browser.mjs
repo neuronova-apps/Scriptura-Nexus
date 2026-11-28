@@ -62,9 +62,16 @@ try {
  assert.ok(await p.locator('bdi[lang="he"][dir="rtl"]').count()>0);
  await go('estudios/');await p.locator('#catalog-status').selectOption('en_revision');assert.equal(await p.locator('[data-study-id]:visible').count(),1);assert.equal(await p.locator('[data-study-id]:visible').getAttribute('data-study-id'),'SN-001');
  activeRoot=publicRoot;await go(study);assert.equal(await p.locator('[data-review-only]').count(),0);
- await go('biblia/lector/');assert.equal(await p.locator('#br-fields').isDisabled(),true);
+ await go('biblia/lector/');
+ // Playwright isDisabled() does not treat fieldset itself as a supported disabled control.
+ // Verify the native fieldset property and the effective state of its interactive descendants.
+ assert.equal(await p.locator('#br-fields').evaluate(e=>e instanceof HTMLFieldSetElement&&e.disabled),true,'Public reader fieldset must remain disabled');
+ for(const id of ['br-edition','br-book','br-chapter','br-verse','br-consult','br-previous','br-next'])assert.equal(await p.locator('#'+id).isDisabled(),true,'Public reader control enabled: '+id);
+ assert.deepEqual(await p.locator('#br-edition option').evaluateAll(options=>options.map(o=>o.value)),[''],'Public reader must expose no edition IDs');
+ assert.match(await p.locator('#br-status').textContent(),/No hay ediciones disponibles para consulta pública/);
+ report.publicReaderBlocked=true;
  assert.deepEqual(report.pageErrors,[]);assert.deepEqual(report.externalRequests,[]);assert.deepEqual(report.missing,[]);
- assert.ok(report.appearance.every(x=>x.reflow),'Reflow: revisar informe');
- assert.ok(report.accessibility.every(x=>x.violations.length===0),'Accesibilidad: revisar informe');
+ assert.ok(report.appearance.every(x=>x.reflow),'Reflow: '+JSON.stringify(report.appearance.filter(x=>!x.reflow)));
+ assert.ok(report.accessibility.every(x=>x.violations.length===0),'Accesibilidad: '+JSON.stringify(report.accessibility.filter(x=>x.violations.length)));
  report.functionalValidated=true;
 }catch(error){report.failure=String(error?.stack??error);throw error;}finally{if(browser)await browser.close();writeFileSync('sn001-validation-output/browser-report.json',JSON.stringify(report,null,2));}
