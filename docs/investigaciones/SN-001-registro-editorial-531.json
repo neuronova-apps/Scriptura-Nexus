@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "studyId": "SN-001",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "status": "borrador_no_publicable",
   "sourceRegistry": {
     "bibliography": "src/data/referencias/biblioteca.json",
@@ -423,7 +423,164 @@
     "Cotejo RV1909 web de ocho pasajes realizado; no certifica contenido del ZIP ni morfología hebrea.",
     "Los grados son propuestas; el análisis lingüístico aún exige evidencias léxicas específicas, especialmente C02.",
     "Secciones no desarrolladas se presentan como límites explícitos del alcance, no como resultados confesionales.",
-    "No es Snapshot; no importar al registro público. Falta formalizar cadena OSHB y léxicos, resolver licencia territorial y revisar contenido exacto."
+    "No es Snapshot; no importar al registro público. Falta formalizar cadena OSHB y léxicos, resolver licencia territorial y revisar contenido exacto.",
+    "Se reconsultaron las ocho referencias RV1909 y declaración de dominio público. Se verificaron directamente LICENSE.md de OSHB y readme.md de HebrewLexicon; los XML grandes no devolvieron contenido mediante el conector y no se certifica su extracción. Se documentan seis fuentes lingüísticas en biblioteca/permisos sin aprobar permisos. No se incorporan tablas de terceros."
   ],
-  "publicationAuthorized": false
+  "publicationAuthorized": false,
+  "linguisticSources": [
+    {
+      "technicalId": "LING-019",
+      "bibliographyId": "BIB-000008",
+      "resourceId": "REC-000008",
+      "licenseId": "LIC-000003",
+      "sourceId": "F35",
+      "sourceUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/wlc/Lev.xml",
+      "licenseUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+      "sha256": "75a4a96e7b64f2145bede15ae37ac8a0b301f110d5d6b2daf9d8048adebbd2e6",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "selectors": [],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    },
+    {
+      "technicalId": "LING-020",
+      "bibliographyId": "BIB-000009",
+      "resourceId": "REC-000009",
+      "licenseId": "LIC-000004",
+      "sourceId": "F36",
+      "sourceUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/wlc/Deut.xml",
+      "licenseUrl": "https://github.com/openscriptures/morphhb/blob/6a5db284c715c18b239422e57bb89684e6a19f00/LICENSE.md",
+      "sha256": "aad16a6a2dcbdc6ee36d7d051e80a63bfeb69ecaae19f775ec5b6aa67fe22355",
+      "allowedComponents": [
+        "texto_wlc",
+        "anotaciones_lema",
+        "anotaciones_morfologia"
+      ],
+      "selectors": [],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    },
+    {
+      "technicalId": "LING-015",
+      "bibliographyId": "BIB-000010",
+      "resourceId": "REC-000010",
+      "licenseId": "LIC-000005",
+      "sourceId": "F37",
+      "sourceUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/AugIndex.xml",
+      "licenseUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+      "sha256": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+      "allowedComponents": [
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/w/@aug",
+        "index/w/text()"
+      ],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    },
+    {
+      "technicalId": "LING-016",
+      "bibliographyId": "BIB-000011",
+      "resourceId": "REC-000011",
+      "licenseId": "LIC-000006",
+      "sourceId": "F38",
+      "sourceUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/LexicalIndex.xml",
+      "licenseUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+      "sha256": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+      "allowedComponents": [
+        "anotaciones_lema",
+        "identificadores_lexicos"
+      ],
+      "selectors": [
+        "index/part/@xml:lang",
+        "index/part/entry/@id",
+        "index/part/entry/w/text()",
+        "index/part/entry/xref/@aug",
+        "index/part/entry/xref/@strong",
+        "index/part/entry/xref/@bdb"
+      ],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    },
+    {
+      "technicalId": "LING-017",
+      "bibliographyId": "BIB-000012",
+      "resourceId": "REC-000012",
+      "licenseId": "LIC-000007",
+      "sourceId": "F39",
+      "sourceUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml",
+      "licenseUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+      "sha256": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/entry/@id",
+        "lexicon/entry/meaning/def/text()"
+      ],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    },
+    {
+      "technicalId": "LING-018",
+      "bibliographyId": "BIB-000013",
+      "resourceId": "REC-000013",
+      "licenseId": "LIC-000008",
+      "sourceId": "F40",
+      "sourceUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/BrownDriverBriggs.xml",
+      "licenseUrl": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/readme.md",
+      "sha256": "2b52658a4323d91674cda4090ab8b3ebddfff640f4f18143c28300e80b2c38f8",
+      "allowedComponents": [
+        "identificadores_lexicos",
+        "sentidos_lexicos"
+      ],
+      "selectors": [
+        "lexicon/part/@xml:lang",
+        "lexicon/part/section/entry/@id",
+        "lexicon/part/section/entry/def/text()",
+        "lexicon/part/section/entry/sense//def/text()"
+      ],
+      "status": "identidad_y_licencia_documentadas_admision_editorial_pendiente"
+    }
+  ],
+  "linguisticCrossChecks": [
+    {
+      "passage": "Levítico 19:28",
+      "url": "https://biblehub.com/text/leviticus/19-28.htm",
+      "observations": "H8296, H3793, H7085 y H5414 coinciden con el reporte; H3793 femenino singular constructo, H7085 masculino singular, H5414 Qal imperfecto 2mp.",
+      "verification": "cotejo_externo_puntual",
+      "permission": "consulta_sin_importacion",
+      "notEquivalentTo": "cotejo de bytes y ocurrencias OSHB fijadas"
+    },
+    {
+      "passage": "Levítico 21:5",
+      "url": "https://biblehub.com/text/leviticus/21-5.htm",
+      "observations": "H8295 verbo Qal imperfecto 3mp y H8296 sustantivo femenino singular; grafía שָׂרָטֶת.",
+      "verification": "cotejo_externo_puntual",
+      "permission": "consulta_sin_importacion",
+      "notEquivalentTo": "cotejo de bytes y ocurrencias OSHB fijadas"
+    },
+    {
+      "passage": "Deuteronomio 14:1",
+      "url": "https://biblehub.com/text/deuteronomy/14-1.htm",
+      "observations": "H1413; etiqueta Hitpael imperfecto 2mp en este proveedor, frente a Hitpolel descriptivo del expediente. No equiparar sistemas automáticamente.",
+      "verification": "cotejo_externo_puntual",
+      "permission": "consulta_sin_importacion",
+      "notEquivalentTo": "cotejo de bytes y ocurrencias OSHB fijadas"
+    },
+    {
+      "passage": "Jeremías 48:37",
+      "url": "https://biblehub.com/text/jeremiah/48-37.htm",
+      "observations": "H1417, sustantivo femenino plural; preservar H1418 como dato reportado de Logos, no equivalencia demostrada.",
+      "verification": "cotejo_externo_puntual",
+      "permission": "consulta_sin_importacion",
+      "notEquivalentTo": "cotejo de bytes y ocurrencias OSHB fijadas"
+    }
+  ],
+  "remaining": [
+    "Cotejo reproducible de XML fijados y entradas Strong/BDB; conservar discrepancias y límites de cobertura.",
+    "Validación automatizada de biblioteca/permisos y registro editorial con los contratos reales; actualizar pruebas históricas sin debilitar barreras.",
+    "Admisión editorial final por componente, generación y revisión de snapshot exacto; no publicar antes de superar controles."
+  ]
 }
